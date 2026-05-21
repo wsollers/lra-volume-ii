@@ -1,0 +1,475 @@
+% =========================================================
+% Problems in Q: Sequences, Limits, and the Failure of Completeness
+% =========================================================
+
+\subsection{Problems in $\mathbb{Q}$}
+\label{sec:problems-in-q}
+
+\begin{tcolorbox}[
+  colback=gray!6,
+  colframe=gray!40,
+  arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\small\textbf{Toolkit: Problems in $\mathbb{Q}$}},
+  fonttitle=\small\bfseries
+]
+This section assembles the formal infrastructure of rational sequences and
+their limits, then uses that infrastructure to make precise exactly what goes
+wrong inside $\mathbb{Q}$. The atomic notions are:
+\begin{itemize}
+  \item convergence of a rational sequence to a rational limit;
+  \item uniqueness of limits;
+  \item subsequences and their convergence;
+  \item boundedness of convergent and Cauchy sequences;
+  \item closure of the Cauchy property under addition and multiplication;
+  \item an equivalence relation on Cauchy sequences, which is the
+        raw material for the construction of $\mathbb{R}$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{remark}
+The rational numbers are ordered, Archimedean, and dense. It is tempting
+to believe they should already suffice for analysis. The first serious
+obstruction appears when one asks which sequences have limits, and where
+those limits live.
+\end{remark}
+
+% ----- def:convergent-rational-sequence -----
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Convergence of a Rational Sequence)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Convergence of a rational sequence]
+\label{def:convergent-rational-sequence}
+Let $(x_n)$ be a sequence of rational numbers and let $a \in \mathbb{Q}$.
+The sequence $(x_n)$ \emph{converges to $a$} if
+\[
+\forall \varepsilon \in \mathbb{Q},\; \varepsilon > 0 \;\;
+\exists N \in \mathbb{N} \;\;
+\forall n \geq N, \quad |x_n - a| < \varepsilon.
+\]
+We write $\lim_{n \to \infty} x_n = a$, or $x_n \to a$ as $n \to \infty$.
+The rational number $a$ is called the \emph{limit} of $(x_n)$.
+A sequence that does not converge to any element of $\mathbb{Q}$ is
+called \emph{divergent in $\mathbb{Q}$}.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{ConvergesTo}(x_n, a)
+\;\coloneqq\;
+\forall \varepsilon > 0 \;\; \exists N \in \mathbb{N} \;\; \forall n \geq N,
+\quad |x_n - a| < \varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\neg\operatorname{ConvergesTo}(x_n, a)
+\;\coloneqq\;
+\exists \varepsilon > 0 \;\; \forall N \in \mathbb{N} \;\; \exists n \geq N,
+\quad |x_n - a| \geq \varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A sequence fails to converge to $a$ in one of two ways:
+\begin{enumerate}
+  \item \textbf{Oscillation:} terms return repeatedly to both sides of $a$
+        with spacing bounded away from zero. Example: $((-1)^n)$.
+  \item \textbf{Unbounded drift:} terms recede without bound and approach
+        no rational number at all. Example: $(n)$.
+\end{enumerate}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Think of $\varepsilon$ as a challenge radius: the definition demands that the
+sequence eventually stays inside every $\varepsilon$-ball around $a$, no
+matter how small the radius. A sequence converges when it can meet every
+challenge, and diverges as soon as some challenge cannot be met.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:rational-sequence]{Sequence of Rational Numbers}
+  \item \hyperref[thm:archimedean-q]{Archimedean Property of $\mathbb{Q}$}
+\end{itemize}
+\end{remark*}
+
+% ----- thm:limit-unique-q -----
+\begin{theorem}[Limits of rational sequences are unique]
+\label{thm:limit-unique-q}
+If a sequence of rational numbers converges, then its limit is unique.
+\hyperref[prf:limit-unique-q]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (x_n) \subseteq \mathbb{Q},\;
+\bigl(
+\operatorname{ConvergesTo}(x_n, a) \land \operatorname{ConvergesTo}(x_n, b)
+\bigr)
+\Longrightarrow a = b.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A sequence cannot approach two distinct rational numbers simultaneously.
+If it did, the two alleged limits would need to be both arbitrarily close to
+the same terms, forcing them to be arbitrarily close to each other --- hence
+equal. This is the $2\varepsilon$ triangle-inequality squeeze.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:convergent-rational-sequence]{Convergence of a Rational Sequence}
+  \item \hyperref[thm:q-is-ordered-field]{$\mathbb{Q}$ Is an Ordered Field}
+\end{itemize}
+\end{remark*}
+
+% ----- def:subsequence-q -----
+\begin{definition}[Subsequence of a rational sequence]
+\label{def:subsequence-q}
+Let $(x_n)$ be a sequence of rational numbers and let $(k_n)$ be a strictly
+increasing sequence of natural numbers:
+$k_1 < k_2 < k_3 < \cdots$.
+The sequence $(x_{k_n})$ is called a \emph{subsequence} of $(x_n)$.
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl(\forall n \in \mathbb{N},\; k_{n+1} > k_n\bigr)
+\;\Longrightarrow\;
+(x_{k_n}) \text{ is a subsequence of } (x_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A subsequence selects an infinite subcollection of terms in their original
+order. The key elementary fact is that $k_n \geq n$ for all $n$, so
+subsequence indices grow at least as fast as $n$ itself.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:rational-sequence]{Sequence of Rational Numbers}
+\end{itemize}
+\end{remark*}
+
+% ----- thm:subsequence-convergence-q -----
+\begin{theorem}[Subsequences of convergent sequences converge to the same limit]
+\label{thm:subsequence-convergence-q}
+Let $(x_n)$ be a sequence of rational numbers with $x_n \to a$.
+Then every subsequence $(x_{k_n})$ of $(x_n)$ also converges to $a$.
+\hyperref[prf:subsequence-convergence-q]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{ConvergesTo}(x_n, a)
+\;\Longrightarrow\;
+\forall (k_n) \text{ strictly increasing},\;
+\operatorname{ConvergesTo}(x_{k_n}, a).
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\exists (k_n) \text{ strictly increasing},\;
+\neg\operatorname{ConvergesTo}(x_{k_n}, a)
+\;\Longrightarrow\;
+\neg\operatorname{ConvergesTo}(x_n, a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The contrapositive is the working tool: to prove $(x_n)$ diverges it suffices
+to find two subsequences converging to distinct limits, or one subsequence
+that diverges.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:convergent-rational-sequence]{Convergence of a Rational Sequence}
+  \item \hyperref[def:subsequence-q]{Subsequence of a Rational Sequence}
+\end{itemize}
+\end{remark*}
+
+% ----- def:bounded-sequence-q -----
+\begin{definition}[Bounded sequence of rational numbers]
+\label{def:bounded-sequence-q}
+A sequence $(x_n)$ of rational numbers is:
+\begin{itemize}
+  \item \emph{bounded above} if $\exists \Lambda \in \mathbb{Q}\; \forall n \in \mathbb{N},\;
+        x_n \leq \Lambda$;
+  \item \emph{bounded below} if $\exists \lambda \in \mathbb{Q}\; \forall n \in \mathbb{N},\;
+        x_n \geq \lambda$;
+  \item \emph{bounded} if $\exists \Gamma \in \mathbb{Q},\;\Gamma>0\;\;
+        \forall n \in \mathbb{N},\; |x_n| \leq \Gamma$.
+\end{itemize}
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Bounded}(x_n)
+\;\coloneqq\;
+\exists \Gamma \in \mathbb{Q},\; \Gamma > 0,\;\;
+\forall n \in \mathbb{N},\;\; |x_n| \leq \Gamma.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\neg\operatorname{Bounded}(x_n)
+\;\coloneqq\;
+\forall \Gamma > 0 \;\; \exists n \in \mathbb{N},\;\; |x_n| > \Gamma.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Boundedness is a global envelope condition: one single rational bound must
+contain every term.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:rational-sequence]{Sequence of Rational Numbers}
+\end{itemize}
+\end{remark*}
+
+% ----- thm:convergent-bounded-q -----
+\begin{theorem}[Convergent sequences are bounded]
+\label{thm:convergent-bounded-q}
+Every convergent sequence of rational numbers is bounded.
+\hyperref[prf:convergent-bounded-q]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{ConvergesTo}(x_n, a)
+\;\Longrightarrow\;
+\operatorname{Bounded}(x_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Convergence forces the tail of the sequence into a bounded neighborhood of
+the limit; the finite initial segment is bounded by the maximum of finitely
+many terms. The converse fails: $((-1)^n)$ is bounded but does not converge.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:convergent-rational-sequence]{Convergence of a Rational Sequence}
+  \item \hyperref[def:bounded-sequence-q]{Bounded Sequence of Rational Numbers}
+\end{itemize}
+\end{remark*}
+
+% ----- thm:cauchy-bounded-q -----
+\begin{theorem}[Cauchy sequences are bounded]
+\label{thm:cauchy-bounded-q}
+Every Cauchy sequence of rational numbers is bounded.
+\hyperref[prf:cauchy-bounded-q]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{CauchySequence}(x_n)
+\;\Longrightarrow\;
+\operatorname{Bounded}(x_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Cauchy condition forces the tail --- all terms beyond index $N$ --- to
+lie within distance $1$ of $x_{N+1}$. The finite initial segment contributes
+finitely many terms bounded by their maximum absolute value.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:cauchy-rational]{Cauchy Sequence in $\mathbb{Q}$}
+  \item \hyperref[def:bounded-sequence-q]{Bounded Sequence of Rational Numbers}
+\end{itemize}
+\end{remark*}
+
+% ----- thm:cauchy-closed-operations-q -----
+\begin{theorem}[Cauchy sequences are closed under addition and multiplication]
+\label{thm:cauchy-closed-operations-q}
+If $(x_n)$ and $(y_n)$ are Cauchy sequences of rational numbers, then so
+are $(x_n + y_n)$ and $(x_n y_n)$.
+\hyperref[prf:cauchy-closed-operations-q]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{CauchySequence}(x_n) \land \operatorname{CauchySequence}(y_n)
+\;\Longrightarrow\;
+\operatorname{CauchySequence}(x_n + y_n)
+\;\land\;
+\operatorname{CauchySequence}(x_n y_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For addition: an $\varepsilon/2$ split suffices. For multiplication: Cauchy
+sequences are bounded, so cross-terms $|y_n||x_n - x_m|$ and
+$|x_m||y_n - y_m|$ are controlled by a common bound $\Lambda$, and
+$\varepsilon/(2\Lambda)$ serves as the input tolerance for each factor.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:cauchy-rational]{Cauchy Sequence in $\mathbb{Q}$}
+  \item \hyperref[thm:cauchy-bounded-q]{Cauchy Sequences Are Bounded}
+\end{itemize}
+\end{remark*}
+
+% ----- def:cauchy-equivalence -----
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Equivalence of Cauchy Sequences in $\mathbb{Q}$)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Equivalence of Cauchy sequences in $\mathbb{Q}$]
+\label{def:cauchy-equivalence}
+Let $\mathbb{Q}^c$ denote the set of all Cauchy sequences of rational numbers.
+Two sequences $(x_n), (y_n) \in \mathbb{Q}^c$ are \emph{equivalent}, written
+$(x_n) \sim (y_n)$, if
+\[
+\forall \varepsilon > 0 \;\; \exists N \in \mathbb{N} \;\; \forall n \geq N,
+\quad |x_n - y_n| < \varepsilon.
+\]
+Equivalently, $(x_n) \sim (y_n)$ if and only if $(x_n - y_n)$ converges to $0$.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{CauchyEquiv}(x_n, y_n)
+\;\coloneqq\;
+\operatorname{ConvergesTo}(x_n - y_n,\, 0).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\neg\operatorname{CauchyEquiv}(x_n, y_n)
+\;\coloneqq\;
+\exists \varepsilon > 0 \;\; \forall N \in \mathbb{N} \;\; \exists n \geq N,
+\quad |x_n - y_n| \geq \varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two Cauchy sequences are equivalent when their difference is a null sequence.
+The equivalence classes under $\sim$ are exactly the real numbers in the
+Cauchy-sequence construction of $\mathbb{R}$.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:cauchy-rational]{Cauchy Sequence in $\mathbb{Q}$}
+  \item \hyperref[def:convergent-rational-sequence]{Convergence of a Rational Sequence}
+\end{itemize}
+\end{remark*}
+
+% ----- thm:cauchy-equivalence-is-equivalence -----
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (The Cauchy Equivalence Relation on $\mathbb{Q}^c$)}},
+  fonttitle=\small\bfseries]
+\begin{theorem}[The relation $\sim$ is an equivalence relation on $\mathbb{Q}^c$]
+\label{thm:cauchy-equivalence-is-equivalence}
+The relation $\sim$ defined on $\mathbb{Q}^c$ by
+$(x_n) \sim (y_n) \Longleftrightarrow \operatorname{ConvergesTo}(x_n - y_n, 0)$
+is an equivalence relation.
+\hyperref[prf:cauchy-equivalence-is-equivalence]{Go to proof.}
+\end{theorem}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+The relation $\sim$ on $\mathbb{Q}^c$ satisfies:
+\begin{align*}
+&\forall (x_n) \in \mathbb{Q}^c,\quad (x_n) \sim (x_n); \\
+&\forall (x_n),(y_n) \in \mathbb{Q}^c,\quad
+  (x_n) \sim (y_n) \Longrightarrow (y_n) \sim (x_n); \\
+&\forall (x_n),(y_n),(z_n) \in \mathbb{Q}^c,\quad
+  (x_n) \sim (y_n) \land (y_n) \sim (z_n)
+  \Longrightarrow (x_n) \sim (z_n).
+\end{align*}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Reflexivity: $|x_n - x_n| = 0 < \varepsilon$ always.
+Symmetry: $|x_n - y_n| = |y_n - x_n|$.
+Transitivity: the triangle inequality with an $\varepsilon/2$ split.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:cauchy-equivalence]{Equivalence of Cauchy Sequences in $\mathbb{Q}$}
+  \item \hyperref[thm:cauchy-closed-operations-q]{Cauchy Sequences Are Closed Under Addition}
+\end{itemize}
+\end{remark*}
+
+% ----- thm:cauchy-equiv-preserved-under-operations -----
+\begin{theorem}[Cauchy equivalence is preserved under addition and multiplication]
+\label{thm:cauchy-equiv-preserved-operations}
+Let $(x_n),(y_n),(u_n),(v_n) \in \mathbb{Q}^c$.
+Suppose $(x_n) \sim (u_n)$ and $(y_n) \sim (v_n)$.  Then:
+\[
+(x_n + y_n) \sim (u_n + v_n)
+\qquad\text{and}\qquad
+(x_n y_n) \sim (u_n v_n).
+\]
+\hyperref[prf:cauchy-equiv-preserved-operations]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(x_n) \sim (u_n) \land (y_n) \sim (v_n)
+\;\Longrightarrow\;
+(x_n + y_n) \sim (u_n + v_n)
+\;\land\;
+(x_n y_n) \sim (u_n v_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the well-definedness result for arithmetic on equivalence classes.
+Without it, adding or multiplying representatives from two classes could
+land in different classes, making the operations on $\mathbb{R} = \mathbb{Q}^c/\!\sim$
+ill-defined. The proof uses boundedness of Cauchy sequences in the same
+way as the analogous well-definedness result for multiplication on $\mathbb{Q}$.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:cauchy-equivalence]{Equivalence of Cauchy Sequences in $\mathbb{Q}$}
+  \item \hyperref[thm:cauchy-closed-operations-q]{Cauchy Sequences Are Closed Under Operations}
+  \item \hyperref[thm:cauchy-bounded-q]{Cauchy Sequences Are Bounded}
+\end{itemize}
+\end{remark*}
+
+\begin{remark}[Diagram of implications in $\mathbb{Q}$]
+\[
+\text{convergent in } \mathbb{Q}
+\;\Longrightarrow\;
+\text{Cauchy in } \mathbb{Q}
+\;\Longrightarrow\;
+\text{bounded in } \mathbb{Q},
+\]
+\[
+\text{bounded}
+\;\not\Longrightarrow\;
+\text{Cauchy},
+\qquad
+\text{Cauchy}
+\;\not\Longrightarrow\;
+\text{convergent in } \mathbb{Q}.
+\]
+Each failure is witnessed by an explicit counterexample. The last implication
+holds in $\mathbb{R}$ but not in $\mathbb{Q}$: that is exactly the completeness
+axiom.
+\end{remark}

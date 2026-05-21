@@ -1,0 +1,671 @@
+subject: rationals
+display_title: Rational Numbers ($\mathbb{Q}$)
+volume: volume-ii
+status: in-progress
+dependencies:
+  prior: integers
+  next: reals
+path: volume-ii/rationals
+environments:
+
+  # -----------------------------------------------------------
+  # Construction
+  # -----------------------------------------------------------
+  - label: def:fraction-pairs
+    type: def
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Fraction Pairs
+
+  - label: def:fraction-pair-equality
+    type: def
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Equality of Fraction Pairs
+
+  - label: thm:fraction-pair-equivalence
+    type: thm
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: The Fraction-Pair Relation Is an Equivalence Relation
+    proof_file: proofs/notes/prf-fraction-pair-equivalence.tex
+
+  - label: def:rational-numbers
+    type: def
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Rational Numbers
+
+  - label: def:rational-distinguished
+    type: def
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Distinguished Elements of $\mathbb{Q}$
+
+  - label: def:rational-operations
+    type: def
+    file: notes/rational-arithmetic-from-representatives/notes-arithmetic-from-representatives.tex
+    display_title: Addition and Multiplication on $\mathbb{Q}$
+
+  - label: lem:rational-addition-well-defined
+    type: lem
+    file: notes/rational-arithmetic-from-representatives/notes-arithmetic-from-representatives.tex
+    display_title: Addition Is Well-Defined on Rational Classes
+    proof_file: proofs/notes/prf-rational-addition-well-defined.tex
+
+  - label: lem:rational-multiplication-well-defined
+    type: lem
+    file: notes/rational-arithmetic-from-representatives/notes-arithmetic-from-representatives.tex
+    display_title: Multiplication Is Well-Defined on Rational Classes
+    proof_file: proofs/notes/prf-rational-multiplication-well-defined.tex
+
+  - label: thm:ec-integer-embedding-add
+    type: thm
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Integer Embedding Preserves Addition
+    proof_file: proofs/notes/prf-ec-integer-embedding-add.tex
+
+  - label: thm:ec-integer-embedding-mul
+    type: thm
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Integer Embedding Preserves Multiplication
+    proof_file: proofs/notes/prf-ec-integer-embedding-mul.tex
+
+  - label: thm:ec-zero-numerator
+    type: thm
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Zero Class Criterion
+    proof_file: proofs/notes/prf-ec-zero-numerator.tex
+
+  - label: thm:ec-scaling
+    type: thm
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Scaling of Equivalence Classes
+    proof_file: proofs/notes/prf-ec-scaling.tex
+
+  - label: thm:ec-negation
+    type: thm
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Negation of an Equivalence Class
+    proof_file: proofs/notes/prf-ec-negation.tex
+
+  - label: thm:ec-subtraction
+    type: thm
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Subtraction of Equivalence Classes
+    proof_file: proofs/notes/prf-ec-subtraction.tex
+
+  - label: thm:ec-reciprocal
+    type: thm
+    file: notes/constructing-rational-numbers/notes-constructing-rational-numbers.tex
+    display_title: Reciprocal of a Nonzero Equivalence Class
+    proof_file: proofs/notes/prf-ec-reciprocal.tex
+
+  # -----------------------------------------------------------
+  # Algebraic laws
+  # -----------------------------------------------------------
+  - label: def:rational-division
+    type: def
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: Division and Reciprocal in $\mathbb{Q}$
+
+  - label: thm:rational-division-by-one
+    type: thm
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: Division by One in $\mathbb{Q}$
+    proof_file: proofs/notes/prf-rational-division-by-one.tex
+
+  - label: thm:rational-quotient-zero-iff-numerator-zero
+    type: thm
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: A Rational Quotient Is Zero Exactly When Its Numerator Is Zero
+    proof_file: proofs/notes/prf-rational-quotient-zero-iff-numerator-zero.tex
+
+  - label: thm:rational-cross-multiplication
+    type: thm
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: Cross-Multiplication Criterion for Rational Equality
+    proof_file: proofs/notes/prf-rational-cross-multiplication.tex
+
+  - label: thm:rational-fraction-scaling
+    type: thm
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: Scaling Numerator and Denominator by the Same Nonzero Rational
+    proof_file: proofs/notes/prf-rational-fraction-scaling.tex
+
+  - label: thm:rational-fraction-addition
+    type: thm
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: Fraction Addition Rule in $\mathbb{Q}$
+    proof_file: proofs/notes/prf-rational-fraction-addition.tex
+
+  - label: thm:rational-fraction-subtraction
+    type: thm
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: Fraction Subtraction Rule in $\mathbb{Q}$
+    proof_file: proofs/notes/prf-rational-fraction-subtraction.tex
+
+  - label: thm:rational-fraction-multiplication
+    type: thm
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: Fraction Multiplication Rule in $\mathbb{Q}$
+    proof_file: proofs/notes/prf-rational-fraction-multiplication.tex
+
+  - label: thm:rational-fraction-negation
+    type: thm
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: Negation Rule for Rational Fractions
+    proof_file: proofs/notes/prf-rational-fraction-negation.tex
+
+  - label: thm:rational-fraction-reciprocal
+    type: thm
+    file: notes/algebraic-laws-of-rational-arithmetic/notes-algebraic-laws-of-rational-arithmetic.tex
+    display_title: Reciprocal of a Nonzero Rational Fraction
+    proof_file: proofs/notes/prf-rational-fraction-reciprocal.tex
+
+  # -----------------------------------------------------------
+  # Field structure
+  # -----------------------------------------------------------
+  - label: def:integral-domain
+    type: def
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Integral Domain
+
+  - label: def:field
+    type: def
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Field
+
+  - label: def:subfield
+    type: def
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Subfield
+
+  - label: def:nonneg-integer-exponents-field
+    type: def
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Nonnegative Integer Exponents in a Field
+
+  - label: def:negative-integer-exponents
+    type: def
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Negative Integer Exponents
+
+  - label: thm:q-is-integral-domain
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: $\mathbb{Q}$ Is an Integral Domain
+    proof_file: proofs/notes/prf-q-is-integral-domain.tex
+
+  - label: thm:q-is-field
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: $\mathbb{Q}$ Is a Field
+    proof_file: proofs/notes/prf-q-is-field.tex
+
+  - label: thm:negative-exponents-agree-with-inverse-power
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Negative Exponents Agree with Inverse Powers
+    proof_file: proofs/notes/prf-negative-exponents-agree-with-inverse-power.tex
+
+  - label: thm:power-of-product-in-field
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Power of a Product in a Field
+    proof_file: proofs/notes/prf-power-of-product-in-field.tex
+
+  - label: thm:integer-exponent-addition-law
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Integer Exponent Addition Law
+    proof_file: proofs/notes/prf-integer-exponent-addition-law.tex
+
+  - label: thm:power-of-a-power-in-field
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Power of a Power in a Field
+    proof_file: proofs/notes/prf-power-of-a-power-in-field.tex
+
+  - label: thm:zero-product
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Zero Product
+    proof_file: proofs/notes/prf-zero-product.tex
+
+  - label: thm:double-negation
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Double Negation
+    proof_file: proofs/notes/prf-double-negation.tex
+
+  - label: thm:negation-of-product
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Negation of a Product
+    proof_file: proofs/notes/prf-negation-of-product.tex
+
+  - label: cor:product-of-negatives
+    type: cor
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Product of Negatives
+    proof_file: proofs/notes/prf-product-of-negatives.tex
+
+  - label: thm:additive-cancellation
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Additive Cancellation
+    proof_file: proofs/notes/prf-additive-cancellation.tex
+
+  - label: thm:multiplicative-cancellation
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Multiplicative Cancellation
+    proof_file: proofs/notes/prf-multiplicative-cancellation.tex
+
+  - label: thm:uniqueness-of-multiplicative-inverse
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: Uniqueness of Multiplicative Inverse
+    proof_file: proofs/notes/prf-uniqueness-of-multiplicative-inverse.tex
+
+  - label: thm:one-inverse-is-one
+    type: thm
+    file: notes/field-structure-of-q/notes-field-structure-of-q.tex
+    display_title: The Inverse of One Is One
+    proof_file: proofs/notes/prf-one-inverse-is-one.tex
+
+  # -----------------------------------------------------------
+  # Order axioms
+  # -----------------------------------------------------------
+  - label: def:positive-cone
+    type: def
+    file: notes/defining-order-on-q/notes-defining-order-on-q.tex
+    display_title: Positive Cone
+
+  - label: def:ordered-integral-domain
+    type: def
+    file: notes/defining-order-on-q/notes-defining-order-on-q.tex
+    display_title: Ordered Integral Domain
+
+  - label: def:ordered-field
+    type: def
+    file: notes/defining-order-on-q/notes-defining-order-on-q.tex
+    display_title: Ordered Field
+
+  - label: def:ordered-subfield
+    type: def
+    file: notes/defining-order-on-q/notes-defining-order-on-q.tex
+    display_title: Ordered Subfield
+
+  - label: def:densely-ordered-system
+    type: def
+    file: notes/defining-order-on-q/notes-defining-order-on-q.tex
+    display_title: Densely Ordered System
+
+  # -----------------------------------------------------------
+  # Ordered field structure
+  # -----------------------------------------------------------
+  - label: thm:q-is-ordered-field
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: $\mathbb{Q}$ Is an Ordered Field
+    proof_file: proofs/notes/prf-q-is-ordered-field.tex
+
+  - label: thm:squares-nonnegative
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: Squares Are Nonnegative
+    proof_file: proofs/notes/prf-squares-nonnegative.tex
+
+  - label: thm:inverse-positive
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: Positive Elements Have Positive Inverses
+    proof_file: proofs/notes/prf-inverse-positive.tex
+
+  - label: thm:multiply-positive
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: Multiplication by a Positive Element Preserves Order
+    proof_file: proofs/notes/prf-multiply-positive.tex
+
+  - label: thm:multiply-negative
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: Multiplication by a Negative Element Reverses Order
+    proof_file: proofs/notes/prf-multiply-negative.tex
+
+  - label: thm:one-positive
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: $1$ Is Positive
+    proof_file: proofs/notes/prf-one-positive.tex
+
+  - label: cor:n-positive
+    type: cor
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: Natural Numbers Are Positive
+    proof_file: proofs/notes/prf-n-positive.tex
+
+  - label: thm:positive-fraction-iff-positive-product
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: Positivity of a Quotient via the Product $ab$
+    proof_file: proofs/notes/prf-positive-fraction-iff-positive-product.tex
+
+  - label: thm:fraction-order-comparison-general
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: General Fraction Comparison in an Ordered Field
+    proof_file: proofs/notes/prf-fraction-order-comparison-general.tex
+
+  - label: thm:fraction-order-comparison-positive-denominator-product
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: Fraction Comparison When the Denominator Product Is Positive
+    proof_file: proofs/notes/prf-fraction-order-comparison-positive-denominator-product.tex
+
+  - label: thm:reciprocal-order-for-positive-elements
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: Reciprocal Order for Positive Elements
+    proof_file: proofs/notes/prf-reciprocal-order-for-positive-elements.tex
+
+  - label: thm:ordered-fields-are-densely-ordered
+    type: thm
+    file: notes/ordered-field-structure-of-q/notes-ordered-field-structure-of-q.tex
+    display_title: Ordered Fields Are Densely Ordered
+    proof_file: proofs/notes/prf-ordered-fields-are-densely-ordered.tex
+
+  # -----------------------------------------------------------
+  # Linear approximation
+  # -----------------------------------------------------------
+  - label: thm:archimedean-q
+    type: thm
+    file: notes/linear-approximation-in-q/notes-density-of-rationals.tex
+    display_title: Archimedean Property of $\mathbb{Q}$
+    proof_file: proofs/notes/prf-archimedean-q.tex
+
+  - label: thm:between-any-two-rationals-is-a-rational
+    type: thm
+    file: notes/linear-approximation-in-q/notes-rational-density-and-order.tex
+    display_title: Between Any Two Rational Numbers Lies Another Rational
+    proof_file: proofs/notes/prf-between-any-two-rationals-is-a-rational.tex
+
+  - label: cor:q-dense-in-itself
+    type: cor
+    file: notes/linear-approximation-in-q/notes-rational-density-and-order.tex
+    display_title: $\mathbb{Q}$ Is Dense in Itself
+    proof_file: proofs/notes/prf-q-dense-in-itself.tex
+
+  - label: cor:q-has-no-adjacent-points
+    type: cor
+    file: notes/linear-approximation-in-q/notes-rational-density-and-order.tex
+    display_title: The Rational Numbers Have No Adjacent Points
+    proof_file: proofs/notes/prf-q-has-no-adjacent-points.tex
+
+  - label: thm:q-has-no-minimum-positive-element
+    type: thm
+    file: notes/linear-approximation-in-q/notes-rational-density-and-order.tex
+    display_title: $\mathbb{Q}$ Has No Minimum Positive Element
+    proof_file: proofs/notes/prf-q-has-no-minimum-positive-element.tex
+
+  - label: lem:rational-upper-lower-perturbation
+    type: lem
+    file: notes/linear-approximation-in-q/notes-rational-density-and-order.tex
+    display_title: Upper/Lower Perturbation Lemma, Rational Version
+    proof_file: proofs/notes/prf-rational-upper-lower-perturbation.tex
+
+  - label: lem:rational-perturbation-lemma
+    type: lem
+    file: notes/linear-approximation-in-q/notes-rational-density-and-order.tex
+    display_title: Rational Perturbation Lemma
+    proof_file: proofs/notes/prf-rational-perturbation-lemma.tex
+
+  - label: thm:rational-chain-with-small-steps
+    type: thm
+    file: notes/linear-approximation-in-q/notes-rational-density-and-order.tex
+    display_title: Rational Chain with Uniformly Small Steps
+    proof_file: proofs/notes/prf-rational-chain-with-small-steps.tex
+
+  - label: def:dyadic-rational
+    type: def
+    file: notes/linear-approximation-in-q/notes-dyadic-approximation-stubs.tex
+    display_title: Dyadic Rational
+
+  - label: thm:dyadic-rationals-are-rational
+    type: thm
+    file: notes/linear-approximation-in-q/notes-dyadic-approximation-stubs.tex
+    display_title: Dyadic Rationals Are Rational
+    proof_file: proofs/notes/prf-dyadic-rationals-are-rational.tex
+
+  - label: thm:dyadic-midpoint-closure
+    type: thm
+    file: notes/linear-approximation-in-q/notes-dyadic-approximation-stubs.tex
+    display_title: Dyadic Midpoint Closure
+    proof_file: proofs/notes/prf-dyadic-midpoint-closure.tex
+
+  - label: thm:dyadic-approximation-error-bound
+    type: thm
+    file: notes/linear-approximation-in-q/notes-dyadic-approximation-stubs.tex
+    display_title: Dyadic Approximation Error Bound
+    proof_file: proofs/notes/prf-dyadic-approximation-error-bound.tex
+
+  - label: def:mediant
+    type: def
+    file: notes/linear-approximation-in-q/notes-mediant.tex
+    display_title: Mediant
+
+  - label: thm:mediant-inequality
+    type: thm
+    file: notes/linear-approximation-in-q/notes-mediant.tex
+    display_title: Mediant Inequality
+    proof_file: proofs/notes/prf-mediant-inequality.tex
+
+  - label: def:farey-sequence
+    type: def
+    file: notes/linear-approximation-in-q/notes-mediant.tex
+    display_title: Farey Sequence
+
+  - label: thm:farey-neighbor-theorem
+    type: thm
+    file: notes/linear-approximation-in-q/notes-mediant.tex
+    display_title: Farey Neighbor Theorem
+    proof_file: proofs/notes/prf-farey-neighbor-theorem.tex
+
+  - label: thm:farey-gap
+    type: thm
+    file: notes/linear-approximation-in-q/notes-mediant.tex
+    display_title: Gap Between Farey Neighbors
+    proof_file: proofs/notes/prf-farey-gap.tex
+
+  - label: thm:farey-mediant-property
+    type: thm
+    file: notes/linear-approximation-in-q/notes-mediant.tex
+    display_title: Mediant Property of Farey Neighbors
+    proof_file: proofs/notes/prf-farey-mediant-property.tex
+
+  - label: lem:mediant-gap
+    type: lem
+    file: notes/linear-approximation-in-q/notes-mediant.tex
+    display_title: Mediant Gap Lemma
+    proof_file: proofs/notes/prf-mediant-gap.tex
+
+  - label: thm:stern-brocot-enumeration
+    type: thm
+    file: notes/linear-approximation-in-q/notes-mediant.tex
+    display_title: Stern--Brocot Enumeration
+    proof_file: proofs/notes/prf-stern-brocot-enumeration.tex
+
+  - label: lem:sb-denom-growth
+    type: lem
+    file: notes/linear-approximation-in-q/stern-brocot.tex
+    display_title: Denominator Growth on Infinite Stern--Brocot Paths
+    proof_file: proofs/notes/prf-sb-denom-growth.tex
+
+  - label: lem:sb-length-zero
+    type: lem
+    file: notes/linear-approximation-in-q/stern-brocot.tex
+    display_title: Stern--Brocot Interval Lengths Shrink to Zero
+    proof_file: proofs/notes/prf-sb-length-zero.tex
+
+  - label: prop:sb-unique-point
+    type: prop
+    file: notes/linear-approximation-in-q/stern-brocot.tex
+    display_title: Nested Stern--Brocot Intervals Contain a Unique Limit Point
+    proof_file: proofs/notes/prf-sb-unique-point.tex
+
+  - label: cor:sb-path-limit
+    type: cor
+    file: notes/linear-approximation-in-q/stern-brocot.tex
+    display_title: Every Infinite Stern--Brocot Path Converges to Its Target
+    proof_file: proofs/notes/prf-sb-path-limit.tex
+
+  - label: cor:sb-limit-irrational
+    type: cor
+    file: notes/linear-approximation-in-q/stern-brocot.tex
+    display_title: Infinite Stern--Brocot Paths Converge to Irrationals
+    proof_file: proofs/notes/prf-sb-limit-irrational.tex
+
+  # -----------------------------------------------------------
+  # Nonlinear approximation
+  # -----------------------------------------------------------
+  - label: thm:rational-square-bracketing
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-square-bracketing-and-nonlinear-approximation.tex
+    display_title: Rational Square Bracketing
+    proof_file: proofs/notes/prf-rational-square-bracketing.tex
+
+  - label: lem:first-grid-point-crossing
+    type: lem
+    file: notes/nonlinear-approximation-in-q/notes-square-bracketing-and-nonlinear-approximation.tex
+    display_title: First Grid Point Crossing
+    proof_file: proofs/notes/prf-first-grid-point-crossing.tex
+
+  - label: thm:rational-square-approximation-from-above
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-square-bracketing-and-nonlinear-approximation.tex
+    display_title: Rational Square Approximation from Above
+    proof_file: proofs/notes/prf-rational-square-approximation-from-above.tex
+
+  - label: thm:rational-square-approximation-from-below
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-square-bracketing-and-nonlinear-approximation.tex
+    display_title: Rational Square Approximation from Below
+    proof_file: proofs/notes/prf-rational-square-approximation-from-below.tex
+
+  - label: def:convergent-rational-sequence
+    type: def
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Convergence of a Rational Sequence
+
+  - label: thm:limit-unique-q
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Limits of Rational Sequences Are Unique
+    proof_file: proofs/notes/prf-limit-unique-q.tex
+
+  - label: def:subsequence-q
+    type: def
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Subsequence of a Rational Sequence
+
+  - label: thm:subsequence-convergence-q
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Subsequences of Convergent Sequences Converge to the Same Limit
+    proof_file: proofs/notes/prf-subsequence-convergence-q.tex
+
+  - label: def:bounded-sequence-q
+    type: def
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Bounded Sequence of Rational Numbers
+
+  - label: thm:convergent-bounded-q
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Convergent Sequences Are Bounded
+    proof_file: proofs/notes/prf-convergent-bounded-q.tex
+
+  - label: thm:cauchy-bounded-q
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Cauchy Sequences Are Bounded
+    proof_file: proofs/notes/prf-cauchy-bounded-q.tex
+
+  - label: thm:cauchy-closed-operations-q
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Cauchy Sequences Are Closed Under Addition and Multiplication
+    proof_file: proofs/notes/prf-cauchy-closed-operations-q.tex
+
+  - label: def:cauchy-equivalence
+    type: def
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Equivalence of Cauchy Sequences in $\mathbb{Q}$
+
+  - label: thm:cauchy-equivalence-is-equivalence
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: The Relation $\sim$ Is an Equivalence Relation on $\mathbb{Q}^c$
+    proof_file: proofs/notes/prf-cauchy-equivalence-is-equivalence.tex
+
+  - label: thm:cauchy-equiv-preserved-operations
+    type: thm
+    file: notes/nonlinear-approximation-in-q/notes-problems-in-q.tex
+    display_title: Cauchy Equivalence Is Preserved Under Addition and Multiplication
+    proof_file: proofs/notes/prf-cauchy-equiv-preserved-operations.tex
+
+  # -----------------------------------------------------------
+  # Sequential approximation
+  # -----------------------------------------------------------
+  - label: def:rational-sequence
+    type: def
+    file: notes/sequential-approximation-in-q/notes-rational-cauchy.tex
+    display_title: Sequence of Rational Numbers
+
+  - label: def:cauchy-rational
+    type: def
+    file: notes/sequential-approximation-in-q/notes-rational-cauchy.tex
+    display_title: Cauchy Sequence in $\mathbb{Q}$
+
+  - label: thm:convergent-implies-cauchy-q
+    type: thm
+    file: notes/sequential-approximation-in-q/notes-rational-cauchy.tex
+    display_title: Every Convergent Rational Sequence Is Cauchy
+    proof_file: proofs/notes/prf-convergent-implies-cauchy-q.tex
+
+  - label: thm:cauchy-not-convergent-q
+    type: thm
+    file: notes/sequential-approximation-in-q/notes-rational-cauchy.tex
+    display_title: There Exist Cauchy Sequences in $\mathbb{Q}$ That Do Not Converge to a Rational Number
+    proof_file: proofs/notes/prf-cauchy-not-convergent-q.tex
+
+  - label: thm:stern-brocot-refinement
+    type: thm
+    file: notes/sequential-approximation-in-q/notes-rational-limiting-processes.tex
+    display_title: Stern--Brocot Interval Refinement
+    proof_file: proofs/notes/prf-stern-brocot-refinement.tex
+
+  - label: thm:stern-brocot-limit
+    type: thm
+    file: notes/sequential-approximation-in-q/notes-rational-limiting-processes.tex
+    display_title: Stern--Brocot Limit Theorem
+    proof_file: proofs/notes/prf-stern-brocot-limit.tex
+
+  # -----------------------------------------------------------
+  # Rational gaps
+  # -----------------------------------------------------------
+  - label: thm:sqrt2-irrational
+    type: thm
+    file: notes/rational-gaps/notes-rational-gaps.tex
+    display_title: No Rational Number Has Square $2$
+    proof_file: proofs/notes/prf-sqrt2-irrational.tex
+
+  - label: lem:rational-square-bracketing
+    type: lem
+    file: notes/rational-gaps/notes-rational-gaps.tex
+    display_title: Rational Square Bracketing
+    proof_file: proofs/notes/prf-rational-square-bracketing.tex
+
+  - label: thm:rational-square-approximation-from-above
+    type: thm
+    file: notes/rational-gaps/notes-rational-gaps.tex
+    display_title: Rational Square Approximation from Above
+    proof_file: proofs/notes/prf-rational-square-approximation-from-above.tex

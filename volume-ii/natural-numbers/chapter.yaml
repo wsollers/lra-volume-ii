@@ -1,0 +1,414 @@
+# =========================================================
+# chapter.yaml - Natural Numbers
+# volume-ii/natural-numbers/
+#
+# Machine-readable card data for all labelled environments.
+# =========================================================
+
+chapter: natural-numbers
+display_title: "Natural Numbers"
+volume: volume-ii
+path: volume-ii/natural-numbers
+
+entries:
+  - label: def:peano-system
+    type: def
+    title: Peano System
+    source: notes/constructing-the-natural-numbers/notes-constructing-the-natural-numbers.tex
+
+  - label: ax:peano-one-in-n
+    type: ax
+    title: Distinguished Element Lies in the Underlying Set
+    source: notes/constructing-the-natural-numbers/notes-constructing-the-natural-numbers.tex
+
+  - label: ax:peano-successor-closure
+    type: ax
+    title: Closure Under Successor
+    source: notes/constructing-the-natural-numbers/notes-constructing-the-natural-numbers.tex
+
+  - label: ax:peano-one-not-successor
+    type: ax
+    title: Distinguished Element Is Not a Successor
+    source: notes/constructing-the-natural-numbers/notes-constructing-the-natural-numbers.tex
+
+  - label: ax:peano-successor-injective
+    type: ax
+    title: Injectivity of Successor
+    source: notes/constructing-the-natural-numbers/notes-constructing-the-natural-numbers.tex
+
+  - label: ax:peano-induction
+    type: ax
+    title: Induction Axiom
+    source: notes/constructing-the-natural-numbers/notes-constructing-the-natural-numbers.tex
+
+  - label: thm:induction-principle-for-peano-system
+    type: thm
+    title: Induction Principle for a Peano System
+    source: notes/constructing-the-natural-numbers/notes-peano-system-theorems.tex
+    proof_file: proofs/notes/prf-induction-principle-for-peano-system.tex
+
+  - label: def:successor-closed-subset
+    type: def
+    title: Successor-Closed Subset
+    source: notes/constructing-the-natural-numbers/notes-peano-system-theorems.tex
+
+  - label: def:inductive-subset-of-peano-system
+    type: def
+    title: Inductive Subset of a Peano System
+    source: notes/constructing-the-natural-numbers/notes-peano-system-theorems.tex
+
+  - label: def:predecessor-in-peano-system
+    type: def
+    title: Predecessor in a Peano System
+    source: notes/constructing-the-natural-numbers/notes-peano-system-theorems.tex
+
+  - label: thm:every-element-is-one-or-a-successor
+    type: thm
+    title: Every Element Is Either 1 or a Successor
+    source: notes/constructing-the-natural-numbers/notes-peano-system-theorems.tex
+    proof_file: proofs/notes/prf-every-element-is-one-or-a-successor.tex
+
+  - label: cor:predecessor-exists-unique-away-from-one
+    type: cor
+    title: Predecessor Existence and Uniqueness Away from 1
+    source: notes/constructing-the-natural-numbers/notes-peano-system-theorems.tex
+    proof_file: proofs/notes/prf-predecessor-exists-unique-away-from-one.tex
+
+  - label: cor:one-is-unique-non-successor
+    type: cor
+    title: The Distinguished Element Is the Unique Non-Successor
+    source: notes/constructing-the-natural-numbers/notes-peano-system-theorems.tex
+    proof_file: proofs/notes/prf-one-is-unique-non-successor.tex
+
+  - label: thm:no-object-is-its-own-successor
+    type: thm
+    title: No Object Is Its Own Successor
+    source: notes/constructing-the-natural-numbers/notes-peano-system-theorems.tex
+    proof_file: proofs/notes/prf-no-object-is-its-own-successor.tex
+
+  - label: def:iterator-data-on-peano-system
+    type: def
+    title: Iterator Data on a Peano System
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+
+  - label: thm:peano-iterator-theorem
+    type: thm
+    title: Peano Iterator Theorem
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+    proof_file: proofs/notes/prf-peano-iterator-theorem.tex
+
+  - label: cor:uniqueness-of-recursively-defined-functions
+    type: cor
+    title: Uniqueness of Recursively Defined Functions
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+    proof_file: proofs/notes/prf-uniqueness-of-recursively-defined-functions.tex
+
+  - label: def:iterator-generated-function
+    type: def
+    title: Iterator-Generated Function
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+
+  - label: thm:iterator-base-value
+    type: thm
+    title: Iterator Base Value
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+    proof_file: proofs/notes/prf-iterator-base-value.tex
+
+  - label: thm:iterator-successor-step
+    type: thm
+    title: Iterator Successor Step
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+    proof_file: proofs/notes/prf-iterator-successor-step.tex
+
+  - label: def:iteration-of-a-self-map
+    type: def
+    title: Iteration of a Self-Map
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+
+  - label: def:recursive-function-on-peano-system
+    type: def
+    title: Recursive Function on a Peano System
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+
+  - label: thm:recursive-specification-well-defined
+    type: thm
+    title: Recursive Specification Is Well-Defined
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+    proof_file: proofs/notes/prf-recursive-specification-well-defined.tex
+
+  - label: thm:general-recursion-theorem-for-peano-system
+    type: thm
+    title: General Recursion Theorem for a Peano System
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+    proof_file: proofs/notes/prf-general-recursion-theorem-for-peano-system.tex
+
+  - label: thm:uniqueness-of-peano-systems-up-to-isomorphism
+    type: thm
+    title: Uniqueness of Peano Systems up to Isomorphism
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+    proof_file: proofs/notes/prf-uniqueness-of-peano-systems-up-to-isomorphism.tex
+
+  - label: thm:natural-numbers-form-a-peano-system
+    type: thm
+    title: The Natural Numbers Form a Peano System
+    source: notes/recursion-on-n/notes-recursion-on-n.tex
+    proof_file: proofs/notes/prf-natural-numbers-form-a-peano-system.tex
+
+  - label: def:addition-on-peano-system
+    type: def
+    title: Addition on a Peano System
+    source: notes/addition-on-n/notes-addition-on-n.tex
+
+  - label: thm:addition-well-defined-on-peano-system
+    type: thm
+    title: Addition Is Well-Defined on a Peano System
+    source: notes/addition-on-n/notes-addition-on-n.tex
+    proof_file: proofs/notes/prf-addition-well-defined-on-peano-system.tex
+
+  - label: thm:addition-with-one
+    type: thm
+    title: Addition With 1
+    source: notes/addition-on-n/notes-addition-on-n.tex
+    proof_file: proofs/notes/prf-addition-with-one.tex
+
+  - label: thm:addition-successor-on-right
+    type: thm
+    title: Addition Successor on the Right
+    source: notes/addition-on-n/notes-addition-on-n.tex
+    proof_file: proofs/notes/prf-addition-successor-on-right.tex
+
+  - label: thm:one-plus-n
+    type: thm
+    title: One Plus n
+    source: notes/addition-on-n/notes-addition-on-n.tex
+    proof_file: proofs/notes/prf-one-plus-n.tex
+
+  - label: thm:addition-associative
+    type: thm
+    title: Addition Is Associative
+    source: notes/addition-on-n/notes-addition-on-n.tex
+    proof_file: proofs/notes/prf-addition-associative.tex
+
+  - label: thm:addition-commutative
+    type: thm
+    title: Addition Is Commutative
+    source: notes/addition-on-n/notes-addition-on-n.tex
+    proof_file: proofs/notes/prf-addition-commutative.tex
+
+  - label: thm:addition-left-cancellation
+    type: thm
+    title: Left Cancellation for Addition
+    source: notes/addition-on-n/notes-addition-on-n.tex
+    proof_file: proofs/notes/prf-addition-left-cancellation.tex
+
+  - label: thm:addition-right-cancellation
+    type: thm
+    title: Right Cancellation for Addition
+    source: notes/addition-on-n/notes-addition-on-n.tex
+    proof_file: proofs/notes/prf-addition-right-cancellation.tex
+
+  - label: thm:no-natural-number-equals-itself-plus-a-natural-number
+    type: thm
+    title: No Natural Number Equals Itself Plus a Natural Number
+    source: notes/addition-on-n/notes-addition-on-n.tex
+    proof_file: proofs/notes/prf-no-natural-number-equals-itself-plus-a-natural-number.tex
+
+  - label: def:multiplication-on-peano-system
+    type: def
+    title: Multiplication on a Peano System
+    source: notes/multiplication-on-n/notes-multiplication-on-n.tex
+
+  - label: thm:multiplication-well-defined-on-peano-system
+    type: thm
+    title: Multiplication Is Well-Defined on a Peano System
+    source: notes/multiplication-on-n/notes-multiplication-on-n.tex
+    proof_file: proofs/notes/prf-multiplication-well-defined-on-peano-system.tex
+
+  - label: thm:multiplication-with-one
+    type: thm
+    title: Multiplication With 1
+    source: notes/multiplication-on-n/notes-multiplication-on-n.tex
+    proof_file: proofs/notes/prf-multiplication-with-one.tex
+
+  - label: thm:multiplication-successor-on-right
+    type: thm
+    title: Multiplication Successor on the Right
+    source: notes/multiplication-on-n/notes-multiplication-on-n.tex
+    proof_file: proofs/notes/prf-multiplication-successor-on-right.tex
+
+  - label: thm:one-times-n
+    type: thm
+    title: One Times n
+    source: notes/multiplication-on-n/notes-multiplication-on-n.tex
+    proof_file: proofs/notes/prf-one-times-n.tex
+
+  - label: thm:multiplication-distributes-over-addition
+    type: thm
+    title: Multiplication Distributes Over Addition
+    source: notes/multiplication-on-n/notes-multiplication-on-n.tex
+    proof_file: proofs/notes/prf-multiplication-distributes-over-addition.tex
+
+  - label: thm:left-distributivity-of-multiplication-over-addition
+    type: thm
+    title: Left Distributivity of Multiplication Over Addition
+    source: notes/multiplication-on-n/notes-multiplication-on-n.tex
+    proof_file: proofs/notes/prf-left-distributivity-of-multiplication-over-addition.tex
+
+  - label: thm:multiplication-associative
+    type: thm
+    title: Multiplication Is Associative
+    source: notes/multiplication-on-n/notes-multiplication-on-n.tex
+    proof_file: proofs/notes/prf-multiplication-associative.tex
+
+  - label: thm:multiplication-commutative
+    type: thm
+    title: Multiplication Is Commutative
+    source: notes/multiplication-on-n/notes-multiplication-on-n.tex
+    proof_file: proofs/notes/prf-multiplication-commutative.tex
+
+  - label: def:strict-less-than-on-peano-system
+    type: def
+    title: Strict Less Than on a Peano System
+    source: notes/order-on-n/notes-order-on-n.tex
+
+  - label: def:less-than-or-equal-on-peano-system
+    type: def
+    title: Less Than or Equal on a Peano System
+    source: notes/order-on-n/notes-order-on-n.tex
+
+  - label: thm:order-reflexive-on-peano-system
+    type: thm
+    title: Order Is Reflexive on a Peano System
+    source: notes/order-on-n/notes-order-on-n.tex
+    proof_file: proofs/notes/prf-order-reflexive-on-peano-system.tex
+
+  - label: thm:order-transitive-on-peano-system
+    type: thm
+    title: Order Is Transitive on a Peano System
+    source: notes/order-on-n/notes-order-on-n.tex
+    proof_file: proofs/notes/prf-order-transitive-on-peano-system.tex
+
+  - label: thm:order-antisymmetric-on-peano-system
+    type: thm
+    title: Order Is Antisymmetric on a Peano System
+    source: notes/order-on-n/notes-order-on-n.tex
+    proof_file: proofs/notes/prf-order-antisymmetric-on-peano-system.tex
+
+  - label: thm:addition-preserves-order-on-right
+    type: thm
+    title: Addition Preserves Order on the Right
+    source: notes/order-on-n/notes-order-on-n.tex
+    proof_file: proofs/notes/prf-addition-preserves-order-on-right.tex
+
+  - label: thm:addition-preserves-order-on-left
+    type: thm
+    title: Addition Preserves Order on the Left
+    source: notes/order-on-n/notes-order-on-n.tex
+    proof_file: proofs/notes/prf-addition-preserves-order-on-left.tex
+
+  - label: thm:multiplication-preserves-and-reflects-strict-order
+    type: thm
+    title: Multiplication Preserves and Reflects Strict Order
+    source: notes/order-on-n/notes-order-on-n.tex
+    proof_file: proofs/notes/prf-multiplication-preserves-and-reflects-strict-order.tex
+
+  - label: thm:strict-order-successor-characterization
+    type: thm
+    title: Strict Order Successor Characterization
+    source: notes/order-on-n/notes-order-on-n.tex
+    proof_file: proofs/notes/prf-strict-order-successor-characterization.tex
+
+  - label: thm:trichotomy-on-peano-system
+    type: thm
+    title: Trichotomy on a Peano System
+    source: notes/order-on-n/notes-order-on-n.tex
+    proof_file: proofs/notes/prf-trichotomy-on-peano-system.tex
+
+  - label: thm:strong-induction-on-peano-system
+    type: thm
+    title: Strong Induction on a Peano System
+    source: notes/induction/notes-induction.tex
+    proof_file: proofs/notes/prf-strong-induction-on-peano-system.tex
+
+  - label: thm:induction-from-arbitrary-base
+    type: thm
+    title: Induction from an Arbitrary Base
+    source: notes/induction/notes-induction.tex
+    proof_file: proofs/notes/prf-induction-from-arbitrary-base.tex
+
+  - label: thm:well-ordering-principle
+    type: thm
+    title: Well-Ordering Principle
+    source: notes/well-ordering-principle/notes-well-ordering-principle.tex
+    proof_file: proofs/notes/prf-well-ordering-principle.tex
+
+  - label: thm:induction-well-ordering-equivalence
+    type: thm
+    title: Induction and Well-Ordering Are Equivalent
+    source: notes/well-ordering-principle/notes-well-ordering-principle.tex
+    proof_file: proofs/notes/prf-induction-well-ordering-equivalence.tex
+
+  - label: thm:n-additive-structure
+    type: thm
+    title: "$\\mathbb{N}$ Is Closed, Associative, and Commutative Under Addition"
+    source: notes/algebraic-structure-of-n/notes-algebraic-structure-of-n.tex
+    proof_file: proofs/notes/prf-n-additive-structure.tex
+
+  - label: thm:n-multiplicative-monoid
+    type: thm
+    title: "$\\mathbb{N}$ Is a Commutative Monoid Under Multiplication"
+    source: notes/algebraic-structure-of-n/notes-algebraic-structure-of-n.tex
+    proof_file: proofs/notes/prf-n-multiplicative-monoid.tex
+
+  - label: thm:n-is-semiring
+    type: thm
+    title: "$\\mathbb{N}$ Is a Semiring"
+    source: notes/algebraic-structure-of-n/notes-algebraic-structure-of-n.tex
+    proof_file: proofs/notes/prf-n-is-semiring.tex
+
+  - label: def:exponentiation-on-peano-system
+    type: def
+    title: Exponentiation on a Peano System
+    source: notes/powers-and-growth/notes-powers-and-growth.tex
+
+  - label: thm:exponentiation-well-defined-on-peano-system
+    type: thm
+    title: Exponentiation Is Well-Defined on a Peano System
+    source: notes/powers-and-growth/notes-powers-and-growth.tex
+    proof_file: proofs/notes/prf-exponentiation-well-defined-on-peano-system.tex
+
+  - label: thm:exponent-sum-law
+    type: thm
+    title: Exponent Sum Law
+    source: notes/powers-and-growth/notes-powers-and-growth.tex
+    proof_file: proofs/notes/prf-exponent-sum-law.tex
+
+  - label: thm:exponent-product-law
+    type: thm
+    title: Exponent Product Law
+    source: notes/powers-and-growth/notes-powers-and-growth.tex
+    proof_file: proofs/notes/prf-exponent-product-law.tex
+
+  - label: thm:exponent-power-law
+    type: thm
+    title: Exponent Power Law
+    source: notes/powers-and-growth/notes-powers-and-growth.tex
+    proof_file: proofs/notes/prf-exponent-power-law.tex
+
+  - label: thm:powers-with-common-exponent-preserve-strict-order
+    type: thm
+    title: Powers with Common Exponent Preserve Strict Order
+    source: notes/powers-and-growth/notes-powers-and-growth.tex
+    proof_file: proofs/notes/prf-powers-with-common-exponent-preserve-strict-order.tex
+
+  - label: thm:powers-with-common-base-preserve-strict-order
+    type: thm
+    title: Powers with Common Base Preserve Strict Order
+    source: notes/powers-and-growth/notes-powers-and-growth.tex
+    proof_file: proofs/notes/prf-powers-with-common-base-preserve-strict-order.tex
+
+  - label: thm:n-less-than-2-to-n
+    type: thm
+    title: "$n < 2^n$ for All $n \\in \\mathbb{N}$"
+    source: notes/powers-and-growth/notes-powers-and-growth.tex
+    proof_file: proofs/notes/prf-n-less-than-2-to-n.tex
