@@ -1,0 +1,49 @@
+# =============================================================
+# sync-to-monorepo.yml — lra-volume-ii
+# Syncs volume-ii/ content back to Learning-Real-Analysis
+# whenever changes are pushed to this repo's main branch.
+#
+# Setup:
+#   Add a secret named SYNC_PAT in this repo's settings
+#   (Settings → Secrets and variables → Actions)
+#   with a GitHub PAT that has repo scope.
+# =============================================================
+
+name: Sync volume-ii to monorepo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'volume-ii/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout lra-volume-ii
+        uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Checkout monorepo
+        uses: actions/checkout@v4
+        with:
+          repository: wsollers/Learning-Real-Analysis
+          token: ${{ secrets.SYNC_PAT }}
+          path: monorepo
+
+      - name: Sync volume-ii/ into monorepo
+        run: |
+          rsync -av --delete source/volume-ii/ monorepo/volume-ii/
+
+      - name: Commit and push if changed
+        run: |
+          cd monorepo
+          git config user.name  "lra-sync-bot"
+          git config user.email "sync-bot@noreply.github.com"
+          git add volume-ii/
+          git diff --cached --quiet && echo "No changes to sync" && exit 0
+          git commit -m "chore: sync volume-ii from lra-volume-ii"
+          git push
