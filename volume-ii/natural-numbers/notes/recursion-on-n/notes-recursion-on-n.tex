@@ -181,7 +181,13 @@ for $(P,S,1)$.
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: iterator data for a Peano system | Location: def:iterator-data-on-peano-system | Suggested: IteratorData((P,S,1),W,c,g)
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{IteratorData}(W,c,g)
+\Longleftrightarrow
+\bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -254,7 +260,19 @@ R\subseteq P\times W
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: iterator relation for iterator data | Location: def:iterator-relation | Suggested: IteratorRelation(R,(P,S,1),W,c,g)
+\begin{remark*}[Definition predicate reading]
+\[
+\begin{aligned}
+\operatorname{IteratorRelation}(R,(P,S,1),W,c,g)
+\Longleftrightarrow\;&
+\operatorname{Relation}(R,P,W)
+\land (1,c)\in R\\
+&\land
+\forall n\in P\;\forall w\in W\;
+\bigl((n,w)\in R\Longrightarrow (S(n),g(w))\in R\bigr).
+\end{aligned}
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -325,7 +343,18 @@ R^*
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: minimal iterator relation | Location: def:minimal-iterator-relation | Suggested: MinimalIteratorRelation(R^*,(P,S,1),W,c,g)
+\begin{remark*}[Definition predicate reading]
+Let $\mathcal C_{\mathrm{it}}$ be the closure condition
+\[
+\mathcal C_{\mathrm{it}}(R)
+\Longleftrightarrow
+\operatorname{IteratorRelation}(R,(P,S,1),W,c,g).
+\]
+Then the definition says
+\[
+\operatorname{MinimalRelation}(R^*,\mathcal C_{\mathrm{it}}).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -374,7 +403,13 @@ R^* \text{ is an iterator relation for } (W,c,g).
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: consistency of the minimal iterator relation | Location: lem:iterator-relation-consistency | Suggested: MinimalIteratorRelationConsistent(R^*,(P,S,1),W,c,g)
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{MinimalRelation}(R^*,\mathcal C_{\mathrm{it}})
+\Longrightarrow
+\operatorname{IteratorRelation}(R^*,(P,S,1),W,c,g).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -422,7 +457,11 @@ $(n,w_1)\in R^*$, then $w_0=w_1$.
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: forced values are unique | Location: lem:forced-values-are-unique | Suggested: ForcedValuesUnique(R^*,(P,S,1),W,c,g)
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{FunctionalRelation}(R^*,P,W).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -476,7 +515,11 @@ $w\in W$ such that $(n,w)\in R^*$.
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: determinism of the minimal iterator relation | Location: lem:minimal-iterator-relation-deterministic | Suggested: DeterministicRelation(R^*,P,W)
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{FunctionalRelation}(R^*,P,W).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -515,7 +558,11 @@ $w\in W$ such that $(n,w)\in R^*$.
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: completeness of the minimal iterator relation | Location: lem:minimal-iterator-relation-complete | Suggested: CompleteRelation(R^*,P,W)
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{TotalRelation}(R^*,P,W).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -569,7 +616,14 @@ f(1)=c\land h(1)=c\\
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: uniqueness of iterator functions | Location: lem:uniqueness-of-iterator-functions | Suggested: IteratorFunctionUnique((P,S,1),W,c,g)
+\begin{remark*}[Predicate reading]
+\[
+\forall f,h:P\to W\;
+\bigl(\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
+\land \operatorname{IteratorFunction}(h,(P,S,1),W,c,g)
+\Longrightarrow f=h\bigr).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -637,7 +691,12 @@ f(1)=c
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: existence of an iterator function | Location: lem:existence-of-iterator-function | Suggested: IteratorFunctionExists((P,S,1),W,c,g)
+\begin{remark*}[Predicate reading]
+\[
+\exists f:P\to W\;
+\operatorname{IteratorFunction}(f,(P,S,1),W,c,g).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -697,7 +756,12 @@ f(1)=c
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: Peano iterator theorem | Location: thm:peano-iterator-theorem | Suggested: PeanoIterator((P,S,1),W,c,g,f)
+\begin{remark*}[Predicate reading]
+\[
+\exists! f:P\to W\;
+\operatorname{IteratorFunction}(f,(P,S,1),W,c,g).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -777,7 +841,16 @@ f \text{ is the iterator-generated function determined by } (W,c,g)
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: iterator-generated function | Location: def:iterator-generated-function | Suggested: IteratorGeneratedFunction(f,(P,S,1),W,c,g)
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
+\Longleftrightarrow
+\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
+\land
+\exists! h:P\to W\;
+\operatorname{IteratorFunction}(h,(P,S,1),W,c,g).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -830,7 +903,12 @@ f \text{ is the iterator-generated function determined by } (W,c,g)
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: iterator base clause | Location: thm:iterator-base-value | Suggested: IteratorBaseClause(f,(P,S,1),W,c,g)
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
+\Longrightarrow f(1)=c.
+\]
+\end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
 \[
@@ -874,7 +952,13 @@ f \text{ is the iterator-generated function determined by } (W,c,g)
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: iterator successor clause | Location: thm:iterator-successor-step | Suggested: IteratorSuccessorClause(f,(P,S,1),W,c,g)
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
+\Longrightarrow
+\forall n\in P\;(f(S(n))=g(f(n))).
+\]
+\end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
 \[
@@ -915,7 +999,13 @@ f \text{ is the iterator-generated function determined by } (W,c,g).
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: iteration of a self-map | Location: def:iteration-of-a-self-map | Suggested: IterationOfSelfMap(f,(P,S,1),W,c,g)
+\begin{remark*}[Definition predicate reading]
+\[
+f \text{ is the iteration of } g \text{ from } c \text{ along } P
+\Longleftrightarrow
+\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -971,7 +1061,15 @@ F(a,1)=c_a\land G(a,1)=c_a\\
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: uniqueness of binary iterator operations | Location: cor:uniqueness-of-binary-iterator-operations | Suggested: BinaryIteratorOperationsUnique(F,G,A,P,W)
+\begin{remark*}[Predicate reading]
+For each $a\in A$, write $F_a(n)=F(a,n)$ and $G_a(n)=G(a,n)$. Then
+\[
+\forall a\in A\;
+\bigl(\operatorname{IteratorFunction}(F_a,(P,S,1),W,c_a,g_a)
+\land \operatorname{IteratorFunction}(G_a,(P,S,1),W,c_a,g_a)
+\Longrightarrow F_a=G_a\bigr).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -1038,7 +1136,13 @@ Let $(P,S,1)$ be a Peano system and let $W$ be a set. A
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: stage-dependent step rule | Location: def:stage-dependent-step-rule | Suggested: StageDependentStepRule(\Phi,P,W)
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{StageDependentStepRule}(\Phi,P,W)
+\Longleftrightarrow
+\Phi:P\times W\to W.
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -1093,7 +1197,16 @@ f:P\to W\land f(1)=c\\
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: general recursive function | Location: def:general-recursive-function | Suggested: GeneralRecursiveFunction(f,(P,S,1),W,c,\Phi)
+\begin{remark*}[Definition predicate reading]
+\[
+\begin{aligned}
+\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi)
+\Longleftrightarrow\;&
+f:P\to W\land f(1)=c\\
+&\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+\end{aligned}
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -1158,7 +1271,14 @@ f(1)=c\land h(1)=c\\
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: uniqueness of general recursive functions | Location: lem:uniqueness-of-general-recursive-functions | Suggested: GeneralRecursiveFunctionUnique((P,S,1),W,c,\Phi)
+\begin{remark*}[Predicate reading]
+\[
+\forall f,h:P\to W\;
+\bigl(\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi)
+\land \operatorname{GeneralRecursiveFunction}(h,(P,S,1),W,c,\Phi)
+\Longrightarrow f=h\bigr).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -1231,7 +1351,17 @@ H(S(n))=(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n))))\Bigr).
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: general recursion by state encoding | Location: thm:general-recursion-by-state-encoding | Suggested: GeneralRecursionStateEncoding(H,(P,S,1),W,c,\Phi)
+\begin{remark*}[Predicate reading]
+Let $\Gamma_\Phi:P\times W\to P\times W$ be defined by
+\[
+\Gamma_\Phi(p,w)=(S(p),\Phi(p,w)).
+\]
+Then state encoding is the iterator assertion
+\[
+\exists H:P\to P\times W\;
+\operatorname{IteratorFunction}(H,(P,S,1),P\times W,(1,c),\Gamma_\Phi).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -1287,7 +1417,12 @@ f(1)=c
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: general recursion theorem | Location: thm:general-recursion-theorem-for-peano-system | Suggested: GeneralRecursion((P,S,1),W,c,\Phi,f)
+\begin{remark*}[Predicate reading]
+\[
+\exists! f:P\to W\;
+\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi).
+\]
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
@@ -1371,7 +1506,14 @@ Thus any two Peano systems are isomorphic.
 \]
 \end{remark*}
 
-% MISSING_PREDICATE: isomorphism of Peano systems | Location: thm:uniqueness-of-peano-systems-up-to-isomorphism | Suggested: PeanoSystemIsomorphism(\theta,(P,S_P,1_P),(Q,S_Q,1_Q))
+\begin{remark*}[Predicate reading]
+Let $A=(P,S_P,1_P)$ and $B=(Q,S_Q,1_Q)$. The theorem asserts
+\[
+\operatorname{Isomorphism}(A,B),
+\]
+with unique witness $\theta:P\to Q$ satisfying the displayed base and
+successor-preservation clauses.
+\end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
