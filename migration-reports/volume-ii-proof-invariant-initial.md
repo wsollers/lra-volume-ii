@@ -1,0 +1,261 @@
+# Volume II Proof Invariant Initial Report
+
+Generated from `python scripts\validate_leaf_proofs.py --root . --strict --format json`.
+
+## Summary
+- `theorem_count`: 288
+- `expected_proof_count`: 233
+- `proof_file_count`: 188
+- `missing_theorem_labels`: 11
+- `missing_proof_stubs`: 233
+- `duplicate_theorem_labels`: 4
+- `duplicate_proof_labels`: 4
+- `orphan_proofs`: 188
+- `invalid_proof_targets`: 0
+- `missing_required_bodies`: 205
+- `warning_count`: 375
+- `total_errors`: 669
+- `status`: FAIL
+
+## Error Counts
+- `duplicate_proof_label`: 4
+- `duplicate_theorem_label`: 4
+- `missing_dependency_remark`: 18
+- `missing_detailed_body`: 114
+- `missing_lra_proof_for`: 188
+- `missing_professional_body`: 91
+- `missing_proof_label`: 5
+- `missing_proof_stub`: 233
+- `missing_theorem_label`: 11
+- `vault_link_in_statement`: 1
+
+## Missing theorem labels
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:228` - Top-level theorem has no label.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:235` - Top-level theorem has no label.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:261` - Top-level lemma has no label.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:280` - Top-level lemma has no label.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:284` - Top-level corollary has no label.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:289` - Top-level theorem has no label.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:314` - Top-level theorem has no label.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:340` - Top-level theorem has no label.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:349` - Top-level theorem has no label.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:392` - Top-level theorem has no label.
+- `volume-ii/reals/notes/foundations/notes-intervals.tex:155` - Top-level theorem has no label.
+
+## Duplicate theorem labels
+- `volume-ii/rationals/notes/nonlinear-approximation-in-q/notes-square-bracketing-and-nonlinear-approximation.tex:113` - Duplicate theorem label thm:rational-square-approximation-from-above.
+- `volume-ii/rationals/notes/rational-gaps/notes-rational-gaps.tex:124` - Duplicate theorem label thm:rational-square-approximation-from-above.
+- `volume-ii/rationals/notes/sequential-approximation-in-q/notes-rational-limiting-processes.tex:211` - Duplicate theorem label thm:stern-brocot-limit.
+- `volume-ii/reals/notes/constructions/notes-stern-brocot-construction.tex:170` - Duplicate theorem label thm:stern-brocot-limit.
+
+## Duplicate proof labels
+- `volume-ii/rationals/proofs/notes/prf-infinitely-many-rationals-between.tex:1` - Duplicate proof label prf:infinitely-many-rationals-between.
+- `volume-ii/reals/proofs/notes/prf-infinitely-many-rationals-between.tex:1` - Duplicate proof label prf:infinitely-many-rationals-between.
+- `volume-ii/rationals/proofs/notes/prf-q-dense-in-r.tex:1` - Duplicate proof label prf:q-dense-in-r.
+- `volume-ii/reals/proofs/notes/prf-q-dense-in-r.tex:1` - Duplicate proof label prf:q-dense-in-r.
+
+## Orphan proof files
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-landau-addition-exists.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-landau-addition-is-associative.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-landau-addition-is-commutative.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-landau-addition-unique.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-landau-lemma-succesor-is-commutative.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-landau-theorem008.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-theorem-10.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-theorem-11.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-theorem-12.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-theorem-13.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-theorem-14.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/landau-foundations-analysis/proofs/notes/prf-trichotomy-for-natural-numbers.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-addition-associative.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-addition-commutative.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-addition-left-cancellation.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-addition-preserves-order-on-left.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-addition-preserves-order-on-right.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-addition-right-cancellation.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-addition-successor-on-right.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-addition-well-defined-on-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-addition-with-one.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-exponent-power-law.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-exponent-product-law.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-exponent-sum-law.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-exponentiation-well-defined-on-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-induction-from-arbitrary-base.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-induction-well-ordering-equivalence.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-left-distributivity-of-multiplication-over-addition.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-multiplication-associative.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-multiplication-commutative.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-multiplication-distributes-over-addition.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-multiplication-preserves-and-reflects-strict-order.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-multiplication-successor-on-right.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-multiplication-well-defined-on-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-multiplication-with-one.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-n-additive-structure.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-n-is-semiring.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-n-less-than-2-to-n.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-n-multiplicative-monoid.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-no-natural-number-equals-itself-plus-a-natural-number.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-one-plus-n.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-one-times-n.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-order-antisymmetric-on-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-order-reflexive-on-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-order-transitive-on-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-powers-with-common-base-preserve-strict-order.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-powers-with-common-exponent-preserve-strict-order.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-strict-order-successor-characterization.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-strong-induction-on-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-trichotomy-on-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/natural-numbers/proofs/notes/prf-well-ordering-principle.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-every-element-is-one-or-a-successor.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-existence-of-iterator-function.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-forced-values-are-unique.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-general-recursion-by-state-encoding.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-general-recursion-theorem-for-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-induction-principle-for-peano-system.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-iterator-base-value.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-iterator-relation-consistency.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-iterator-successor-step.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-minimal-iterator-relation-complete.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-minimal-iterator-relation-deterministic.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-no-object-is-its-own-successor.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-non-one-elements-have-a-predecessor.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-one-is-unique-non-successor.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-peano-iterator-theorem.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-predecessor-exists-unique-away-from-one.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-successor-inequality-reflection.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-unique-predecessor-characterization-away-from-one.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-uniqueness-of-binary-iterator-operations.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-uniqueness-of-general-recursive-functions.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-uniqueness-of-iterator-functions.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/peano-systems/proofs/notes/prf-uniqueness-of-peano-systems-up-to-isomorphism.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-additive-cancellation.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-archimedean-q.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-between-any-two-rationals-is-a-rational.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-cauchy-bounded-q.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-cauchy-closed-operations-q.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-cauchy-equiv-preserved-operations.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-cauchy-equivalence-is-equivalence.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-cauchy-not-convergent-q.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-convergent-bounded-q.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-convergent-implies-cauchy-q.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-dirichlet-approx.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-double-negation.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-dyadic-approximation-error-bound.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-dyadic-midpoint-closure.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-dyadic-rationals-are-rational.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-addition.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-division-by-one.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-integer-embedding-add.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-integer-embedding-mul.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-multiplication.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-negation.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-reciprocal.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-scaling.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-subtraction.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-ec-zero-numerator.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-farey-gap.tex:1` - Proof file has no \LRAProofFor{...}.
+- `volume-ii/rationals/proofs/notes/prf-farey-mediant-property.tex:1` - Proof file has no \LRAProofFor{...}.
+- ... 88 more
+
+## Missing proof stubs
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:34` - Expected proof stub for thm:men-equiv.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:75` - Expected proof stub for lem:men-add-welld.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:93` - Expected proof stub for thm:men-add.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:115` - Expected proof stub for lem:men-mul-welld.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:133` - Expected proof stub for thm:men-mul.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:186` - Expected proof stub for thm:men-cancel-equiv.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:196` - Expected proof stub for thm:men-trivial.
+- `volume-ii/integers/notes/notes-int-mendelson-construction.tex:244` - Expected proof stub for thm:men-pos-set.
+- `volume-ii/integers/notes/notes-int-tao-construction.tex:98` - Expected proof stub for lem:int-well-defined.
+- `volume-ii/integers/notes/notes-int-tao-construction.tex:160` - Expected proof stub for lem:int-trichotomy.
+- `volume-ii/integers/notes/notes-int-tao-construction.tex:240` - Expected proof stub for prop:int-no-zero-div.
+- `volume-ii/integers/notes/notes-int-tao-construction.tex:248` - Expected proof stub for cor:int-cancel.
+- `volume-ii/integers/notes/notes-int-tao-construction.tex:278` - Expected proof stub for lem:int-order.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:89` - Expected proof stub for thm:landau-succ-strict.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:96` - Expected proof stub for thm:landau-succ-ne-self.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:103` - Expected proof stub for thm:landau-pred-unique.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:115` - Expected proof stub for thm:landau-addition-exists-unique.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:137` - Expected proof stub for thm:landau-addition-unique.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:160` - Expected proof stub for lem:landau-succ-comm.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:172` - Expected proof stub for thm:landau-plus-assoc.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:182` - Expected proof stub for thm:landau-plus-comm.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:198` - Expected proof stub for lem:landau-one-plus-x.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:215` - Expected proof stub for lem:landau-successor-plus.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:233` - Expected proof stub for lem:landau-add-one-comm.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:254` - Expected proof stub for thm:landau-add-ne-self.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:289` - Expected proof stub for thm:landau-thm8-add-injective.
+- `volume-ii/landau-foundations-analysis/notes/addition/notes-landau-foundations.tex:326` - Expected proof stub for thm:trichotomy-for-natural-numbers.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:35` - Expected proof stub for thm:trichotomy-of-order.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:51` - Expected proof stub for thm:symmetry-of-greater-than.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:67` - Expected proof stub for thm:symmetry-of-less-than.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:119` - Expected proof stub for thm:symmetry-of-greater-than-or-equal-to.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:135` - Expected proof stub for thm:symmetry-of-less-than-or-equal-to.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:151` - Expected proof stub for thm:transitivity-of-strict-ordering.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:169` - Expected proof stub for thm:mixed-transitivity.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:193` - Expected proof stub for thm:transitivity-of-weak-ordering.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:211` - Expected proof stub for thm:addition-produces-a-greater-number.
+- `volume-ii/landau-foundations-analysis/notes/ordering/notes-landau-ordering.tex:223` - Expected proof stub for thm:addition-preserves-order.
+- `volume-ii/natural-numbers/notes/addition-on-n/notes-addition-on-n.tex:103` - Expected proof stub for thm:addition-well-defined-on-peano-system.
+- `volume-ii/natural-numbers/notes/addition-on-n/notes-addition-on-n.tex:163` - Expected proof stub for thm:addition-with-one.
+- `volume-ii/natural-numbers/notes/addition-on-n/notes-addition-on-n.tex:198` - Expected proof stub for thm:addition-successor-on-right.
+- `volume-ii/natural-numbers/notes/addition-on-n/notes-addition-on-n.tex:243` - Expected proof stub for thm:one-plus-n.
+- `volume-ii/natural-numbers/notes/addition-on-n/notes-addition-on-n.tex:290` - Expected proof stub for thm:addition-associative.
+- `volume-ii/natural-numbers/notes/addition-on-n/notes-addition-on-n.tex:327` - Expected proof stub for thm:addition-commutative.
+- `volume-ii/natural-numbers/notes/addition-on-n/notes-addition-on-n.tex:376` - Expected proof stub for thm:addition-left-cancellation.
+- `volume-ii/natural-numbers/notes/addition-on-n/notes-addition-on-n.tex:428` - Expected proof stub for thm:addition-right-cancellation.
+- `volume-ii/natural-numbers/notes/addition-on-n/notes-addition-on-n.tex:483` - Expected proof stub for thm:no-natural-number-equals-itself-plus-a-natural-number.
+- `volume-ii/natural-numbers/notes/algebraic-structure-of-n/notes-algebraic-structure-of-n.tex:19` - Expected proof stub for thm:n-additive-structure.
+- `volume-ii/natural-numbers/notes/algebraic-structure-of-n/notes-algebraic-structure-of-n.tex:79` - Expected proof stub for thm:n-multiplicative-monoid.
+- `volume-ii/natural-numbers/notes/algebraic-structure-of-n/notes-algebraic-structure-of-n.tex:145` - Expected proof stub for thm:n-is-semiring.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-order.tex:65` - Expected proof stub for prop:order-basic.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-order.tex:97` - Expected proof stub for prop:trichotomy.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-toolkit.tex:39` - Expected proof stub for lem:add-zero-right.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-toolkit.tex:55` - Expected proof stub for lem:add-succ-right.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-toolkit.tex:66` - Expected proof stub for cor:succ-is-add-one.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-toolkit.tex:75` - Expected proof stub for prop:add-comm.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-toolkit.tex:83` - Expected proof stub for prop:add-assoc.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-toolkit.tex:96` - Expected proof stub for prop:add-cancel.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-toolkit.tex:119` - Expected proof stub for prop:pos-add-pos.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-toolkit.tex:128` - Expected proof stub for cor:sum-zero.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/addition/notes-add-toolkit.tex:136` - Expected proof stub for lem:predecessor.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/multiplication/notes-mult-toolkit.tex:33` - Expected proof stub for lem:mult-comm.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/multiplication/notes-mult-toolkit.tex:41` - Expected proof stub for lem:no-zero-div.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/multiplication/notes-mult-toolkit.tex:52` - Expected proof stub for prop:distrib.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/multiplication/notes-mult-toolkit.tex:69` - Expected proof stub for prop:mult-assoc.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/multiplication/notes-mult-toolkit.tex:77` - Expected proof stub for prop:mult-order.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/multiplication/notes-mult-toolkit.tex:85` - Expected proof stub for cor:mult-cancel.
+- `volume-ii/natural-numbers/notes/archive-current-live/arithmetic/multiplication/notes-mult-toolkit.tex:99` - Expected proof stub for prop:euclid.
+- `volume-ii/natural-numbers/notes/induction/notes-induction.tex:17` - Expected proof stub for thm:strong-induction-on-peano-system.
+- `volume-ii/natural-numbers/notes/induction/notes-induction.tex:90` - Expected proof stub for thm:induction-from-arbitrary-base.
+- `volume-ii/natural-numbers/notes/multiplication-on-n/notes-multiplication-on-n.tex:104` - Expected proof stub for thm:multiplication-well-defined-on-peano-system.
+- `volume-ii/natural-numbers/notes/multiplication-on-n/notes-multiplication-on-n.tex:164` - Expected proof stub for thm:multiplication-with-one.
+- `volume-ii/natural-numbers/notes/multiplication-on-n/notes-multiplication-on-n.tex:199` - Expected proof stub for thm:multiplication-successor-on-right.
+- `volume-ii/natural-numbers/notes/multiplication-on-n/notes-multiplication-on-n.tex:244` - Expected proof stub for thm:one-times-n.
+- `volume-ii/natural-numbers/notes/multiplication-on-n/notes-multiplication-on-n.tex:290` - Expected proof stub for thm:multiplication-distributes-over-addition.
+- `volume-ii/natural-numbers/notes/multiplication-on-n/notes-multiplication-on-n.tex:329` - Expected proof stub for thm:left-distributivity-of-multiplication-over-addition.
+- `volume-ii/natural-numbers/notes/multiplication-on-n/notes-multiplication-on-n.tex:371` - Expected proof stub for thm:multiplication-associative.
+- `volume-ii/natural-numbers/notes/multiplication-on-n/notes-multiplication-on-n.tex:418` - Expected proof stub for thm:multiplication-commutative.
+- `volume-ii/natural-numbers/notes/order-on-n/notes-order-on-n.tex:164` - Expected proof stub for thm:order-reflexive-on-peano-system.
+- `volume-ii/natural-numbers/notes/order-on-n/notes-order-on-n.tex:198` - Expected proof stub for thm:order-transitive-on-peano-system.
+- `volume-ii/natural-numbers/notes/order-on-n/notes-order-on-n.tex:238` - Expected proof stub for thm:order-antisymmetric-on-peano-system.
+- `volume-ii/natural-numbers/notes/order-on-n/notes-order-on-n.tex:298` - Expected proof stub for thm:addition-preserves-order-on-right.
+- `volume-ii/natural-numbers/notes/order-on-n/notes-order-on-n.tex:338` - Expected proof stub for thm:addition-preserves-order-on-left.
+- `volume-ii/natural-numbers/notes/order-on-n/notes-order-on-n.tex:384` - Expected proof stub for thm:multiplication-preserves-and-reflects-strict-order.
+- `volume-ii/natural-numbers/notes/order-on-n/notes-order-on-n.tex:440` - Expected proof stub for thm:strict-order-successor-characterization.
+- `volume-ii/natural-numbers/notes/order-on-n/notes-order-on-n.tex:484` - Expected proof stub for thm:trichotomy-on-peano-system.
+- `volume-ii/natural-numbers/notes/powers-and-growth/notes-powers-and-growth.tex:82` - Expected proof stub for thm:exponentiation-well-defined-on-peano-system.
+- `volume-ii/natural-numbers/notes/powers-and-growth/notes-powers-and-growth.tex:147` - Expected proof stub for thm:exponent-sum-law.
+- `volume-ii/natural-numbers/notes/powers-and-growth/notes-powers-and-growth.tex:182` - Expected proof stub for thm:exponent-product-law.
+- `volume-ii/natural-numbers/notes/powers-and-growth/notes-powers-and-growth.tex:218` - Expected proof stub for thm:exponent-power-law.
+- `volume-ii/natural-numbers/notes/powers-and-growth/notes-powers-and-growth.tex:263` - Expected proof stub for thm:powers-with-common-exponent-preserve-strict-order.
+- `volume-ii/natural-numbers/notes/powers-and-growth/notes-powers-and-growth.tex:307` - Expected proof stub for thm:powers-with-common-base-preserve-strict-order.
+- `volume-ii/natural-numbers/notes/powers-and-growth/notes-powers-and-growth.tex:363` - Expected proof stub for thm:n-less-than-2-to-n.
+- `volume-ii/natural-numbers/notes/well-ordering-principle/notes-well-ordering-principle.tex:20` - Expected proof stub for thm:well-ordering-principle.
+- `volume-ii/natural-numbers/notes/well-ordering-principle/notes-well-ordering-principle.tex:110` - Expected proof stub for thm:induction-well-ordering-equivalence.
+- `volume-ii/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex:16` - Expected proof stub for thm:induction-principle-for-peano-system.
+- `volume-ii/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex:294` - Expected proof stub for thm:every-element-is-one-or-a-successor.
+- `volume-ii/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex:337` - Expected proof stub for thm:successor-inequality-reflection.
+- `volume-ii/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex:404` - Expected proof stub for cor:non-one-elements-have-a-predecessor.
+- `volume-ii/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex:470` - Expected proof stub for cor:predecessor-exists-unique-away-from-one.
+- `volume-ii/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex:512` - Expected proof stub for cor:unique-predecessor-characterization-away-from-one.
+- ... 133 more
