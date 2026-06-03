@@ -1,14 +1,3 @@
-# =============================================================
-# sync-to-monorepo.yml — lra-volume-ii
-# Syncs volume-ii/ content back to Learning-Real-Analysis
-# whenever changes are pushed to this repo's main branch.
-#
-# Setup:
-#   Add a secret named SYNC_PAT in this repo's settings
-#   (Settings → Secrets and variables → Actions)
-#   with a GitHub PAT that has repo scope.
-# =============================================================
-
 name: Sync volume-ii to monorepo
 
 on:
@@ -16,11 +5,11 @@ on:
     branches: [main]
     paths:
       - 'volume-ii/**'
+      - 'bibliography/volume-ii-number-systems.bib'
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout lra-volume-ii
         uses: actions/checkout@v4
@@ -34,6 +23,11 @@ jobs:
           token: ${{ secrets.SYNC_PAT }}
           path: monorepo
 
+      - name: Validate volume bibliography
+        run: |
+          cd source
+          python scripts/check_bibliography.py --bib-dir bibliography
+
       - name: Validate leaf proof stubs
         run: |
           cd source
@@ -43,12 +37,17 @@ jobs:
         run: |
           rsync -av --delete source/volume-ii/ monorepo/volume-ii/
 
+      - name: Sync volume-ii bibliography into monorepo
+        run: |
+          mkdir -p monorepo/bibliography
+          cp source/bibliography/volume-ii-number-systems.bib monorepo/bibliography/volume-ii-number-systems.bib
+
       - name: Commit and push if changed
         run: |
           cd monorepo
           git config user.name  "lra-sync-bot"
           git config user.email "sync-bot@noreply.github.com"
-          git add volume-ii/
+          git add volume-ii/ bibliography/volume-ii-number-systems.bib
           git diff --cached --quiet && echo "No changes to sync" && exit 0
           git commit -m "chore: sync volume-ii from lra-volume-ii"
           git push
