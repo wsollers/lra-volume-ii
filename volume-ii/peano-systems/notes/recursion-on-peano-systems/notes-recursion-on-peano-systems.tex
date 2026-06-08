@@ -333,6 +333,25 @@ R^*
 \end{definition}
 \end{tcolorbox}
 
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Feferman, \emph{The Number Systems}, Section 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
+\Formalizes{def:minimal-iterator-relation}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
+\LeanDeclaration{minimal\_iterator\_relation}
+\textbf{Status:} checked against \texttt{lra-lean}.\par
+
+\begin{leancode}
+def minimal_iterator_relation
+    (ps : PeanoSystem)
+    (data : IteratorData ps)
+    (element : ps.carrier)
+    (value : data.target) : Prop :=
+  forall relation : ps.carrier -> data.target -> Prop,
+    iterator_relation ps data relation ->
+    relation element value
+\end{leancode}
+\end{formalizationrecord}
+
 \begin{remark*}[Standard quantified statement]
 \[
 (n,w)\in R^*
@@ -510,6 +529,48 @@ $w\in W$ such that $(n,w)\in R^*$.
 \end{lemma}
 \end{tcolorbox}
 
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Feferman, \emph{The Number Systems}, Section 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
+\Formalizes{lem:minimal-iterator-relation-deterministic}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
+\LeanDeclaration{minimal\_iterator\_relation\_deterministic}
+\textbf{Status:} checked against \texttt{lra-lean}.\par
+
+\begin{leancode}
+theorem minimal_iterator_relation_deterministic
+    (ps : PeanoSystem)
+    (data : IteratorData ps) :
+    forall element : ps.carrier,
+      forall first_value second_value : data.target,
+        minimal_iterator_relation ps data element first_value ->
+        minimal_iterator_relation ps data element second_value ->
+        first_value = second_value := by
+  apply induction_principle ps
+
+  case base_case =>
+    intro first_value second_value first_forced second_forced
+    exact
+      Eq.trans
+        (minimal_iterator_relation_base_unique ps data first_value first_forced)
+        (minimal_iterator_relation_base_unique ps data second_value second_forced).symm
+
+  case successor_step =>
+    intro element induction_hypothesis
+    intro first_successor_value second_successor_value
+    intro first_forced second_forced
+    cases minimal_iterator_relation_complete ps data element with
+    | intro current_value current_forced =>
+        exact
+          Eq.trans
+            (forced_successor_values_are_unique
+              ps data element current_value first_successor_value
+              induction_hypothesis current_forced first_forced)
+            (forced_successor_values_are_unique
+              ps data element current_value second_successor_value
+              induction_hypothesis current_forced second_forced).symm
+\end{leancode}
+\end{formalizationrecord}
+
 \begin{remark*}[Standard quantified statement]
 \[
 \forall n\in P\;\forall w_0,w_1\in W\;
@@ -553,6 +614,40 @@ $w\in W$ such that $(n,w)\in R^*$.
 \hyperref[prf:minimal-iterator-relation-complete]{Go to proof.}
 \end{lemma}
 \end{tcolorbox}
+
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Feferman, \emph{The Number Systems}, Section 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
+\Formalizes{lem:minimal-iterator-relation-complete}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
+\LeanDeclaration{minimal\_iterator\_relation\_complete}
+\textbf{Status:} checked against \texttt{lra-lean}.\par
+
+\begin{leancode}
+theorem minimal_iterator_relation_complete
+    (ps : PeanoSystem)
+    (data : IteratorData ps) :
+    forall element : ps.carrier,
+      Exists (fun value : data.target =>
+        minimal_iterator_relation ps data element value) := by
+  apply induction_principle ps
+
+  case base_case =>
+    exact
+      Exists.intro
+        data.initial_value
+        (minimal_iterator_relation_is_iterator_relation ps data).left
+
+  case successor_step =>
+    intro element induction_hypothesis
+    cases induction_hypothesis with
+    | intro value value_is_forced =>
+        exact
+          Exists.intro
+            (data.step_rule value)
+            ((minimal_iterator_relation_is_iterator_relation ps data).right
+              element value value_is_forced)
+\end{leancode}
+\end{formalizationrecord}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -757,6 +852,47 @@ f(1)=c
 \hyperref[prf:peano-iterator-theorem]{Go to proof.}
 \end{theorem}
 \end{tcolorbox}
+
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Feferman, \emph{The Number Systems}, Theorem 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
+\Formalizes{thm:peano-iterator-theorem}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
+\LeanDeclaration{peano\_iterator\_theorem}
+\textbf{Status:} checked against \texttt{lra-lean}.\par
+
+\begin{leancode}
+theorem peano_iterator_theorem
+    (ps : PeanoSystem)
+    (target : Type)
+    (initial_value : target)
+    (step_rule : target -> target) :
+    Exists (fun iterator_function : ps.carrier -> target =>
+      And
+        (satisfies_iterator_clauses
+          ps target initial_value step_rule iterator_function)
+        (forall other_iterator : ps.carrier -> target,
+          satisfies_iterator_clauses
+            ps target initial_value step_rule other_iterator ->
+          forall element : ps.carrier,
+            other_iterator element = iterator_function element)) := by
+  refine
+    Exists.intro
+      (iter ps target initial_value step_rule)
+      ?_
+  constructor
+  exact iter_satisfies_iterator_clauses ps target initial_value step_rule
+  intro other_iterator other_satisfies element
+  exact
+    Eq.symm
+      (iterator_function_unique
+        ps target initial_value step_rule
+        (iter ps target initial_value step_rule)
+        other_iterator
+        (iter_satisfies_iterator_clauses ps target initial_value step_rule)
+        other_satisfies
+        element)
+\end{leancode}
+\end{formalizationrecord}
 
 \begin{remark*}[Standard quantified statement]
 \[
