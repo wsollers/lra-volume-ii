@@ -374,7 +374,8 @@ successor-closure clauses.
 \begin{remark*}[Interpretation]
 The minimal iterator relation consists exactly of the stage-value pairs forced
 by the base pair and the successor closure rule. This is the $R^*$ construction
-used in the classical proof strategy
+used in Feferman's proof of recursive definition, and in the related
+set-theoretic presentations cited here
 \citep{FefermanNumberSystems1964,hrbacek_jech1999,chi_recursion_wustl}.
 \end{remark*}
 
@@ -486,7 +487,8 @@ R^* \text{ is not functional at every stage}.
 
 \begin{remark*}[Interpretation]
 No stage can be forced to carry two different values. This is the key
-determinacy step in the minimal-relation construction.
+determinacy step in the minimal-relation construction used to turn recursive
+specifications into functions \citep{FefermanNumberSystems1964}.
 \end{remark*}
 
 \begin{dependencies}
@@ -573,6 +575,13 @@ $w\in W$ such that $(n,w)\in R^*$.
 \begin{remark*}[Failure modes]
 Completeness fails exactly when some stage of $P$ receives no value in the
 minimal iterator relation.
+\end{remark*}
+
+\begin{remark*}[Source alignment]
+This is the totality half of Feferman's minimal-relation construction for
+recursive definition: after determinacy gives at most one value at each stage,
+completeness gives at least one value at each stage
+\citep{FefermanNumberSystems1964}.
 \end{remark*}
 
 \begin{dependencies}
