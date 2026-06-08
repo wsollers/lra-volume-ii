@@ -5,7 +5,6 @@
 \newpage
 \phantomsection
 \label{prf:farey-neighbor-theorem}
-\LRAProofFor{thm:farey-neighbor-theorem}
 
 \begin{remark*}[Return]
 \hyperref[thm:farey-neighbor-theorem]{Return to Theorem~\ref*{thm:farey-neighbor-theorem}.}
@@ -16,10 +15,7 @@ Let $a/b < c/d$ be consecutive fractions in $F_n$, with $\gcd(a,b) = \gcd(c,d) =
 and $b, d > 0$.  Then $bc - ad = 1$.
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
-[Proof (Professional Standard)]
+\begin{proof}[Proof (Professional Standard)]
 Suppose for contradiction that $bc - ad \geq 2$.  Then $bc - ad$ is a positive
 integer at least $2$.  Consider the fraction
 \[
@@ -39,10 +35,6 @@ One verifies that $a/b < u/v < c/d$ and that $v = sb + (k-s)d \leq (k-1)\max(b,d
 when $k$ is chosen minimally.  This contradicts the assumption that $a/b$ and
 $c/d$ are consecutive in $F_n$.  Therefore $bc - ad = 1$.
 \end{proof}
-
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
-
 
 \begin{proof}[Proof (Detailed Learning)]
 \textbf{Step 1: Set up the contradiction hypothesis.}
@@ -84,8 +76,8 @@ denominator at most $n$, violating consecutiveness.  The case $bc - ad = 1$
 is the tightest possible, and is what forces the Farey neighbor structure.
 \end{remark*}
 
-\begin{dependencies}
+\begin{remark*}[Dependencies]
 \hyperref[def:farey-sequence]{Farey sequence},
 \hyperref[thm:mediant-inequality]{Mediant inequality},
 \hyperref[thm:fraction-pair-equivalence]{equivalence of fraction pairs}.
-\end{dependencies}
+\end{remark*}

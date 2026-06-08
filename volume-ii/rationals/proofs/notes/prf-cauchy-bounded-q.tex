@@ -5,7 +5,6 @@
 \newpage
 \phantomsection
 \label{prf:cauchy-bounded-q}
-\LRAProofFor{thm:cauchy-bounded-q}
 
 \begin{remark*}[Return]
 \hyperref[thm:cauchy-bounded-q]{Return to Theorem~\ref*{thm:cauchy-bounded-q}.}
@@ -15,10 +14,7 @@
 Every Cauchy sequence of rational numbers is bounded.
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
-[Proof (Professional Standard)]
+\begin{proof}[Proof (Professional Standard)]
 Let $(x_n)$ be a Cauchy sequence of rational numbers.
 Apply the Cauchy condition with $\varepsilon = 1$: there exists
 $N \in \mathbb{N}$ such that $|x_m - x_n| < 1$ for all $m, n \geq N$.
@@ -31,10 +27,6 @@ Define
 \]
 Then $|x_n| \leq \Gamma$ for all $n \in \mathbb{N}$.
 \end{proof}
-
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
-
 
 \begin{proof}[Proof (Detailed Learning)]
 \textbf{Step 1: Apply the Cauchy condition with $\varepsilon = 1$.}
@@ -83,8 +75,8 @@ controlled $|x_m - a|$.  This structural parallel is not a coincidence: the
 Cauchy condition is convergence without a named limit.
 \end{remark*}
 
-\begin{dependencies}
+\begin{remark*}[Dependencies]
 \hyperref[def:cauchy-rational]{Cauchy sequence in $\mathbb{Q}$},
 \hyperref[def:bounded-sequence-q]{Bounded sequence},
 the triangle inequality in $\mathbb{Q}$.
-\end{dependencies}
+\end{remark*}
