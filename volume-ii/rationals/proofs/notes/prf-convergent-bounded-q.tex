@@ -5,7 +5,6 @@
 \newpage
 \phantomsection
 \label{prf:convergent-bounded-q}
-\LRAProofFor{thm:convergent-bounded-q}
 
 \begin{remark*}[Return]
 \hyperref[thm:convergent-bounded-q]{Return to Theorem~\ref*{thm:convergent-bounded-q}.}
@@ -15,10 +14,7 @@
 Every convergent sequence of rational numbers is bounded.
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
-[Proof (Professional Standard)]
+\begin{proof}[Proof (Professional Standard)]
 Let $(x_n)$ be a sequence of rational numbers with $x_n \to a \in \mathbb{Q}$.
 Apply the definition of convergence with $\varepsilon = 1$: there exists
 $N \in \mathbb{N}$ such that $|x_n - a| < 1$ for all $n \geq N$.
@@ -30,10 +26,6 @@ Define
 \]
 Then $|x_n| \leq \Gamma$ for all $n \in \mathbb{N}$, so $(x_n)$ is bounded.
 \end{proof}
-
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
-
 
 \begin{proof}[Proof (Detailed Learning)]
 \textbf{Step 1: Control the tail using convergence.}
@@ -73,8 +65,8 @@ $\varepsilon = 1$ is not special — any positive $\varepsilon$ works — but
 $1$ keeps the arithmetic clean.
 \end{remark*}
 
-\begin{dependencies}
+\begin{remark*}[Dependencies]
 \hyperref[def:convergent-rational-sequence]{Convergence of a rational sequence},
 \hyperref[def:bounded-sequence-q]{Bounded sequence},
 the triangle inequality in $\mathbb{Q}$.
-\end{dependencies}
+\end{remark*}
