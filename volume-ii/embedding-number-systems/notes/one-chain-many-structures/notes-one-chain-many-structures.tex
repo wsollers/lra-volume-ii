@@ -1,26 +1,14 @@
 \section{Summary: One Chain, Many Structures}
-\label{sec:embedding-summary-one-chain-many-structures}
+\label{sec:one-chain-many-structures}
 
 \begin{topicbox}{One Chain, Many Structures}
 \begin{exposition}
-The chain
-\[
-\mathbb N \hookrightarrow \mathbb W \hookrightarrow
-\mathbb Z \hookrightarrow \mathbb Q \hookrightarrow \mathbb R
-\]
-is not merely a chain of names. It records a sequence of structure-preserving
-identifications. Each new system solves a limitation of the previous one:
-\(\mathbb W\) adds zero, \(\mathbb Z\) adds additive inverses, \(\mathbb Q\)
-adds division by nonzero elements, and \(\mathbb R\) adds the completeness
-needed for real analysis.
+The embeddings assemble into a single chain $\mathbb{N}\hookrightarrow\mathbb{W}\hookrightarrow\mathbb{Z}\hookrightarrow\mathbb{Q}\hookrightarrow\mathbb{R}$. Each arrow is injective, preserves arithmetic, and reflects order; each step also \emph{adds} structure that the previous system lacked.
 \end{exposition}
-
 \begin{exposition}
-After the embeddings are established, the ordinary notation becomes harmless:
-the same numeral may be used across several systems because the maps preserve
-the structure that matters. The foundational distinction remains in the
-background, while the working notation regains the simplicity used in
-analysis.
+From $\mathbb{N}$ to $\mathbb{W}$ an additive identity $0$ appears. From $\mathbb{W}$ to $\mathbb{Z}$ additive inverses appear, completing a commutative ring. From $\mathbb{Z}$ to $\mathbb{Q}$ multiplicative inverses of nonzero elements appear, completing an ordered field. From $\mathbb{Q}$ to $\mathbb{R}$ order-completeness appears: the gaps in the rational line are filled. The numerals carry through unchanged by compatibility, but the ambient structure grows at every step. This chain is the bridge from number construction to the analysis of the real line.
 \end{exposition}
 \end{topicbox}
-
+\begin{remark*}[Exposition]
+Read as a ladder of structures: counting ($\mathbb{N}$) $\to$ counting with zero ($\mathbb{W}$) $\to$ signed counting / ring ($\mathbb{Z}$) $\to$ ordered field ($\mathbb{Q}$) $\to$ complete ordered field ($\mathbb{R}$). Only the last rung is order-complete, and that completeness is the property the next chapter turns into the topology of the real line.
+\end{remark*}

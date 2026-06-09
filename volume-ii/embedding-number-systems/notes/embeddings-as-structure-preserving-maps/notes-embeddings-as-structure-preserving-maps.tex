@@ -1,24 +1,157 @@
 \section{Embeddings as Structure-Preserving Maps}
 \label{sec:embeddings-as-structure-preserving-maps}
 
-\begin{topicbox}{Embeddings as Structure-Preserving Maps}
+\begin{topicbox}{From Construction to Identification}
 \begin{exposition}
-The preceding chapters constructed the number systems one at a time. In that
-construction-first viewpoint, the symbols used in different systems do not
-automatically denote the same object. A natural number, an integer class, a
-rational class, and a real number may all be written as \(2\), but the
-construction has not made them literally identical.
+The preceding chapters built $\mathbb{N}$, $\mathbb{W}$, $\mathbb{Z}$, $\mathbb{Q}$, and $\mathbb{R}$ one at a time. In that construction-first development the symbol $2$ denotes a different object in each system: a Peano element, a whole number, an integer difference class, a rational fraction class, and a real number are literally distinct sets. Nothing in the constructions has made them identical.
 \end{exposition}
-
 \begin{exposition}
-An embedding is the device that repairs this gap in a controlled way. It is
-an injective map from one system into another that preserves the relevant
-structure: the distinguished constants, the operations, and the order. Once
-such a map has been fixed, the smaller system may be identified with its
-image inside the larger one. This is why ordinary arithmetic can write
-\(\mathbb N\subseteq \mathbb Z\subseteq \mathbb Q\subseteq \mathbb R\), even
-though the foundational construction usually passes through maps rather than
-literal subset inclusions.
+An \emph{embedding} is the device that closes this gap without pretending the objects were the same to begin with. It is an injective map that preserves the relevant structure --- the distinguished constants, the operations, and the order. Once such a map is fixed, the source system is identified with its image inside the target, and only then is the familiar chain $\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}$ written down. The inclusion symbol records an identification along an embedding, not a literal subset relation.
 \end{exposition}
 \end{topicbox}
-
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Structure-Preserving Map)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Structure-Preserving Map]
+\label{def:structure-preserving-map}
+Let $A=(A,+_A,\cdot_A,<_A,0_A,1_A)$ and $B=(B,+_B,\cdot_B,<_B,0_B,1_B)$ be ordered arithmetic systems. A map $\varphi:A\to B$ is \emph{structure-preserving} exactly when, for all $a,a'\in A$,
+\[
+\varphi(0_A)=0_B,\quad \varphi(1_A)=1_B,\quad \varphi(a+_A a')=\varphi(a)+_B\varphi(a'),\quad \varphi(a\cdot_A a')=\varphi(a)\cdot_B\varphi(a'),
+\]
+and $a<_A a' \Longrightarrow \varphi(a)<_B\varphi(a')$.
+\end{definition}
+\end{tcolorbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\varphi:A\to B \text{ is structure-preserving}\\
+&\Longleftrightarrow \Bigl(\varphi(0_A)=0_B \land \varphi(1_A)=1_B\\
+&\qquad\land \forall a,a'\in A\;(\varphi(a+_A a')=\varphi(a)+_B\varphi(a'))\\
+&\qquad\land \forall a,a'\in A\;(\varphi(a\cdot_A a')=\varphi(a)\cdot_B\varphi(a'))\\
+&\qquad\land \forall a,a'\in A\;(a<_A a' \Rightarrow \varphi(a)<_B\varphi(a'))\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+A structure-preserving map carries every piece of arithmetic and order from $A$ into $B$ without distortion: constants go to constants, sums to sums, products to products, and strict order is respected. It need not be injective; collapsing distinct elements is still allowed at this stage. Injectivity is added separately to obtain an embedding.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item TODO: link to the ordered-semiring/ring/field structure carried by each constructed system.
+\end{itemize}
+\end{dependencies}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Order Embedding)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Order Embedding]
+\label{def:order-embedding}
+Let $A$ and $B$ be ordered arithmetic systems and $\varphi:A\to B$ a map. Then $\varphi$ is an \emph{order embedding} exactly when, for all $a,a'\in A$,
+\[
+a<_A a' \Longleftrightarrow \varphi(a)<_B\varphi(a').
+\]
+\end{definition}
+\end{tcolorbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\varphi \text{ is an order embedding} \Longleftrightarrow \forall a,a'\in A\;(a<_A a' \Longleftrightarrow \varphi(a)<_B\varphi(a')).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+An order embedding does not merely preserve order in one direction; it reflects it. The image sees exactly the order relations the source had, so no spurious comparisons are created and none are lost. An order embedding is automatically injective, since $a\neq a'$ forces $a<_A a'$ or $a'<_A a$, hence $\varphi(a)\neq\varphi(a')$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:structure-preserving-map]{Structure-Preserving Map}
+\end{itemize}
+\end{dependencies}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Embedding of Number Systems)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Embedding of Number Systems]
+\label{def:number-system-embedding}
+Let $A$ and $B$ be ordered arithmetic systems. A map $\varphi:A\to B$ is an \emph{embedding} exactly when $\varphi$ is injective and structure-preserving and is an order embedding.
+\end{definition}
+\end{tcolorbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\varphi \text{ is an embedding}\\
+&\Longleftrightarrow \Bigl(\varphi \text{ is injective}\land \varphi \text{ is structure-preserving}\\
+&\qquad\land \forall a,a'\in A\;(a<_A a'\Leftrightarrow\varphi(a)<_B\varphi(a'))\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\varphi \text{ is not an embedding}\\
+&\Longleftrightarrow
+\Bigl(\exists a,a'\in A\;(a\neq a'\land \varphi(a)=\varphi(a'))\\
+&\qquad\lor\ \varphi \text{ fails to preserve a constant, sum, or product}\\
+&\qquad\lor\ \exists a,a'\in A\;\bigl((a<_A a'\land \neg(\varphi(a)<_B\varphi(a')))
+\lor(\varphi(a)<_B\varphi(a')\land \neg(a<_A a'))\bigr)\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+\begin{remark*}[Failure modes]
+An embedding can fail in three structurally distinct ways: it may collapse two distinct elements to the same image (injectivity fails), fail to transport a constant, sum, or product (algebraic preservation fails), or fail to preserve or reflect a strict-order comparison (order embedding fails).
+\end{remark*}
+\begin{remark*}[Interpretation]
+An embedding is the precise meaning of ``$A$ sits inside $B$.'' It is injective, so distinct elements stay distinct; it preserves the arithmetic and reflects the order, so the copy of $A$ inside $B$ behaves exactly as $A$ did. This is what licenses treating $2\in\mathbb{N}$ and $2\in\mathbb{R}$ as ``the same number.''
+\end{remark*}
+\begin{remark*}[Interpretation]
+An embedding transports the \emph{ordered ring/field} structure --- constants, the two operations, and order. It does \emph{not} transport the Peano structure. The target $\mathbb{Z}$, for instance, has no distinguished non-successor element and admits no induction over all of $\mathbb{Z}$, so successor and induction do not travel along the embedding. The phrase ``the naturals sit inside the integers'' must not be read as carrying induction across.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:structure-preserving-map]{Structure-Preserving Map}
+  \item \hyperref[def:order-embedding]{Order Embedding}
+\end{itemize}
+\end{dependencies}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Image of an Embedding)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Image of an Embedding]
+\label{def:image-of-embedding}
+Let $\varphi:A\to B$ be an embedding. The \emph{image} of $\varphi$ is the set $\varphi(A)=\{\,\varphi(a) : a\in A\,\}\subseteq B$, equipped with the operations and order of $B$ restricted to $\varphi(A)$.
+\end{definition}
+\end{tcolorbox}
+\begin{remark*}[Interpretation]
+The image is the literal subset of $B$ that plays the role of $A$. The identification theorem below states that $\varphi$, viewed as a map onto its image, is an isomorphism, so $A$ and $\varphi(A)$ are the same ordered arithmetic system under two names.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:number-system-embedding]{Embedding of Number Systems}
+\end{itemize}
+\end{dependencies}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Embeddings Identify a System with Its Image)}},
+  fonttitle=\small\bfseries]
+\begin{theorem}[Embeddings Identify a System with Its Image]
+\label{thm:embedding-identifies-with-image}
+Let $\varphi:A\to B$ be an embedding of ordered arithmetic systems. Then the corestriction $\varphi:A\to\varphi(A)$ is an isomorphism of ordered arithmetic systems: it is a bijection that preserves and reflects the constants, both operations, and the order. Consequently $A$ may be identified with the substructure $\varphi(A)\subseteq B$.
+\hyperref[prf:embedding-identifies-with-image]{Go to proof.}
+\end{theorem}
+\end{tcolorbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\varphi:A\to B \text{ an embedding}\\
+&\Longrightarrow \varphi:A\to\varphi(A) \text{ is a bijective structure-preserving order isomorphism.}
+\end{aligned}
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+This is the theorem that makes the inclusion notation legitimate. After identification we write $A\subseteq B$, understanding that ``$\subseteq$'' abbreviates ``embeds via $\varphi$ as the substructure $\varphi(A)$.'' Every later use of $\mathbb{N}\subseteq\mathbb{R}$ is shorthand for this identification.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:number-system-embedding]{Embedding of Number Systems}
+  \item \hyperref[def:image-of-embedding]{Image of an Embedding}
+\end{itemize}
+\end{dependencies}

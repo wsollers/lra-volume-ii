@@ -5,6 +5,7 @@
 \newpage
 \phantomsection
 \label{prf:stern-brocot-limit}
+\LRAProofFor{thm:stern-brocot-limit}
 
 \begin{remark*}[Return]
 \hyperref[thm:stern-brocot-limit]{Return to Theorem~\ref*{thm:stern-brocot-limit}.}
@@ -17,7 +18,10 @@ Conversely, every infinite path determines a unique positive irrational
 as its limit.
 \end{theorem*}
 
-\begin{proof}[Proof (Professional Standard)]
+\textbf{Professional Standard Proof.}~\\
+% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
+\begin{proof}
+[Proof (Professional Standard)]
 \textbf{Forward direction (irrational $\Rightarrow$ unique infinite path
 converging to $x$).}
 
@@ -44,6 +48,10 @@ Therefore $\xi$ is irrational.
 
 Uniqueness of $\xi$ follows from the Unique Point Proposition.
 \end{proof}
+
+\textbf{Detailed Learning Proof.}~\\
+TODO: Expand the professional proof into a detailed learning proof.
+
 
 \begin{proof}[Proof (Detailed Learning)]
 \textbf{Forward direction.}
@@ -95,10 +103,10 @@ assembly of the chain built up by Lemmas A and B, Proposition A, and
 Corollaries A and B.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:stern-brocot-refinement]{SB interval refinement},
 \hyperref[prop:sb-unique-point]{Unique limit point},
 \hyperref[cor:sb-path-limit]{Every infinite path converges},
 \hyperref[cor:sb-limit-irrational]{Infinite paths are irrational},
 \hyperref[thm:sqrt2-irrational]{irrationality of $\sqrt{2}$} (prototype example).
-\end{remark*}
+\end{dependencies}

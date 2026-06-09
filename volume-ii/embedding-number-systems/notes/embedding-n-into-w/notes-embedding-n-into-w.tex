@@ -1,15 +1,59 @@
-\section{Embedding \texorpdfstring{\(\mathbb N\)}{N} into \texorpdfstring{\(\mathbb W\)}{W}}
+\section{Embedding $\mathbb{N}$ into $\mathbb{W}$}
 \label{sec:embedding-n-into-w}
 
-\begin{topicbox}{From \texorpdfstring{\(\mathbb N\)}{N} to \texorpdfstring{\(\mathbb W\)}{W}}
+\begin{topicbox}{Embedding $\mathbb{N}$ into $\mathbb{W}$}
 \begin{exposition}
-The first embedding records that the natural-number system sits inside the
-whole-number system after the new zero element has been introduced. The
-successor structure is preserved: the image of the first natural number is
-the successor of zero, and applying successor before or after the embedding
-gives the same result. Addition, multiplication, and order on the natural
-numbers agree with the restrictions of the corresponding operations and order
-on the whole numbers.
+This section fixes the canonical embedding of $\mathbb{N}$ into $\mathbb{W}$ and records that it is injective, structure-preserving, and order-reflecting. The map is the bridge that lets elements of $\mathbb{N}$ be regarded as elements of $\mathbb{W}$ after identification.
 \end{exposition}
 \end{topicbox}
-
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Embedding $\mathbb{N}$ into $\mathbb{W}$)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Embedding $\mathbb{N}$ into $\mathbb{W}$]
+\label{def:embedding-n-into-w}
+The \emph{canonical embedding} $\iota:\mathbb{N}\to \mathbb{W}$ is defined by
+\[
+\iota(n)=n \quad(\text{the copy of each natural number inside the whole numbers}).
+\]
+\end{definition}
+\end{tcolorbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\iota:\mathbb{N}\to \mathbb{W},\qquad \iota(n)=n \quad(\text{the copy of each natural number inside the whole numbers}).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The map sends each element of $\mathbb{N}$ to its natural representative in $\mathbb{W}$. The next result certifies that this representative choice preserves all arithmetic and order, so $\mathbb{N}$ may be identified with its image in $\mathbb{W}$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item TODO: link to the construction of $\mathbb{W}$ from $\mathbb{N}$ by adjoining $0$.
+  \item \hyperref[def:number-system-embedding]{Embedding of Number Systems}
+\end{itemize}
+\end{dependencies}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem ($\mathbb{N}$ Embeds in $\mathbb{W}$)}},
+  fonttitle=\small\bfseries]
+\begin{theorem}[$\mathbb{N}$ Embeds in $\mathbb{W}$]
+\label{thm:n-embeds-in-w}
+The canonical map $\iota:\mathbb{N}\to \mathbb{W}$ is an embedding of ordered arithmetic systems: it is injective, preserves $1$, addition, and multiplication, and reflects the order.
+\hyperref[prf:n-embeds-in-w]{Go to proof.}
+\end{theorem}
+\end{tcolorbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\iota:\mathbb{N}\to \mathbb{W} \text{ is injective, structure-preserving, and order-reflecting.}
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Once this theorem is proved, the identification theorem of \S\ref{sec:embeddings-as-structure-preserving-maps} applies, and $\mathbb{N}$ may be treated as the substructure $\iota(\mathbb{N})\subseteq \mathbb{W}$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item TODO: link to the construction of $\mathbb{W}$ from $\mathbb{N}$ by adjoining $0$.
+  \item \hyperref[def:embedding-n-into-w]{Embedding $\mathbb{N}$ into $\mathbb{W}$}
+  \item \hyperref[thm:embedding-identifies-with-image]{Embeddings Identify a System with Its Image}
+\end{itemize}
+\end{dependencies}

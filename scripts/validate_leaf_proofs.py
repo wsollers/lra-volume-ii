@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import shutil
 import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -52,6 +53,12 @@ class ProofFile:
     has_dependency_remark: bool
 
 
+@dataclass(frozen=True)
+class ProofQuality:
+    score: int
+    issues: list[str]
+
+
 def strip_comments(text: str) -> str:
     lines: list[str] = []
     for line in text.splitlines():
@@ -72,6 +79,11 @@ def strip_comments(text: str) -> str:
 
 def line_number(text: str, pos: int) -> int:
     return text.count("\n", 0, pos) + 1
+
+
+def is_selected_volume_part(path: Path | str, parts: set[str]) -> bool:
+    path_text = path.as_posix() if isinstance(path, Path) else path.replace("\\", "/")
+    return any(f"volume-ii/{part}/" in path_text for part in parts)
 
 
 def iter_tex_files(root: Path, part: str) -> Iterable[Path]:
@@ -158,6 +170,202 @@ def discover_proofs(root: Path) -> list[ProofFile]:
             )
         )
     return proofs
+
+
+def proof_quality(text: str) -> ProofQuality:
+    stripped = strip_comments(text)
+    lower = stripped.lower()
+    labels = [label for label in LABEL_RE.findall(stripped) if label.startswith("prf:")]
+    proof_for = PROOF_FOR_RE.findall(stripped)
+    vault_urls = PROOF_VAULT_RE.findall(stripped)
+    issues: list[str] = []
+    if not labels:
+        issues.append("missing_proof_label")
+    if not proof_for:
+        issues.append("missing_lra_proof_for")
+    elif len(set(proof_for)) > 1:
+        issues.append("conflicting_lra_proof_for")
+    if not re.search(r"professional\s+(standard\s+)?proof", lower):
+        issues.append("missing_professional_body")
+    if not re.search(r"detailed\s+(learning\s+)?proof", lower):
+        issues.append("missing_detailed_body")
+    if not re.search(r"dependenc|proof[-\s]*structure", lower):
+        issues.append("missing_dependency_remark")
+    if proof_for and not [ref for ref in HYPERREF_RE.findall(stripped) if not ref.startswith("prf:")]:
+        issues.append("missing_return_link")
+    for url in vault_urls:
+        if not re.match(r"^(https?://|[A-Za-z0-9_.-]+/)", url.strip()):
+            issues.append("malformed_vault_url")
+    return ProofQuality(score=len(issues), issues=issues)
+
+
+def count_findings(summary: dict, key: str) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for finding in summary[key]:
+        code = finding["code"]
+        counts[code] = counts.get(code, 0) + 1
+    return dict(sorted(counts.items(), key=lambda item: (-item[1], item[0])))
+
+
+def old_proofs_by_target(source_root: Path, selected_parts: set[str]) -> dict[str, list[Path]]:
+    by_target: dict[str, list[Path]] = {}
+    for proof in discover_proofs(source_root):
+        proof_rel = rel(proof.path, source_root)
+        if not is_selected_volume_part(proof_rel, selected_parts):
+            continue
+        for target in set(proof.proof_for):
+            by_target.setdefault(target, []).append(proof.path)
+    return by_target
+
+
+def proof_target_counts(root: Path) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for proof in discover_proofs(root):
+        for target in set(proof.proof_for):
+            counts[target] = counts.get(target, 0) + 1
+    return counts
+
+
+def target_from_missing_stub(message: str) -> str | None:
+    match = re.search(r"Expected proof stub for ([^.]+)\.", message)
+    return match.group(1) if match else None
+
+
+def repair_from_source(
+    root: Path,
+    source_root: Path,
+    *,
+    selected_parts: set[str],
+    apply: bool,
+    strict: bool,
+    refactor_mode: bool,
+) -> dict:
+    before = validate(root, strict=strict, refactor_mode=refactor_mode)
+    replacements: list[dict] = []
+    kept: list[dict] = []
+
+    for current in iter_tex_files(root, "proofs"):
+        current_rel = rel(current, root)
+        if not is_selected_volume_part(current_rel, selected_parts):
+            continue
+        source = source_root / current_rel
+        if not source.exists() or not source.is_file():
+            continue
+        current_text = current.read_text(encoding="utf-8", errors="replace")
+        source_text = source.read_text(encoding="utf-8", errors="replace")
+        current_quality = proof_quality(current_text)
+        source_quality = proof_quality(source_text)
+        item = {
+            "path": current_rel,
+            "current_score": current_quality.score,
+            "source_score": source_quality.score,
+            "current_issues": current_quality.issues,
+            "source_issues": source_quality.issues,
+        }
+        if source_quality.score < current_quality.score:
+            item["action"] = "replaced" if apply else "would_replace"
+            replacements.append(item)
+            if apply:
+                shutil.copy2(source, current)
+        else:
+            item["action"] = "kept"
+            kept.append(item)
+
+    after_replacements = validate(root, strict=strict, refactor_mode=refactor_mode)
+    existing_targets = proof_target_counts(root)
+    source_targets = old_proofs_by_target(source_root, selected_parts)
+    copied_missing: list[dict] = []
+    unresolved_missing: list[dict] = []
+
+    for finding in after_replacements["errors"]:
+        if finding["code"] != "missing_proof_stub":
+            continue
+        if not is_selected_volume_part(finding["path"], selected_parts):
+            continue
+        target = target_from_missing_stub(finding["message"])
+        if target is None:
+            unresolved_missing.append({"path": finding["path"], "line": finding["line"], "reason": "could_not_parse_target"})
+            continue
+        if existing_targets.get(target, 0) > 0:
+            continue
+        candidates = source_targets.get(target, [])
+        if len(candidates) != 1:
+            unresolved_missing.append(
+                {
+                    "target": target,
+                    "path": finding["path"],
+                    "line": finding["line"],
+                    "reason": "source_candidate_count",
+                    "source_candidate_count": len(candidates),
+                }
+            )
+            continue
+        source = candidates[0]
+        source_rel = rel(source, source_root)
+        destination = root / source_rel
+        item = {
+            "target": target,
+            "source_path": source_rel,
+            "destination_path": rel(destination, root),
+            "action": "copied" if apply else "would_copy",
+        }
+        copied_missing.append(item)
+        if apply:
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, destination)
+            existing_targets[target] = existing_targets.get(target, 0) + 1
+
+    after = validate(root, strict=strict, refactor_mode=refactor_mode)
+    return {
+        "root": str(root),
+        "source_root": str(source_root),
+        "selected_parts": sorted(selected_parts),
+        "applied": apply,
+        "before": {
+            "status": before["status"],
+            "error_count": len(before["errors"]),
+            "warning_count": len(before["warnings"]),
+            "errors_by_code": count_findings(before, "errors"),
+            "warnings_by_code": count_findings(before, "warnings"),
+        },
+        "after": {
+            "status": after["status"],
+            "error_count": len(after["errors"]),
+            "warning_count": len(after["warnings"]),
+            "errors_by_code": count_findings(after, "errors"),
+            "warnings_by_code": count_findings(after, "warnings"),
+        },
+        "proof_file_replacements": replacements,
+        "proof_files_kept": kept,
+        "missing_stubs_copied": copied_missing,
+        "missing_stubs_unresolved": unresolved_missing,
+    }
+
+
+def compare_proof_files(current: Path, source: Path) -> dict:
+    current_text = current.read_text(encoding="utf-8", errors="replace")
+    source_text = source.read_text(encoding="utf-8", errors="replace")
+    current_quality = proof_quality(current_text)
+    source_quality = proof_quality(source_text)
+    if source_quality.score < current_quality.score:
+        recommendation = "use_source"
+    elif current_quality.score < source_quality.score:
+        recommendation = "keep_current"
+    else:
+        recommendation = "tie"
+    return {
+        "current": {
+            "path": str(current),
+            "score": current_quality.score,
+            "issues": current_quality.issues,
+        },
+        "source": {
+            "path": str(source),
+            "score": source_quality.score,
+            "issues": source_quality.issues,
+        },
+        "recommendation": recommendation,
+    }
 
 
 def validate(root: Path, *, strict: bool, refactor_mode: bool) -> dict:
@@ -283,7 +491,36 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--format", choices=["text", "json"], default="text")
     parser.add_argument("--strict", action="store_true", help="Treat warnings as failures.")
     parser.add_argument("--refactor-mode", action="store_true", help="Suppress path-layout warnings during explicit refactors.")
+    parser.add_argument("--repair-from", type=Path, default=None, help="Compare proof files with a source repo and use cleaner source files.")
+    parser.add_argument("--repair-parts", default="rationals,reals", help="Comma-separated Volume II parts to repair.")
+    parser.add_argument("--apply-repair", action="store_true", help="Apply cleaner proof files from --repair-from.")
+    parser.add_argument("--repair-report", type=Path, default=None, help="Write repair summary JSON to this path.")
+    parser.add_argument("--compare-file", type=Path, default=None, help="Compare this proof file against --compare-with.")
+    parser.add_argument("--compare-with", type=Path, default=None, help="Source proof file for --compare-file.")
     args = parser.parse_args(argv)
+
+    if args.compare_file is not None or args.compare_with is not None:
+        if args.compare_file is None or args.compare_with is None:
+            parser.error("--compare-file and --compare-with must be used together.")
+        print(json.dumps(compare_proof_files(args.compare_file.resolve(), args.compare_with.resolve()), indent=2))
+        return 0
+
+    if args.repair_from is not None:
+        selected_parts = {part.strip() for part in args.repair_parts.split(",") if part.strip()}
+        report = repair_from_source(
+            args.root.resolve(),
+            args.repair_from.resolve(),
+            selected_parts=selected_parts,
+            apply=args.apply_repair,
+            strict=args.strict,
+            refactor_mode=args.refactor_mode,
+        )
+        if args.repair_report is not None:
+            args.repair_report.parent.mkdir(parents=True, exist_ok=True)
+            args.repair_report.write_text(json.dumps(report, indent=2), encoding="utf-8")
+        print(json.dumps(report, indent=2))
+        return 0 if report["after"]["status"] == "PASS" else 1
+
     summary = validate(args.root.resolve(), strict=args.strict, refactor_mode=args.refactor_mode)
     if args.format == "json":
         print(json.dumps(summary, indent=2))

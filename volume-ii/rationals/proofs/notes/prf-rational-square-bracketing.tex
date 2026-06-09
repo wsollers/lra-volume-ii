@@ -1,19 +1,22 @@
 \newpage
 \phantomsection
 \label{prf:rational-square-bracketing}
+\LRAProofFor{thm:rational-square-bracketing}
 
 \begin{remark*}[Return]
-\hyperref[lem:rational-square-bracketing]{Return to Lemma}
+\hyperref[thm:rational-square-bracketing]{Return to Theorem}
 \end{remark*}
 
-\begin{lemma*}[Rational Square Bracketing]
-Let $r$ be a positive rational number. Then there exist positive rational
-numbers $a$ and $b$ such that
+\begin{theorem*}[Rational Square Bracketing]
+For every $r\in\mathbb{Q}$ with $r>0$, there exist $a,b\in\mathbb{Q}$ with
+$a>0$ and $b>0$ such that
 \[
 a^2<r<b^2.
 \]
-\end{lemma*}
+\end{theorem*}
 
+\textbf{Professional Standard Proof.}~\\
+% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
 \begin{proof}
 Let
 \[
@@ -61,6 +64,10 @@ a^2<r<b^2,
 as required.
 \end{proof}
 
+\textbf{Detailed Learning Proof.}~\\
+TODO: Expand the professional proof into a detailed learning proof.
+
+
 \begin{remark*}[Proof structure]
 The proof uses an explicit construction rather than an existence argument by
 approximation. The lower bracket is chosen as
@@ -76,9 +83,9 @@ which is larger than $r$ and larger than $1$, so its square is larger still.
 This produces rational squares on both sides of the given positive rational.
 \end{remark*}
 
-\begin{remark*}[Dependencies]~\\
+\begin{dependencies}
 \begin{itemize}
   \item Basic field closure of $\mathbb{Q}$ under addition and division
   \item Basic order compatibility in an ordered field
 \end{itemize}
-\end{remark*}
+\end{dependencies}

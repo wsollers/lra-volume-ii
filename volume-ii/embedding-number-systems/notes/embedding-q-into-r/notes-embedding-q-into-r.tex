@@ -1,14 +1,59 @@
-\section{Embedding \texorpdfstring{\(\mathbb Q\)}{Q} into \texorpdfstring{\(\mathbb R\)}{R}}
+\section{Embedding $\mathbb{Q}$ into $\mathbb{R}$}
 \label{sec:embedding-q-into-r}
 
-\begin{topicbox}{From \texorpdfstring{\(\mathbb Q\)}{Q} to \texorpdfstring{\(\mathbb R\)}{R}}
+\begin{topicbox}{Embedding $\mathbb{Q}$ into $\mathbb{R}$}
 \begin{exposition}
-The real numbers are introduced to repair the completeness failures of the
-rationals. The rational numbers embed into the real numbers in a way that
-preserves field operations and order. After this embedding is fixed, rational
-numbers can be treated as real numbers without changing their arithmetic, but
-the surrounding system now contains limits, cuts, or equivalence classes that
-were not present in \(\mathbb Q\).
+This section fixes the canonical embedding of $\mathbb{Q}$ into $\mathbb{R}$ and records that it is injective, structure-preserving, and order-reflecting. The map is the bridge that lets elements of $\mathbb{Q}$ be regarded as elements of $\mathbb{R}$ after identification.
 \end{exposition}
 \end{topicbox}
-
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Embedding $\mathbb{Q}$ into $\mathbb{R}$)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Embedding $\mathbb{Q}$ into $\mathbb{R}$]
+\label{def:embedding-q-into-r}
+The \emph{canonical embedding} $\iota:\mathbb{Q}\to \mathbb{R}$ is defined by
+\[
+\iota(q)=q^{*} \quad(\text{the real number determined by } q).
+\]
+\end{definition}
+\end{tcolorbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\iota:\mathbb{Q}\to \mathbb{R},\qquad \iota(q)=q^{*} \quad(\text{the real number determined by } q).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The map sends each element of $\mathbb{Q}$ to its natural representative in $\mathbb{R}$. The next result certifies that this representative choice preserves all arithmetic and order, so $\mathbb{Q}$ may be identified with its image in $\mathbb{R}$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item TODO: link to the construction of $\mathbb{R}$ (Dedekind cuts or Cauchy sequences).
+  \item \hyperref[def:number-system-embedding]{Embedding of Number Systems}
+\end{itemize}
+\end{dependencies}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem ($\mathbb{Q}$ Embeds in $\mathbb{R}$)}},
+  fonttitle=\small\bfseries]
+\begin{theorem}[$\mathbb{Q}$ Embeds in $\mathbb{R}$]
+\label{thm:q-embeds-in-r}
+The canonical map $\iota:\mathbb{Q}\to \mathbb{R}$ is an embedding of ordered arithmetic systems: it is injective, preserves $0$, $1$, addition, and multiplication, and reflects the order.
+\hyperref[prf:q-embeds-in-r]{Go to proof.}
+\end{theorem}
+\end{tcolorbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\iota:\mathbb{Q}\to \mathbb{R} \text{ is injective, structure-preserving, and order-reflecting.}
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Once this theorem is proved, the identification theorem of \S\ref{sec:embeddings-as-structure-preserving-maps} applies, and $\mathbb{Q}$ may be treated as the substructure $\iota(\mathbb{Q})\subseteq \mathbb{R}$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item TODO: link to the construction of $\mathbb{R}$ (Dedekind cuts or Cauchy sequences).
+  \item \hyperref[def:embedding-q-into-r]{Embedding $\mathbb{Q}$ into $\mathbb{R}$}
+  \item \hyperref[thm:embedding-identifies-with-image]{Embeddings Identify a System with Its Image}
+\end{itemize}
+\end{dependencies}

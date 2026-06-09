@@ -1,23 +1,33 @@
 \section{Number Lines}
 \label{sec:number-lines}
 
-\begin{topicbox}{Number Lines}
+\begin{topicbox}{The Geometric Model of an Ordered System}
 \begin{exposition}
-A number line is a visual representation of an ordered number system. For
-\(\mathbb W\), the points begin at zero and proceed discretely to the right.
-For \(\mathbb Z\), the line extends discretely in both directions. For
-\(\mathbb Q\), there are rational points between any two distinct rational
-points, but the rational line still has gaps from the point of view of limits
-and completeness. For \(\mathbb R\), the order is complete in the sense
-developed earlier in the real-number chapter.
-\end{exposition}
-
-\begin{exposition}
-The embedding chain gives a disciplined interpretation of the usual picture.
-The whole-number line sits inside the integer line, the integer line sits
-inside the rational line, and the rational line sits inside the real line.
-Each step preserves the visible order and the arithmetic structure already
-available at the previous step.
+A number line is the geometric realization of a linearly ordered system: points on a line arranged so that ``left of'' matches the order. The construction so far is algebraic; the number line is the picture that accompanies it, and it becomes exact for $\mathbb{R}$.
 \end{exposition}
 \end{topicbox}
-
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Number Line)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Number Line]
+\label{def:number-line}
+A \emph{number line} for a linearly ordered system $(A,<_A)$ is a linearly ordered set of points $L$ together with an order isomorphism $\lambda:A\to L$, so that for all $a,a'\in A$,
+\[
+a<_A a' \Longleftrightarrow \lambda(a) \text{ lies to the left of } \lambda(a').
+\]
+\end{definition}
+\end{tcolorbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\lambda:A\to L \text{ is a bijection with } \forall a,a'\in A\;(a<_A a'\Leftrightarrow \lambda(a)\prec\lambda(a')).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The number line records only order, not arithmetic: it is the visual home of betweenness and length. For $\mathbb{R}$ the order isomorphism is onto a full continuum, which is why the real line has no gaps; for $\mathbb{Q}$ the same picture has holes at every irrational location.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-embedding]{Order Embedding}
+\end{itemize}
+\end{dependencies}
