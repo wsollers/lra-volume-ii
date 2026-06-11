@@ -29,7 +29,7 @@ U \text{ is not open} \Longleftrightarrow \exists x\in U\;\forall r>0\;(B_{r}(x)
 Openness fails exactly when some point of $U$ has no ball contained in $U$ --- a boundary point trapped inside $U$, every ball around which pokes outside.
 \end{remark*}
 \begin{remark*}[Interpretation]
-An open set has interior room around each of its points: you can always step a little in either direction and stay inside. The empty set and $\mathbb{R}$ are open, and open intervals are the model examples.
+An open set has interior room around each of its points: a small step in either direction remains inside the set. The empty set and $\mathbb{R}$ are open, and open intervals are the model examples.
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
@@ -43,6 +43,15 @@ Every open interval $(a,b)$, every open ray $(a,\infty)$ and $(-\infty,b)$, and 
 \hyperref[prf:open-interval-is-open]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{gathered}
+\forall a,b\in\mathbb{R}\;(a<b\Longrightarrow (a,b)\text{ is open}),\\
+\forall a\in\mathbb{R}\;\bigl((a,\infty)\text{ is open}\land(-\infty,a)\text{ is open}\bigr),
+\qquad \mathbb{R}\text{ is open}.
+\end{gathered}
+\]
+\end{remark*}
 \begin{remark*}[Interpretation]
 The name ``open interval'' is justified: each such interval satisfies the open-set condition, with the radius at $x$ taken as the distance to the nearer endpoint.
 \end{remark*}

@@ -34,6 +34,13 @@ An open cover is a way of surrounding every point of $E$ with an open piece of t
 Let $\{U_{i}\}_{i\in I}$ be an open cover of $E$. A \emph{subcover} is a subfamily $\{U_{i}\}_{i\in J}$ with $J\subseteq I$ that still covers $E$. It is a \emph{finite subcover} when $J$ is finite.
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\{U_i\}_{i\in J} \text{ is a finite subcover of } E
+\Longleftrightarrow
+\bigl(J\subseteq I \land J \text{ is finite} \land E\subseteq\textstyle\bigcup_{i\in J}U_i\bigr).
+\]
+\end{remark*}
 \begin{remark*}[Interpretation]
 A subcover discards some pieces while still covering $E$; a finite subcover discards all but finitely many. The existence of a finite subcover for \emph{every} open cover is the defining property of compactness.
 \end{remark*}
