@@ -15,6 +15,17 @@ a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\cdot_{\mathbb{W}}:\mathbb{W}\times\mathbb{W}\to\mathbb{W},\\
+&\forall a\in\mathbb{W}\;(0\cdot_{\mathbb{W}}a=0\ \wedge\ a\cdot_{\mathbb{W}}0=0),\\
+&\forall a,b\in\mathbb{N}\;
+  (a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The zero cases are new. The positive-positive case is inherited from
 $\mathbb{N}$. Since $0\notin\mathbb{N}$, these clauses do not compete.
@@ -35,6 +46,12 @@ $\mathbb{W}$.
 \hyperref[prf:multiplication-on-w-well-defined]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\cdot_{\mathbb{W}}\text{ is a well-defined binary operation on }\mathbb{W}.
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 The inherited positive case is already well-defined on $\mathbb{N}$, and the
@@ -61,6 +78,17 @@ a\cdot_{\mathbb{W}}0=0.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{W}\;
+\bigl(0\cdot_{\mathbb{W}}a=0\ \wedge\ a\cdot_{\mathbb{W}}0=0\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The adjoined element $0$ is absorbing for multiplication on both sides.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-w]{Multiplication on $\mathbb{W}$}
@@ -80,6 +108,17 @@ a\cdot_{\mathbb{W}}1=a.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{W}\;
+\bigl(1\cdot_{\mathbb{W}}a=a\ \wedge\ a\cdot_{\mathbb{W}}1=a\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The old multiplicative identity remains an identity after adjoining $0$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-w]{Multiplication on $\mathbb{W}$}
@@ -98,6 +137,17 @@ a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b.
 \hyperref[prf:multiplication-on-w-extends-multiplication-on-n]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{N}\;
+\bigl(a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The extension does not alter products of positive natural numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -119,6 +169,19 @@ a\cdot_{\mathbb{W}}(b\cdot_{\mathbb{W}}c).
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c\in\mathbb{W}\;
+\bigl((a\cdot_{\mathbb{W}}b)\cdot_{\mathbb{W}}c
+=a\cdot_{\mathbb{W}}(b\cdot_{\mathbb{W}}c)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Associativity follows from the absorbing zero cases and the inherited
+associativity of multiplication on positive natural numbers.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:zero-absorbing-for-multiplication-on-w]{Zero Is Absorbing for Multiplication on $\mathbb{W}$}
@@ -136,6 +199,18 @@ a\cdot_{\mathbb{W}}b=b\cdot_{\mathbb{W}}a.
 \hyperref[prf:multiplication-on-w-commutative]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{W}\;
+\bigl(a\cdot_{\mathbb{W}}b=b\cdot_{\mathbb{W}}a\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The zero cases are symmetric, and the positive-positive case is the inherited
+commutativity theorem for $\mathbb{N}$.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -156,6 +231,19 @@ a\cdot_{\mathbb{W}}(b+_{\mathbb{W}}c)
 \hyperref[prf:multiplication-distributes-over-addition-on-w]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c\in\mathbb{W}\;
+\bigl(a\cdot_{\mathbb{W}}(b+_{\mathbb{W}}c)
+=(a\cdot_{\mathbb{W}}b)+_{\mathbb{W}}(a\cdot_{\mathbb{W}}c)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Distributivity reduces zero cases to the absorbing law and positive cases to
+the distributive law already proved on $\mathbb{N}$.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

@@ -8,6 +8,17 @@ The structure $(\mathbb{W},+_{\mathbb{W}},0)$ is a commutative monoid.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+(\mathbb{W},+_{\mathbb{W}},0)\text{ is a commutative monoid}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition on $\mathbb{W}$ has an identity element, is associative, and is
+commutative.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:zero-additive-identity-on-w]{Zero Is an Additive Identity on $\mathbb{W}$}
@@ -23,6 +34,17 @@ The structure $(\mathbb{W},\cdot_{\mathbb{W}},1)$ is a commutative monoid.
 \hyperref[prf:w-multiplicative-commutative-monoid]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\mathbb{W},\cdot_{\mathbb{W}},1)\text{ is a commutative monoid}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication on $\mathbb{W}$ has identity $1$, is associative, and is
+commutative.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -42,6 +64,18 @@ semiring.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+(\mathbb{W},+_{\mathbb{W}},\cdot_{\mathbb{W}},0,1)
+\text{ is a commutative semiring}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The whole numbers have the additive and multiplicative structure needed for
+ordinary arithmetic, but no subtraction operation is included.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:w-additive-commutative-monoid]{$(\mathbb{W},+,0)$ Is a Commutative Monoid}
@@ -60,6 +94,19 @@ multiplication, and order.
 \hyperref[prf:n-embeds-into-w-as-positive-part]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\iota:\mathbb{N}\hookrightarrow\mathbb{W},\qquad \iota(n)=n,
+\]
+identifies $\mathbb{N}$ with $\mathbb{W}\setminus\{0\}$ and preserves
+successor, $1$, addition, multiplication, and order.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The positive part of $\mathbb{W}$ is exactly the previously constructed
+natural-number system, with the same arithmetic and order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -82,6 +129,18 @@ then $a=0$ and $b=0$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{W}\;
+\bigl(a+_{\mathbb{W}}b=0 \Longrightarrow (a=0\ \wedge\ b=0)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The only way to sum to zero inside $\mathbb{W}$ is for both summands already
+to be zero.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-w]{Addition on $\mathbb{W}$}
@@ -98,6 +157,13 @@ numbers do not form a ring.
 \hyperref[prf:w-is-not-a-ring]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\mathbb{W},+_{\mathbb{W}},\cdot_{\mathbb{W}},0,1)
+\text{ is not a ring}.
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 The obstruction is not associativity, commutativity, or distributivity. The

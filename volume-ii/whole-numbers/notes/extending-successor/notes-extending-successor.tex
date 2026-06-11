@@ -12,6 +12,17 @@ S_{\mathbb{W}}(n)=S_{\mathbb{N}}(n)\quad(n\in\mathbb{N}).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&S_{\mathbb{W}}:\mathbb{W}\to\mathbb{W},\\
+&S_{\mathbb{W}}(0)=1,\\
+&\forall n\in\mathbb{N}\;
+  \bigl(S_{\mathbb{W}}(n)=S_{\mathbb{N}}(n)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The definition inserts $0$ immediately before the positive chain. After the
 first step, successor is exactly the successor already defined on
@@ -34,6 +45,13 @@ $S_{\mathbb{W}}:\mathbb{W}\to\mathbb{W}$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+S_{\mathbb{W}}\text{ is a well-defined function from }\mathbb{W}
+\text{ to }\mathbb{W}.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The cases are exclusive because $0\notin\mathbb{N}$, and the positive case
 lands in $\mathbb{N}\subseteq\mathbb{W}$.
@@ -53,6 +71,12 @@ There is no $a\in\mathbb{W}$ such that $S_{\mathbb{W}}(a)=0$.
 \hyperref[prf:zero-is-not-successor-in-w]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\neg\exists a\in\mathbb{W}\;\bigl(S_{\mathbb{W}}(a)=0\bigr).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 The new element $0$ is the first element of the extended chain. It is placed
@@ -74,6 +98,14 @@ $b\in\mathbb{W}$ such that $a=S_{\mathbb{W}}(b)$.
 \hyperref[prf:every-nonzero-w-is-successor]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{W}\;
+\bigl(a\neq 0 \Longrightarrow
+\exists b\in\mathbb{W}\;(a=S_{\mathbb{W}}(b))\bigr).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 The element $1$ is the successor of $0$, and every positive natural number
@@ -98,6 +130,13 @@ S_{\mathbb{W}}(a)=S_{\mathbb{W}}(b)\Longrightarrow a=b.
 \hyperref[prf:successor-on-w-injective]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{W}\;
+\bigl(S_{\mathbb{W}}(a)=S_{\mathbb{W}}(b)\Longrightarrow a=b\bigr).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 The extended successor still never merges two inputs. The only new case is the
