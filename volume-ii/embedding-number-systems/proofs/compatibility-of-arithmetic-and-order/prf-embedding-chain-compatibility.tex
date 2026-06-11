@@ -8,24 +8,29 @@
 \end{remark*}
 
 \begin{theorem*}[Compatibility of the Embedding Chain]
-The composite $\Phi=\iota_{4}\circ\iota_{3}\circ\iota_{2}\circ\iota_{1}$ preserves $0$, $1$, addition, multiplication, and order, and sends each $n\in\mathbb{N}$ to the real number identified with $n$.
+Let $\iota_{1}:\mathbb{N}\to\mathbb{W}$, $\iota_{2}:\mathbb{W}\to\mathbb{Z}$, $\iota_{3}:\mathbb{Z}\to\mathbb{Q}$, and $\iota_{4}:\mathbb{Q}\to\mathbb{R}$ be the canonical embeddings. For every $n\in\mathbb{N}$ the composite $(\iota_{4}\circ\iota_{3}\circ\iota_{2}\circ\iota_{1})(n)$ is the real number identified with $n$, and the composite preserves the arithmetic and order carried by the source system. Hence arithmetic computed in any system agrees with arithmetic on its image in $\mathbb{R}$.
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
-\begin{proof}
-TODO
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for embedding-chain-compatibility.
 \end{proof}
 
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for embedding-chain-compatibility.
+\end{proof}
 
 \begin{remark*}[Proof structure]
-Composition of structure-preserving order embeddings is again a structure-preserving order embedding; apply each step's theorem and chase the constants and operations through the composite. The agreement claim is the statement that the diagram of canonical maps commutes.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:n-embeds-in-w]{$\mathbb{N}$ Embeds in $\mathbb{W}$}
+  \item \hyperref[thm:n-embeds-into-w-as-positive-part]{$\mathbb{N}$ Embeds into $\mathbb{W}$ as the Positive Part}
+  \item \hyperref[thm:w-embeds-in-z]{$\mathbb{W}$ Embeds in $\mathbb{Z}$}
+  \item \hyperref[thm:z-embeds-in-q]{$\mathbb{Z}$ Embeds in $\mathbb{Q}$}
   \item \hyperref[thm:q-embeds-in-r]{$\mathbb{Q}$ Embeds in $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
+
+\clearpage

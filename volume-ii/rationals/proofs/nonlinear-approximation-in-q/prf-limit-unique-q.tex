@@ -17,10 +17,9 @@ $\lim_{n\to\infty} x_n = a$ and $\lim_{n\to\infty} x_n = b$
 with $a,b \in \mathbb{Q}$, then $a = b$.
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 % MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
-[Proof (Professional Standard)]
 Suppose $\lim_{n\to\infty} x_n = a$ and $\lim_{n\to\infty} x_n = b$.
 Let $\varepsilon > 0$.
 By convergence to $a$, there exists $N_1 \in \mathbb{N}$ such that
@@ -39,11 +38,8 @@ Since $\varepsilon > 0$ was arbitrary and $|a - b| < \varepsilon$ for all
 $\varepsilon > 0$, we conclude $|a - b| = 0$, hence $a = b$.
 \end{proof}
 
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
-
-
-\begin{proof}[Proof (Detailed Learning)]
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 \textbf{Step 1: Set up the goal.}
 We want to prove $a = b$, or equivalently $|a - b| = 0$.
 Since $|a - b| \geq 0$ always holds, it suffices to show $|a - b| < \varepsilon$

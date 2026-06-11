@@ -6,15 +6,12 @@
 Closed sets are the complements of open sets. They can equivalently be described as the sets that contain all of their limit points, the description used when reasoning about convergence.
 \end{exposition}
 \end{topicbox}
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Closed Set in $\mathbb{R}$)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Closed Set in $\mathbb{R}$)}
 \begin{definition}[Closed Set in $\mathbb{R}$]
 \label{def:closed-set}
 A set $F\subseteq\mathbb{R}$ is \emph{closed} exactly when its complement $\mathbb{R}\setminus F$ is open.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 \[
 F \text{ is closed} \Longleftrightarrow (\mathbb{R}\setminus F) \text{ is open}.
@@ -28,16 +25,13 @@ Closed and open are complementary, not opposite: a set can be both (e.g.\ $\empt
   \item \hyperref[def:open-set]{Open Set in $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Closed Sets Contain Their Limit Points)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Closed Sets Contain Their Limit Points)}
 \begin{theorem}[Closed Sets Contain Their Limit Points]
 \label{thm:closed-iff-contains-limit-points}
 A set $F\subseteq\mathbb{R}$ is closed if and only if it contains every one of its limit points.
 \hyperref[prf:closed-iff-contains-limit-points]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 \begin{remark*}[Standard quantified statement]
 \[
 F \text{ closed} \Longleftrightarrow \forall x\in\mathbb{R}\;\bigl(x \text{ is a limit point of } F \Rightarrow x\in F\bigr).

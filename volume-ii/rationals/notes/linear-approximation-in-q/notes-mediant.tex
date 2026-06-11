@@ -2,17 +2,10 @@
 % The Mediant Property, Farey Sequences, and Stern--Brocot Theory
 % =========================================================
 
-\subsection{The Mediant Property}
+\subsection*{The Mediant Property}
 \label{sec:mediant}
 
-\begin{tcolorbox}[
-  colback=gray!6,
-  colframe=gray!40,
-  arc=2pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  title={\small\textbf{Toolkit: Mediants, Farey Sequences, and Stern--Brocot}},
-  fonttitle=\small\bfseries
-]
+\begin{toolkitbox}{Toolkit: Mediants, Farey Sequences, and Stern--Brocot}
 Once density is known abstractly, it is natural to ask for a \emph{constructive}
 way to produce rationals between two given ones, and to understand the precise
 arithmetic of the gaps between them.  The atomic notions developed here are:
@@ -26,16 +19,13 @@ arithmetic of the gaps between them.  The atomic notions developed here are:
   \item the \textbf{Stern--Brocot tree}, which enumerates all positive rationals
         without repetition.
 \end{itemize}
-\end{tcolorbox}
+\end{toolkitbox}
 
 % ---------------------------------------------------------
-\subsubsection{Mediants}
+\subsubsection*{Mediants}
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Mediant)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Mediant)}
 \begin{definition}[Mediant]
 \label{def:mediant}
 Let $a/b, c/d \in \mathbb{Q}$ with $b, d > 0$.
@@ -44,7 +34,7 @@ The \emph{mediant} of these two fractions is
 \frac{a+c}{b+d}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -99,7 +89,7 @@ a third one between them without appeal to existence arguments.
 \end{itemize}
 \end{remark*}
 
-\begin{remark}[Local versus global density]
+\begin{remark*}[Local versus global density]
 \label{rem:mediant-vs-arch}
 The mediant property is \emph{local}: it refines a given interval by
 inserting a specific rational between two given rationals.
@@ -107,16 +97,13 @@ The Archimedean property is \emph{global}: it says the natural numbers
 eventually exceed any fixed rational.
 Together they describe both the fine structure and the unboundedness of
 $\mathbb{Q}$.
-\end{remark}
+\end{remark*}
 
 % ---------------------------------------------------------
-\subsubsection{Farey Sequences}
+\subsubsection*{Farey Sequences}
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Farey Sequence)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Farey Sequence)}
 \begin{definition}[Farey sequence]
 \label{def:farey-sequence}
 For $n \in \mathbb{N}$, $n \geq 1$, the \emph{Farey sequence of order $n$},
@@ -126,7 +113,7 @@ denoted $F_n$, is the finite sequence of all rational numbers $a/b$ satisfying
 \]
 arranged in strictly increasing order.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -161,10 +148,7 @@ determinant condition.
 \end{remark*}
 
 % ----- thm:farey-neighbor-theorem -----
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Farey Neighbor Theorem)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Farey Neighbor Theorem)}
 \begin{theorem}[Farey Neighbor Theorem]
 \label{thm:farey-neighbor-theorem}
 Let $a/b < c/d$ be two consecutive fractions in the Farey sequence $F_n$,
@@ -174,7 +158,7 @@ bc - ad = 1.
 \]
 \hyperref[prf:farey-neighbor-theorem]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -185,15 +169,6 @@ bc - ad = 1.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
-The determinant $bc - ad$ measures the ``arithmetic distance'' between two
-reduced fractions.  For consecutive Farey neighbors this quantity is always
-exactly $1$ — the smallest it can be for distinct reduced fractions with
-positive denominators.  This is why Farey neighbors are best approximations
-within their denominator range: no reduced fraction with smaller denominator
-can fit between them.
-\end{remark*}
-
 \begin{remark*}[Negated quantified statement]
 \[
 \exists \tfrac{a}{b}, \tfrac{c}{d} \in F_n,\quad
@@ -201,6 +176,15 @@ can fit between them.
 \;\land\; bc - ad \neq 1.
 \]
 This negation is false: the theorem asserts the determinant is always $1$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The determinant $bc - ad$ measures the ``arithmetic distance'' between two
+reduced fractions.  For consecutive Farey neighbors this quantity is always
+exactly $1$ — the smallest it can be for distinct reduced fractions with
+positive denominators.  This is why Farey neighbors are best approximations
+within their denominator range: no reduced fraction with smaller denominator
+can fit between them.
 \end{remark*}
 
 \begin{remark*}[Dependencies]
@@ -315,7 +299,7 @@ denominators.
 \end{remark*}
 
 % ---------------------------------------------------------
-\subsubsection{The Stern--Brocot Tree}
+\subsubsection*{The Stern--Brocot Tree}
 % ---------------------------------------------------------
 
 \begin{theorem}[Stern--Brocot enumeration]
@@ -351,11 +335,11 @@ analogous to the Euclidean algorithm.
 \end{itemize}
 \end{remark*}
 
-\begin{remark}[The Farey--Stern--Brocot connection]
+\begin{remark*}[The Farey--Stern--Brocot connection]
 The determinant condition $bc - ad = 1$ is the arithmetic shadow of the
 Stern--Brocot tree.  Adjacent fractions in the tree always satisfy this
 condition, and the mediant inserts the unique next fraction between them.
 This is why the Farey gap formula $c/d - a/b = 1/(bd)$ and the Mediant
 Gap Lemma control approximation errors so precisely: the entire arithmetic
 structure of the tree is encoded in a single determinant identity.
-\end{remark}
+\end{remark*}

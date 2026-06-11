@@ -6,21 +6,18 @@
 This section fixes the canonical embedding of $\mathbb{Z}$ into $\mathbb{Q}$ and records that it is injective, structure-preserving, and order-reflecting. The map is the bridge that lets elements of $\mathbb{Z}$ be regarded as elements of $\mathbb{Q}$ after identification.
 \end{exposition}
 \end{topicbox}
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Embedding $\mathbb{Z}$ into $\mathbb{Q}$)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Embedding $\mathbb{Z}$ into $\mathbb{Q}$)}
 \begin{definition}[Embedding $\mathbb{Z}$ into $\mathbb{Q}$]
 \label{def:embedding-z-into-q}
 The \emph{canonical embedding} $\iota:\mathbb{Z}\to \mathbb{Q}$ is defined by
 \[
-\iota(z)=\left[(z,1)\right] \quad(\text{the fraction class } z/1).
+\iota(z)=\left[(z,1)\right] \quad(\text{the rational represented by } z/1).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 \[
-\iota:\mathbb{Z}\to \mathbb{Q},\qquad \iota(z)=\left[(z,1)\right] \quad(\text{the fraction class } z/1).
+\iota:\mathbb{Z}\to \mathbb{Q},\qquad \iota(z)=\left[(z,1)\right] \quad(\text{the rational represented by } z/1).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -28,20 +25,17 @@ The map sends each element of $\mathbb{Z}$ to its natural representative in $\ma
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: link to the construction of $\mathbb{Q}$ as fraction classes of integers.
+  \item \hyperref[def:rational-numbers]{Construction of $\mathbb{Q}$ as fraction classes of integers}
   \item \hyperref[def:number-system-embedding]{Embedding of Number Systems}
 \end{itemize}
 \end{dependencies}
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem ($\mathbb{Z}$ Embeds in $\mathbb{Q}$)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem ($\mathbb{Z}$ Embeds in $\mathbb{Q}$)}
 \begin{theorem}[$\mathbb{Z}$ Embeds in $\mathbb{Q}$]
 \label{thm:z-embeds-in-q}
 The canonical map $\iota:\mathbb{Z}\to \mathbb{Q}$ is an embedding of ordered arithmetic systems: it is injective, preserves $0$, $1$, addition, and multiplication, and reflects the order.
 \hyperref[prf:z-embeds-in-q]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 \begin{remark*}[Standard quantified statement]
 \[
 \iota:\mathbb{Z}\to \mathbb{Q} \text{ is injective, structure-preserving, and order-reflecting.}
@@ -52,7 +46,7 @@ Once this theorem is proved, the identification theorem of \S\ref{sec:embeddings
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: link to the construction of $\mathbb{Q}$ as fraction classes of integers.
+  \item \hyperref[def:rational-numbers]{Construction of $\mathbb{Q}$ as fraction classes of integers}
   \item \hyperref[def:embedding-z-into-q]{Embedding $\mathbb{Z}$ into $\mathbb{Q}$}
   \item \hyperref[thm:embedding-identifies-with-image]{Embeddings Identify a System with Its Image}
 \end{itemize}

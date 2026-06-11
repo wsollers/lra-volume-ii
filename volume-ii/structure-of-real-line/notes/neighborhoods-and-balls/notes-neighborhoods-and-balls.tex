@@ -6,10 +6,7 @@
 On the line, the ball of radius $r$ about a point is an open interval centered at that point. Neighborhoods are sets that contain such a ball. These are the local objects from which open sets are assembled.
 \end{exposition}
 \end{topicbox}
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Open Ball on the Real Line)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Open Ball on the Real Line)}
 \begin{definition}[Open Ball on the Real Line]
 \label{def:open-ball}
 Let $x\in\mathbb{R}$ and $r>0$. The \emph{open ball} of radius $r$ about $x$ is
@@ -17,7 +14,7 @@ Let $x\in\mathbb{R}$ and $r>0$. The \emph{open ball} of radius $r$ about $x$ is
 B_{r}(x)=\{\,y\in\mathbb{R} : |y-x|<r\,\}=(x-r,\,x+r).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 \[
 B_{r}(x)=\{\,y\in\mathbb{R} : d(y,x)<r\,\}=(x-r,x+r).
@@ -32,15 +29,12 @@ A ball on the line is just a symmetric open interval: all points strictly within
   \item \hyperref[def:open-interval]{Open Interval}
 \end{itemize}
 \end{dependencies}
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Neighborhood of a Point)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Neighborhood of a Point)}
 \begin{definition}[Neighborhood of a Point]
 \label{def:neighborhood}
 A set $N\subseteq\mathbb{R}$ is a \emph{neighborhood} of $x\in\mathbb{R}$ exactly when there exists $r>0$ with $B_{r}(x)\subseteq N$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 \[
 N \text{ is a neighborhood of } x \Longleftrightarrow \exists r>0\;(B_{r}(x)\subseteq N).

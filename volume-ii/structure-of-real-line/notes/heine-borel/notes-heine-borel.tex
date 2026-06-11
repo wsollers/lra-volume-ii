@@ -6,16 +6,13 @@
 Heine--Borel closes the chapter by proving the converse direction: on $\mathbb{R}$, closed and bounded is enough for compactness. The keystone is that every closed bounded interval $[a,b]$ is compact; the general statement follows because a closed subset of a compact set is compact.
 \end{exposition}
 \end{topicbox}
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Closed Bounded Intervals Are Compact)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Closed Bounded Intervals Are Compact)}
 \begin{theorem}[Closed Bounded Intervals Are Compact]
 \label{thm:closed-bounded-interval-compact}
 Every closed bounded interval $[a,b]\subseteq\mathbb{R}$ is compact.
 \hyperref[prf:closed-bounded-interval-compact]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 \begin{remark*}[Interpretation]
 This is the hard half. The standard proof uses completeness directly: let $S$ be the set of $x\in[a,b]$ such that $[a,x]$ has a finite subcover, and show $\sup S=b$ is attained. Bisection (the nested-interval method) gives the same result. Either route shows completeness is what makes the line compact in the large.
 \end{remark*}
@@ -23,19 +20,17 @@ This is the hard half. The standard proof uses completeness directly: let $S$ be
 \begin{itemize}
   \item \hyperref[def:compact-set]{Compact Set in $\mathbb{R}$}
   \item \hyperref[def:closed-interval]{Closed Interval}
-  \item TODO: link to the Least Upper Bound Property / Nested Interval Property.
+  \item \hyperref[thm:dedekind-complete]{Dedekind Completeness of $\mathbb{R}$}
+  \item \hyperref[thm:cantor-nested]{Cantor Nested Interval Principle}
 \end{itemize}
 \end{dependencies}
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Heine--Borel Theorem for $\mathbb{R}$)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Heine--Borel Theorem for $\mathbb{R}$)}
 \begin{theorem}[Heine--Borel Theorem for $\mathbb{R}$]
 \label{thm:heine-borel}
 A set $K\subseteq\mathbb{R}$ is compact if and only if $K$ is closed and bounded.
 \hyperref[prf:heine-borel]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 \begin{remark*}[Standard quantified statement]
 \[
 K \text{ compact} \Longleftrightarrow (K \text{ closed} \land K \text{ bounded}).

@@ -15,9 +15,9 @@ such that
 \]
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 % MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
 Let $q\in\mathbb{Q}$ and let $\varepsilon>0$. By
 \hyperref[lem:rational-upper-lower-perturbation]{Lemma~\ref*{lem:rational-upper-lower-perturbation}},
 there exist rational numbers $r,s\in\mathbb{Q}$ such that
@@ -39,9 +39,30 @@ Therefore
 Since $r\in\mathbb{Q}$, this proves the claim.
 \end{proof}
 
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+We expand the professional proof by following the same sequence of justified moves.
 
+Let $q\in\mathbb{Q}$ and let $\varepsilon>0$. By
+\hyperref[lem:rational-upper-lower-perturbation]{Lemma~\ref*{lem:rational-upper-lower-perturbation}},
+there exist rational numbers $r,s\in\mathbb{Q}$ such that
+\[
+q-\varepsilon<r<q<s<q+\varepsilon.
+\]
+We may use the point $r$. Since $r<q$, we have
+\[
+0<q-r<\varepsilon.
+\]
+Because $r-q<0$, the definition of absolute value gives
+\[
+|r-q|=q-r.
+\]
+Therefore
+\[
+0<|r-q|<\varepsilon.
+\]
+Since $r\in\mathbb{Q}$, this proves the claim.
+\end{proof}
 
 \begin{remark*}[Proof structure]
 The upper/lower perturbation lemma already gives rational points strictly on

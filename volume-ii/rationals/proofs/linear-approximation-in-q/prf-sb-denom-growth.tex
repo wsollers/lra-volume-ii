@@ -17,10 +17,9 @@ the successive endpoint fractions form a strictly increasing sequence
 tending to infinity.
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 % MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
-[Proof (Professional Standard)]
 At each step, the path occupies an interval $[a_n/b_n, c_n/d_n]$ where
 $b_n c_n - a_n d_n = 1$ by the Farey Neighbor Theorem.  The mediant
 inserted at step $n+1$ has denominator $b_n + d_n$.  One endpoint of the
@@ -34,11 +33,8 @@ Since they are positive integers and strictly increasing, they are
 unbounded: $b_n \to \infty$.
 \end{proof}
 
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
-
-
-\begin{proof}[Proof (Detailed Learning)]
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 \textbf{Step 1: State the inductive claim.}
 We show that if the current boundary fractions are $a_n/b_n$ and
 $c_n/d_n$ with $b_n, d_n \geq 1$, then after one mediant insertion the

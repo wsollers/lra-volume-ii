@@ -6,10 +6,7 @@
 The absolute value of a difference turns $\mathbb{R}$ into a metric space. Length of an interval is the distance between its endpoints. These are the quantitative tools underneath every later definition of nearness.
 \end{exposition}
 \end{topicbox}
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Distance on the Real Line)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Distance on the Real Line)}
 \begin{definition}[Distance on the Real Line]
 \label{def:distance-on-real-line}
 The \emph{distance} on $\mathbb{R}$ is the map $d:\mathbb{R}\times\mathbb{R}\to\mathbb{R}$ given by
@@ -17,7 +14,7 @@ The \emph{distance} on $\mathbb{R}$ is the map $d:\mathbb{R}\times\mathbb{R}\to\
 d(x,y)=|x-y|.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 \[
 \forall x,y\in\mathbb{R}\;(d(x,y)=|x-y|).
@@ -28,13 +25,10 @@ The distance between two points is the length of the segment joining them. It is
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: link to the definition of absolute value on $\mathbb{R}$.
+  \item \hyperref[thm:men-absolute-value-properties]{Absolute Value Properties}
 \end{itemize}
 \end{dependencies}
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Length of a Bounded Interval)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Length of a Bounded Interval)}
 \begin{definition}[Length of a Bounded Interval]
 \label{def:length-of-interval}
 Let $a,b\in\mathbb{R}$ with $a\le b$. The \emph{length} of any bounded interval with endpoints $a$ and $b$ is
@@ -42,7 +36,7 @@ Let $a,b\in\mathbb{R}$ with $a\le b$. The \emph{length} of any bounded interval 
 \ell=b-a.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 \begin{remark*}[Interpretation]
 Length depends only on the endpoints, not on whether they are included. It is the distance $d(a,b)$ and measures the size of the basic pieces of the line.
 \end{remark*}
@@ -51,16 +45,13 @@ Length depends only on the endpoints, not on whether they are included. It is th
   \item \hyperref[def:distance-on-real-line]{Distance on the Real Line}
 \end{itemize}
 \end{dependencies}
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (The Distance Function Is a Metric)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (The Distance Function Is a Metric)}
 \begin{theorem}[The Distance Function Is a Metric]
 \label{thm:distance-is-a-metric}
 The map $d(x,y)=|x-y|$ satisfies, for all $x,y,z\in\mathbb{R}$: (i) $d(x,y)\ge 0$ with $d(x,y)=0$ iff $x=y$; (ii) $d(x,y)=d(y,x)$; and (iii) $d(x,z)\le d(x,y)+d(y,z)$. Hence $(\mathbb{R},d)$ is a metric space.
 \hyperref[prf:distance-is-a-metric]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 \begin{remark*}[Standard quantified statement]
 \[
 \forall x,y,z\in\mathbb{R}\;\bigl(d(x,y)\ge 0\ \land\ (d(x,y)=0\Leftrightarrow x=y)\ \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\le d(x,y)+d(y,z)\bigr).
@@ -72,6 +63,6 @@ The three metric axioms are exactly the properties of $|\cdot|$: nonnegativity w
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:distance-on-real-line]{Distance on the Real Line}
-  \item TODO: link to the triangle inequality for absolute value.
+  \item \hyperref[thm:men-absolute-value-properties]{Triangle Inequality for Absolute Value}
 \end{itemize}
 \end{dependencies}

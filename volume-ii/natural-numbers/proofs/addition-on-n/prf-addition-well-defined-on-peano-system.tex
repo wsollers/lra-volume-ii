@@ -7,7 +7,9 @@
 \hyperref[thm:addition-well-defined-on-peano-system]{Return to Theorem}
 \end{remark*}
 
+\begin{remark*}[Proof status]
 \ProofVaultURL{https://github.com/wsollers/lra-proof-vault/tree/master/volume-ii/natural-numbers/thm-addition-well-defined-on-peano-system}
+\end{remark*}
 
 \begin{theorem*}[Addition Is Well-Defined on a Peano System]
 Let $(P,S,1)$ be a Peano system. For every $m \in P$, there exists a unique
@@ -28,8 +30,8 @@ Consequently the rule
 defines a unique binary operation on $P$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Fix $m\in P$. Since $(P,S,1)$ is a Peano system, $S:P\to P$ is a function.
 By closure under successor, $S(m)\in P$. Thus $(P,S(m),S)$ is iterator data
 for $(P,S,1)$. By the Peano Iterator Theorem, there exists a unique function
@@ -58,8 +60,8 @@ pair uniquely determined. Hence the displayed rule defines a unique binary
 operation on $P$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 \textbf{Step 1. Fix the left input.}
 Let $m\in P$ be fixed. Addition is constructed by holding this left input
 constant and recursively defining the right-input function.

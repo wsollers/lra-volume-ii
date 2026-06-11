@@ -14,8 +14,8 @@ For every $q\in\mathbb{Q}$ with $q>0$, there exists $r\in\mathbb{Q}$ such that
 \]
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $q\in\mathbb{Q}$ with
 \[
 q>0.
@@ -72,7 +72,43 @@ positive rational can be smallest: one can always move halfway toward $0$.
 \end{itemize}
 \end{dependencies}
 
-\textbf{Detailed Learning Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-TODO: Expand the proof into a detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+We expand the professional proof by following the same sequence of justified moves.
 
+Let $q\in\mathbb{Q}$ with
+\[
+q>0.
+\]
+Set
+\[
+r:=\frac{q}{2}.
+\]
+Since $\mathbb{Q}$ is closed under division by the nonzero rational number
+$2$, we have
+\[
+r\in\mathbb{Q}.
+\]
+
+Because $q>0$ and $2>0$, division by the positive rational number $2$
+preserves positivity.  Hence
+\[
+0<\frac{q}{2}=r.
+\]
+
+Also, multiplying the inequality $0<q$ by the positive rational number
+$\frac{1}{2}$ gives
+\[
+0<\frac{q}{2}<q.
+\]
+Thus
+\[
+0<r<q.
+\]
+
+Therefore there exists a rational number $r$ such that
+\[
+0<r<q,
+\]
+as required.
+\end{proof}

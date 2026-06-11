@@ -16,8 +16,8 @@ For every $a,b,c,d\in\mathbb{Q}$ with $b\neq 0$ and $d\neq 0$,
 \]
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Set
 \[
 x:=\frac{a}{b}\cdot\frac{c}{d}.
@@ -81,7 +81,52 @@ structure of $\mathbb{Q}$ and the defining property of quotients.
 \end{itemize}
 \end{dependencies}
 
-\textbf{Detailed Learning Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-TODO: Expand the proof into a detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+We expand the professional proof by following the same sequence of justified moves.
 
+Set
+\[
+x:=\frac{a}{b}\cdot\frac{c}{d}.
+\]
+We show that $x$ satisfies the defining equation for
+\[
+\frac{a\cdot c}{b\cdot d}.
+\]
+Since $b\neq 0$ and $d\neq 0$, the product $bd$ is nonzero in the field
+$\mathbb{Q}$.  Multiply by $bd$:
+\[
+(bd)x=(bd)\left(\frac{a}{b}\cdot\frac{c}{d}\right).
+\]
+By associativity and commutativity of multiplication,
+\[
+(bd)\left(\frac{a}{b}\cdot\frac{c}{d}\right)
+=
+\left(b\frac{a}{b}\right)\left(d\frac{c}{d}\right).
+\]
+By the definition of division,
+\[
+b\frac{a}{b}=a
+\qquad\text{and}\qquad
+d\frac{c}{d}=c.
+\]
+Therefore
+\[
+(bd)x=a\cdot c.
+\]
+By the definition of division in $\mathbb{Q}$, the unique rational number
+whose product with $bd$ equals $a\cdot c$ is
+\[
+\frac{a\cdot c}{b\cdot d}.
+\]
+Hence
+\[
+x=\frac{a\cdot c}{b\cdot d},
+\]
+that is,
+\[
+\frac{a}{b}\cdot\frac{c}{d}
+=
+\frac{a\cdot c}{b\cdot d}.
+\]
+\end{proof}

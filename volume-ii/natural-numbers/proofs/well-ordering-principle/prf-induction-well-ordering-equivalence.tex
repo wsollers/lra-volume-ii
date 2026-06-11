@@ -8,22 +8,28 @@
 \end{remark*}
 
 \begin{theorem*}[Induction and Well-Ordering Are Equivalent]
-Let $(P,S,1)$ be a Peano system equipped with the order $\le$. The induction
-principle and the well-ordering principle are equivalent over $P$.
+Let $(P,S,1)$ be a Peano system equipped with the order $\le$. The following
+are equivalent:
+\begin{enumerate}
+  \item The induction principle: for every predicate $\varphi$ on $P$, if
+  $\varphi(1)$ holds and the successor step holds, then $\varphi(n)$ holds
+  for all $n \in P$.
+  \item The well-ordering principle: every nonempty subset of $P$ has a least
+  element with respect to $\le$.
+\end{enumerate}
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
-TODO.
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for induction-well-ordering-equivalence.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
-TODO.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for induction-well-ordering-equivalence.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-TODO.
 \end{remark*}
 
 \begin{dependencies}
@@ -32,3 +38,5 @@ TODO.
   \item \hyperref[thm:well-ordering-principle]{Well-Ordering Principle}
 \end{itemize}
 \end{dependencies}
+
+\clearpage

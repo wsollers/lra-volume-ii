@@ -15,8 +15,8 @@ $a,b\in\mathbb{Z}$. Then
 \]
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 We split according to the sign of $b$.
 
 If $b=0$, then
@@ -61,7 +61,31 @@ for positive powers and inversion for negative powers.
 \end{itemize}
 \end{dependencies}
 
-\textbf{Detailed Learning Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-TODO: Expand the proof into a detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+We expand the professional proof by following the same sequence of justified moves.
 
+We split according to the sign of $b$.
+
+If $b=0$, then
+\[
+(q^a)^0=1=q^0=q^{a\cdot 0}.
+\]
+
+If $b=n>0$, we argue by induction on $n$.  For $n=1$ the identity is
+\[
+(q^a)^1=q^a=q^{a\cdot 1}.
+\]
+Assume $(q^a)^n=q^{an}$.  Then
+\[
+(q^a)^{n+1}=(q^a)^n q^a=q^{an}q^a=q^{an+a}=q^{a(n+1)},
+\]
+using the induction hypothesis and the integer exponent addition law.
+
+Finally, let $b=-n$ with $n>0$.  Then
+\[
+(q^a)^b=(q^a)^{-n}=((q^a)^{-1})^n=(q^{-a})^n=q^{(-a)n}=q^{a(-n)}=q^{ab},
+\]
+using the theorem on negative exponents and the already established
+positive-exponent case.
+\end{proof}

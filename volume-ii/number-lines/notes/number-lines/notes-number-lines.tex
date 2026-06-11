@@ -1,15 +1,9 @@
-\section{Number Lines}
-\label{sec:number-lines}
-
 \begin{topicbox}{The Geometric Model of an Ordered System}
 \begin{exposition}
 A number line is the geometric realization of a linearly ordered system: points on a line arranged so that ``left of'' matches the order. The construction so far is algebraic; the number line is the picture that accompanies it, and it becomes exact for $\mathbb{R}$.
 \end{exposition}
 \end{topicbox}
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Number Line)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Number Line)}
 \begin{definition}[Number Line]
 \label{def:number-line}
 A \emph{number line} for a linearly ordered system $(A,<_A)$ is a linearly ordered set of points $L$ together with an order isomorphism $\lambda:A\to L$, so that for all $a,a'\in A$,
@@ -17,7 +11,7 @@ A \emph{number line} for a linearly ordered system $(A,<_A)$ is a linearly order
 a<_A a' \Longleftrightarrow \lambda(a) \text{ lies to the left of } \lambda(a').
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 \[
 \lambda:A\to L \text{ is a bijection with } \forall a,a'\in A\;(a<_A a'\Leftrightarrow \lambda(a)\prec\lambda(a')).

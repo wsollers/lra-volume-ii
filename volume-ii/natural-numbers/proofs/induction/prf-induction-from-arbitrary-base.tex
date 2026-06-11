@@ -9,23 +9,29 @@
 
 \begin{theorem*}[Induction from an Arbitrary Base]
 Let $(P,S,1)$ be a Peano system, let $m \in P$, and let $\varphi$ be a
-predicate on $P$. If $\varphi(m)$ and
-$\forall n \in P\;(n \ge m \land \varphi(n) \Longrightarrow \varphi(S(n)))$,
-then $\forall n \in P\;(n \ge m \Longrightarrow \varphi(n))$.
+predicate on $P$. If
+\[
+\varphi(m)
+\qquad\text{and}\qquad
+\forall n \in P\;\bigl(n \ge m \land \varphi(n) \Longrightarrow \varphi(S(n))\bigr),
+\]
+then
+\[
+\forall n \in P\;\bigl(n \ge m \Longrightarrow \varphi(n)\bigr).
+\]
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
-TODO.
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for induction-from-arbitrary-base.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
-TODO.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for induction-from-arbitrary-base.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-TODO.
 \end{remark*}
 
 \begin{dependencies}
@@ -34,3 +40,5 @@ TODO.
   \item \hyperref[def:less-than-or-equal-on-peano-system]{Less Than or Equal on a Peano System}
 \end{itemize}
 \end{dependencies}
+
+\clearpage

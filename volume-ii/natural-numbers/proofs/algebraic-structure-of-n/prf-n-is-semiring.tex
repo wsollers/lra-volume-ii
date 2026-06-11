@@ -7,24 +7,29 @@
 \hyperref[thm:n-is-semiring]{Return to Theorem}
 \end{remark*}
 
-\begin{theorem*}[$\mathbb{N}$ Is a Semiring]
-Let $(P,S,1)$ be a Peano system. The system $(P,+,\cdot)$ is a semiring:
-$(P,+)$ is a commutative semigroup, $(P,\cdot,1)$ is a commutative monoid,
-and multiplication distributes over addition on both sides.
+\begin{theorem*}[$N$ Is a Semiring]
+Let $(P,S,1)$ be a Peano system. Then $(P,+,\cdot)$ satisfies:
+\begin{enumerate}
+  \item $(P,+)$ is a commutative semigroup.
+  \item $(P,\cdot,1)$ is a commutative monoid.
+  \item Multiplication distributes over addition: for all $a,b,c \in P$,
+  \[
+  a \cdot (b+c) = (a \cdot b) + (a \cdot c).
+  \]
+\end{enumerate}
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
-TODO.
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for n-is-semiring.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
-TODO.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for n-is-semiring.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-TODO.
 \end{remark*}
 
 \begin{dependencies}
@@ -34,3 +39,5 @@ TODO.
   \item \hyperref[thm:multiplication-distributes-over-addition]{Multiplication Distributes Over Addition}
 \end{itemize}
 \end{dependencies}
+
+\clearpage

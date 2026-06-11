@@ -6,10 +6,7 @@
 A limit point of $E$ is one that $E$ crowds arbitrarily closely, even with the point itself removed. An isolated point of $E$ belongs to $E$ but has a ball meeting $E$ only at itself. These notions drive the convergence description of closed sets.
 \end{exposition}
 \end{topicbox}
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Limit Point)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Limit Point)}
 \begin{definition}[Limit Point]
 \label{def:limit-point}
 Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is a \emph{limit point} of $E$ exactly when
@@ -17,7 +14,7 @@ Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is a \emph{limit point
 \forall r>0\;\exists y\in E\;\bigl(0<|y-x|<r\bigr).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 \[
 x \text{ is a limit point of } E \Longleftrightarrow \forall r>0\;\exists y\in E\;(0<|y-x|<r).
@@ -36,10 +33,7 @@ Every punctured ball around a limit point meets $E$: the set accumulates at $x$.
   \item \hyperref[def:open-ball]{Open Ball on the Real Line}
 \end{itemize}
 \end{dependencies}
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Isolated Point)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Isolated Point)}
 \begin{definition}[Isolated Point]
 \label{def:isolated-point}
 Let $E\subseteq\mathbb{R}$ and $x\in E$. Then $x$ is an \emph{isolated point} of $E$ exactly when
@@ -47,7 +41,7 @@ Let $E\subseteq\mathbb{R}$ and $x\in E$. Then $x$ is an \emph{isolated point} of
 \exists r>0\;\forall y\in E\;\bigl(|y-x|<r \Rightarrow y=x\bigr).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 \begin{remark*}[Interpretation]
 An isolated point sits in $E$ but stands apart: some ball around it contains no other point of $E$. A point of $E$ is either isolated or a limit point of $E$, never both.
 \end{remark*}

@@ -16,8 +16,8 @@ For every $a,b,c,d\in\mathbb{Q}$ with $b\neq 0$ and $d\neq 0$,
 \]
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Set
 \[
 x:=\frac{a}{b}-\frac{c}{d}.
@@ -77,7 +77,45 @@ matching.
 \end{itemize}
 \end{dependencies}
 
-\textbf{Detailed Learning Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-TODO: Expand the proof into a detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+We expand the professional proof by following the same sequence of justified moves.
 
+Set
+\[
+x:=\frac{a}{b}-\frac{c}{d}.
+\]
+As in the addition theorem, it is enough to show that $x$ is the unique
+rational number whose product with $bd$ equals $ad-bc$.  Since $b\neq 0$ and
+$d\neq 0$, also $bd\neq 0$.  Multiply by $bd$:
+\[
+(bd)x=(bd)\frac{a}{b}-(bd)\frac{c}{d}.
+\]
+By associativity and commutativity,
+\[
+(bd)\frac{a}{b}=d\Bigl(b\frac{a}{b}\Bigr)=d\cdot a=a\cdot d
+\]
+and
+\[
+(bd)\frac{c}{d}=b\Bigl(d\frac{c}{d}\Bigr)=b\cdot c.
+\]
+Therefore
+\[
+(bd)x=a\cdot d-b\cdot c.
+\]
+By the definition of division in $\mathbb{Q}$, the unique rational number
+whose product with $bd$ equals $a\cdot d-b\cdot c$ is
+\[
+\frac{a\cdot d-b\cdot c}{b\cdot d}.
+\]
+Hence
+\[
+x=\frac{a\cdot d-b\cdot c}{b\cdot d},
+\]
+so
+\[
+\frac{a}{b}-\frac{c}{d}
+=
+\frac{a\cdot d-b\cdot c}{b\cdot d}.
+\]
+\end{proof}

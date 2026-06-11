@@ -16,10 +16,9 @@ Let $(x_n)$ be a sequence of rational numbers with $x_n \to a \in \mathbb{Q}$.
 Then every subsequence $(x_{k_n})$ converges to $a$.
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 % MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
-[Proof (Professional Standard)]
 Let $(x_{k_n})$ be any subsequence of $(x_n)$.  Let $\varepsilon > 0$.
 Since $x_n \to a$, there exists $N \in \mathbb{N}$ such that
 $|x_n - a| < \varepsilon$ for all $n \geq N$.
@@ -32,11 +31,8 @@ $|x_{k_n} - a| < \varepsilon$.
 Since $\varepsilon > 0$ was arbitrary, $x_{k_n} \to a$.
 \end{proof}
 
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
-
-
-\begin{proof}[Proof (Detailed Learning)]
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 \textbf{Step 1: Establish the key lemma $k_n \geq n$.}
 We prove by induction that $k_n \geq n$ for all $n \in \mathbb{N}$.
 

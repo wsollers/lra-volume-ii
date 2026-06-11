@@ -16,8 +16,8 @@ a\cdot d<b\cdot c.
 \]
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $a,b,c,d\in F$ with
 \[
 b\neq 0,\qquad d\neq 0,\qquad 0<b\cdot d.
@@ -106,7 +106,76 @@ of the general comparison law.
 \end{itemize}
 \end{dependencies}
 
-\textbf{Detailed Learning Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-TODO: Expand the proof into a detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+We expand the professional proof by following the same sequence of justified moves.
 
+Let $a,b,c,d\in F$ with
+\[
+b\neq 0,\qquad d\neq 0,\qquad 0<b\cdot d.
+\]
+By
+\hyperref[thm:fraction-order-comparison-general]{Theorem~\ref*{thm:fraction-order-comparison-general}},
+we have
+\[
+\frac{a}{b}<\frac{c}{d}
+\quad\Longleftrightarrow\quad
+(a\cdot d)\cdot(b\cdot d)<(b\cdot c)\cdot(b\cdot d).
+\]
+Thus it remains to show that, under the hypothesis $0<b\cdot d$, the latter
+inequality is equivalent to
+\[
+a\cdot d<b\cdot c.
+\]
+
+Since $0<b\cdot d$, multiplication by the positive element $b\cdot d$
+preserves order.  Therefore, if
+\[
+a\cdot d<b\cdot c,
+\]
+then by
+\hyperref[thm:multiply-positive]{Theorem~\ref*{thm:multiply-positive}},
+\[
+(a\cdot d)\cdot(b\cdot d)<(b\cdot c)\cdot(b\cdot d).
+\]
+
+Conversely, suppose that
+\[
+(a\cdot d)\cdot(b\cdot d)<(b\cdot c)\cdot(b\cdot d).
+\]
+Because $b\cdot d>0$, its inverse is positive by
+\hyperref[thm:inverse-positive]{Theorem~\ref*{thm:inverse-positive}}:
+\[
+(b\cdot d)^{-1}>0.
+\]
+Applying
+\hyperref[thm:multiply-positive]{Theorem~\ref*{thm:multiply-positive}}
+to the displayed inequality with positive multiplier $(b\cdot d)^{-1}$, we
+obtain
+\[
+\bigl((a\cdot d)\cdot(b\cdot d)\bigr)(b\cdot d)^{-1}
+<
+\bigl((b\cdot c)\cdot(b\cdot d)\bigr)(b\cdot d)^{-1}.
+\]
+Associativity gives
+\[
+(a\cdot d)\bigl((b\cdot d)(b\cdot d)^{-1}\bigr)
+<
+(b\cdot c)\bigl((b\cdot d)(b\cdot d)^{-1}\bigr),
+\]
+so
+\[
+(a\cdot d)\cdot 1<(b\cdot c)\cdot 1.
+\]
+Hence
+\[
+a\cdot d<b\cdot c.
+\]
+
+Combining the two equivalences,
+\[
+\frac{a}{b}<\frac{c}{d}
+\quad\Longleftrightarrow\quad
+a\cdot d<b\cdot c.
+\]
+\end{proof}

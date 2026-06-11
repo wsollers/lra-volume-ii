@@ -11,8 +11,8 @@
 If $a>0$, then $a^{-1}>0$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $F$ be an ordered field, and suppose that $a>0$.  Since $F$ is a field
 and $a\neq 0$, the multiplicative inverse $a^{-1}$ exists.
 
@@ -82,7 +82,60 @@ trichotomy and nonzeroness of inverses, it must be positive.
 \end{itemize}
 \end{dependencies}
 
-\textbf{Detailed Learning Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-TODO: Expand the proof into a detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+We expand the professional proof by following the same sequence of justified moves.
 
+Let $F$ be an ordered field, and suppose that $a>0$.  Since $F$ is a field
+and $a\neq 0$, the multiplicative inverse $a^{-1}$ exists.
+
+We claim that $a^{-1}>0$.  Suppose, for contradiction, that
+\[
+a^{-1}<0.
+\]
+By adding $-a^{-1}$ to both sides, we obtain
+\[
+0<-a^{-1}.
+\]
+Now $0<a$ and $0<-a^{-1}$, so applying the order axiom for multiplication by
+a positive element to the inequality
+\[
+0<-a^{-1}
+\]
+with multiplier $a$, we get
+\[
+0\cdot a<(-a^{-1})\cdot a.
+\]
+Thus
+\[
+0<a(-a^{-1}).
+\]
+Since
+\[
+a(-a^{-1})=-(aa^{-1})=-1,
+\]
+it follows that
+\[
+0<-1.
+\]
+Adding $1$ to both sides yields
+\[
+1<0.
+\]
+Now multiply the inequality $1<0$ by the positive element $a$.  Again by the
+order axiom for multiplication by a positive element,
+\[
+1\cdot a<0\cdot a.
+\]
+Hence
+\[
+a<0,
+\]
+which contradicts the assumption that $a>0$.
+
+Therefore our assumption $a^{-1}<0$ was false.  Since $a^{-1}\neq 0$, the
+trichotomy law in the ordered field implies that
+\[
+a^{-1}>0.
+\]
+\end{proof}

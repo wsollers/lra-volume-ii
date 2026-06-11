@@ -1,9 +1,6 @@
 \subsection*{The Extended Order}
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Order on \texorpdfstring{$\mathbb{W}$}{W})}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Order on \texorpdfstring{$\mathbb{W}$}{W})}
 \begin{definition}[Order on $\mathbb{W}$]
 \label{def:order-on-w}
 Define $\leq_{\mathbb{W}}$ on $\mathbb{W}$ by declaring
@@ -17,7 +14,7 @@ a\leq_{\mathbb{W}}b
 a\leq_{\mathbb{N}}b.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -26,10 +23,7 @@ a\leq_{\mathbb{N}}b.
 \end{itemize}
 \end{dependencies}
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Strict Order on \texorpdfstring{$\mathbb{W}$}{W})}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Strict Order on \texorpdfstring{$\mathbb{W}$}{W})}
 \begin{definition}[Strict Order on $\mathbb{W}$]
 \label{def:strict-order-on-w}
 Define $<_{\mathbb{W}}$ on $\mathbb{W}$ by declaring
@@ -44,7 +38,7 @@ a<_{\mathbb{N}}b.
 \]
 No element of $\mathbb{W}$ is strictly less than $0$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Interpretation]
 The non-strict order makes $0$ least. The strict order says exactly that the
@@ -58,10 +52,7 @@ positive natural numbers lie after $0$ and keep their old strict ordering.
 \end{itemize}
 \end{dependencies}
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Extends Order on \texorpdfstring{$\mathbb{N}$}{N})}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Extends Order on \texorpdfstring{$\mathbb{N}$}{N})}
 \begin{theorem}[Order on $\mathbb{W}$ Extends Order on $\mathbb{N}$]
 \label{thm:order-on-w-extends-order-on-n}
 For all $a,b\in\mathbb{N}$,
@@ -72,7 +63,7 @@ a<_{\mathbb{W}}b\Longleftrightarrow a<_{\mathbb{N}}b.
 \]
 \hyperref[prf:order-on-w-extends-order-on-n]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -81,10 +72,7 @@ a<_{\mathbb{W}}b\Longleftrightarrow a<_{\mathbb{N}}b.
 \end{itemize}
 \end{dependencies}
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Zero Is the Least Element of \texorpdfstring{$\mathbb{W}$}{W})}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Zero Is the Least Element of \texorpdfstring{$\mathbb{W}$}{W})}
 \begin{theorem}[Zero Is the Least Element of $\mathbb{W}$]
 \label{thm:zero-least-element-of-w}
 For every $a\in\mathbb{W}$,
@@ -93,7 +81,7 @@ For every $a\in\mathbb{W}$,
 \]
 \hyperref[prf:zero-least-element-of-w]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -101,16 +89,13 @@ For every $a\in\mathbb{W}$,
 \end{itemize}
 \end{dependencies}
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Is Reflexive)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Is Reflexive)}
 \begin{theorem}[Order on $\mathbb{W}$ Is Reflexive]
 \label{thm:order-on-w-reflexive}
 For every $a\in\mathbb{W}$, $a\leq_{\mathbb{W}}a$.
 \hyperref[prf:order-on-w-reflexive]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -119,10 +104,7 @@ For every $a\in\mathbb{W}$, $a\leq_{\mathbb{W}}a$.
 \end{itemize}
 \end{dependencies}
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Is Antisymmetric)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Is Antisymmetric)}
 \begin{theorem}[Order on $\mathbb{W}$ Is Antisymmetric]
 \label{thm:order-on-w-antisymmetric}
 For all $a,b\in\mathbb{W}$,
@@ -132,7 +114,7 @@ a\leq_{\mathbb{W}}b\ \text{and}\ b\leq_{\mathbb{W}}a
 \]
 \hyperref[prf:order-on-w-antisymmetric]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -141,10 +123,7 @@ a\leq_{\mathbb{W}}b\ \text{and}\ b\leq_{\mathbb{W}}a
 \end{itemize}
 \end{dependencies}
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Is Transitive)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Is Transitive)}
 \begin{theorem}[Order on $\mathbb{W}$ Is Transitive]
 \label{thm:order-on-w-transitive}
 For all $a,b,c\in\mathbb{W}$,
@@ -154,7 +133,7 @@ a\leq_{\mathbb{W}}b\ \text{and}\ b\leq_{\mathbb{W}}c
 \]
 \hyperref[prf:order-on-w-transitive]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -163,10 +142,7 @@ a\leq_{\mathbb{W}}b\ \text{and}\ b\leq_{\mathbb{W}}c
 \end{itemize}
 \end{dependencies}
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Is Total)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Order on \texorpdfstring{$\mathbb{W}$}{W} Is Total)}
 \begin{theorem}[Order on $\mathbb{W}$ Is Total]
 \label{thm:order-on-w-total}
 For all $a,b\in\mathbb{W}$,
@@ -177,7 +153,7 @@ b\leq_{\mathbb{W}}a.
 \]
 \hyperref[prf:order-on-w-total]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -186,17 +162,14 @@ b\leq_{\mathbb{W}}a.
 \end{itemize}
 \end{dependencies}
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Well-Ordering Principle for \texorpdfstring{$\mathbb{W}$}{W})}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Well-Ordering Principle for \texorpdfstring{$\mathbb{W}$}{W})}
 \begin{theorem}[Well-Ordering Principle for $\mathbb{W}$]
 \label{thm:well-ordering-principle-for-w}
 Every nonempty subset of $\mathbb{W}$ has a least element with respect to
 $\leq_{\mathbb{W}}$.
 \hyperref[prf:well-ordering-principle-for-w]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{dependencies}
 \begin{itemize}
