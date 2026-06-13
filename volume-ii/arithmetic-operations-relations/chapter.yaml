@@ -1,0 +1,25 @@
+subject: arithmetic-operations-relations
+display_title: "Arithmetic Operations and Relations"
+volume: volume-ii
+status: active
+sections:
+  - subject: arithmetic-operations-relations
+    display_title: "Arithmetic Operations and Relations"
+dependencies:
+  prior: identity-equality-equivalence
+  next: natural-numbers
+entries:
+  - label: def:arithmetic-operation
+    type: def
+    title: Arithmetic Operation
+    source: notes/arithmetic-operations-relations/notes-arithmetic-operations-relations.tex
+
+  - label: def:arithmetic-relation
+    type: def
+    title: Arithmetic Relation
+    source: notes/arithmetic-operations-relations/notes-arithmetic-operations-relations.tex
+
+  - label: def:operation-relation-compatibility
+    type: def
+    title: Operation-Relation Compatibility
+    source: notes/arithmetic-operations-relations/notes-arithmetic-operations-relations.tex

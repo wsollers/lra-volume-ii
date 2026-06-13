@@ -11,6 +11,16 @@ volume: volume-ii
 path: volume-ii/peano-systems
 
 entries:
+  - label: def:presburger-signature
+    type: def
+    title: Presburger Signature
+    source: notes/presburger-arithmetic/notes-presburger-arithmetic.tex
+
+  - label: def:presburger-arithmetic
+    type: def
+    title: Presburger Arithmetic
+    source: notes/presburger-arithmetic/notes-presburger-arithmetic.tex
+
   - label: def:peano-system
     type: def
     title: Peano System
