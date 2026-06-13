@@ -1,0 +1,85 @@
+\subsection*{Dedekind Cuts}
+
+\begin{definition}[Dedekind Cut]
+\label{def:dedekind-cut}
+A \emph{Dedekind cut} is a set $\alpha\subseteq\mathbb{Q}$ satisfying:
+\[
+\alpha\ne\emptyset,\qquad \alpha\ne\mathbb{Q},
+\]
+\[
+p\in\alpha\land q<p \Longrightarrow q\in\alpha,
+\]
+and
+\[
+p\in\alpha \Longrightarrow \exists r\in\alpha\,(p<r).
+\]
+\end{definition}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:density-of-q]{Density of $\mathbb{Q}$}
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[The Real Numbers]
+\label{def:reals}
+The real numbers are the set
+\[
+\mathbb{R}:=\{\alpha:\alpha\text{ is a Dedekind cut in }\mathbb{Q}\}.
+\]
+\end{definition}
+
+\subsection*{Rational Cuts}
+
+\begin{definition}[Rational Cut]
+\label{def:rational-cut}
+For $q\in\mathbb{Q}$, define the rational cut
+\[
+q^{\ast}:=\{r\in\mathbb{Q}:r<q\}.
+\]
+\end{definition}
+
+\begin{lemma}[Rational Cuts Are Cuts]
+\label{lem:rational-cut-is-a-cut}
+For every $q\in\mathbb{Q}$, the set $q^{\ast}$ is a Dedekind cut.
+\end{lemma}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:density-of-q]{Density of $\mathbb{Q}$}
+  \item \hyperref[prop:no-least-positive-rational]{No Least Positive Rational}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Zero and One in $\mathbb{R}$}
+
+\begin{definition}[Zero in $\mathbb{R}$]
+\label{def:zero-in-r}
+Define
+\[
+0_{\mathbb{R}}:=(0_{\mathbb{Q}})^{\ast}
+=\{r\in\mathbb{Q}:r<0_{\mathbb{Q}}\}.
+\]
+\end{definition}
+
+\begin{definition}[One in $\mathbb{R}$]
+\label{def:one-in-r}
+Define
+\[
+1_{\mathbb{R}}:=(1_{\mathbb{Q}})^{\ast}
+=\{r\in\mathbb{Q}:r<1_{\mathbb{Q}}\}.
+\]
+\end{definition}
+
+\begin{theorem}[Zero and One Are Reals]
+\label{thm:zero-one-are-reals}
+The cuts $0_{\mathbb{R}}$ and $1_{\mathbb{R}}$ are elements of $\mathbb{R}$.
+\end{theorem}
+
+\begin{theorem}[Zero Is Not One in $\mathbb{R}$]
+\label{thm:zero-not-one-in-r}
+In $\mathbb{R}$,
+\[
+0_{\mathbb{R}}\ne 1_{\mathbb{R}}.
+\]
+\end{theorem}
