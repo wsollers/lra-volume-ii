@@ -399,6 +399,14 @@ x\cdot(y+z)=x\cdot y+x\cdot z.
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
+  \item \hyperref[def:multiplication-on-z-classes]{Multiplication on $\mathbb{Z}$}
+  \item \hyperref[thm:multiplication-distributes-over-addition-on-w]{Multiplication Distributes over Addition on $\mathbb{W}$}
+\end{itemize}
+\end{dependencies}
+
 \begin{corollarybox}{Corollary}
 \begin{corollary}[Right Distributivity on $\mathbb{Z}$]
 \label{cor:right-distributivity-on-z}
@@ -409,12 +417,28 @@ For all $x,y,z\in\mathbb{Z}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:left-distributivity-on-z]{Left Distributivity on $\mathbb{Z}$}
+  \item \hyperref[thm:multiplication-on-z-commutative]{Multiplication on $\mathbb{Z}$ Is Commutative}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Multiplication Distributes over Addition on $\mathbb{Z}$]
 \label{thm:multiplication-distributes-over-addition-on-z}
 Multiplication distributes over addition on both sides in $\mathbb{Z}$.
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
+  \item \hyperref[def:multiplication-on-z-classes]{Multiplication on $\mathbb{Z}$}
+  \item \hyperref[thm:left-distributivity-on-z]{Left Distributivity on $\mathbb{Z}$}
+  \item \hyperref[cor:right-distributivity-on-z]{Right Distributivity on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Class-Level Ring Summary}
 
@@ -439,3 +463,12 @@ The structure $(\mathbb{Z},+,\cdot,0_{\mathbb{Z}},1_{\mathbb{Z}})$ is a
 commutative ring.
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:commutative-ring]{Commutative Ring}
+  \item \hyperref[thm:z-additive-abelian-group]{$\mathbb{Z}$ Is an Additive Abelian Group}
+  \item \hyperref[thm:z-multiplicative-commutative-monoid]{$\mathbb{Z}$ Is a Multiplicative Commutative Monoid}
+  \item \hyperref[thm:multiplication-distributes-over-addition-on-z]{Multiplication Distributes over Addition on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
