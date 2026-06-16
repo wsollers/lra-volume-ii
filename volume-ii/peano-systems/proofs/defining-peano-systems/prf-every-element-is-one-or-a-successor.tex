@@ -12,8 +12,8 @@ Let $(P,S,1)$ be a Peano system. For every $x \in P$, either $x=1$ or there
 exists $u \in P$ such that $S(u)=x$.
 \end{theorem*}
 
-\begin{proof}[Professional Standard Proof]
-\LRAProofBodyStart
+\begin{proof}
+\textbf{Professional Standard Proof.}~\\
 Let
 \[
 D:=\{x\in P:x=1 \text{ or } \exists u\in P\;(S(u)=x)\}.
@@ -29,8 +29,8 @@ Thus every $x\in P$ lies in $D$, so every $x\in P$ satisfies either $x=1$ or
 there exists $u\in P$ such that $S(u)=x$.
 \end{proof}
 
-\begin{proof}[Detailed Learning Proof]
-\LRAProofBodyStart
+\begin{proof}
+\textbf{Detailed Learning Proof.}~\\
 Define a subset $D$ of $P$ by putting into $D$ exactly those elements of $P$
 that already have the desired form:
 \[
@@ -64,11 +64,9 @@ definition, a successor of an element of $P$.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:peano-system]{Peano System}
-  \item \hyperref[ax:peano-base-in-set]{Distinguished Element Lies in the Underlying Set}
+  \item \hyperref[ax:peano-one-in-n]{Distinguished Element Lies in the Underlying Set}
   \item \hyperref[ax:peano-successor-closure]{Closure Under Successor}
   \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
 \end{itemize}
 \end{dependencies}
 
-
-\clearpage

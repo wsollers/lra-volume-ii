@@ -1,3 +1,4 @@
+\section{Interior, Exterior, and Boundary}
 \label{sec:interior-exterior-boundary}
 
 \begin{topicbox}{Inside, Outside, and Edge}
@@ -5,7 +6,10 @@
 Relative to a set $E$, each point of the line is interior to $E$, exterior to $E$, or on its boundary. These three regions partition $\mathbb{R}$ and refine the open/closed distinction.
 \end{exposition}
 \end{topicbox}
-\begin{definitionbox}{Definition (Interior Point)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Interior Point)}},
+  fonttitle=\small\bfseries]
 \begin{definition}[Interior Point]
 \label{def:interior-point}
 Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is an interior point of $E$ exactly when
@@ -13,7 +17,7 @@ Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is an interior point o
 \exists r>0\;(B_{r}(x)\subseteq E).
 \]
 \end{definition}
-\end{definitionbox}
+\end{tcolorbox}
 \begin{remark*}[Standard quantified statement]
 \[
 x \text{ is an interior point of } E \Longleftrightarrow \exists r>0\;(B_{r}(x)\subseteq E).
@@ -27,7 +31,10 @@ An interior point of $E$ sits inside $E$ with room to spare: a whole ball around
   \item \hyperref[def:open-ball]{Open Ball on the Real Line}
 \end{itemize}
 \end{dependencies}
-\begin{definitionbox}{Definition (Exterior Point)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Exterior Point)}},
+  fonttitle=\small\bfseries]
 \begin{definition}[Exterior Point]
 \label{def:exterior-point}
 Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is an exterior point of $E$ exactly when
@@ -35,7 +42,7 @@ Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is an exterior point o
 \exists r>0\;(B_{r}(x)\subseteq \mathbb{R}\setminus E).
 \]
 \end{definition}
-\end{definitionbox}
+\end{tcolorbox}
 \begin{remark*}[Standard quantified statement]
 \[
 x \text{ is an exterior point of } E \Longleftrightarrow \exists r>0\;(B_{r}(x)\subseteq \mathbb{R}\setminus E).
@@ -49,7 +56,10 @@ An exterior point of $E$ is interior to the complement: a whole ball around it m
   \item \hyperref[def:open-ball]{Open Ball on the Real Line}
 \end{itemize}
 \end{dependencies}
-\begin{definitionbox}{Definition (Boundary Point)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Boundary Point)}},
+  fonttitle=\small\bfseries]
 \begin{definition}[Boundary Point]
 \label{def:boundary-point}
 Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is a boundary point of $E$ exactly when
@@ -57,7 +67,7 @@ Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is a boundary point of
 \forall r>0\;(B_{r}(x)\cap E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus E)\neq\emptyset).
 \]
 \end{definition}
-\end{definitionbox}
+\end{tcolorbox}
 \begin{remark*}[Standard quantified statement]
 \[
 x \text{ is a boundary point of } E \Longleftrightarrow \forall r>0\;(B_{r}(x)\cap E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus E)\neq\emptyset).
@@ -71,17 +81,15 @@ A boundary point of $E$ is approached from both sides: every ball around it meet
   \item \hyperref[def:open-ball]{Open Ball on the Real Line}
 \end{itemize}
 \end{dependencies}
-\begin{definitionbox}{Definition (Interior of a Set)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Interior of a Set)}},
+  fonttitle=\small\bfseries]
 \begin{definition}[Interior of a Set]
 \label{def:interior-of-set}
 The \emph{interior} of $E\subseteq\mathbb{R}$, written $\operatorname{int}(E)$, is the set of all interior points of $E$.
 \end{definition}
-\end{definitionbox}
-\begin{remark*}[Standard quantified statement]
-\[
-\operatorname{int}(E)=\{\,x\in\mathbb{R}: \exists r>0\;(B_r(x)\subseteq E)\,\}.
-\]
-\end{remark*}
+\end{tcolorbox}
 \begin{remark*}[Interpretation]
 The interior is the largest open set inside $E$; $E$ is open exactly when $E=\operatorname{int}(E)$. The boundary is what $E$ and its complement share, and a set is closed exactly when it contains its boundary.
 \end{remark*}

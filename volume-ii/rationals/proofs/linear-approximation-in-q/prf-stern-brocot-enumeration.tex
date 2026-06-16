@@ -16,8 +16,10 @@ Every positive rational number appears exactly once in reduced form in
 the Stern--Brocot tree.
 \end{theorem*}
 
-\begin{proof}[Professional Standard Proof]
-\LRAProofBodyStart
+\textbf{Professional Standard Proof.}~\\
+% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
+\begin{proof}
+[Proof (Professional Standard)]
 We prove existence and uniqueness separately.
 
 \textbf{Existence.} Let $p/q \in \mathbb{Q}_{>0}$ be in reduced form.
@@ -44,8 +46,11 @@ $bc - ad = 1$ that is maintained at every level.  Therefore every positive
 rational appears exactly once.
 \end{proof}
 
-\begin{proof}[Detailed Learning Proof]
-\LRAProofBodyStart
+\textbf{Detailed Learning Proof.}~\\
+TODO: Expand the professional proof into a detailed learning proof.
+
+
+\begin{proof}[Proof (Detailed Learning)]
 \textbf{Step 1: Describe the search procedure.}
 Start with the boundary pair $(a/b, c/d) = (0/1, 1/0)$.
 At each step compute the mediant $m = (a+c)/(b+d)$ and compare $p/q$ to $m$:
@@ -96,5 +101,3 @@ makes both arguments work.
 \hyperref[lem:mediant-gap]{Mediant Gap Lemma},
 \hyperref[thm:fraction-pair-equivalence]{reduced-form representatives}.
 \end{dependencies}
-
-\clearpage

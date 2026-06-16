@@ -1,4 +1,4 @@
-\subsection*{First Theorems on Peano Systems}
+\subsection{First Theorems on Peano Systems}
 
 \begin{topicbox}{Induction as a Working Principle}
 \begin{exposition}
@@ -11,7 +11,10 @@ this is the working proof principle attached to Peano's axiomatization of the
 natural numbers \citep{PeanoArithmeticesPrincipia1889}.
 \end{exposition}
 
-\begin{theorembox}{Theorem (Induction Principle for a Peano System)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Induction Principle for a Peano System)}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Induction Principle for a Peano System]
 \label{thm:induction-principle-for-peano-system}
 Let $(P,S,1)$ be a Peano system, and let $\varphi$ be a predicate on $P$.
@@ -27,7 +30,7 @@ then
 \]
 \hyperref[prf:induction-principle-for-peano-system]{Go to proof.}
 \end{theorem}
-\end{theorembox}
+\end{tcolorbox}
 
 \begin{formalizationrecord}{Lean 4 Verification Record}
 \FormalizationSource{Peano, \emph{Arithmetices principia}; Feferman, \emph{The Number Systems}, Section 3.1}
@@ -102,62 +105,6 @@ induction principle as an explicit reusable theorem.
 \end{dependencies}
 \end{topicbox}
 
-\begin{topicbox}{Strong Induction}
-\begin{exposition}
-Ordinary induction propagates a property from each element to its immediate
-successor. Strong induction allows the inductive step to use the property at
-every predecessor, not just the immediate one. This broader hypothesis makes
-strong induction convenient when the successor step needs information from the
-entire earlier segment of the Peano system.
-\end{exposition}
-
-\begin{theorembox}{Theorem (Strong Induction on a Peano System)}
-\begin{theorem}[Strong Induction on a Peano System]
-\label{thm:strong-induction-on-peano-system}
-Let $(P,S,1)$ be a Peano system, and let $\varphi$ be a predicate on $P$.
-If
-\[
-\forall n \in P\;
-\bigl(\forall k \in P\;(k < n \Longrightarrow \varphi(k))\bigr)
-\Longrightarrow \varphi(n),
-\]
-then
-\[
-\forall n \in P\;\varphi(n).
-\]
-\hyperref[prf:strong-induction-on-peano-system]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system and let } \varphi
-\text{ be a predicate on } P.\\
-&\Bigl(\forall n \in P\;
-\bigl(\forall k \in P\;(k < n \Longrightarrow \varphi(k))\bigr)
-\Longrightarrow \varphi(n)\Bigr)
-\Longrightarrow
-\forall n \in P\;\varphi(n).
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Strong induction grants the inductive step access to the entire history below
-$n$, not just the single predecessor. It is the proof form behind least
-counterexample arguments.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
-  \item \hyperref[def:strict-less-than-on-peano-system]{Strict Less Than on a Peano System}
-  \item \hyperref[thm:trichotomy-on-peano-system]{Trichotomy on a Peano System}
-\end{itemize}
-\end{dependencies}
-\end{topicbox}
-
 \begin{topicbox}{Inductive Subsets and Predecessors}
 \begin{exposition}
 Induction is expressed in terms of subsets of a Peano system. Two structural
@@ -167,7 +114,10 @@ is also convenient once it is known that every non-initial element arises as a
 successor.
 \end{exposition}
 
-\begin{definitionbox}{Definition (Successor-Closed Subset)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Successor-Closed Subset)}} ,
+  fonttitle=\small\bfseries]
 \begin{definition}[Successor-Closed Subset]
 \label{def:successor-closed-subset}
 Let $(P,S,1)$ be a Peano system, and let $A \subseteq P$. The subset $A$ is
@@ -176,7 +126,7 @@ called \emph{successor-closed} exactly when
 \forall n \in P\;(n \in A \Longrightarrow S(n) \in A).
 \]
 \end{definition}
-\end{definitionbox}
+\end{tcolorbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -233,13 +183,16 @@ the closure condition directly.
 \end{itemize}
 \end{dependencies}
 
-\begin{definitionbox}{Definition (Inductive Subset of a Peano System)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Inductive Subset of a Peano System)}} ,
+  fonttitle=\small\bfseries]
 \begin{definition}[Inductive Subset of a Peano System]
 \label{def:inductive-subset-of-peano-system}
 Let $(P,S,1)$ be a Peano system, and let $A \subseteq P$. The subset $A$ is
 called \emph{inductive} exactly when $1 \in A$ and $A$ is successor-closed.
 \end{definition}
-\end{definitionbox}
+\end{tcolorbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -302,34 +255,10 @@ that the internal structure of induction proofs remains explicit.
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Minimality of a Peano System)}
-\begin{theorem}[Minimality of a Peano System]
-\label{thm:peano-minimality}
-Let $(P,S,1)$ be a Peano system. If $A\subseteq P$ contains $1$ and is closed
-under successor, then $A=P$.
-\[
-\bigl(1\in A \land
-\forall n\in P\;(n\in A \Longrightarrow S(n)\in A)\bigr)
-\Longrightarrow A=P.
-\]
-\hyperref[prf:peano-minimality]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Interpretation]
-A Peano system has no elements outside the successor chain generated by its
-base element. Any subset that contains the base element and is closed under
-successor already exhausts the whole carrier.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[ax:peano-induction]{Induction Axiom}
-  \item \hyperref[def:inductive-subset-of-peano-system]{Inductive Subset of a Peano System}
-\end{itemize}
-\end{dependencies}
-
-\begin{definitionbox}{Definition (Predecessor in a Peano System)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Predecessor in a Peano System)}} ,
+  fonttitle=\small\bfseries]
 \begin{definition}[Predecessor in a Peano System]
 \label{def:predecessor-in-peano-system}
 Let $(P,S,1)$ be a Peano system, and let $x,u \in P$. The element $u$ is
@@ -338,7 +267,7 @@ called a \emph{predecessor} of $x$ exactly when
 S(u)=x.
 \]
 \end{definition}
-\end{definitionbox}
+\end{tcolorbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -384,14 +313,17 @@ successor, every non-initial element has a unique predecessor, and no element
 can be its own successor.
 \end{exposition}
 
-\begin{theorembox}{Theorem (Every Element Is Either \texorpdfstring{$1$}{1} or a Successor)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Every Element Is Either \texorpdfstring{$1$}{1} or a Successor)}} ,
+  fonttitle=\small\bfseries]
 \begin{theorem}[Every Element Is Either $1$ or a Successor]
 \label{thm:every-element-is-one-or-a-successor}
 Let $(P,S,1)$ be a Peano system. For every $x \in P$, either $x=1$ or there
 exists $u \in P$ such that $S(u)=x$.
 \hyperref[prf:every-element-is-one-or-a-successor]{Go to proof.}
 \end{theorem}
-\end{theorembox}
+\end{tcolorbox}
 
 \begin{formalizationrecord}{Lean 4 Verification Record}
 \FormalizationSource{Landau, \emph{Foundations of Analysis}, Section 1; Feferman, \emph{The Number Systems}, Theorem 3.3}
@@ -451,20 +383,23 @@ Peano system.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:peano-system]{Peano System}
-  \item \hyperref[ax:peano-base-in-set]{Distinguished Element Lies in the Underlying Set}
+  \item \hyperref[ax:peano-one-in-n]{Distinguished Element Lies in the Underlying Set}
   \item \hyperref[ax:peano-successor-closure]{Closure Under Successor}
   \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Successor Inequality Reflection)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Successor Inequality Reflection)}} ,
+  fonttitle=\small\bfseries]
 \begin{theorem}[Successor Inequality Reflection]
 \label{thm:successor-inequality-reflection}
 Let $(P,S,1)$ be a Peano system. For all $a,b \in P$, if $a \neq b$, then
 $S(a)\neq S(b)$.
 \hyperref[prf:successor-inequality-reflection]{Go to proof.}
 \end{theorem}
-\end{theorembox}
+\end{tcolorbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -521,14 +456,17 @@ negative equality statement.
 \end{itemize}
 \end{dependencies}
 
-\begin{corollarybox}{Corollary (Non-One Elements Have a Predecessor)}
+\begin{tcolorbox}[colback=corbox, colframe=corborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Corollary (Non-One Elements Have a Predecessor)}} ,
+  fonttitle=\small\bfseries]
 \begin{corollary}[Non-One Elements Have a Predecessor]
 \label{cor:non-one-elements-have-a-predecessor}
 Let $(P,S,1)$ be a Peano system. For every $x \in P$, if $x \neq 1$, then
 there exists $u \in P$ such that $S(u)=x$.
 \hyperref[prf:non-one-elements-have-a-predecessor]{Go to proof.}
 \end{corollary}
-\end{corollarybox}
+\end{tcolorbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -584,14 +522,17 @@ The present notes record it separately before adding uniqueness.
 \end{itemize}
 \end{dependencies}
 
-\begin{corollarybox}{Corollary (Predecessor Existence and Uniqueness Away from \texorpdfstring{$1$}{1})}
+\begin{tcolorbox}[colback=corbox, colframe=corborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Corollary (Predecessor Existence and Uniqueness Away from \texorpdfstring{$1$}{1})}} ,
+  fonttitle=\small\bfseries]
 \begin{corollary}[Predecessor Existence and Uniqueness Away from $1$]
 \label{cor:predecessor-exists-unique-away-from-one}
 Let $(P,S,1)$ be a Peano system, and let $x \in P$ with $x \neq 1$. Then
 there exists a unique $u \in P$ such that $S(u)=x$.
 \hyperref[prf:predecessor-exists-unique-away-from-one]{Go to proof.}
 \end{corollary}
-\end{corollarybox}
+\end{tcolorbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -623,14 +564,17 @@ directly in later proofs.
 \end{itemize}
 \end{dependencies}
 
-\begin{corollarybox}{Corollary (Unique Predecessor Characterization Away from \texorpdfstring{$1$}{1})}
+\begin{tcolorbox}[colback=corbox, colframe=corborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Corollary (Unique Predecessor Characterization Away from \texorpdfstring{$1$}{1})}} ,
+  fonttitle=\small\bfseries]
 \begin{corollary}[Unique Predecessor Characterization Away from $1$]
 \label{cor:unique-predecessor-characterization-away-from-one}
 Let $(P,S,1)$ be a Peano system. For every $x \in P$, $x \neq 1$ if and
 only if there exists a unique $u \in P$ such that $S(u)=x$.
 \hyperref[prf:unique-predecessor-characterization-away-from-one]{Go to proof.}
 \end{corollary}
-\end{corollarybox}
+\end{tcolorbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -699,19 +643,22 @@ uses the axiom that $1$ is not a successor.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:peano-system]{Peano System}
-  \item \hyperref[ax:peano-base-not-successor]{Distinguished Element Is Not a Successor}
+  \item \hyperref[ax:peano-one-not-successor]{Distinguished Element Is Not a Successor}
   \item \hyperref[cor:predecessor-exists-unique-away-from-one]{Predecessor Existence and Uniqueness Away from $1$}
 \end{itemize}
 \end{dependencies}
 
-\begin{corollarybox}{Corollary (The Distinguished Element Is the Unique Non-Successor)}
+\begin{tcolorbox}[colback=corbox, colframe=corborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Corollary (The Distinguished Element Is the Unique Non-Successor)}} ,
+  fonttitle=\small\bfseries]
 \begin{corollary}[The Distinguished Element Is the Unique Non-Successor]
 \label{cor:one-is-unique-non-successor}
 Let $(P,S,1)$ be a Peano system. An element $x \in P$ is not a successor of
 any element of $P$ if and only if $x=1$.
 \hyperref[prf:one-is-unique-non-successor]{Go to proof.}
 \end{corollary}
-\end{corollarybox}
+\end{tcolorbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -736,12 +683,15 @@ initial element that is implicit in the discussion surrounding Theorem 3.3 of
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[ax:peano-base-not-successor]{Distinguished Element Is Not a Successor}
+  \item \hyperref[ax:peano-one-not-successor]{Distinguished Element Is Not a Successor}
   \item \hyperref[cor:predecessor-exists-unique-away-from-one]{Predecessor Existence and Uniqueness Away from $1$}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (No Object Is Its Own Successor)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (No Object Is Its Own Successor)}} ,
+  fonttitle=\small\bfseries]
 \begin{theorem}[No Object Is Its Own Successor]
 \label{thm:no-object-is-its-own-successor}
 Let $(P,S,1)$ be a Peano system. For every $n \in P$,
@@ -750,7 +700,7 @@ S(n) \neq n.
 \]
 \hyperref[prf:no-object-is-its-own-successor]{Go to proof.}
 \end{theorem}
-\end{theorembox}
+\end{tcolorbox}
 
 \begin{formalizationrecord}{Lean 4 Verification Record}
 \FormalizationSource{Landau, \emph{Foundations of Analysis}, Section 2, Theorem 2}
@@ -803,7 +753,7 @@ Feferman includes the corresponding result as an exercise in Chapter 3 of
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[ax:peano-base-not-successor]{Distinguished Element Is Not a Successor}
+  \item \hyperref[ax:peano-one-not-successor]{Distinguished Element Is Not a Successor}
   \item \hyperref[ax:peano-successor-injective]{Injectivity of Successor}
   \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
 \end{itemize}

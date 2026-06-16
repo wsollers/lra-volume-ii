@@ -1,3 +1,4 @@
+\section{Unions and Intersections of Sets}
 \label{sec:unions-and-intersections}
 
 \begin{topicbox}{Closure Laws for Open and Closed Sets}
@@ -5,13 +6,16 @@
 The open closure laws of \S\ref{sec:open-sets} dualize to closed sets by complementation. Collecting them gives the bookkeeping rules used throughout the rest of the development.
 \end{exposition}
 \end{topicbox}
-\begin{theorembox}{Theorem (Closure Laws for Closed Sets)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Closure Laws for Closed Sets)}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Closure Laws for Closed Sets]
 \label{thm:closed-set-closure-operations}
 An arbitrary intersection of closed subsets of $\mathbb{R}$ is closed, and a finite union of closed subsets of $\mathbb{R}$ is closed.
 \hyperref[prf:closed-set-closure-operations]{Go to proof.}
 \end{theorem}
-\end{theorembox}
+\end{tcolorbox}
 \begin{remark*}[Standard quantified statement]
 \[
 \Bigl(\forall i\in I\;F_i\text{ closed}\Bigr)\Longrightarrow \Bigl(\bigcap_{i\in I} F_{i}\Bigr) \text{ closed};\qquad

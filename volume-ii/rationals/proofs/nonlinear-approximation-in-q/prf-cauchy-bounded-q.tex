@@ -15,8 +15,10 @@
 Every Cauchy sequence of rational numbers is bounded.
 \end{theorem*}
 
-\begin{proof}[Professional Standard Proof]
-\LRAProofBodyStart
+\textbf{Professional Standard Proof.}~\\
+% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
+\begin{proof}
+[Proof (Professional Standard)]
 Let $(x_n)$ be a Cauchy sequence of rational numbers.
 Apply the Cauchy condition with $\varepsilon = 1$: there exists
 $N \in \mathbb{N}$ such that $|x_m - x_n| < 1$ for all $m, n \geq N$.
@@ -30,8 +32,11 @@ Define
 Then $|x_n| \leq \Gamma$ for all $n \in \mathbb{N}$.
 \end{proof}
 
-\begin{proof}[Detailed Learning Proof]
-\LRAProofBodyStart
+\textbf{Detailed Learning Proof.}~\\
+TODO: Expand the professional proof into a detailed learning proof.
+
+
+\begin{proof}[Proof (Detailed Learning)]
 \textbf{Step 1: Apply the Cauchy condition with $\varepsilon = 1$.}
 By \hyperref[def:cauchy-rational]{Definition~\ref*{def:cauchy-rational}},
 there exists $N \in \mathbb{N}$ such that
@@ -83,5 +88,3 @@ Cauchy condition is convergence without a named limit.
 \hyperref[def:bounded-sequence-q]{Bounded sequence},
 the triangle inequality in $\mathbb{Q}$.
 \end{dependencies}
-
-\clearpage

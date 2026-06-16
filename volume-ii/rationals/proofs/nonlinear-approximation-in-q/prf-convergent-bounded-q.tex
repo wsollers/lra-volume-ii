@@ -15,8 +15,10 @@
 Every convergent sequence of rational numbers is bounded.
 \end{theorem*}
 
-\begin{proof}[Professional Standard Proof]
-\LRAProofBodyStart
+\textbf{Professional Standard Proof.}~\\
+% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
+\begin{proof}
+[Proof (Professional Standard)]
 Let $(x_n)$ be a sequence of rational numbers with $x_n \to a \in \mathbb{Q}$.
 Apply the definition of convergence with $\varepsilon = 1$: there exists
 $N \in \mathbb{N}$ such that $|x_n - a| < 1$ for all $n \geq N$.
@@ -29,8 +31,11 @@ Define
 Then $|x_n| \leq \Gamma$ for all $n \in \mathbb{N}$, so $(x_n)$ is bounded.
 \end{proof}
 
-\begin{proof}[Detailed Learning Proof]
-\LRAProofBodyStart
+\textbf{Detailed Learning Proof.}~\\
+TODO: Expand the professional proof into a detailed learning proof.
+
+
+\begin{proof}[Proof (Detailed Learning)]
 \textbf{Step 1: Control the tail using convergence.}
 Since $x_n \to a$, choose $\varepsilon = 1$.  There exists $N \in \mathbb{N}$
 such that $|x_n - a| < 1$ for all $n \geq N$.
@@ -73,5 +78,3 @@ $1$ keeps the arithmetic clean.
 \hyperref[def:bounded-sequence-q]{Bounded sequence},
 the triangle inequality in $\mathbb{Q}$.
 \end{dependencies}
-
-\clearpage

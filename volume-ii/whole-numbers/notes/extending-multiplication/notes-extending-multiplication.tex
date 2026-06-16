@@ -1,6 +1,9 @@
 \subsection*{The Extended Multiplication Operation}
 
-\begin{definitionbox}{Definition (Multiplication on \texorpdfstring{$\mathbb{W}$}{W})}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Multiplication on \texorpdfstring{$\mathbb{W}$}{W})}},
+  fonttitle=\small\bfseries]
 \begin{definition}[Multiplication on $\mathbb{W}$]
 \label{def:multiplication-on-w}
 Define $\cdot_{\mathbb{W}}:\mathbb{W}\times\mathbb{W}\to\mathbb{W}$ by
@@ -13,18 +16,7 @@ and, for $a,b\in\mathbb{N}$,
 a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b.
 \]
 \end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\cdot_{\mathbb{W}}:\mathbb{W}\times\mathbb{W}\to\mathbb{W},\\
-&\forall a\in\mathbb{W}\;(0\cdot_{\mathbb{W}}a=0\ \wedge\ a\cdot_{\mathbb{W}}0=0),\\
-&\forall a,b\in\mathbb{N}\;
-  (a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b).
-\end{aligned}
-\]
-\end{remark*}
+\end{tcolorbox}
 
 \begin{remark*}[Interpretation]
 The zero cases are new. The positive-positive case is inherited from
@@ -38,20 +30,17 @@ $\mathbb{N}$. Since $0\notin\mathbb{N}$, these clauses do not compete.
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Multiplication on \texorpdfstring{$\mathbb{W}$}{W} Is Well-Defined)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Multiplication on \texorpdfstring{$\mathbb{W}$}{W} Is Well-Defined)}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Multiplication on $\mathbb{W}$ Is Well-Defined]
 \label{thm:multiplication-on-w-well-defined}
 The case definition of $\cdot_{\mathbb{W}}$ determines a binary operation on
 $\mathbb{W}$.
 \hyperref[prf:multiplication-on-w-well-defined]{Go to proof.}
 \end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\cdot_{\mathbb{W}}\text{ is a well-defined binary operation on }\mathbb{W}.
-\]
-\end{remark*}
+\end{tcolorbox}
 
 \begin{remark*}[Interpretation]
 The inherited positive case is already well-defined on $\mathbb{N}$, and the
@@ -65,7 +54,10 @@ new zero cases land in the distinguished element $0\in\mathbb{W}$.
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Zero Is Absorbing for Multiplication on \texorpdfstring{$\mathbb{W}$}{W})}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Zero Is Absorbing for Multiplication on \texorpdfstring{$\mathbb{W}$}{W})}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Zero Is Absorbing for Multiplication on $\mathbb{W}$]
 \label{thm:zero-absorbing-for-multiplication-on-w}
 For every $a\in\mathbb{W}$,
@@ -76,18 +68,7 @@ a\cdot_{\mathbb{W}}0=0.
 \]
 \hyperref[prf:zero-absorbing-for-multiplication-on-w]{Go to proof.}
 \end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\forall a\in\mathbb{W}\;
-\bigl(0\cdot_{\mathbb{W}}a=0\ \wedge\ a\cdot_{\mathbb{W}}0=0\bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The adjoined element $0$ is absorbing for multiplication on both sides.
-\end{remark*}
+\end{tcolorbox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -95,41 +76,10 @@ The adjoined element $0$ is absorbing for multiplication on both sides.
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Left Zero Absorption on \texorpdfstring{$\mathbb{W}$}{W})}
-\begin{theorem}[Left Zero Absorption on $\mathbb{W}$]
-\label{thm:left-zero-absorption-on-w}
-For every $a\in\mathbb{W}$,
-\[
-0\cdot_{\mathbb{W}}a=0.
-\]
-\hyperref[prf:left-zero-absorption-on-w]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[thm:zero-absorbing-for-multiplication-on-w]{Zero Is Absorbing for Multiplication on $\mathbb{W}$}
-\end{itemize}
-\end{dependencies}
-
-\begin{theorembox}{Theorem (Right Zero Absorption on \texorpdfstring{$\mathbb{W}$}{W})}
-\begin{theorem}[Right Zero Absorption on $\mathbb{W}$]
-\label{thm:right-zero-absorption-on-w}
-For every $a\in\mathbb{W}$,
-\[
-a\cdot_{\mathbb{W}}0=0.
-\]
-\hyperref[prf:right-zero-absorption-on-w]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[thm:zero-absorbing-for-multiplication-on-w]{Zero Is Absorbing for Multiplication on $\mathbb{W}$}
-\end{itemize}
-\end{dependencies}
-
-\begin{theorembox}{Theorem (One Is a Multiplicative Identity on \texorpdfstring{$\mathbb{W}$}{W})}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (One Is a Multiplicative Identity on \texorpdfstring{$\mathbb{W}$}{W})}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[One Is a Multiplicative Identity on $\mathbb{W}$]
 \label{thm:one-multiplicative-identity-on-w}
 For every $a\in\mathbb{W}$,
@@ -140,18 +90,7 @@ a\cdot_{\mathbb{W}}1=a.
 \]
 \hyperref[prf:one-multiplicative-identity-on-w]{Go to proof.}
 \end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\forall a\in\mathbb{W}\;
-\bigl(1\cdot_{\mathbb{W}}a=a\ \wedge\ a\cdot_{\mathbb{W}}1=a\bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The old multiplicative identity remains an identity after adjoining $0$.
-\end{remark*}
+\end{tcolorbox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -161,7 +100,10 @@ The old multiplicative identity remains an identity after adjoining $0$.
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Multiplication on \texorpdfstring{$\mathbb{W}$}{W} Extends Multiplication on \texorpdfstring{$\mathbb{N}$}{N})}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Multiplication on \texorpdfstring{$\mathbb{W}$}{W} Extends Multiplication on \texorpdfstring{$\mathbb{N}$}{N})}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Multiplication on $\mathbb{W}$ Extends Multiplication on $\mathbb{N}$]
 \label{thm:multiplication-on-w-extends-multiplication-on-n}
 For all $a,b\in\mathbb{N}$,
@@ -170,18 +112,7 @@ a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b.
 \]
 \hyperref[prf:multiplication-on-w-extends-multiplication-on-n]{Go to proof.}
 \end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\forall a,b\in\mathbb{N}\;
-\bigl(a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b\bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The extension does not alter products of positive natural numbers.
-\end{remark*}
+\end{tcolorbox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -190,7 +121,10 @@ The extension does not alter products of positive natural numbers.
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Multiplication on \texorpdfstring{$\mathbb{W}$}{W} Is Associative)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Multiplication on \texorpdfstring{$\mathbb{W}$}{W} Is Associative)}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Multiplication on $\mathbb{W}$ Is Associative]
 \label{thm:multiplication-on-w-associative}
 For all $a,b,c\in\mathbb{W}$,
@@ -201,20 +135,7 @@ a\cdot_{\mathbb{W}}(b\cdot_{\mathbb{W}}c).
 \]
 \hyperref[prf:multiplication-on-w-associative]{Go to proof.}
 \end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\forall a,b,c\in\mathbb{W}\;
-\bigl((a\cdot_{\mathbb{W}}b)\cdot_{\mathbb{W}}c
-=a\cdot_{\mathbb{W}}(b\cdot_{\mathbb{W}}c)\bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Associativity follows from the absorbing zero cases and the inherited
-associativity of multiplication on positive natural numbers.
-\end{remark*}
+\end{tcolorbox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -223,7 +144,10 @@ associativity of multiplication on positive natural numbers.
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Multiplication on \texorpdfstring{$\mathbb{W}$}{W} Is Commutative)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Multiplication on \texorpdfstring{$\mathbb{W}$}{W} Is Commutative)}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Multiplication on $\mathbb{W}$ Is Commutative]
 \label{thm:multiplication-on-w-commutative}
 For all $a,b\in\mathbb{W}$,
@@ -232,19 +156,7 @@ a\cdot_{\mathbb{W}}b=b\cdot_{\mathbb{W}}a.
 \]
 \hyperref[prf:multiplication-on-w-commutative]{Go to proof.}
 \end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\forall a,b\in\mathbb{W}\;
-\bigl(a\cdot_{\mathbb{W}}b=b\cdot_{\mathbb{W}}a\bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The zero cases are symmetric, and the positive-positive case is the inherited
-commutativity theorem for $\mathbb{N}$.
-\end{remark*}
+\end{tcolorbox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -253,7 +165,10 @@ commutativity theorem for $\mathbb{N}$.
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Multiplication Distributes over Addition on \texorpdfstring{$\mathbb{W}$}{W})}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Multiplication Distributes over Addition on \texorpdfstring{$\mathbb{W}$}{W})}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Multiplication Distributes over Addition on $\mathbb{W}$]
 \label{thm:multiplication-distributes-over-addition-on-w}
 For all $a,b,c\in\mathbb{W}$,
@@ -264,20 +179,7 @@ a\cdot_{\mathbb{W}}(b+_{\mathbb{W}}c)
 \]
 \hyperref[prf:multiplication-distributes-over-addition-on-w]{Go to proof.}
 \end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\forall a,b,c\in\mathbb{W}\;
-\bigl(a\cdot_{\mathbb{W}}(b+_{\mathbb{W}}c)
-=(a\cdot_{\mathbb{W}}b)+_{\mathbb{W}}(a\cdot_{\mathbb{W}}c)\bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Distributivity reduces zero cases to the absorbing law and positive cases to
-the distributive law already proved on $\mathbb{N}$.
-\end{remark*}
+\end{tcolorbox}
 
 \begin{dependencies}
 \begin{itemize}

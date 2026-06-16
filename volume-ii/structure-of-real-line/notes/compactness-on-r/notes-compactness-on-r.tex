@@ -1,3 +1,4 @@
+\section{Compactness on $\mathbb{R}$}
 \label{sec:compactness-on-r}
 
 \begin{topicbox}{The Open-Cover Definition}
@@ -5,7 +6,10 @@
 Compactness is defined by the open-cover property, deliberately and not as ``closed and bounded.'' The open-cover formulation is the one that survives to general metric spaces and to manifolds such as the torus, where ``bounded'' has no intrinsic meaning. On $\mathbb{R}$ the two descriptions coincide, and that coincidence is the Heine--Borel theorem of the next section, proved rather than assumed.
 \end{exposition}
 \end{topicbox}
-\begin{definitionbox}{Definition (Compact Set in $\mathbb{R}$)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Compact Set in $\mathbb{R}$)}},
+  fonttitle=\small\bfseries]
 \begin{definition}[Compact Set in $\mathbb{R}$]
 \label{def:compact-set}
 A set $K\subseteq\mathbb{R}$ is \emph{compact} exactly when every open cover of $K$ admits a finite subcover:
@@ -13,7 +17,7 @@ A set $K\subseteq\mathbb{R}$ is \emph{compact} exactly when every open cover of 
 \forall \{U_i\}_{i\in I}\text{ open cover of }K\;\exists \text{finite } J\subseteq I\;\Bigl(K\subseteq\bigcup_{i\in J}U_i\Bigr).
 \]
 \end{definition}
-\end{definitionbox}
+\end{tcolorbox}
 \begin{remark*}[Standard quantified statement]
 \[
 K \text{ compact} \Longleftrightarrow \forall \{U_i\}_{i\in I}\Bigl(\bigl(\forall i\in I\;U_i \text{ open}\bigr)\land K\subseteq\textstyle\bigcup_{i\in I}U_i \Rightarrow \exists \text{finite } J\subseteq I\;K\subseteq\textstyle\bigcup_{i\in J}U_i\Bigr).
@@ -32,17 +36,20 @@ Compactness is a finiteness property phrased entirely in open sets: no matter ho
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:real-open-cover]{Open Cover}
+  \item \hyperref[def:open-cover]{Open Cover}
   \item \hyperref[def:finite-subcover]{Subcover and Finite Subcover}
 \end{itemize}
 \end{dependencies}
-\begin{theorembox}{Theorem (Compact Subsets of $\mathbb{R}$ Are Closed and Bounded)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Compact Subsets of $\mathbb{R}$ Are Closed and Bounded)}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Compact Subsets of $\mathbb{R}$ Are Closed and Bounded]
 \label{thm:compact-implies-closed-bounded}
 If $K\subseteq\mathbb{R}$ is compact, then $K$ is closed and bounded.
 \hyperref[prf:compact-implies-closed-bounded]{Go to proof.}
 \end{theorem}
-\end{theorembox}
+\end{tcolorbox}
 \begin{remark*}[Standard quantified statement]
 \[
 K \text{ compact} \Longrightarrow (K \text{ closed} \land K \text{ bounded}).

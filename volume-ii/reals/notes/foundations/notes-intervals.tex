@@ -7,18 +7,31 @@
 % ---------------------------------------------------------
 % Toolkit
 % ---------------------------------------------------------
-\begin{exposition}
+\begin{tcolorbox}[colback=gray!6, colframe=gray!40, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Intervals — Quick Reference}},
+  fonttitle=\small\bfseries]
+\begin{tabular}{@{}p{0.28\textwidth}p{0.68\textwidth}@{}}
+\textbf{Core items} & Key definitions/results introduced in this file.\\
+\textbf{How to use} & Read the boxed items first; proofs and consequences follow.\\
+\textbf{Dependencies} & Refer back to earlier sections as needed.\\
+\end{tabular}
+\end{tcolorbox}
+
+
 Intervals are fundamental subsets of the real line defined using the order
 relation on $\mathbb{R}$. Let $a,b \in \mathbb{R}$ with $a < b$.
-\end{exposition}
 
 % ---------------------------------------------------------
-\subsection*{Basic Definitions}
+\subsection{Basic Definitions}
 % ---------------------------------------------------------
 
 \section*{Bounded Intervals}
 
-\begin{definitionbox}{Definition (Open Interval)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Open Interval)}},
+  fonttitle=\small\bfseries]
 The \emph{open interval} from $a$ to $b$ is the set
 \[
 (a,b) := \{ x \in \mathbb{R} : a < x < b \}.
@@ -26,10 +39,13 @@ The \emph{open interval} from $a$ to $b$ is the set
 \[
 \forall x \, (x \in (a,b) \leftrightarrow a < x \wedge x < b)
 \]
-\end{definitionbox}
+\end{tcolorbox}
 \label{def:open-interval-R}
 
-\begin{definitionbox}{Definition (Closed Interval)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Closed Interval)}},
+  fonttitle=\small\bfseries]
 The \emph{closed interval} from $a$ to $b$ is the set
 \[
 [a,b] := \{ x \in \mathbb{R} : a \le x \le b \}.
@@ -37,10 +53,13 @@ The \emph{closed interval} from $a$ to $b$ is the set
 \[
 \forall x \, (x \in [a,b] \leftrightarrow a \le x \wedge x \le b)
 \]
-\end{definitionbox}
+\end{tcolorbox}
 \label{def:closed-interval-R}
 
-\begin{definitionbox}{Definition (Half-Open Intervals)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Half-Open Intervals)}},
+  fonttitle=\small\bfseries]
 The \emph{left-closed, right-open interval} is
 \[
 [a,b) := \{ x \in \mathbb{R} : a \le x < b \}.
@@ -49,29 +68,38 @@ The \emph{left-open, right-closed interval} is
 \[
 (a,b] := \{ x \in \mathbb{R} : a < x \le b \}.
 \]
-\end{definitionbox}
+\end{tcolorbox}
 
 \section*{Unbounded Intervals}
 
-\begin{definitionbox}{Definition (Open Rays)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Open Rays)}},
+  fonttitle=\small\bfseries]
 The \emph{open rays} determined by $a \in \mathbb{R}$ are
 \[
 (a,\infty) := \{ x \in \mathbb{R} : x > a \},
 \qquad
 (-\infty,a) := \{ x \in \mathbb{R} : x < a \}.
 \]
-\end{definitionbox}
+\end{tcolorbox}
 
-\begin{definitionbox}{Definition (Closed Rays)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Closed Rays)}},
+  fonttitle=\small\bfseries]
 The \emph{closed rays} determined by $a \in \mathbb{R}$ are
 \[
 [a,\infty) := \{ x \in \mathbb{R} : x \ge a \},
 \qquad
 (-\infty,a] := \{ x \in \mathbb{R} : x \le a \}.
 \]
-\end{definitionbox}
+\end{tcolorbox}
 
-\begin{theorembox}{Theorem (Upper/Lower Perturbation Lemma in $\mathbb{R}$)}
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Upper/Lower Perturbation Lemma in $\mathbb{R}$)}},
+  fonttitle=\small\bfseries]
 \begin{theorem}[Upper/Lower Perturbation Lemma in $\mathbb{R}$]
 \label{thm:real-upper-lower-perturbation}
 If $x\in\mathbb{R}$ and $\varepsilon\in\mathbb{R}$ with $\varepsilon>0$, then
@@ -80,13 +108,12 @@ there exist $r,s\in\mathbb{R}$ such that
 x-\varepsilon<r<x<s<x+\varepsilon.
 \]
 \end{theorem}
-\end{theorembox}
+\end{tcolorbox}
 
-\begin{dependencies}
-\hyperref[prop:order-arithmetic]{order arithmetic in $\mathbb{R}$}.
-Missing formal dependency target: $\mathbb{R}$ is closed under division by $2$
-as part of its ordered-field structure.
-\end{dependencies}
+\begin{remark*}[Dependencies]
+Order arithmetic in $\mathbb{R}$ and closure of $\mathbb{R}$ under division by
+$2$.
+\end{remark*}
 
 \begin{remark*}[Proof idea]
 Take the symmetric perturbation $\delta=\varepsilon/2$ and set
@@ -99,24 +126,30 @@ $r=x-\delta$, $s=x+\delta$.
 
 \section*{Degenerate and Trivial Intervals}
 
-\begin{definitionbox}{Definition (Degenerate Interval)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Degenerate Interval)}},
+  fonttitle=\small\bfseries]
 If $a=b$, the closed interval
 \[
 [a,a] = \{a\}
 \]
 is called a \emph{degenerate interval}.
-\end{definitionbox}
+\end{tcolorbox}
 
-\begin{definitionbox}{Definition (Empty Interval)}
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Empty Interval)}},
+  fonttitle=\small\bfseries]
 If $a>b$, the set
 \[
 (a,b) = \varnothing
 \]
 is called an \emph{empty interval}.
-\end{definitionbox}
+\end{tcolorbox}
 
 % ---------------------------------------------------------
-\subsection*{Main Theorems}
+\subsection{Main Theorems}
 % ---------------------------------------------------------
 
 \begin{theorem}[Convexity Characterization of Intervals in $\mathbb{R}$]
@@ -131,25 +164,21 @@ Equivalently,
 (x<y<z \Rightarrow y \in I)
 \bigr).
 \]
-\hyperref[prf:convexity-characterization-of-intervals-in-r]{Go to proof.}
 \end{theorem}
 
 
 
-\begin{remark*}
+\begin{remark}
 Intervals are precisely the subsets of $\mathbb{R}$ with the property that if
 $x<y<z$ and $x,z$ belong to the set, then $y$ also belongs to the set.
-\end{remark*}
+\end{remark}
 
 % ---------------------------------------------------------
-\subsection*{Consequences}
+\subsection{Consequences}
 % ---------------------------------------------------------
 
-\begin{exposition}
 The logical implication of this section is:
-\end{exposition}
 
-\begin{exposition}
 \[
 \text{Order Structure of }\mathbb{R}
 \Rightarrow
@@ -157,12 +186,9 @@ The logical implication of this section is:
 \Rightarrow
 \text{Convex subsets of }\mathbb{R}.
 \]
-\end{exposition}
 
-\begin{exposition}
 Intervals encode the idea of “no gaps” between points of a set.
 They are the basic building blocks for:
-\end{exposition}
 
 \begin{itemize}
 \item neighborhoods,
@@ -171,7 +197,7 @@ They are the basic building blocks for:
 \item and completeness arguments (e.g. nested intervals).
 \end{itemize}
 
-\begin{remark*}[Logical Structure]
+\begin{remark}[Logical Structure]
 The major structural flow is:
 
 \[
@@ -185,4 +211,4 @@ The major structural flow is:
 \Rightarrow
 \text{Topological Structure of }\mathbb{R}.
 \]
-\end{remark*}
+\end{remark}

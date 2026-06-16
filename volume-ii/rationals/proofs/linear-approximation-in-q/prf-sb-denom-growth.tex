@@ -11,14 +11,16 @@
 \hyperref[lem:sb-denom-growth]{Return to Lemma~\ref*{lem:sb-denom-growth}.}
 \end{remark*}
 
-\begin{lemma*}[Denominator growth on infinite Stern--Brocot paths]
+\begin{theorem*}[Denominator growth on infinite Stern--Brocot paths]
 Along any infinite path in the Stern--Brocot tree, the denominators of
 the successive endpoint fractions form a strictly increasing sequence
 tending to infinity.
-\end{lemma*}
+\end{theorem*}
 
-\begin{proof}[Professional Standard Proof]
-\LRAProofBodyStart
+\textbf{Professional Standard Proof.}~\\
+% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
+\begin{proof}
+[Proof (Professional Standard)]
 At each step, the path occupies an interval $[a_n/b_n, c_n/d_n]$ where
 $b_n c_n - a_n d_n = 1$ by the Farey Neighbor Theorem.  The mediant
 inserted at step $n+1$ has denominator $b_n + d_n$.  One endpoint of the
@@ -32,8 +34,11 @@ Since they are positive integers and strictly increasing, they are
 unbounded: $b_n \to \infty$.
 \end{proof}
 
-\begin{proof}[Detailed Learning Proof]
-\LRAProofBodyStart
+\textbf{Detailed Learning Proof.}~\\
+TODO: Expand the professional proof into a detailed learning proof.
+
+
+\begin{proof}[Proof (Detailed Learning)]
 \textbf{Step 1: State the inductive claim.}
 We show that if the current boundary fractions are $a_n/b_n$ and
 $c_n/d_n$ with $b_n, d_n \geq 1$, then after one mediant insertion the
@@ -82,5 +87,3 @@ strict monotonicity of a positive-integer sequence.
 \hyperref[thm:archimedean-q]{Archimedean property of $\mathbb{Q}$},
 induction on $\mathbb{N}$.
 \end{dependencies}
-
-\clearpage
