@@ -98,6 +98,16 @@ x=[0,n]\text{ for some nonzero }n\in\mathbb{W}.
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:integers]{Integers}
+  \item \hyperref[def:integer-class-notation]{Integer Class Notation}
+  \item \hyperref[def:formal-difference-equivalence]{Formal-Difference Equivalence}
+  \item \hyperref[def:whole-numbers]{Whole Numbers}
+  \item \hyperref[thm:order-on-w-total]{Order on $\mathbb{W}$ Is Total}
+\end{itemize}
+\end{dependencies}
+
 \begin{corollarybox}{Corollary}
 \begin{corollary}[Integers Split by Sign]
 \label{cor:integers-split-by-sign}
@@ -180,12 +190,28 @@ x<y\land y<z \Longrightarrow x<z.
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
+  \item \hyperref[def:subtraction-on-z]{Subtraction on $\mathbb{Z}$}
+  \item \hyperref[def:positive-integer]{Positive Integer}
+  \item \hyperref[thm:addition-preserves-strict-order-on-z]{Addition Preserves Strict Order on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Order on $\mathbb{Z}$ Is Reflexive]
 \label{thm:order-on-z-reflexive}
 For every $x\in\mathbb{Z}$, $x\le x$.
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-on-z]{Order on $\mathbb{Z}$}
+  \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Order on $\mathbb{Z}$ Is Antisymmetric]
@@ -197,6 +223,14 @@ x\le y\land y\le x \Longrightarrow x=y.
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-on-z]{Order on $\mathbb{Z}$}
+  \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
+  \item \hyperref[thm:trichotomy-on-z]{Trichotomy on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Order on $\mathbb{Z}$ Is Transitive]
 \label{thm:order-on-z-transitive}
@@ -206,6 +240,15 @@ x\le y\land y\le z \Longrightarrow x\le z.
 \]
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-on-z]{Order on $\mathbb{Z}$}
+  \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
+  \item \hyperref[thm:strict-order-on-z-transitive]{Strict Order on $\mathbb{Z}$ Is Transitive}
+  \item \hyperref[thm:trichotomy-on-z]{Trichotomy on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Order on $\mathbb{Z}$ Is Total]
@@ -255,6 +298,14 @@ x<y \Longrightarrow z+x<z+y.
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
+  \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
+  \item \hyperref[thm:addition-on-z-well-defined]{Addition on $\mathbb{Z}$ Is Well-Defined}
+\end{itemize}
+\end{dependencies}
+
 \begin{corollarybox}{Corollary}
 \begin{corollary}[Right Addition Preserves Strict Order on $\mathbb{Z}$]
 \label{cor:right-addition-preserves-strict-order-on-z}
@@ -265,12 +316,26 @@ x<y \Longrightarrow x+z<y+z.
 \end{corollary}
 \end{corollarybox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:left-addition-preserves-strict-order-on-z]{Left Addition Preserves Strict Order on $\mathbb{Z}$}
+  \item \hyperref[thm:addition-on-z-commutative]{Addition on $\mathbb{Z}$ Is Commutative}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Addition Preserves Strict Order on $\mathbb{Z}$]
 \label{thm:addition-preserves-strict-order-on-z}
 Addition preserves strict order on both sides in $\mathbb{Z}$.
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:left-addition-preserves-strict-order-on-z]{Left Addition Preserves Strict Order on $\mathbb{Z}$}
+  \item \hyperref[cor:right-addition-preserves-strict-order-on-z]{Right Addition Preserves Strict Order on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Left Addition Preserves Order on $\mathbb{Z}$]
@@ -475,3 +540,13 @@ For all $x,y\in\mathbb{Z}$,
 The ordered set $(\mathbb{Z},\le)$ is not a well-order.
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:well-order]{Well-Ordered Set}
+  \item \hyperref[def:order-on-z]{Order on $\mathbb{Z}$}
+  \item \hyperref[def:zero-in-z]{Zero in $\mathbb{Z}$}
+  \item \hyperref[def:one-in-z]{One in $\mathbb{Z}$}
+  \item \hyperref[thm:trichotomy-on-z]{Trichotomy on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}

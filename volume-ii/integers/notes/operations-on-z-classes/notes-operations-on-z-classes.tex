@@ -96,6 +96,14 @@ For all $x,y,z\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
+  \item \hyperref[thm:addition-on-z-well-defined]{Addition on $\mathbb{Z}$ Is Well-Defined}
+  \item \hyperref[thm:addition-on-w-associative]{Addition on $\mathbb{W}$ Is Associative}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Addition on $\mathbb{Z}$ Is Commutative]
 \label{thm:addition-on-z-commutative}
@@ -124,6 +132,15 @@ For every $x\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
+  \item \hyperref[def:zero-in-z]{Zero in $\mathbb{Z}$}
+  \item \hyperref[thm:addition-on-z-well-defined]{Addition on $\mathbb{Z}$ Is Well-Defined}
+  \item \hyperref[thm:zero-additive-identity-on-w]{Zero Is an Additive Identity on $\mathbb{W}$}
+\end{itemize}
+\end{dependencies}
+
 \begin{corollarybox}{Corollary}
 \begin{corollary}[Zero Is a Right Additive Identity on $\mathbb{Z}$]
 \label{cor:zero-right-additive-identity-on-z}
@@ -133,6 +150,13 @@ x+0_{\mathbb{Z}}=x.
 \]
 \end{corollary}
 \end{corollarybox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:zero-left-additive-identity-on-z]{Zero Is a Left Additive Identity on $\mathbb{Z}$}
+  \item \hyperref[thm:addition-on-z-commutative]{Addition on $\mathbb{Z}$ Is Commutative}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Zero Is an Additive Identity on $\mathbb{Z}$]
@@ -145,6 +169,13 @@ x+0_{\mathbb{Z}}=x.
 \]
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:zero-left-additive-identity-on-z]{Zero Is a Left Additive Identity on $\mathbb{Z}$}
+  \item \hyperref[cor:zero-right-additive-identity-on-z]{Zero Is a Right Additive Identity on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Negation on $\mathbb{Z}$-Classes}
 
@@ -174,12 +205,26 @@ If $[a,b]=[a',b']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:negation-on-z-classes]{Negation on $\mathbb{Z}$}
+  \item \hyperref[def:formal-difference-equivalence]{Formal-Difference Equivalence}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Negation on $\mathbb{Z}$ Is Well-Defined]
 \label{thm:negation-on-z-well-defined}
 Negation determines a well-defined unary operation $\mathbb{Z}\to\mathbb{Z}$.
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:negation-on-z-classes]{Negation on $\mathbb{Z}$}
+  \item \hyperref[lem:negation-on-z-classes-respects-equivalence]{Negation Respects Formal-Difference Equivalence}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Negation Gives a Left Additive Inverse on $\mathbb{Z}$]
@@ -191,6 +236,16 @@ For every $x\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:negation-on-z-classes]{Negation on $\mathbb{Z}$}
+  \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
+  \item \hyperref[def:zero-in-z]{Zero in $\mathbb{Z}$}
+  \item \hyperref[thm:negation-on-z-well-defined]{Negation on $\mathbb{Z}$ Is Well-Defined}
+  \item \hyperref[thm:addition-on-z-well-defined]{Addition on $\mathbb{Z}$ Is Well-Defined}
+\end{itemize}
+\end{dependencies}
+
 \begin{corollarybox}{Corollary}
 \begin{corollary}[Negation Gives a Right Additive Inverse on $\mathbb{Z}$]
 \label{cor:negation-right-additive-inverse-on-z}
@@ -200,6 +255,13 @@ x+(-x)=0_{\mathbb{Z}}.
 \]
 \end{corollary}
 \end{corollarybox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:negation-left-additive-inverse-on-z]{Negation Gives a Left Additive Inverse on $\mathbb{Z}$}
+  \item \hyperref[thm:addition-on-z-commutative]{Addition on $\mathbb{Z}$ Is Commutative}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Every Integer Has an Additive Inverse]
@@ -212,6 +274,13 @@ y+x=0_{\mathbb{Z}}.
 \]
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:negation-left-additive-inverse-on-z]{Negation Gives a Left Additive Inverse on $\mathbb{Z}$}
+  \item \hyperref[cor:negation-right-additive-inverse-on-z]{Negation Gives a Right Additive Inverse on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Subtraction on $\mathbb{Z}$-Classes}
 
@@ -337,6 +406,14 @@ For all $x,y,z\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:multiplication-on-z-classes]{Multiplication on $\mathbb{Z}$}
+  \item \hyperref[thm:multiplication-on-z-well-defined]{Multiplication on $\mathbb{Z}$ Is Well-Defined}
+  \item \hyperref[thm:multiplication-on-w-associative]{Multiplication on $\mathbb{W}$ Is Associative}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Multiplication on $\mathbb{Z}$ Is Commutative]
 \label{thm:multiplication-on-z-commutative}
@@ -365,6 +442,15 @@ For every $x\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:multiplication-on-z-classes]{Multiplication on $\mathbb{Z}$}
+  \item \hyperref[def:one-in-z]{One in $\mathbb{Z}$}
+  \item \hyperref[thm:multiplication-on-z-well-defined]{Multiplication on $\mathbb{Z}$ Is Well-Defined}
+  \item \hyperref[thm:one-multiplicative-identity-on-w]{One Is a Multiplicative Identity on $\mathbb{W}$}
+\end{itemize}
+\end{dependencies}
+
 \begin{corollarybox}{Corollary}
 \begin{corollary}[One Is a Right Multiplicative Identity on $\mathbb{Z}$]
 \label{cor:one-right-multiplicative-identity-on-z}
@@ -374,6 +460,13 @@ x\cdot 1_{\mathbb{Z}}=x.
 \]
 \end{corollary}
 \end{corollarybox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:one-left-multiplicative-identity-on-z]{One Is a Left Multiplicative Identity on $\mathbb{Z}$}
+  \item \hyperref[thm:multiplication-on-z-commutative]{Multiplication on $\mathbb{Z}$ Is Commutative}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[One Is a Multiplicative Identity on $\mathbb{Z}$]
@@ -386,6 +479,13 @@ x\cdot 1_{\mathbb{Z}}=x.
 \]
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:one-left-multiplicative-identity-on-z]{One Is a Left Multiplicative Identity on $\mathbb{Z}$}
+  \item \hyperref[cor:one-right-multiplicative-identity-on-z]{One Is a Right Multiplicative Identity on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Distributivity on $\mathbb{Z}$-Classes}
 
@@ -449,12 +549,33 @@ The structure $(\mathbb{Z},+,0_{\mathbb{Z}})$ is an abelian group.
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:group]{Group}
+  \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
+  \item \hyperref[thm:addition-on-z-associative]{Addition on $\mathbb{Z}$ Is Associative}
+  \item \hyperref[thm:addition-on-z-commutative]{Addition on $\mathbb{Z}$ Is Commutative}
+  \item \hyperref[thm:zero-additive-identity-on-z]{Zero Is an Additive Identity on $\mathbb{Z}$}
+  \item \hyperref[thm:every-integer-has-additive-inverse]{Every Integer Has an Additive Inverse}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[$\mathbb{Z}$ Is a Multiplicative Commutative Monoid]
 \label{thm:z-multiplicative-commutative-monoid}
 The structure $(\mathbb{Z},\cdot,1_{\mathbb{Z}})$ is a commutative monoid.
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:commutative-monoid]{Commutative Monoid}
+  \item \hyperref[def:multiplication-on-z-classes]{Multiplication on $\mathbb{Z}$}
+  \item \hyperref[thm:multiplication-on-z-associative]{Multiplication on $\mathbb{Z}$ Is Associative}
+  \item \hyperref[thm:multiplication-on-z-commutative]{Multiplication on $\mathbb{Z}$ Is Commutative}
+  \item \hyperref[thm:one-multiplicative-identity-on-z]{One Is a Multiplicative Identity on $\mathbb{Z}$}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[$\mathbb{Z}$ Is a Commutative Ring]
