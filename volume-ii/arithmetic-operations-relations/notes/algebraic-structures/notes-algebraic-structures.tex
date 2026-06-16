@@ -83,6 +83,90 @@ addition and multiplication by positive elements.
 \end{definition}
 \end{definitionbox}
 
+\begin{axiombox}{Axiom (Ordered Field Trichotomy)}
+\begin{axiom}[Ordered Field Trichotomy]
+\label{ax:ordered-field-trichotomy}
+In an ordered field, for all elements $a$ and $b$, exactly one of the following
+holds:
+\[
+a=b,\qquad a<b,\qquad b<a.
+\]
+\end{axiom}
+\end{axiombox}
+
+\begin{remark*}[Interpretation]
+Any two elements of an ordered field are comparable, and comparison has no
+overlap: equality, being below, and being above are mutually exclusive cases.
+\end{remark*}
+
+\NoLocalDependencies
+
+\begin{axiombox}{Axiom (Ordered Field Addition Law)}
+\begin{axiom}[Ordered Field Addition Law]
+\label{ax:ordered-field-addition-law}
+In an ordered field, for all elements $a$, $b$, and $c$,
+\[
+a<b \quad\Longleftrightarrow\quad a+c<b+c.
+\]
+\end{axiom}
+\end{axiombox}
+
+\begin{remark*}[Interpretation]
+Adding the same element to both sides of a strict inequality preserves and
+reflects the order.
+\end{remark*}
+
+\NoLocalDependencies
+
+\begin{axiombox}{Axiom (Ordered Field Multiplication Law)}
+\begin{axiom}[Ordered Field Multiplication Law]
+\label{ax:ordered-field-multiplication-law}
+In an ordered field, for all elements $a$, $b$, and $c$,
+\[
+c>0 \Longrightarrow
+\bigl(ac<bc \Longleftrightarrow a<b\bigr),
+\]
+and
+\[
+c<0 \Longrightarrow
+\bigl(ac<bc \Longleftrightarrow b<a\bigr).
+\]
+Moreover, positive elements are closed under multiplication:
+\[
+0<a \land 0<b \Longrightarrow 0<ab.
+\]
+\end{axiom}
+\end{axiombox}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive element preserves strict order, while
+multiplication by a negative element reverses strict order. The positive
+elements are also closed under multiplication.
+\end{remark*}
+
+\NoLocalDependencies
+
+\begin{theorembox}{Theorem (Ordered Field Transitivity)}
+\begin{theorem}[Ordered Field Transitivity]
+\label{thm:ordered-field-transitivity}
+In an ordered field, for all elements $a$, $b$, and $c$,
+\[
+a<b \land b<c \Longrightarrow a<c.
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Interpretation]
+Strict order in an ordered field chains: an element below a second element
+which is below a third is below the third.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:abstract-ordered-field]{Ordered Field}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Positive Cone)}
 \begin{definition}[Positive cone]
 \label{def:positive-cone}
