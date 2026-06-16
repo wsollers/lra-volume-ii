@@ -1,11 +1,14 @@
 \subsection*{Integer Prepairs}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[Integer Prepair]
 \label{def:integer-prepair}
 An \emph{integer prepair} is an ordered pair $(a,b)\in\mathbb{W}\times\mathbb{W}$,
 read as the formal difference $a-b$.
 \end{definition}
+\end{definitionbox}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[Integer Prepair Set]
 \label{def:integer-prepair-set}
 The integer prepair set is
@@ -13,9 +16,11 @@ The integer prepair set is
 \operatorname{Pre}\mathbb{Z}:=\mathbb{W}\times\mathbb{W}.
 \]
 \end{definition}
+\end{definitionbox}
 
 \subsection*{Formal-Difference Equivalence}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[Formal-Difference Equivalence]
 \label{def:formal-difference-equivalence}
 For $(a,b),(c,d)\in\operatorname{Pre}\mathbb{Z}$, define
@@ -25,7 +30,9 @@ For $(a,b),(c,d)\in\operatorname{Pre}\mathbb{Z}$, define
 a+d=c+b.
 \]
 \end{definition}
+\end{definitionbox}
 
+\begin{lemmabox}{Lemma}
 \begin{lemma}[Formal-Difference Equivalence Is Reflexive]
 \label{lem:formal-difference-equivalence-reflexive}
 For every $(a,b)\in\operatorname{Pre}\mathbb{Z}$,
@@ -33,7 +40,9 @@ For every $(a,b)\in\operatorname{Pre}\mathbb{Z}$,
 (a,b)\sim_{\mathbb{Z}}(a,b).
 \]
 \end{lemma}
+\end{lemmabox}
 
+\begin{lemmabox}{Lemma}
 \begin{lemma}[Formal-Difference Equivalence Is Symmetric]
 \label{lem:formal-difference-equivalence-symmetric}
 For all prepairs $(a,b),(c,d)$,
@@ -43,7 +52,9 @@ For all prepairs $(a,b),(c,d)$,
 (c,d)\sim_{\mathbb{Z}}(a,b).
 \]
 \end{lemma}
+\end{lemmabox}
 
+\begin{lemmabox}{Lemma}
 \begin{lemma}[Formal-Difference Equivalence Is Transitive]
 \label{lem:formal-difference-equivalence-transitive}
 For all prepairs $(a,b),(c,d),(e,f)$,
@@ -54,6 +65,7 @@ For all prepairs $(a,b),(c,d),(e,f)$,
 (a,b)\sim_{\mathbb{Z}}(e,f).
 \]
 \end{lemma}
+\end{lemmabox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -61,15 +73,18 @@ For all prepairs $(a,b),(c,d),(e,f)$,
 \end{itemize}
 \end{dependencies}
 
+\begin{theorembox}{Theorem}
 \begin{theorem}[Formal-Difference Equivalence Is an Equivalence Relation]
 \label{thm:formal-difference-equivalence-relation}
 \label{thm:men-equiv}
 The relation $\sim_{\mathbb{Z}}$ is an equivalence relation on
 $\operatorname{Pre}\mathbb{Z}$.
 \end{theorem}
+\end{theorembox}
 
 \subsection*{Definition of $\mathbb{Z}$}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[Integers]
 \label{def:integers}
 The integers are the quotient
@@ -77,15 +92,19 @@ The integers are the quotient
 \mathbb{Z}:=\operatorname{Pre}\mathbb{Z}/{\sim_{\mathbb{Z}}}.
 \]
 \end{definition}
+\end{definitionbox}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[Integer Class Notation]
 \label{def:integer-class-notation}
 The notation $[a,b]$ denotes the $\sim_{\mathbb{Z}}$-equivalence class of the
 prepair $(a,b)$.
 \end{definition}
+\end{definitionbox}
 
 \subsection*{Zero and One in $\mathbb{Z}$}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[Zero in $\mathbb{Z}$]
 \label{def:zero-in-z}
 Define
@@ -93,7 +112,9 @@ Define
 0_{\mathbb{Z}}:=[0,0].
 \]
 \end{definition}
+\end{definitionbox}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[One in $\mathbb{Z}$]
 \label{def:one-in-z}
 Define
@@ -101,17 +122,23 @@ Define
 1_{\mathbb{Z}}:=[1,0].
 \]
 \end{definition}
+\end{definitionbox}
 
+\begin{theorembox}{Theorem}
 \begin{theorem}[Zero Is an Integer]
 \label{thm:zero-is-an-integer}
 The class $0_{\mathbb{Z}}$ is an element of $\mathbb{Z}$.
 \end{theorem}
+\end{theorembox}
 
+\begin{theorembox}{Theorem}
 \begin{theorem}[One Is an Integer]
 \label{thm:one-is-an-integer}
 The class $1_{\mathbb{Z}}$ is an element of $\mathbb{Z}$.
 \end{theorem}
+\end{theorembox}
 
+\begin{theorembox}{Theorem}
 \begin{theorem}[Zero Is Not One in $\mathbb{Z}$]
 \label{thm:zero-not-one-in-z}
 In $\mathbb{Z}$,
@@ -119,6 +146,7 @@ In $\mathbb{Z}$,
 0_{\mathbb{Z}}\ne 1_{\mathbb{Z}}.
 \]
 \end{theorem}
+\end{theorembox}
 
 \begin{dependencies}
 \begin{itemize}

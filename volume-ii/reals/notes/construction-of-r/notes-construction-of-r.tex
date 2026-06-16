@@ -1,5 +1,6 @@
 \subsection*{Dedekind Cuts}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[Dedekind Cut]
 \label{def:dedekind-cut}
 A \emph{Dedekind cut} is a set $\alpha\subseteq\mathbb{Q}$ satisfying:
@@ -14,6 +15,7 @@ and
 p\in\alpha \Longrightarrow \exists r\in\alpha\,(p<r).
 \]
 \end{definition}
+\end{definitionbox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -21,6 +23,7 @@ p\in\alpha \Longrightarrow \exists r\in\alpha\,(p<r).
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[The Real Numbers]
 \label{def:reals}
 The real numbers are the set
@@ -28,9 +31,11 @@ The real numbers are the set
 \mathbb{R}:=\{\alpha:\alpha\text{ is a Dedekind cut in }\mathbb{Q}\}.
 \]
 \end{definition}
+\end{definitionbox}
 
 \subsection*{Rational Cuts}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[Rational Cut]
 \label{def:rational-cut}
 For $q\in\mathbb{Q}$, define the rational cut
@@ -38,11 +43,14 @@ For $q\in\mathbb{Q}$, define the rational cut
 q^{\ast}:=\{r\in\mathbb{Q}:r<q\}.
 \]
 \end{definition}
+\end{definitionbox}
 
+\begin{lemmabox}{Lemma}
 \begin{lemma}[Rational Cuts Are Cuts]
 \label{lem:rational-cut-is-a-cut}
 For every $q\in\mathbb{Q}$, the set $q^{\ast}$ is a Dedekind cut.
 \end{lemma}
+\end{lemmabox}
 
 \begin{dependencies}
 \begin{itemize}
@@ -53,6 +61,7 @@ For every $q\in\mathbb{Q}$, the set $q^{\ast}$ is a Dedekind cut.
 
 \subsection*{Zero and One in $\mathbb{R}$}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[Zero in $\mathbb{R}$]
 \label{def:zero-in-r}
 Define
@@ -61,7 +70,9 @@ Define
 =\{r\in\mathbb{Q}:r<0_{\mathbb{Q}}\}.
 \]
 \end{definition}
+\end{definitionbox}
 
+\begin{definitionbox}{Definition}
 \begin{definition}[One in $\mathbb{R}$]
 \label{def:one-in-r}
 Define
@@ -70,12 +81,16 @@ Define
 =\{r\in\mathbb{Q}:r<1_{\mathbb{Q}}\}.
 \]
 \end{definition}
+\end{definitionbox}
 
+\begin{theorembox}{Theorem}
 \begin{theorem}[Zero and One Are Reals]
 \label{thm:zero-one-are-reals}
 The cuts $0_{\mathbb{R}}$ and $1_{\mathbb{R}}$ are elements of $\mathbb{R}$.
 \end{theorem}
+\end{theorembox}
 
+\begin{theorembox}{Theorem}
 \begin{theorem}[Zero Is Not One in $\mathbb{R}$]
 \label{thm:zero-not-one-in-r}
 In $\mathbb{R}$,
@@ -83,3 +98,4 @@ In $\mathbb{R}$,
 0_{\mathbb{R}}\ne 1_{\mathbb{R}}.
 \]
 \end{theorem}
+\end{theorembox}
