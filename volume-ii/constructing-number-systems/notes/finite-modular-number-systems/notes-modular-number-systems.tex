@@ -101,12 +101,11 @@ For \(a\in\mathbb{Z}\), the \emph{residue class of \(a\) modulo \(n\)} is
 \end{definition}
 
 \begin{remark*}[Standard quantified statement]
-The residue class \([a]_n\) is the set of all integers congruent to \(a\)
-modulo \(n\).
+The set \([a]_n\) contains exactly the integers congruent to \(a\) modulo \(n\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-A residue class is one element of the quotient number system.
+Each such set is one element of the quotient number system.
 \end{remark*}
 \end{definitionbox}
 
@@ -130,7 +129,7 @@ For residue classes modulo a positive integer \(n\), define
 \end{definition}
 
 \begin{remark*}[Standard quantified statement]
-The sum of two residue classes is the class of the sum of representatives.
+The sum \([a]_n+[b]_n\) is \([a+b]_n\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -156,8 +155,7 @@ For residue classes modulo a positive integer \(n\), define
 \end{definition}
 
 \begin{remark*}[Standard quantified statement]
-The product of two residue classes is the class of the product of
-representatives.
+The product \([a]_n\cdot[b]_n\) is \([ab]_n\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -182,11 +180,11 @@ well-defined operations on \(\mathbb{Z}/n\mathbb{Z}\).
 
 \begin{remark*}[Standard quantified statement]
 For each positive integer \(n\), the representative formulas for modular
-addition and multiplication determine unique residue classes.
+addition and multiplication determine unique outputs.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Changing representatives does not change the output class, so the operations
+Changing representatives does not change the output, so the operations
 belong to \(\mathbb{Z}/n\mathbb{Z}\) itself.
 \end{remark*}
 \end{theorembox}
@@ -234,33 +232,7 @@ arithmetic modulo \(n\).
 \end{itemize}
 \end{dependencies}
 
-\subsection*{Basic Examples}
-
-\begin{theorembox}{Theorem}
-\begin{theorem}[\(\mathbb{Z}/2\mathbb{Z}\) Is the Two-Element System]
-\label{thm:z-mod-two-is-two-element-system}
-The finite modular number system \(\mathbb{Z}/2\mathbb{Z}\) has exactly two
-classes, \([0]_2\) and \([1]_2\), and its addition and multiplication tables
-are the tables of \(\mathbb{F}_2\).
-\end{theorem}
-
-\begin{remark*}[Standard quantified statement]
-\(\mathbb{Z}/2\mathbb{Z}\) has the same carrier size and operation tables as
-\(\mathbb{F}_2\).
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The two-element table system is the first modular arithmetic system.
-\end{remark*}
-\end{theorembox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:finite-modular-number-system]{Finite Modular Number System}
-  \item \hyperref[def:two-element-number-system]{Two-Element Number System}
-  \item \hyperref[thm:modular-operations-well-defined]{Modular Addition and Multiplication Are Well-Defined}
-\end{itemize}
-\end{dependencies}
+\subsection*{Basic Example}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[\(\mathbb{Z}/4\mathbb{Z}\) Has Zero Divisors]
