@@ -18,10 +18,10 @@ TODO_RE = re.compile(
 
 
 def volume_name(repo_root: Path) -> str:
-    for child in sorted(repo_root.iterdir()):
-        if child.is_dir() and child.name.startswith("volume-"):
-            return child.name
-    return "volume-ii"
+    volume_roots = [child.name for child in sorted(repo_root.iterdir()) if child.is_dir() and child.name.startswith("volume-")]
+    if len(volume_roots) != 1:
+        raise ValueError(f"Expected exactly one volume-* directory in {repo_root}, found {len(volume_roots)}.")
+    return volume_roots[0]
 
 
 def chapter_from_path(path: Path, volume_root: Path) -> str:
@@ -86,26 +86,27 @@ def write_csv(path: Path, rows: list[dict[str, str]]) -> None:
         writer.writerows(rows)
 
 
-def write_markdown(path: Path, rows: list[dict[str, str]]) -> None:
+def write_markdown(path: Path, rows: list[dict[str, str]], volume: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     done = [row for row in rows if row["status"] == "done"]
     todo = [row for row in rows if row["status"] == "todo"]
     invalid = [row for row in rows if row["status"] == "invalid"]
+    title = volume.replace("-", " ").title()
     lines = [
-        "# Volume II Proof Status",
+        f"# {title} Proof Status",
         "",
         f"- Total active proof files: {len(rows)}",
         f"- Done: {len(done)}",
         f"- TODO: {len(todo)}",
         f"- Invalid proof-layer shape: {len(invalid)}",
         "",
-        "| Status | Label | Chapter | Proof file | TODO layers |",
-        "|---|---|---|---|---|",
+        "| Status | Label | Chapter | Proof file | TODO layers | Missing layers |",
+        "|---|---|---|---|---|---|",
     ]
     for row in rows:
         lines.append(
             f"| {row['status']} | `{row['label']}` | `{row['chapter']}` | "
-            f"`{row['proof_file']}` | {row['todo_layers']} |"
+            f"`{row['proof_file']}` | {row['todo_layers']} | {row['missing_layers']} |"
         )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -113,21 +114,26 @@ def write_markdown(path: Path, rows: list[dict[str, str]]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Report active proof files done versus TODO.")
     parser.add_argument("--repo-root", type=Path, default=ROOT)
-    parser.add_argument("--csv", type=Path, default=ROOT / "build" / "reports" / "volume-ii-proof-status.csv")
-    parser.add_argument("--markdown", type=Path, default=ROOT / "build" / "reports" / "volume-ii-proof-status.md")
+    parser.add_argument("--csv", type=Path)
+    parser.add_argument("--markdown", type=Path)
     args = parser.parse_args()
 
-    rows = collect_rows(args.repo_root.resolve())
-    write_csv(args.csv, rows)
-    write_markdown(args.markdown, rows)
+    repo_root = args.repo_root.resolve()
+    volume = volume_name(repo_root)
+    csv_path = args.csv or repo_root / "build" / "reports" / f"{volume}-proof-status.csv"
+    markdown_path = args.markdown or repo_root / "build" / "reports" / f"{volume}-proof-status.md"
+
+    rows = collect_rows(repo_root)
+    write_csv(csv_path, rows)
+    write_markdown(markdown_path, rows, volume)
 
     counts = {status: sum(1 for row in rows if row["status"] == status) for status in ("done", "todo", "invalid")}
     print(f"total active proof files: {len(rows)}")
     print(f"done: {counts['done']}")
     print(f"todo: {counts['todo']}")
     print(f"invalid: {counts['invalid']}")
-    print(f"csv: {args.csv}")
-    print(f"markdown: {args.markdown}")
+    print(f"csv: {csv_path}")
+    print(f"markdown: {markdown_path}")
     return 0
 
 
