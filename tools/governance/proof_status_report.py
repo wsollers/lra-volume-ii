@@ -58,7 +58,7 @@ def classify_proof(path: Path, repo_root: Path) -> dict[str, str]:
     missing_layers = [name for name in ("professional", "detailed") if name not in bodies]
     todo_layers = [name for name, body in bodies.items() if TODO_RE.search(body)]
     status = "done"
-    if missing_layers:
+    if not proof_for or missing_layers:
         status = "invalid"
     elif todo_layers:
         status = "todo"
@@ -69,7 +69,7 @@ def classify_proof(path: Path, repo_root: Path) -> dict[str, str]:
         "chapter": chapter_from_path(path, volume_root),
         "proof_file": path.relative_to(repo_root).as_posix(),
         "todo_layers": "; ".join(todo_layers),
-        "missing_layers": "; ".join(missing_layers),
+        "missing_layers": "; ".join([*([] if proof_for else ["proof_for"]), *missing_layers]),
     }
 
 
