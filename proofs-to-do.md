@@ -1,9 +1,10 @@
 # Volume II Proofs To Do
 
 Proof-writing order is dependency-first among active TODO proof labels, with the generated proof/status report order used as the stable tie-breaker.
-Use the empty `()` marker to record completion, for example `(✓)`.
+Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Total proofs to do: 493
+Open proofs to do: 492
+Completed in this tracker: 1
 
 1. () `thm:general-associativity` — **General Associativity**
    > **Statement.** If $O$ is associative, then every bracketing of
@@ -2417,7 +2418,7 @@ Total proofs to do: 493
    > \exists y,z\in\mathbb{Q}\ (x-\varepsilon<y<x<z<x+\varepsilon).
    > \]
 
-388. () `cor:q-has-no-adjacent-points` — **$ $ Has No Adjacent Points**
+388. (✅) `cor:q-has-no-adjacent-points` — **$ $ Has No Adjacent Points**
    > **Statement.** There do not exist rational numbers $x<y$ with no rational number strictly
    > between them.
 
