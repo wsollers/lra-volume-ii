@@ -1,0 +1,11 @@
+subject: numbers-summary
+display_title: 'Summary: The Number Systems'
+volume: volume-ii
+status: active
+dependencies:
+  prior: ''
+  next: ''
+path: volume-ii/book-continuum/numbers-summary
+book: book-continuum
+environments: []
+proof_files: []
