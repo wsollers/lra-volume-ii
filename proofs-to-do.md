@@ -399,7 +399,7 @@ Completed in this tracker: 1
    > For each positive integer \(n\), addition and multiplication modulo \(n\) are
    > well-defined operations on \(\mathbb{Z}/n\mathbb{Z}\).
 
-60. () `thm:z-mod-four-has-zero-divisors` — **\( /4 \) Has Zero Divisors**
+60. () `thm:z-mod-four-has-zero-divisors` — **\(\mathbb{Z}/4\mathbb{Z}\) Has Zero Divisors**
    > **Statement.**
    > In \(\mathbb{Z}/4\mathbb{Z}\), the nonzero class \([2]_4\) satisfies
    > \[
@@ -416,7 +416,7 @@ Completed in this tracker: 1
    > There is no order on \(\mathbb{B}_2\) that makes
    > \(\mathbb{F}_2\) an ordered field.
 
-63. () `thm:z-mod-two-is-two-element-system` — **\( /2 \) Is the Two-Element System**
+63. () `thm:z-mod-two-is-two-element-system` — **\(\mathbb{Z}/2\mathbb{Z}\) Is the Two-Element System**
    > **Statement.**
    > The finite modular number system \(\mathbb{Z}/2\mathbb{Z}\) has exactly two
    > classes, \([0]_2\) and \([1]_2\), and its addition and multiplication tables
@@ -730,7 +730,7 @@ Completed in this tracker: 1
    > n \neq m+n.
    > \]
 
-98. () `thm:n-additive-structure` — **$ $ Is Closed, Associative, and Commutative Under Addition**
+98. () `thm:n-additive-structure` — **$\mathbb{N}$ Is Closed, Associative, and Commutative Under Addition**
    > **Statement.**
    > Let $(P,S,1)$ be a Peano system. The binary operation $+$ on $P$ satisfies:
    > - \textbf{Closure.} For all $a,b \in P$, $a+b \in P$.
@@ -782,7 +782,7 @@ Completed in this tracker: 1
    > a \cdot b = b \cdot a.
    > \]
 
-105. () `thm:n-multiplicative-monoid` — **$ $ Is a Commutative Monoid Under Multiplication**
+105. () `thm:n-multiplicative-monoid` — **$\mathbb{N}$ Is a Commutative Monoid Under Multiplication**
    > **Statement.**
    > Let $(P,S,1)$ be a Peano system. The binary operation $\cdot$ on $P$ satisfies:
    > - \textbf{Closure.} For all $a,b \in P$, $a \cdot b \in P$.
@@ -794,7 +794,7 @@ Completed in this tracker: 1
    >  $1 \cdot a = a = a \cdot 1$.
    > Consequently $(P, \cdot, 1)$ is a commutative monoid.
 
-106. () `thm:n-is-semiring` — **$ $ Is a Semiring**
+106. () `thm:n-is-semiring` — **$\mathbb{N}$ Is a Semiring**
    > **Statement.**
    > Let $(P,S,1)$ be a Peano system. Then $(P,+,\cdot)$ satisfies:
    > - $(P,+)$ is a commutative semigroup.
@@ -1027,7 +1027,7 @@ Completed in this tracker: 1
    > 1<a \land m<n.
    > \]
 
-130. () `thm:n-less-than-2-to-n` — **$n < 2^n$ for All $n $**
+130. () `thm:n-less-than-2-to-n` — **$n < 2^n$ for All $n \in \mathbb{N}$**
    > **Statement.**
    > Let $(P,S,1)$ be a Peano system, and let $2 \coloneqq S(1)$. For every $n \in P$,
    > \[
@@ -1052,7 +1052,7 @@ Completed in this tracker: 1
    > - The well-ordering principle: every nonempty subset of $P$ has a least
    >  element with respect to $\le$.
 
-133. () `thm:zero-additive-identity-on-w` — **Zero Is an Additive Identity on $ $**
+133. () `thm:zero-additive-identity-on-w` — **Zero Is an Additive Identity on $\mathbb{W}$**
    > **Statement.**
    > For every $a\in\mathbb{W}$,
    > \[
@@ -1061,7 +1061,7 @@ Completed in this tracker: 1
    > a+_{\mathbb{W}}0=a.
    > \]
 
-134. () `thm:addition-on-w-associative` — **Addition on $ $ Is Associative**
+134. () `thm:addition-on-w-associative` — **Addition on $\mathbb{W}$ Is Associative**
    > **Statement.**
    > For all $a,b,c\in\mathbb{W}$,
    > \[
@@ -1070,18 +1070,18 @@ Completed in this tracker: 1
    > a+_{\mathbb{W}}(b+_{\mathbb{W}}c).
    > \]
 
-135. () `thm:addition-on-w-commutative` — **Addition on $ $ Is Commutative**
+135. () `thm:addition-on-w-commutative` — **Addition on $\mathbb{W}$ Is Commutative**
    > **Statement.**
    > For all $a,b\in\mathbb{W}$,
    > \[
    > a+_{\mathbb{W}}b=b+_{\mathbb{W}}a.
    > \]
 
-136. () `thm:w-additive-commutative-monoid` — **$( ,+,0)$ Is a Commutative Monoid**
+136. () `thm:w-additive-commutative-monoid` — **$(\mathbb{W},+,0)$ Is a Commutative Monoid**
    > **Statement.**
    > The structure $(\mathbb{W},+_{\mathbb{W}},0)$ is a commutative monoid.
 
-137. () `thm:one-multiplicative-identity-on-w` — **One Is a Multiplicative Identity on $ $**
+137. () `thm:one-multiplicative-identity-on-w` — **One Is a Multiplicative Identity on $\mathbb{W}$**
    > **Statement.**
    > For every $a\in\mathbb{W}$,
    > \[
@@ -1090,7 +1090,7 @@ Completed in this tracker: 1
    > a\cdot_{\mathbb{W}}1=a.
    > \]
 
-138. () `thm:zero-absorbing-for-multiplication-on-w` — **Zero Is Absorbing for Multiplication on $ $**
+138. () `thm:zero-absorbing-for-multiplication-on-w` — **Zero Is Absorbing for Multiplication on $\mathbb{W}$**
    > **Statement.**
    > For every $a\in\mathbb{W}$,
    > \[
@@ -1099,7 +1099,7 @@ Completed in this tracker: 1
    > a\cdot_{\mathbb{W}}0=0.
    > \]
 
-139. () `thm:multiplication-on-w-associative` — **Multiplication on $ $ Is Associative**
+139. () `thm:multiplication-on-w-associative` — **Multiplication on $\mathbb{W}$ Is Associative**
    > **Statement.**
    > For all $a,b,c\in\mathbb{W}$,
    > \[
@@ -1108,18 +1108,18 @@ Completed in this tracker: 1
    > a\cdot_{\mathbb{W}}(b\cdot_{\mathbb{W}}c).
    > \]
 
-140. () `thm:multiplication-on-w-commutative` — **Multiplication on $ $ Is Commutative**
+140. () `thm:multiplication-on-w-commutative` — **Multiplication on $\mathbb{W}$ Is Commutative**
    > **Statement.**
    > For all $a,b\in\mathbb{W}$,
    > \[
    > a\cdot_{\mathbb{W}}b=b\cdot_{\mathbb{W}}a.
    > \]
 
-141. () `thm:w-multiplicative-commutative-monoid` — **$( , ,1)$ Is a Commutative Monoid**
+141. () `thm:w-multiplicative-commutative-monoid` — **$(\mathbb{W},\cdot,1)$ Is a Commutative Monoid**
    > **Statement.**
    > The structure $(\mathbb{W},\cdot_{\mathbb{W}},1)$ is a commutative monoid.
 
-142. () `thm:multiplication-distributes-over-addition-on-w` — **Multiplication Distributes over Addition on $ $**
+142. () `thm:multiplication-distributes-over-addition-on-w` — **Multiplication Distributes over Addition on $\mathbb{W}$**
    > **Statement.**
    > For all $a,b,c\in\mathbb{W}$,
    > \[
@@ -1128,13 +1128,13 @@ Completed in this tracker: 1
    > (a\cdot_{\mathbb{W}}b)+_{\mathbb{W}}(a\cdot_{\mathbb{W}}c).
    > \]
 
-143. () `thm:w-commutative-semiring` — **$( ,+, ,0,1)$ Is a Commutative Semiring**
+143. () `thm:w-commutative-semiring` — **$(\mathbb{W},+,\cdot,0,1)$ Is a Commutative Semiring**
    > **Statement.**
    > The structure
    > $(\mathbb{W},+_{\mathbb{W}},\cdot_{\mathbb{W}},0,1)$ is a commutative
    > semiring.
 
-144. () `thm:order-on-w-extends-order-on-n` — **Order on $ $ Extends Order on $ $**
+144. () `thm:order-on-w-extends-order-on-n` — **Order on $\mathbb{W}$ Extends Order on $\mathbb{N}$**
    > **Statement.**
    > For all $a,b\in\mathbb{N}$,
    > \[
@@ -1143,14 +1143,14 @@ Completed in this tracker: 1
    > a<_{\mathbb{W}}b\Longleftrightarrow a<_{\mathbb{N}}b.
    > \]
 
-145. () `thm:zero-least-element-of-w` — **Zero Is the Least Element of $ $**
+145. () `thm:zero-least-element-of-w` — **Zero Is the Least Element of $\mathbb{W}$**
    > **Statement.**
    > For every $a\in\mathbb{W}$,
    > \[
    > 0\leq_{\mathbb{W}}a.
    > \]
 
-146. () `thm:order-on-w-total` — **Order on $ $ Is Total**
+146. () `thm:order-on-w-total` — **Order on $\mathbb{W}$ Is Total**
    > **Statement.**
    > For all $a,b\in\mathbb{W}$,
    > \[
@@ -1159,32 +1159,32 @@ Completed in this tracker: 1
    > b\leq_{\mathbb{W}}a.
    > \]
 
-147. () `thm:w-commutative-ordered-semiring` — **$ $ Is a Commutative Ordered Semiring**
+147. () `thm:w-commutative-ordered-semiring` — **$\mathbb{W}$ Is a Commutative Ordered Semiring**
    > **Statement.**
    > With the operations $+_{\mathbb{W}}$ and $\cdot_{\mathbb{W}}$ and the order
    > $\le_{\mathbb{W}}$, the whole numbers form a commutative ordered semiring.
 
-148. () `thm:addition-on-w-extends-addition-on-n` — **Addition on $ $ Extends Addition on $ $**
+148. () `thm:addition-on-w-extends-addition-on-n` — **Addition on $\mathbb{W}$ Extends Addition on $\mathbb{N}$**
    > **Statement.**
    > For all $a,b\in\mathbb{N}$,
    > \[
    > a+_{\mathbb{W}}b=a+_{\mathbb{N}}b.
    > \]
 
-149. () `thm:multiplication-on-w-extends-multiplication-on-n` — **Multiplication on $ $ Extends Multiplication on $ $**
+149. () `thm:multiplication-on-w-extends-multiplication-on-n` — **Multiplication on $\mathbb{W}$ Extends Multiplication on $\mathbb{N}$**
    > **Statement.**
    > For all $a,b\in\mathbb{N}$,
    > \[
    > a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b.
    > \]
 
-150. () `thm:n-embeds-into-w-as-positive-part` — **$ $ Embeds into $ $ as the Positive Part**
+150. () `thm:n-embeds-into-w-as-positive-part` — **$\mathbb{N}$ Embeds into $\mathbb{W}$ as the Positive Part**
    > **Statement.**
    > The inclusion map identifies $\mathbb{N}$ with the positive part
    > $\mathbb{W}\setminus\{0\}$ and preserves successor, $1$, addition,
    > multiplication, and order.
 
-151. () `thm:w-has-no-additive-inverses-except-zero` — **$ $ Has No Additive Inverses Except $0$**
+151. () `thm:w-has-no-additive-inverses-except-zero` — **$\mathbb{W}$ Has No Additive Inverses Except $0$**
    > **Statement.**
    > If $a,b\in\mathbb{W}$ and
    > \[
@@ -1192,12 +1192,12 @@ Completed in this tracker: 1
    > \]
    > then $a=0$ and $b=0$.
 
-152. () `thm:w-is-not-a-ring` — **$ $ Is Not a Ring**
+152. () `thm:w-is-not-a-ring` — **$\mathbb{W}$ Is Not a Ring**
    > **Statement.**
    > With the operations $+_{\mathbb{W}}$ and $\cdot_{\mathbb{W}}$, the whole
    > numbers do not form a ring.
 
-153. () `thm:zero-not-in-n` — **$0 $**
+153. () `thm:zero-not-in-n` — **$0\notin\mathbb{N}$**
    > **Statement.**
    > The adjoined element $0$ is not an element of the one-based natural-number
    > system:
@@ -1205,73 +1205,73 @@ Completed in this tracker: 1
    > 0\notin\mathbb{N}.
    > \]
 
-154. () `thm:addition-on-w-well-defined` — **Addition on $ $ Is Well-Defined**
+154. () `thm:addition-on-w-well-defined` — **Addition on $\mathbb{W}$ Is Well-Defined**
    > **Statement.**
    > The case definition of $+_{\mathbb{W}}$ determines a binary operation on
    > $\mathbb{W}$.
 
-155. () `thm:left-additive-identity-on-w` — **Left Additive Identity on $ $**
+155. () `thm:left-additive-identity-on-w` — **Left Additive Identity on $\mathbb{W}$**
    > **Statement.**
    > For every $a\in\mathbb{W}$,
    > \[
    > 0+_{\mathbb{W}}a=a.
    > \]
 
-156. () `thm:right-additive-identity-on-w` — **Right Additive Identity on $ $**
+156. () `thm:right-additive-identity-on-w` — **Right Additive Identity on $\mathbb{W}$**
    > **Statement.**
    > For every $a\in\mathbb{W}$,
    > \[
    > a+_{\mathbb{W}}0=a.
    > \]
 
-157. () `thm:addition-on-w-cancellation` — **Addition on $ $ Satisfies Cancellation**
+157. () `thm:addition-on-w-cancellation` — **Addition on $\mathbb{W}$ Satisfies Cancellation**
    > **Statement.**
    > For all $a,b,c\in\mathbb{W}$,
    > \[
    > a+_{\mathbb{W}}b=a+_{\mathbb{W}}c\Longrightarrow b=c.
    > \]
 
-158. () `thm:multiplication-on-w-well-defined` — **Multiplication on $ $ Is Well-Defined**
+158. () `thm:multiplication-on-w-well-defined` — **Multiplication on $\mathbb{W}$ Is Well-Defined**
    > **Statement.**
    > The case definition of $\cdot_{\mathbb{W}}$ determines a binary operation on
    > $\mathbb{W}$.
 
-159. () `thm:left-zero-absorption-on-w` — **Left Zero Absorption on $ $**
+159. () `thm:left-zero-absorption-on-w` — **Left Zero Absorption on $\mathbb{W}$**
    > **Statement.**
    > For every $a\in\mathbb{W}$,
    > \[
    > 0\cdot_{\mathbb{W}}a=0.
    > \]
 
-160. () `thm:right-zero-absorption-on-w` — **Right Zero Absorption on $ $**
+160. () `thm:right-zero-absorption-on-w` — **Right Zero Absorption on $\mathbb{W}$**
    > **Statement.**
    > For every $a\in\mathbb{W}$,
    > \[
    > a\cdot_{\mathbb{W}}0=0.
    > \]
 
-161. () `thm:successor-on-w-well-defined` — **Successor on $ $ Is Well-Defined**
+161. () `thm:successor-on-w-well-defined` — **Successor on $\mathbb{W}$ Is Well-Defined**
    > **Statement.**
    > The rule defining $S_{\mathbb{W}}$ determines a function
    > $S_{\mathbb{W}}:\mathbb{W}\to\mathbb{W}$.
 
-162. () `thm:zero-is-not-successor-in-w` — **$0$ Is Not a Successor in $ $**
+162. () `thm:zero-is-not-successor-in-w` — **$0$ Is Not a Successor in $\mathbb{W}$**
    > **Statement.**
    > There is no $a\in\mathbb{W}$ such that $S_{\mathbb{W}}(a)=0$.
 
-163. () `thm:every-nonzero-w-is-successor` — **Every Nonzero Element of $ $ Is a Successor**
+163. () `thm:every-nonzero-w-is-successor` — **Every Nonzero Element of $\mathbb{W}$ Is a Successor**
    > **Statement.**
    > If $a\in\mathbb{W}$ and $a\neq 0$, then there exists
    > $b\in\mathbb{W}$ such that $a=S_{\mathbb{W}}(b)$.
 
-164. () `thm:successor-on-w-injective` — **Successor on $ $ Is Injective**
+164. () `thm:successor-on-w-injective` — **Successor on $\mathbb{W}$ Is Injective**
    > **Statement.**
    > For all $a,b\in\mathbb{W}$,
    > \[
    > S_{\mathbb{W}}(a)=S_{\mathbb{W}}(b)\Longrightarrow a=b.
    > \]
 
-165. () `thm:w-successor-system-properties` — **$( ,0,S_ )$ Satisfies the Successor Properties**
+165. () `thm:w-successor-system-properties` — **$(\mathbb{W},0,S_{\mathbb{W}})$ Satisfies the Successor Properties**
    > **Statement.**
    > The triple $(\mathbb{W},0,S_{\mathbb{W}})$ satisfies the successor-side
    > properties:
@@ -1286,11 +1286,11 @@ Completed in this tracker: 1
    > (S_{\mathbb{W}}(a)=S_{\mathbb{W}}(b)\Longrightarrow a=b).
    > \]
 
-166. () `thm:order-on-w-reflexive` — **Order on $ $ Is Reflexive**
+166. () `thm:order-on-w-reflexive` — **Order on $\mathbb{W}$ Is Reflexive**
    > **Statement.**
    > For every $a\in\mathbb{W}$, $a\leq_{\mathbb{W}}a$.
 
-167. () `thm:order-on-w-antisymmetric` — **Order on $ $ Is Antisymmetric**
+167. () `thm:order-on-w-antisymmetric` — **Order on $\mathbb{W}$ Is Antisymmetric**
    > **Statement.**
    > For all $a,b\in\mathbb{W}$,
    > \[
@@ -1298,7 +1298,7 @@ Completed in this tracker: 1
    > \Longrightarrow a=b.
    > \]
 
-168. () `thm:order-on-w-transitive` — **Order on $ $ Is Transitive**
+168. () `thm:order-on-w-transitive` — **Order on $\mathbb{W}$ Is Transitive**
    > **Statement.**
    > For all $a,b,c\in\mathbb{W}$,
    > \[
@@ -1306,26 +1306,26 @@ Completed in this tracker: 1
    > \Longrightarrow a\leq_{\mathbb{W}}c.
    > \]
 
-169. () `thm:well-ordering-principle-for-w` — **Well-Ordering Principle for $ $**
+169. () `thm:well-ordering-principle-for-w` — **Well-Ordering Principle for $\mathbb{W}$**
    > **Statement.**
    > Every nonempty subset of $\mathbb{W}$ has a least element with respect to
    > $\leq_{\mathbb{W}}$.
 
-170. () `thm:z-has-no-zero-divisors` — **$ $ Has No Zero Divisors**
+170. () `thm:z-has-no-zero-divisors` — **$\mathbb{Z}$ Has No Zero Divisors**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
    > x\cdot y=0 \Longrightarrow x=0 \text{ or } y=0.
    > \]
 
-171. () `thm:zero-not-one-in-z` — **Zero Is Not One in $ $**
+171. () `thm:zero-not-one-in-z` — **Zero Is Not One in $\mathbb{Z}$**
    > **Statement.**
    > In $\mathbb{Z}$,
    > \[
    > 0_{\mathbb{Z}}\ne 1_{\mathbb{Z}}.
    > \]
 
-172. () `thm:left-distributivity-on-z` — **Left Distributivity on $ $**
+172. () `thm:left-distributivity-on-z` — **Left Distributivity on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
@@ -1353,26 +1353,26 @@ Completed in this tracker: 1
    > [a,b]\cdot[c,d]=[a',b']\cdot[c',d'].
    > \]
 
-176. () `thm:multiplication-on-z-well-defined` — **Multiplication on $ $ Is Well-Defined**
+176. () `thm:multiplication-on-z-well-defined` — **Multiplication on $\mathbb{Z}$ Is Well-Defined**
    > **Statement.**
    > Multiplication determines a well-defined binary operation
    > $\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$.
 
-177. () `thm:multiplication-on-z-commutative` — **Multiplication on $ $ Is Commutative**
+177. () `thm:multiplication-on-z-commutative` — **Multiplication on $\mathbb{Z}$ Is Commutative**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
    > x\cdot y=y\cdot x.
    > \]
 
-178. () `cor:right-distributivity-on-z` — **Right Distributivity on $ $**
+178. () `cor:right-distributivity-on-z` — **Right Distributivity on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > (y+z)\cdot x=y\cdot x+z\cdot x.
    > \]
 
-179. () `thm:multiplication-distributes-over-addition-on-z` — **Multiplication Distributes over Addition on $ $**
+179. () `thm:multiplication-distributes-over-addition-on-z` — **Multiplication Distributes over Addition on $\mathbb{Z}$**
    > **Statement.**
    > Multiplication distributes over addition on both sides in $\mathbb{Z}$.
 
@@ -1397,40 +1397,40 @@ Completed in this tracker: 1
    > [a,b]+[c,d]=[a',b']+[c',d'].
    > \]
 
-183. () `thm:addition-on-z-well-defined` — **Addition on $ $ Is Well-Defined**
+183. () `thm:addition-on-z-well-defined` — **Addition on $\mathbb{Z}$ Is Well-Defined**
    > **Statement.**
    > Addition determines a well-defined binary operation
    > $\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$.
 
-184. () `thm:addition-on-z-associative` — **Addition on $ $ Is Associative**
+184. () `thm:addition-on-z-associative` — **Addition on $\mathbb{Z}$ Is Associative**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > (x+y)+z=x+(y+z).
    > \]
 
-185. () `thm:addition-on-z-commutative` — **Addition on $ $ Is Commutative**
+185. () `thm:addition-on-z-commutative` — **Addition on $\mathbb{Z}$ Is Commutative**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
    > x+y=y+x.
    > \]
 
-186. () `thm:zero-left-additive-identity-on-z` — **Zero Is a Left Additive Identity on $ $**
+186. () `thm:zero-left-additive-identity-on-z` — **Zero Is a Left Additive Identity on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
    > 0_{\mathbb{Z}}+x=x.
    > \]
 
-187. () `cor:zero-right-additive-identity-on-z` — **Zero Is a Right Additive Identity on $ $**
+187. () `cor:zero-right-additive-identity-on-z` — **Zero Is a Right Additive Identity on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
    > x+0_{\mathbb{Z}}=x.
    > \]
 
-188. () `thm:zero-additive-identity-on-z` — **Zero Is an Additive Identity on $ $**
+188. () `thm:zero-additive-identity-on-z` — **Zero Is an Additive Identity on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
@@ -1446,18 +1446,18 @@ Completed in this tracker: 1
    > -[a,b]=-[a',b'].
    > \]
 
-190. () `thm:negation-on-z-well-defined` — **Negation on $ $ Is Well-Defined**
+190. () `thm:negation-on-z-well-defined` — **Negation on $\mathbb{Z}$ Is Well-Defined**
    > **Statement.**
    > Negation determines a well-defined unary operation $\mathbb{Z}\to\mathbb{Z}$.
 
-191. () `thm:negation-left-additive-inverse-on-z` — **Negation Gives a Left Additive Inverse on $ $**
+191. () `thm:negation-left-additive-inverse-on-z` — **Negation Gives a Left Additive Inverse on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
    > (-x)+x=0_{\mathbb{Z}}.
    > \]
 
-192. () `cor:negation-right-additive-inverse-on-z` — **Negation Gives a Right Additive Inverse on $ $**
+192. () `cor:negation-right-additive-inverse-on-z` — **Negation Gives a Right Additive Inverse on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
@@ -1473,32 +1473,32 @@ Completed in this tracker: 1
    > y+x=0_{\mathbb{Z}}.
    > \]
 
-194. () `thm:z-additive-abelian-group` — **$ $ Is an Additive Abelian Group**
+194. () `thm:z-additive-abelian-group` — **$\mathbb{Z}$ Is an Additive Abelian Group**
    > **Statement.**
    > The structure $(\mathbb{Z},+,0_{\mathbb{Z}})$ is an abelian group.
 
-195. () `thm:multiplication-on-z-associative` — **Multiplication on $ $ Is Associative**
+195. () `thm:multiplication-on-z-associative` — **Multiplication on $\mathbb{Z}$ Is Associative**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > (x\cdot y)\cdot z=x\cdot(y\cdot z).
    > \]
 
-196. () `thm:one-left-multiplicative-identity-on-z` — **One Is a Left Multiplicative Identity on $ $**
+196. () `thm:one-left-multiplicative-identity-on-z` — **One Is a Left Multiplicative Identity on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
    > 1_{\mathbb{Z}}\cdot x=x.
    > \]
 
-197. () `cor:one-right-multiplicative-identity-on-z` — **One Is a Right Multiplicative Identity on $ $**
+197. () `cor:one-right-multiplicative-identity-on-z` — **One Is a Right Multiplicative Identity on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
    > x\cdot 1_{\mathbb{Z}}=x.
    > \]
 
-198. () `thm:one-multiplicative-identity-on-z` — **One Is a Multiplicative Identity on $ $**
+198. () `thm:one-multiplicative-identity-on-z` — **One Is a Multiplicative Identity on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
@@ -1507,28 +1507,28 @@ Completed in this tracker: 1
    > x\cdot 1_{\mathbb{Z}}=x.
    > \]
 
-199. () `thm:z-multiplicative-commutative-monoid` — **$ $ Is a Multiplicative Commutative Monoid**
+199. () `thm:z-multiplicative-commutative-monoid` — **$\mathbb{Z}$ Is a Multiplicative Commutative Monoid**
    > **Statement.**
    > The structure $(\mathbb{Z},\cdot,1_{\mathbb{Z}})$ is a commutative monoid.
 
-200. () `thm:z-commutative-ring` — **$ $ Is a Commutative Ring**
+200. () `thm:z-commutative-ring` — **$\mathbb{Z}$ Is a Commutative Ring**
    > **Statement.**
    > The structure $(\mathbb{Z},+,\cdot,0_{\mathbb{Z}},1_{\mathbb{Z}})$ is a
    > commutative ring.
 
-201. () `thm:z-integral-domain` — **$ $ Is an Integral Domain**
+201. () `thm:z-integral-domain` — **$\mathbb{Z}$ Is an Integral Domain**
    > **Statement.**
    > The integers form an integral domain: $\mathbb{Z}$ is a commutative ring,
    > $0\ne 1$, and $\mathbb{Z}$ has no zero divisors.
 
-202. () `cor:multiplicative-cancellation-on-z` — **Multiplicative Cancellation on $ $**
+202. () `cor:multiplicative-cancellation-on-z` — **Multiplicative Cancellation on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > z\ne 0 \land z\cdot x=z\cdot y \Longrightarrow x=y.
    > \]
 
-203. () `cor:zero-absorption-on-z` — **Zero Absorption on $ $**
+203. () `cor:zero-absorption-on-z` — **Zero Absorption on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
@@ -1537,7 +1537,7 @@ Completed in this tracker: 1
    > x\cdot 0=0.
    > \]
 
-204. () `cor:sign-rule-on-z` — **Sign Rule on $ $**
+204. () `cor:sign-rule-on-z` — **Sign Rule on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
@@ -1546,14 +1546,14 @@ Completed in this tracker: 1
    > x\cdot(-y)=-(x\cdot y).
    > \]
 
-205. () `cor:negative-one-rule-on-z` — **Negative One Rule on $ $**
+205. () `cor:negative-one-rule-on-z` — **Negative One Rule on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$,
    > \[
    > (-1)\cdot x=-x.
    > \]
 
-206. () `cor:product-of-negatives-on-z` — **Product of Negatives on $ $**
+206. () `cor:product-of-negatives-on-z` — **Product of Negatives on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
@@ -1599,14 +1599,14 @@ Completed in this tracker: 1
    > **Statement.**
    > The class $1_{\mathbb{Z}}$ is an element of $\mathbb{Z}$.
 
-213. () `prop:divisibility-reflexive-on-z` — **Divisibility Is Reflexive on $ $**
+213. () `prop:divisibility-reflexive-on-z` — **Divisibility Is Reflexive on $\mathbb{Z}$**
    > **Statement.**
    > For every $a\in\mathbb{Z}$,
    > \[
    > a\mid a.
    > \]
 
-214. () `prop:divisibility-transitive-on-z` — **Divisibility Is Transitive on $ $**
+214. () `prop:divisibility-transitive-on-z` — **Divisibility Is Transitive on $\mathbb{Z}$**
    > **Statement.**
    > For all $a,b,c\in\mathbb{Z}$,
    > \[
@@ -1643,21 +1643,21 @@ Completed in this tracker: 1
    > a\mid b \Longleftrightarrow a\mid(-b).
    > \]
 
-219. () `prop:divisibility-compatible-with-negation-on-z` — **Divisibility Is Compatible with Negation on $ $**
+219. () `prop:divisibility-compatible-with-negation-on-z` — **Divisibility Is Compatible with Negation on $\mathbb{Z}$**
    > **Statement.**
    > For all $a,b\in\mathbb{Z}$,
    > \[
    > a\mid b \Longleftrightarrow (-a)\mid b \Longleftrightarrow a\mid(-b).
    > \]
 
-220. () `prop:divisibility-compatible-with-addition-on-z` — **Divisibility Is Compatible with Addition on $ $**
+220. () `prop:divisibility-compatible-with-addition-on-z` — **Divisibility Is Compatible with Addition on $\mathbb{Z}$**
    > **Statement.**
    > For all $a,b,c\in\mathbb{Z}$,
    > \[
    > a\mid b\land a\mid c \Longrightarrow a\mid(b+c).
    > \]
 
-221. () `prop:divisibility-respects-linear-combinations-on-z` — **Divisibility Respects Linear Combinations on $ $**
+221. () `prop:divisibility-respects-linear-combinations-on-z` — **Divisibility Respects Linear Combinations on $\mathbb{Z}$**
    > **Statement.**
    > For all $a,b,c,x,y\in\mathbb{Z}$,
    > \[
@@ -1673,7 +1673,7 @@ Completed in this tracker: 1
    > x=[0,n]\text{ for some nonzero }n\in\mathbb{W}.
    > \]
 
-223. () `thm:sign-trichotomy-on-z` — **Sign Trichotomy on $ $**
+223. () `thm:sign-trichotomy-on-z` — **Sign Trichotomy on $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Z}$, exactly one of
    > \[
@@ -1681,7 +1681,7 @@ Completed in this tracker: 1
    > \]
    > holds.
 
-224. () `thm:trichotomy-on-z` — **Trichotomy on $ $**
+224. () `thm:trichotomy-on-z` — **Trichotomy on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$, exactly one of
    > \[
@@ -1689,18 +1689,18 @@ Completed in this tracker: 1
    > \]
    > holds.
 
-225. () `thm:units-of-z-are-pm-one` — **The Units of $ $ Are Exactly $ 1$**
+225. () `thm:units-of-z-are-pm-one` — **The Units of $\mathbb{Z}$ Are Exactly $\pm1$**
    > **Statement.**
    > An integer $u$ is a unit if and only if
    > \[
    > u=1\quad\text{or}\quad u=-1.
    > \]
 
-226. () `thm:z-is-not-well-ordered` — **$ $ Is Not Well-Ordered**
+226. () `thm:z-is-not-well-ordered` — **$\mathbb{Z}$ Is Not Well-Ordered**
    > **Statement.**
    > The ordered set $(\mathbb{Z},\le)$ is not a well-order.
 
-227. () `thm:division-algorithm-on-z` — **Division Algorithm on $ $**
+227. () `thm:division-algorithm-on-z` — **Division Algorithm on $\mathbb{Z}$**
    > **Statement.**
    > If $a,b\in\mathbb{Z}$ and $b\ne0$, then there exist unique
    > $q,r\in\mathbb{Z}$ such that
@@ -1710,7 +1710,7 @@ Completed in this tracker: 1
    > 0\le r<|b|.
    > \]
 
-228. () `thm:bezout-identity-on-z` — **Bezout Identity on $ $**
+228. () `thm:bezout-identity-on-z` — **Bezout Identity on $\mathbb{Z}$**
    > **Statement.**
    > For $a,b\in\mathbb{Z}$, there exist $x,y\in\mathbb{Z}$ such that
    > \[
@@ -1731,7 +1731,7 @@ Completed in this tracker: 1
    > \iota(1_{\mathbb{W}})=1_{\mathbb{Z}}.
    > \]
 
-231. () `thm:embedding-w-into-z-injective` — **Embedding $ $ into $ $ Is Injective**
+231. () `thm:embedding-w-into-z-injective` — **Embedding $\mathbb{W}$ into $\mathbb{Z}$ Is Injective**
    > **Statement.**
    > For all $a,b\in\mathbb{W}$,
    > \[
@@ -1759,12 +1759,12 @@ Completed in this tracker: 1
    > a\le b \Longleftrightarrow \iota(a)\le\iota(b).
    > \]
 
-235. () `thm:w-embeds-into-z` — **$ $ Embeds into $ $**
+235. () `thm:w-embeds-into-z` — **$\mathbb{W}$ Embeds into $\mathbb{Z}$**
    > **Statement.**
    > The map $\iota:\mathbb{W}\to\mathbb{Z}$ is an injective order-preserving
    > semiring homomorphism.
 
-236. () `thm:subtraction-on-z-well-defined` — **Subtraction on $ $ Is Well-Defined**
+236. () `thm:subtraction-on-z-well-defined` — **Subtraction on $\mathbb{Z}$ Is Well-Defined**
    > **Statement.**
    > Subtraction determines a well-defined binary operation
    > $\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$.
@@ -1776,7 +1776,7 @@ Completed in this tracker: 1
    > b<a \Longleftrightarrow b'<a'.
    > \]
 
-238. () `thm:positivity-on-z-well-defined` — **Positivity on $ $ Is Well-Defined**
+238. () `thm:positivity-on-z-well-defined` — **Positivity on $\mathbb{Z}$ Is Well-Defined**
    > **Statement.**
    > The predicate ``$x$ is positive'' is well-defined on equivalence classes in
    > $\mathbb{Z}$.
@@ -1798,144 +1798,144 @@ Completed in this tracker: 1
    > The image of the canonical embedding $\mathbb{W}\to\mathbb{Z}$ is exactly
    > the set of nonnegative integers.
 
-242. () `thm:strict-order-on-z-irreflexive` — **Strict Order on $ $ Is Irreflexive**
+242. () `thm:strict-order-on-z-irreflexive` — **Strict Order on $\mathbb{Z}$ Is Irreflexive**
    > **Statement.**
    > For every $x\in\mathbb{Z}$, not $x<x$.
 
-243. () `thm:strict-order-on-z-asymmetric` — **Strict Order on $ $ Is Asymmetric**
+243. () `thm:strict-order-on-z-asymmetric` — **Strict Order on $\mathbb{Z}$ Is Asymmetric**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
    > x<y \Longrightarrow \neg(y<x).
    > \]
 
-244. () `thm:left-addition-preserves-strict-order-on-z` — **Left Addition Preserves Strict Order on $ $**
+244. () `thm:left-addition-preserves-strict-order-on-z` — **Left Addition Preserves Strict Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > x<y \Longrightarrow z+x<z+y.
    > \]
 
-245. () `cor:right-addition-preserves-strict-order-on-z` — **Right Addition Preserves Strict Order on $ $**
+245. () `cor:right-addition-preserves-strict-order-on-z` — **Right Addition Preserves Strict Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > x<y \Longrightarrow x+z<y+z.
    > \]
 
-246. () `thm:addition-preserves-strict-order-on-z` — **Addition Preserves Strict Order on $ $**
+246. () `thm:addition-preserves-strict-order-on-z` — **Addition Preserves Strict Order on $\mathbb{Z}$**
    > **Statement.**
    > Addition preserves strict order on both sides in $\mathbb{Z}$.
 
-247. () `thm:strict-order-on-z-transitive` — **Strict Order on $ $ Is Transitive**
+247. () `thm:strict-order-on-z-transitive` — **Strict Order on $\mathbb{Z}$ Is Transitive**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > x<y\land y<z \Longrightarrow x<z.
    > \]
 
-248. () `thm:order-on-z-reflexive` — **Order on $ $ Is Reflexive**
+248. () `thm:order-on-z-reflexive` — **Order on $\mathbb{Z}$ Is Reflexive**
    > **Statement.**
    > For every $x\in\mathbb{Z}$, $x\le x$.
 
-249. () `thm:order-on-z-antisymmetric` — **Order on $ $ Is Antisymmetric**
+249. () `thm:order-on-z-antisymmetric` — **Order on $\mathbb{Z}$ Is Antisymmetric**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
    > x\le y\land y\le x \Longrightarrow x=y.
    > \]
 
-250. () `thm:order-on-z-transitive` — **Order on $ $ Is Transitive**
+250. () `thm:order-on-z-transitive` — **Order on $\mathbb{Z}$ Is Transitive**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > x\le y\land y\le z \Longrightarrow x\le z.
    > \]
 
-251. () `thm:order-on-z-total` — **Order on $ $ Is Total**
+251. () `thm:order-on-z-total` — **Order on $\mathbb{Z}$ Is Total**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
    > x\le y\text{ or }y\le x.
    > \]
 
-252. () `thm:z-totally-ordered-set` — **$ $ Is a Totally Ordered Set**
+252. () `thm:z-totally-ordered-set` — **$\mathbb{Z}$ Is a Totally Ordered Set**
    > **Statement.**
    > The ordered pair $(\mathbb{Z},\le)$ is a totally ordered set.
 
-253. () `thm:left-addition-preserves-order-on-z` — **Left Addition Preserves Order on $ $**
+253. () `thm:left-addition-preserves-order-on-z` — **Left Addition Preserves Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > x\le y \Longrightarrow z+x\le z+y.
    > \]
 
-254. () `cor:right-addition-preserves-order-on-z` — **Right Addition Preserves Order on $ $**
+254. () `cor:right-addition-preserves-order-on-z` — **Right Addition Preserves Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > x\le y \Longrightarrow x+z\le y+z.
    > \]
 
-255. () `thm:addition-preserves-order-on-z` — **Addition Preserves Order on $ $**
+255. () `thm:addition-preserves-order-on-z` — **Addition Preserves Order on $\mathbb{Z}$**
    > **Statement.**
    > Addition preserves non-strict order on both sides in $\mathbb{Z}$.
 
-256. () `cor:addition-reflects-order-on-z` — **Addition Reflects Order on $ $**
+256. () `cor:addition-reflects-order-on-z` — **Addition Reflects Order on $\mathbb{Z}$**
    > **Statement.**
    > Addition by a fixed integer reflects both strict and non-strict order.
 
-257. () `thm:left-positive-multiplication-preserves-strict-order-on-z` — **Left Multiplication by Positives Preserves Strict Order on $ $**
+257. () `thm:left-positive-multiplication-preserves-strict-order-on-z` — **Left Multiplication by Positives Preserves Strict Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > 0<z\land x<y \Longrightarrow z\cdot x<z\cdot y.
    > \]
 
-258. () `cor:right-positive-multiplication-preserves-strict-order-on-z` — **Right Multiplication by Positives Preserves Strict Order on $ $**
+258. () `cor:right-positive-multiplication-preserves-strict-order-on-z` — **Right Multiplication by Positives Preserves Strict Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > 0<z\land x<y \Longrightarrow x\cdot z<y\cdot z.
    > \]
 
-259. () `thm:positive-multiplication-preserves-strict-order-on-z` — **Multiplication by Positives Preserves Strict Order on $ $**
+259. () `thm:positive-multiplication-preserves-strict-order-on-z` — **Multiplication by Positives Preserves Strict Order on $\mathbb{Z}$**
    > **Statement.**
    > Multiplication by a positive integer preserves strict order on both sides.
 
-260. () `thm:left-positive-multiplication-preserves-order-on-z` — **Left Multiplication by Positives Preserves Order on $ $**
+260. () `thm:left-positive-multiplication-preserves-order-on-z` — **Left Multiplication by Positives Preserves Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > 0<z\land x\le y \Longrightarrow z\cdot x\le z\cdot y.
    > \]
 
-261. () `cor:right-positive-multiplication-preserves-order-on-z` — **Right Multiplication by Positives Preserves Order on $ $**
+261. () `cor:right-positive-multiplication-preserves-order-on-z` — **Right Multiplication by Positives Preserves Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > 0<z\land x\le y \Longrightarrow x\cdot z\le y\cdot z.
    > \]
 
-262. () `thm:positive-multiplication-preserves-order-on-z` — **Multiplication by Positives Preserves Order on $ $**
+262. () `thm:positive-multiplication-preserves-order-on-z` — **Multiplication by Positives Preserves Order on $\mathbb{Z}$**
    > **Statement.**
    > Multiplication by a positive integer preserves non-strict order on both sides.
 
-263. () `thm:negative-multiplication-reverses-strict-order-on-z` — **Multiplication by Negatives Reverses Strict Order on $ $**
+263. () `thm:negative-multiplication-reverses-strict-order-on-z` — **Multiplication by Negatives Reverses Strict Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > z<0\land x<y \Longrightarrow z\cdot y<z\cdot x.
    > \]
 
-264. () `cor:negative-multiplication-reverses-order-on-z` — **Multiplication by Negatives Reverses Order on $ $**
+264. () `cor:negative-multiplication-reverses-order-on-z` — **Multiplication by Negatives Reverses Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Z}$,
    > \[
    > z<0\land x\le y \Longrightarrow z\cdot y\le z\cdot x.
    > \]
 
-265. () `thm:zero-multiplication-collapses-order-on-z` — **Multiplication by Zero Collapses Order on $ $**
+265. () `thm:zero-multiplication-collapses-order-on-z` — **Multiplication by Zero Collapses Order on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
@@ -1977,7 +1977,7 @@ Completed in this tracker: 1
    > -|x|\le x\le |x|.
    > \]
 
-271. () `thm:triangle-inequality-on-z` — **Triangle Inequality on $ $**
+271. () `thm:triangle-inequality-on-z` — **Triangle Inequality on $\mathbb{Z}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Z}$,
    > \[
@@ -1992,15 +1992,15 @@ Completed in this tracker: 1
    > the selected constants, operations, and order. Consequently $A$ may be
    > identified with the corresponding substructure $\varphi(A)\subseteq B$.
 
-273. () `thm:q-embeds-in-r` — **$ $ Embeds in $ $**
+273. () `thm:q-embeds-in-r` — **$\mathbb{Q}$ Embeds in $\mathbb{R}$**
    > **Statement.**
    > The canonical map $\iota:\mathbb{Q}\to \mathbb{R}$ is an embedding of ordered arithmetic systems: it is injective, preserves $0$, $1$, addition, and multiplication, and reflects the order.
 
-274. () `thm:w-embeds-in-z` — **$ $ Embeds in $ $**
+274. () `thm:w-embeds-in-z` — **$\mathbb{W}$ Embeds in $\mathbb{Z}$**
    > **Statement.**
    > The canonical map $\iota:\mathbb{W}\to \mathbb{Z}$ is an embedding of ordered arithmetic systems: it is injective, preserves $0$, $1$, addition, and multiplication, and reflects the order.
 
-275. () `thm:z-embeds-in-q` — **$ $ Embeds in $ $**
+275. () `thm:z-embeds-in-q` — **$\mathbb{Z}$ Embeds in $\mathbb{Q}$**
    > **Statement.**
    > The canonical map $\iota:\mathbb{Z}\to \mathbb{Q}$ is an embedding of ordered arithmetic systems: it is injective, preserves $0$, $1$, addition, and multiplication, and reflects the order.
 
@@ -2008,13 +2008,13 @@ Completed in this tracker: 1
    > **Statement.**
    > Let $\iota_{1}:\mathbb{N}\to\mathbb{W}$, $\iota_{2}:\mathbb{W}\to\mathbb{Z}$, $\iota_{3}:\mathbb{Z}\to\mathbb{Q}$, and $\iota_{4}:\mathbb{Q}\to\mathbb{R}$ be the canonical embeddings. For every $n\in\mathbb{N}$ the composite $(\iota_{4}\circ\iota_{3}\circ\iota_{2}\circ\iota_{1})(n)$ is the real number identified with $n$, and the composite preserves the arithmetic and order carried by the source system. Hence arithmetic computed in any system agrees with arithmetic on its image in $\mathbb{R}$.
 
-277. () `thm:n-embeds-in-w` — **$ $ Embeds in $ $**
+277. () `thm:n-embeds-in-w` — **$\mathbb{N}$ Embeds in $\mathbb{W}$**
    > **Statement.**
    > The canonical map $\iota:\mathbb{N}\to \mathbb{W}$ identifies $\mathbb{N}$ with
    > the positive part $\mathbb{W}\setminus\{0\}$ and preserves successor, $1$,
    > addition, multiplication, and order.
 
-278. () `thm:sign-trichotomy-on-q` — **Sign Trichotomy on $ $**
+278. () `thm:sign-trichotomy-on-q` — **Sign Trichotomy on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$, exactly one of
    > \[
@@ -2022,7 +2022,7 @@ Completed in this tracker: 1
    > \]
    > holds.
 
-279. () `thm:trichotomy-on-q` — **Trichotomy on $ $**
+279. () `thm:trichotomy-on-q` — **Trichotomy on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$, exactly one of
    > \[
@@ -2030,7 +2030,7 @@ Completed in this tracker: 1
    > \]
    > holds.
 
-280. () `thm:zero-not-one-in-q` — **Zero Is Not One in $ $**
+280. () `thm:zero-not-one-in-q` — **Zero Is Not One in $\mathbb{Q}$**
    > **Statement.**
    > In $\mathbb{Q}$,
    > \[
@@ -2067,7 +2067,7 @@ Completed in this tracker: 1
    > [a,b]+[c,d]=[a',b']+[c',d'].
    > \]
 
-285. () `thm:addition-on-q-well-defined` — **Addition on $ $ Is Well-Defined**
+285. () `thm:addition-on-q-well-defined` — **Addition on $\mathbb{Q}$ Is Well-Defined**
    > **Statement.**
    > Addition determines a well-defined binary operation
    > $\mathbb{Q}\times\mathbb{Q}\to\mathbb{Q}$.
@@ -2093,65 +2093,65 @@ Completed in this tracker: 1
    > [a,b]\cdot[c,d]=[a',b']\cdot[c',d'].
    > \]
 
-289. () `thm:multiplication-on-q-well-defined` — **Multiplication on $ $ Is Well-Defined**
+289. () `thm:multiplication-on-q-well-defined` — **Multiplication on $\mathbb{Q}$ Is Well-Defined**
    > **Statement.**
    > Multiplication determines a well-defined binary operation
    > $\mathbb{Q}\times\mathbb{Q}\to\mathbb{Q}$.
 
-290. () `thm:left-distributivity-on-q` — **Left Distributivity on $ $**
+290. () `thm:left-distributivity-on-q` — **Left Distributivity on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > x\cdot(y+z)=x\cdot y+x\cdot z.
    > \]
 
-291. () `thm:multiplication-on-q-commutative` — **Multiplication on $ $ Is Commutative**
+291. () `thm:multiplication-on-q-commutative` — **Multiplication on $\mathbb{Q}$ Is Commutative**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
    > x\cdot y=y\cdot x.
    > \]
 
-292. () `cor:right-distributivity-on-q` — **Right Distributivity on $ $**
+292. () `cor:right-distributivity-on-q` — **Right Distributivity on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > (y+z)\cdot x=y\cdot x+z\cdot x.
    > \]
 
-293. () `thm:multiplication-distributes-over-addition-on-q` — **Multiplication Distributes over Addition on $ $**
+293. () `thm:multiplication-distributes-over-addition-on-q` — **Multiplication Distributes over Addition on $\mathbb{Q}$**
    > **Statement.**
    > Multiplication distributes over addition on both sides in $\mathbb{Q}$.
 
-294. () `thm:addition-on-q-associative` — **Addition on $ $ Is Associative**
+294. () `thm:addition-on-q-associative` — **Addition on $\mathbb{Q}$ Is Associative**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > (x+y)+z=x+(y+z).
    > \]
 
-295. () `thm:addition-on-q-commutative` — **Addition on $ $ Is Commutative**
+295. () `thm:addition-on-q-commutative` — **Addition on $\mathbb{Q}$ Is Commutative**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
    > x+y=y+x.
    > \]
 
-296. () `thm:zero-left-additive-identity-on-q` — **Zero Is a Left Additive Identity on $ $**
+296. () `thm:zero-left-additive-identity-on-q` — **Zero Is a Left Additive Identity on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
    > 0_{\mathbb{Q}}+x=x.
    > \]
 
-297. () `cor:zero-right-additive-identity-on-q` — **Zero Is a Right Additive Identity on $ $**
+297. () `cor:zero-right-additive-identity-on-q` — **Zero Is a Right Additive Identity on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
    > x+0_{\mathbb{Q}}=x.
    > \]
 
-298. () `thm:zero-additive-identity-on-q` — **Zero Is an Additive Identity on $ $**
+298. () `thm:zero-additive-identity-on-q` — **Zero Is an Additive Identity on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
@@ -2167,18 +2167,18 @@ Completed in this tracker: 1
    > -[a,b]=-[a',b'].
    > \]
 
-300. () `thm:negation-on-q-well-defined` — **Negation on $ $ Is Well-Defined**
+300. () `thm:negation-on-q-well-defined` — **Negation on $\mathbb{Q}$ Is Well-Defined**
    > **Statement.**
    > Negation determines a well-defined unary operation $\mathbb{Q}\to\mathbb{Q}$.
 
-301. () `thm:negation-left-additive-inverse-on-q` — **Negation Gives a Left Additive Inverse on $ $**
+301. () `thm:negation-left-additive-inverse-on-q` — **Negation Gives a Left Additive Inverse on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
    > (-x)+x=0_{\mathbb{Q}}.
    > \]
 
-302. () `cor:negation-right-additive-inverse-on-q` — **Negation Gives a Right Additive Inverse on $ $**
+302. () `cor:negation-right-additive-inverse-on-q` — **Negation Gives a Right Additive Inverse on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
@@ -2194,32 +2194,32 @@ Completed in this tracker: 1
    > y+x=0_{\mathbb{Q}}.
    > \]
 
-304. () `thm:q-additive-abelian-group` — **$ $ Is an Additive Abelian Group**
+304. () `thm:q-additive-abelian-group` — **$\mathbb{Q}$ Is an Additive Abelian Group**
    > **Statement.**
    > The structure $(\mathbb{Q},+,0_{\mathbb{Q}})$ is an abelian group.
 
-305. () `thm:multiplication-on-q-associative` — **Multiplication on $ $ Is Associative**
+305. () `thm:multiplication-on-q-associative` — **Multiplication on $\mathbb{Q}$ Is Associative**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > (x\cdot y)\cdot z=x\cdot(y\cdot z).
    > \]
 
-306. () `thm:one-left-multiplicative-identity-on-q` — **One Is a Left Multiplicative Identity on $ $**
+306. () `thm:one-left-multiplicative-identity-on-q` — **One Is a Left Multiplicative Identity on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
    > 1_{\mathbb{Q}}\cdot x=x.
    > \]
 
-307. () `cor:one-right-multiplicative-identity-on-q` — **One Is a Right Multiplicative Identity on $ $**
+307. () `cor:one-right-multiplicative-identity-on-q` — **One Is a Right Multiplicative Identity on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
    > x\cdot 1_{\mathbb{Q}}=x.
    > \]
 
-308. () `thm:one-multiplicative-identity-on-q` — **One Is a Multiplicative Identity on $ $**
+308. () `thm:one-multiplicative-identity-on-q` — **One Is a Multiplicative Identity on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
@@ -2228,7 +2228,7 @@ Completed in this tracker: 1
    > x\cdot 1_{\mathbb{Q}}=x.
    > \]
 
-309. () `lem:vanishing-criterion-q` — **Vanishing Criterion in $ $**
+309. () `lem:vanishing-criterion-q` — **Vanishing Criterion in $\mathbb{Q}$**
    > **Statement.**
    > For every prefraction $(a,b)\in\operatorname{Pre}\mathbb{Q}$,
    > \[
@@ -2237,7 +2237,7 @@ Completed in this tracker: 1
    > a=0_{\mathbb{Z}}.
    > \]
 
-310. () `lem:nonzero-predicate-well-defined-q` — **Nonzero Predicate Is Well-Defined on $ $**
+310. () `lem:nonzero-predicate-well-defined-q` — **Nonzero Predicate Is Well-Defined on $\mathbb{Q}$**
    > **Statement.**
    > For every prefraction $(a,b)\in\operatorname{Pre}\mathbb{Q}$,
    > \[
@@ -2247,7 +2247,7 @@ Completed in this tracker: 1
    > \]
    > Thus nonzeroness is independent of the representative.
 
-311. () `lem:reciprocal-denominator-nonzero-q` — **Reciprocal Lands in $ $**
+311. () `lem:reciprocal-denominator-nonzero-q` — **Reciprocal Lands in $\operatorname{Pre}\mathbb{Q}$**
    > **Statement.**
    > If $[a,b]\ne 0_{\mathbb{Q}}$, then $a\ne 0_{\mathbb{Z}}$, so $(b,a)$ is a
    > prefraction.
@@ -2259,21 +2259,21 @@ Completed in this tracker: 1
    > [a,b]^{-1}=[a',b']^{-1}.
    > \]
 
-313. () `thm:reciprocal-on-q-well-defined` — **Reciprocal on $ $ Is Well-Defined**
+313. () `thm:reciprocal-on-q-well-defined` — **Reciprocal on $\mathbb{Q}$ Is Well-Defined**
    > **Statement.**
    > Reciprocal determines a well-defined map
    > \[
    > \mathbb{Q}\setminus\{0_{\mathbb{Q}}\}\to\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}.
    > \]
 
-314. () `thm:reciprocal-left-multiplicative-inverse-on-q` — **Reciprocal Gives a Left Multiplicative Inverse on $ $**
+314. () `thm:reciprocal-left-multiplicative-inverse-on-q` — **Reciprocal Gives a Left Multiplicative Inverse on $\mathbb{Q}$**
    > **Statement.**
    > For every nonzero $x\in\mathbb{Q}$,
    > \[
    > x^{-1}\cdot x=1_{\mathbb{Q}}.
    > \]
 
-315. () `cor:reciprocal-right-multiplicative-inverse-on-q` — **Reciprocal Gives a Right Multiplicative Inverse on $ $**
+315. () `cor:reciprocal-right-multiplicative-inverse-on-q` — **Reciprocal Gives a Right Multiplicative Inverse on $\mathbb{Q}$**
    > **Statement.**
    > For every nonzero $x\in\mathbb{Q}$,
    > \[
@@ -2290,96 +2290,96 @@ Completed in this tracker: 1
    > y\cdot x=1_{\mathbb{Q}}.
    > \]
 
-317. () `thm:q-nonzero-multiplicative-abelian-group` — **Nonzero $ $ Is a Multiplicative Abelian Group**
+317. () `thm:q-nonzero-multiplicative-abelian-group` — **Nonzero $\mathbb{Q}$ Is a Multiplicative Abelian Group**
    > **Statement.**
    > The structure
    > $(\mathbb{Q}\setminus\{0_{\mathbb{Q}}\},\cdot,1_{\mathbb{Q}})$ is an abelian
    > group.
 
-318. () `thm:q-is-a-field` — **$ $ Is a Field**
+318. () `thm:q-is-a-field` — **$\mathbb{Q}$ Is a Field**
    > **Statement.**
    > The structure $(\mathbb{Q},+,\cdot,0_{\mathbb{Q}},1_{\mathbb{Q}})$ is a field.
 
-319. () `thm:order-on-q-reflexive` — **Order on $ $ Is Reflexive**
+319. () `thm:order-on-q-reflexive` — **Order on $\mathbb{Q}$ Is Reflexive**
    > **Statement.**
    > For every $x\in\mathbb{Q}$, $x\le x$.
 
-320. () `thm:strict-order-on-q-asymmetric` — **Strict Order on $ $ Is Asymmetric**
+320. () `thm:strict-order-on-q-asymmetric` — **Strict Order on $\mathbb{Q}$ Is Asymmetric**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
    > x<y \Longrightarrow \neg(y<x).
    > \]
 
-321. () `thm:order-on-q-antisymmetric` — **Order on $ $ Is Antisymmetric**
+321. () `thm:order-on-q-antisymmetric` — **Order on $\mathbb{Q}$ Is Antisymmetric**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
    > x\le y\land y\le x \Longrightarrow x=y.
    > \]
 
-322. () `thm:left-addition-preserves-strict-order-on-q` — **Left Addition Preserves Strict Order on $ $**
+322. () `thm:left-addition-preserves-strict-order-on-q` — **Left Addition Preserves Strict Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > x<y \Longrightarrow z+x<z+y.
    > \]
 
-323. () `cor:right-addition-preserves-strict-order-on-q` — **Right Addition Preserves Strict Order on $ $**
+323. () `cor:right-addition-preserves-strict-order-on-q` — **Right Addition Preserves Strict Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > x<y \Longrightarrow x+z<y+z.
    > \]
 
-324. () `thm:addition-preserves-strict-order-on-q` — **Addition Preserves Strict Order on $ $**
+324. () `thm:addition-preserves-strict-order-on-q` — **Addition Preserves Strict Order on $\mathbb{Q}$**
    > **Statement.**
    > Addition preserves strict order on both sides in $\mathbb{Q}$.
 
-325. () `thm:strict-order-on-q-transitive` — **Strict Order on $ $ Is Transitive**
+325. () `thm:strict-order-on-q-transitive` — **Strict Order on $\mathbb{Q}$ Is Transitive**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > x<y\land y<z \Longrightarrow x<z.
    > \]
 
-326. () `thm:order-on-q-transitive` — **Order on $ $ Is Transitive**
+326. () `thm:order-on-q-transitive` — **Order on $\mathbb{Q}$ Is Transitive**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > x\le y\land y\le z \Longrightarrow x\le z.
    > \]
 
-327. () `thm:order-on-q-total` — **Order on $ $ Is Total**
+327. () `thm:order-on-q-total` — **Order on $\mathbb{Q}$ Is Total**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
    > x\le y\text{ or }y\le x.
    > \]
 
-328. () `thm:q-totally-ordered-set` — **$ $ Is a Totally Ordered Set**
+328. () `thm:q-totally-ordered-set` — **$\mathbb{Q}$ Is a Totally Ordered Set**
    > **Statement.**
    > The ordered pair $(\mathbb{Q},\le)$ is a totally ordered set.
 
-329. () `thm:left-addition-preserves-order-on-q` — **Left Addition Preserves Order on $ $**
+329. () `thm:left-addition-preserves-order-on-q` — **Left Addition Preserves Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > x\le y \Longrightarrow z+x\le z+y.
    > \]
 
-330. () `cor:right-addition-preserves-order-on-q` — **Right Addition Preserves Order on $ $**
+330. () `cor:right-addition-preserves-order-on-q` — **Right Addition Preserves Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
    > x\le y \Longrightarrow x+z\le y+z.
    > \]
 
-331. () `thm:addition-preserves-order-on-q` — **Addition Preserves Order on $ $**
+331. () `thm:addition-preserves-order-on-q` — **Addition Preserves Order on $\mathbb{Q}$**
    > **Statement.**
    > Addition preserves non-strict order on both sides in $\mathbb{Q}$.
 
-332. () `prop:product-of-positives-is-positive-q` — **Product of Positives Is Positive on $ $**
+332. () `prop:product-of-positives-is-positive-q` — **Product of Positives Is Positive on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
@@ -2388,7 +2388,7 @@ Completed in this tracker: 1
    > 0_{\mathbb{Q}}<x\cdot y.
    > \]
 
-333. () `thm:left-positive-multiplication-preserves-strict-order-on-q` — **Left Multiplication by Positives Preserves Strict Order on $ $**
+333. () `thm:left-positive-multiplication-preserves-strict-order-on-q` — **Left Multiplication by Positives Preserves Strict Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
@@ -2397,7 +2397,7 @@ Completed in this tracker: 1
    > z\cdot x<z\cdot y.
    > \]
 
-334. () `thm:left-positive-multiplication-preserves-order-on-q` — **Left Multiplication by Positives Preserves Order on $ $**
+334. () `thm:left-positive-multiplication-preserves-order-on-q` — **Left Multiplication by Positives Preserves Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
@@ -2406,7 +2406,7 @@ Completed in this tracker: 1
    > z\cdot x\le z\cdot y.
    > \]
 
-335. () `cor:right-positive-multiplication-preserves-strict-order-on-q` — **Right Multiplication by Positives Preserves Strict Order on $ $**
+335. () `cor:right-positive-multiplication-preserves-strict-order-on-q` — **Right Multiplication by Positives Preserves Strict Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
@@ -2415,7 +2415,7 @@ Completed in this tracker: 1
    > x\cdot z<y\cdot z.
    > \]
 
-336. () `cor:right-positive-multiplication-preserves-order-on-q` — **Right Multiplication by Positives Preserves Order on $ $**
+336. () `cor:right-positive-multiplication-preserves-order-on-q` — **Right Multiplication by Positives Preserves Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
@@ -2424,11 +2424,11 @@ Completed in this tracker: 1
    > x\cdot z\le y\cdot z.
    > \]
 
-337. () `thm:positive-multiplication-preserves-order-on-q` — **Multiplication by Positives Preserves Order on $ $**
+337. () `thm:positive-multiplication-preserves-order-on-q` — **Multiplication by Positives Preserves Order on $\mathbb{Q}$**
    > **Statement.**
    > Multiplication by a positive rational preserves non-strict order on both sides.
 
-338. () `thm:q-is-an-ordered-field` — **$ $ Is an Ordered Field**
+338. () `thm:q-is-an-ordered-field` — **$\mathbb{Q}$ Is an Ordered Field**
    > **Statement.**
    > The structure
    > \[
@@ -2436,14 +2436,14 @@ Completed in this tracker: 1
    > \]
    > is an ordered field.
 
-339. () `cor:one-positive-on-q` — **One Is Positive in $ $**
+339. () `cor:one-positive-on-q` — **One Is Positive in $\mathbb{Q}$**
    > **Statement.**
    > In $\mathbb{Q}$,
    > \[
    > 0_{\mathbb{Q}}<1_{\mathbb{Q}}.
    > \]
 
-340. () `lem:two-nonzero-in-q` — **Two Is Nonzero in $ $**
+340. () `lem:two-nonzero-in-q` — **Two Is Nonzero in $\mathbb{Q}$**
    > **Statement.**
    > In $\mathbb{Q}$,
    > \[
@@ -2459,7 +2459,7 @@ Completed in this tracker: 1
    > x< (x+y)\cdot 2_{\mathbb{Q}}^{-1}<y.
    > \]
 
-342. () `thm:density-of-q` — **Density of $ $ in Itself**
+342. () `thm:density-of-q` — **Density of $\mathbb{Q}$ in Itself**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
@@ -2468,7 +2468,7 @@ Completed in this tracker: 1
    > \exists r\in\mathbb{Q}\ (x<r<y).
    > \]
 
-343. () `thm:archimedean-property-of-q` — **Archimedean Property of $ $**
+343. () `thm:archimedean-property-of-q` — **Archimedean Property of $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
@@ -2477,7 +2477,7 @@ Completed in this tracker: 1
    > \exists n\in\mathbb{N}\ (y<n\cdot x).
    > \]
 
-344. () `thm:sign-of-reciprocal-q` — **Sign of a Reciprocal on $ $**
+344. () `thm:sign-of-reciprocal-q` — **Sign of a Reciprocal on $\mathbb{Q}$**
    > **Statement.**
    > For every nonzero $x\in\mathbb{Q}$,
    > \[
@@ -2486,7 +2486,7 @@ Completed in this tracker: 1
    > x<0_{\mathbb{Q}} \Longrightarrow x^{-1}<0_{\mathbb{Q}}.
    > \]
 
-345. () `cor:reciprocals-arbitrarily-small-q` — **Reciprocals Become Arbitrarily Small in $ $**
+345. () `cor:reciprocals-arbitrarily-small-q` — **Reciprocals Become Arbitrarily Small in $\mathbb{Q}$**
    > **Statement.**
    > For every $\varepsilon\in\mathbb{Q}$,
    > \[
@@ -2496,7 +2496,7 @@ Completed in this tracker: 1
    > \left(0_{\mathbb{Q}}<n^{-1}<\varepsilon\right).
    > \]
 
-346. () `thm:q-has-arbitrarily-close-distinct-points` — **$ $ Has Arbitrarily Close Distinct Points**
+346. () `thm:q-has-arbitrarily-close-distinct-points` — **$\mathbb{Q}$ Has Arbitrarily Close Distinct Points**
    > **Statement.**
    > For every $x\in\mathbb{Q}$ and every $\varepsilon\in\mathbb{Q}$,
    > \[
@@ -2505,12 +2505,12 @@ Completed in this tracker: 1
    > \exists y\in\mathbb{Q}\ (y\ne x\ \text{and}\ |x-y|<\varepsilon).
    > \]
 
-347. (✅) `cor:q-has-no-adjacent-points` — **$ $ Has No Adjacent Points**
+347. (✅) `cor:q-has-no-adjacent-points` — **$\mathbb{Q}$ Has No Adjacent Points**
    > **Statement.**
    > There do not exist rational numbers $x<y$ with no rational number strictly
    > between them.
 
-348. () `prop:no-least-positive-rational` — **$ $ Has No Least Positive Rational**
+348. () `prop:no-least-positive-rational` — **$\mathbb{Q}$ Has No Least Positive Rational**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
@@ -2581,7 +2581,7 @@ Completed in this tracker: 1
    > \iota(1_{\mathbb{Z}})=1_{\mathbb{Q}}.
    > \]
 
-358. () `thm:embedding-z-into-q-injective` — **Embedding $ $ into $ $ Is Injective**
+358. () `thm:embedding-z-into-q-injective` — **Embedding $\mathbb{Z}$ into $\mathbb{Q}$ Is Injective**
    > **Statement.**
    > For all $m,n\in\mathbb{Z}$,
    > \[
@@ -2611,12 +2611,12 @@ Completed in this tracker: 1
    > \iota(m)\le\iota(n).
    > \]
 
-362. () `thm:z-embeds-into-q` — **$ $ Embeds into $ $**
+362. () `thm:z-embeds-into-q` — **$\mathbb{Z}$ Embeds into $\mathbb{Q}$**
    > **Statement.**
    > The map $\iota:\mathbb{Z}\to\mathbb{Q}$ is an injective order-preserving ring
    > homomorphism.
 
-363. () `thm:q-is-field-of-fractions-of-z` — **$ $ Is the Field of Fractions of $ $**
+363. () `thm:q-is-field-of-fractions-of-z` — **$\mathbb{Q}$ Is the Field of Fractions of $\mathbb{Z}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$, there exist $m,n\in\mathbb{Z}$ with
    > $n\ne0_{\mathbb{Z}}$ such that
@@ -2624,12 +2624,12 @@ Completed in this tracker: 1
    > x=\iota(m)\cdot \iota(n)^{-1}.
    > \]
 
-364. () `cor:embedding-z-into-q-not-surjective` — **The Embedding of $ $ into $ $ Is Not Surjective**
+364. () `cor:embedding-z-into-q-not-surjective` — **The Embedding of $\mathbb{Z}$ into $\mathbb{Q}$ Is Not Surjective**
    > **Statement.**
    > The image of $\iota:\mathbb{Z}\to\mathbb{Q}$ is a proper subset of
    > \(\mathbb{Q}\).
 
-365. () `cor:zero-product-on-q` — **Zero Product on $ $**
+365. () `cor:zero-product-on-q` — **Zero Product on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
@@ -2638,14 +2638,14 @@ Completed in this tracker: 1
    > x=0_{\mathbb{Q}}\ \text{or}\ y=0_{\mathbb{Q}}.
    > \]
 
-366. () `cor:double-negation-on-q` — **Double Negation on $ $**
+366. () `cor:double-negation-on-q` — **Double Negation on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
    > -(-x)=x.
    > \]
 
-367. () `cor:negation-of-product-on-q` — **Negation of a Product on $ $**
+367. () `cor:negation-of-product-on-q` — **Negation of a Product on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
@@ -2654,14 +2654,14 @@ Completed in this tracker: 1
    > x\cdot(-y)=-(x\cdot y).
    > \]
 
-368. () `cor:product-of-negatives-on-q` — **Product of Negatives on $ $**
+368. () `cor:product-of-negatives-on-q` — **Product of Negatives on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
    > (-x)\cdot(-y)=x\cdot y.
    > \]
 
-369. () `cor:additive-cancellation-on-q` — **Additive Cancellation on $ $**
+369. () `cor:additive-cancellation-on-q` — **Additive Cancellation on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
@@ -2670,7 +2670,7 @@ Completed in this tracker: 1
    > x=y.
    > \]
 
-370. () `cor:multiplicative-cancellation-on-q` — **Multiplicative Cancellation on $ $**
+370. () `cor:multiplicative-cancellation-on-q` — **Multiplicative Cancellation on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
@@ -2679,83 +2679,83 @@ Completed in this tracker: 1
    > x=y.
    > \]
 
-371. () `cor:uniqueness-additive-inverse-on-q` — **Uniqueness of Additive Inverses on $ $**
+371. () `cor:uniqueness-additive-inverse-on-q` — **Uniqueness of Additive Inverses on $\mathbb{Q}$**
    > **Statement.**
    > Every additive inverse in $\mathbb{Q}$ is unique.
 
-372. () `cor:uniqueness-multiplicative-inverse-on-q` — **Uniqueness of Multiplicative Inverses on $ $**
+372. () `cor:uniqueness-multiplicative-inverse-on-q` — **Uniqueness of Multiplicative Inverses on $\mathbb{Q}$**
    > **Statement.**
    > Every multiplicative inverse of a nonzero rational number is unique.
 
-373. () `cor:inverse-of-one-is-one-on-q` — **The Inverse of One Is One on $ $**
+373. () `cor:inverse-of-one-is-one-on-q` — **The Inverse of One Is One on $\mathbb{Q}$**
    > **Statement.**
    > In $\mathbb{Q}$,
    > \[
    > 1_{\mathbb{Q}}^{-1}=1_{\mathbb{Q}}.
    > \]
 
-374. () `cor:inverse-of-product-on-q` — **Inverse of a Product on $ $**
+374. () `cor:inverse-of-product-on-q` — **Inverse of a Product on $\mathbb{Q}$**
    > **Statement.**
    > For all nonzero $x,y\in\mathbb{Q}$,
    > \[
    > (x\cdot y)^{-1}=x^{-1}\cdot y^{-1}.
    > \]
 
-375. () `cor:inverse-of-inverse-on-q` — **Inverse of an Inverse on $ $**
+375. () `cor:inverse-of-inverse-on-q` — **Inverse of an Inverse on $\mathbb{Q}$**
    > **Statement.**
    > For every nonzero $x\in\mathbb{Q}$,
    > \[
    > (x^{-1})^{-1}=x.
    > \]
 
-376. () `cor:exponent-addition-on-q` — **Exponent Addition Law on $ $**
+376. () `cor:exponent-addition-on-q` — **Exponent Addition Law on $\mathbb{Q}$**
    > **Statement.**
    > For every nonzero $x\in\mathbb{Q}$ and all $m,n\in\mathbb{Z}$,
    > \[
    > x^{m+n}=x^m\cdot x^n.
    > \]
 
-377. () `cor:power-of-power-on-q` — **Power of a Power on $ $**
+377. () `cor:power-of-power-on-q` — **Power of a Power on $\mathbb{Q}$**
    > **Statement.**
    > For every nonzero $x\in\mathbb{Q}$ and all $m,n\in\mathbb{Z}$,
    > \[
    > (x^m)^n=x^{m\cdot n}.
    > \]
 
-378. () `cor:power-of-product-on-q` — **Power of a Product on $ $**
+378. () `cor:power-of-product-on-q` — **Power of a Product on $\mathbb{Q}$**
    > **Statement.**
    > For all nonzero $x,y\in\mathbb{Q}$ and every $n\in\mathbb{Z}$,
    > \[
    > (x\cdot y)^n=x^n\cdot y^n.
    > \]
 
-379. () `lem:addition-denominator-nonzero-q` — **Addition Lands in $ $**
+379. () `lem:addition-denominator-nonzero-q` — **Addition Lands in $\operatorname{Pre}\mathbb{Q}$**
    > **Statement.**
    > If $b\ne 0_{\mathbb{Z}}$ and $d\ne 0_{\mathbb{Z}}$, then
    > \[
    > b\cdot d\ne 0_{\mathbb{Z}}.
    > \]
 
-380. () `thm:subtraction-on-q-well-defined` — **Subtraction on $ $ Is Well-Defined**
+380. () `thm:subtraction-on-q-well-defined` — **Subtraction on $\mathbb{Q}$ Is Well-Defined**
    > **Statement.**
    > Subtraction determines a well-defined binary operation
    > $\mathbb{Q}\times\mathbb{Q}\to\mathbb{Q}$.
 
-381. () `lem:multiplication-denominator-nonzero-q` — **Multiplication Lands in $ $**
+381. () `lem:multiplication-denominator-nonzero-q` — **Multiplication Lands in $\operatorname{Pre}\mathbb{Q}$**
    > **Statement.**
    > If $b\ne 0_{\mathbb{Z}}$ and $d\ne 0_{\mathbb{Z}}$, then
    > \[
    > b\cdot d\ne 0_{\mathbb{Z}}.
    > \]
 
-382. () `thm:division-on-q-well-defined` — **Division on $ $ Is Well-Defined**
+382. () `thm:division-on-q-well-defined` — **Division on $\mathbb{Q}$ Is Well-Defined**
    > **Statement.**
    > Division determines a well-defined map
    > \[
    > \mathbb{Q}\times(\mathbb{Q}\setminus\{0_{\mathbb{Q}}\})\to\mathbb{Q}.
    > \]
 
-383. () `lem:positivity-respects-equivalence-q` — **Positivity Respects Fraction Equivalence on $ $**
+383. () `lem:positivity-respects-equivalence-q` — **Positivity Respects Fraction Equivalence on $\mathbb{Q}$**
    > **Statement.**
    > If $[a,b]=[c,d]$, then
    > \[
@@ -2764,24 +2764,24 @@ Completed in this tracker: 1
    > c\cdot d>0_{\mathbb{Z}}.
    > \]
 
-384. () `thm:positivity-on-q-well-defined` — **Positivity on $ $ Is Well-Defined**
+384. () `thm:positivity-on-q-well-defined` — **Positivity on $\mathbb{Q}$ Is Well-Defined**
    > **Statement.**
    > The predicate ``$x$ is positive'' is well-defined on equivalence classes in
    > $\mathbb{Q}$.
 
-385. () `thm:strict-order-on-q-irreflexive` — **Strict Order on $ $ Is Irreflexive**
+385. () `thm:strict-order-on-q-irreflexive` — **Strict Order on $\mathbb{Q}$ Is Irreflexive**
    > **Statement.**
    > For every $x\in\mathbb{Q}$, not $x<x$.
 
-386. () `cor:addition-reflects-order-on-q` — **Addition Reflects Order on $ $**
+386. () `cor:addition-reflects-order-on-q` — **Addition Reflects Order on $\mathbb{Q}$**
    > **Statement.**
    > Addition by a fixed rational reflects both strict and non-strict order.
 
-387. () `thm:positive-multiplication-preserves-strict-order-on-q` — **Multiplication by Positives Preserves Strict Order on $ $**
+387. () `thm:positive-multiplication-preserves-strict-order-on-q` — **Multiplication by Positives Preserves Strict Order on $\mathbb{Q}$**
    > **Statement.**
    > Multiplication by a positive rational preserves strict order on both sides.
 
-388. () `thm:negative-multiplication-reverses-strict-order-on-q` — **Multiplication by Negatives Reverses Strict Order on $ $**
+388. () `thm:negative-multiplication-reverses-strict-order-on-q` — **Multiplication by Negatives Reverses Strict Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
@@ -2790,7 +2790,7 @@ Completed in this tracker: 1
    > z\cdot y<z\cdot x.
    > \]
 
-389. () `cor:negative-multiplication-reverses-order-on-q` — **Multiplication by Negatives Reverses Order on $ $**
+389. () `cor:negative-multiplication-reverses-order-on-q` — **Multiplication by Negatives Reverses Order on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y,z\in\mathbb{Q}$,
    > \[
@@ -2799,7 +2799,7 @@ Completed in this tracker: 1
    > z\cdot y\le z\cdot x.
    > \]
 
-390. () `thm:reciprocal-reverses-order-on-positives-q` — **Reciprocal Reverses Order on Positives in $ $**
+390. () `thm:reciprocal-reverses-order-on-positives-q` — **Reciprocal Reverses Order on Positives in $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
@@ -2808,14 +2808,14 @@ Completed in this tracker: 1
    > 0_{\mathbb{Q}}<y^{-1}<x^{-1}.
    > \]
 
-391. () `thm:absolute-value-nonnegative-on-q` — **Absolute Value Is Nonnegative on $ $**
+391. () `thm:absolute-value-nonnegative-on-q` — **Absolute Value Is Nonnegative on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
    > 0_{\mathbb{Q}}\le |x|.
    > \]
 
-392. () `thm:absolute-value-zero-iff-on-q` — **Absolute Value Vanishes Only at Zero on $ $**
+392. () `thm:absolute-value-zero-iff-on-q` — **Absolute Value Vanishes Only at Zero on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
@@ -2824,40 +2824,40 @@ Completed in this tracker: 1
    > x=0_{\mathbb{Q}}.
    > \]
 
-393. () `thm:absolute-value-multiplicative-on-q` — **Absolute Value Is Multiplicative on $ $**
+393. () `thm:absolute-value-multiplicative-on-q` — **Absolute Value Is Multiplicative on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
    > |x\cdot y|=|x|\cdot |y|.
    > \]
 
-394. () `thm:triangle-inequality-on-q` — **Triangle Inequality on $ $**
+394. () `thm:triangle-inequality-on-q` — **Triangle Inequality on $\mathbb{Q}$**
    > **Statement.**
    > For all $x,y\in\mathbb{Q}$,
    > \[
    > |x+y|\le |x|+|y|.
    > \]
 
-395. () `thm:absolute-value-of-reciprocal-q` — **Absolute Value of a Reciprocal on $ $**
+395. () `thm:absolute-value-of-reciprocal-q` — **Absolute Value of a Reciprocal on $\mathbb{Q}$**
    > **Statement.**
    > For every nonzero $x\in\mathbb{Q}$,
    > \[
    > |x^{-1}|=|x|^{-1}.
    > \]
 
-396. () `cor:ordered-field-laws-on-q` — **Ordered Field Laws Hold on $ $**
+396. () `cor:ordered-field-laws-on-q` — **Ordered Field Laws Hold on $\mathbb{Q}$**
    > **Statement.**
    > Every theorem that depends only on the ordered-field axioms applies to
    > $\mathbb{Q}$ with its constructed operations and order.
 
-397. () `cor:squares-nonnegative-on-q` — **Squares Are Nonnegative on $ $**
+397. () `cor:squares-nonnegative-on-q` — **Squares Are Nonnegative on $\mathbb{Q}$**
    > **Statement.**
    > For every $x\in\mathbb{Q}$,
    > \[
    > 0_{\mathbb{Q}}\le x^2.
    > \]
 
-398. () `cor:natural-numbers-positive-on-q` — **Natural Numbers Are Positive in $ $**
+398. () `cor:natural-numbers-positive-on-q` — **Natural Numbers Are Positive in $\mathbb{Q}$**
    > **Statement.**
    > Every natural number embedded in $\mathbb{Q}$ is positive.
 
@@ -2870,7 +2870,7 @@ Completed in this tracker: 1
    > 0_{\mathbb{Q}}<x^{-1}.
    > \]
 
-400. () `cor:fraction-comparison-on-q` — **Fraction Comparison in $ $**
+400. () `cor:fraction-comparison-on-q` — **Fraction Comparison in $\mathbb{Q}$**
    > **Statement.**
    > For rational classes with positive denominator product,
    > \[
@@ -2886,7 +2886,7 @@ Completed in this tracker: 1
    > q\cdot q=2_{\mathbb{Q}}.
    > \]
 
-402. () `prop:gap-set-bounded-above-q` — **The Gap Set Is Bounded Above in $ $**
+402. () `prop:gap-set-bounded-above-q` — **The Gap Set Is Bounded Above in $\mathbb{Q}$**
    > **Statement.**
    > The set $S$ is nonempty and bounded above in $\mathbb{Q}$.
 
@@ -2894,7 +2894,7 @@ Completed in this tracker: 1
    > **Statement.**
    > The set $S$ has no least upper bound in $\mathbb{Q}$.
 
-404. () `cor:q-order-incomplete` — **$ $ Is Order-Incomplete**
+404. () `cor:q-order-incomplete` — **$\mathbb{Q}$ Is Order-Incomplete**
    > **Statement.**
    > The ordered field $\mathbb{Q}$ is not order-complete: there exists a nonempty
    > bounded-above subset of $\mathbb{Q}$ with no supremum in $\mathbb{Q}$.
@@ -2907,21 +2907,21 @@ Completed in this tracker: 1
    > **Statement.**
    > If $\alpha,\beta\in\mathbb{R}$, then $\alpha+\beta$ is a Dedekind cut.
 
-407. () `thm:addition-on-r-associative` — **Addition on $ $ Is Associative**
+407. () `thm:addition-on-r-associative` — **Addition on $\mathbb{R}$ Is Associative**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
    > (\alpha+\beta)+\gamma=\alpha+(\beta+\gamma).
    > \]
 
-408. () `thm:addition-on-r-commutative` — **Addition on $ $ Is Commutative**
+408. () `thm:addition-on-r-commutative` — **Addition on $\mathbb{R}$ Is Commutative**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha+\beta=\beta+\alpha.
    > \]
 
-409. () `thm:zero-additive-identity-on-r` — **Zero Is an Additive Identity on $ $**
+409. () `thm:zero-additive-identity-on-r` — **Zero Is an Additive Identity on $\mathbb{R}$**
    > **Statement.**
    > For every $\alpha\in\mathbb{R}$,
    > \[
@@ -2932,14 +2932,14 @@ Completed in this tracker: 1
    > **Statement.**
    > If $\alpha\in\mathbb{R}$, then $-\alpha$ is a Dedekind cut.
 
-411. () `thm:negation-additive-inverse-on-r` — **Negation Is an Additive Inverse on $ $**
+411. () `thm:negation-additive-inverse-on-r` — **Negation Is an Additive Inverse on $\mathbb{R}$**
    > **Statement.**
    > For every $\alpha\in\mathbb{R}$,
    > \[
    > \alpha+(-\alpha)=0_{\mathbb{R}}.
    > \]
 
-412. () `thm:r-additive-abelian-group` — **$ $ Is an Additive Abelian Group**
+412. () `thm:r-additive-abelian-group` — **$\mathbb{R}$ Is an Additive Abelian Group**
    > **Statement.**
    > The structure $(\mathbb{R},+,0_{\mathbb{R}})$ is an abelian group.
 
@@ -2959,7 +2959,7 @@ Completed in this tracker: 1
    > \sup S=\bigcup_{\alpha\in S}\alpha.
    > \]
 
-415. () `thm:zero-not-one-in-r` — **Zero Is Not One in $ $**
+415. () `thm:zero-not-one-in-r` — **Zero Is Not One in $\mathbb{R}$**
    > **Statement.**
    > In $\mathbb{R}$,
    > \[
@@ -2974,21 +2974,21 @@ Completed in this tracker: 1
    > **Statement.**
    > If $\alpha,\beta\in\mathbb{R}$, then $\alpha\cdot\beta\in\mathbb{R}$.
 
-418. () `thm:multiplication-on-r-associative` — **Multiplication on $ $ Is Associative**
+418. () `thm:multiplication-on-r-associative` — **Multiplication on $\mathbb{R}$ Is Associative**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
    > (\alpha\cdot\beta)\cdot\gamma=\alpha\cdot(\beta\cdot\gamma).
    > \]
 
-419. () `thm:multiplication-on-r-commutative` — **Multiplication on $ $ Is Commutative**
+419. () `thm:multiplication-on-r-commutative` — **Multiplication on $\mathbb{R}$ Is Commutative**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha\cdot\beta=\beta\cdot\alpha.
    > \]
 
-420. () `thm:one-multiplicative-identity-on-r` — **One Is a Multiplicative Identity on $ $**
+420. () `thm:one-multiplicative-identity-on-r` — **One Is a Multiplicative Identity on $\mathbb{R}$**
    > **Statement.**
    > For every $\alpha\in\mathbb{R}$,
    > \[
@@ -2999,30 +2999,30 @@ Completed in this tracker: 1
    > **Statement.**
    > If $\alpha\ne0_{\mathbb{R}}$, then $\alpha^{-1}\in\mathbb{R}$.
 
-422. () `thm:reciprocal-multiplicative-inverse-on-r` — **Reciprocal Is a Multiplicative Inverse on $ $**
+422. () `thm:reciprocal-multiplicative-inverse-on-r` — **Reciprocal Is a Multiplicative Inverse on $\mathbb{R}$**
    > **Statement.**
    > If $\alpha\ne0_{\mathbb{R}}$, then
    > \[
    > \alpha\cdot\alpha^{-1}=1_{\mathbb{R}}.
    > \]
 
-423. () `thm:r-nonzero-multiplicative-abelian-group` — **Nonzero $ $ Is a Multiplicative Abelian Group**
+423. () `thm:r-nonzero-multiplicative-abelian-group` — **Nonzero $\mathbb{R}$ Is a Multiplicative Abelian Group**
    > **Statement.**
    > The structure $(\mathbb{R}\setminus\{0_{\mathbb{R}}\},\cdot,1_{\mathbb{R}})$
    > is an abelian group.
 
-424. () `thm:distributivity-on-r` — **Distributivity on $ $**
+424. () `thm:distributivity-on-r` — **Distributivity on $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
    > \alpha\cdot(\beta+\gamma)=\alpha\cdot\beta+\alpha\cdot\gamma.
    > \]
 
-425. () `thm:r-is-a-field` — **$ $ Is a Field**
+425. () `thm:r-is-a-field` — **$\mathbb{R}$ Is a Field**
    > **Statement.**
    > The structure $(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}})$ is a field.
 
-426. () `thm:addition-preserves-order-on-r` — **Addition Preserves Order on $ $**
+426. () `thm:addition-preserves-order-on-r` — **Addition Preserves Order on $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
@@ -3030,7 +3030,7 @@ Completed in this tracker: 1
    > \]
    > and the corresponding non-strict statement also holds.
 
-427. () `thm:positive-multiplication-preserves-order-on-r` — **Multiplication by Positives Preserves Order on $ $**
+427. () `thm:positive-multiplication-preserves-order-on-r` — **Multiplication by Positives Preserves Order on $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
@@ -3039,18 +3039,18 @@ Completed in this tracker: 1
    > \gamma\cdot\alpha<\gamma\cdot\beta.
    > \]
 
-428. () `thm:order-on-r-reflexive` — **Order on $ $ Is Reflexive**
+428. () `thm:order-on-r-reflexive` — **Order on $\mathbb{R}$ Is Reflexive**
    > **Statement.**
    > For every $\alpha\in\mathbb{R}$, $\alpha\le\alpha$.
 
-429. () `thm:order-on-r-antisymmetric` — **Order on $ $ Is Antisymmetric**
+429. () `thm:order-on-r-antisymmetric` — **Order on $\mathbb{R}$ Is Antisymmetric**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha\le\beta\land\beta\le\alpha \Longrightarrow \alpha=\beta.
    > \]
 
-430. () `thm:order-on-r-transitive` — **Order on $ $ Is Transitive**
+430. () `thm:order-on-r-transitive` — **Order on $\mathbb{R}$ Is Transitive**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
@@ -3064,23 +3064,23 @@ Completed in this tracker: 1
    > \alpha\subseteq\beta \lor \beta\subseteq\alpha.
    > \]
 
-432. () `thm:order-on-r-total` — **Order on $ $ Is Total**
+432. () `thm:order-on-r-total` — **Order on $\mathbb{R}$ Is Total**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha\le\beta\lor\beta\le\alpha.
    > \]
 
-433. () `thm:r-totally-ordered-set` — **$ $ Is a Totally Ordered Set**
+433. () `thm:r-totally-ordered-set` — **$\mathbb{R}$ Is a Totally Ordered Set**
    > **Statement.**
    > The ordered pair $(\mathbb{R},\le)$ is a total order.
 
-434. () `thm:r-is-an-ordered-field` — **$ $ Is an Ordered Field**
+434. () `thm:r-is-an-ordered-field` — **$\mathbb{R}$ Is an Ordered Field**
    > **Statement.**
    > The structure $(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}},\le)$ is an
    > ordered field.
 
-435. () `thm:r-is-complete-ordered-field` — **$ $ Is a Complete Ordered Field**
+435. () `thm:r-is-complete-ordered-field` — **$\mathbb{R}$ Is a Complete Ordered Field**
    > **Statement.**
    > The ordered field $\mathbb{R}$ satisfies the least-upper-bound property.
 
@@ -3088,7 +3088,7 @@ Completed in this tracker: 1
    > **Statement.**
    > Any two complete ordered fields are isomorphic by a unique order-isomorphism.
 
-437. () `cor:r-is-the-reals` — **$ $ Is the Real Numbers**
+437. () `cor:r-is-the-reals` — **$\mathbb{R}$ Is the Real Numbers**
    > **Statement.**
    > The field $\mathbb{R}$ is determined up to unique order-isomorphism by being a
    > complete ordered field.
@@ -3115,7 +3115,7 @@ Completed in this tracker: 1
    > \iota(1_{\mathbb{Q}})=1_{\mathbb{R}}.
    > \]
 
-442. () `thm:embedding-q-into-r-injective` — **Embedding $ $ into $ $ Is Injective**
+442. () `thm:embedding-q-into-r-injective` — **Embedding $\mathbb{Q}$ into $\mathbb{R}$ Is Injective**
    > **Statement.**
    > For all $p,q\in\mathbb{Q}$,
    > \[
@@ -3138,18 +3138,18 @@ Completed in this tracker: 1
    > p\le q \Longleftrightarrow \iota(p)\le\iota(q).
    > \]
 
-445. () `thm:q-embeds-into-r` — **$ $ Embeds into $ $ as an Ordered Field**
+445. () `thm:q-embeds-into-r` — **$\mathbb{Q}$ Embeds into $\mathbb{R}$ as an Ordered Field**
    > **Statement.**
    > The map $\iota$ is an injective order-preserving field homomorphism.
 
-446. () `thm:density-of-q-in-r` — **Density of $ $ in $ $**
+446. () `thm:density-of-q-in-r` — **Density of $\mathbb{Q}$ in $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha<\beta \Longrightarrow \exists q\in\mathbb{Q}\,(\alpha<\iota(q)<\beta).
    > \]
 
-447. () `thm:archimedean-property-of-r` — **Archimedean Property of $ $**
+447. () `thm:archimedean-property-of-r` — **Archimedean Property of $\mathbb{R}$**
    > **Statement.**
    > For $\alpha,\beta\in\mathbb{R}$,
    > \[
@@ -3158,13 +3158,13 @@ Completed in this tracker: 1
    > \exists n\in\mathbb{N}\,(\beta<\iota(n)\cdot\alpha).
    > \]
 
-448. () `cor:field-laws-on-r` — **Field Laws Hold on $ $**
+448. () `cor:field-laws-on-r` — **Field Laws Hold on $\mathbb{R}$**
    > **Statement.**
    > Every theorem proved generically for fields holds in $\mathbb{R}$, including
    > zero product, double negation, sign rules, cancellation, uniqueness of
    > inverses, inverse laws, and exponent laws.
 
-449. () `cor:ordered-field-laws-on-r` — **Ordered-Field Laws Hold on $ $**
+449. () `cor:ordered-field-laws-on-r` — **Ordered-Field Laws Hold on $\mathbb{R}$**
    > **Statement.**
    > Every theorem proved generically for ordered fields holds in $\mathbb{R}$.
 
@@ -3175,7 +3175,7 @@ Completed in this tracker: 1
    > |\alpha+\beta|\le |\alpha|+|\beta|.
    > \]
 
-451. () `thm:trichotomy-on-r` — **Trichotomy on $ $**
+451. () `thm:trichotomy-on-r` — **Trichotomy on $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$, exactly one of
    > \[
@@ -3195,7 +3195,7 @@ Completed in this tracker: 1
    > \]
    > where $2_{\mathbb{R}}:=\iota(2_{\mathbb{Q}})$.
 
-454. () `cor:r-fills-the-gap` — **$ $ Contains the Supremum $ $ Was Missing**
+454. () `cor:r-fills-the-gap` — **$\mathbb{R}$ Contains the Supremum $\mathbb{Q}$ Was Missing**
    > **Statement.**
    > Let
    > \[
@@ -3239,7 +3239,7 @@ Completed in this tracker: 1
    > The relation $\sim_{\mathbb{C}}$ is an equivalence relation on
    > \(\operatorname{Pre}\mathbb{C}\).
 
-459. () `thm:embedding-r-into-c-injective` — **The Real Embedding into $ $ Is Injective**
+459. () `thm:embedding-r-into-c-injective` — **The Real Embedding into $\mathbb{C}$ Is Injective**
    > **Statement.**
    > If \(\iota(a)=\iota(b)\), then \(a=b\).
 
@@ -3268,21 +3268,21 @@ Completed in this tracker: 1
    > \]
    > are well-defined.
 
-463. () `thm:addition-on-c-associative` — **Addition on $ $ Is Associative**
+463. () `thm:addition-on-c-associative` — **Addition on $\mathbb{C}$ Is Associative**
    > **Statement.**
    > For all \(z,w,u\in\mathbb{C}\),
    > \[
    > (z+w)+u=z+(w+u).
    > \]
 
-464. () `thm:addition-on-c-commutative` — **Addition on $ $ Is Commutative**
+464. () `thm:addition-on-c-commutative` — **Addition on $\mathbb{C}$ Is Commutative**
    > **Statement.**
    > For all \(z,w\in\mathbb{C}\),
    > \[
    > z+w=w+z.
    > \]
 
-465. () `thm:zero-additive-identity-on-c` — **Zero Is an Additive Identity on $ $**
+465. () `thm:zero-additive-identity-on-c` — **Zero Is an Additive Identity on $\mathbb{C}$**
    > **Statement.**
    > For every \(z\in\mathbb{C}\),
    > \[
@@ -3300,21 +3300,21 @@ Completed in this tracker: 1
    > (-z)+z=0_{\mathbb{C}}.
    > \]
 
-467. () `thm:multiplication-on-c-associative` — **Multiplication on $ $ Is Associative**
+467. () `thm:multiplication-on-c-associative` — **Multiplication on $\mathbb{C}$ Is Associative**
    > **Statement.**
    > For all \(z,w,u\in\mathbb{C}\),
    > \[
    > (zw)u=z(wu).
    > \]
 
-468. () `thm:multiplication-on-c-commutative` — **Multiplication on $ $ Is Commutative**
+468. () `thm:multiplication-on-c-commutative` — **Multiplication on $\mathbb{C}$ Is Commutative**
    > **Statement.**
    > For all \(z,w\in\mathbb{C}\),
    > \[
    > zw=wz.
    > \]
 
-469. () `thm:one-multiplicative-identity-on-c` — **One Is a Multiplicative Identity on $ $**
+469. () `thm:one-multiplicative-identity-on-c` — **One Is a Multiplicative Identity on $\mathbb{C}$**
    > **Statement.**
    > For every \(z\in\mathbb{C}\),
    > \[
@@ -3332,7 +3332,7 @@ Completed in this tracker: 1
    > z^{-1}z=1_{\mathbb{C}}.
    > \]
 
-471. () `thm:multiplication-distributes-over-addition-on-c` — **Multiplication Distributes over Addition on $ $**
+471. () `thm:multiplication-distributes-over-addition-on-c` — **Multiplication Distributes over Addition on $\mathbb{C}$**
    > **Statement.**
    > For all \(z,w,u\in\mathbb{C}\),
    > \[
@@ -3351,7 +3351,7 @@ Completed in this tracker: 1
    > [a',b']_{\mathbb{C}}+[c',d']_{\mathbb{C}}.
    > \]
 
-473. () `thm:addition-on-c-well-defined` — **Addition on $ $ Is Well-Defined**
+473. () `thm:addition-on-c-well-defined` — **Addition on $\mathbb{C}$ Is Well-Defined**
    > **Statement.**
    > Addition determines a well-defined binary operation
    > \[
@@ -3368,14 +3368,14 @@ Completed in this tracker: 1
    > [a',b']_{\mathbb{C}}\cdot[c',d']_{\mathbb{C}}.
    > \]
 
-475. () `thm:multiplication-on-c-well-defined` — **Multiplication on $ $ Is Well-Defined**
+475. () `thm:multiplication-on-c-well-defined` — **Multiplication on $\mathbb{C}$ Is Well-Defined**
    > **Statement.**
    > Multiplication determines a well-defined binary operation
    > \[
    > \mathbb{C}\times\mathbb{C}\to\mathbb{C}.
    > \]
 
-476. () `thm:c-is-a-field` — **$ $ Is a Field**
+476. () `thm:c-is-a-field` — **$\mathbb{C}$ Is a Field**
    > **Statement.**
    > With the operations defined above,
    > \[
@@ -3390,7 +3390,7 @@ Completed in this tracker: 1
    > i^2=-1_{\mathbb{C}}.
    > \]
 
-478. () `thm:c-is-not-an-ordered-field` — **$ $ Is Not an Ordered Field**
+478. () `thm:c-is-not-an-ordered-field` — **$\mathbb{C}$ Is Not an Ordered Field**
    > **Statement.**
    > There is no order relation on \(\mathbb{C}\) making \(\mathbb{C}\) an ordered
    > field and extending the usual order on \(\mathbb{R}\).
@@ -3402,11 +3402,11 @@ Completed in this tracker: 1
    > -[a,b]_{\mathbb{C}}=-[a',b']_{\mathbb{C}}.
    > \]
 
-480. () `thm:negation-on-c-well-defined` — **Negation on $ $ Is Well-Defined**
+480. () `thm:negation-on-c-well-defined` — **Negation on $\mathbb{C}$ Is Well-Defined**
    > **Statement.**
    > Negation determines a well-defined unary operation $\mathbb{C}\to\mathbb{C}$.
 
-481. () `thm:subtraction-on-c-well-defined` — **Subtraction on $ $ Is Well-Defined**
+481. () `thm:subtraction-on-c-well-defined` — **Subtraction on $\mathbb{C}$ Is Well-Defined**
    > **Statement.**
    > Subtraction determines a well-defined binary operation
    > \(\mathbb{C}\times\mathbb{C}\to\mathbb{C}\).
@@ -3424,6 +3424,6 @@ Completed in this tracker: 1
    > \]
    > Moreover, if \(z\ne 0_{\mathbb{C}}\), then \(a^2+b^2\ne 0\).
 
-484. () `thm:inversion-on-c-well-defined` — **Inversion on $ ^ $ Is Well-Defined**
+484. () `thm:inversion-on-c-well-defined` — **Inversion on $\mathbb{C}^{\times}$ Is Well-Defined**
    > **Statement.**
    > Inversion determines a well-defined operation on the nonzero complex numbers.
