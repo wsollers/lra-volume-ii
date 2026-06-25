@@ -1,13 +1,29 @@
 # lra-volume-ii
 
-**Volume II: Foundations of Formal Number Systems** — Overleaf-ready standalone repository.
+**Volume II: Origins of Numbers** — Overleaf-ready standalone repository.
 
-Part of the [Learning Real Analysis](https://github.com/wsollers/Learning-Real-Analysis) project.
+## Structure
+
+```text
+volume-ii.tex          — full-volume root (Overleaf main document)
+volume-ii-<book>.tex   — individual book roots
+common/               — shared LaTeX infrastructure supplied by lra-common; ignored here
+bibliography/         — per-book bibliography shards
+volume-ii/             — all LaTeX content for this volume
+```
 
 ## Overleaf
 
-Link this repo to Overleaf via **Menu → GitHub**. The main document is `main.tex`.
+Upload or checkout `common/` beside this repository's TeX roots, then set the main document to `volume-ii.tex` for the full volume or to one of the book roots:
 
-## common/ sync
+```text
+volume-ii-discrete-number-systems.tex, volume-ii-the-continuum.tex
+```
 
-The `common/` directory is automatically kept in sync with `lra-common` via a GitHub Actions workflow. Do not edit files in `common/` here.
+`common/` is ignored by git in this volume repo; edit shared infrastructure in `lra-common`.
+
+## Building locally
+
+```powershell
+python F:\repos\lra-governance\tools\governance\build_volume_docker.py --root F:\repos\lra-volume-ii --common-root F:\repos\lra-common
+```
