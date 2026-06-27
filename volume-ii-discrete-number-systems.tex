@@ -1,6 +1,9 @@
 % =========================================================
 % volume-ii-discrete-number-systems.tex --- Standalone book root
 % Volume II: Origins of Numbers / Discrete Number Systems
+%
+% Build (local): latexmk -lualatex volume-ii-discrete-number-systems.tex
+% Build (Overleaf): Menu $\to$ Main Document $\to$ volume-ii-discrete-number-systems.tex
 % =========================================================
 \documentclass[12pt, a4paper]{report}
 \input{common/volume-preamble}
@@ -10,40 +13,10 @@
 \renewcommand{\familydefault}{\rmdefault}
 
 \pagenumbering{roman}
-\begin{titlepage}
-\centering
-\vspace*{3.5cm}
+\input{volume-ii/frontmatter}
+\LRAFrontMatterPage{From Cantor to Ito}{Origins of Numbers}{Discrete Number Systems}{Giuseppe Peano}{1858-1932}{images/peano.png}
+\input{common/dedication}
 
-{\Large\scshape Volume II\par}
-\vspace{0.35cm}
-{\large Origins of Numbers\par}
-
-\vspace{1.4cm}
-
-{\Huge\bfseries Discrete Number Systems\par}
-
-\vspace{0.6cm}
-{\large\itshape Self-Study Notes\par}
-
-\vfill
-
-{\large William Sollers\par}
-\vspace{0.35cm}
-{\large \today\par}
-
-\vfill
-
-{\large\scshape From Cantor to Ito\par}
-\end{titlepage}
-
-\clearpage
-\thispagestyle{plain}
-\chapter*{Front Matter}
-\noindent\textbf{Series.} From Cantor to Ito\\[0.5em]
-\textbf{Volume.} Volume II: Origins of Numbers\\[0.5em]
-\textbf{Book.} Discrete Number Systems
-
-\clearpage
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}

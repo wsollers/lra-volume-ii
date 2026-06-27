@@ -1,5 +1,5 @@
 % =========================================================
-% volume-ii.tex --- Standalone root for Volume II
+% volume-ii.tex --- Standalone volume root
 % Volume II: Origins of Numbers
 %
 % Build (local): latexmk -lualatex volume-ii.tex
@@ -13,10 +13,10 @@
 \renewcommand{\familydefault}{\rmdefault}
 
 \pagenumbering{roman}
-\input{volume-ii/peano-quote}
-\input{volume-ii/volume-ii-title}
+\input{volume-ii/frontmatter}
+\LRAFrontMatterPage{From Cantor to Ito}{Origins of Numbers}{}{Richard Dedekind}{1831-1916}{images/dedekind.png}
+\input{common/dedication}
 
-\clearpage
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
@@ -28,7 +28,7 @@
 \bibliographystyle{plainnat}
 \bibliography{%
   bibliography/volume-ii-discrete-number-systems,%
-  bibliography/volume-ii-the-continuum%
+  bibliography/volume-ii-the-continuum
 }
 
 \printindex[tech]
