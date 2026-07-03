@@ -122,3 +122,4 @@ desktop.ini
 *.pdf
 !volume-ii/**/*-asset.pdf
 common/
+.claude/
