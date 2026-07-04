@@ -513,6 +513,26 @@ environments:
   file: notes\order-on-r\notes-order-on-r.tex
   display_title: $\mathbb{R}$ Is a Totally Ordered Set
   proof_file: null
+- label: thm:existence-of-square-roots
+  type: thm
+  file: notes\the-gap-filled\notes-the-gap-filled.tex
+  display_title: Existence of Square Roots
+  proof_file: proofs\the-gap-filled\prf-existence-of-square-roots.tex
+- label: thm:uniqueness-of-nonnegative-square-roots
+  type: thm
+  file: notes\the-gap-filled\notes-the-gap-filled.tex
+  display_title: Uniqueness of Nonnegative Square Roots
+  proof_file: proofs\the-gap-filled\prf-uniqueness-of-nonnegative-square-roots.tex
+- label: def:square-root
+  type: def
+  file: notes\the-gap-filled\notes-the-gap-filled.tex
+  display_title: Square Root
+  proof_file: null
+- label: thm:square-root-of-two-is-irrational
+  type: thm
+  file: notes\the-gap-filled\notes-the-gap-filled.tex
+  display_title: Square Root of Two Is Irrational
+  proof_file: proofs\the-gap-filled\prf-square-root-of-two-is-irrational.tex
 - label: def:sqrt-two-cut
   type: def
   file: notes\the-gap-filled\notes-the-gap-filled.tex
@@ -533,4 +553,7 @@ environments:
   file: notes\the-gap-filled\notes-the-gap-filled.tex
   display_title: $\mathbb{R}$ Contains the Supremum $\mathbb{Q}$ Was Missing
   proof_file: null
-proof_files: []
+proof_files:
+- proofs\the-gap-filled\prf-existence-of-square-roots.tex
+- proofs\the-gap-filled\prf-uniqueness-of-nonnegative-square-roots.tex
+- proofs\the-gap-filled\prf-square-root-of-two-is-irrational.tex

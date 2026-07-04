@@ -1,0 +1,159 @@
+subject: extended-real-numbers
+display_title: "The Extended Real Numbers"
+volume: volume-ii
+status: planned
+book: book-continuum
+path: volume-ii/book-continuum/extended-real-numbers
+sections:
+  - subject: the-extended-real-number-system
+    display_title: "The Extended Real Number System"
+  - subject: arithmetic-and-order
+    display_title: "Arithmetic and Order"
+  - subject: extended-real-intervals
+    display_title: "Extended Real Intervals"
+dependencies:
+  prior: reals
+  next: complex-numbers
+environments:
+- label: def:extended-real-numbers
+  type: def
+  file: notes\the-extended-real-number-system\notes-the-extended-real-number-system.tex
+  display_title: Extended Real Numbers
+  proof_file: null
+- label: def:finite-extended-real
+  type: def
+  file: notes\the-extended-real-number-system\notes-the-extended-real-number-system.tex
+  display_title: Finite Extended Real
+  proof_file: null
+- label: def:extended-real-order
+  type: def
+  file: notes\the-extended-real-number-system\notes-the-extended-real-number-system.tex
+  display_title: Order on the Extended Reals
+  proof_file: null
+- label: thm:extended-real-order-well-defined
+  type: thm
+  file: notes\the-extended-real-number-system\notes-the-extended-real-number-system.tex
+  display_title: Extended Real Order Is Well Defined
+  proof_file: proofs\the-extended-real-number-system\prf-extended-real-order-well-defined.tex
+- label: thm:extended-real-order-is-total
+  type: thm
+  file: notes\the-extended-real-number-system\notes-the-extended-real-number-system.tex
+  display_title: Extended Real Order Is Total
+  proof_file: proofs\the-extended-real-number-system\prf-extended-real-order-is-total.tex
+- label: thm:real-order-embeds-in-extended-real-order
+  type: thm
+  file: notes\the-extended-real-number-system\notes-the-extended-real-number-system.tex
+  display_title: Real Order Embeds in the Extended Real Order
+  proof_file: proofs\the-extended-real-number-system\prf-real-order-embeds-in-extended-real-order.tex
+- label: thm:comparison-with-infinities
+  type: thm
+  file: notes\the-extended-real-number-system\notes-the-extended-real-number-system.tex
+  display_title: Comparison with Infinities
+  proof_file: proofs\the-extended-real-number-system\prf-comparison-with-infinities.tex
+- label: def:extended-real-addition-domain
+  type: def
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Domain of Extended Real Addition
+  proof_file: null
+- label: def:extended-real-addition
+  type: def
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Extended Real Addition
+  proof_file: null
+- label: thm:extended-real-addition-well-defined
+  type: thm
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Extended Real Addition Is Well Defined
+  proof_file: proofs\arithmetic-and-order\prf-extended-real-addition-well-defined.tex
+- label: thm:extended-real-addition-extends-real-addition
+  type: thm
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Extended Addition Extends Real Addition
+  proof_file: proofs\arithmetic-and-order\prf-extended-real-addition-extends-real-addition.tex
+- label: thm:extended-real-addition-with-infinities
+  type: thm
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Addition with Infinities
+  proof_file: proofs\arithmetic-and-order\prf-extended-real-addition-with-infinities.tex
+- label: def:extended-real-negation
+  type: def
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Extended Real Negation and Subtraction
+  proof_file: null
+- label: thm:extended-real-negation-well-defined
+  type: thm
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Extended Real Negation Is Well Defined
+  proof_file: proofs\arithmetic-and-order\prf-extended-real-negation-well-defined.tex
+- label: def:extended-real-multiplication-domain
+  type: def
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Domain of Extended Real Multiplication
+  proof_file: null
+- label: def:extended-real-multiplication
+  type: def
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Extended Real Multiplication
+  proof_file: null
+- label: thm:extended-real-multiplication-well-defined
+  type: thm
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Extended Real Multiplication Is Well Defined
+  proof_file: proofs\arithmetic-and-order\prf-extended-real-multiplication-well-defined.tex
+- label: thm:extended-real-multiplication-extends-real-multiplication
+  type: thm
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Extended Multiplication Extends Real Multiplication
+  proof_file: proofs\arithmetic-and-order\prf-extended-real-multiplication-extends-real-multiplication.tex
+- label: thm:extended-real-multiplication-with-infinities
+  type: thm
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Multiplication with Infinities
+  proof_file: proofs\arithmetic-and-order\prf-extended-real-multiplication-with-infinities.tex
+- label: prop:indeterminate-extended-real-forms
+  type: prop
+  file: notes\arithmetic-and-order\notes-arithmetic-and-order.tex
+  display_title: Indeterminate Extended Real Forms
+  proof_file: proofs\arithmetic-and-order\prf-indeterminate-extended-real-forms.tex
+- label: def:extended-real-interval
+  type: def
+  file: notes\extended-real-intervals\notes-extended-real-intervals.tex
+  display_title: Extended Real Interval
+  proof_file: null
+- label: thm:real-rays-as-extended-intervals
+  type: thm
+  file: notes\extended-real-intervals\notes-extended-real-intervals.tex
+  display_title: Real Rays as Extended Intervals
+  proof_file: proofs\extended-real-intervals\prf-real-rays-as-extended-intervals.tex
+- label: thm:extended-closed-rays-contain-infinite-endpoints
+  type: thm
+  file: notes\extended-real-intervals\notes-extended-real-intervals.tex
+  display_title: Extended Closed Rays Contain Infinite Endpoints
+  proof_file: proofs\extended-real-intervals\prf-extended-closed-rays-contain-infinite-endpoints.tex
+- label: thm:extended-real-line-is-closed-bounded
+  type: thm
+  file: notes\extended-real-intervals\notes-extended-real-intervals.tex
+  display_title: The Extended Real Line Is Closed and Bounded
+  proof_file: proofs\extended-real-intervals\prf-extended-real-line-is-closed-bounded.tex
+- label: thm:extended-interval-order-characterization
+  type: thm
+  file: notes\extended-real-intervals\notes-extended-real-intervals.tex
+  display_title: Extended Interval Order Characterization
+  proof_file: proofs\extended-real-intervals\prf-extended-interval-order-characterization.tex
+proof_files:
+- proofs\the-extended-real-number-system\prf-extended-real-order-well-defined.tex
+- proofs\the-extended-real-number-system\prf-extended-real-order-is-total.tex
+- proofs\the-extended-real-number-system\prf-real-order-embeds-in-extended-real-order.tex
+- proofs\the-extended-real-number-system\prf-comparison-with-infinities.tex
+- proofs\arithmetic-and-order\prf-extended-real-addition-well-defined.tex
+- proofs\arithmetic-and-order\prf-extended-real-addition-extends-real-addition.tex
+- proofs\arithmetic-and-order\prf-extended-real-addition-with-infinities.tex
+- proofs\arithmetic-and-order\prf-extended-real-negation-well-defined.tex
+- proofs\arithmetic-and-order\prf-extended-real-multiplication-well-defined.tex
+- proofs\arithmetic-and-order\prf-extended-real-multiplication-extends-real-multiplication.tex
+- proofs\arithmetic-and-order\prf-extended-real-multiplication-with-infinities.tex
+- proofs\arithmetic-and-order\prf-indeterminate-extended-real-forms.tex
+- proofs\extended-real-intervals\prf-real-rays-as-extended-intervals.tex
+- proofs\extended-real-intervals\prf-extended-closed-rays-contain-infinite-endpoints.tex
+- proofs\extended-real-intervals\prf-extended-real-line-is-closed-bounded.tex
+- proofs\extended-real-intervals\prf-extended-interval-order-characterization.tex

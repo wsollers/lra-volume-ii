@@ -5,6 +5,54 @@ each basic interval shape its notation and spells out which endpoints are
 included.
 \end{exposition}
 \end{topicbox}
+\begin{definitionbox}{Definition (Interval)}
+\begin{definition}[Interval]
+\label{def:interval}
+A set $I\subseteq\mathbb{R}$ is an \emph{interval} if whenever $x,z\in I$ and
+$x<y<z$, then $y\in I$.
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+I\text{ is an interval}
+\Longleftrightarrow
+\forall x,z\in I\;\forall y\in\mathbb{R}\;
+\bigl(x<y<z\Rightarrow y\in I\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Interval}(I)
+\Longleftrightarrow
+\forall x,z\in I\;\forall y\in\mathbb{R}\;
+\operatorname{Between}(x,y,z)\Rightarrow y\in I.
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+I\text{ is not an interval}
+\Longleftrightarrow
+\exists x,z\in I\;\exists y\in\mathbb{R}\;
+\bigl(x<y<z\land y\notin I\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{Interval}(I)
+\Longleftrightarrow
+\exists x,z\in I\;\exists y\in\mathbb{R}\;
+\bigl(\operatorname{Between}(x,y,z)\land y\notin I\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+An interval has no order gaps: once it contains two endpoints, it contains
+every real point between them.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:reals]{Real Numbers};
+\hyperref[def:strict-order-on-r]{Strict Order on $\mathbb{R}$}.
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Open Interval)}
 \begin{definition}[Open Interval]
 \label{def:open-interval}
@@ -65,6 +113,7 @@ The left-half-open interval excludes the left endpoint, includes the right. It i
 \begin{dependencies}
 \NoLocalDependencies
 \end{dependencies}
+
 \begin{definitionbox}{Definition (Right-Half-Open Interval)}
 \begin{definition}[Right-Half-Open Interval]
 \label{def:right-half-open-interval}
@@ -85,6 +134,108 @@ The right-half-open interval includes the left endpoint, excludes the right. It 
 \begin{dependencies}
 \NoLocalDependencies
 \end{dependencies}
+
+\begin{theorembox}{Theorem (Characterization of Intervals)}
+\begin{theorem}[Characterization of Intervals]
+\label{thm:interval-characterization}
+A subset $I\subseteq\mathbb{R}$ is an interval if and only if for all $x,z\in I$
+with $x<z$,
+\[
+[x,z]\subseteq I.
+\]
+\hyperref[prf:interval-characterization]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Interval}(I)
+\Longleftrightarrow
+\forall x,z\in I\;\bigl(x<z\Rightarrow [x,z]\subseteq I\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Interval}(I)
+\Longleftrightarrow
+\operatorname{ClosedSegmentConvex}(I).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\neg\operatorname{Interval}(I)
+\Longleftrightarrow
+\exists x,z\in I\;\bigl(x<z\land [x,z]\nsubseteq I\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\exists x,z\in I\;\bigl(x<z\land [x,z]\nsubseteq I\bigr)
+\Longleftrightarrow
+\neg\operatorname{Interval}(I).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The pointwise betweenness definition of interval is equivalent to saying that
+every closed segment joining two points of the set stays inside the set.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:interval]{Interval};
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Classification of Intervals in $\mathbb{R}$)}
+\begin{theorem}[Classification of Intervals in $\mathbb{R}$]
+\label{thm:classification-of-intervals-in-r}
+Every interval in $\mathbb{R}$ is one of the standard interval types:
+\[
+(a,b),\ [a,b],\ (a,b],\ [a,b),\ (a,\infty),\ [a,\infty),
+\]
+\[
+(-\infty,b),\ (-\infty,b],\ \mathbb{R},\ \varnothing,
+\]
+including degenerate one-point intervals.
+\hyperref[prf:classification-of-intervals-in-r]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall I\subseteq\mathbb{R}\;
+\bigl(\operatorname{Interval}(I)\Rightarrow
+I\text{ is one of the standard interval types}\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Interval}(I)\Longrightarrow \operatorname{StandardRealInterval}(I).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists I\subseteq\mathbb{R}\;
+\bigl(\operatorname{Interval}(I)\land
+\neg\operatorname{StandardRealInterval}(I)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{StandardRealInterval}(I)\Longrightarrow \neg\operatorname{Interval}(I).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The real-line interval condition has no exotic bounded or unbounded shapes:
+the endpoint data determine one of the familiar open, closed, half-open, ray,
+whole-line, empty, or singleton forms.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:interval]{Interval};
+\hyperref[def:open-interval]{Open Interval};
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:left-half-open-interval]{Left-Half-Open Interval};
+\hyperref[def:right-half-open-interval]{Right-Half-Open Interval};
+\hyperref[def:ray]{Ray}.
+\end{dependencies}
+
+\input{volume-ii/book-continuum/number-lines/notes/intervals-on-a-number-line/figure-interval-classification}
 \begin{definitionbox}{Definition (Ray)}
 \begin{definition}[Ray]
 \label{def:ray}

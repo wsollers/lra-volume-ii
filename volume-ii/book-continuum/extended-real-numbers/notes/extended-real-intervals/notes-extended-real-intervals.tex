@@ -1,0 +1,142 @@
+\begin{definitionbox}{Definition (Extended Real Interval)}
+\begin{definition}[Extended Real Interval]
+\label{def:extended-real-interval}
+A set $I\subseteq\overline{\mathbb{R}}$ is an \emph{extended real interval} if
+whenever $x,z\in I$ and $x\le y\le z$ in $\overline{\mathbb{R}}$, then
+$y\in I$.
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{ExtInterval}(I)
+\Longleftrightarrow
+\forall x,z\in I\;\forall y\in\overline{\mathbb{R}}\;
+\bigl(x\le y\le z\Rightarrow y\in I\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x,z\in I\;\exists y\in\overline{\mathbb{R}}\;
+\bigl(x\le y\le z\land y\notin I\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The interval condition is unchanged, but the ambient ordered set now has two
+extra endpoints.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:extended-real-order]{Order on the Extended Reals};
+\hyperref[def:interval]{Interval}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Real Rays as Extended Intervals)}
+\begin{theorem}[Real Rays as Extended Intervals]
+\label{thm:real-rays-as-extended-intervals}
+For $a\in\mathbb{R}$, the real rays
+\[
+(a,+\infty),\qquad [a,+\infty),\qquad
+(-\infty,a),\qquad (-\infty,a]
+\]
+are the finite parts of extended intervals with infinite endpoints.
+\hyperref[prf:real-rays-as-extended-intervals]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+[a,+\infty)_{\mathbb{R}}
+= [a,+\infty]_{\overline{\mathbb{R}}}\cap\mathbb{R}
+\]
+and similarly for the other ray types.
+\end{remark*}
+\begin{remark*}[Interpretation]
+What was unbounded in $\mathbb{R}$ becomes endpoint-bounded in
+$\overline{\mathbb{R}}$.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:ray]{Ray};
+\hyperref[def:extended-real-interval]{Extended Real Interval}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Extended Closed Rays Contain Infinite Endpoints)}
+\begin{theorem}[Extended Closed Rays Contain Infinite Endpoints]
+\label{thm:extended-closed-rays-contain-infinite-endpoints}
+For $a\in\mathbb{R}$,
+\[
++\infty\in [a,+\infty]_{\overline{\mathbb{R}}}
+\quad\text{and}\quad
+-\infty\in [-\infty,a]_{\overline{\mathbb{R}}}.
+\]
+\hyperref[prf:extended-closed-rays-contain-infinite-endpoints]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;
+\bigl(+\infty\in [a,+\infty]_{\overline{\mathbb{R}}}
+\land -\infty\in [-\infty,a]_{\overline{\mathbb{R}}}\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Closedness in the extended line includes the newly added endpoint.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:extended-real-order]{Order on the Extended Reals}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (The Extended Real Line Is Closed and Bounded)}
+\begin{theorem}[The Extended Real Line Is Closed and Bounded]
+\label{thm:extended-real-line-is-closed-bounded}
+In $\overline{\mathbb{R}}$,
+\[
+\overline{\mathbb{R}}=[-\infty,+\infty].
+\]
+Thus the whole extended real line has both a least element and a greatest
+element.
+\hyperref[prf:extended-real-line-is-closed-bounded]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\overline{\mathbb{R}}\;(-\infty\le x\le+\infty).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The extended line is order-bounded by construction.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:comparison-with-infinities]{Comparison with Infinities};
+\hyperref[def:extended-real-interval]{Extended Real Interval}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Extended Interval Order Characterization)}
+\begin{theorem}[Extended Interval Order Characterization]
+\label{thm:extended-interval-order-characterization}
+A subset $I\subseteq\overline{\mathbb{R}}$ is an extended real interval if and
+only if for all $x,z\in I$ with $x\le z$,
+\[
+[x,z]_{\overline{\mathbb{R}}}\subseteq I.
+\]
+\hyperref[prf:extended-interval-order-characterization]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{ExtInterval}(I)
+\Longleftrightarrow
+\forall x,z\in I\;\bigl(x\le z\Rightarrow
+[x,z]_{\overline{\mathbb{R}}}\subseteq I\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x,z\in I\;\bigl(x\le z\land [x,z]_{\overline{\mathbb{R}}}\nsubseteq I\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The familiar interval characterization survives after adjoining the two
+order endpoints.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:extended-real-interval]{Extended Real Interval};
+\hyperref[thm:interval-characterization]{Characterization of Intervals}.
+\end{dependencies}

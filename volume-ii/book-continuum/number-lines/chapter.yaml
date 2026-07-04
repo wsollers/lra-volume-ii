@@ -6,6 +6,11 @@ dependencies:
   prior: ''
   next: ''
 environments:
+- label: def:interval
+  type: def
+  file: notes\intervals-on-a-number-line\notes-intervals-on-a-number-line.tex
+  display_title: Interval
+  proof_file: null
 - label: def:open-interval
   type: def
   file: notes\intervals-on-a-number-line\notes-intervals-on-a-number-line.tex
@@ -31,12 +36,24 @@ environments:
   file: notes\intervals-on-a-number-line\notes-intervals-on-a-number-line.tex
   display_title: Ray
   proof_file: null
+- label: thm:interval-characterization
+  type: thm
+  file: notes\intervals-on-a-number-line\notes-intervals-on-a-number-line.tex
+  display_title: Characterization of Intervals
+  proof_file: proofs\intervals-on-a-number-line\prf-interval-characterization.tex
+- label: thm:classification-of-intervals-in-r
+  type: thm
+  file: notes\intervals-on-a-number-line\notes-intervals-on-a-number-line.tex
+  display_title: Classification of Intervals in $\mathbb{R}$
+  proof_file: proofs\intervals-on-a-number-line\prf-classification-of-intervals-in-r.tex
 - label: def:number-line
   type: def
   file: notes\number-lines\notes-number-lines.tex
   display_title: Number Line
   proof_file: null
-proof_files: []
+proof_files:
+- proofs\intervals-on-a-number-line\prf-interval-characterization.tex
+- proofs\intervals-on-a-number-line\prf-classification-of-intervals-in-r.tex
 
 book: book-continuum
 path: volume-ii/book-continuum/number-lines

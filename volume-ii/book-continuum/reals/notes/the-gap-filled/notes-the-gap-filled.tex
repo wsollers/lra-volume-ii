@@ -1,3 +1,176 @@
+\begin{theorembox}{Theorem (Existence of Square Roots)}
+\begin{theorem}[Existence of Square Roots]
+\label{thm:existence-of-square-roots}
+For every real number $a\ge 0$, there exists $x\in\mathbb{R}$ such that
+\[
+x\ge 0
+\quad\text{and}\quad
+x^2=a.
+\]
+\hyperref[prf:existence-of-square-roots]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;
+\bigl(a\ge 0\Rightarrow
+\exists x\in\mathbb{R}\;(x\ge 0\land x^2=a)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Nonnegative}(a)\Rightarrow
+\operatorname{HasNonnegativeSquareRoot}(a).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists a\in\mathbb{R}\;
+\bigl(a\ge 0\land
+\forall x\in\mathbb{R}\;(x<0\lor x^2\ne a)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Nonnegative}(a)\land
+\neg\operatorname{HasNonnegativeSquareRoot}(a).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Nonnegative real numbers have nonnegative real square roots. This is a
+completeness consequence, not an algebraic field axiom.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:lub-property-r]{Least-Upper-Bound Property};
+\hyperref[cor:ordered-field-laws-on-r]{Ordered-Field Laws Hold on $\mathbb{R}$}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Uniqueness of Nonnegative Square Roots)}
+\begin{theorem}[Uniqueness of Nonnegative Square Roots]
+\label{thm:uniqueness-of-nonnegative-square-roots}
+If $x,y\ge 0$ and
+\[
+x^2=y^2,
+\]
+then
+\[
+x=y.
+\]
+\hyperref[prf:uniqueness-of-nonnegative-square-roots]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{R}\;
+\bigl((x\ge 0\land y\ge 0\land x^2=y^2)\Rightarrow x=y\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Nonnegative}(x)\land\operatorname{Nonnegative}(y)\land x^2=y^2
+\Rightarrow x=y.
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x,y\in\mathbb{R}\;
+\bigl(x\ge 0\land y\ge 0\land x^2=y^2\land x\ne y\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{SameSquare}(x,y)\land\operatorname{Nonnegative}(x,y)\land x\ne y.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The sign restriction removes the ambiguity between opposite square roots.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:trichotomy-on-r]{Trichotomy on $\mathbb{R}$};
+\hyperref[cor:ordered-field-laws-on-r]{Ordered-Field Laws Hold on $\mathbb{R}$}.
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Square Root)}
+\begin{definition}[Square Root]
+\label{def:square-root}
+For $a\ge 0$, define $\sqrt a$ to be the unique nonnegative real number $x$
+such that
+\[
+x^2=a.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+a\ge 0
+\Rightarrow
+\sqrt a=\text{the unique }x\in\mathbb{R}\text{ with }x\ge 0\text{ and }x^2=a.
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\sqrt a=\iota x\;\operatorname{NonnegativeSquareRoot}(x,a).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+a\ge 0\land
+\neg\exists!x\in\mathbb{R}\;(x\ge 0\land x^2=a).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{UniqueNonnegativeSquareRoot}(a).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The radical symbol names the unique nonnegative solution of the square
+equation.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:existence-of-square-roots]{Existence of Square Roots};
+\hyperref[thm:uniqueness-of-nonnegative-square-roots]{Uniqueness of Nonnegative Square Roots}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Square Root of Two Is Irrational)}
+\begin{theorem}[Square Root of Two Is Irrational]
+\label{thm:square-root-of-two-is-irrational}
+\[
+\sqrt2\in\mathbb{R}\setminus\mathbb{Q}.
+\]
+\hyperref[prf:square-root-of-two-is-irrational]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\sqrt2\in\mathbb{R}\land \sqrt2\notin\mathbb{Q}.
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Irrational}(\sqrt2).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\sqrt2\in\mathbb{Q}.
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{Irrational}(\sqrt2).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The square root supplied by completeness need not be rational; the classical
+gap at $2$ is filled only after passing from $\mathbb{Q}$ to $\mathbb{R}$.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:square-root]{Square Root};
+\hyperref[thm:no-rational-square-root-of-two]{No Rational Square Root of Two};
+\hyperref[thm:sqrt-two-squared-is-two]{Its Square Is Two}.
+\end{dependencies}
+
 \begin{definitionbox}{Definition}
 \begin{definition}[The Square-Root-of-Two Cut]
 \label{def:sqrt-two-cut}

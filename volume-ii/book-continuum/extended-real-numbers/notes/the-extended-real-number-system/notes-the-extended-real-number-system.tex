@@ -1,0 +1,236 @@
+\begin{topicbox}{Why Extend the Real Line?}
+\begin{exposition}
+The extended real number system is obtained by adjoining two formal endpoint
+symbols, $-\infty$ and $+\infty$, to the real numbers. It is not a new field:
+the infinite symbols are not real numbers, and arithmetic involving them is
+only partially defined. Its purpose is order-theoretic and analytic. It gives
+every unbounded-above set a formal supremum $+\infty$, every unbounded-below
+set a formal infimum $-\infty$, and it lets intervals, monotone limits, and
+endpoint behavior be stated without repeatedly separating finite and infinite
+cases.
+
+The extended line is therefore a bookkeeping completion of the order on
+$\mathbb{R}$, not an algebraic completion. The real numbers remain the finite
+part of the system, while $-\infty$ and $+\infty$ mark the two ends of the
+ordered line.
+\end{exposition}
+\end{topicbox}
+
+\begin{definitionbox}{Definition (Extended Real Numbers)}
+\begin{definition}[Extended Real Numbers]
+\label{def:extended-real-numbers}
+The \emph{extended real numbers} are
+\[
+\overline{\mathbb{R}}=\mathbb{R}\cup\{-\infty,+\infty\},
+\]
+where $-\infty$ and $+\infty$ are formal symbols not belonging to
+$\mathbb{R}$.
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+x\in\overline{\mathbb{R}}
+\Longleftrightarrow
+x\in\mathbb{R}\lor x=-\infty\lor x=+\infty.
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ExtendedReal}(x)\Longleftrightarrow
+\operatorname{Real}(x)\lor x=-\infty\lor x=+\infty.
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+x\notin\overline{\mathbb{R}}
+\Longleftrightarrow
+x\notin\mathbb{R}\land x\ne-\infty\land x\ne+\infty.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The extended real line is the real line with one formal endpoint attached at
+each end.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:reals]{Real Numbers}.
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Finite Extended Real)}
+\begin{definition}[Finite Extended Real]
+\label{def:finite-extended-real}
+An element $x\in\overline{\mathbb{R}}$ is \emph{finite} if $x\in\mathbb{R}$.
+It is \emph{infinite} if $x=-\infty$ or $x=+\infty$.
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Finite}_{\overline{\mathbb{R}}}(x)
+\Longleftrightarrow x\in\mathbb{R}.
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\neg\operatorname{Finite}_{\overline{\mathbb{R}}}(x)
+\Longleftrightarrow x=-\infty\lor x=+\infty.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Finite extended reals are exactly the ordinary real numbers.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:extended-real-numbers]{Extended Real Numbers}.
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Order on the Extended Reals)}
+\begin{definition}[Order on the Extended Reals]
+\label{def:extended-real-order}
+The order on $\overline{\mathbb{R}}$ extends the order on $\mathbb{R}$ by
+requiring
+\[
+-\infty\le x\le +\infty
+\]
+for every $x\in\overline{\mathbb{R}}$, and by preserving the usual order
+between finite elements.
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+x\le_{\overline{\mathbb{R}}}y
+\Longleftrightarrow
+x=-\infty\lor y=+\infty\lor
+(x,y\in\mathbb{R}\land x\le_{\mathbb{R}}y).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ExtendedLeq}(x,y)
+\Longleftrightarrow
+\operatorname{Bottom}(x)\lor\operatorname{Top}(y)\lor
+\operatorname{FiniteLeq}(x,y).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\neg(x\le_{\overline{\mathbb{R}}}y)
+\Longleftrightarrow
+x\ne-\infty\land y\ne+\infty\land
+(x,y\in\mathbb{R}\Rightarrow y<x).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The new symbols are the least and greatest elements; nothing changes between
+ordinary real numbers.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:extended-real-numbers]{Extended Real Numbers};
+\hyperref[def:order-on-r]{Order on $\mathbb{R}$}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Extended Real Order Is Well Defined)}
+\begin{theorem}[Extended Real Order Is Well Defined]
+\label{thm:extended-real-order-well-defined}
+The relation $\le_{\overline{\mathbb{R}}}$ defines a binary relation on
+$\overline{\mathbb{R}}$.
+\hyperref[prf:extended-real-order-well-defined]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\overline{\mathbb{R}}\;
+\bigl(x\le_{\overline{\mathbb{R}}}y\lor \neg(x\le_{\overline{\mathbb{R}}}y)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Every pair of extended real inputs has a definite comparison truth value.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:extended-real-order]{Order on the Extended Reals}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Extended Real Order Is Total)}
+\begin{theorem}[Extended Real Order Is Total]
+\label{thm:extended-real-order-is-total}
+The ordered set $(\overline{\mathbb{R}},\le_{\overline{\mathbb{R}}})$ is a
+totally ordered set.
+\hyperref[prf:extended-real-order-is-total]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\overline{\mathbb{R}}\;
+\bigl(x\le y\lor y\le x\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x,y\in\overline{\mathbb{R}}\;(x\nleq y\land y\nleq x).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Adding two endpoints preserves linear comparability.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:extended-real-order]{Order on the Extended Reals};
+\hyperref[thm:order-on-r-total]{Order on $\mathbb{R}$ Is Total}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Real Order Embeds in the Extended Real Order)}
+\begin{theorem}[Real Order Embeds in the Extended Real Order]
+\label{thm:real-order-embeds-in-extended-real-order}
+For all $x,y\in\mathbb{R}$,
+\[
+x\le_{\mathbb{R}}y
+\quad\Longleftrightarrow\quad
+x\le_{\overline{\mathbb{R}}}y.
+\]
+\hyperref[prf:real-order-embeds-in-extended-real-order]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{R}\;
+\bigl(x\le_{\mathbb{R}}y\Longleftrightarrow
+x\le_{\overline{\mathbb{R}}}y\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The extended order changes only comparisons involving the two new endpoints.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:extended-real-order]{Order on the Extended Reals};
+\hyperref[def:order-on-r]{Order on $\mathbb{R}$}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Comparison with Infinities)}
+\begin{theorem}[Comparison with Infinities]
+\label{thm:comparison-with-infinities}
+For every $x\in\mathbb{R}$,
+\[
+-\infty<x<+\infty.
+\]
+Also,
+\[
+-\infty\le y\le+\infty
+\]
+for every $y\in\overline{\mathbb{R}}$.
+\hyperref[prf:comparison-with-infinities]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;(-\infty<x<+\infty)
+\quad\land\quad
+\forall y\in\overline{\mathbb{R}}\;(-\infty\le y\le+\infty).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists y\in\overline{\mathbb{R}}\;(y<-\infty\lor +\infty<y).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The infinite symbols are the bottom and top of the extended order.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:extended-real-order]{Order on the Extended Reals}.
+\end{dependencies}
