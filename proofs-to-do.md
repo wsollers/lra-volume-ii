@@ -3,7 +3,7 @@
 Proof-writing order is dependency-first among active TODO proof labels, with the generated knowledge graph order used as the stable tie-breaker.
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Open proofs to do: 483
+Open proofs to do: 504
 Completed in this tracker: 0
 
 1. () `cor:equality-is-finest-equivalence` — **Equality Is the Finest Equivalence**
@@ -2868,47 +2868,66 @@ Completed in this tracker: 0
    > **Statement.**
    > A convergent sequence in $\mathbb{Q}$ has at most one rational limit.
 
-399. () `lem:sum-of-cuts-is-a-cut` — **Sum of Cuts Is a Cut**
+399. () `thm:interval-characterization` — **Characterization of Intervals**
+   > **Statement.**
+   > A subset $I\subseteq\mathbb{R}$ is an interval if and only if for all $x,z\in I$
+   > with $x<z$,
+   > \[
+   > [x,z]\subseteq I.
+   > \]
+
+400. () `thm:classification-of-intervals-in-r` — **Classification of Intervals in $\mathbb{R}$**
+   > **Statement.**
+   > Every interval in $\mathbb{R}$ is one of the standard interval types:
+   > \[
+   > (a,b),\ [a,b],\ (a,b],\ [a,b),\ (a,\infty),\ [a,\infty),
+   > \]
+   > \[
+   > (-\infty,b),\ (-\infty,b],\ \mathbb{R},\ \varnothing,
+   > \]
+   > including degenerate one-point intervals.
+
+401. () `lem:sum-of-cuts-is-a-cut` — **Sum of Cuts Is a Cut**
    > **Statement.**
    > If $\alpha,\beta\in\mathbb{R}$, then $\alpha+\beta$ is a Dedekind cut.
 
-400. () `thm:addition-on-r-associative` — **Addition on $\mathbb{R}$ Is Associative**
+402. () `thm:addition-on-r-associative` — **Addition on $\mathbb{R}$ Is Associative**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
    > (\alpha+\beta)+\gamma=\alpha+(\beta+\gamma).
    > \]
 
-401. () `thm:addition-on-r-commutative` — **Addition on $\mathbb{R}$ Is Commutative**
+403. () `thm:addition-on-r-commutative` — **Addition on $\mathbb{R}$ Is Commutative**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha+\beta=\beta+\alpha.
    > \]
 
-402. () `thm:zero-additive-identity-on-r` — **Zero Is an Additive Identity on $\mathbb{R}$**
+404. () `thm:zero-additive-identity-on-r` — **Zero Is an Additive Identity on $\mathbb{R}$**
    > **Statement.**
    > For every $\alpha\in\mathbb{R}$,
    > \[
    > \alpha+0_{\mathbb{R}}=\alpha.
    > \]
 
-403. () `lem:negation-of-cut-is-a-cut` — **Negation of a Cut Is a Cut**
+405. () `lem:negation-of-cut-is-a-cut` — **Negation of a Cut Is a Cut**
    > **Statement.**
    > If $\alpha\in\mathbb{R}$, then $-\alpha$ is a Dedekind cut.
 
-404. () `thm:negation-additive-inverse-on-r` — **Negation Is an Additive Inverse on $\mathbb{R}$**
+406. () `thm:negation-additive-inverse-on-r` — **Negation Is an Additive Inverse on $\mathbb{R}$**
    > **Statement.**
    > For every $\alpha\in\mathbb{R}$,
    > \[
    > \alpha+(-\alpha)=0_{\mathbb{R}}.
    > \]
 
-405. () `thm:r-additive-abelian-group` — **$\mathbb{R}$ Is an Additive Abelian Group**
+407. () `thm:r-additive-abelian-group` — **$\mathbb{R}$ Is an Additive Abelian Group**
    > **Statement.**
    > The structure $(\mathbb{R},+,0_{\mathbb{R}})$ is an abelian group.
 
-406. () `lem:union-of-cuts-is-a-cut` — **Union of a Bounded Nonempty Family of Cuts Is a Cut**
+408. () `lem:union-of-cuts-is-a-cut` — **Union of a Bounded Nonempty Family of Cuts Is a Cut**
    > **Statement.**
    > If $S\subseteq\mathbb{R}$ is nonempty and bounded above, then
    > \[
@@ -2916,7 +2935,7 @@ Completed in this tracker: 0
    > \]
    > is a Dedekind cut.
 
-407. () `thm:lub-property-r` — **Least-Upper-Bound Property**
+409. () `thm:lub-property-r` — **Least-Upper-Bound Property**
    > **Statement.**
    > Every nonempty subset $S\subseteq\mathbb{R}$ that is bounded above has a least
    > upper bound, namely
@@ -2924,70 +2943,70 @@ Completed in this tracker: 0
    > \sup S=\bigcup_{\alpha\in S}\alpha.
    > \]
 
-408. () `thm:zero-not-one-in-r` — **Zero Is Not One in $\mathbb{R}$**
+410. () `thm:zero-not-one-in-r` — **Zero Is Not One in $\mathbb{R}$**
    > **Statement.**
    > In $\mathbb{R}$,
    > \[
    > 0_{\mathbb{R}}\ne 1_{\mathbb{R}}.
    > \]
 
-409. () `lem:product-nonnegative-is-a-cut` — **Product of Nonnegative Cuts Is a Cut**
+411. () `lem:product-nonnegative-is-a-cut` — **Product of Nonnegative Cuts Is a Cut**
    > **Statement.**
    > If $\alpha,\beta\ge 0_{\mathbb{R}}$, then $\alpha\cdot\beta$ is a Dedekind cut.
 
-410. () `lem:product-of-cuts-is-a-cut` — **Product of Cuts Is a Cut**
+412. () `lem:product-of-cuts-is-a-cut` — **Product of Cuts Is a Cut**
    > **Statement.**
    > If $\alpha,\beta\in\mathbb{R}$, then $\alpha\cdot\beta\in\mathbb{R}$.
 
-411. () `thm:multiplication-on-r-associative` — **Multiplication on $\mathbb{R}$ Is Associative**
+413. () `thm:multiplication-on-r-associative` — **Multiplication on $\mathbb{R}$ Is Associative**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
    > (\alpha\cdot\beta)\cdot\gamma=\alpha\cdot(\beta\cdot\gamma).
    > \]
 
-412. () `thm:multiplication-on-r-commutative` — **Multiplication on $\mathbb{R}$ Is Commutative**
+414. () `thm:multiplication-on-r-commutative` — **Multiplication on $\mathbb{R}$ Is Commutative**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha\cdot\beta=\beta\cdot\alpha.
    > \]
 
-413. () `thm:one-multiplicative-identity-on-r` — **One Is a Multiplicative Identity on $\mathbb{R}$**
+415. () `thm:one-multiplicative-identity-on-r` — **One Is a Multiplicative Identity on $\mathbb{R}$**
    > **Statement.**
    > For every $\alpha\in\mathbb{R}$,
    > \[
    > \alpha\cdot 1_{\mathbb{R}}=\alpha.
    > \]
 
-414. () `lem:reciprocal-is-a-cut` — **Reciprocal of a Nonzero Cut Is a Cut**
+416. () `lem:reciprocal-is-a-cut` — **Reciprocal of a Nonzero Cut Is a Cut**
    > **Statement.**
    > If $\alpha\ne0_{\mathbb{R}}$, then $\alpha^{-1}\in\mathbb{R}$.
 
-415. () `thm:reciprocal-multiplicative-inverse-on-r` — **Reciprocal Is a Multiplicative Inverse on $\mathbb{R}$**
+417. () `thm:reciprocal-multiplicative-inverse-on-r` — **Reciprocal Is a Multiplicative Inverse on $\mathbb{R}$**
    > **Statement.**
    > If $\alpha\ne0_{\mathbb{R}}$, then
    > \[
    > \alpha\cdot\alpha^{-1}=1_{\mathbb{R}}.
    > \]
 
-416. () `thm:r-nonzero-multiplicative-abelian-group` — **Nonzero $\mathbb{R}$ Is a Multiplicative Abelian Group**
+418. () `thm:r-nonzero-multiplicative-abelian-group` — **Nonzero $\mathbb{R}$ Is a Multiplicative Abelian Group**
    > **Statement.**
    > The structure $(\mathbb{R}\setminus\{0_{\mathbb{R}}\},\cdot,1_{\mathbb{R}})$
    > is an abelian group.
 
-417. () `thm:distributivity-on-r` — **Distributivity on $\mathbb{R}$**
+419. () `thm:distributivity-on-r` — **Distributivity on $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
    > \alpha\cdot(\beta+\gamma)=\alpha\cdot\beta+\alpha\cdot\gamma.
    > \]
 
-418. () `thm:r-is-a-field` — **$\mathbb{R}$ Is a Field**
+420. () `thm:r-is-a-field` — **$\mathbb{R}$ Is a Field**
    > **Statement.**
    > The structure $(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}})$ is a field.
 
-419. () `thm:addition-preserves-order-on-r` — **Addition Preserves Order on $\mathbb{R}$**
+421. () `thm:addition-preserves-order-on-r` — **Addition Preserves Order on $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
@@ -2995,7 +3014,7 @@ Completed in this tracker: 0
    > \]
    > and the corresponding non-strict statement also holds.
 
-420. () `thm:positive-multiplication-preserves-order-on-r` — **Multiplication by Positives Preserves Order on $\mathbb{R}$**
+422. () `thm:positive-multiplication-preserves-order-on-r` — **Multiplication by Positives Preserves Order on $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
@@ -3004,74 +3023,74 @@ Completed in this tracker: 0
    > \gamma\cdot\alpha<\gamma\cdot\beta.
    > \]
 
-421. () `thm:order-on-r-reflexive` — **Order on $\mathbb{R}$ Is Reflexive**
+423. () `thm:order-on-r-reflexive` — **Order on $\mathbb{R}$ Is Reflexive**
    > **Statement.**
    > For every $\alpha\in\mathbb{R}$, $\alpha\le\alpha$.
 
-422. () `thm:order-on-r-antisymmetric` — **Order on $\mathbb{R}$ Is Antisymmetric**
+424. () `thm:order-on-r-antisymmetric` — **Order on $\mathbb{R}$ Is Antisymmetric**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha\le\beta\land\beta\le\alpha \Longrightarrow \alpha=\beta.
    > \]
 
-423. () `thm:order-on-r-transitive` — **Order on $\mathbb{R}$ Is Transitive**
+425. () `thm:order-on-r-transitive` — **Order on $\mathbb{R}$ Is Transitive**
    > **Statement.**
    > For all $\alpha,\beta,\gamma\in\mathbb{R}$,
    > \[
    > \alpha\le\beta\land\beta\le\gamma \Longrightarrow \alpha\le\gamma.
    > \]
 
-424. () `thm:comparability-of-cuts` — **Comparability of Cuts**
+426. () `thm:comparability-of-cuts` — **Comparability of Cuts**
    > **Statement.**
    > For all cuts $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha\subseteq\beta \lor \beta\subseteq\alpha.
    > \]
 
-425. () `thm:order-on-r-total` — **Order on $\mathbb{R}$ Is Total**
+427. () `thm:order-on-r-total` — **Order on $\mathbb{R}$ Is Total**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha\le\beta\lor\beta\le\alpha.
    > \]
 
-426. () `thm:r-totally-ordered-set` — **$\mathbb{R}$ Is a Totally Ordered Set**
+428. () `thm:r-totally-ordered-set` — **$\mathbb{R}$ Is a Totally Ordered Set**
    > **Statement.**
    > The ordered pair $(\mathbb{R},\le)$ is a total order.
 
-427. () `thm:r-is-an-ordered-field` — **$\mathbb{R}$ Is an Ordered Field**
+429. () `thm:r-is-an-ordered-field` — **$\mathbb{R}$ Is an Ordered Field**
    > **Statement.**
    > The structure $(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}},\le)$ is an
    > ordered field.
 
-428. () `thm:r-is-complete-ordered-field` — **$\mathbb{R}$ Is a Complete Ordered Field**
+430. () `thm:r-is-complete-ordered-field` — **$\mathbb{R}$ Is a Complete Ordered Field**
    > **Statement.**
    > The ordered field $\mathbb{R}$ satisfies the least-upper-bound property.
 
-429. () `thm:uniqueness-of-cof` — **Uniqueness of the Complete Ordered Field**
+431. () `thm:uniqueness-of-cof` — **Uniqueness of the Complete Ordered Field**
    > **Statement.**
    > Any two complete ordered fields are isomorphic by a unique order-isomorphism.
 
-430. () `cor:r-is-the-reals` — **$\mathbb{R}$ Is the Real Numbers**
+432. () `cor:r-is-the-reals` — **$\mathbb{R}$ Is the Real Numbers**
    > **Statement.**
    > The field $\mathbb{R}$ is determined up to unique order-isomorphism by being a
    > complete ordered field.
 
-431. () `cor:glb-property-r` — **Greatest-Lower-Bound Property**
+433. () `cor:glb-property-r` — **Greatest-Lower-Bound Property**
    > **Statement.**
    > Every nonempty subset $S\subseteq\mathbb{R}$ that is bounded below has a
    > greatest lower bound.
 
-432. () `lem:rational-cut-is-a-cut` — **Rational Cuts Are Cuts**
+434. () `lem:rational-cut-is-a-cut` — **Rational Cuts Are Cuts**
    > **Statement.**
    > For every $q\in\mathbb{Q}$, the set $q^{\ast}$ is a Dedekind cut.
 
-433. () `thm:zero-one-are-reals` — **Zero and One Are Reals**
+435. () `thm:zero-one-are-reals` — **Zero and One Are Reals**
    > **Statement.**
    > The cuts $0_{\mathbb{R}}$ and $1_{\mathbb{R}}$ are elements of $\mathbb{R}$.
 
-434. () `thm:embedding-q-into-r-preserves-zero-one` — **Embedding Preserves Zero and One**
+436. () `thm:embedding-q-into-r-preserves-zero-one` — **Embedding Preserves Zero and One**
    > **Statement.**
    > The embedding satisfies
    > \[
@@ -3080,14 +3099,14 @@ Completed in this tracker: 0
    > \iota(1_{\mathbb{Q}})=1_{\mathbb{R}}.
    > \]
 
-435. () `thm:embedding-q-into-r-injective` — **Embedding $\mathbb{Q}$ into $\mathbb{R}$ Is Injective**
+437. () `thm:embedding-q-into-r-injective` — **Embedding $\mathbb{Q}$ into $\mathbb{R}$ Is Injective**
    > **Statement.**
    > For all $p,q\in\mathbb{Q}$,
    > \[
    > \iota(p)=\iota(q) \Longrightarrow p=q.
    > \]
 
-436. () `thm:embedding-q-into-r-preserves-arithmetic` — **Embedding Preserves Addition and Multiplication**
+438. () `thm:embedding-q-into-r-preserves-arithmetic` — **Embedding Preserves Addition and Multiplication**
    > **Statement.**
    > For all $p,q\in\mathbb{Q}$,
    > \[
@@ -3096,25 +3115,25 @@ Completed in this tracker: 0
    > \iota(p\cdot q)=\iota(p)\cdot\iota(q).
    > \]
 
-437. () `thm:embedding-q-into-r-preserves-order` — **Embedding Preserves Order**
+439. () `thm:embedding-q-into-r-preserves-order` — **Embedding Preserves Order**
    > **Statement.**
    > For all $p,q\in\mathbb{Q}$,
    > \[
    > p\le q \Longleftrightarrow \iota(p)\le\iota(q).
    > \]
 
-438. () `thm:q-embeds-into-r` — **$\mathbb{Q}$ Embeds into $\mathbb{R}$ as an Ordered Field**
+440. () `thm:q-embeds-into-r` — **$\mathbb{Q}$ Embeds into $\mathbb{R}$ as an Ordered Field**
    > **Statement.**
    > The map $\iota$ is an injective order-preserving field homomorphism.
 
-439. () `thm:density-of-q-in-r` — **Density of $\mathbb{Q}$ in $\mathbb{R}$**
+441. () `thm:density-of-q-in-r` — **Density of $\mathbb{Q}$ in $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > \alpha<\beta \Longrightarrow \exists q\in\mathbb{Q}\,(\alpha<\iota(q)<\beta).
    > \]
 
-440. () `thm:archimedean-property-of-r` — **Archimedean Property of $\mathbb{R}$**
+442. () `thm:archimedean-property-of-r` — **Archimedean Property of $\mathbb{R}$**
    > **Statement.**
    > For $\alpha,\beta\in\mathbb{R}$,
    > \[
@@ -3123,24 +3142,24 @@ Completed in this tracker: 0
    > \exists n\in\mathbb{N}\,(\beta<\iota(n)\cdot\alpha).
    > \]
 
-441. () `cor:field-laws-on-r` — **Field Laws Hold on $\mathbb{R}$**
+443. () `cor:field-laws-on-r` — **Field Laws Hold on $\mathbb{R}$**
    > **Statement.**
    > Every theorem proved generically for fields holds in $\mathbb{R}$, including
    > zero product, double negation, sign rules, cancellation, uniqueness of
    > inverses, inverse laws, and exponent laws.
 
-442. () `cor:ordered-field-laws-on-r` — **Ordered-Field Laws Hold on $\mathbb{R}$**
+444. () `cor:ordered-field-laws-on-r` — **Ordered-Field Laws Hold on $\mathbb{R}$**
    > **Statement.**
    > Every theorem proved generically for ordered fields holds in $\mathbb{R}$.
 
-443. () `thm:triangle-inequality` — **Triangle Inequality**
+445. () `thm:triangle-inequality` — **Triangle Inequality**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$,
    > \[
    > |\alpha+\beta|\le |\alpha|+|\beta|.
    > \]
 
-444. () `thm:trichotomy-on-r` — **Trichotomy on $\mathbb{R}$**
+446. () `thm:trichotomy-on-r` — **Trichotomy on $\mathbb{R}$**
    > **Statement.**
    > For all $\alpha,\beta\in\mathbb{R}$, exactly one of
    > \[
@@ -3148,11 +3167,31 @@ Completed in this tracker: 0
    > \]
    > holds.
 
-445. () `lem:sqrt-two-is-a-cut` — **The Square-Root-of-Two Cut Is a Cut**
+447. () `thm:existence-of-square-roots` — **Existence of Square Roots**
+   > **Statement.**
+   > For every real number $a\ge 0$, there exists $x\in\mathbb{R}$ such that
+   > \[
+   > x\ge 0
+   > \quad\text{and}\quad
+   > x^2=a.
+   > \]
+
+448. () `thm:uniqueness-of-nonnegative-square-roots` — **Uniqueness of Nonnegative Square Roots**
+   > **Statement.**
+   > If $x,y\ge 0$ and
+   > \[
+   > x^2=y^2,
+   > \]
+   > then
+   > \[
+   > x=y.
+   > \]
+
+449. () `lem:sqrt-two-is-a-cut` — **The Square-Root-of-Two Cut Is a Cut**
    > **Statement.**
    > The set $\sqrt{2}$ is a Dedekind cut.
 
-446. () `thm:sqrt-two-squared-is-two` — **Its Square Is Two**
+450. () `thm:sqrt-two-squared-is-two` — **Its Square Is Two**
    > **Statement.**
    > In $\mathbb{R}$,
    > \[
@@ -3160,7 +3199,13 @@ Completed in this tracker: 0
    > \]
    > where $2_{\mathbb{R}}:=\iota(2_{\mathbb{Q}})$.
 
-447. () `cor:r-fills-the-gap` — **$\mathbb{R}$ Contains the Supremum $\mathbb{Q}$ Was Missing**
+451. () `thm:square-root-of-two-is-irrational` — **Square Root of Two Is Irrational**
+   > **Statement.**
+   > \[
+   > \sqrt2\in\mathbb{R}\setminus\mathbb{Q}.
+   > \]
+
+452. () `cor:r-fills-the-gap` — **$\mathbb{R}$ Contains the Supremum $\mathbb{Q}$ Was Missing**
    > **Statement.**
    > Let
    > \[
@@ -3173,14 +3218,159 @@ Completed in this tracker: 0
    > Thus the bounded-above rational set with no rational supremum has a supremum
    > in $\mathbb{R}$.
 
-448. () `lem:complex-coordinate-equivalence-reflexive` — **Complex Coordinate Equivalence Is Reflexive**
+453. () `thm:extended-real-addition-well-defined` — **Extended Real Addition Is Well Defined**
+   > **Statement.**
+   > For every pair $(x,y)$ in the domain of extended real addition, there is a
+   > unique element $z\in\overline{\mathbb{R}}$ such that
+   > \[
+   > z=x+y.
+   > \]
+
+454. () `thm:extended-real-addition-extends-real-addition` — **Extended Addition Extends Real Addition**
+   > **Statement.**
+   > For all $x,y\in\mathbb{R}$,
+   > \[
+   > x+_{\overline{\mathbb{R}}}y=x+_{\mathbb{R}}y.
+   > \]
+
+455. () `thm:extended-real-addition-with-infinities` — **Addition with Infinities**
+   > **Statement.**
+   > For every $x\in\mathbb{R}$,
+   > \[
+   > x+(+\infty)=+\infty
+   > \quad\text{and}\quad
+   > x+(-\infty)=-\infty.
+   > \]
+   > Moreover,
+   > \[
+   > (+\infty)+(+\infty)=+\infty
+   > \quad\text{and}\quad
+   > (-\infty)+(-\infty)=-\infty.
+   > \]
+
+456. () `thm:extended-real-negation-well-defined` — **Extended Real Negation Is Well Defined**
+   > **Statement.**
+   > For every $x\in\overline{\mathbb{R}}$, there is a unique
+   > $y\in\overline{\mathbb{R}}$ such that
+   > \[
+   > y=-x.
+   > \]
+
+457. () `thm:extended-real-multiplication-well-defined` — **Extended Real Multiplication Is Well Defined**
+   > **Statement.**
+   > For every pair $(x,y)$ in the domain of extended real multiplication, there is
+   > a unique element $z\in\overline{\mathbb{R}}$ such that
+   > \[
+   > z=xy.
+   > \]
+
+458. () `thm:extended-real-multiplication-extends-real-multiplication` — **Extended Multiplication Extends Real Multiplication**
+   > **Statement.**
+   > For all $x,y\in\mathbb{R}$,
+   > \[
+   > x\cdot_{\overline{\mathbb{R}}}y=x\cdot_{\mathbb{R}}y.
+   > \]
+
+459. () `thm:extended-real-multiplication-with-infinities` — **Multiplication with Infinities**
+   > **Statement.**
+   > If $x\in\mathbb{R}$ and $x>0$, then
+   > \[
+   > x(+\infty)=+\infty
+   > \quad\text{and}\quad
+   > x(-\infty)=-\infty.
+   > \]
+   > If $x\in\mathbb{R}$ and $x<0$, then
+   > \[
+   > x(+\infty)=-\infty
+   > \quad\text{and}\quad
+   > x(-\infty)=+\infty.
+   > \]
+
+460. () `prop:indeterminate-extended-real-forms` — **Indeterminate Extended Real Forms**
+   > **Statement.**
+   > The expressions
+   > \[
+   > (+\infty)+(-\infty),\qquad
+   > (-\infty)+(+\infty),\qquad
+   > 0\cdot(+\infty),\qquad
+   > 0\cdot(-\infty)
+   > \]
+   > are not defined in the extended real arithmetic introduced here.
+
+461. () `thm:real-rays-as-extended-intervals` — **Real Rays as Extended Intervals**
+   > **Statement.**
+   > For $a\in\mathbb{R}$, the real rays
+   > \[
+   > (a,+\infty),\qquad [a,+\infty),\qquad
+   > (-\infty,a),\qquad (-\infty,a]
+   > \]
+   > are the finite parts of extended intervals with infinite endpoints.
+
+462. () `thm:extended-closed-rays-contain-infinite-endpoints` — **Extended Closed Rays Contain Infinite Endpoints**
+   > **Statement.**
+   > For $a\in\mathbb{R}$,
+   > \[
+   > +\infty\in [a,+\infty]_{\overline{\mathbb{R}}}
+   > \quad\text{and}\quad
+   > -\infty\in [-\infty,a]_{\overline{\mathbb{R}}}.
+   > \]
+
+463. () `thm:comparison-with-infinities` — **Comparison with Infinities**
+   > **Statement.**
+   > For every $x\in\mathbb{R}$,
+   > \[
+   > -\infty<x<+\infty.
+   > \]
+   > Also,
+   > \[
+   > -\infty\le y\le+\infty
+   > \]
+   > for every $y\in\overline{\mathbb{R}}$.
+
+464. () `thm:extended-real-line-is-closed-bounded` — **The Extended Real Line Is Closed and Bounded**
+   > **Statement.**
+   > In $\overline{\mathbb{R}}$,
+   > \[
+   > \overline{\mathbb{R}}=[-\infty,+\infty].
+   > \]
+   > Thus the whole extended real line has both a least element and a greatest
+   > element.
+
+465. () `thm:extended-interval-order-characterization` — **Extended Interval Order Characterization**
+   > **Statement.**
+   > A subset $I\subseteq\overline{\mathbb{R}}$ is an extended real interval if and
+   > only if for all $x,z\in I$ with $x\le z$,
+   > \[
+   > [x,z]_{\overline{\mathbb{R}}}\subseteq I.
+   > \]
+
+466. () `thm:extended-real-order-well-defined` — **Extended Real Order Is Well Defined**
+   > **Statement.**
+   > The relation $\le_{\overline{\mathbb{R}}}$ defines a binary relation on
+   > $\overline{\mathbb{R}}$.
+
+467. () `thm:extended-real-order-is-total` — **Extended Real Order Is Total**
+   > **Statement.**
+   > The ordered set $(\overline{\mathbb{R}},\le_{\overline{\mathbb{R}}})$ is a
+   > totally ordered set.
+
+468. () `thm:real-order-embeds-in-extended-real-order` — **Real Order Embeds in the Extended Real Order**
+   > **Statement.**
+   > For all $x,y\in\mathbb{R}$,
+   > \[
+   > x\le_{\mathbb{R}}y
+   > \quad\Longleftrightarrow\quad
+   > x\le_{\overline{\mathbb{R}}}y.
+   > \]
+
+469. () `lem:complex-coordinate-equivalence-reflexive` — **Complex Coordinate Equivalence Is Reflexive**
    > **Statement.**
    > For every $(a,b)\in\operatorname{Pre}\mathbb{C}$,
    > \[
    > (a,b)\sim_{\mathbb{C}}(a,b).
    > \]
 
-449. () `lem:complex-coordinate-equivalence-symmetric` — **Complex Coordinate Equivalence Is Symmetric**
+470. () `lem:complex-coordinate-equivalence-symmetric` — **Complex Coordinate Equivalence Is Symmetric**
    > **Statement.**
    > For all prepairs $(a,b),(c,d)$,
    > \[
@@ -3189,7 +3379,7 @@ Completed in this tracker: 0
    > (c,d)\sim_{\mathbb{C}}(a,b).
    > \]
 
-450. () `lem:complex-coordinate-equivalence-transitive` — **Complex Coordinate Equivalence Is Transitive**
+471. () `lem:complex-coordinate-equivalence-transitive` — **Complex Coordinate Equivalence Is Transitive**
    > **Statement.**
    > For all prepairs $(a,b),(c,d),(e,f)$,
    > \[
@@ -3199,16 +3389,16 @@ Completed in this tracker: 0
    > (a,b)\sim_{\mathbb{C}}(e,f).
    > \]
 
-451. () `thm:complex-coordinate-equivalence-relation` — **Complex Coordinate Equivalence Is an Equivalence Relation**
+472. () `thm:complex-coordinate-equivalence-relation` — **Complex Coordinate Equivalence Is an Equivalence Relation**
    > **Statement.**
    > The relation $\sim_{\mathbb{C}}$ is an equivalence relation on
    > \(\operatorname{Pre}\mathbb{C}\).
 
-452. () `thm:embedding-r-into-c-injective` — **The Real Embedding into $\mathbb{C}$ Is Injective**
+473. () `thm:embedding-r-into-c-injective` — **The Real Embedding into $\mathbb{C}$ Is Injective**
    > **Statement.**
    > If \(\iota(a)=\iota(b)\), then \(a=b\).
 
-453. () `thm:embedding-r-into-c-preserves-operations` — **The Real Embedding Preserves Addition and Multiplication**
+474. () `thm:embedding-r-into-c-preserves-operations` — **The Real Embedding Preserves Addition and Multiplication**
    > **Statement.**
    > For all \(a,b\in\mathbb{R}\),
    > \[
@@ -3217,7 +3407,7 @@ Completed in this tracker: 0
    > \iota(ab)=\iota(a)\iota(b).
    > \]
 
-454. () `thm:embedding-r-into-c-preserves-zero-one` — **The Real Embedding Preserves Zero and One**
+475. () `thm:embedding-r-into-c-preserves-zero-one` — **The Real Embedding Preserves Zero and One**
    > **Statement.**
    > \[
    > \iota(0)=0_{\mathbb{C}},
@@ -3225,7 +3415,7 @@ Completed in this tracker: 0
    > \iota(1)=1_{\mathbb{C}}.
    > \]
 
-455. () `thm:real-imaginary-parts-well-defined` — **Real and Imaginary Parts Are Well-Defined**
+476. () `thm:real-imaginary-parts-well-defined` — **Real and Imaginary Parts Are Well-Defined**
    > **Statement.**
    > The functions
    > \[
@@ -3233,21 +3423,21 @@ Completed in this tracker: 0
    > \]
    > are well-defined.
 
-456. () `thm:addition-on-c-associative` — **Addition on $\mathbb{C}$ Is Associative**
+477. () `thm:addition-on-c-associative` — **Addition on $\mathbb{C}$ Is Associative**
    > **Statement.**
    > For all \(z,w,u\in\mathbb{C}\),
    > \[
    > (z+w)+u=z+(w+u).
    > \]
 
-457. () `thm:addition-on-c-commutative` — **Addition on $\mathbb{C}$ Is Commutative**
+478. () `thm:addition-on-c-commutative` — **Addition on $\mathbb{C}$ Is Commutative**
    > **Statement.**
    > For all \(z,w\in\mathbb{C}\),
    > \[
    > z+w=w+z.
    > \]
 
-458. () `thm:zero-additive-identity-on-c` — **Zero Is an Additive Identity on $\mathbb{C}$**
+479. () `thm:zero-additive-identity-on-c` — **Zero Is an Additive Identity on $\mathbb{C}$**
    > **Statement.**
    > For every \(z\in\mathbb{C}\),
    > \[
@@ -3256,7 +3446,7 @@ Completed in this tracker: 0
    > z+0_{\mathbb{C}}=z.
    > \]
 
-459. () `thm:every-complex-has-additive-inverse` — **Every Complex Number Has an Additive Inverse**
+480. () `thm:every-complex-has-additive-inverse` — **Every Complex Number Has an Additive Inverse**
    > **Statement.**
    > For every \(z\in\mathbb{C}\),
    > \[
@@ -3265,21 +3455,21 @@ Completed in this tracker: 0
    > (-z)+z=0_{\mathbb{C}}.
    > \]
 
-460. () `thm:multiplication-on-c-associative` — **Multiplication on $\mathbb{C}$ Is Associative**
+481. () `thm:multiplication-on-c-associative` — **Multiplication on $\mathbb{C}$ Is Associative**
    > **Statement.**
    > For all \(z,w,u\in\mathbb{C}\),
    > \[
    > (zw)u=z(wu).
    > \]
 
-461. () `thm:multiplication-on-c-commutative` — **Multiplication on $\mathbb{C}$ Is Commutative**
+482. () `thm:multiplication-on-c-commutative` — **Multiplication on $\mathbb{C}$ Is Commutative**
    > **Statement.**
    > For all \(z,w\in\mathbb{C}\),
    > \[
    > zw=wz.
    > \]
 
-462. () `thm:one-multiplicative-identity-on-c` — **One Is a Multiplicative Identity on $\mathbb{C}$**
+483. () `thm:one-multiplicative-identity-on-c` — **One Is a Multiplicative Identity on $\mathbb{C}$**
    > **Statement.**
    > For every \(z\in\mathbb{C}\),
    > \[
@@ -3288,7 +3478,7 @@ Completed in this tracker: 0
    > z1_{\mathbb{C}}=z.
    > \]
 
-463. () `thm:every-nonzero-complex-has-inverse` — **Every Nonzero Complex Number Has a Multiplicative Inverse**
+484. () `thm:every-nonzero-complex-has-inverse` — **Every Nonzero Complex Number Has a Multiplicative Inverse**
    > **Statement.**
    > For every \(z\in\mathbb{C}\) with \(z\ne 0_{\mathbb{C}}\),
    > \[
@@ -3297,7 +3487,7 @@ Completed in this tracker: 0
    > z^{-1}z=1_{\mathbb{C}}.
    > \]
 
-464. () `thm:multiplication-distributes-over-addition-on-c` — **Multiplication Distributes over Addition on $\mathbb{C}$**
+485. () `thm:multiplication-distributes-over-addition-on-c` — **Multiplication Distributes over Addition on $\mathbb{C}$**
    > **Statement.**
    > For all \(z,w,u\in\mathbb{C}\),
    > \[
@@ -3306,7 +3496,7 @@ Completed in this tracker: 0
    > (w+u)z=wz+uz.
    > \]
 
-465. () `lem:addition-on-c-respects-equivalence` — **Addition Respects Complex Coordinate Equivalence**
+486. () `lem:addition-on-c-respects-equivalence` — **Addition Respects Complex Coordinate Equivalence**
    > **Statement.**
    > If $[a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}$ and
    > $[c,d]_{\mathbb{C}}=[c',d']_{\mathbb{C}}$, then
@@ -3316,14 +3506,14 @@ Completed in this tracker: 0
    > [a',b']_{\mathbb{C}}+[c',d']_{\mathbb{C}}.
    > \]
 
-466. () `thm:addition-on-c-well-defined` — **Addition on $\mathbb{C}$ Is Well-Defined**
+487. () `thm:addition-on-c-well-defined` — **Addition on $\mathbb{C}$ Is Well-Defined**
    > **Statement.**
    > Addition determines a well-defined binary operation
    > \[
    > \mathbb{C}\times\mathbb{C}\to\mathbb{C}.
    > \]
 
-467. () `lem:multiplication-on-c-respects-equivalence` — **Multiplication Respects Complex Coordinate Equivalence**
+488. () `lem:multiplication-on-c-respects-equivalence` — **Multiplication Respects Complex Coordinate Equivalence**
    > **Statement.**
    > If $[a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}$ and
    > $[c,d]_{\mathbb{C}}=[c',d']_{\mathbb{C}}$, then
@@ -3333,14 +3523,14 @@ Completed in this tracker: 0
    > [a',b']_{\mathbb{C}}\cdot[c',d']_{\mathbb{C}}.
    > \]
 
-468. () `thm:multiplication-on-c-well-defined` — **Multiplication on $\mathbb{C}$ Is Well-Defined**
+489. () `thm:multiplication-on-c-well-defined` — **Multiplication on $\mathbb{C}$ Is Well-Defined**
    > **Statement.**
    > Multiplication determines a well-defined binary operation
    > \[
    > \mathbb{C}\times\mathbb{C}\to\mathbb{C}.
    > \]
 
-469. () `thm:c-is-a-field` — **$\mathbb{C}$ Is a Field**
+490. () `thm:c-is-a-field` — **$\mathbb{C}$ Is a Field**
    > **Statement.**
    > With the operations defined above,
    > \[
@@ -3348,40 +3538,40 @@ Completed in this tracker: 0
    > \]
    > is a field.
 
-470. () `thm:i-squared-negative-one` — **The Imaginary Unit Squares to Negative One**
+491. () `thm:i-squared-negative-one` — **The Imaginary Unit Squares to Negative One**
    > **Statement.**
    > In \(\mathbb{C}\),
    > \[
    > i^2=-1_{\mathbb{C}}.
    > \]
 
-471. () `thm:c-is-not-an-ordered-field` — **$\mathbb{C}$ Is Not an Ordered Field**
+492. () `thm:c-is-not-an-ordered-field` — **$\mathbb{C}$ Is Not an Ordered Field**
    > **Statement.**
    > There is no order relation on \(\mathbb{C}\) making \(\mathbb{C}\) an ordered
    > field and extending the usual order on \(\mathbb{R}\).
 
-472. () `lem:negation-on-c-respects-equivalence` — **Negation Respects Complex Coordinate Equivalence**
+493. () `lem:negation-on-c-respects-equivalence` — **Negation Respects Complex Coordinate Equivalence**
    > **Statement.**
    > If $[a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}$, then
    > \[
    > -[a,b]_{\mathbb{C}}=-[a',b']_{\mathbb{C}}.
    > \]
 
-473. () `thm:negation-on-c-well-defined` — **Negation on $\mathbb{C}$ Is Well-Defined**
+494. () `thm:negation-on-c-well-defined` — **Negation on $\mathbb{C}$ Is Well-Defined**
    > **Statement.**
    > Negation determines a well-defined unary operation $\mathbb{C}\to\mathbb{C}$.
 
-474. () `thm:subtraction-on-c-well-defined` — **Subtraction on $\mathbb{C}$ Is Well-Defined**
+495. () `thm:subtraction-on-c-well-defined` — **Subtraction on $\mathbb{C}$ Is Well-Defined**
    > **Statement.**
    > Subtraction determines a well-defined binary operation
    > \(\mathbb{C}\times\mathbb{C}\to\mathbb{C}\).
 
-475. () `thm:complex-conjugation-well-defined` — **Complex Conjugation Is Well-Defined**
+496. () `thm:complex-conjugation-well-defined` — **Complex Conjugation Is Well-Defined**
    > **Statement.**
    > Complex conjugation determines a well-defined unary operation
    > \(\mathbb{C}\to\mathbb{C}\).
 
-476. () `lem:complex-product-with-conjugate` — **Product with the Conjugate Is Real and Nonnegative**
+497. () `lem:complex-product-with-conjugate` — **Product with the Conjugate Is Real and Nonnegative**
    > **Statement.**
    > For \(z=[a,b]_{\mathbb{C}}\),
    > \[
@@ -3389,11 +3579,11 @@ Completed in this tracker: 0
    > \]
    > Moreover, if \(z\ne 0_{\mathbb{C}}\), then \(a^2+b^2\ne 0\).
 
-477. () `thm:inversion-on-c-well-defined` — **Inversion on $\mathbb{C}^{\times}$ Is Well-Defined**
+498. () `thm:inversion-on-c-well-defined` — **Inversion on $\mathbb{C}^{\times}$ Is Well-Defined**
    > **Statement.**
    > Inversion determines a well-defined operation on the nonzero complex numbers.
 
-478. () `thm:embedding-identifies-with-image` — **Embeddings Identify a System with Its Image**
+499. () `thm:embedding-identifies-with-image` — **Embeddings Identify a System with Its Image**
    > **Statement.**
    > Let $\varphi:A\to B$ be an embedding of ordered arithmetic systems relative to
    > a selected source structure. Then the corestriction $\varphi:A\to\varphi(A)$
@@ -3401,23 +3591,23 @@ Completed in this tracker: 0
    > the selected constants, operations, and order. Consequently $A$ may be
    > identified with the corresponding substructure $\varphi(A)\subseteq B$.
 
-479. () `thm:q-embeds-in-r` — **$\mathbb{Q}$ Embeds in $\mathbb{R}$**
+500. () `thm:q-embeds-in-r` — **$\mathbb{Q}$ Embeds in $\mathbb{R}$**
    > **Statement.**
    > The canonical map $\iota:\mathbb{Q}\to \mathbb{R}$ is an embedding of ordered arithmetic systems: it is injective, preserves $0$, $1$, addition, and multiplication, and reflects the order.
 
-480. () `thm:w-embeds-in-z` — **$\mathbb{W}$ Embeds in $\mathbb{Z}$**
+501. () `thm:w-embeds-in-z` — **$\mathbb{W}$ Embeds in $\mathbb{Z}$**
    > **Statement.**
    > The canonical map $\iota:\mathbb{W}\to \mathbb{Z}$ is an embedding of ordered arithmetic systems: it is injective, preserves $0$, $1$, addition, and multiplication, and reflects the order.
 
-481. () `thm:z-embeds-in-q` — **$\mathbb{Z}$ Embeds in $\mathbb{Q}$**
+502. () `thm:z-embeds-in-q` — **$\mathbb{Z}$ Embeds in $\mathbb{Q}$**
    > **Statement.**
    > The canonical map $\iota:\mathbb{Z}\to \mathbb{Q}$ is an embedding of ordered arithmetic systems: it is injective, preserves $0$, $1$, addition, and multiplication, and reflects the order.
 
-482. () `thm:embedding-chain-compatibility` — **Compatibility of the Embedding Chain**
+503. () `thm:embedding-chain-compatibility` — **Compatibility of the Embedding Chain**
    > **Statement.**
    > Let $\iota_{1}:\mathbb{N}\to\mathbb{W}$, $\iota_{2}:\mathbb{W}\to\mathbb{Z}$, $\iota_{3}:\mathbb{Z}\to\mathbb{Q}$, and $\iota_{4}:\mathbb{Q}\to\mathbb{R}$ be the canonical embeddings. For every $n\in\mathbb{N}$ the composite $(\iota_{4}\circ\iota_{3}\circ\iota_{2}\circ\iota_{1})(n)$ is the real number identified with $n$, and the composite preserves the arithmetic and order carried by the source system. Hence arithmetic computed in any system agrees with arithmetic on its image in $\mathbb{R}$.
 
-483. () `thm:n-embeds-in-w` — **$\mathbb{N}$ Embeds in $\mathbb{W}$**
+504. () `thm:n-embeds-in-w` — **$\mathbb{N}$ Embeds in $\mathbb{W}$**
    > **Statement.**
    > The canonical map $\iota:\mathbb{N}\to \mathbb{W}$ identifies $\mathbb{N}$ with
    > the positive part $\mathbb{W}\setminus\{0\}$ and preserves successor, $1$,
