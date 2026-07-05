@@ -38,6 +38,7 @@ Let $\sim$ be an equivalence relation on $A$. For all $a,b\in A$,
 \[
 a=b \Longrightarrow a\sim b.
 \]
+\hyperref[prf:equality-is-finest-equivalence]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
 
@@ -103,6 +104,7 @@ A/{\sim} := \{[a]\mid a\in A\}.
 \label{thm:equivalence-classes-partition-domain}
 The equivalence classes of an equivalence relation on $A$ are nonempty, cover
 $A$, and are pairwise disjoint.
+\hyperref[prf:equivalence-classes-partition-domain]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -133,6 +135,7 @@ Equivalence classes divide the domain into non-overlapping blocks.
 \[
 a\sim b \Longleftrightarrow [a]=[b].
 \]
+\hyperref[prf:representatives-related-iff-classes-equal]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -179,6 +182,7 @@ is the map
 \begin{proposition}[Projection Is Surjective]
 \label{prop:projection-is-surjective}
 The canonical projection $\pi:A\to A/{\sim}$ is surjective.
+\hyperref[prf:projection-is-surjective]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -202,6 +206,7 @@ For all $a,b\in A$,
 \[
 \pi(a)=\pi(b)\Longleftrightarrow a\sim b.
 \]
+\hyperref[prf:projection-identifies-equivalent-elements]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -221,6 +226,7 @@ as the set of equivalence classes, and the canonical projection
 \pi:A\to A/{\sim}
 \]
 is well-defined.
+\hyperref[prf:existence-of-a-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -259,7 +265,8 @@ relation on $A$. The operation $O$ \emph{respects} $\sim$ if
 \begin{definitionbox}{Definition (Left and Right Respect)}
 \begin{definition}[Left and Right Respect]
 \label{def:left-right-respect-equivalence}
-The operation $O$ \emph{respects} $\sim$ on the left if
+The operation $O$ \emph{respect
+s} $\sim$ on the left if
 \[
 a\sim a'\Longrightarrow (a\mathbin{O}b)\sim(a'\mathbin{O}b),
 \]
@@ -282,6 +289,7 @@ b\sim b'\Longrightarrow (a\mathbin{O}b)\sim(a\mathbin{O}b').
 \label{lem:respect-splits}
 A binary operation $O$ respects $\sim$ if and only if it respects $\sim$ on
 the left and on the right.
+\hyperref[prf:respect-splits]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 
@@ -300,6 +308,7 @@ If $O:A\times A\to A$ respects $\sim$, then
 [a]\mathbin{\overline{O}}[b]:=[a\mathbin{O}b]
 \]
 defines a well-defined binary operation on $A/{\sim}$.
+\hyperref[prf:induced-operation-on-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -323,6 +332,7 @@ then
 \overline{f}([a]):=[f(a)]
 \]
 defines a well-defined unary operation on $A/{\sim}$.
+\hyperref[prf:induced-unary-operation-on-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -336,7 +346,8 @@ defines a well-defined unary operation on $A/{\sim}$.
 \begin{definitionbox}{Definition (Predicate Respects an Equivalence)}
 \begin{definition}[Predicate Respects an Equivalence]
 \label{def:predicate-respects-equivalence}
-Let $P$ be a predicate on $A$. The predicate $P$ \emph{respects} $\sim$ if
+Let $P$ be a predicate on $A$
+. The predicate $P$ \emph{respects} $\sim$ if
 \[
 \forall a,a'\in A,\,
 a\sim a'\Longrightarrow \bigl(P(a)\Longleftrightarrow P(a')\bigr).
@@ -359,6 +370,7 @@ If $P$ respects $\sim$, then
 \overline{P}([a]):\Longleftrightarrow P(a)
 \]
 defines a well-defined predicate on $A/{\sim}$.
+\hyperref[prf:induced-predicate-on-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -376,7 +388,8 @@ Let $R$ be a binary relation on $A$. The relation $R$ \emph{respects} $\sim$
 if
 \[
 \forall a,a',b,b'\in A,\,
-\bigl(a\sim a'\land b\sim b'\bigr)
+\bigl(a\sim a'\land b\sim b'\bigr
+)
 \Longrightarrow
 \bigl(R(a,b)\Longleftrightarrow R(a',b')\bigr).
 \]
@@ -398,6 +411,7 @@ If $R$ respects $\sim$, then
 \overline{R}([a],[b]):\Longleftrightarrow R(a,b)
 \]
 defines a well-defined binary relation on $A/{\sim}$.
+\hyperref[prf:induced-relation-on-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -415,7 +429,8 @@ Let $g:A\to B$. If
 \[
 a\sim a'\Longrightarrow g(a)=g(a'),
 \]
-then there is a unique well-defined map
+then there is a unique w
+ell-defined map
 \[
 \overline{g}:A/{\sim}\to B
 \]
@@ -426,6 +441,7 @@ such that
 \overline{g}\circ\pi=g,
 \]
 where $\pi:A\to A/{\sim}$ is the canonical projection.
+\hyperref[prf:induced-map-out-of-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -452,6 +468,7 @@ is a well-defined partial operation on $A/{\sim}$ with domain
 \[
 D/{\sim}:=\{[a]\in A/{\sim}:a\in D\}.
 \]
+\hyperref[prf:induced-partial-operation-on-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -470,6 +487,7 @@ If a rule on classes
 [a]\mathbin{\overline{O}}[b]:=[a\mathbin{O}b]
 \]
 is well-defined on $A/{\sim}$, then $O$ respects $\sim$.
+\hyperref[prf:representative-independence-is-necessary]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -487,6 +505,7 @@ is well-defined on $A/{\sim}$, then $O$ respects $\sim$.
 \[
 [a]\ne[b] \Longrightarrow [a]\cap[b]=\emptyset.
 \]
+\hyperref[prf:distinct-equivalence-classes-are-disjoint]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 

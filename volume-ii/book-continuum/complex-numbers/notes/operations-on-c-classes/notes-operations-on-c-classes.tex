@@ -28,6 +28,7 @@ $[c,d]_{\mathbb{C}}=[c',d']_{\mathbb{C}}$, then
 =
 [a',b']_{\mathbb{C}}+[c',d']_{\mathbb{C}}.
 \]
+\hyperref[prf:addition-on-c-respects-equivalence]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 
@@ -45,12 +46,14 @@ Addition determines a well-defined binary operation
 \[
 \mathbb{C}\times\mathbb{C}\to\mathbb{C}.
 \]
+\hyperref[prf:addition-on-c-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
 \begin{remark*}[Proof sketch]
 Suppose the input classes are represented in two ways. Coordinate equivalence
-gives \(a=a'\), \(b=b'\), \(c=c'\), and \(d=d'\). Addition in
+gives \(a=a'\), \(b=b'\), 
+\(c=c'\), and \(d=d'\). Addition in
 \(\mathbb{R}\) gives \(a+c=a'+c'\) and \(b+d=b'+d'\), so the resulting
 complex classes agree.
 \end{remark*}
@@ -75,6 +78,13 @@ Define negation by
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:complex-class-notation]{Complex Class Notation}
+  \item \hyperref[def:negation-on-r]{Negation on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
+
 \begin{lemmabox}{Lemma}
 \begin{lemma}[Negation Respects Complex Coordinate Equivalence]
 \label{lem:negation-on-c-respects-equivalence}
@@ -82,13 +92,23 @@ If $[a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}$, then
 \[
 -[a,b]_{\mathbb{C}}=-[a',b']_{\mathbb{C}}.
 \]
+\hyperref[prf:negation-on-c-respects-equivalence]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:negation-on-c-classes]{Negation on $\mathbb{C}$-Classes}
+  \item \hyperref[def:complex-coordinate-equivalence]{Complex Coordinate Equivalence}
+  \item \hyperref[prop:substitution-preserves-functions]{Substitution Preserves Functions}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Negation on $\mathbb{C}$ Is Well-Defined]
 \label{thm:negation-on-c-well-defined}
 Negation determines a well-defined unary operation $\mathbb{C}\to\mathbb{C}$.
+\hyperref[prf:negation-on-c-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -116,11 +136,19 @@ z-w:=z+(-w).
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:addition-on-c-classes]{Addition on $\mathbb{C}$-Classes}
+  \item \hyperref[def:negation-on-c-classes]{Negation on $\mathbb{C}$-Classes}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Subtraction on $\mathbb{C}$ Is Well-Defined]
 \label{thm:subtraction-on-c-well-defined}
 Subtraction determines a well-defined binary operation
 \(\mathbb{C}\times\mathbb{C}\to\mathbb{C}\).
+\hyperref[prf:subtraction-on-c-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -156,7 +184,8 @@ The rule is forced by the intended identity \(i^2=-1\):
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:complex-class-notation]{Complex Class Notation}
-  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$
+}
   \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
@@ -171,16 +200,28 @@ $[c,d]_{\mathbb{C}}=[c',d']_{\mathbb{C}}$, then
 =
 [a',b']_{\mathbb{C}}\cdot[c',d']_{\mathbb{C}}.
 \]
+\hyperref[prf:multiplication-on-c-respects-equivalence]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 
-\begin{theorembox}{Theorem}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:multiplication-on-c-classes]{Multiplication on $\mathbb{C}$-Classes}
+  \item \hyperref[def:complex-coordinate-equivalence]{Complex Coordinate Equivalence}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theor
+em}
 \begin{theorem}[Multiplication on $\mathbb{C}$ Is Well-Defined]
 \label{thm:multiplication-on-c-well-defined}
 Multiplication determines a well-defined binary operation
 \[
 \mathbb{C}\times\mathbb{C}\to\mathbb{C}.
 \]
+\hyperref[prf:multiplication-on-c-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -211,11 +252,19 @@ For \(z=[a,b]_{\mathbb{C}}\), define its \emph{complex conjugate} by
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:complex-class-notation]{Complex Class Notation}
+  \item \hyperref[def:negation-on-r]{Negation on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Complex Conjugation Is Well-Defined]
 \label{thm:complex-conjugation-well-defined}
 Complex conjugation determines a well-defined unary operation
 \(\mathbb{C}\to\mathbb{C}\).
+\hyperref[prf:complex-conjugation-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -233,15 +282,27 @@ so conjugation does not depend on the representative.
 \end{remark*}
 
 \begin{lemmabox}{Lemma}
-\begin{lemma}[Product with the Conjugate Is Real and Nonnegative]
+\begin{lemma}[Product with the Con
+jugate Is Real and Nonnegative]
 \label{lem:complex-product-with-conjugate}
 For \(z=[a,b]_{\mathbb{C}}\),
 \[
 z\overline{z}=[a^2+b^2,0]_{\mathbb{C}}.
 \]
 Moreover, if \(z\ne 0_{\mathbb{C}}\), then \(a^2+b^2\ne 0\).
+\hyperref[prf:complex-product-with-conjugate]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:complex-conjugation]{Complex Conjugation}
+  \item \hyperref[def:multiplication-on-c-classes]{Multiplication on $\mathbb{C}$-Classes}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:zero-one-i-in-c]{Zero, One, and the Imaginary Unit in $\mathbb{C}$}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition}
 \begin{definition}[Multiplicative Inverse in $\mathbb{C}$]
@@ -255,10 +316,19 @@ z^{-1}
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:complex-class-notation]{Complex Class Notation}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+  \item \hyperref[lem:complex-product-with-conjugate]{Product with the Conjugate Is Real and Nonnegative}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Inversion on $\mathbb{C}^{\times}$ Is Well-Defined]
 \label{thm:inversion-on-c-well-defined}
 Inversion determines a well-defined operation on the nonzero complex numbers.
+\hyperref[prf:inversion-on-c-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
