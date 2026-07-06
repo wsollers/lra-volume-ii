@@ -458,6 +458,46 @@ environments:
   file: notes\multiplication-on-r\notes-multiplication-on-r.tex
   display_title: Reciprocal Is a Multiplicative Inverse on $\mathbb{R}$
   proof_file: null
+- label: thm:sign-of-reciprocal-r
+  type: thm
+  file: notes\multiplication-on-r\notes-multiplication-on-r.tex
+  display_title: Sign of a Reciprocal on $\mathbb{R}$
+  proof_file: null
+- label: thm:reciprocal-involutive-on-r
+  type: thm
+  file: notes\multiplication-on-r\notes-multiplication-on-r.tex
+  display_title: Reciprocal Is Involutive on $\mathbb{R}$
+  proof_file: null
+- label: thm:reciprocal-of-product-on-r
+  type: thm
+  file: notes\multiplication-on-r\notes-multiplication-on-r.tex
+  display_title: Reciprocal of a Product on $\mathbb{R}$
+  proof_file: null
+- label: thm:reciprocal-reverses-order-on-positives-r
+  type: thm
+  file: notes\multiplication-on-r\notes-multiplication-on-r.tex
+  display_title: Reciprocal Reverses Order on Positives in $\mathbb{R}$
+  proof_file: null
+- label: thm:reciprocal-reverses-nonstrict-order-on-positives-r
+  type: thm
+  file: notes\multiplication-on-r\notes-multiplication-on-r.tex
+  display_title: Reciprocal Reverses Non-Strict Order on Positives in $\mathbb{R}$
+  proof_file: null
+- label: thm:reciprocal-reverses-order-on-same-sign-r
+  type: thm
+  file: notes\multiplication-on-r\notes-multiplication-on-r.tex
+  display_title: Reciprocal Reverses Order on Same-Sign Reals
+  proof_file: null
+- label: thm:reciprocal-reverses-nonstrict-order-on-same-sign-r
+  type: thm
+  file: notes\multiplication-on-r\notes-multiplication-on-r.tex
+  display_title: Reciprocal Reverses Non-Strict Order on Same-Sign Reals
+  proof_file: null
+- label: thm:absolute-value-of-reciprocal-r
+  type: thm
+  file: notes\multiplication-on-r\notes-multiplication-on-r.tex
+  display_title: Absolute Value of a Reciprocal on $\mathbb{R}$
+  proof_file: null
 - label: def:division-on-r
   type: def
   file: notes\multiplication-on-r\notes-multiplication-on-r.tex

@@ -953,6 +953,26 @@ environments:
   file: notes\order-on-q\notes-order-on-q.tex
   display_title: Reciprocal Reverses Order on Same-Sign Rationals
   proof_file: null
+- label: thm:reciprocal-involutive-on-q
+  type: thm
+  file: notes\order-on-q\notes-order-on-q.tex
+  display_title: Reciprocal Is Involutive on $\mathbb{Q}$
+  proof_file: null
+- label: thm:reciprocal-of-product-on-q
+  type: thm
+  file: notes\order-on-q\notes-order-on-q.tex
+  display_title: Reciprocal of a Product on $\mathbb{Q}$
+  proof_file: null
+- label: thm:reciprocal-reverses-nonstrict-order-on-positives-q
+  type: thm
+  file: notes\order-on-q\notes-order-on-q.tex
+  display_title: Reciprocal Reverses Non-Strict Order on Positives in $\mathbb{Q}$
+  proof_file: null
+- label: thm:reciprocal-reverses-nonstrict-order-on-same-sign-q
+  type: thm
+  file: notes\order-on-q\notes-order-on-q.tex
+  display_title: Reciprocal Reverses Non-Strict Order on Same-Sign Rationals
+  proof_file: null
 - label: def:absolute-value-on-q
   type: def
   file: notes\order-on-q\notes-order-on-q.tex
