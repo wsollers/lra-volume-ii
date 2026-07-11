@@ -7,6 +7,22 @@
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in A,\ xRx.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Reflexive}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Reflexivity says every element is related to itself.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -22,6 +38,22 @@
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in A,\ \neg(xRx).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Irreflexive}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Irreflexivity says no element is related to itself.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -39,6 +71,22 @@
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ xRy \Longrightarrow yRx.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Symmetric}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Symmetry says the relation can be reversed whenever it holds.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -54,6 +102,22 @@
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ (xRy\land yRx)\Longrightarrow x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Antisymmetric}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Antisymmetry says mutual relatedness forces equality.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -71,6 +135,22 @@
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ xRy \Longrightarrow \neg(yRx).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Asymmetric}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Asymmetry says a relation cannot hold in both directions.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -87,6 +167,22 @@
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ (xRy\land yRz)\Longrightarrow xRz.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Transitive}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Transitivity lets two composable relation steps collapse to one step.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -102,6 +198,22 @@
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ xRy\lor yRx.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Total}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Totality says every two elements are comparable in at least one direction.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -120,6 +232,22 @@ x<y,\qquad x=y,\qquad y<x
 holds for every pair $x,y$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ \text{exactly one of }x<y,\ x=y,\ y<x\text{ holds}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Trichotomous}(<,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Trichotomy packages comparability and exclusivity for a strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

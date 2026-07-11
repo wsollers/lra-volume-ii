@@ -10,6 +10,24 @@ Define addition on representatives by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c,d\in\mathbb{W},\quad
+[a,b]+[c,d]=[a+c,b+d].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{InducedBinaryOperation}(+_{\mathbb{Z}},+_{\mathbb{W}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integer addition is first specified on representatives before passing to the
+quotient.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integer-class-notation]{Integer Class Notation}
@@ -27,6 +45,24 @@ If $[a,b]=[a',b']$, then
 \hyperref[prf:addition-on-z-classes-respects-left-equivalence]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+[a,b]=[a',b']
+\Longrightarrow
+[a,b]+[c,d]=[a',b']+[c,d].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftRepresentativeIndependent}(+_{\mathbb{Z}},\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the left representative does not change the resulting integer sum.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -47,6 +83,24 @@ If $[c,d]=[c',d']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+[c,d]=[c',d']
+\Longrightarrow
+[a,b]+[c,d]=[a,b]+[c',d'].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightRepresentativeIndependent}(+_{\mathbb{Z}},\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the right representative does not change the resulting integer sum.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
@@ -66,6 +120,24 @@ If $[a,b]=[a',b']$ and $[c,d]=[c',d']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+[a,b]=[a',b']\land[c,d]=[c',d']
+\Longrightarrow
+[a,b]+[c,d]=[a',b']+[c',d'].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RepresentativeIndependent}(+_{\mathbb{Z}},\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The addition rule is independent of both chosen representatives.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
@@ -82,6 +154,23 @@ $\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$.
 \hyperref[prf:addition-on-z-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
++_{\mathbb{Z}}:\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(+_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Representative independence makes addition a genuine operation on integer
+classes.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -100,6 +189,23 @@ For all $x,y,z\in\mathbb{Z}$,
 \hyperref[prf:addition-on-z-associative]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+(x+y)+z=x+(y+z).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(+_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition on integers inherits associativity from the representative operation.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -120,6 +226,22 @@ x+y=y+x.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad x+y=y+x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Commutative}(+_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integer addition inherits commutativity from whole-number addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
@@ -138,6 +260,22 @@ For every $x\in\mathbb{Z}$,
 \hyperref[prf:zero-left-additive-identity-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad 0_{\mathbb{Z}}+x=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftIdentity}(0_{\mathbb{Z}},\mathbb{Z},+_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The zero class is a left identity for integer addition.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -158,6 +296,22 @@ x+0_{\mathbb{Z}}=x.
 \hyperref[prf:zero-right-additive-identity-on-z]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad x+0_{\mathbb{Z}}=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightIdentity}(0_{\mathbb{Z}},\mathbb{Z},+_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Commutativity turns the left additive identity law into the right one.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -180,6 +334,23 @@ x+0_{\mathbb{Z}}=x.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad
+0_{\mathbb{Z}}+x=x\land x+0_{\mathbb{Z}}=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Identity}(0_{\mathbb{Z}},\mathbb{Z},+_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The zero class is the two-sided identity for integer addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:zero-left-additive-identity-on-z]{Zero Is a Left Additive Identity on $\mathbb{Z}$}
@@ -199,6 +370,22 @@ Define negation on representatives by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{W},\quad -[a,b]=[b,a].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{InducedUnaryOperation}(-_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negation swaps the two coordinates of a representative formal difference.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integer-class-notation]{Integer Class Notation}
@@ -216,6 +403,24 @@ If $[a,b]=[a',b']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+[a,b]=[a',b']
+\Longrightarrow
+-[a,b]=-[a',b'].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RepresentativeIndependent}(-_{\mathbb{Z}},\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negation does not depend on the chosen representative of an integer.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:negation-on-z-classes]{Negation on $\mathbb{Z}$}
@@ -230,6 +435,23 @@ Negation determines a well-defined unary operation $\mathbb{Z}\to\mathbb{Z}$.
 \hyperref[prf:negation-on-z-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+-_{\mathbb{Z}}:\mathbb{Z}\to\mathbb{Z}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedUnaryOperation}(-_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Representative independence makes negation a genuine unary operation on
+integers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -249,6 +471,22 @@ For every $x\in\mathbb{Z}$,
 \hyperref[prf:negation-left-additive-inverse-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad (-x)+x=0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftInverse}(-x,x,0_{\mathbb{Z}},\mathbb{Z},+_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negation provides a left additive inverse for each integer.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -271,6 +509,22 @@ x+(-x)=0_{\mathbb{Z}}.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad x+(-x)=0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightInverse}(-x,x,0_{\mathbb{Z}},\mathbb{Z},+_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Commutativity turns the left additive inverse law into the right one.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:negation-left-additive-inverse-on-z]{Negation Gives a Left Additive Inverse on $\mathbb{Z}$}
@@ -291,6 +545,24 @@ y+x=0_{\mathbb{Z}}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z}\,\exists y\in\mathbb{Z},\quad
+x+y=0_{\mathbb{Z}}\land y+x=0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall x\in\mathbb{Z}\,\exists y\in\mathbb{Z},\,
+\operatorname{Inverse}(y,x,0_{\mathbb{Z}},\mathbb{Z},+_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every integer has a two-sided additive inverse.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:negation-left-additive-inverse-on-z]{Negation Gives a Left Additive Inverse on $\mathbb{Z}$}
@@ -310,6 +582,22 @@ x-y:=x+(-y).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad x-y=x+(-y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DerivedOperation}(-_{\mathrm{sub}},+_{\mathbb{Z}},-_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Subtraction is defined from addition and additive negation.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
@@ -326,6 +614,22 @@ $\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$.
 \hyperref[prf:subtraction-on-z-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+-_{\mathrm{sub}}:\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(-_{\mathrm{sub}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Well-defined addition and negation make subtraction well-defined.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -347,6 +651,23 @@ Define multiplication on representatives by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c,d\in\mathbb{W},\quad
+[a,b]\cdot[c,d]=[ac+bd,ad+bc].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{InducedBinaryOperation}(\cdot_{\mathbb{Z}},\cdot_{\mathbb{W}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integer multiplication is specified on representatives before quotienting.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integer-class-notation]{Integer Class Notation}
@@ -366,6 +687,25 @@ If $[a,b]=[a',b']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+[a,b]=[a',b']
+\Longrightarrow
+[a,b]\cdot[c,d]=[a',b']\cdot[c,d].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftRepresentativeIndependent}(\cdot_{\mathbb{Z}},\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the left representative does not change the resulting integer
+product.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:addition-on-w-cancellation]{Addition on $\mathbb{W}$ Satisfies Cancellation}
@@ -383,6 +723,25 @@ If $[c,d]=[c',d']$, then
 \hyperref[prf:multiplication-on-z-classes-respects-right-equivalence]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+[c,d]=[c',d']
+\Longrightarrow
+[a,b]\cdot[c,d]=[a,b]\cdot[c',d'].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightRepresentativeIndependent}(\cdot_{\mathbb{Z}},\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the right representative does not change the resulting integer
+product.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -402,6 +761,24 @@ If $[a,b]=[a',b']$ and $[c,d]=[c',d']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+[a,b]=[a',b']\land[c,d]=[c',d']
+\Longrightarrow
+[a,b]\cdot[c,d]=[a',b']\cdot[c',d'].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RepresentativeIndependent}(\cdot_{\mathbb{Z}},\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The multiplication rule is independent of both chosen representatives.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-z-classes]{Multiplication on $\mathbb{Z}$}
@@ -420,6 +797,23 @@ $\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\cdot_{\mathbb{Z}}:\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(\cdot_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Representative independence makes multiplication a genuine operation on
+integer classes.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-z-classes]{Multiplication on $\mathbb{Z}$}
@@ -437,6 +831,23 @@ For all $x,y,z\in\mathbb{Z}$,
 \hyperref[prf:multiplication-on-z-associative]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+(x\cdot y)\cdot z=x\cdot(y\cdot z).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(\cdot_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integer multiplication inherits associativity from the representative laws.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -457,6 +868,22 @@ x\cdot y=y\cdot x.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad x\cdot y=y\cdot x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Commutative}(\cdot_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integer multiplication inherits commutativity from the representative laws.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-z-classes]{Multiplication on $\mathbb{Z}$}
@@ -475,6 +902,22 @@ For every $x\in\mathbb{Z}$,
 \hyperref[prf:one-left-multiplicative-identity-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad 1_{\mathbb{Z}}\cdot x=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftIdentity}(1_{\mathbb{Z}},\mathbb{Z},\cdot_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The one class is a left identity for integer multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -496,6 +939,22 @@ x\cdot 1_{\mathbb{Z}}=x.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad x\cdot 1_{\mathbb{Z}}=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightIdentity}(1_{\mathbb{Z}},\mathbb{Z},\cdot_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Commutativity turns the left multiplicative identity law into the right one.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:one-left-multiplicative-identity-on-z]{One Is a Left Multiplicative Identity on $\mathbb{Z}$}
@@ -515,6 +974,23 @@ x\cdot 1_{\mathbb{Z}}=x.
 \hyperref[prf:one-multiplicative-identity-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad
+1_{\mathbb{Z}}\cdot x=x\land x\cdot 1_{\mathbb{Z}}=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Identity}(1_{\mathbb{Z}},\mathbb{Z},\cdot_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The one class is the two-sided identity for integer multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -537,6 +1013,23 @@ x\cdot(y+z)=x\cdot y+x\cdot z.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+x\cdot(y+z)=x\cdot y+x\cdot z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftDistributive}(\cdot_{\mathbb{Z}},+_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integer multiplication is left distributive over integer addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
@@ -556,6 +1049,23 @@ For all $x,y,z\in\mathbb{Z}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+(y+z)\cdot x=y\cdot x+z\cdot x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightDistributive}(\cdot_{\mathbb{Z}},+_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Commutativity turns left distributivity into right distributivity.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-distributivity-on-z]{Left Distributivity on $\mathbb{Z}$}
@@ -570,6 +1080,24 @@ Multiplication distributes over addition on both sides in $\mathbb{Z}$.
 \hyperref[prf:multiplication-distributes-over-addition-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftDistributive}(\cdot_{\mathbb{Z}},+_{\mathbb{Z}},\mathbb{Z})
+\quad\text{and}\quad
+\operatorname{RightDistributive}(\cdot_{\mathbb{Z}},+_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Distributive}(\cdot_{\mathbb{Z}},+_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication distributes over addition on both sides in the integer system.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -590,6 +1118,24 @@ The structure $(\mathbb{Z},+,0_{\mathbb{Z}})$ is an abelian group.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+(\mathbb{Z},+_{\mathbb{Z}},0_{\mathbb{Z}})
+\text{ is an abelian group.}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsAbelianGroup}(
+\operatorname{AbelianGroup}(\mathbb{Z},+_{\mathbb{Z}},0_{\mathbb{Z}})).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The additive integer structure is a group with commutative addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
 \item \hyperref[def:addition-on-z-classes]{Addition on $\mathbb{Z}$}
@@ -608,6 +1154,26 @@ The structure $(\mathbb{Z},\cdot,1_{\mathbb{Z}})$ is a commutative monoid.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+(\mathbb{Z},\cdot_{\mathbb{Z}},1_{\mathbb{Z}})
+\text{ is a commutative monoid.}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsCommutativeMonoid}(
+\operatorname{CommutativeMonoid}(
+\operatorname{Monoid}(\mathbb{Z},\cdot_{\mathbb{Z}},1_{\mathbb{Z}}))).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The multiplicative integer structure is a monoid with commutative
+multiplication.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
 \item \hyperref[def:multiplication-on-z-classes]{Multiplication on $\mathbb{Z}$}
@@ -625,6 +1191,26 @@ commutative ring.
 \hyperref[prf:z-commutative-ring]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}},0_{\mathbb{Z}},1_{\mathbb{Z}})
+\text{ is a commutative ring.}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsCommutativeRing}(
+\operatorname{CommutativeRing}(
+\operatorname{Ring}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}},
+0_{\mathbb{Z}},1_{\mathbb{Z}}))).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The integer operations form a commutative ring structure.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

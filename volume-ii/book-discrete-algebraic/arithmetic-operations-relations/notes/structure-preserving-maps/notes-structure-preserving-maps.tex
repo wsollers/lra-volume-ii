@@ -11,6 +11,23 @@ identity.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ f(x\mathbin{O}y)=f(x)\mathbin{O'}f(y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Homomorphism}(f,(A,O),(B,O')).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A homomorphism preserves the named operation from the source structure to the
+target structure.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -25,6 +42,25 @@ An \emph{injective homomorphism} is a homomorphism whose underlying function
 is injective.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Homomorphism}(f,(A,O),(B,O'))
+\quad\text{and}\quad
+\operatorname{Injective}(f,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{InjectiveHomomorphism}(f,(A,O),(B,O')).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An injective homomorphism preserves the operation and identifies the source
+with its image without collisions.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -42,6 +78,22 @@ xRy \Longleftrightarrow f(x)R'f(y).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ xRy \Longleftrightarrow f(x)R'f(y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderEmbedding}(f,(A,R),(B,R')).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An order embedding both preserves and reflects the relation.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -58,6 +110,24 @@ relevant order relation.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{InjectiveHomomorphism}(f,(A,O),(B,O'))
+\quad\text{and}\quad
+\operatorname{OrderEmbedding}(f,(A,R),(B,R')).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{StructureEmbedding}(f,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A structure embedding preserves the operation data and the relevant order data.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:injective-homomorphism]{Injective Homomorphism}
@@ -73,6 +143,26 @@ The composition of two homomorphisms is a homomorphism.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Homomorphism}(f,A,B)
+\land
+\operatorname{Homomorphism}(g,B,C)
+\Longrightarrow
+\operatorname{Homomorphism}(g\circ f,A,C).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Homomorphism}(g\circ f,A,C).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Operation preservation is stable under composition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:homomorphism]{Homomorphism}
@@ -87,6 +177,22 @@ itself.
 \hyperref[prf:identity-map-is-homomorphism]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Homomorphism}(\operatorname{id}_A,A,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IdentityHomomorphism}(\operatorname{id}_A,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The identity map preserves every operation of its own structure.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

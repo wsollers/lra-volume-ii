@@ -41,6 +41,20 @@ a+b = b+a
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ClosedUnderBinaryOperation}(P,+_P)
+\land
+\operatorname{Associative}(P,+_P)
+\land
+\operatorname{Commutative}(P,+_P)
+\land
+\operatorname{LeftCancellation}(P,+_P)
+\land
+\operatorname{RightCancellation}(P,+_P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 This theorem is a packaging result. It names the algebraic structure that
 has been proved piece by piece: the three individual theorems on associativity,
@@ -97,6 +111,14 @@ a \cdot b = b \cdot a
 \;\land\;
 1 \cdot a = a.
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsCommutativeMonoid}
+\bigl(\operatorname{CommutativeMonoid}
+(\operatorname{Monoid}(\operatorname{Semigroup}(\operatorname{Magma}(P,\cdot_P)),1))\bigr).
 \]
 \end{remark*}
 
@@ -160,6 +182,18 @@ a+b = b+a
 \;\land\;
 1 \cdot a = a.
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightDistributive}(P,+_P,\cdot_P)
+\land
+\operatorname{Associative}(P,+_P)
+\land
+\operatorname{Commutative}(P,+_P)
+\land
+\operatorname{Identity}(1,P,\cdot_P).
 \]
 \end{remark*}
 

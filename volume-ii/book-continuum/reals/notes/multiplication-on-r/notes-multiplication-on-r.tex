@@ -6,6 +6,20 @@ positive if $0_{\mathbb{R}}<\alpha$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}$,
+\[
+\alpha\ge 0_{\mathbb{R}}\Longleftrightarrow 0_{\mathbb{R}}\le\alpha,
+\qquad
+\alpha>0_{\mathbb{R}}\Longleftrightarrow 0_{\mathbb{R}}<\alpha.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The nonnegative and positive real cuts are the cuts lying weakly or strictly
+above the zero cut.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reals]{The Real Numbers}
@@ -28,6 +42,22 @@ For nonnegative cuts $\alpha,\beta\in\mathbb{R}$, define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all nonnegative cuts $\alpha,\beta\in\mathbb{R}$,
+\[
+\alpha\cdot\beta
+=
+\{r\in\mathbb{Q}:r<0_{\mathbb{Q}}\}
+\cup
+\{p\cdot q:p\in\alpha,\ q\in\beta,\ p\ge 0_{\mathbb{Q}},\ q\ge 0_{\mathbb{Q}}\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The product of nonnegative cuts contains all negative rationals and all
+products of nonnegative rational elements drawn from the two cuts.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:nonnegative-cut]{Nonnegative Cut}
@@ -43,6 +73,19 @@ If $\alpha,\beta\ge 0_{\mathbb{R}}$, then $\alpha\cdot\beta$ is a Dedekind cut.
 \hyperref[prf:product-nonnegative-is-a-cut]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For all $\alpha,\beta\in\mathbb{R}$,
+\[
+0_{\mathbb{R}}\le\alpha\land 0_{\mathbb{R}}\le\beta
+\Longrightarrow
+\alpha\cdot\beta\in\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The nonnegative product construction produces another Dedekind cut.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -66,6 +109,20 @@ For $\alpha\in\mathbb{R}$, define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}$,
+\[
+0_{\mathbb{R}}\le\alpha\Longrightarrow |\alpha|=\alpha,
+\qquad
+\alpha<0_{\mathbb{R}}\Longrightarrow |\alpha|=-\alpha.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The absolute value of a real cut is the cut itself when nonnegative and its
+additive inverse when negative.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
@@ -88,6 +145,17 @@ For all $\alpha,\beta\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $\alpha,\beta\in\mathbb{R}$,
+\[
+|\alpha+\beta|\le |\alpha|+|\beta|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real absolute value satisfies the triangle inequality.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
@@ -104,6 +172,16 @@ $-(|\alpha|\cdot|\beta|)$ when they have opposite signs, and use
 $0_{\mathbb{R}}$ when either factor is $0_{\mathbb{R}}$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For all $\alpha,\beta\in\mathbb{R}$, the product $\alpha\cdot\beta$ is defined
+by the sign cases determined by $|\alpha|$, $|\beta|$, and $0_{\mathbb{R}}$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Real multiplication extends the nonnegative cut product to all signs by using
+absolute values, negation, and the zero case.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -122,6 +200,17 @@ If $\alpha,\beta\in\mathbb{R}$, then $\alpha\cdot\beta\in\mathbb{R}$.
 \hyperref[prf:product-of-cuts-is-a-cut]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For all $\alpha,\beta\in\mathbb{R}$,
+\[
+\alpha\cdot\beta\in\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The sign-case definition of real multiplication always returns a Dedekind cut.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -143,6 +232,16 @@ For all $\alpha,\beta,\gamma\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(\mathbb{R},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Real multiplication satisfies the associative law.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
@@ -162,6 +261,16 @@ For all $\alpha,\beta\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Commutative}(\mathbb{R},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Real multiplication satisfies the commutative law.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
@@ -180,6 +289,16 @@ For every $\alpha\in\mathbb{R}$,
 \hyperref[prf:one-multiplicative-identity-on-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Identity}(1_{\mathbb{R}},\mathbb{R},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real number $1_{\mathbb{R}}$ is the two-sided multiplicative identity.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -201,6 +320,22 @@ For $\alpha>0_{\mathbb{R}}$, define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}$ with $\alpha>0_{\mathbb{R}}$,
+\[
+\alpha^{-1}
+=\{r\in\mathbb{Q}:r\le 0_{\mathbb{Q}}\}
+\cup
+\{r\in\mathbb{Q}:r>0_{\mathbb{Q}}\land
+\exists s\in\mathbb{Q}\,(s>r\land s^{-1}\notin\alpha)\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a positive cut is defined by a rational upper-search
+condition using reciprocals in $\mathbb{Q}$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reals]{The Real Numbers}
@@ -217,6 +352,20 @@ For $\alpha\ne0_{\mathbb{R}}$, define $\alpha^{-1}$ to be $|\alpha|^{-1}$ if
 $\alpha>0_{\mathbb{R}}$ and $-(|\alpha|^{-1})$ if $\alpha<0_{\mathbb{R}}$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}\setminus\{0_{\mathbb{R}}\}$,
+\[
+\alpha>0_{\mathbb{R}}\Longrightarrow \alpha^{-1}=|\alpha|^{-1},
+\qquad
+\alpha<0_{\mathbb{R}}\Longrightarrow \alpha^{-1}=-(|\alpha|^{-1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a nonzero real is defined by reducing to the positive case
+and restoring the sign.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -237,6 +386,17 @@ If $\alpha\ne0_{\mathbb{R}}$, then $\alpha^
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}\setminus\{0_{\mathbb{R}}\}$,
+\[
+\alpha^{-1}\in\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal construction for a nonzero real number produces a Dedekind cut.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reciprocal-on-r]{Reciprocal on $\mathbb{R}$}
@@ -256,6 +416,18 @@ If $\alpha\ne0_{\mathbb{R}}$, then
 \hyperref[prf:reciprocal-multiplicative-inverse-on-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}\setminus\{0_{\mathbb{R}}\}$,
+\[
+\operatorname{RightInverse}(\alpha^{-1},\alpha,1_{\mathbb{R}},\mathbb{R},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a nonzero real is a multiplicative inverse under real
+multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -279,6 +451,19 @@ For every nonzero $\alpha\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}\setminus\{0_{\mathbb{R}}\}$,
+\[
+0_{\mathbb{R}}<\alpha \Longrightarrow 0_{\mathbb{R}}<\alpha^{-1},
+\qquad
+\alpha<0_{\mathbb{R}} \Longrightarrow \alpha^{-1}<0_{\mathbb{R}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A nonzero real number and its reciprocal have the same sign.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:sign-of-reciprocal-q]{Sign of a Reciprocal on $\mathbb{Q}$}
@@ -300,6 +485,17 @@ For every nonzero $\alpha\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}\setminus\{0_{\mathbb{R}}\}$,
+\[
+(\alpha^{-1})^{-1}=\alpha.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking the reciprocal twice returns the original nonzero real number.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:reciprocal-involutive-on-q]{Reciprocal Is Involutive on $\mathbb{Q}$}
@@ -320,6 +516,18 @@ For all nonzero $\alpha,\beta\in\mathbb{R}$,
 \hyperref[prf:reciprocal-of-product-on-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $\alpha,\beta\in\mathbb{R}\setminus\{0_{\mathbb{R}}\}$,
+\[
+(\alpha\beta)^{-1}=\alpha^{-1}\beta^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a product of nonzero real numbers is the product of their
+reciprocals.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -344,6 +552,19 @@ For all $\alpha,\beta\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $\alpha,\beta\in\mathbb{R}$,
+\[
+0_{\mathbb{R}}<\alpha<\beta
+\Longrightarrow
+0_{\mathbb{R}}<\beta^{-1}<\alpha^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+On positive real numbers, taking reciprocals reverses strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:reciprocal-reverses-order-on-positives-q]{Reciprocal Reverses Order on Positives in $\mathbb{Q}$}
@@ -366,6 +587,19 @@ For all nonzero $\alpha,\beta\in\mathbb{R}$,
 \hyperref[prf:reciprocal-reverses-nonstrict-order-on-positives-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all nonzero $\alpha,\beta\in\mathbb{R}$,
+\[
+0_{\mathbb{R}}<\alpha\le\beta
+\Longrightarrow
+0_{\mathbb{R}}<\beta^{-1}\le\alpha^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+On positive real numbers, taking reciprocals reverses non-strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -394,6 +628,24 @@ For all nonzero $\alpha,\beta\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all nonzero $\alpha,\beta\in\mathbb{R}$,
+\[
+0_{\mathbb{R}}<\alpha<\beta
+\Longrightarrow
+0_{\mathbb{R}}<\beta^{-1}<\alpha^{-1},
+\qquad
+\alpha<\beta<0_{\mathbb{R}}
+\Longrightarrow
+\beta^{-1}<\alpha^{-1}<0_{\mathbb{R}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For same-sign nonzero real numbers, reciprocal reverses strict order and
+preserves the common sign side.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:reciprocal-reverses-order-on-same-sign-q]{Reciprocal Reverses Order on Same-Sign Rationals}
@@ -421,6 +673,24 @@ For all nonzero $\alpha,\beta\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all nonzero $\alpha,\beta\in\mathbb{R}$,
+\[
+0_{\mathbb{R}}<\alpha\le\beta
+\Longrightarrow
+0_{\mathbb{R}}<\beta^{-1}\le\alpha^{-1},
+\qquad
+\alpha\le\beta<0_{\mathbb{R}}
+\Longrightarrow
+\beta^{-1}\le\alpha^{-1}<0_{\mathbb{R}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For same-sign nonzero real numbers, reciprocal reverses non-strict order and
+preserves the common sign side.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:reciprocal-reverses-nonstrict-order-on-same-sign-q]{Reciprocal Reverses Non-Strict Order on Same-Sign Rationals}
@@ -441,6 +711,17 @@ For every nonzero $\alpha\in\mathbb{R}$,
 \hyperref[prf:absolute-value-of-reciprocal-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}\setminus\{0_{\mathbb{R}}\}$,
+\[
+|\alpha^{-1}|=|\alpha|^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute value commutes with reciprocals of nonzero real numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -463,6 +744,18 @@ For $\beta\ne0_{\mathbb{R}}$, define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $\alpha\in\mathbb{R}$ and all
+$\beta\in\mathbb{R}\setminus\{0_{\mathbb{R}}\}$,
+\[
+\alpha/\beta=\alpha\cdot\beta^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Real division is multiplication by the reciprocal of the nonzero divisor.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
@@ -481,6 +774,16 @@ For all $\alpha,\beta,\gamma\in\mathbb{R}$,
 \hyperref[prf:distributivity-on-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftDistributive}(\mathbb{R},\cdot,+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Real multiplication distributes over real addition on the left.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

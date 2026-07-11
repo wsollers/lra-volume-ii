@@ -181,6 +181,16 @@ Define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\sqrt{2}=\{r\in\mathbb{Q}:r<0_{\mathbb{Q}}\lor r\cdot r<2_{\mathbb{Q}}\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The square-root-of-two cut collects negative rationals together with positive rationals whose square is below two.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rationals]{Rational Numbers}
@@ -197,6 +207,16 @@ The set $\sqrt{2}$ is a Dedekind cut.
 \hyperref[prf:sqrt-two-is-a-cut]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{DedekindCut}(\sqrt{2}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The square-root-of-two set satisfies the Dedekind cut conditions and therefore represents a real number.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -215,6 +235,18 @@ where $2_{\mathbb{R}}:=\iota(2_{\mathbb{Q}})$.
 \hyperref[prf:sqrt-two-squared-is-two]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\sqrt{2}\cdot\sqrt{2}=2_{\mathbb{R}}
+\quad\text{with}\quad
+2_{\mathbb{R}}=\iota(2_{\mathbb{Q}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The cut constructed for $\sqrt{2}$ has square equal to the real number two.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -242,6 +274,18 @@ in $\mathbb{R}$.
 \hyperref[prf:r-fills-the-gap]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+S=\{q\in\mathbb{Q}:0_{\mathbb{Q}}<q\land q\cdot q<2_{\mathbb{Q}}\}
+\Longrightarrow
+\operatorname{LeastUpperBound}(\sqrt{2},\iota(S),\mathbb{R},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real number $\sqrt{2}$ is exactly the supremum in $\mathbb{R}$ of the rational gap set embedded into the reals.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

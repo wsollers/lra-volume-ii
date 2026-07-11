@@ -7,6 +7,25 @@
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+e_L\in A
+\quad\text{and}\quad
+\forall x\in A,\ e_L\mathbin{O}x=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftIdentity}(e_L,A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A left identity is tied to both the carrier and the operation; the same element
+need not be a left identity for another operation.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -22,6 +41,24 @@
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+e_R\in A
+\quad\text{and}\quad
+\forall x\in A,\ x\mathbin{O}e_R=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightIdentity}(e_R,A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A right identity is an operation-relative property on the chosen carrier.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -35,6 +72,25 @@ An element $e$ is a \emph{two-sided identity} for $O$ if it is both a left
 identity and a right identity.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftIdentity}(e,A,O)
+\quad\text{and}\quad
+\operatorname{RightIdentity}(e,A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Identity}(e,A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two-sided identity packages the left and right identity laws for one operation
+on one carrier.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -56,6 +112,25 @@ for every element $x$ in the domain of the operation.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+z\in A
+\quad\text{and}\quad
+\forall x\in A,\ z\mathbin{O}x=z \land x\mathbin{O}z=z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{AbsorbingElement}(z,A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An absorbing element fixes the operation output whenever it appears in either
+input slot.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -73,9 +148,25 @@ operation, then $e_L=e_R$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-(\forall x,\ e_L\mathbin{O}x=x)\land(\forall x,\ x\mathbin{O}e_R=x)
+\operatorname{LeftIdentity}(e_L,A,O)
+\land
+\operatorname{RightIdentity}(e_R,A,O)
 \Longrightarrow e_L=e_R.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftIdentity}(e_L,A,O)
+\land
+\operatorname{RightIdentity}(e_R,A,O)
+\Longrightarrow e_L=e_R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left and right identities cannot disagree once they belong to the same carrier
+and operation.
 \end{remark*}
 
 \begin{dependencies}
@@ -95,8 +186,19 @@ A two-sided identity for a binary operation is unique.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Identity}(e)\land\operatorname{Identity}(e') \Longrightarrow e=e'.
+\operatorname{Identity}(e,A,O)\land\operatorname{Identity}(e',A,O)
+\Longrightarrow e=e'.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Unique}(\lambda u.\operatorname{Identity}(u,A,O)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Identity is unique as a property of a fixed carrier-operation pair.
 \end{remark*}
 
 \begin{dependencies}

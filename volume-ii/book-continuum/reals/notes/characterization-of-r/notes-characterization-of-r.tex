@@ -6,6 +6,20 @@ least-upper-bound property.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsCompleteOrderedField}(F,+,\cdot,0,1,\le)
+\Longleftrightarrow
+\operatorname{IsOrderedField}(F,+,\cdot,0,1,\le)
+\land
+\operatorname{LeastUpperBoundProperty}(F,\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A complete ordered field is an ordered field whose order has the least-upper-bound property.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
 \item \hyperref[def:least-upper-bound-property-on-r]{Least-Upper-Bound Property on $\mathbb{R}$}
@@ -19,6 +33,26 @@ Any two complete ordered fields are isomorphic by a unique order-isomorphism.
 \hyperref[prf:uniqueness-of-cof]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall F,G,\qquad
+\operatorname{IsCompleteOrderedField}(F)\land\operatorname{IsCompleteOrderedField}(G)
+\Longrightarrow
+\exists!\varphi\,\operatorname{OrderIsomorphism}(\varphi,F,G).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UniqueOrderIsomorphism}(F,G)
+\]
+means that there is exactly one order-preserving field isomorphism from the complete ordered field $F$ to the complete ordered field $G$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any two complete ordered fields have exactly one order-preserving field isomorphism between them.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -35,6 +69,26 @@ complete ordered field.
 \hyperref[prf:r-is-the-reals]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsCompleteOrderedField}(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}},\le)
+\Longrightarrow
+\forall F\,\left(\operatorname{IsCompleteOrderedField}(F)\Longrightarrow
+\exists!\varphi\,\operatorname{OrderIsomorphism}(\varphi,F,\mathbb{R})\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{CharacterizesRealNumbers}(\mathbb{R})
+\]
+means that every complete ordered field is uniquely order-isomorphic to $\mathbb{R}$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real numbers are characterized up to unique order-isomorphism by complete ordered field structure.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

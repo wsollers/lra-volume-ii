@@ -107,6 +107,12 @@ $b\in\mathbb{W}$ such that $a=S_{\mathbb{W}}(b)$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{SuccessorCoversNonbase}(S_{\mathbb{W}},0,\mathbb{W}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The element $1$ is the successor of $0$, and every positive natural number
 beyond $1$ remains a successor in the original Peano chain.
@@ -135,6 +141,12 @@ S_{\mathbb{W}}(a)=S_{\mathbb{W}}(b)\Longrightarrow a=b.
 \[
 \forall a,b\in\mathbb{W}\;
 \bigl(S_{\mathbb{W}}(a)=S_{\mathbb{W}}(b)\Longrightarrow a=b\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Injective}(S_{\mathbb{W}},\mathbb{W},\mathbb{W}).
 \]
 \end{remark*}
 
@@ -170,6 +182,24 @@ S_{\mathbb{W}}:\mathbb{W}\to\mathbb{W},
 \hyperref[prf:w-successor-system-properties]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{gathered}
+0\in\mathbb{W},\qquad
+S_{\mathbb{W}}:\mathbb{W}\to\mathbb{W},\\
+\neg\exists a\in\mathbb{W}\;(S_{\mathbb{W}}(a)=0),\\
+\forall a,b\in\mathbb{W}\;
+\bigl(S_{\mathbb{W}}(a)=S_{\mathbb{W}}(b)\Longrightarrow a=b\bigr).
+\end{gathered}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{SuccessorSystemProperties}(\mathbb{W},0,S_{\mathbb{W}}).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 Adjoining $0$ shifts the base of the successor chain from $1$ to $0$. The

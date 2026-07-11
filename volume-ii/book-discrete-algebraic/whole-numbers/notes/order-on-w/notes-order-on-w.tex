@@ -25,6 +25,15 @@ a\leq_{\mathbb{N}}b.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RelationOn}(\leq_{\mathbb{W}},\mathbb{W})
+\quad\text{and}\quad
+\operatorname{RelationExtension}
+(\leq_{\mathbb{W}},\leq_{\mathbb{N}},\mathbb{N},\mathbb{W}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The non-strict order makes $0$ least and otherwise preserves the order already
 defined on $\mathbb{N}$.
@@ -65,6 +74,15 @@ No element of $\mathbb{W}$ is strictly less than $0$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RelationOn}(<_{\mathbb{W}},\mathbb{W})
+\quad\text{and}\quad
+\operatorname{RelationExtension}
+(<_{\mathbb{W}},<_{\mathbb{N}},\mathbb{N},\mathbb{W}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The non-strict order makes $0$ least. The strict order says exactly that the
 positive natural numbers lie after $0$ and keep their old strict ordering.
@@ -98,6 +116,16 @@ a<_{\mathbb{W}}b\Longleftrightarrow a<_{\mathbb{N}}b.
 \wedge
 (a<_{\mathbb{W}}b\Longleftrightarrow a<_{\mathbb{N}}b)
 \bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RelationExtension}
+(\leq_{\mathbb{W}},\leq_{\mathbb{N}},\mathbb{N},\mathbb{W})
+\quad\text{and}\quad
+\operatorname{RelationExtension}
+(<_{\mathbb{W}},<_{\mathbb{N}},\mathbb{N},\mathbb{W}).
 \]
 \end{remark*}
 
@@ -185,6 +213,12 @@ a\leq_{\mathbb{W}}b\ \text{and}\ b\leq_{\mathbb{W}}a
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Antisymmetric}(\leq_{\mathbb{W}},\mathbb{W}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Antisymmetry follows from the least-element behavior of $0$ and the inherited
 antisymmetry on positive natural numbers.
@@ -214,6 +248,12 @@ a\leq_{\mathbb{W}}b\ \text{and}\ b\leq_{\mathbb{W}}c
 \forall a,b,c\in\mathbb{W}\;
 \bigl(a\leq_{\mathbb{W}}b\ \wedge\ b\leq_{\mathbb{W}}c
 \Longrightarrow a\leq_{\mathbb{W}}c\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Transitive}(\leq_{\mathbb{W}},\mathbb{W}).
 \]
 \end{remark*}
 
@@ -249,6 +289,12 @@ b\leq_{\mathbb{W}}a.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{TotalRelation}(\leq_{\mathbb{W}},\mathbb{W}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Any comparison involving $0$ is decided by leastness, while comparisons
 between positive elements are decided by totality on $\mathbb{N}$.
@@ -275,6 +321,13 @@ $\leq_{\mathbb{W}}$.
 \forall A\subseteq\mathbb{W}\;
 \bigl(A\neq\varnothing \Longrightarrow
 \exists m\in A\;\forall a\in A\;(m\leq_{\mathbb{W}}a)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsWellOrderedSet}
+\bigl(\mathsf{WellOrderedSet}(\mathbb{W},\leq_{\mathbb{W}})\bigr).
 \]
 \end{remark*}
 

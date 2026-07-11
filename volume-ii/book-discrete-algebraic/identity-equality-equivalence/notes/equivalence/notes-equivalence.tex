@@ -18,6 +18,12 @@ if it is reflexive, symmetric, and transitive.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{EquivalenceRelation}(\sim,A).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 An equivalence relation formalizes sameness for a chosen purpose.
 \end{remark*}
@@ -46,6 +52,12 @@ a=b \Longrightarrow a\sim b.
 \[
 \forall a,b\in A,\,
 a=b\Longrightarrow a\sim b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Refines}(=,\sim,A).
 \]
 \end{remark*}
 
@@ -145,6 +157,12 @@ a\sim b \Longleftrightarrow [a]=[b].
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\forall a,b\in A,\ a\sim b \Longleftrightarrow [a]=[b].
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Changing representatives inside an equivalence class does not change the
 class.
@@ -171,6 +189,17 @@ is the map
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in A,\ \pi(a)=[a].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The canonical projection sends each element of $A$ to the equivalence class it
+represents.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:quotient-set]{Quotient Set}
@@ -192,6 +221,17 @@ The canonical projection $\pi:A\to A/{\sim}$ is surjective.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Surjective}(\pi,A,A/{\sim}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every equivalence class is hit by the canonical projection because each class
+has at least one representative from $A$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:canonical-projection]{Canonical Projection}
@@ -209,6 +249,23 @@ For all $a,b\in A$,
 \hyperref[prf:projection-identifies-equivalent-elements]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in A,\ \pi(a)=\pi(b)\Longleftrightarrow a\sim b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall a,b\in A,\ \pi(a)=\pi(b)\Longleftrightarrow a\sim b.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The projection identifies exactly the elements that the equivalence relation
+already identifies.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -229,6 +286,25 @@ is well-defined.
 \hyperref[prf:existence-of-a-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists Q\;\exists \pi:A\to Q\;
+\bigl(Q=A/{\sim}\land \forall a\in A\;(\pi(a)=[a])\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Quotient}(A,\sim)=A/{\sim}
+\land \operatorname{WellDefinedFunction}(\pi,A,A/{\sim}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The quotient packages the equivalence classes as a set together with the
+canonical projection from the original domain.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -254,6 +330,26 @@ relation on $A$. The operation $O$ \emph{respects} $\sim$ if
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,a',b,b'\in A,\,
+\bigl(a\sim a'\land b\sim b'\bigr)
+\Longrightarrow
+\bigl(a\mathbin{O}b\bigr)\sim\bigl(a'\mathbin{O}b'\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RepresentativeIndependent}(O,\sim,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A binary operation respects an equivalence relation when changing either
+input to an equivalent representative changes the output only by equivalence.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:equivalence-relation]{Equivalence Relation}
@@ -277,6 +373,28 @@ b\sim b'\Longrightarrow (a\mathbin{O}b)\sim(a\mathbin{O}b').
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\forall a,a',b\in A,\ a\sim a'\Longrightarrow (a\mathbin{O}b)\sim(a'\mathbin{O}b),\\
+&\forall a,b,b'\in A,\ b\sim b'\Longrightarrow (a\mathbin{O}b)\sim(a\mathbin{O}b').
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftRepresentativeIndependent}(O,\sim,A)
+\land
+\operatorname{RightRepresentativeIndependent}(O,\sim,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left and right respect isolate representative independence in each input of a
+binary operation.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:operation-respects-equivalence]{Operation Respects an Equivalence}
@@ -292,6 +410,19 @@ the left and on the right.
 \hyperref[prf:respect-splits]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+O \text{ respects } \sim
+\Longleftrightarrow
+\bigl(O \text{ respects } \sim \text{ on the left and on the right}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For binary operations, full representative independence is equivalent to
+separate independence in each argument.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -311,6 +442,18 @@ defines a well-defined binary operation on $A/{\sim}$.
 \hyperref[prf:induced-operation-on-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl([a],[b]\bigr)\longmapsto [a\mathbin{O}b]
+\text{ is a well-defined binary operation on } A/{\sim}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If an operation respects equivalence, the value of the induced operation on
+classes is independent of the chosen representatives.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -336,6 +479,18 @@ defines a well-defined unary operation on $A/{\sim}$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\overline{f}([a])=[f(a)]
+\text{ is well-defined on } A/{\sim}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A unary operation descends to the quotient exactly when it sends equivalent
+inputs to equivalent outputs.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[prop:representatives-related-iff-classes-equal]{Representatives Related iff Classes Equal}
@@ -355,6 +510,24 @@ a\sim a'\Longrightarrow \bigl(P(a)\Longleftrightarrow P(a')\bigr).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,a'\in A,\,
+a\sim a'\Longrightarrow \bigl(P(a)\Longleftrightarrow P(a')\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RepresentativeIndependent}(P,\sim,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A predicate respects an equivalence relation when truth does not depend on the
+representative chosen from a class.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:equivalence-relation]{Equivalence Relation}
@@ -373,6 +546,18 @@ defines a well-defined predicate on $A/{\sim}$.
 \hyperref[prf:induced-predicate-on-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\overline{P}([a])\Longleftrightarrow P(a)
+\text{ is well-defined on } A/{\sim}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If a predicate respects the equivalence relation, it descends to a predicate
+on equivalence classes.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -396,6 +581,26 @@ if
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,a',b,b'\in A,\,
+\bigl(a\sim a'\land b\sim b'\bigr)
+\Longrightarrow
+\bigl(R(a,b)\Longleftrightarrow R(a',b')\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RepresentativeIndependent}(R,\sim,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A relation respects an equivalence relation when replacing either coordinate
+by an equivalent representative preserves truth.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:equivalence-relation]{Equivalence Relation}
@@ -414,6 +619,18 @@ defines a well-defined binary relation on $A/{\sim}$.
 \hyperref[prf:induced-relation-on-quotient]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\overline{R}([a],[b])\Longleftrightarrow R(a,b)
+\text{ is well-defined on } A/{\sim}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If a relation respects equivalence, its truth value can be read on quotient
+classes without depending on representatives.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -445,6 +662,24 @@ where $\pi:A\to A/{\sim}$ is the canonical projection.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\exists!\,\overline{g}:A/{\sim}\to B\;
+\bigl(\forall a\in A\;(\overline{g}([a])=g(a))\land \overline{g}\circ\pi=g\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedFunction}(\overline{g},A/{\sim},B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A map that is constant on equivalence classes factors uniquely through the
+quotient projection.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:canonical-projection]{Canonical Projection}
@@ -472,6 +707,18 @@ D/{\sim}:=\{[a]\in A/{\sim}:a\in D\}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\overline{f}([a])=[f(a)]
+\text{ is well-defined on } D/{\sim}\subseteq A/{\sim}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A partial operation descends to the quotient when its domain is saturated and
+its rule respects equivalence on that domain.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:induced-unary-operation-on-quotient]{Induced Unary Operation}
@@ -490,6 +737,18 @@ is well-defined on $A/{\sim}$, then $O$ respects $\sim$.
 \hyperref[prf:representative-independence-is-necessary]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\text{If } [a]\mathbin{\overline{O}}[b]=[a\mathbin{O}b]
+\text{ is well-defined, then } O \text{ respects } \sim.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Representative independence is not optional: any well-defined operation on
+classes forces the original operation to respect the equivalence relation.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -510,6 +769,12 @@ is well-defined on $A/{\sim}$, then $O$ respects $\sim$.
 \end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in A,\ [a]\ne[b] \Longrightarrow [a]\cap[b]=\emptyset.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
 \[
 \forall a,b\in A,\ [a]\ne[b] \Longrightarrow [a]\cap[b]=\emptyset.
 \]

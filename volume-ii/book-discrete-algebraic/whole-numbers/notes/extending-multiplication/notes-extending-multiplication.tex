@@ -26,6 +26,15 @@ a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(\cdot_{\mathbb{W}},\mathbb{W})
+\quad\text{and}\quad
+\operatorname{OperationExtension}
+(\cdot_{\mathbb{W}},\cdot_{\mathbb{N}},\mathbb{N},\mathbb{W}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The zero cases are new. The positive-positive case is inherited from
 $\mathbb{N}$. Since $0\notin\mathbb{N}$, these clauses do not compete.
@@ -106,6 +115,17 @@ For every $a\in\mathbb{W}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{W}\;(0\cdot_{\mathbb{W}}a=0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The element $0$ absorbs multiplication when it is placed on the left side of
+the product on $\mathbb{W}$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:zero-absorbing-for-multiplication-on-w]{Zero Is Absorbing for Multiplication on $\mathbb{W}$}
@@ -122,6 +142,17 @@ a\cdot_{\mathbb{W}}0=0.
 \hyperref[prf:right-zero-absorption-on-w]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{W}\;(a\cdot_{\mathbb{W}}0=0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The element $0$ absorbs multiplication when it is placed on the right side of
+the product on $\mathbb{W}$.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -179,6 +210,13 @@ a\cdot_{\mathbb{W}}b=a\cdot_{\mathbb{N}}b.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OperationExtension}
+(\cdot_{\mathbb{W}},\cdot_{\mathbb{N}},\mathbb{N},\mathbb{W}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The extension does not alter products of positive natural numbers.
 \end{remark*}
@@ -208,6 +246,12 @@ a\cdot_{\mathbb{W}}(b\cdot_{\mathbb{W}}c).
 \forall a,b,c\in\mathbb{W}\;
 \bigl((a\cdot_{\mathbb{W}}b)\cdot_{\mathbb{W}}c
 =a\cdot_{\mathbb{W}}(b\cdot_{\mathbb{W}}c)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(\mathbb{W},\cdot_{\mathbb{W}}).
 \]
 \end{remark*}
 
@@ -241,6 +285,12 @@ a\cdot_{\mathbb{W}}b=b\cdot_{\mathbb{W}}a.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Commutative}(\mathbb{W},\cdot_{\mathbb{W}}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The zero cases are symmetric, and the positive-positive case is the inherited
 commutativity theorem for $\mathbb{N}$.
@@ -271,6 +321,12 @@ a\cdot_{\mathbb{W}}(b+_{\mathbb{W}}c)
 \forall a,b,c\in\mathbb{W}\;
 \bigl(a\cdot_{\mathbb{W}}(b+_{\mathbb{W}}c)
 =(a\cdot_{\mathbb{W}}b)+_{\mathbb{W}}(a\cdot_{\mathbb{W}}c)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftDistributive}(\mathbb{W},+_{\mathbb{W}},\cdot_{\mathbb{W}}).
 \]
 \end{remark*}
 

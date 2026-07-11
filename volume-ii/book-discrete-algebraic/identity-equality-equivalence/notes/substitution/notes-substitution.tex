@@ -16,6 +16,12 @@ x=y \Longrightarrow \bigl(\varphi(x)\Longleftrightarrow\varphi(y)\bigr).
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+x=y \Longrightarrow \bigl(\varphi(x)\Longleftrightarrow\varphi(y)\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Substitution is the operational meaning of equality. Equal objects may replace
 one another in legitimate statements without changing truth.
@@ -36,6 +42,12 @@ x=y \Longrightarrow \bigl(P(x)\Longleftrightarrow P(y)\bigr).
 \begin{remark*}[Standard quantified statement]
 \[
 \forall x\,\forall y,\,
+x=y \Longrightarrow \bigl(P(x)\Longleftrightarrow P(y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
 x=y \Longrightarrow \bigl(P(x)\Longleftrightarrow P(y)\bigr).
 \]
 \end{remark*}
@@ -68,6 +80,12 @@ x=y \Longrightarrow
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+x=y \Longrightarrow \bigl(R(x,z)\Longleftrightarrow R(y,z)\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Relations respect equality in their first coordinate.
 \end{remark*}
@@ -96,6 +114,12 @@ x=y \Longrightarrow
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+x=y \Longrightarrow \bigl(R(z,x)\Longleftrightarrow R(z,y)\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Relations respect equality in their second coordinate.
 \end{remark*}
@@ -117,10 +141,17 @@ x=x' \land y=y' \Longrightarrow
 \end{proposition}
 \end{propositionbox}
 
-\begin{remark*}[St
-andard quantified statement]
+\begin{remark*}[Standard quantified statement]
 \[
 \forall x,x',y,y',\,
+\bigl(x=x'\land y=y'\bigr)
+\Longrightarrow
+\bigl(R(x,y)\Longleftrightarrow R(x',y')\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
 \bigl(x=x'\land y=y'\bigr)
 \Longrightarrow
 \bigl(R(x,y)\Longleftrightarrow R(x',y')\bigr).
@@ -155,6 +186,12 @@ x=y \Longrightarrow f(x)=f(y).
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+x=y \Longrightarrow f(x)=f(y).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Functions send equal inputs to equal outputs.
 \end{remark*}
@@ -178,6 +215,12 @@ x=x' \Longrightarrow x\mathbin{O}y=x'\mathbin{O}y.
 \begin{remark*}[Standard quantified statement]
 \[
 \forall x,x',y,\,
+x=x' \Longrightarrow x\mathbin{O}y=x'\mathbin{O}y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
 x=x' \Longrightarrow x\mathbin{O}y=x'\mathbin{O}y.
 \]
 \end{remark*}
@@ -209,6 +252,12 @@ y=y' \Longrightarrow x\mathbin{O}y=x\mathbin{O}y'.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+y=y' \Longrightarrow x\mathbin{O}y=x\mathbin{O}y'.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A binary operation respects equality in its right argument.
 \end{remark*}
@@ -229,13 +278,19 @@ x=x' \land y=y' \Longrightarrow x\mathbin{O}y=x'\mathbin{O}y'.
 \end{proposition}
 \end{propositionbox}
 
-\begin{remark*}[Standard quantified statemen
-t]
+\begin{remark*}[Standard quantified statement]
 \[
 \forall x,x',y,y',\,
 \bigl(x=x'\land y=y'\bigr)
 \Longrightarrow
 x\mathbin{O}y=x'\mathbin{O}y'.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\bigl(x=x'\land y=y'\bigr)
+\Longrightarrow x\mathbin{O}y=x'\mathbin{O}y'.
 \]
 \end{remark*}
 

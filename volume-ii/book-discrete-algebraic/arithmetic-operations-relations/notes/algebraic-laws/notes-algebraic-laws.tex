@@ -7,6 +7,23 @@
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ x\mathbin{O}(y\mathbin{O}z)=(x\mathbin{O}y)\mathbin{O}z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Associativity says the operation value is independent of the placement of
+parentheses in a threefold product.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -21,6 +38,26 @@ $x_1\mathbin{O}\cdots\mathbin{O}x_n$ has the same value.
 \hyperref[prf:general-associativity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(O,A)
+\Longrightarrow
+\operatorname{BracketIndependent}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(O,A)
+\Longrightarrow
+\operatorname{BracketIndependent}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Associativity extends from triples to arbitrary finite strings of operands.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -37,6 +74,23 @@ $x_1\mathbin{O}\cdots\mathbin{O}x_n$ has the same value.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ x\mathbin{O}y=y\mathbin{O}x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Commutative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Commutativity says the operation value is independent of the order of two
+inputs.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -52,6 +106,31 @@ $x_1\mathbin{O}\cdots\mathbin{O}x_n$ has the same value.
 \hyperref[prf:general-commutativity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(O,A)
+\land
+\operatorname{Commutative}(O,A)
+\Longrightarrow
+\operatorname{PermutationIndependent}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(O,A)
+\land
+\operatorname{Commutative}(O,A)
+\Longrightarrow
+\operatorname{PermutationIndependent}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Associativity and commutativity together make finite products independent of
+parenthesizing and reordering.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -70,6 +149,23 @@ x\otimes(y\oplus z)=(x\otimes y)\oplus(x\otimes z),
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ x\otimes(y\oplus z)=(x\otimes y)\oplus(x\otimes z).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftDistributive}(\otimes,\oplus,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left distributivity lets a fixed left factor distribute over a sum in the
+right input.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -86,6 +182,23 @@ The operation $\otimes$ is right distributive over $\oplus$ if
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ (y\oplus z)\otimes x=(y\otimes x)\oplus(z\otimes x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightDistributive}(\otimes,\oplus,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right distributivity lets a fixed right factor distribute over a sum in the
+left input.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -99,6 +212,24 @@ The operation $\otimes$ is two-sided distributive over $\oplus$ if it is both
 left distributive and right distributive.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftDistributive}(\otimes,\oplus,A)
+\quad\text{and}\quad
+\operatorname{RightDistributive}(\otimes,\oplus,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Distributive}(\otimes,\oplus,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two-sided distributivity bundles the left and right distributive laws.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -117,6 +248,22 @@ x\mathbin{O}y=x\mathbin{O}z \Longrightarrow y=z,
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ x\mathbin{O}y=x\mathbin{O}z \Longrightarrow y=z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftCancellative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left cancellation permits cancelling a common left factor.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -133,6 +280,22 @@ y\mathbin{O}x=z\mathbin{O}x \Longrightarrow y=z.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ y\mathbin{O}x=z\mathbin{O}x \Longrightarrow y=z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightCancellative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right cancellation permits cancelling a common right factor.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -146,6 +309,24 @@ An operation has two-sided cancellation if it has both left cancellation and
 right cancellation.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftCancellative}(O,A)
+\quad\text{and}\quad
+\operatorname{RightCancellative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Cancellative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two-sided cancellation records cancellability in both input positions.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -162,6 +343,31 @@ cancellation.
 \hyperref[prf:invertibility-implies-left-cancellation]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(O,A)
+\land
+\operatorname{Identity}(e,A,O)
+\land
+\operatorname{Inverse}(x^{-1},x,e,A,O)
+\Longrightarrow
+\forall y,z\in A,\ x\mathbin{O}y=x\mathbin{O}z \Rightarrow y=z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{HasInverses}(A,O,e)
+\Longrightarrow
+\operatorname{LeftCancellative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left multiplication by an invertible element can be undone, so it is
+cancellative.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -181,6 +387,29 @@ two-sided cancellation.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftCancellative}(O,A)
+\land
+\operatorname{RightCancellative}(O,A)
+\Longrightarrow
+\operatorname{Cancellative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{HasInverses}(A,O,e)
+\Longrightarrow
+\operatorname{Cancellative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Invertibility gives cancellation in both directions once the left and right
+forms have been established.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[prop:invertibility-implies-left-cancellation]{Invertibility Implies Left Cancellation}
@@ -197,6 +426,31 @@ cancellation.
 \hyperref[prf:invertibility-implies-right-cancellation]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(O,A)
+\land
+\operatorname{Identity}(e,A,O)
+\land
+\operatorname{Inverse}(x^{-1},x,e,A,O)
+\Longrightarrow
+\forall y,z\in A,\ y\mathbin{O}x=z\mathbin{O}x \Rightarrow y=z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{HasInverses}(A,O,e)
+\Longrightarrow
+\operatorname{RightCancellative}(O,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right multiplication by an invertible element can be undone, so it is
+cancellative.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

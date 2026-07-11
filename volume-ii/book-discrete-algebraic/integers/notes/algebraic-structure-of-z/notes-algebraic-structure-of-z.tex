@@ -11,6 +11,23 @@ x\cdot y=0 \Longrightarrow x=0 \text{ or } y=0.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad
+x\cdot y=0_{\mathbb{Z}} \Longrightarrow x=0_{\mathbb{Z}}\lor y=0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NoZeroDivisors}(\mathbb{Z},\cdot_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The integer product can vanish only when at least one factor is zero.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:order-on-w-total]{Order on $
@@ -27,6 +44,32 @@ $0\ne 1$, and $\mathbb{Z}$ has no zero divisors.
 \hyperref[prf:z-integral-domain]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsCommutativeRing}(
+\operatorname{CommutativeRing}(
+\operatorname{Ring}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}},
+0_{\mathbb{Z}},1_{\mathbb{Z}})))
+\land
+0_{\mathbb{Z}}\ne1_{\mathbb{Z}}
+\land
+\operatorname{NoZeroDivisors}(\mathbb{Z},\cdot_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsIntegralDomain}(
+\operatorname{IntegralDomain}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}},
+0_{\mathbb{Z}},1_{\mathbb{Z}})).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The integers are a commutative ring with distinct zero and one and no nonzero
+zero divisors.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -46,6 +89,23 @@ z\ne 0 \land z\cdot x=z\cdot y \Longrightarrow x=y.
 \hyperref[prf:multiplicative-cancellation-on-z]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+z\ne0_{\mathbb{Z}}\land z\cdot x=z\cdot y \Longrightarrow x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftCancellativeOnNonzero}(\cdot_{\mathbb{Z}},\mathbb{Z},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A nonzero integer factor can be cancelled from products.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -69,6 +129,23 @@ x\cdot 0=0.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad
+0_{\mathbb{Z}}\cdot x=0_{\mathbb{Z}}\land x\cdot0_{\mathbb{Z}}=0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{AbsorbingElement}(0_{\mathbb{Z}},\mathbb{Z},\cdot_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Zero is absorbing for integer multiplication.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:z-commutative-ring]{$\mathbb{Z}$ Is a Commutative Ring}
@@ -88,6 +165,23 @@ x\cdot(-y)=-(x\cdot y).
 \hyperref[prf:sign-rule-on-z]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad
+(-x)\cdot y=-(x\cdot y)\land x\cdot(-y)=-(x\cdot y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NegationDistributesOverProduct}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Moving one additive inverse into a product negates the product.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -109,6 +203,22 @@ For every $x\in\mathbb{Z}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad (-1_{\mathbb{Z}})\cdot x=-x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NegativeOneActsByNegation}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}},0_{\mathbb{Z}},1_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by negative one realizes additive negation.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:sign-rule-on-z]{Sign Rule on $\mathbb{Z}$}
@@ -126,6 +236,23 @@ For all $x,y\in\mathbb{Z}$,
 \hyperref[prf:product-of-negatives-on-z]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad
+(-x)\cdot(-y)=x\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ProductOfNegativesLaw}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two product sign changes cancel.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

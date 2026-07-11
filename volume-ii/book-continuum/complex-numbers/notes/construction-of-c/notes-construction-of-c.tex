@@ -20,6 +20,17 @@ read informally as the expression $a+bi$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Pre}\mathbb{C}=\mathbb{R}\times\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A complex prepair is an ordered pair of real numbers, read as formal real and
+imaginary coordinates.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-pair]{Ordered Pair}
@@ -36,6 +47,17 @@ The complex prepair set is
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Pre}\mathbb{C}:=\mathbb{R}\times\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The pre-complex carrier is the Cartesian product of the real numbers with
+itself.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -58,6 +80,15 @@ a=c\ \text{ and }\ b=d.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $(a,b),(c,d)\in\operatorname{Pre}\mathbb{C}$,
+\[
+(a,b)\sim_{\mathbb{C}}(c,d)
+\Longleftrightarrow
+a=c\land b=d.
+\]
+\end{remark*}
+
 \begin{remark*}[Predicate reading]
 \[
 (a,b)\sim_{\mathbb{C}}(c,d)
@@ -66,6 +97,11 @@ a=c\ \text{ and }\ b=d.
 \]
 Thus the complex-number quotient is formally present, but the equivalence
 classes are singleton coordinate-equality classes.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex coordinate equivalence identifies exactly those prepairs with equal
+real coordinates and equal imaginary coordinates.
 \end{remark*}
 
 \begin{dependencies}
@@ -85,6 +121,18 @@ For every $(a,b)\in\operatorname{Pre}\mathbb{C}$,
 \hyperref[prf:complex-coordinate-equivalence-reflexive]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For every $(a,b)\in\operatorname{Pre}\mathbb{C}$,
+\[
+(a,b)\sim_{\mathbb{C}}(a,b).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every complex prepair is coordinate-equivalent to itself.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:complex-coordinate-equivalence]{Complex Coordinate Equivalence}
@@ -104,6 +152,21 @@ For all prepairs $(a,b),(c,d)$,
 \hyperref[prf:complex-coordinate-equivalence-symmetric]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For all $(a,b),(c,d)\in\operatorname{Pre}\mathbb{C}$,
+\[
+(a,b)\sim_{\mathbb{C}}(c,d)
+\Longrightarrow
+(c,d)\sim_{\mathbb{C}}(a,b).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Coordinate equivalence is symmetric because equality of real coordinates is
+symmetric.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:complex-coordinate-equivalence]{Complex Coordinate Equivalence}
@@ -125,6 +188,21 @@ For all prepairs $(a,b),(c,d),(e,f)$,
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all $(a,b),(c,d),(e,f)\in\operatorname{Pre}\mathbb{C}$,
+\[
+(a,b)\sim_{\mathbb{C}}(c,d)\land
+(c,d)\sim_{\mathbb{C}}(e,f)
+\Longrightarrow
+(a,b)\sim_{\mathbb{C}}(e,f).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Coordinate equivalence is transitive because equality of real coordinates is
+transitive in each coordinate.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:complex-coordinate-equivalence]{Complex Coordinate Equivalence}
@@ -141,7 +219,13 @@ The relation $\sim_{\mathbb{C}}$ is an equivalence relation on
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Proof sketch]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{EquivalenceRelation}(\operatorname{Pre}\mathbb{C},\sim_{\mathbb{C}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Reflexivity, symmetry, and transitivity are checked coordinate by coordinate
 using equality in \(\mathbb{R}\). Thus this quotient construction has the same
 formal shape as the constructions of \(\mathbb{Z}\) and \(\mathbb{Q}\), even
@@ -169,6 +253,17 @@ The complex numbers are the quotient
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\mathbb{C}=\operatorname{Quotient}(\operatorname{Pre}\mathbb{C},\sim_{\mathbb{C}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complex numbers are the quotient of real coordinate prepairs by coordinate
+equivalence.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:quotient-set]{Quotient Set}
@@ -185,7 +280,14 @@ The notation $[a,b]_{\mathbb{C}}$ denotes the
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Standard form]
+\begin{remark*}[Standard quantified statement]
+For every $(a,b)\in\operatorname{Pre}\mathbb{C}$,
+\[
+[a,b]_{\mathbb{C}}=\{(c,d)\in\operatorname{Pre}\mathbb{C}:(c,d)\sim_{\mathbb{C}}(a,b)\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Since coordinate equivalence is equality of coordinates, every complex number
 has a unique representative
 \[
@@ -214,6 +316,21 @@ i:=[0,1]_{\mathbb{C}}.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{C}}=[0,0]_{\mathbb{C}},
+\qquad
+1_{\mathbb{C}}=[1,0]_{\mathbb{C}},
+\qquad
+i=[0,1]_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The distinguished complex constants are the coordinate classes for zero, one,
+and the imaginary unit.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

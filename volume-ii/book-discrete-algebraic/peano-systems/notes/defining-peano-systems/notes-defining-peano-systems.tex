@@ -45,29 +45,39 @@ $1 \in P$, $S : P \to P$ is a function, and the following axioms hold:
 \]
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-A triple $(P,S,1)$ fails to be a Peano system if the distinguished element
-does not lie in the underlying set, if the successor map leaves the set, if
-the successor hits $1$, if the successor identifies two distinct elements, or
-if there exists a proper subset of $P$ that contains $1$ and is closed under
-successor.
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PeanoSystem}(P,S,1).
+\]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
-\begin{aligned}
-\neg\,\text{$(P,S,1)$ is a Peano system}
-\Longrightarrow\;&
-1 \notin P \\
-&\lor \exists n \in P\;(S(n) \notin P) \\
-&\lor \exists n \in P\;(S(n)=1) \\
-&\lor \exists m,n \in P\;(m \neq n \land S(m)=S(n)) \\
-&\lor \exists A \subseteq P\;
-\bigl(1 \in A \land
-\forall n \in P\;(n \in A \Longrightarrow S(n) \in A)
-\land A \neq P\bigr).
-\end{aligned}
-\]
+\begin{description}
+  \item[Exposition.]
+  A triple $(P,S,1)$ fails to be a Peano system if the distinguished element
+  does not lie in the underlying set, if the successor map leaves the set, if
+  the successor hits $1$, if the successor identifies two distinct elements,
+  or if there exists a proper subset of $P$ that contains $1$ and is closed
+  under successor.
+  \item[Axiom failure.]
+  \[
+  \neg\operatorname{PeanoSystem}(P,S,1).
+  \]
+  \[
+  \begin{aligned}
+  \neg\,\text{$(P,S,1)$ is a Peano system}
+  \Longrightarrow\;&
+  1 \notin P \\
+  &\lor \exists n \in P\;(S(n) \notin P) \\
+  &\lor \exists n \in P\;(S(n)=1) \\
+  &\lor \exists m,n \in P\;(m \neq n \land S(m)=S(n)) \\
+  &\lor \exists A \subseteq P\;
+  \bigl(1 \in A \land
+  \forall n \in P\;(n \in A \Longrightarrow S(n) \in A)
+  \land A \neq P\bigr).
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -77,7 +87,7 @@ induction principles. The purpose of the definition is to isolate the ambient
 object before the individual axioms are recorded and used one by one.
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 The five displayed clauses are the house-style Peano-system presentation of
 Peano's axiomatization of arithmetic \citep{PeanoArithmeticesPrincipia1889}.
 They are stated here in structural form so that later definitions and proofs
@@ -178,6 +188,12 @@ If $m,n \in P$ and $S(m)=S(n)$, then $m=n$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Injective}(S,P,P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Different natural numbers do not collapse to the same successor. The successor
 operation preserves distinctness and lets predecessor reasoning work whenever a
@@ -206,6 +222,12 @@ then $A=P$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{InductionPrinciple}(P,S,1).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Any subset of the underlying set that contains the distinguished element and is
 closed under successor must already contain the entire set. This axiom rules
@@ -227,10 +249,16 @@ There exists a Peano system.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\exists P\;\exists S\;\operatorname{PeanoSystem}(P,S,1).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The Peano axioms are not merely a formal pattern; at least one structure
 satisfies them. This axiom guarantees that the abstract counting system is
-available before we give it the conventional name $\mathbb{N}$.
+available before it receives the conventional name $\mathbb{N}$.
 \end{remark*}
 
 \begin{remark*}[Historical note]

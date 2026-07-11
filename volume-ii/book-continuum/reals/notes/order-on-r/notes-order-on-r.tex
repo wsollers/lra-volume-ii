@@ -10,6 +10,17 @@ For cuts $\alpha,\beta\in\mathbb{R}$, define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R},\qquad
+\alpha\le\beta \Longleftrightarrow \alpha\subseteq\beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The nonstrict order on real numbers is the inclusion order on the Dedekind cuts representing those real numbers.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reals]{The Real Numbers}
@@ -27,6 +38,17 @@ For cuts $\alpha,\beta\in\mathbb{R}$, define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R},\qquad
+\alpha<\beta \Longleftrightarrow \alpha\subsetneq\beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict order on real numbers records proper inclusion of cuts.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reals]{The Real Numbers}
@@ -42,6 +64,16 @@ For every $\alpha\in\mathbb{R}$, $\alpha\le\alpha$.
 \hyperref[prf:order-on-r-reflexive]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha\in\mathbb{R},\qquad \alpha\le\alpha.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every real cut is included in itself, so the induced order is reflexive.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -60,6 +92,17 @@ For all $\alpha,\beta\in\mathbb{R}$,
 \hyperref[prf:order-on-r-antisymmetric]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R},\qquad
+(\alpha\le\beta\land\beta\le\alpha)\Longrightarrow \alpha=\beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two real cuts that include each other have exactly the same rational elements, hence are the same real number.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -80,6 +123,17 @@ For all $\alpha,\beta,\gamma\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta,\gamma\in\mathbb{R},\qquad
+(\alpha\le\beta\land\beta\le\gamma)\Longrightarrow \alpha\le\gamma.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Inclusion of cuts composes, so the real order is transitive.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
@@ -98,6 +152,17 @@ For all cuts $\alpha,\beta\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R},\qquad
+\alpha\subseteq\beta \lor \beta\subseteq\alpha.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any two Dedekind cuts are comparable by inclusion.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:dedekind-cut]{Dedekind Cut}
@@ -115,6 +180,17 @@ For all $\alpha,\beta\in\mathbb{R}$,
 \hyperref[prf:order-on-r-total]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R},\qquad
+\alpha\le\beta \lor \beta\le\alpha.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Because the real order is inclusion of cuts, comparability of cuts gives totality of the real order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -135,6 +211,17 @@ holds.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R},\qquad
+\operatorname{ExactlyOne}(\alpha<\beta,\alpha=\beta,\beta<\alpha).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two real numbers have exactly one strict order relation between them, or else they are equal.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-r]{Strict Order on $\mathbb{R}$}
@@ -150,6 +237,16 @@ The ordered pair $(\mathbb{R},\le)$ is a total order.
 \hyperref[prf:r-totally-ordered-set]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{TotalOrder}(\mathbb{R},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real numbers, ordered by inclusion of cuts, form a totally ordered set.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

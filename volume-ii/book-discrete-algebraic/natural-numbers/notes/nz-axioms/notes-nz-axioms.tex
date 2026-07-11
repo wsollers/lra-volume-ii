@@ -22,7 +22,13 @@ $S:\mathbb{N}\to\mathbb{N}$ is the successor operation.
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Standing convention]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{PeanoSystem}(\mathbb{N},S,1).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Throughout this chapter, variables $m,n,k$ range over $\mathbb{N}$ unless a
 larger ambient set is explicitly named. The element $1$ is the base natural
 number, and $S(n)$ is the successor of $n$.
@@ -52,6 +58,17 @@ point directly to $\mathbb{N}$ rather than to an arbitrary Peano system.
 \end{axiom}
 \end{axiombox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+1 \in \mathbb{N}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The distinguished first element belongs to the canonical natural-number
+system. This is the base object from which successor iteration begins.
+\end{remark*}
+
 \NoLocalDependencies
 
 \begin{axiombox}{Axiom (N2, Successor Closure)}
@@ -62,6 +79,17 @@ point directly to $\mathbb{N}$ rather than to an arbitrary Peano system.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n \in \mathbb{N}\;(S(n)\in \mathbb{N}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The successor operation is closed on the natural numbers: applying successor
+to a natural number produces another natural number.
+\end{remark*}
 
 \NoLocalDependencies
 
@@ -74,6 +102,17 @@ point directly to $\mathbb{N}$ rather than to an arbitrary Peano system.
 \end{axiom}
 \end{axiombox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n \in \mathbb{N}\;(S(n)\ne 1).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The base element is not a successor. This separates the first natural number
+from all elements obtained by stepping forward.
+\end{remark*}
+
 \NoLocalDependencies
 
 \begin{axiombox}{Axiom (N4, Successor Injectivity)}
@@ -84,6 +123,23 @@ point directly to $\mathbb{N}$ rather than to an arbitrary Peano system.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall m,n \in \mathbb{N}\;(S(m)=S(n)\Longrightarrow m=n).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Injective}(S,\mathbb{N},\mathbb{N}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Successor preserves enough information to be cancellable: equal successors
+must have equal predecessors.
+\end{remark*}
 
 \NoLocalDependencies
 
@@ -99,6 +155,26 @@ For every predicate $\varphi$ on $\mathbb{N}$,
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\Bigl(\varphi(1)\land
+\forall n\in\mathbb{N}\;(\varphi(n)\Longrightarrow \varphi(S(n)))\Bigr)
+\Longrightarrow
+\forall n\in\mathbb{N}\;\varphi(n).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{InductionPrinciple}(\mathbb{N},S,1).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Induction says that any predicate containing the base element and closed under
+successor contains every natural number.
+\end{remark*}
 
 \NoLocalDependencies
 \end{topicbox}

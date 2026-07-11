@@ -33,6 +33,12 @@ and $a<_A a' \Longrightarrow \varphi(a)<_B\varphi(a')$.
 \end{aligned}
 \]
 \end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{StructurePreservingMap}(\varphi,A,B,\mathcal{S})
+\]
+means that $\varphi$ preserves the constants, operations, and order comparisons specified by the source structure $\mathcal{S}$.
+\end{remark*}
 \begin{remark*}[Interpretation]
 A structure-preserving map carries the chosen arithmetic and order from $A$
 into $B$ without distortion. The choice of structure matters: the positive
@@ -70,6 +76,12 @@ Let $A$ and $B$ be ordered arithmetic systems. A map $\varphi:A\to B$ is an \emp
 \end{aligned}
 \]
 \end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NumberSystemEmbedding}(\varphi,A,B,\mathcal{S})
+\]
+means that $\varphi$ is injective, preserves the selected structure $\mathcal{S}$, and preserves and reflects the selected order.
+\end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
 \begin{aligned}
@@ -83,7 +95,31 @@ Let $A$ and $B$ be ordered arithmetic systems. A map $\varphi:A\to B$ is an \emp
 \]
 \end{remark*}
 \begin{remark*}[Failure modes]
-An embedding can fail in three structurally distinct ways: it may collapse two distinct elements to the same image (injectivity fails), fail to transport one of the selected constants or operations (algebraic preservation fails), or fail to preserve or reflect a strict-order comparison (order embedding fails).
+\begin{description}
+  \item[Exposition.] An embedding can fail by losing distinctness, by failing to preserve selected algebraic structure, or by failing to preserve and reflect order.
+  \item[Injectivity fails.]
+  \[
+  \exists a,a'\in A\;(a\ne a'\land \varphi(a)=\varphi(a')).
+  \]
+  \[
+  \neg\operatorname{Injective}(\varphi).
+  \]
+  \item[Algebraic preservation fails.]
+  \[
+  \text{$\varphi$ fails to preserve a selected constant or selected operation.}
+  \]
+  \[
+  \neg\operatorname{StructurePreservingMap}(\varphi,A,B,\mathcal{S}).
+  \]
+  \item[Order embedding fails.]
+  \[
+  \exists a,a'\in A\;\bigl((a<_A a'\land \neg(\varphi(a)<_B\varphi(a')))
+  \lor(\varphi(a)<_B\varphi(a')\land \neg(a<_A a'))\bigr).
+  \]
+  \[
+  \neg\operatorname{OrderEmbedding}(\varphi,A,B,<).
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 An embedding is the precise meaning of ``$A$ sits inside $B$.'' It is injective, so distinct elements stay distinct; it preserves the arithmetic and reflects the order, so the copy of $A$ inside $B$ behaves exactly as $A$ did. This is what licenses treating $2\in\mathbb{N}$ and $2\in\mathbb{R}$ as ``the same number.''

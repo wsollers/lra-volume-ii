@@ -12,6 +12,16 @@ is an ordered field.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(\mathbb{Q},+,\cdot,0_{\mathbb{Q}},1_{\mathbb{Q}},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The constructed rational operations and order make $\mathbb{Q}$ an ordered field.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-a-field]{$\mathbb{Q}$ Is
@@ -30,6 +40,18 @@ $\mathbb{Q}$ with its constructed operations and order.
 \hyperref[prf:ordered-field-laws-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(\mathbb{Q},+,\cdot,0_{\mathbb{Q}},1_{\mathbb{Q}},\le)
+\Longrightarrow
+\operatorname{OrderedFieldLaws}(\mathbb{Q},+,\cdot,0_{\mathbb{Q}},1_{\mathbb{Q}},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every generic ordered-field consequence applies to the constructed rational ordered field.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -50,6 +72,16 @@ For every $x\in\mathbb{Q}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Q},\qquad 0_{\mathbb{Q}}\le x^2.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every rational square is nonnegative in the rational order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-an-ordered-field]{$\mathbb{Q}$ Is an Ordered Field}
@@ -68,6 +100,16 @@ In $\mathbb{Q}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{Q}}<1_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The multiplicative identity of $\mathbb{Q}$ is positive.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-an-ordered-field]{$\mathbb{Q}$ Is an Ordered Field}
@@ -82,6 +124,16 @@ Every natural number embedded in $\mathbb{Q}$ is positive.
 \hyperref[prf:natural-numbers-positive-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in\mathbb{N},\qquad 0_{\mathbb{Q}}<\iota(n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Each natural number, viewed as a rational number, is positive.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -103,6 +155,17 @@ For every $x\in\mathbb{Q}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Q},\qquad
+0_{\mathbb{Q}}<x\Longrightarrow 0_{\mathbb{Q}}<x^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a positive rational number is positive.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-an-ordered-field]{$\mathbb{Q}$ Is an Ordered Field}
@@ -122,6 +185,26 @@ a\cdot d<c\cdot b.
 \hyperref[prf:fraction-comparison-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall [a,b],[c,d]\in\mathbb{Q},\qquad
+0_{\mathbb{Q}}<[b,d]
+\Longrightarrow
+\left([a,b]<[c,d]\Longleftrightarrow a\cdot d<c\cdot b\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{FractionComparison}([a,b],[c,d])
+\]
+means that, when the denominator product is positive, the order of the rational classes is equivalent to the corresponding cross-product inequality.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Fractions with positive denominator product can be compared by cross multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

@@ -45,6 +45,12 @@ O:K\times K\to K.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{BinaryOperation}(O,K).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Binary closure is the abstract form behind addition and multiplication.
 \end{remark*}
@@ -94,6 +100,12 @@ $K$ produces an element of $K$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Closed}(O,K).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The operation is internal to the domain.
 \end{remark*}
@@ -125,6 +137,12 @@ a\mathbin{O}b \sim a'\mathbin{O}b'.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RepresentativeIndependent}(O,\sim,A).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 This is the condition that lets an operation descend to equivalence classes.
 \end{remark*}
@@ -153,6 +171,12 @@ a\sim a' \Rightarrow a\mathbin{O}b\sim a'\mathbin{O}b.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftRepresentativeIndependent}(O,\sim,A).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Full respect includes respect in the left coordinate.
 \end{remark*}
@@ -178,6 +202,12 @@ b\sim b' \Longrightarrow a\mathbin{O}b\sim a\mathbin{O}b'.
 \[
 \forall a,b,b'\in A,\,
 b\sim b' \Rightarrow a\mathbin{O}b\sim a\mathbin{O}b'.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightRepresentativeIndependent}(O,\sim,A).
 \]
 \end{remark*}
 
@@ -211,6 +241,14 @@ on $A/{\sim}$ is well-defined if and only if $O$ respects $\sim$.
 \bigl(a\sim a'\land b\sim b'\bigr)
 \Rightarrow
 a\mathbin{O}b\sim a'\mathbin{O}b'.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(\overline{O},A/{\sim})
+\Longleftrightarrow
+\operatorname{RepresentativeIndependent}(O,\sim,A).
 \]
 \end{remark*}
 

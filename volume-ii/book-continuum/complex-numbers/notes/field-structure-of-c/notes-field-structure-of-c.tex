@@ -11,6 +11,16 @@ For all \(z,w,u\in\mathbb{C}\),
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(\mathbb{C},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex addition satisfies the associative law.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-c-classes]{Addition on $\mathbb{C}$-Classes}
@@ -29,6 +39,16 @@ z+w=w+z.
 \hyperref[prf:addition-on-c-commutative]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Commutative}(\mathbb{C},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex addition satisfies the commutative law.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -51,6 +71,16 @@ z+0_{\mathbb{C}}=z.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Identity}(0_{\mathbb{C}},\mathbb{C},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complex zero is the two-sided identity element for complex addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-c-classes]{Addition on $\mathbb{C}$-Classes}
@@ -71,6 +101,17 @@ z+(-z)=0_{\mathbb{C}}
 \hyperref[prf:every-complex-has-additive-inverse]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $z\in\mathbb{C}$,
+\[
+\operatorname{Inverse}(-z,z,0_{\mathbb{C}},\mathbb{C},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every complex number has a two-sided additive inverse.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -93,6 +134,16 @@ For all \(z,w,u\in\mathbb{C}\),
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(\mathbb{C},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex multiplication satisfies the associative law.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-c-classes]{Multiplication on $\mathbb{C}$-Classes}
@@ -112,6 +163,16 @@ zw=wz.
 \hyperref[prf:multiplication-on-c-commutative]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Commutative}(\mathbb{C},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex multiplication satisfies the commutative law.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -134,6 +195,16 @@ z1_{\mathbb{C}}=z.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Identity}(1_{\mathbb{C}},\mathbb{C},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complex one is the two-sided identity element for complex multiplication.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-c-classes]{Multiplication on $\mathbb{C}$-Classes}
@@ -154,6 +225,17 @@ z^{-1}z=1_{\mathbb{C}}.
 \hyperref[prf:every-nonzero-complex-has-inverse]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $z\in\mathbb{C}\setminus\{0_{\mathbb{C}}\}$,
+\[
+\operatorname{Inverse}(z^{-1},z,1_{\mathbb{C}},\mathbb{C},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every nonzero complex number has a two-sided multiplicative inverse.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -179,6 +261,16 @@ z(w+u)=zw+zu
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Distributive}(\mathbb{C},\cdot,+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex multiplication distributes over complex addition on both sides.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-c-classes]{Addition on $\mathbb{C}$-Classes}
@@ -201,6 +293,19 @@ is a field.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsField}
+\bigl(\operatorname{Field}(
+\operatorname{CommutativeRing}(\operatorname{Ring}(
+\mathbb{C},+,\cdot,0_{\mathbb{C}},1_{\mathbb{C}})))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complex carrier, operations, and constants satisfy the field laws.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:addition-on-c-well-defined]{Addition on $\mathbb{C}$ Is Well-Defined}
@@ -222,6 +327,22 @@ i^2=-1_{\mathbb{C}}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+i^2=-1_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The imaginary unit is a complex number whose square is negative one.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The equation \(i^2=-1\) is the structural reason for introducing
+\(\mathbb{C}\). It makes the polynomial \(x^2+1\) have a root, while the field
+operations remain compatible with the real arithmetic already constructed.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:zero-one-i-in-c]{Zero, One, and the Imaginary Unit in $\mathbb{C}$}
@@ -229,12 +350,6 @@ i^2=-1_{\mathbb{C}}.
   \item \hyperref[def:negation-on-c-classes]{Negation on $\mathbb{C}$-Classes}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Explanation]
-The equation \(i^2=-1\) is the structural reason for introducing
-\(\mathbb{C}\). It makes the polynomial \(x^2+1\) have a root, while the field
-operations remain compatible with the real arithmetic already constructed.
-\end{remark*}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[$\mathbb{C}$ Is Not an Ordered Field]
@@ -245,6 +360,31 @@ field and extending the usual order on \(\mathbb{R}\).
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+There is no relation $<_{\mathbb{C}}$ such that
+\[
+\operatorname{IsOrderedField}
+\bigl(\operatorname{OrderedField}(
+\operatorname{Field}(
+\operatorname{CommutativeRing}(\operatorname{Ring}(
+\mathbb{C},+,\cdot,0_{\mathbb{C}},1_{\mathbb{C}}))),
+<_{\mathbb{C}})\bigr)
+\]
+and $<_{\mathbb{C}}$ extends the usual order on $\mathbb{R}$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complex field cannot be equipped with an ordered-field order compatible
+with the real order.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In any ordered field,
+every square is nonnegative. If \(\mathbb{C}\) were an
+ordered field extending the real order, \(i^2\) would be nonnegative. But
+\(i^2=-1\), and \(-1<0\) in the real subfield.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:i-squared-negative-one]{The Imaginary Unit Squares to Negative One}
@@ -252,10 +392,3 @@ field and extending the usual order on \(\mathbb{R}\).
   \item \hyperref[def:real-ordered-field]{Real Ordered Field}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Reason]
-In any ordered field,
- every square is nonnegative. If \(\mathbb{C}\) were an
-ordered field extending the real order, \(i^2\) would be nonnegative. But
-\(i^2=-1\), and \(-1<0\) in the real subfield.
-\end{remark*}

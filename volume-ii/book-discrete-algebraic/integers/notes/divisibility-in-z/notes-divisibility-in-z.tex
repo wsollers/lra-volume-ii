@@ -12,6 +12,24 @@ a\mid b
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{Z},\quad
+a\mid b \Longleftrightarrow \exists c\in\mathbb{Z}\,(b=a\cdot c).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Divides}(a,b,\mathbb{Z},\cdot_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Divisibility records the existence of an integer multiplier from the divisor to
+the dividend.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integers]{Integers}
@@ -33,6 +51,22 @@ a\mid a.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{Z},\quad a\mid a.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Reflexive}(\mid,\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every integer divides itself by multiplication with one.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:divisibility-in-z]{Divisibility in $\mathbb{Z}$}
@@ -51,6 +85,23 @@ a\mid b\land b\mid c \Longrightarrow a\mid c.
 \hyperref[prf:divisibility-transitive-on-z]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c\in\mathbb{Z},\quad
+a\mid b\land b\mid c \Longrightarrow a\mid c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Transitive}(\mid,\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Divisibility chains compose through multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -72,6 +123,22 @@ For every $a\in\mathbb{Z}$,
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{Z},\quad 1_{\mathbb{Z}}\mid a\land (-1_{\mathbb{Z}})\mid a.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UnitsDivideAll}(\mathbb{Z},\cdot_{\mathbb{Z}},1_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The two integer units divide every integer.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:divisibility-in-z]{Divisibility in $\mathbb{Z}$}
@@ -91,6 +158,22 @@ a\mid 0.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{Z},\quad a\mid0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DividesZero}(a,\mathbb{Z},\cdot_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every integer divides zero because zero is absorbing for multiplication.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:divisibility-in-z]{Divisibility in $\mathbb{Z}$}
@@ -108,6 +191,23 @@ a\mid b \Longleftrightarrow (-a)\mid b.
 \hyperref[prf:divisibility-compatible-with-negation-divisor-on-z]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{Z},\quad
+a\mid b \Longleftrightarrow (-a)\mid b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DivisibilityInvariantUnderNegatedDivisor}(\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the sign of the divisor does not change divisibility.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -127,6 +227,23 @@ a\mid b \Longleftrightarrow a\mid(-b).
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{Z},\quad
+a\mid b \Longleftrightarrow a\mid(-b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DivisibilityInvariantUnderNegatedDividend}(\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the sign of the dividend does not change divisibility.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:divisibility-in-z]{Divisibility in $\mathbb{Z}$}
@@ -145,6 +262,23 @@ a\mid b \Longleftrightarrow (-a)\mid b \Longleftrightarrow a\mid(-b).
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{Z},\quad
+a\mid b \Longleftrightarrow (-a)\mid b \Longleftrightarrow a\mid(-b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DivisibilityInvariantUnderNegation}(\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Divisibility is unchanged by negating either input.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[prop:divisibility-compatible-with-negation-divisor-on-z]{Divisibility Is Compatible with Negation on the Divisor}
@@ -162,6 +296,23 @@ a\mid b\land a\mid c \Longrightarrow a\mid(b+c).
 \hyperref[prf:divisibility-compatible-with-addition-on-z]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c\in\mathbb{Z},\quad
+a\mid b\land a\mid c \Longrightarrow a\mid(b+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DivisibilityClosedUnderAddition}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Common divisibility is preserved under addition of dividends.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -182,6 +333,23 @@ a\mid b\land a\mid c \Longrightarrow a\mid(b\cdot x+c\cdot y).
 \hyperref[prf:divisibility-respects-linear-combinations-on-z]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c,x,y\in\mathbb{Z},\quad
+a\mid b\land a\mid c \Longrightarrow a\mid(b\cdot x+c\cdot y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DivisibilityClosedUnderLinearCombinations}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A common divisor divides every integer linear combination of the two dividends.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -204,6 +372,24 @@ An integer $u\in\mathbb{Z}$ is a \emph{unit} if
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Unit}(u)
+\Longleftrightarrow
+u\in\mathbb{Z}\land\exists v\in\mathbb{Z}\,(u\cdot v=1_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Unit}(u,\mathbb{Z},\cdot_{\mathbb{Z}},1_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A unit is an integer with a multiplicative inverse.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integers]{Integers}
@@ -224,6 +410,25 @@ u=1\quad\text{or}\quad u=-1.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall u\in\mathbb{Z},\quad
+\operatorname{Unit}(u,\mathbb{Z},\cdot_{\mathbb{Z}},1_{\mathbb{Z}})
+\Longleftrightarrow
+u=1_{\mathbb{Z}}\lor u=-1_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UnitsExactly}(\mathbb{Z},\{1_{\mathbb{Z}},-1_{\mathbb{Z}}\}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The only invertible integers are one and negative one.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item 
@@ -241,6 +446,26 @@ Integers $a,b\in\mathbb{Z}$ are \emph{associates} if $a=u\cdot b$ for some
 unit $u\in\mathbb{Z}$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associates}(a,b)
+\Longleftrightarrow
+\exists u\in\mathbb{Z},\,
+\operatorname{Unit}(u,\mathbb{Z},\cdot_{\mathbb{Z}},1_{\mathbb{Z}})
+\land a=u\cdot b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associates}(a,b,\mathbb{Z},\cdot_{\mathbb{Z}},1_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Associate integers differ by multiplication by a unit.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -265,6 +490,26 @@ a=bq+r
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{Z},\ b\ne0_{\mathbb{Z}}
+\Longrightarrow
+\exists! q,r\in\mathbb{Z},\,
+a=bq+r\land 0\le r<|b|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DivisionAlgorithm}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}},\le_{\mathbb{Z}},|\cdot|).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Division by a nonzero integer has unique quotient and remainder with bounded
+nonnegative remainder.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:well-ordering-principle]{Well-Ordering Principle}
@@ -282,6 +527,27 @@ A greatest common divisor $\gcd(a,b)$ is the positive common divisor of
 $a$ and $b$ divisible by every other common divisor.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+d=\gcd(a,b)
+\Longleftrightarrow
+0<d\land d\mid a\land d\mid b
+\land
+\forall e\in\mathbb{Z},\ (e\mid a\land e\mid b)\Longrightarrow e\mid d.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{GreatestCommonDivisor}(d,a,b,\mathbb{Z},\mid,<_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A greatest common divisor is the positive common divisor that absorbs all
+other common divisors.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -303,6 +569,23 @@ For $a,b\in\mathbb{Z}$, there exist $x,y\in\mathbb{Z}$ such that
 \hyperref[prf:bezout-identity-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{Z}\,\exists x,y\in\mathbb{Z},\quad
+\gcd(a,b)=a\cdot x+b\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{BezoutIdentity}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}},\gcd).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every greatest common divisor is an integer linear combination of the inputs.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

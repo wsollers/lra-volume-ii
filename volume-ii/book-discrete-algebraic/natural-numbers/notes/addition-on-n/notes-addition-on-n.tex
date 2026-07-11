@@ -56,25 +56,26 @@ x \neq f_m(n).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The definition fails only when the designated value does not agree with the
-unique recursively generated function attached to the fixed left input $m$.
-Once the recursive map $f_m$ is fixed, every incorrect candidate for $m+n$ is
-simply a value of $P$ different from $f_m(n)$.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system. For each } m \in P,
-\text{ let } f_m : P \to P \text{ satisfy}\\
-&f_m(1)=S(m)
-\qquad\text{and}\qquad
-\forall n \in P\;(f_m(S(n))=S(f_m(n))).\\
-&x \neq m+n
-\Longleftrightarrow
-\underbrace{x \neq f_m(n)}_{\text{candidate value disagrees with the recursive output}}.
-\end{aligned}
-\]
+\begin{description}
+  \item[Exposition.]
+  The definition fails only when the designated value does not agree with the
+  unique recursively generated function attached to the fixed left input $m$.
+  Once the recursive map $f_m$ is fixed, every incorrect candidate for $m+n$
+  is simply a value of $P$ different from $f_m(n)$.
+  \item[Quantified failure.]
+  \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system. For each } m \in P,
+  \text{ let } f_m : P \to P \text{ satisfy}\\
+  &f_m(1)=S(m)
+  \qquad\text{and}\qquad
+  \forall n \in P\;(f_m(S(n))=S(f_m(n))).\\
+  &x \neq m+n
+  \Longleftrightarrow
+  \underbrace{x \neq f_m(n)}_{\text{candidate value disagrees with the recursive output}}.
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -125,13 +126,19 @@ defines a unique binary operation on $P$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(+_P,P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The theorem shows that the recursive clauses for addition determine exactly one
 right-input map for each fixed left input. The addition operation is therefore
 not assumed; it is constructed from the successor map by recursion.
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 This is the house-style well-definedness form of addition obtained by applying
 the Peano recursion theorem in the manner of Feferman's construction of
 arithmetic operations \citep{FefermanNumberSystems1964}.
@@ -203,6 +210,12 @@ m+S(n)=S(m+n).
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\
 &\forall m,n \in P\;(m+S(n)=S(m+n)).
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall m,n \in P\;(m+S(n)=S(m+n)).
 \]
 \end{remark*}
 
@@ -292,6 +305,12 @@ Let $(P,S,1)$ be a Peano system. For every $a,b,c \in P$,
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(P,+_P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Associativity shows that successive additions can be regrouped without
 changing the value. This makes longer sums structurally coherent and prepares
@@ -323,6 +342,12 @@ a+b=b+a.
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\
 &\forall a,b \in P\;(a+b=b+a).
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Commutative}(P,+_P).
 \]
 \end{remark*}
 
@@ -371,6 +396,12 @@ b=c.
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\
 &\forall a,b,c \in P\;\bigl((a+b=a+c) \Longrightarrow b=c\bigr).
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftCancellation}(P,+_P).
 \]
 \end{remark*}
 
@@ -423,6 +454,12 @@ b=c.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightCancellation}(P,+_P).
+\]
+\end{remark*}
+
 \begin{remark*}[Contrapositive quantified statement]
 \[
 \begin{aligned}
@@ -458,6 +495,25 @@ b+a=c+a\Longrightarrow b=c.
 \hyperref[prf:addition-cancellation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\forall a,b,c \in P\;
+\bigl((a+b=a+c \Longrightarrow b=c) \land
+(b+a=c+a \Longrightarrow b=c)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftCancellation}(P,+_P)
+\land
+\operatorname{RightCancellation}(P,+_P).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 The left and right cancellation laws together say that adding a common natural
@@ -500,13 +556,19 @@ n \neq m+n.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\forall m,n \in P\;(n \neq m+n).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Because every element of $P$ is at least one successor step, the sum $m+n$
 lies strictly beyond $n$. The theorem rules out additive cycles and is a
 standard tool for order arguments on the natural numbers.
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 This is the house-style form of the additive non-return theorem in
 \citep{FefermanNumberSystems1964}.
 \end{remark*}

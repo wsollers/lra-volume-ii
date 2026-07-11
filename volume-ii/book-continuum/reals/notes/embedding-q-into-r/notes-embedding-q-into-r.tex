@@ -8,6 +8,18 @@ Define $\iota:\mathbb{Q}\to\mathbb{R}$ by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\iota:\mathbb{Q}\to\mathbb{R}
+\quad\text{and}\quad
+\forall q\in\mathbb{Q},\ \iota(q)=q^{\ast}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The canonical embedding sends each rational number to its corresponding rational cut.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rationals]{Rational Numbers}
@@ -28,6 +40,18 @@ The embedding satisfies
 \hyperref[prf:embedding-q-into-r-preserves-zero-one]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\iota(0_{\mathbb{Q}})=0_{\mathbb{R}}
+\land
+\iota(1_{\mathbb{Q}})=1_{\mathbb{R}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rational constants zero and one become the designated real constants under the embedding.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -50,6 +74,24 @@ For all $p,q\in\mathbb{Q}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall p,q\in\mathbb{Q},\qquad
+\iota(p)=\iota(q)\Longrightarrow p=q.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Injective}(\iota)
+\]
+means that $\iota(p)=\iota(q)$ implies $p=q$ for rational inputs $p$ and $q$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Distinct rational numbers determine distinct rational cuts, so the embedding loses no rational information.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:real-chapter-embedding-q-into-r]{Embedding of $\mathbb{Q}$ into $\mathbb{R}$}
@@ -70,6 +112,28 @@ For all $p,q\in\mathbb{Q}$,
 \hyperref[prf:embedding-q-into-r-preserves-arithmetic]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall p,q\in\mathbb{Q},\qquad
+\iota(p+q)=\iota(p)+\iota(q)
+\land
+\iota(p\cdot q)=\iota(p)\cdot\iota(q).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Homomorphism}(\iota,\mathbb{Q},\mathbb{R},+)
+\land
+\operatorname{Homomorphism}(\iota,\mathbb{Q},\mathbb{R},\cdot)
+\]
+means that $\iota$ preserves rational addition and multiplication as real addition and multiplication.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition and multiplication of rational numbers agree with addition and multiplication after passing to rational cuts.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -92,6 +156,24 @@ p\le q \Longleftrightarrow \iota(p)\le\iota(q).
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall p,q\in\mathbb{Q},\qquad
+p\le q \Longleftrightarrow \iota(p)\le\iota(q).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderEmbedding}(\iota,\mathbb{Q},\mathbb{R},\le)
+\]
+means that $\iota$ preserves and reflects the nonstrict order.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The order on rational cuts extends the original rational order exactly.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:real-chapter-embedding-q-into-r]{Embedding of $\mathbb{Q}$ into $\mathbb{R}$}
@@ -108,6 +190,22 @@ The map $\iota$ is an injective order-preserving field homomorphism.
 \hyperref[prf:q-embeds-into-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Injective}(\iota)
+\land
+\operatorname{Homomorphism}(\iota,\mathbb{Q},\mathbb{R},+)
+\land
+\operatorname{Homomorphism}(\iota,\mathbb{Q},\mathbb{R},\cdot)
+\land
+\operatorname{OrderEmbedding}(\iota,\mathbb{Q},\mathbb{R},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rational numbers sit inside the real numbers as an ordered subfield through the rational-cut embedding.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -130,6 +228,18 @@ For all $\alpha,\beta\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R},\qquad
+\alpha<\beta\Longrightarrow
+\exists q\in\mathbb{Q}\,(\alpha<\iota(q)\land \iota(q)<\beta).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every nonempty open interval of real numbers contains an embedded rational number.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:real-chapter-embedding-q-into-r]{Embedding of $\mathbb{Q}$ into $\mathbb{R}$}
@@ -151,6 +261,19 @@ For $\alpha,\beta\in\mathbb{R}$,
 \hyperref[prf:archimedean-property-of-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R},\qquad
+0_{\mathbb{R}}<\alpha
+\Longrightarrow
+\exists n\in\mathbb{N}\,(\beta<\iota(n)\cdot\alpha).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive real multiples of a sufficiently large natural number eventually exceed any fixed real number.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

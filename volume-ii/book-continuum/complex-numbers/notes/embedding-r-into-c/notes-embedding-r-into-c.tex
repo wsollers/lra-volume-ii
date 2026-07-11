@@ -12,6 +12,18 @@ Define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\iota:\mathbb{R}\to\mathbb{C}
+\quad\text{and}\quad
+\forall a\in\mathbb{R},\ \iota(a)=[a,0]_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The canonical embedding sends each real number to the complex class on the real axis with imaginary coordinate zero.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reals]{The Real Numbers}
@@ -27,6 +39,24 @@ If \(\iota(a)=\iota(b)\), then \(a=b\).
 \hyperref[prf:embedding-r-into-c-injective]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R},\qquad
+\iota(a)=\iota(b)\Longrightarrow a=b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Injective}(\iota)
+\]
+means that equal embedded complex classes come from equal real numbers.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real-axis embedding loses no real-number information.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -48,6 +78,28 @@ For all \(a,b\in\mathbb{R}\),
 \hyperref[prf:embedding-r-into-c-preserves-operations]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R},\qquad
+\iota(a+b)=\iota(a)+\iota(b)
+\land
+\iota(a\cdot b)=\iota(a)\cdot\iota(b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Homomorphism}(\iota,\mathbb{R},\mathbb{C},+)
+\land
+\operatorname{Homomorphism}(\iota,\mathbb{R},\mathbb{C},\cdot)
+\]
+means that $\iota$ preserves real addition and multiplication as complex addition and multiplication.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Arithmetic on the real axis agrees with the corresponding complex arithmetic.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -71,16 +123,19 @@ For all \(a,b\in\mathbb{R}\),
 \end{theorem}
 \end{theorembox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:canonical-embedding-r-into-c]{Canonical Embedding of $\mathbb{R}$ into $\mathbb{C}$}
-  \item \hyperref[def:zero-one-i-in-c]{Zero, One, and the Imaginary Unit in $\mathbb{C}$}
-  \item \hyperref[def:zero-in-r]{Zero in $\mathbb{R}$}
-  \item \hyperref[def:one-in-r]{One in $\mathbb{R}$}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+\iota(0_{\mathbb{R}})=0_{\mathbb{C}}
+\land
+\iota(1_{\mathbb{R}})=1_{\mathbb{C}}.
+\]
+\end{remark*}
 
-\begin{remark*}[Identification]
+\begin{remark*}[Interpretation]
+The real zero and one embed as the complex zero and one.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 After these preservation results, it is standard to 
 identify \(a\in\mathbb{R}\)
 with \([a,0]_{\mathbb{C}}\in\mathbb{C}\). Under this convention,
@@ -89,6 +144,15 @@ with \([a,0]_{\mathbb{C}}\in\mathbb{C}\). Under this convention,
 =a+bi.
 \]
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:canonical-embedding-r-into-c]{Canonical Embedding of $\mathbb{R}$ into $\mathbb{C}$}
+  \item \hyperref[def:zero-one-i-in-c]{Zero, One, and the Imaginary Unit in $\mathbb{C}$}
+  \item \hyperref[def:zero-in-r]{Zero in $\mathbb{R}$}
+  \item \hyperref[def:one-in-r]{One in $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Real and Imaginary Parts}
 
@@ -103,6 +167,17 @@ For \(z=[a,b]_{\mathbb{C}}\), define
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall z=[a,b]_{\mathbb{C}}\in\mathbb{C},\qquad
+\operatorname{Re}(z)=a\land \operatorname{Im}(z)=b.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real and imaginary part maps recover the two real coordinates of a complex class.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -123,14 +198,19 @@ are well-defined.
 \end{theorem}
 \end{theorembox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:complex-class-notation]{Complex Class Notation}
-  \item \hyperref[def:reals]{The Real Numbers}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefined}(\operatorname{Re},\mathbb{C},\mathbb{R})
+\land
+\operatorname{WellDefined}(\operatorname{Im},\mathbb{C},\mathbb{R}).
+\]
+\end{remark*}
 
-\begin{remark*}[The completed number-system ladder]
+\begin{remark*}[Interpretation]
+Equivalent representatives of a complex class have the same real and imaginary coordinates.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The construction of \(\mathbb{C}\) completes the standard ladder of number
 systems in this volume:
 \[
@@ -140,3 +220,10 @@ systems in this volume:
 The final step sacrifices order compatibility in exchange for algebraic power:
 \(-1\) now has a square root.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:complex-class-notation]{Complex Class Notation}
+  \item \hyperref[def:reals]{The Real Numbers}
+\end{itemize}
+\end{dependencies}

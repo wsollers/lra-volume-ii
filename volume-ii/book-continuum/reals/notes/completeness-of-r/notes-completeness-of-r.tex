@@ -10,6 +10,31 @@ The set $S$ is bounded above if it has an upper bound in $\mathbb{R}$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{UpperBound}(\gamma,S,\mathbb{R},\le)
+\Longleftrightarrow
+\gamma\in\mathbb{R}\land S\subseteq\mathbb{R}\land
+\forall\alpha\in S\,(\alpha\le\gamma),
+\]
+\[
+\operatorname{BoundedAbove}(S,\mathbb{R},\le)
+\Longleftrightarrow
+\exists\gamma\in\mathbb{R}\,\operatorname{UpperBound}(\gamma,S,\mathbb{R},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UpperBound}(\gamma,S,\mathbb{R},\le)
+\]
+means that $\gamma$ is at least every element of $S$ in the real order.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An upper bound is a real number that lies above all elements of the given real subset.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reals]{The Real Numbers}
@@ -27,6 +52,28 @@ $\sigma\le\gamma$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeastUpperBound}(\sigma,S,\mathbb{R},\le)
+\Longleftrightarrow
+\operatorname{UpperBound}(\sigma,S,\mathbb{R},\le)
+\land
+\forall\gamma\in\mathbb{R}\,
+\left(\operatorname{UpperBound}(\gamma,S,\mathbb{R},\le)\Longrightarrow \sigma\le\gamma\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeastUpperBound}(\sigma,S,\mathbb{R},\le)
+\]
+means that $\sigma$ is the least real upper bound of $S$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The supremum of a set is its smallest real upper bound.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:upper-bound-in-r]{Upper Bound in $\mathbb{R}$}
@@ -42,6 +89,21 @@ nonempty subset of $\mathbb{R}$ that is bounded above has a supremum in
 $\mathbb{R}$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeastUpperBoundProperty}(\mathbb{R},\le)
+\Longleftrightarrow
+\forall S\subseteq\mathbb{R},\,
+\left(S\ne\emptyset\land \operatorname{BoundedAbove}(S,\mathbb{R},\le)\right)
+\Longrightarrow
+\exists\sigma\in\mathbb{R}\,\operatorname{LeastUpperBound}(\sigma,S,\mathbb{R},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Order completeness asserts that every nonempty bounded-above real set has a real supremum.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -64,6 +126,19 @@ is a Dedekind cut.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall S\subseteq\mathbb{R},\qquad
+\left(S\ne\emptyset\land \operatorname{BoundedAbove}(S,\mathbb{R},\le)\right)
+\Longrightarrow
+\operatorname{DedekindCut}\!\left(\bigcup_{\alpha\in S}\alpha\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The union of a nonempty bounded-above family of real cuts is itself a real cut.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:dedekind-cut]{Dedekind Cut}
@@ -84,6 +159,19 @@ upper bound, namely
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall S\subseteq\mathbb{R},\qquad
+\left(S\ne\emptyset\land \operatorname{BoundedAbove}(S,\mathbb{R},\le)\right)
+\Longrightarrow
+\operatorname{LeastUpperBound}\!\left(\bigcup_{\alpha\in S}\alpha,S,\mathbb{R},\le\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For Dedekind cuts, the supremum of a nonempty bounded-above family is the union of its member cuts.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:least-upper-bound-property-on-r]{Least-Upper-Bound Property on $\mathbb{R}$}
@@ -100,6 +188,19 @@ greatest lower bound.
 \hyperref[prf:glb-property-r]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall S\subseteq\mathbb{R},\qquad
+\left(S\ne\emptyset\land \operatorname{BoundedBelow}(S,\mathbb{R},\le)\right)
+\Longrightarrow
+\exists\lambda\in\mathbb{R}\,\operatorname{GreatestLowerBound}(\lambda,S,\mathbb{R},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The least-upper-bound property also yields greatest lower bounds for nonempty bounded-below real sets.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

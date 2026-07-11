@@ -11,6 +11,16 @@ q\cdot q=2_{\mathbb{Q}}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\neg\exists q\in\mathbb{Q}\,(q\cdot q=2_{\mathbb{Q}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+No rational number squares to rational two.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-a-field]{$\mathbb{Q}$ Is 
@@ -32,6 +42,16 @@ S:=\{q\in\mathbb{Q}:0_{\mathbb{Q}}<q\ \text{and}\ q\cdot q<2_{\mathbb{Q}}\}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+S=\{q\in\mathbb{Q}:0_{\mathbb{Q}}<q\land q\cdot q<2_{\mathbb{Q}}\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The gap set consists of positive rational numbers whose square lies below two.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rationals]{Rationals}
@@ -49,6 +69,25 @@ The set $S$ is nonempty and bounded above in $\mathbb{Q}$.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+S\ne\emptyset
+\land
+\exists b\in\mathbb{Q}\,\forall s\in S\,(s\le b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{BoundedAbove}(S,\mathbb{Q},\le)
+\]
+means that some rational number is an upper bound for every element of $S$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The square-two gap set has rational elements and has rational upper bounds.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-an-ordered-field]{$\mathbb{Q}$ Is an Ordered Field}
@@ -63,6 +102,17 @@ The set $S$ has no least upper bound in $\mathbb{Q}$.
 \hyperref[prf:gap-set-no-rational-supremum-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\neg\exists u\in\mathbb{Q}\,
+\operatorname{LeastUpperBound}(u,S,\mathbb{Q},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Although $S$ is bounded above in $\mathbb{Q}$, no rational upper bound is least.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -80,6 +130,26 @@ bounded-above subset of $\mathbb{Q}$ with no supremum in $\mathbb{Q}$.
 \hyperref[prf:q-order-incomplete]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists A\subseteq\mathbb{Q}\,
+\left(A\ne\emptyset
+\land \exists b\in\mathbb{Q}\,\forall a\in A\,(a\le b)
+\land \neg\exists u\in\mathbb{Q}\,\operatorname{LeastUpperBound}(u,A,\mathbb{Q},\le)\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\neg\operatorname{OrderComplete}(\mathbb{Q},\le)
+\]
+means that a nonempty bounded-above subset of $\mathbb{Q}$ can fail to have a rational supremum.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rational ordered field lacks the least-upper-bound property.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -108,6 +178,29 @@ A sequence $(x_n)$ in $\mathbb{Q}$ is Cauchy if
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{CauchySequence}_{\mathbb{Q}}((x_n))
+\Longleftrightarrow
+\forall\varepsilon\in\mathbb{Q}\,
+\left(0_{\mathbb{Q}}<\varepsilon
+\Longrightarrow
+\exists N\in\mathbb{N}\,
+\forall m,n\ge N\,(\left|x_m-x_n\right|<\varepsilon)\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{CauchySequence}_{\mathbb{Q}}((x_n))
+\]
+means that the rational sequence $(x_n)$ is eventually pairwise arbitrarily close in $\mathbb{Q}$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A rational Cauchy sequence has terms that eventually remain within any positive rational tolerance of one another.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rationals]{Rationals}
@@ -134,6 +227,29 @@ A sequence $(x_n)$ in $\mathbb{Q}$ is null if
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{NullSequence}_{\mathbb{Q}}((x_n))
+\Longleftrightarrow
+\forall\varepsilon\in\mathbb{Q}\,
+\left(0_{\mathbb{Q}}<\varepsilon
+\Longrightarrow
+\exists N\in\mathbb{N}\,
+\forall n\ge N\,(\left|x_n\right|<\varepsilon)\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NullSequence}_{\mathbb{Q}}((x_n))
+\]
+means that the rational sequence $(x_n)$ converges to $0_{\mathbb{Q}}$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A null rational sequence eventually lies within every positive rational tolerance of zero.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rationals]{Rationals}
@@ -149,6 +265,25 @@ A convergent sequence in $\mathbb{Q}$ has at most one rational limit.
 \hyperref[prf:rational-limit-unique]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (x_n)\,\forall a,b\in\mathbb{Q},\qquad
+\left(\lim_{n\to\infty}x_n=a\land \lim_{n\to\infty}x_n=b\right)
+\Longrightarrow a=b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UniqueLimit}_{\mathbb{Q}}((x_n))
+\]
+means that any two rational limits of the sequence $(x_n)$ are equal.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A rational sequence cannot converge to two distinct rational limits.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

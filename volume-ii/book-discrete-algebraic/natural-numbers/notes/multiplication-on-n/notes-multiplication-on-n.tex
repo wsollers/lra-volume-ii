@@ -56,25 +56,26 @@ x \neq g_m(n).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The definition fails only when a proposed value for $m \cdot n$ does not agree
-with the recursively generated function attached to the fixed left factor $m$.
-Once $g_m$ is determined, every incorrect candidate product is simply a value
-different from $g_m(n)$.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system. For each } m \in P,
-\text{ let } g_m : P \to P \text{ satisfy}\\
-&g_m(1)=m
-\qquad\text{and}\qquad
-\forall n \in P\;(g_m(S(n))=g_m(n)+m).\\
-&x \neq m \cdot n
-\Longleftrightarrow
-\underbrace{x \neq g_m(n)}_{\text{candidate value disagrees with the recursive output}}.
-\end{aligned}
-\]
+\begin{description}
+  \item[Exposition.]
+  The definition fails only when a proposed value for $m \cdot n$ does not
+  agree with the recursively generated function attached to the fixed left
+  factor $m$. Once $g_m$ is determined, every incorrect candidate product is
+  simply a value different from $g_m(n)$.
+  \item[Quantified failure.]
+  \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system. For each } m \in P,
+  \text{ let } g_m : P \to P \text{ satisfy}\\
+  &g_m(1)=m
+  \qquad\text{and}\qquad
+  \forall n \in P\;(g_m(S(n))=g_m(n)+m).\\
+  &x \neq m \cdot n
+  \Longleftrightarrow
+  \underbrace{x \neq g_m(n)}_{\text{candidate value disagrees with the recursive output}}.
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -126,13 +127,19 @@ defines a unique binary operation on $P$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(\cdot_P,P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The recursive clauses for multiplication determine exactly one right-input map
 for each fixed left input. The multiplication operation is therefore
 constructed from recursion and addition rather than assumed at the outset.
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 This is the house-style well-definedness form of multiplication obtained by
 applying the Peano recursion theorem in the manner of Feferman's construction
 of arithmetic operations \citep{FefermanNumberSystems1964}.
@@ -204,6 +211,12 @@ m \cdot S(n) = (m \cdot n) + m.
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\
 &\forall m,n \in P\;(m \cdot S(n) = (m \cdot n) + m).
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall m,n \in P\;(m \cdot S(n) = (m \cdot n) + m).
 \]
 \end{remark*}
 
@@ -292,6 +305,12 @@ a \cdot (b+c) = (a \cdot b) + (a \cdot c).
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightDistributive}(P,+_P,\cdot_P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Distributivity expresses formally that multiplying by $a$ means repeatedly
 adding copies of $a$, so a sum in the second factor splits into two separate
@@ -328,13 +347,19 @@ Let $(P,S,1)$ be a Peano system. For every $a,b,c \in P$,
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftDistributive}(P,+_P,\cdot_P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The existing distributive law expands a sum in the right factor. This theorem
 expands a sum in the left factor. It follows from right distributivity together
 with commutativity of multiplication.
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 This is the house-style form of Feferman's left distributive law for
 multiplication \citep{FefermanNumberSystems1964}.
 \end{remark*}
@@ -360,6 +385,29 @@ a\cdot(b+c)=(a\cdot b)+(a\cdot c)
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\forall a,b,c \in P\;
+\bigl(a\cdot(b+c)=(a\cdot b)+(a\cdot c)
+\land
+(a+b)\cdot c=(a\cdot c)+(b\cdot c)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Distributive}(P,+_P,\cdot_P).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The two distributive laws together say that multiplication distributes over
+addition regardless of which factor contains the sum.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:multiplication-distributes-over-addition]{Multiplication Distributes Over Addition}
@@ -384,6 +432,12 @@ Let $(P,S,1)$ be a Peano system. For every $a,b,c \in P$,
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\
 &\forall a,b,c \in P\;((a \cdot b) \cdot c = a \cdot (b \cdot c)).
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(P,\cdot_P).
 \]
 \end{remark*}
 
@@ -428,6 +482,12 @@ a \cdot b = b \cdot a.
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\
 &\forall a,b \in P\;(a \cdot b = b \cdot a).
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Commutative}(P,\cdot_P).
 \]
 \end{remark*}
 
@@ -477,6 +537,12 @@ b=c.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftCancellation}(P,\cdot_P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Left cancellation says that multiplying two values by the same natural number
 cannot collapse a genuine difference between them.
@@ -509,6 +575,12 @@ b=c.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightCancellation}(P,\cdot_P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Right cancellation is the symmetric form of multiplicative cancellation. It
 follows from left cancellation together with commutativity of multiplication.
@@ -534,6 +606,31 @@ b\cdot a=c\cdot a\Longrightarrow b=c.
 \hyperref[prf:multiplication-cancellation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\forall a,b,c \in P\;
+\bigl((a\cdot b=a\cdot c \Longrightarrow b=c)
+\land
+(b\cdot a=c\cdot a \Longrightarrow b=c)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftCancellation}(P,\cdot_P)
+\land
+\operatorname{RightCancellation}(P,\cdot_P).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The left and right cancellation laws together say that multiplying by a common
+natural-number factor preserves equality information on either side.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

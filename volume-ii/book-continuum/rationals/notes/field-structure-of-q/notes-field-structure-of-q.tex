@@ -13,6 +13,19 @@ x=0_{\mathbb{Q}}\ \text{or}\ y=0_{\mathbb{Q}}.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+x\cdot y=0_{\mathbb{Q}}
+\Longleftrightarrow
+x=0_{\mathbb{Q}}\lor y=0_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rational field has no nonzero zero divisors.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-a-field]{$\mathbb{Q}$ Is a Field}
@@ -29,6 +42,17 @@ For every $x\in\mathbb{Q}$,
 \hyperref[prf:double-negation-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$,
+\[
+-(-x)=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Applying additive negation twice returns the original rational number.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -49,6 +73,19 @@ x\cdot(-y)=-(x\cdot y).
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+(-x)\cdot y=-(x\cdot y)
+\qquad\text{and}\qquad
+x\cdot(-y)=-(x\cdot y).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Moving one negative sign into a rational product negates the whole product.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-a-field]{$\mathbb{Q}$ Is a Field}
@@ -66,6 +103,18 @@ For all $x,y\in\mathbb{Q}$,
 \hyperref[prf:product-of-negatives-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+(-x)\cdot(-y)=x\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The product of two additive negatives equals the product of the original
+rational numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -87,6 +136,17 @@ x=y.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+x+z=y+z\Longrightarrow x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational addition admits cancellation by a common addend.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-additive-abelian-group]{$\mathbb{Q}$ Is an Additive Abelian Group}
@@ -106,6 +166,19 @@ x=y.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+z\ne 0_{\mathbb{Q}}\land x\cdot z=y\cdot z
+\Longrightarrow
+x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational multiplication admits cancellation by a common nonzero factor.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-a-field]{$\mathbb{Q}$ Is a Field}
@@ -120,6 +193,20 @@ Every additive inverse in $\mathbb{Q}$ is unique.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+\operatorname{Inverse}(y,x,0_{\mathbb{Q}},\mathbb{Q},+)
+\land
+\operatorname{Inverse}(z,x,0_{\mathbb{Q}},\mathbb{Q},+)
+\Longrightarrow y=z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A rational number has at most one additive inverse.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-additive-abelian-group]{$\mathbb{Q}$ Is an Additive Abelian Group}
@@ -133,6 +220,20 @@ Every multiplicative inverse of a nonzero rational number is unique.
 \hyperref[prf:uniqueness-multiplicative-inverse-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$ with $x\ne 0_{\mathbb{Q}}$,
+\[
+\operatorname{Inverse}(y,x,1_{\mathbb{Q}},\mathbb{Q},\cdot)
+\land
+\operatorname{Inverse}(z,x,1_{\mathbb{Q}},\mathbb{Q},\cdot)
+\Longrightarrow y=z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A nonzero rational number has at most one multiplicative inverse.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -150,6 +251,16 @@ In $\mathbb{Q}$,
 \hyperref[prf:inverse-of-one-is-one-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+1_{\mathbb{Q}}^{-1}=1_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of the multiplicative identity is itself.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -170,6 +281,18 @@ For all nonzero $x,y\in\mathbb{Q}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+(x\cdot y)^{-1}=x^{-1}\cdot y^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a product of nonzero rationals is the product of their
+reciprocals.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-a-field]{$\mathbb{Q}$ Is a Field}
@@ -189,6 +312,17 @@ For every nonzero $x\in\mathbb{Q}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+(x^{-1})^{-1}=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking the reciprocal twice returns the original nonzero rational.
+\end{remark*}
+
 \begin{dependencies}
 \NoLocalDependencies
 \end{dependencies}
@@ -207,6 +341,19 @@ x^n:=(x^{-1})^{-n}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For $x\in\mathbb{Q}$ and $n\in\mathbb{Z}$, $x^n$ is the recursive nonnegative
+power when $n\in\mathbb{W}$, and if $x\ne0_{\mathbb{Q}}$ and $n<0$, then
+\[
+x^n=(x^{-1})^{-n}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integer powers of nonzero rationals extend whole-number powers by using
+reciprocals for negative exponents.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:q-is-a-field]{$\mathbb{Q}$ Is a Field}
@@ -224,6 +371,18 @@ x^{m+n}=x^m\cdot x^n.
 \hyperref[prf:exponent-addition-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$ and all
+$m,n\in\mathbb{Z}$,
+\[
+x^{m+n}=x^m\cdot x^n.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For nonzero rationals, adding exponents corresponds to multiplying powers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -244,6 +403,18 @@ and all $m,n\in\mathbb{Z}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$ and all
+$m,n\in\mathbb{Z}$,
+\[
+(x^m)^n=x^{m\cdot n}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For nonzero rationals, raising a power to a power multiplies the exponents.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integer-power-on-q]{Integer Power on $\mathbb{Q}$}
@@ -261,6 +432,18 @@ For all nonzero $x,y\in\mathbb{Q}$ and every $n\in\mathbb{Z}$,
 \hyperref[prf:power-of-product-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$ and every
+$n\in\mathbb{Z}$,
+\[
+(x\cdot y)^n=x^n\cdot y^n.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integer powers distribute over products of nonzero rational numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

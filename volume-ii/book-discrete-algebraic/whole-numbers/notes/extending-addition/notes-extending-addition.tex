@@ -26,6 +26,15 @@ a+_{\mathbb{W}}b=a+_{\mathbb{N}}b.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(+_{\mathbb{W}},\mathbb{W})
+\quad\text{and}\quad
+\operatorname{OperationExtension}
+(+_{\mathbb{W}},+_{\mathbb{N}},\mathbb{N},\mathbb{W}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 If either input is $0$, the new identity clause applies. If both inputs lie in
 $\mathbb{N}$, the old operation is used. Since $0\notin\mathbb{N}$, the
@@ -110,6 +119,17 @@ For every $a\in\mathbb{W}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{W}\;(0+_{\mathbb{W}}a=a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The element $0$ acts as an identity when it is placed on the left side of
+addition on $\mathbb{W}$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:zero-additive-identity-on-w]{Zero Is an Additive Identity on $\mathbb{W}$}
@@ -126,6 +146,17 @@ a+_{\mathbb{W}}0=a.
 \hyperref[prf:right-additive-identity-on-w]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{W}\;(a+_{\mathbb{W}}0=a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The element $0$ acts as an identity when it is placed on the right side of
+addition on $\mathbb{W}$.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -148,6 +179,13 @@ a+_{\mathbb{W}}b=a+_{\mathbb{N}}b.
 \[
 \forall a,b\in\mathbb{N}\;
 \bigl(a+_{\mathbb{W}}b=a+_{\mathbb{N}}b\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OperationExtension}
+(+_{\mathbb{W}},+_{\mathbb{N}},\mathbb{N},\mathbb{W}).
 \]
 \end{remark*}
 
@@ -183,6 +221,12 @@ a+_{\mathbb{W}}(b+_{\mathbb{W}}c).
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(\mathbb{W},+_{\mathbb{W}}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Associativity follows by reducing zero cases to the identity law and reducing
 the positive-positive-positive case to associativity on $\mathbb{N}$.
@@ -213,6 +257,12 @@ a+_{\mathbb{W}}b=b+_{\mathbb{W}}a.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Commutative}(\mathbb{W},+_{\mathbb{W}}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The zero cases are symmetric by definition, and the positive-positive case is
 the commutativity theorem already proved for $\mathbb{N}$.
@@ -240,6 +290,12 @@ a+_{\mathbb{W}}b=a+_{\mathbb{W}}c\Longrightarrow b=c.
 \[
 \forall a,b,c\in\mathbb{W}\;
 \bigl(a+_{\mathbb{W}}b=a+_{\mathbb{W}}c\Longrightarrow b=c\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftCancellation}(\mathbb{W},+_{\mathbb{W}}).
 \]
 \end{remark*}
 

@@ -8,6 +8,25 @@ $a,b\in\mathbb{W}$ with $b<a$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Positive}_{\mathbb{Z}}(x)
+\Longleftrightarrow
+\exists a,b\in\mathbb{W},\ x=[a,b]\land b<a.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Positive}(x,\mathbb{Z},<_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive integers are represented by formal differences whose first coordinate
+is larger than the second.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integer-class-notation]{Integer Class Notation}
@@ -27,6 +46,25 @@ b<a \Longleftrightarrow b'<a'.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+[a,b]=[a',b']
+\Longrightarrow
+\bigl(b<a \Longleftrightarrow b'<a'\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RepresentativeIndependent}(\operatorname{Positive}_{\mathbb{Z}},
+\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positivity is independent of the chosen representative of an integer.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:addition-on-w-cancellation]{Addition on $\mathbb{W}$ Satisfies Cancellation}
@@ -42,6 +80,22 @@ $\mathbb{Z}$.
 \hyperref[prf:positivity-on-z-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedPredicate}(\operatorname{Positive}_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedPredicate}(\operatorname{Positive}_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The positivity test descends from representatives to the integer quotient.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -61,6 +115,25 @@ x<y \quad:\Longleftrightarrow\quad y-x \text{ is positive}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad
+x<_{\mathbb{Z}}y
+\Longleftrightarrow
+\operatorname{Positive}_{\mathbb{Z}}(y-x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{StrictOrderFromPositiveCone}(<_{\mathbb{Z}},\operatorname{Positive}_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict order is induced by positivity of the difference.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:subtraction-on-z]{Subtraction on $\mathbb{Z}$}
@@ -78,6 +151,25 @@ x\le y \quad:\Longleftrightarrow\quad x<y \text{ or } x=y.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad
+x\le_{\mathbb{Z}}y
+\Longleftrightarrow
+x<_{\mathbb{Z}}y\lor x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NonStrictOrderFromStrictOrder}(\le_{\mathbb{Z}},<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The non-strict order is obtained by adjoining equality to the strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
@@ -94,6 +186,23 @@ For all $x,y\in\mathbb{Z}$,
 \hyperref[prf:product-of-positives-is-positive]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad
+0<x\land 0<y \Longrightarrow 0<x\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveConeMultiplicativelyClosed}(\operatorname{Positive}_{\mathbb{Z}},\mathbb{Z},\cdot_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The positive integers are closed under multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -119,6 +228,23 @@ x=[0,n]\text{ for some nonzero }n\in\mathbb{W}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad
+\text{exactly one of }x=[n,0]\ (n\ne0),\ x=[0,0],\ x=[0,n]\ (n\ne0)\text{ holds}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IntegerCanonicalTrichotomy}(\mathbb{Z},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every integer has a unique positive, zero, or negative representative form.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integers]{Integers}
@@ -138,6 +264,26 @@ the two descriptions overlap only at $0_{\mathbb{Z}}$.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad
+0_{\mathbb{Z}}\le x
+\quad\text{or}\quad
+\exists n\in\mathbb{W},\ x=-\iota(n),
+\]
+with overlap only at $0_{\mathbb{Z}}$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{SignDecomposition}(\mathbb{Z},\le_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The canonical form splits integers into nonnegative and negative parts.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:canonical-form-of-integers]{Canonical Form of Integers}
@@ -154,6 +300,24 @@ the set of nonnegative integers.
 \hyperref[prf:image-of-embedding-is-nonnegatives]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{im}(\iota)
+=
+\{x\in\mathbb{Z}:0_{\mathbb{Z}}\le x\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ImageEqualsNonnegativeCone}(\iota,\mathbb{W},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The embedded whole numbers are exactly the nonnegative integers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -175,6 +339,23 @@ holds.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad
+\text{exactly one of }x<0,\ x=0,\ 0<x\text{ holds}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{SignTrichotomy}(\mathbb{Z},<_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every integer has exactly one sign relative to zero.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:canonical-form-of-integers]{Canonical Form of Integers}
@@ -194,6 +375,23 @@ holds.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad
+\text{exactly one of }x<y,\ x=y,\ y<x\text{ holds}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Trichotomous}(<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The strict order compares every pair of integers in exactly one way.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
@@ -211,6 +409,22 @@ For every $x\in\mathbb{Z}$, not $x<x$.
 \hyperref[prf:strict-order-on-z-irreflexive]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad \neg(x<_{\mathbb{Z}}x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Irreflexive}(<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+No integer is strictly less than itself.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -231,6 +445,23 @@ x<y \Longrightarrow \neg(y<x).
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad
+x<_{\mathbb{Z}}y \Longrightarrow \neg(y<_{\mathbb{Z}}x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Asymmetric}(<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict order cannot hold in both directions.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
@@ -250,6 +481,23 @@ x<y\land y<z \Longrightarrow x<z.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+x<y\land y<z \Longrightarrow x<z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Transitive}(<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict integer inequalities compose transitively.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
@@ -266,6 +514,22 @@ For every $x\in\mathbb{Z}$, $x\le x$.
 \hyperref[prf:order-on-z-reflexive]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad x\le_{\mathbb{Z}}x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Reflexive}(\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every integer is less than or equal to itself.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -285,6 +549,23 @@ x\le y\land y\le x \Longrightarrow x=y.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad
+x\le y\land y\le x \Longrightarrow x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Antisymmetric}(\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Mutual non-strict comparison forces equality.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-z]{Order on $\mathbb{Z}$}
@@ -303,6 +584,23 @@ x\le y\land y\le z \Longrightarrow x\le z.
 \hyperref[prf:order-on-z-transitive]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+x\le y\land y\le z \Longrightarrow x\le z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Transitive}(\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Non-strict integer inequalities compose transitively.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -324,6 +622,22 @@ x\le y\text{ or }y\le x.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad x\le y\lor y\le x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Total}(\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every two integers are comparable in the non-strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-z]{Order on $\mathbb{Z}$}
@@ -338,6 +652,28 @@ The ordered pair $(\mathbb{Z},\le)$ is a totally ordered set.
 \hyperref[prf:z-totally-ordered-set]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Reflexive}(\le_{\mathbb{Z}},\mathbb{Z})
+\land
+\operatorname{Antisymmetric}(\le_{\mathbb{Z}},\mathbb{Z})
+\land
+\operatorname{Transitive}(\le_{\mathbb{Z}},\mathbb{Z})
+\land
+\operatorname{Total}(\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{TotalOrder}(\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The non-strict integer order is a total order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -364,6 +700,23 @@ x<y \Longrightarrow z+x<z+y.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+x<y \Longrightarrow z+x<z+y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightMonotone}(+_{\mathbb{Z}},<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Adding a fixed integer on the left preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
@@ -383,6 +736,23 @@ x<y \Longrightarrow x+z<y+z.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+x<y \Longrightarrow x+z<y+z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftMonotone}(+_{\mathbb{Z}},<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Adding a fixed integer on the right preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-addition-preserves-strict-order-on-z]{Left Addition Preserves Strict Order on $\mathbb{Z}$}
@@ -397,6 +767,24 @@ Addition preserves strict order on both sides in $\mathbb{Z}$.
 \hyperref[prf:addition-preserves-strict-order-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftMonotone}(+_{\mathbb{Z}},<_{\mathbb{Z}},\mathbb{Z})
+\quad\text{and}\quad
+\operatorname{RightMonotone}(+_{\mathbb{Z}},<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{MonotoneOperation}(+_{\mathbb{Z}},<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition preserves strict order in both operation slots.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -415,6 +803,23 @@ x\le y \Longrightarrow z+x\le z+y.
 \hyperref[prf:left-addition-preserves-order-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+x\le y \Longrightarrow z+x\le z+y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightMonotone}(+_{\mathbb{Z}},\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Adding a fixed integer on the left preserves non-strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -435,6 +840,23 @@ x\le y \Longrightarrow x+z\le y+z.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+x\le y \Longrightarrow x+z\le y+z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftMonotone}(+_{\mathbb{Z}},\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Adding a fixed integer on the right preserves non-strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-addition-preserves-order-on-z]{Left Addition Preserves Order on $\mathbb{Z}$}
@@ -450,6 +872,24 @@ Addition preserves non-strict order on both sides in $\mathbb{Z}$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftMonotone}(+_{\mathbb{Z}},\le_{\mathbb{Z}},\mathbb{Z})
+\quad\text{and}\quad
+\operatorname{RightMonotone}(+_{\mathbb{Z}},\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{MonotoneOperation}(+_{\mathbb{Z}},\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition preserves non-strict order in both operation slots.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-addition-preserves-order-on-z]{Left Addition Preserves Order on $\mathbb{Z}$}
@@ -464,6 +904,26 @@ Addition by a fixed integer reflects both strict and non-strict order.
 \hyperref[prf:addition-reflects-order-on-z]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\text{For each }z\in\mathbb{Z},\quad
+x+z\le y+z \Longrightarrow x\le y,
+\]
+and the analogous strict-order implication holds.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderReflectingOperation}(+_{\mathbb{Z}},\le_{\mathbb{Z}},\mathbb{Z})
+\quad\text{and}\quad
+\operatorname{OrderReflectingOperation}(+_{\mathbb{Z}},<_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Additive inverses allow cancellation of a fixed summand in order comparisons.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -486,6 +946,23 @@ For all $x,y,z\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+0<z\land x<y \Longrightarrow z\cdot x<z\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveLeftFactorPreservesOrder}(\cdot_{\mathbb{Z}},<_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive left factor preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-z]{Strict Order on $\mathbb{Z}$}
@@ -506,6 +983,23 @@ For all $x,y,z\in\mathbb{Z}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+0<z\land x<y \Longrightarrow x\cdot z<y\cdot z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveRightFactorPreservesOrder}(\cdot_{\mathbb{Z}},<_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive right factor preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-positive-multiplication-preserves-strict-order-on-z]{Left Multiplication by Positives Preserves Strict Order on $\mathbb{Z}$}
@@ -520,6 +1014,24 @@ Multiplication by a positive integer preserves strict order on both sides.
 \hyperref[prf:positive-multiplication-preserves-strict-order-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{PositiveLeftFactorPreservesOrder}(\cdot_{\mathbb{Z}},<_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z})
+\quad\text{and}\quad
+\operatorname{PositiveRightFactorPreservesOrder}(\cdot_{\mathbb{Z}},<_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveFactorPreservesOrder}(\cdot_{\mathbb{Z}},<_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by positive integers preserves strict order on both sides.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -539,6 +1051,23 @@ For all $x,y,z\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+0<z\land x\le y \Longrightarrow z\cdot x\le z\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveLeftFactorPreservesOrder}(\cdot_{\mathbb{Z}},\le_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive left factor preserves non-strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-z]{Order on $\mathbb{Z}$}
@@ -557,6 +1086,23 @@ For all $x,y,z\in\mathbb{Z}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+0<z\land x\le y \Longrightarrow x\cdot z\le y\cdot z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveRightFactorPreservesOrder}(\cdot_{\mathbb{Z}},\le_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive right factor preserves non-strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-positive-multiplication-preserves-order-on-z]{Left Multiplication by Positives Preserves Order on $\mathbb{Z}$}
@@ -571,6 +1117,24 @@ Multiplication by a positive integer preserves non-strict order on both sides.
 \hyperref[prf:positive-multiplication-preserves-order-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{PositiveLeftFactorPreservesOrder}(\cdot_{\mathbb{Z}},\le_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z})
+\quad\text{and}\quad
+\operatorname{PositiveRightFactorPreservesOrder}(\cdot_{\mathbb{Z}},\le_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveFactorPreservesOrder}(\cdot_{\mathbb{Z}},\le_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by positive integers preserves non-strict order on both sides.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -589,6 +1153,23 @@ z<0\land x<y \Longrightarrow z\cdot y<z\cdot x.
 \hyperref[prf:negative-multiplication-reverses-strict-order-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+z<0\land x<y \Longrightarrow z\cdot y<z\cdot x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NegativeFactorReversesOrder}(\cdot_{\mathbb{Z}},<_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a negative integer reverses strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -609,6 +1190,23 @@ z<0\land x\le y \Longrightarrow z\cdot y\le z\cdot x.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in\mathbb{Z},\quad
+z<0\land x\le y \Longrightarrow z\cdot y\le z\cdot x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NegativeFactorReversesOrder}(\cdot_{\mathbb{Z}},\le_{\mathbb{Z}},0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a negative integer reverses non-strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:negative-multiplication-reverses-strict-order-on-z]{Multiplication by Negatives Reverses Strict Order on $\mathbb{Z}$}
@@ -627,6 +1225,22 @@ For all $x,y\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad 0\cdot x=0\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ZeroMultiplicationCollapsesOrder}(\mathbb{Z},\cdot_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by zero collapses all compared inputs to the same product.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:zero-absorption-on-z]{Zero Absorption on $\mathbb{Z}$}
@@ -641,13 +1255,31 @@ For all $x,y\in\mathbb{Z}$,
 \label{def:absolute-value-on-z}
 Define
 \[
-|x|:=\begin{cases}
-x, & 0\le x,\\
--x, & x<0.
-\end{cases}
+|x|=x\quad\text{if }0\le x,
+\qquad
+|x|=-x\quad\text{if }x<0.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(0\le x\Longrightarrow |x|=x)
+\quad\text{and}\quad
+(x<0\Longrightarrow |x|=-x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{AbsoluteValue}(|\cdot|,\mathbb{Z},\le_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute value chooses the nonnegative representative among an integer and its
+additive inverse.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -668,6 +1300,22 @@ For every $x\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad 0\le |x|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NonnegativeValue}(|\cdot|,\mathbb{Z},\le_{\mathbb{Z}},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute values are always nonnegative.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:absolute-value-on-z]{Absolute Value on $\mathbb{Z}$}
@@ -685,6 +1333,22 @@ For every $x\in\mathbb{Z}$,
 \hyperref[prf:absolute-value-zero-iff-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad |x|=0 \Longleftrightarrow x=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ZeroKernel}(|\cdot|,\mathbb{Z},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Only zero has absolute value zero.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -704,6 +1368,22 @@ For every $x\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad |-x|=|x|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{EvenUnderNegation}(|\cdot|,\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute value ignores additive sign.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:absolute-value-on-z]{Absolute Value on $\mathbb{Z}$}
@@ -722,6 +1402,22 @@ For all $x,y\in\mathbb{Z}$,
 \hyperref[prf:absolute-value-multiplicative-on-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad |x\cdot y|=|x|\cdot |y|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Multiplicative}(|\cdot|,\mathbb{Z},\cdot_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute value turns products into products of absolute values.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -743,6 +1439,22 @@ For every $x\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{Z},\quad -|x|\le x\le |x|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{BoundsByAbsoluteValue}(|\cdot|,\mathbb{Z},\le_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An integer lies between the negative and positive forms of its absolute value.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:absolute-value-on-z]{Absolute Value on $\mathbb{Z}$}
@@ -762,6 +1474,22 @@ For all $x,y\in\mathbb{Z}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Z},\quad |x+y|\le |x|+|y|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{TriangleInequality}(|\cdot|,\mathbb{Z},+_{\mathbb{Z}},\le_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute value is subadditive for integer addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:absolute-value-on-z]{Absolute Value on $\mathbb{Z}$}
@@ -779,6 +1507,22 @@ The ordered set $(\mathbb{Z},\le)$ is not a well-order.
 \hyperref[prf:z-is-not-well-ordered]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\neg\operatorname{WellOrder}(\le_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NotWellOrdered}(\mathbb{Z},\le_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The integer order has infinite descending chains, so it is not a well-order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

@@ -8,6 +8,24 @@ x'\mathbin{O}x=e.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+x,x'\in A
+\quad\text{and}\quad
+x'\mathbin{O}x=e.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftInverse}(x',x,e,A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left inverse is a property relative to the identity, carrier, and operation.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -24,6 +42,25 @@ x\mathbin{O}x''=e.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x,x''\in A
+\quad\text{and}\quad
+x\mathbin{O}x''=e.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightInverse}(x'',x,e,A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right inverse is operation-relative and identity-relative, not a standalone
+property of the element.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -44,6 +81,25 @@ x\mathbin{O}y=e.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftInverse}(y,x,e,A,O)
+\quad\text{and}\quad
+\operatorname{RightInverse}(y,x,e,A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Inverse}(y,x,e,A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A two-sided inverse combines the left and right inverse equations for the same
+operation and identity.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:left-inverse]{Left Inverse}
@@ -62,9 +118,29 @@ of the same element are equal.
 
 \begin{remark*}[Standard quantified statement]
 \[
-(x'\mathbin{O}x=e)\land(x\mathbin{O}x''=e)
+\operatorname{Associative}(O,A)
+\land
+\operatorname{Identity}(e,A,O)
+\land
+\operatorname{LeftInverse}(x',x,e,A,O)
+\land
+\operatorname{RightInverse}(x'',x,e,A,O)
 \Longrightarrow x'=x''.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftInverse}(x',x,e,A,O)
+\land
+\operatorname{RightInverse}(x'',x,e,A,O)
+\Longrightarrow x'=x''.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Associativity and a two-sided identity force the two one-sided inverse
+candidates to coincide.
 \end{remark*}
 
 \begin{dependencies}
@@ -84,6 +160,28 @@ In an associative operation with identity, inverses are unique.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(O,A)
+\land
+\operatorname{Identity}(e,A,O)
+\Longrightarrow
+\forall x\in A,\,
+\operatorname{Unique}(\lambda y.\operatorname{Inverse}(y,x,e,A,O)).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UniqueInverse}(A,O,e).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For a fixed associative operation and identity, an element has at most one
+two-sided inverse.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[lem:left-right-inverses-coincide]{Left and Right Inverses Coincide}
@@ -99,6 +197,22 @@ Right solvability means
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A\,\exists z\in A,\ x=y\mathbin{O}z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightSolvable}(A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right solvability says every target can be reached by multiplying on the right.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -116,6 +230,22 @@ Left solvability means
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A\,\exists z\in A,\ x=z\mathbin{O}y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftSolvable}(A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left solvability says every target can be reached by multiplying on the left.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:binary-arithmetic-operation]{Binary Arithmetic Operation}
@@ -128,6 +258,24 @@ Left solvability means
 Two-sided solvability means both left solvability and right solvability hold.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftSolvable}(A,O)
+\quad\text{and}\quad
+\operatorname{RightSolvable}(A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Solvable}(A,O).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two-sided solvability bundles solvability in both input directions.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -144,6 +292,33 @@ equivalent to the existence of inverses.
 \hyperref[prf:solvability-iff-inverses]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(O,A)
+\land
+\operatorname{Identity}(e,A,O)
+\Longrightarrow
+\left(
+\operatorname{Solvable}(A,O)
+\Longleftrightarrow
+\forall x\in A\,\exists y\in A,\operatorname{Inverse}(y,x,e,A,O)
+\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Solvable}(A,O)
+\Longleftrightarrow
+\operatorname{HasInverses}(A,O,e).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Under associativity and identity laws, solving equations is equivalent to
+having inverses.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

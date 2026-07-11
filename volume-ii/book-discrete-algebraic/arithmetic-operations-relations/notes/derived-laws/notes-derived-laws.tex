@@ -9,6 +9,26 @@ When multiplication distributes over addition and $0$ is the additive identity,
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Distributive}(\cdot,+,A)
+\land
+\operatorname{Identity}(0,A,+)
+\Longrightarrow
+\forall a\in A,\ 0\cdot a=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftAbsorbingElement}(0,A,\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The additive identity becomes a left absorbing element for multiplication.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:two-sided-distributivity]{Two-Sided Distributivity}
@@ -27,6 +47,26 @@ a\cdot 0=0.
 \hyperref[prf:right-zero-absorption]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Distributive}(\cdot,+,A)
+\land
+\operatorname{Identity}(0,A,+)
+\Longrightarrow
+\forall a\in A,\ a\cdot 0=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightAbsorbingElement}(0,A,\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The additive identity becomes a right absorbing element for multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -49,6 +89,22 @@ a\cdot 0=0.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in A,\ 0\cdot a=0\ \land\ a\cdot 0=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{AbsorbingElement}(0,A,\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Zero absorption bundles the left and right absorption laws.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[prop:left-zero-absorption]{Left Zero Absorption}
@@ -66,6 +122,22 @@ When multiplication distributes over addition and additive inverses exist,
 \hyperref[prf:left-sign-rule]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in A,\ (-a)\cdot b=-(a\cdot b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftNegationDistributesOverProduct}(A,+,\cdot,0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Moving an additive inverse into the left factor negates the product.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -85,6 +157,22 @@ a\cdot(-b)=-(a\cdot b).
 \hyperref[prf:right-sign-rule]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in A,\ a\cdot(-b)=-(a\cdot b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightNegationDistributesOverProduct}(A,+,\cdot,0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Moving an additive inverse into the right factor negates the product.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -107,6 +195,24 @@ a\cdot(-b)=-(a\cdot b).
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in A,\ (-a)\cdot b=-(a\cdot b)
+\quad\text{and}\quad
+a\cdot(-b)=-(a\cdot b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NegationDistributesOverProduct}(A,+,\cdot,0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The sign rule records the left and right product-negation laws together.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[prop:left-sign-rule]{Left Sign Rule}
@@ -124,6 +230,22 @@ When multiplication distributes over addition and additive inverses exist,
 \hyperref[prf:negative-one-rule]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in A,\ (-1)\cdot a=-a.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NegativeOneActsByNegation}(A,+,\cdot,0,1).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by negative one realizes additive negation.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -143,6 +265,22 @@ When multiplication distributes over addition and additive inverses exist,
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in A,\ (-a)\cdot(-b)=a\cdot b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ProductOfNegativesLaw}(A,+,\cdot,0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two additive sign changes cancel in a product.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[prop:left-sign-rule]{Left Sign Rule}
@@ -158,6 +296,22 @@ element $a\in K$ is a \emph{zero divisor} if there exists a nonzero element
 $b\in K$ such that $ab=0$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+a\in K,\ a\ne 0,\ \exists b\in K,\ b\ne 0 \land ab=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ZeroDivisor}(a,K,\cdot,0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A zero divisor is a nonzero element that annihilates another nonzero element.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -175,6 +329,25 @@ a\cdot b=0 \Longrightarrow a=0 \lor b=0.
 \hyperref[prf:no-zero-divisors]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{NoNonzeroZeroDivisors}(K,\cdot,0)
+\Longrightarrow
+\forall a,b\in K,\ a\cdot b=0 \Rightarrow a=0 \lor b=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NoZeroDivisors}(K,\cdot,0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The absence of nonzero zero divisors turns a zero product into a zero factor
+alternative.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

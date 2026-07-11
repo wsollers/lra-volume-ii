@@ -12,6 +12,18 @@ Define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For every $n\in\mathbb{Z}$,
+\[
+\iota(n)=[n,1_{\mathbb{Z}}].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The integer embedding sends an integer to the rational class with denominator
+one.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rationals]{Rational Numbers}
@@ -30,6 +42,16 @@ The embedding sends integer zero to rational zero:
 \hyperref[prf:embedding-z-into-q-preserves-zero]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\iota(0_{\mathbb{Z}})=0_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The embedding preserves the additive zero constant.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -50,6 +72,16 @@ The embedding sends integer one to rational one:
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\iota(1_{\mathbb{Z}})=1_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The embedding preserves the multiplicative one constant.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-chapter-embedding-z-into-q]{Embedding of $\mathbb{Z}$ into $\mathbb{Q}$}
@@ -68,6 +100,17 @@ For all $m,n\in\mathbb{Z}$,
 \hyperref[prf:embedding-z-into-q-injective]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $m,n\in\mathbb{Z}$,
+\[
+\iota(m)=\iota(n)\Longrightarrow m=n.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Distinct integers remain distinct after embedding into the rationals.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -88,6 +131,17 @@ For all $m,n\in\mathbb{Z}$,
 \hyperref[prf:embedding-z-into-q-preserves-addition]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $m,n\in\mathbb{Z}$,
+\[
+\iota(m+n)=\iota(m)+\iota(n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The embedding preserves addition.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -110,6 +164,17 @@ For all $m,n\in\mathbb{Z}$,
 \hyperref[prf:embedding-z-into-q-preserves-multiplication]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $m,n\in\mathbb{Z}$,
+\[
+\iota(m\cdot n)=\iota(m)\cdot\iota(n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The embedding preserves multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -135,6 +200,20 @@ m\le n
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $m,n\in\mathbb{Z}$,
+\[
+m\le n
+\Longleftrightarrow
+\iota(m)\le\iota(n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The embedding preserves and reflects the integer order inside the rational
+order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-q-classes]{Addition on $\mathbb{Q}$-Classes}
@@ -152,6 +231,23 @@ homomorphism.
 \hyperref[prf:z-embeds-into-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Injective}(\iota)
+\land
+\operatorname{Homomorphism}(\iota,\mathbb{Z},\mathbb{Q},+)
+\land
+\operatorname{Homomorphism}(\iota,\mathbb{Z},\mathbb{Q},\cdot)
+\land
+\operatorname{OrderEmbedding}(\iota,\mathbb{Z},\mathbb{Q},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The map from integers to rationals is an injective structure-preserving
+embedding for the ring operations and order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -178,6 +274,19 @@ x=\iota(m)\cdot \iota(n)^{-1}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$, there exist $m,n\in\mathbb{Z}$ with
+$n\ne0_{\mathbb{Z}}$ such that
+\[
+x=\iota(m)\cdot\iota(n)^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every rational number is a quotient of two embedded integers with nonzero
+denominator.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-class-notation]{Rational Class Notation}
@@ -194,6 +303,16 @@ The image of $\iota:\mathbb{Z}\to\mathbb{Q}$ is a proper subset of
 \hyperref[prf:embedding-z-into-q-not-surjective]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Image}(\iota)\subsetneq\mathbb{Q}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Not every rational number is the image of an integer under the embedding.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

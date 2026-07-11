@@ -17,6 +17,29 @@ p\in\alpha \Longrightarrow \exists r\in\alpha\,(p<r).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{DedekindCut}(\alpha)
+\Longleftrightarrow
+\alpha\subseteq\mathbb{Q}\land \alpha\ne\emptyset\land \alpha\ne\mathbb{Q}
+\land
+\forall p,q\in\mathbb{Q}\,((p\in\alpha\land q<p)\Longrightarrow q\in\alpha)
+\land
+\forall p\in\mathbb{Q}\,(p\in\alpha\Longrightarrow \exists r\in\mathbb{Q}\,(r\in\alpha\land p<r)).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DedekindCut}(\alpha)
+\]
+means that $\alpha$ is a Dedekind cut of $\mathbb{Q}$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A Dedekind cut is a nontrivial downward-closed subset of the rationals with no greatest element.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:density-of-q]{Density of $\mathbb{Q}$}
@@ -32,6 +55,16 @@ The real numbers are the set
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\mathbb{R}=\{\alpha\subseteq\mathbb{Q}:\operatorname{DedekindCut}(\alpha)\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real numbers are constructed as the collection of all Dedekind cuts of rational numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -51,6 +84,17 @@ q^{\ast}:=\{r\in\mathbb{Q}:r<q\}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall q\in\mathbb{Q},\qquad
+q^{\ast}=\{r\in\mathbb{Q}:r<q\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A rational number embeds into the real construction as the cut of all rationals below it.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rationals]{Rational Numbers}
@@ -65,6 +109,16 @@ For every $q\in\mathbb{Q}$, the set $q^{\ast}$ is a Dedekind cut.
 \hyperref[prf:rational-cut-is-a-cut]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall q\in\mathbb{Q},\qquad \operatorname{DedekindCut}(q^{\ast}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every rational cut satisfies the defining cut conditions, so each rational determines a real number.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -86,6 +140,17 @@ Define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{R}}=(0_{\mathbb{Q}})^{\ast}
+=\{r\in\mathbb{Q}:r<0_{\mathbb{Q}}\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real zero is the rational cut determined by rational zero.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-cut]{Rational Cut}
@@ -104,6 +169,17 @@ Define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+1_{\mathbb{R}}=(1_{\mathbb{Q}})^{\ast}
+=\{r\in\mathbb{Q}:r<1_{\mathbb{Q}}\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real one is the rational cut determined by rational one.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-cut]{Rational Cut}
@@ -118,6 +194,16 @@ The cuts $0_{\mathbb{R}}$ and $1_{\mathbb{R}}$ are elements of $\mathbb{R}$.
 \hyperref[prf:zero-one-are-reals]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{R}}\in\mathbb{R}\land 1_{\mathbb{R}}\in\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The designated zero and one cuts are valid real numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -139,6 +225,16 @@ In $\mathbb{R}$,
 \hyperref[prf:zero-not-one-in-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{R}}\ne 1_{\mathbb{R}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real constants inherited from rational zero and one remain distinct.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

@@ -10,6 +10,20 @@ Define addition on representatives by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $(a,b),(c,d)\in\operatorname{Pre}\mathbb{Q}$,
+\[
+[a,b]+[c,d]=[a\cdot d+b\cdot c,\ b\cdot d].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational addition is first defined on prefraction representatives by the
+usual cross-multiplication formula. The subsequent well-definedness theorem
+shows that this representative formula descends to the quotient
+$\mathbb{Q}$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-class-notation]{Rational Class Notation}
@@ -29,6 +43,19 @@ b\cdot d\ne 0_{\mathbb{Z}}.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all $(a,b),(c,d)\in\operatorname{Pre}\mathbb{Q}$,
+\[
+b\ne 0_{\mathbb{Z}}\land d\ne 0_{\mathbb{Z}}
+\Longrightarrow b\cdot d\ne 0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The denominator in the representative formula for rational addition is a
+nonzero integer, so the displayed sum is again a prefraction.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:z-has-no-zero-divisors]{$\mathbb{Z}$ Has No Zero Divisors}
@@ -45,6 +72,20 @@ If $[a,b]=[a',b']$, then
 \hyperref[prf:addition-on-q-respects-left-equivalence]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For all prefractions $(a,b),(a',b'),(c,d)$,
+\[
+[a,b]=[a',b']
+\Longrightarrow
+[a,b]+[c,d]=[a',b']+[c,d].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the left representative within its fraction-equivalence class does
+not change the rational sum.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -65,6 +106,20 @@ If $[c,d]=[c',d']$, then
 \hyperref[prf:addition-on-q-respects-right-equivalence]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For all prefractions $(a,b),(c,d),(c',d')$,
+\[
+[c,d]=[c',d']
+\Longrightarrow
+[a,b]+[c,d]=[a,b]+[c',d'].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the right representative within its fraction-equivalence class does
+not change the rational sum.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -87,6 +142,19 @@ If $[a,b]=[a',b']$ and $[c,d]=[c',d']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all prefractions $(a,b),(a',b'),(c,d),(c',d')$,
+\[
+[a,b]=[a',b']\land [c,d]=[c',d']
+\Longrightarrow
+[a,b]+[c,d]=[a',b']+[c',d'].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition is independent of both representative choices at once.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-q-classes]{Addition on $\mathbb{Q}$}
@@ -103,6 +171,25 @@ $\mathbb{Q}\times\mathbb{Q}\to\mathbb{Q}$.
 \hyperref[prf:addition-on-q-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedBinaryOperation}
+\bigl(+,\operatorname{Quotient}(\operatorname{Pre}\mathbb{Q},\sim_{\mathbb{Q}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}
+\bigl(+,\operatorname{Quotient}(\operatorname{Pre}\mathbb{Q},\sim_{\mathbb{Q}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The representative formula for addition descends to a unique binary operation
+on rational equivalence classes.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -121,6 +208,22 @@ For all $x,y,z\in\mathbb{Q}$,
 \hyperref[prf:addition-on-q-associative]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The well-defined rational addition operation satisfies the associative law.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -143,6 +246,22 @@ x+y=y+x.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Commutative}(\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Commutative}(\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The order of two rational addends does not affect their sum.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-q-classes]{Addition on $\mathbb{Q}$}
@@ -161,6 +280,22 @@ For every $x\in\mathbb{Q}$,
 \hyperref[prf:zero-left-additive-identity-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftIdentity}(0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftIdentity}(0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Zero acts as a left identity for rational addition.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -183,6 +318,22 @@ x+0_{\mathbb{Q}}=x.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{RightIdentity}(0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightIdentity}(0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Zero acts as a right identity for rational addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:zero-left-additive-identity-on-q]{Zero Is a Left Additive Identity on $\mathbb{Q}$}
@@ -203,6 +354,22 @@ x+0_{\mathbb{Q}}=x.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Identity}(0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Identity}(0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Zero is the two-sided identity element for rational addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:zero-left-additive-identity-on-q]{Zero Is a Left Additive Identity on $\mathbb{Q}$}
@@ -222,6 +389,18 @@ Define negation on representatives by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $(a,b)\in\operatorname{Pre}\mathbb{Q}$,
+\[
+-[a,b]=[-a,b].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negation of a rational representative negates the numerator and leaves the
+nonzero denominator unchanged.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-class-notation]{Rational Class Notation}
@@ -240,6 +419,17 @@ If $[a,b]=[a',b']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all prefractions $(a,b),(a',b')$,
+\[
+[a,b]=[a',b']\Longrightarrow -[a,b]=-[a',b'].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negation is independent of the representative chosen for a rational class.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:negation-on-q-classes]{Negation on $\mathbb{Q}$}
@@ -255,6 +445,25 @@ Negation determines a well-defined unary operation $\mathbb{Q}\to\mathbb{Q}$.
 \hyperref[prf:negation-on-q-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedUnaryOperation}
+\bigl(-,\operatorname{Quotient}(\operatorname{Pre}\mathbb{Q},\sim_{\mathbb{Q}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedUnaryOperation}
+\bigl(-,\operatorname{Quotient}(\operatorname{Pre}\mathbb{Q},\sim_{\mathbb{Q}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The representative formula for negation descends to a unique unary operation
+on rational equivalence classes.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -273,6 +482,23 @@ For every $x\in\mathbb{Q}$,
 \hyperref[prf:negation-left-additive-inverse-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$,
+\[
+\operatorname{LeftInverse}(-x,x,0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftInverse}(-x,x,0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The additive negative of a rational number is a left inverse for addition.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -296,6 +522,23 @@ x+(-x)=0_{\mathbb{Q}}.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$,
+\[
+\operatorname{RightInverse}(-x,x,0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightInverse}(-x,x,0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The additive negative of a rational number is a right inverse for addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:negation-left-additive-inverse-on-q]{Negation Gives a Left Additive Inverse on $\mathbb{Q}$}
@@ -315,6 +558,24 @@ y+x=0_{\mathbb{Q}}.
 \hyperref[prf:every-rational-has-additive-inverse]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$, there exists $y\in\mathbb{Q}$ such that
+\[
+\operatorname{Inverse}(y,x,0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall x\in\mathbb{Q}\ \exists y\in\mathbb{Q}
+\operatorname{Inverse}(y,x,0_{\mathbb{Q}},\mathbb{Q},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every rational number has a two-sided additive inverse.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -336,6 +597,17 @@ x-y:=x+(-y).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+x-y=x+(-y).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational subtraction is defined as addition of the additive inverse.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-q-classes]{Addition on $\mathbb{Q}$}
@@ -351,6 +623,23 @@ $\mathbb{Q}\times\mathbb{Q}\to\mathbb{Q}$.
 \hyperref[prf:subtraction-on-q-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedBinaryOperation}(-,\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(-,\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Because rational addition and negation are well defined, subtraction is a
+well-defined binary operation on $\mathbb{Q}$.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -373,6 +662,18 @@ Define multiplication on representatives by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $(a,b),(c,d)\in\operatorname{Pre}\mathbb{Q}$,
+\[
+[a,b]\cdot[c,d]=[a\cdot c,\ b\cdot d].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational multiplication is first defined by multiplying numerators and
+denominators of prefraction representatives.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-class-notation]{Rational Class Notation}
@@ -391,6 +692,19 @@ b\cdot d\ne 0_{\mathbb{Z}}.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all $(a,b),(c,d)\in\operatorname{Pre}\mathbb{Q}$,
+\[
+b\ne 0_{\mathbb{Z}}\land d\ne 0_{\mathbb{Z}}
+\Longrightarrow b\cdot d\ne 0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The denominator in the representative formula for rational multiplication is
+nonzero, so the displayed product is again a prefraction.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:z-has-no-zero-divisors]{$\mathbb{Z}$ Has No Zero Divisors}
@@ -407,6 +721,20 @@ If $[a,b]=[a',b']$, then
 \hyperref[prf:multiplication-on-q-respects-left-equivalence]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For all prefractions $(a,b),(a',b'),(c,d)$,
+\[
+[a,b]=[a',b']
+\Longrightarrow
+[a,b]\cdot[c,d]=[a',b']\cdot[c,d].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the left representative within its fraction-equivalence class does
+not change the rational product.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -428,6 +756,20 @@ If $[c,d]=[c',d']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all prefractions $(a,b),(c,d),(c',d')$,
+\[
+[c,d]=[c',d']
+\Longrightarrow
+[a,b]\cdot[c,d]=[a,b]\cdot[c',d'].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing the right representative within its fraction-equivalence class does
+not change the rational product.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-q-classes]{Multiplication on $\mathbb{Q}$}
@@ -448,6 +790,19 @@ If $[a,b]=[a',b']$ and $[c,d]=[c',d']$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all prefractions $(a,b),(a',b'),(c,d),(c',d')$,
+\[
+[a,b]=[a',b']\land [c,d]=[c',d']
+\Longrightarrow
+[a,b]\cdot[c,d]=[a',b']\cdot[c',d'].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication is independent of both representative choices at once.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-q-classes]{Multiplication on $\mathbb{Q}$}
@@ -466,6 +821,25 @@ $\mathbb{Q}\times\mathbb{Q}\to\mathbb
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedBinaryOperation}
+\bigl(\cdot,\operatorname{Quotient}(\operatorname{Pre}\mathbb{Q},\sim_{\mathbb{Q}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}
+\bigl(\cdot,\operatorname{Quotient}(\operatorname{Pre}\mathbb{Q},\sim_{\mathbb{Q}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The representative formula for multiplication descends to a unique binary
+operation on rational equivalence classes.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-q-classes]{Multiplication on $\mathbb{Q}$}
@@ -483,6 +857,23 @@ For all $x,y,z\in\mathbb{Q}$,
 \hyperref[prf:multiplication-on-q-associative]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Associative}(\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The well-defined rational multiplication operation satisfies the associative
+law.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -504,6 +895,22 @@ x\cdot y=y\cdot x.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Commutative}(\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Commutative}(\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The order of two rational factors does not affect their product.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-q-classes]{Multiplication on $\mathbb{Q}$}
@@ -522,6 +929,22 @@ For every $x\in\mathbb{Q}$,
 \hyperref[prf:one-left-multiplicative-identity-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftIdentity}(1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftIdentity}(1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+One acts as a left identity for rational multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -544,6 +967,22 @@ x\cdot 1_{\mathbb{Q}}=x.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{RightIdentity}(1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightIdentity}(1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+One acts as a right identity for rational multiplication.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:one-left-multiplicative-identity-on-q]{One Is a Left Multiplicative Identity on $\mathbb{Q}$}
@@ -563,6 +1002,22 @@ x\cdot 1_{\mathbb{Q}}=x.
 \hyperref[prf:one-multiplicative-identity-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Identity}(1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Identity}(1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+One is the two-sided identity element for rational multiplication.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -587,6 +1042,20 @@ Thus nonzeroness is independent of the representative.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For every $(a,b)\in\operatorname{Pre}\mathbb{Q}$,
+\[
+[a,b]\ne 0_{\mathbb{Q}}
+\Longleftrightarrow
+a\ne 0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Whether a rational class is nonzero can be checked on the numerator of any
+prefraction representative.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:zero-in-q]{Zero in $\mathbb{Q}$}
@@ -604,6 +1073,18 @@ For $[a,b]\ne 0_{\mathbb{Q}}$, define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $(a,b)\in\operatorname{Pre}\mathbb{Q}$ with $[a,b]\ne 0_{\mathbb{Q}}$,
+\[
+[a,b]^{-1}=[b,a].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a nonzero rational class is represented by swapping the
+numerator and denominator.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-class-notation]{Rational Class Notation}
@@ -620,6 +1101,18 @@ prefraction.
 \hyperref[prf:reciprocal-denominator-nonzero-q]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For every $(a,b)\in\operatorname{Pre}\mathbb{Q}$,
+\[
+[a,b]\ne 0_{\mathbb{Q}}\Longrightarrow (b,a)\in\operatorname{Pre}\mathbb{Q}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal representative has a nonzero denominator exactly because the
+original rational class is nonzero.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -641,6 +1134,20 @@ If $[a,b]=[a',b']$ and $[a,b]\ne 0_{\mathbb{Q}}$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all prefractions $(a,b),(a',b')$,
+\[
+[a,b]=[a',b']\land [a,b]\ne 0_{\mathbb{Q}}
+\Longrightarrow
+[a,b]^{-1}=[a',b']^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Reciprocal is independent of the representative chosen for a nonzero rational
+class.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reciprocal-on-q-classes]{Reciprocal on $\mathbb{Q}$}
@@ -660,6 +1167,25 @@ Reciprocal determines a well-defined map
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedUnaryOperation}
+\bigl((-)^{-1},\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedUnaryOperation}
+\bigl((-)^{-1},\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The representative reciprocal formula descends to a unique unary operation on
+the nonzero rational classes.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reciprocal-on-q-classes]{Reciprocal on $\mathbb{Q}$}
@@ -678,6 +1204,23 @@ x^{-1}\cdot x=1_{\mathbb{Q}}.
 \hyperref[prf:reciprocal-left-multiplicative-inverse-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+\operatorname{LeftInverse}(x^{-1},x,1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftInverse}(x^{-1},x,1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a nonzero rational number is a left multiplicative inverse.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -700,6 +1243,23 @@ x\cdot x^{-1}=1_{\mathbb{Q}}.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+\operatorname{RightInverse}(x^{-1},x,1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightInverse}(x^{-1},x,1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a nonzero rational number is a right multiplicative inverse.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:reciprocal-left-multiplicative-inverse-on-q]{Reciprocal Gives a Left Multiplicative Inverse on $\mathbb{Q}$}
@@ -721,6 +1281,25 @@ y\cdot x=1_{\mathbb{Q}}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$, there exists
+$y\in\mathbb{Q}$ such that
+\[
+\operatorname{Inverse}(y,x,1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}\ \exists y\in\mathbb{Q}
+\operatorname{Inverse}(y,x,1_{\mathbb{Q}},\mathbb{Q},\cdot).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every nonzero rational number has a two-sided multiplicative inverse.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:reciprocal-left-multiplicative-inverse-on-q]{Reciprocal Gives a Left Multiplicative Inverse on $\mathbb{Q}$}
@@ -740,6 +1319,17 @@ x/y:=x\cdot y^{-1}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x\in\mathbb{Q}$ and all $y\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+x/y=x\cdot y^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational division is multiplication by the reciprocal of the nonzero divisor.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-q-classes]{Multiplication on $\mathbb{Q}$}
@@ -757,6 +1347,26 @@ Division determines a well-defined map
 \hyperref[prf:division-on-q-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedBinaryOperation}
+\bigl(/,\mathbb{Q}\times(\mathbb{Q}\setminus\{0_{\mathbb{Q}}\})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}
+\bigl(/,\mathbb{Q}\times(\mathbb{Q}\setminus\{0_{\mathbb{Q}}\})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Because multiplication and reciprocal are well defined, division gives a
+unique rational value for each rational numerator and nonzero rational
+denominator.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -779,6 +1389,22 @@ x\cdot(y+z)=x\cdot y+x\cdot z.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftDistributive}(\mathbb{Q},\cdot,+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftDistributive}(\mathbb{Q},\cdot,+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational multiplication distributes over rational addition on the left.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-q-classes]{Addition on $\mathbb{Q}$}
@@ -800,6 +1426,22 @@ For all $x,y,z\in\mathbb{Q}$,
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{RightDistributive}(\mathbb{Q},\cdot,+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightDistributive}(\mathbb{Q},\cdot,+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational multiplication distributes over rational addition on the right.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-distributivity-on-q]{Left Distributivity on $\mathbb{Q}$}
@@ -814,6 +1456,22 @@ Multiplication distributes over addition on both sides in $\mathbb{Q}$.
 \hyperref[prf:multiplication-distributes-over-addition-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Distributive}(\mathbb{Q},\cdot,+).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Distributive}(\mathbb{Q},\cdot,+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational multiplication distributes over rational addition on both sides.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -832,6 +1490,31 @@ is an abelian group.
 \hyperref[prf:q-additive-abelian-group]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsAbelianGroup}
+\bigl(\operatorname{AbelianGroup}(
+\operatorname{Group}(\operatorname{Monoid}(
+\operatorname{Semigroup}(\operatorname{Magma}(\mathbb{Q},+)),
+0_{\mathbb{Q}})))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsAbelianGroup}
+\bigl(\operatorname{AbelianGroup}(
+\operatorname{Group}(\operatorname{Monoid}(
+\operatorname{Semigroup}(\operatorname{Magma}(\mathbb{Q},+)),
+0_{\mathbb{Q}})))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The additive rational structure packages closure, associativity, zero, additive
+inverses, and commutativity as an abelian group.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -853,6 +1536,33 @@ group.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsAbelianGroup}
+\bigl(\operatorname{AbelianGroup}(
+\operatorname{Group}(\operatorname{Monoid}(
+\operatorname{Semigroup}(\operatorname{Magma}(
+\mathbb{Q}\setminus\{0_{\mathbb{Q}}\},\cdot)),
+1_{\mathbb{Q}})))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsAbelianGroup}
+\bigl(\operatorname{AbelianGroup}(
+\operatorname{Group}(\operatorname{Monoid}(
+\operatorname{Semigroup}(\operatorname{Magma}(
+\mathbb{Q}\setminus\{0_{\mathbb{Q}}\},\cdot)),
+1_{\mathbb{Q}})))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The nonzero rational classes form an abelian group under multiplication with
+unit $1_{\mathbb{Q}}$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
 \item \hyperref[def:multiplication-on-q-classes]{Multiplication on $\mathbb{Q}$}
@@ -872,6 +1582,30 @@ The structure $(\mathbb{Q},+,\cdot,0_{\mathbb{Q}},1_{\mathbb{Q}})$ is a field.
 \hyperref[prf:q-is-a-field]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsField}
+\bigl(\operatorname{Field}(
+\operatorname{CommutativeRing}(\operatorname{Ring}(
+\mathbb{Q},+,\cdot,0_{\mathbb{Q}},1_{\mathbb{Q}})))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsField}
+\bigl(\operatorname{Field}(
+\operatorname{CommutativeRing}(\operatorname{Ring}(
+\mathbb{Q},+,\cdot,0_{\mathbb{Q}},1_{\mathbb{Q}})))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rational operations and constants assemble into a field: addition is an
+abelian group, nonzero multiplication is an abelian group, multiplication
+distributes over addition, and zero is distinct from one.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

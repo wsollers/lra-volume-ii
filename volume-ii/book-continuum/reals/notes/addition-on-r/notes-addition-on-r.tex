@@ -8,6 +8,18 @@ For cuts $\alpha,\beta\in\mathbb{R}$, define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all cuts $\alpha,\beta\in\mathbb{R}$,
+\[
+\alpha+\beta=\{p+q:p\in\alpha,\ q\in\beta\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition of real cuts is defined pointwise from rational sums of elements in
+the two cuts.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reals]{The Real Numbers}
@@ -22,6 +34,17 @@ If $\alpha,\beta\in\mathbb{R}$, then $\alpha+\beta$ is a Dedekind cut.
 \hyperref[prf:sum-of-cuts-is-a-cut]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For all $\alpha,\beta\in\mathbb{R}$,
+\[
+\alpha+\beta\in\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The pointwise sum of two Dedekind cuts is again a Dedekind cut.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -42,6 +65,16 @@ For all $\alpha,\beta,\gamma\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Associative}(\mathbb{R},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Real addition satisfies the associative law.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
@@ -60,6 +93,16 @@ For all $\alpha,\beta\in\mathbb{R}$,
 \hyperref[prf:addition-on-r-commutative]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Commutative}(\mathbb{R},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Real addition satisfies the commutative law.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -80,6 +123,16 @@ For every $\alpha\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Identity}(0_{\mathbb{R}},\mathbb{R},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real zero cut is the two-sided identity for real addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
@@ -98,6 +151,18 @@ For $\alpha\in\mathbb{R}$, define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}$,
+\[
+-\alpha=\{p\in\mathbb{Q}:\exists r\in\mathbb{Q}\,(r>0\land -p-r\notin\alpha)\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The negative cut consists of rationals lying safely below the reflected
+complement of $\alpha$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reals]{The Real Numbers}
@@ -114,6 +179,17 @@ If $\alpha\in\mathbb{R}$, then $-\alpha$ is a Dedekind cut.
 \hyperref[prf:negation-of-cut-is-a-cut]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}$,
+\[
+-\alpha\in\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The cut-theoretic negation construction produces another Dedekind cut.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -134,6 +210,17 @@ For every $\alpha\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $\alpha\in\mathbb{R}$,
+\[
+\operatorname{RightInverse}(-\alpha,\alpha,0_{\mathbb{R}},\mathbb{R},+).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The negation of a real cut is an additive inverse for real addition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
@@ -151,6 +238,20 @@ The structure
 \hyperref[prf:r-additive-abelian-group]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsAbelianGroup}
+\bigl(\operatorname{AbelianGroup}(
+\operatorname{Group}(\operatorname{Monoid}(
+\operatorname{Semigroup}(\operatorname{Magma}(\mathbb{R},+)),
+0_{\mathbb{R}})))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real numbers under addition, with zero as identity, form an abelian group.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -171,6 +272,17 @@ For cuts $\alpha,\beta\in\mathbb{R}$, define
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For all $\alpha,\beta\in\mathbb{R}$,
+\[
+\alpha-\beta=\alpha+(-\beta).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Real subtraction is defined as addition of the additive inverse.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

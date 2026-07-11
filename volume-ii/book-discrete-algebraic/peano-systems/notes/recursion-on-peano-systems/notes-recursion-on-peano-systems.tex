@@ -193,21 +193,25 @@ for $(P,S,1)$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Iterator data fails if the proposed value collection is not a set, if the
-initial value does not lie in the value set, or if the proposed update rule is
-not a self-map of the value set.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\[
-\begin{aligned}
-&(W,c,g) \text{ is not iterator data for } (P,S,1)\\
-\Longleftrightarrow\;&
-\underbrace{W \text{ is not a set}}_{\text{no value set}}\\
-&\lor \underbrace{c\notin W}_{\text{invalid initial value}}\\
-&\lor \underbrace{g \text{ is not a function } W\to W}_{\text{invalid update rule}}.
-\end{aligned}
-\]
+\begin{description}
+  \item[Exposition.]
+  Iterator data fails if the proposed value collection is not a set, if the
+  initial value does not lie in the value set, or if the proposed update rule
+  is not a self-map of the value set.
+  \item[Invalid data.]
+  \[
+  \neg\operatorname{IteratorData}(W,c,g).
+  \]
+  \[
+  \begin{aligned}
+  &(W,c,g) \text{ is not iterator data for } (P,S,1)\\
+  \Longleftrightarrow\;&
+  \underbrace{W \text{ is not a set}}_{\text{no value set}}\\
+  &\lor \underbrace{c\notin W}_{\text{invalid initial value}}\\
+  &\lor \underbrace{g \text{ is not a function } W\to W}_{\text{invalid update rule}}.
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -280,21 +284,26 @@ R\not\subseteq P\times W
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-An iterator relation fails if it is not a relation inside $P\times W$, if it
-omits the required base pair, or if it is not closed under the iterator step.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\[
-\begin{aligned}
-R \text{ is not an iterator relation for } (W,c,g)
-\Longleftrightarrow\;&
-\underbrace{R\not\subseteq P\times W}_{\text{wrong ambient relation}}\\
-&\lor \underbrace{(1,c)\notin R}_{\text{base pair missing}}\\
-&\lor \underbrace{\exists n\in P\;\exists w\in W\;
-\bigl((n,w)\in R\land (S(n),g(w))\notin R\bigr)}_{\text{step closure fails}}.
-\end{aligned}
-\]
+\begin{description}
+  \item[Exposition.]
+  An iterator relation fails if it is not a relation inside $P\times W$, if
+  it omits the required base pair, or if it is not closed under the iterator
+  step.
+  \item[Invalid relation.]
+  \[
+  \neg\operatorname{IteratorRelation}(R,(P,S,1),W,c,g).
+  \]
+  \[
+  \begin{aligned}
+  R \text{ is not an iterator relation for } (W,c,g)
+  \Longleftrightarrow\;&
+  \underbrace{R\not\subseteq P\times W}_{\text{wrong ambient relation}}\\
+  &\lor \underbrace{(1,c)\notin R}_{\text{base pair missing}}\\
+  &\lor \underbrace{\exists n\in P\;\exists w\in W\;
+  \bigl((n,w)\in R\land (S(n),g(w))\notin R\bigr)}_{\text{step closure fails}}.
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -374,9 +383,22 @@ Then the definition says
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A pair fails to belong to the minimal iterator relation exactly when some
-iterator relation omits that pair. Such a pair is not forced by the base and
-successor-closure clauses.
+\begin{description}
+  \item[Exposition.]
+  A pair fails to belong to the minimal iterator relation exactly when some
+  iterator relation omits that pair. Such a pair is not forced by the base and
+  successor-closure clauses.
+  \item[Omitted pair.]
+  \[
+  \neg (n,w)\in R^*.
+  \]
+  \[
+  (n,w)\notin R^*
+  \Longleftrightarrow
+  \exists R\subseteq P\times W\;
+  \bigl(R \text{ is an iterator relation for } (W,c,g)\land (n,w)\notin R\bigr).
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -474,8 +496,19 @@ $(n,w_1)\in R^*$, then $w_0=w_1$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Forced value uniqueness fails exactly when one stage is assigned two distinct
-values by the minimal iterator relation.
+\begin{description}
+  \item[Exposition.]
+  Forced value uniqueness fails exactly when one stage is assigned two
+  distinct values by the minimal iterator relation.
+  \item[Two forced values.]
+  \[
+  \neg\operatorname{FunctionalRelation}(R^*,P,W).
+  \]
+  \[
+  \exists n\in P\;\exists w_0,w_1\in W\;
+  \bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr).
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
@@ -572,8 +605,25 @@ theorem minimal_iterator_relation_deterministic
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Determinism fails exactly when a single stage has two distinct values in the
-minimal iterator relation.
+\begin{description}
+  \item[Exposition.]
+  Determinism fails exactly when a single stage has two distinct values in the
+  minimal iterator relation.
+  \item[Two values.]
+  \[
+  \neg\operatorname{FunctionalRelation}(R^*,P,W).
+  \]
+  \[
+  \exists n\in P\;\exists w_0,w_1\in W\;
+  \bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr).
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Determinism says the minimal iterator relation is functional at every stage.
+This repackages forced-value uniqueness in the at-most-one form needed to
+extract a function from the relation.
 \end{remark*}
 
 \begin{dependencies}
@@ -645,11 +695,21 @@ theorem minimal_iterator_relation_complete
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Completeness fails exactly when some stage of $P$ receives no value in the
-minimal iterator relation.
+\begin{description}
+  \item[Exposition.]
+  Completeness fails exactly when some stage of $P$ receives no value in the
+  minimal iterator relation.
+  \item[Missing value.]
+  \[
+  \neg\operatorname{TotalRelation}(R^*,P,W).
+  \]
+  \[
+  \exists n\in P\;\forall w\in W\;((n,w)\notin R^*).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 This is the totality half of Feferman's minimal-relation construction for
 recursive definition: after determinacy gives at most one value at each stage,
 completeness gives at least one value at each stage
@@ -716,8 +776,27 @@ f(1)=c\land h(1)=c\\
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Uniqueness fails exactly when two distinct functions satisfy the same base
-clause and the same successor clause.
+\begin{description}
+  \item[Exposition.]
+  Uniqueness fails exactly when two distinct functions satisfy the same base
+  clause and the same successor clause.
+  \item[Two iterator functions.]
+  \[
+  \neg\forall f,h:P\to W\;
+  \bigl(\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
+  \land \operatorname{IteratorFunction}(h,(P,S,1),W,c,g)
+  \Longrightarrow f=h\bigr).
+  \]
+  \[
+  \begin{aligned}
+  \exists f,h:P\to W\;\Bigl(&
+  f(1)=c\land h(1)=c\\
+  &\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+  &\land \forall n\in P\;(h(S(n))=g(h(n)))
+  \land f\neq h\Bigr).
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
@@ -781,8 +860,20 @@ f(1)=c
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Existence fails exactly when every candidate function misses the base value or
-misses the recursive successor equation at some stage.
+\begin{description}
+  \item[Exposition.]
+  Existence fails exactly when every candidate function misses the base value
+  or misses the recursive successor equation at some stage.
+  \item[No iterator function.]
+  \[
+  \neg\exists f:P\to W\;
+  \operatorname{IteratorFunction}(f,(P,S,1),W,c,g).
+  \]
+  \[
+  \forall f:P\to W\;
+  \bigl(f(1)\neq c\lor \exists n\in P\;(f(S(n))\neq g(f(n)))\bigr).
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
@@ -886,25 +977,30 @@ theorem peano_iterator_theorem
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The iterator theorem fails only if no function satisfies the iterator clauses
-or if more than one function satisfies them.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\[
-\begin{aligned}
-&\neg\exists! f:P\to W\;
-\bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr)\\
-\Longleftrightarrow\;&
-\underbrace{\neg\exists f:P\to W\;
-\bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr)}_{\text{existence fails}}\\
-&\lor
-\underbrace{\exists f,h:P\to W\;
-\bigl(f\neq h\land f(1)=c\land h(1)=c
-\land \forall n\in P\;(f(S(n))=g(f(n)))
-\land \forall n\in P\;(h(S(n))=g(h(n)))\bigr)}_{\text{uniqueness fails}}.
-\end{aligned}
-\]
+\begin{description}
+  \item[Exposition.]
+  The iterator theorem fails only if no function satisfies the iterator
+  clauses or if more than one function satisfies them.
+  \item[Existence or uniqueness failure.]
+  \[
+  \neg\exists! f:P\to W\;
+  \operatorname{IteratorFunction}(f,(P,S,1),W,c,g).
+  \]
+  \[
+  \begin{aligned}
+  &\neg\exists! f:P\to W\;
+  \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr)\\
+  \Longleftrightarrow\;&
+  \underbrace{\neg\exists f:P\to W\;
+  \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr)}_{\text{existence fails}}\\
+  &\lor
+  \underbrace{\exists f,h:P\to W\;
+  \bigl(f\neq h\land f(1)=c\land h(1)=c
+  \land \forall n\in P\;(f(S(n))=g(f(n)))
+  \land \forall n\in P\;(h(S(n))=g(h(n)))\bigr)}_{\text{uniqueness fails}}.
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -975,9 +1071,25 @@ f \text{ is not a function } P\to W\\
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A candidate fails to be the iterator-generated function if it is not a
-function from $P$ to $W$, if it has the wrong base value, or if it violates
-the successor clause.
+\begin{description}
+  \item[Exposition.]
+  A candidate fails to be the iterator-generated function if it is not a
+  function from $P$ to $W$, if it has the wrong base value, or if it violates
+  the successor clause.
+  \item[Invalid candidate.]
+  \[
+  \neg\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g).
+  \]
+  \[
+  \begin{aligned}
+  f \text{ is not the iterator-generated function determined by } (W,c,g)
+  \Longleftrightarrow\;&
+  f \text{ is not a function } P\to W\\
+  &\lor f(1)\neq c
+  \lor \exists n\in P\;(f(S(n))\neq g(f(n))).
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1182,8 +1294,24 @@ F(a,1)=c_a\land G(a,1)=c_a\\
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Binary iterator uniqueness fails if two different binary operations satisfy
-the same one-parameter iterator specification for every fixed parameter.
+\begin{description}
+  \item[Exposition.]
+  Binary iterator uniqueness fails if two different binary operations satisfy
+  the same one-parameter iterator specification for every fixed parameter.
+  \item[Two binary operations.]
+  \[
+  \exists a\in A\;\exists n\in P\;(F(a,n)\neq G(a,n)).
+  \]
+  \[
+  \begin{aligned}
+  \exists a\in A\;\exists n\in P\;\Bigl(&
+  F(a,1)=c_a\land G(a,1)=c_a\\
+  &\land F(a,S(n))=g_a(F(a,n))
+  \land G(a,S(n))=g_a(G(a,n))
+  \land F\neq G\Bigr).
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1248,8 +1376,18 @@ Let $(P,S,1)$ be a Peano system and let $W$ be a set. A
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A stage-dependent step rule fails precisely when it is not a well-defined
-function from stage-value pairs back into the value set.
+\begin{description}
+  \item[Exposition.]
+  A stage-dependent step rule fails precisely when it is not a well-defined
+  function from stage-value pairs back into the value set.
+  \item[Invalid step rule.]
+  \[
+  \neg\operatorname{StageDependentStepRule}(\Phi,P,W).
+  \]
+  \[
+  \Phi \text{ is not a function } P\times W\to W.
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1313,9 +1451,25 @@ f \text{ is not a function } P\to W\\
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A candidate fails to be the general recursive function if it has the wrong
-domain or codomain, the wrong base value, or a failed stage-dependent
-successor equation.
+\begin{description}
+  \item[Exposition.]
+  A candidate fails to be the general recursive function if it has the wrong
+  domain or codomain, the wrong base value, or a failed stage-dependent
+  successor equation.
+  \item[Invalid candidate.]
+  \[
+  \neg\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi).
+  \]
+  \[
+  \begin{aligned}
+  f \text{ is not the general recursive function determined by } (W,c,\Phi)
+  \Longleftrightarrow\;&
+  f \text{ is not a function } P\to W\\
+  &\lor f(1)\neq c
+  \lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n))).
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1382,8 +1536,27 @@ f(1)=c\land h(1)=c\\
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Uniqueness of general recursive functions fails if two distinct functions
-satisfy the same base clause and the same stage-dependent successor clause.
+\begin{description}
+  \item[Exposition.]
+  Uniqueness of general recursive functions fails if two distinct functions
+  satisfy the same base clause and the same stage-dependent successor clause.
+  \item[Two recursive functions.]
+  \[
+  \neg\forall f,h:P\to W\;
+  \bigl(\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi)
+  \land \operatorname{GeneralRecursiveFunction}(h,(P,S,1),W,c,\Phi)
+  \Longrightarrow f=h\bigr).
+  \]
+  \[
+  \begin{aligned}
+  \exists f,h:P\to W\;\Bigl(&
+  f(1)=c\land h(1)=c\\
+  &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\\
+  &\land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))
+  \land f\neq h\Bigr).
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
@@ -1461,8 +1634,24 @@ H(S(n))\neq(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n))))\Bigr).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-State encoding fails if every candidate state function has the wrong initial
-state or violates the encoded successor step at some stage.
+\begin{description}
+  \item[Exposition.]
+  State encoding fails if every candidate state function has the wrong initial
+  state or violates the encoded successor step at some stage.
+  \item[No encoded iterator.]
+  \[
+  \neg\exists H:P\to P\times W\;
+  \operatorname{IteratorFunction}(H,(P,S,1),P\times W,(1,c),\Gamma_\Phi).
+  \]
+  \[
+  \begin{aligned}
+  \forall H:P\to P\times W\;\Bigl(&
+  H(1)\neq (1,c)\\
+  &\lor \exists n\in P\;
+  H(S(n))\neq(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n))))\Bigr).
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1515,30 +1704,38 @@ f(1)=c
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-General recursion fails if no function satisfies the general recursive
-clauses or if two distinct functions satisfy them.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\[
-\begin{aligned}
-&\neg\exists! f:P\to W\;
-\bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr)\\
-\Longleftrightarrow\;&
-\underbrace{\neg\exists f:P\to W\;
-\bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr)}_{\text{existence fails}}\\
-&\lor
-\underbrace{\exists f,h:P\to W\;
-\bigl(f\neq h\land f(1)=c\land h(1)=c
-\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))
-\land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))\bigr)}_{\text{uniqueness fails}}.
-\end{aligned}
-\]
+\begin{description}
+  \item[Exposition.]
+  General recursion fails if no function satisfies the general recursive
+  clauses or if two distinct functions satisfy them.
+  \item[Existence or uniqueness failure.]
+  \[
+  \neg\exists! f:P\to W\;
+  \operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi).
+  \]
+  \[
+  \begin{aligned}
+  &\neg\exists! f:P\to W\;
+  \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr)\\
+  \Longleftrightarrow\;&
+  \underbrace{\neg\exists f:P\to W\;
+  \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr)}_{\text{existence fails}}\\
+  &\lor
+  \underbrace{\exists f,h:P\to W\;
+  \bigl(f\neq h\land f(1)=c\land h(1)=c
+  \land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))
+  \land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))\bigr)}_{\text{uniqueness fails}}.
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 General recursion justifies recursive definitions whose successor rule depends
-on the current stage as well as the current value.
+on the current stage as well as the current value. Definitions of addition,
+multiplication, exponentiation, and later arithmetic operations are not part
+of this section. They begin after the recursion principles have been
+established.
 \end{remark*}
 
 \begin{remark*}[Historical note]
@@ -1554,12 +1751,6 @@ definitions; those definitions are deferred to their own sections
   \item \hyperref[thm:general-recursion-by-state-encoding]{General Recursion by State Encoding}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Deferred arithmetic definitions]
-Definitions of addition, multiplication, exponentiation, and later arithmetic
-operations are not part of this section. They begin after the recursion
-principles have been established.
-\end{remark*}
 
 \begin{theorembox}{Theorem (Uniqueness of Peano Systems up to Isomorphism)}
 \begin{theorem}[Uniqueness of Peano Systems up to Isomorphism]
@@ -1607,8 +1798,23 @@ successor-preservation clauses.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Categoricity fails if no structure-preserving bijection exists between the two
-Peano systems or if more than one such bijection exists.
+\begin{description}
+  \item[Exposition.]
+  Categoricity fails if no structure-preserving bijection exists between the
+  two Peano systems or if more than one such bijection exists.
+  \item[Isomorphism failure.]
+  \[
+  \neg\operatorname{Isomorphism}((P,S_P,1_P),(Q,S_Q,1_Q)).
+  \]
+  \[
+  \begin{aligned}
+  &\neg\exists! \theta:P\to Q\;
+  \bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q\\
+  &\qquad\qquad\qquad\land
+  \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1630,4 +1836,3 @@ Theorem 3.5 and Simpson's Peano-system presentation
 \end{itemize}
 \end{dependencies}
 \end{topicbox}
-

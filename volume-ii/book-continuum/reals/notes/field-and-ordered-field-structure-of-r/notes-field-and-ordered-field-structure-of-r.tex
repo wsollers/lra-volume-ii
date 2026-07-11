@@ -7,6 +7,16 @@ is an abelian group.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{AbelianGroup}(\mathbb{R}\setminus\{0_{\mathbb{R}}\},\cdot,1_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The nonzero real numbers form a commutative group under multiplication, with reciprocal as inverse operation.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
 \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
@@ -24,6 +34,16 @@ The structure $(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}})$ is a field.
 \hyperref[prf:r-is-a-field]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsField}(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real numbers carry the field structure built from real addition, multiplication, zero, and one.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -44,14 +64,25 @@ inverses, inverse laws, and exponent laws.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsField}(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}})
+\Longrightarrow
+\operatorname{FieldLaws}(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Once $\mathbb{R}$ is known to be a field, all previously developed generic field consequences specialize to real numbers.
+\end{remark*}
+
 \begin{dependencies}
 \NoLocalDependencies
 \end{dependencies}
 
 \subsection*{Order Compatibility}
 
-\begin{theorembox}{Theore
-m}
+\begin{theorembox}{Theorem}
 \begin{theorem}[Addition Preserves Order on $\mathbb{R}$]
 \label{thm:addition-preserves-order-on-r}
 For all $\alpha,\beta,\gamma\in\mathbb{R}$,
@@ -62,6 +93,21 @@ and the corresponding non-strict statement also holds.
 \hyperref[prf:addition-preserves-order-on-r]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta,\gamma\in\mathbb{R},\qquad
+\alpha<\beta\Longrightarrow \alpha+\gamma<\beta+\gamma,
+\]
+\[
+\forall \alpha,\beta,\gamma\in\mathbb{R},\qquad
+\alpha\le\beta\Longrightarrow \alpha+\gamma\le\beta+\gamma.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Translating both real numbers by the same real number preserves strict and nonstrict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -85,6 +131,19 @@ For all $\alpha,\beta,\gamma\in\mathbb{R}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta,\gamma\in\mathbb{R},\qquad
+(0_{\mathbb{R}}<\gamma\land\alpha<\beta)
+\Longrightarrow
+\gamma\cdot\alpha<\gamma\cdot\beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive real number preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
@@ -94,8 +153,7 @@ For all $\alpha,\beta,\gamma\in\mathbb{R}$,
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theo
-rem}
+\begin{theorembox}{Theorem}
 \begin{theorem}[$\mathbb{R}$ Is an Ordered Field]
 \label{thm:r-is-an-ordered-field}
 The structure $(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}},\le)$ is an
@@ -103,6 +161,16 @@ ordered field.
 \hyperref[prf:r-is-an-ordered-field]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The field structure on $\mathbb{R}$ is compatible with its total order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -121,6 +189,18 @@ Every theorem proved generically for ordered fields holds in $\mathbb{R}$.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsOrderedField}(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}},\le)
+\Longrightarrow
+\operatorname{OrderedFieldLaws}(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+All generic ordered-field theorems specialize to the real ordered field.
+\end{remark*}
+
 \begin{dependencies}
 \NoLocalDependencies
 \end{dependencies}
@@ -132,6 +212,16 @@ The ordered field $\mathbb{R}$ satisfies the least-upper-bound property.
 \hyperref[prf:r-is-complete-ordered-field]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsCompleteOrderedField}(\mathbb{R},+,\cdot,0_{\mathbb{R}},1_{\mathbb{R}},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real numbers are an ordered field with the least-upper-bound property.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

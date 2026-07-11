@@ -11,6 +11,18 @@ Define addition on representatives by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all real coordinates $a,b,c,d\in\mathbb{R}$,
+\[
+[a,b]_{\mathbb{C}}+[c,d]_{\mathbb{C}}
+=[a+c,b+d]_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex addition is defined coordinatewise on representatives.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:complex-class-notation]{Complex Class Notation}
@@ -32,6 +44,23 @@ $[c,d]_{\mathbb{C}}=[c',d']_{\mathbb{C}}$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all real coordinates $a,b,a',b',c,d,c',d'\in\mathbb{R}$,
+\[
+[a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}
+\land
+[c,d]_{\mathbb{C}}=[c',d']_{\mathbb{C}}
+\Longrightarrow
+[a,b]_{\mathbb{C}}+[c,d]_{\mathbb{C}}
+=
+[a',b']_{\mathbb{C}}+[c',d']_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex addition is independent of the chosen coordinate representatives.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:addition-on-c-classes]{Addition on $\mathbb{C}$}
@@ -50,12 +79,20 @@ Addition determines a well-defined binary operation
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Proof sketch]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedBinaryOperation}
+\bigl(+, \operatorname{Quotient}(\mathbb{R}\times\mathbb{R},\sim_{\mathbb{C}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Suppose the input classes are represented in two ways. Coordinate equivalence
 gives \(a=a'\), \(b=b'\), 
 \(c=c'\), and \(d=d'\). Addition in
 \(\mathbb{R}\) gives \(a+c=a'+c'\) and \(b+d=b'+d'\), so the resulting
-complex classes agree.
+complex classes agree. Thus addition descends to a binary operation on
+$\mathbb{C}$.
 \end{remark*}
 
 \begin{dependencies}
@@ -78,6 +115,17 @@ Define negation by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $a,b\in\mathbb{R}$,
+\[
+-[a,b]_{\mathbb{C}}=[-a,-b]_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex negation negates both real coordinates.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:complex-class-notation]{Complex Class Notation}
@@ -96,6 +144,19 @@ If $[a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all $a,b,a',b'\in\mathbb{R}$,
+\[
+[a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}
+\Longrightarrow
+-[a,b]_{\mathbb{C}}=-[a',b']_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex negation is independent of the chosen coordinate representative.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:negation-on-c-classes]{Negation on $\mathbb{C}$-Classes}
@@ -112,6 +173,19 @@ Negation determines a well-defined unary operation $\mathbb{C}\to\mathbb{C}$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedUnaryOperation}
+\bigl(-, \operatorname{Quotient}(\mathbb{R}\times\mathbb{R},\sim_{\mathbb{C}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If \([a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}\), then \(a=a'\) and
+\(b=b'\). Hence \(-a=-a'\) and \(-b=-b'\), so the negated representatives
+determine the same complex class.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -119,12 +193,6 @@ Negation determines a well-defined unary operation $\mathbb{C}\to\mathbb{C}$.
   \item \hyperref[lem:negation-on-c-respects-equivalence]{Negation Respects Complex Coordinate Equivalence}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Proof sketch]
-If \([a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}\), then \(a=a'\) and
-\(b=b'\). Hence \(-a=-a'\) and \(-b=-b'\), so the negated representatives
-determine the same complex class.
-\end{remark*}
 
 \begin{definitionbox}{Definition}
 \begin{definition}[Subtraction on $\mathbb{C}$]
@@ -135,6 +203,17 @@ z-w:=z+(-w).
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For all $z,w\in\mathbb{C}$,
+\[
+z-w=z+(-w).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex subtraction is addition of the additive inverse.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -151,6 +230,17 @@ Subtraction determines a well-defined binary operation
 \hyperref[prf:subtraction-on-c-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedBinaryOperation}(-,\mathbb{C}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Since complex addition and negation are well defined, subtraction is a
+well-defined binary operation on complex numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -174,7 +264,15 @@ Define multiplication on representatives by
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Why this formula]
+\begin{remark*}[Standard quantified statement]
+For all $a,b,c,d\in\mathbb{R}$,
+\[
+[a,b]_{\mathbb{C}}\cdot[c,d]_{\mathbb{C}}
+=[ac-bd,ad+bc]_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The rule is forced by the intended identity \(i^2=-1\):
 \[
 (a+bi)(c+di)=(ac-bd)+(ad+bc)i.
@@ -204,6 +302,24 @@ $[c,d]_{\mathbb{C}}=[c',d']_{\mathbb{C}}$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all real coordinates $a,b,a',b',c,d,c',d'\in\mathbb{R}$,
+\[
+[a,b]_{\mathbb{C}}=[a',b']_{\mathbb{C}}
+\land
+[c,d]_{\mathbb{C}}=[c',d']_{\mathbb{C}}
+\Longrightarrow
+[a,b]_{\mathbb{C}}\cdot[c,d]_{\mathbb{C}}
+=
+[a',b']_{\mathbb{C}}\cdot[c',d']_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex multiplication is independent of the chosen coordinate
+representatives.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:multiplication-on-c-classes]{Multiplication on $\mathbb{C}$-Classes}
@@ -225,7 +341,14 @@ Multiplication determines a well-defined binary operation
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Proof sketch]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedBinaryOperation}
+\bigl(\cdot, \operatorname{Quotient}(\mathbb{R}\times\mathbb{R},\sim_{\mathbb{C}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Changing representatives preserves each coordinate. Therefore the real
 expressions \(ac-bd\) and \(ad+bc\) are unchanged after replacing
 \((a,b)\) by an equivalent prepair and \((c,d)\) by an equivalent prepair.
@@ -252,6 +375,18 @@ For \(z=[a,b]_{\mathbb{C}}\), define its \emph{complex conjugate} by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For every $z=[a,b]_{\mathbb{C}}\in\mathbb{C}$,
+\[
+\overline{z}=[a,-b]_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complex conjugation keeps the real coordinate and negates the imaginary
+coordinate.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:complex-class-notation]{Complex Class Notation}
@@ -268,18 +403,25 @@ Complex conjugation determines a well-defined unary operation
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedUnaryOperation}
+\bigl(\overline{(\cdot)},\operatorname{Quotient}(\mathbb{R}\times\mathbb{R},\sim_{\mathbb{C}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Equivalent prepairs have equal first coordinates and equal second coordinates.
+Keeping the first coordinate and negating the second preserves that equality,
+so conjugation does not depend on the representative.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:complex-conjugation]{Complex Conjugation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Proof sketch]
-Equivalent prepairs have equal first coordinates and equal second coordinates.
-Keeping the first coordinate and negating the second preserves that equality,
-so conjugation does not depend on the representative.
-\end{remark*}
 
 \begin{lemmabox}{Lemma}
 \begin{lemma}[Product with the Con
@@ -293,6 +435,20 @@ Moreover, if \(z\ne 0_{\mathbb{C}}\), then \(a^2+b^2\ne 0\).
 \hyperref[prf:complex-product-with-conjugate]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+For every $z=[a,b]_{\mathbb{C}}\in\mathbb{C}$,
+\[
+z\overline{z}=[a^2+b^2,0]_{\mathbb{C}},
+\qquad
+z\ne 0_{\mathbb{C}}\Longrightarrow a^2+b^2\ne 0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplying a complex number by its conjugate yields a real nonnegative
+coordinate, and this coordinate is nonzero for nonzero complex numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -316,6 +472,20 @@ z^{-1}
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For every $z=[a,b]_{\mathbb{C}}\in\mathbb{C}\setminus\{0_{\mathbb{C}}\}$,
+\[
+z^{-1}
+=
+\left[\frac{a}{a^2+b^2},\frac{-b}{a^2+b^2}\right]_{\mathbb{C}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The inverse of a nonzero complex number is obtained by dividing its conjugate
+coordinates by $a^2+b^2$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:complex-class-notation]{Complex Class Notation}
@@ -332,6 +502,20 @@ Inversion determines a well-defined operation on the nonzero complex numbers.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedUnaryOperation}
+\bigl((-)^{-1},\mathbb{C}\setminus\{0_{\mathbb{C}}\}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If \(z=[a,b]_{\mathbb{C}}\ne0_{\mathbb{C}}\), then \(a\) and \(b\) are not
+both zero, so \(a^2+b^2\ne0\) in \(\mathbb{R}\). Equivalent representatives
+have the same coordinates, hence the same denominator and the same inverse
+coordinates.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -339,10 +523,3 @@ Inversion determines a well-defined operation on the nonzero complex numbers.
   \item \hyperref[lem:complex-product-with-conjugate]{Product with the Conjugate Is Real and Nonnegative}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Proof sketch]
-If \(z=[a,b]_{\mathbb{C}}\ne0_{\mathbb{C}}\), then \(a\) and \(b\) are not
-both zero, so \(a^2+b^2\ne0\) in \(\mathbb{R}\). Equivalent representatives
-have the same coordinates, hence the same denominator and the same inverse
-coordinates.
-\end{remark*}

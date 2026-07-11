@@ -105,13 +105,19 @@ defines a unique binary operation on $P$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{WellDefinedBinaryOperation}(\operatorname{pow}_P,P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The recursive clauses for exponentiation determine exactly one exponent map
 for each fixed base. Exponentiation is therefore constructed from recursion
 and multiplication rather than assumed as a primitive operation.
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 This is the house-style existence-and-uniqueness form of the recursive
 definition of exponentiation in \citep{FefermanNumberSystems1964}.
 \end{remark*}
@@ -151,6 +157,12 @@ a^{m+n} = a^m \cdot a^n.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\forall a,m,n \in P\;(a^{m+n} = a^m \cdot a^n).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Adding exponents corresponds to concatenating the two blocks of repeated
 multiplication. The proof is induction on $n$ using the recursive clause
@@ -179,6 +191,12 @@ Let $(P,S,1)$ be a Peano system. For all $a,b,n \in P$,
 \begin{remark*}[Standard quantified statement]
 \[
 \text{Let } (P,S,1) \text{ be a Peano system.}\quad
+\forall a,b,n \in P\;((a \cdot b)^n = a^n \cdot b^n).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
 \forall a,b,n \in P\;((a \cdot b)^n = a^n \cdot b^n).
 \]
 \end{remark*}
@@ -212,6 +230,12 @@ Let $(P,S,1)$ be a Peano system. For all $a,m,n \in P$,
 \begin{remark*}[Standard quantified statement]
 \[
 \text{Let } (P,S,1) \text{ be a Peano system.}\quad
+\forall a,m,n \in P\;((a^m)^n = a^{m \cdot n}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
 \forall a,m,n \in P\;((a^m)^n = a^{m \cdot n}).
 \]
 \end{remark*}
@@ -262,13 +286,19 @@ a^n<b^n.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderEmbedding}(P,<_{P},P,<_{P},x \mapsto x^n).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A positive exponent does not collapse the strict order between bases. Since
 the exponent is a natural number, exponentiation repeatedly multiplies by
 positive factors and preserves the order information.
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 This is the house-style common-exponent comparison theorem corresponding to
 Feferman's natural-number exponent laws \citep{FefermanNumberSystems1964}.
 \end{remark*}
@@ -303,6 +333,12 @@ a^m<a^n
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\forall a,m,n \in P\;\bigl(a^m<a^n \Longleftrightarrow (1<a \land m<n)\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Strict growth in the exponent occurs exactly when the base is beyond the
 multiplicative identity. If the base is $1$, all powers are $1$; if the base
@@ -310,7 +346,7 @@ is larger than $1$, each successor step in the exponent multiplies by a factor
 that strictly increases the value.
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 This is the house-style common-base comparison theorem corresponding to
 Feferman's exponent-order theorem \citep{FefermanNumberSystems1964}.
 \end{remark*}
@@ -354,11 +390,18 @@ n < 2^n.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\forall n \in P\;(n < 2^n).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The base case $1 < 2 = 2^1$ holds by definition of $2$ and the strict order.
 For the inductive step, assume $n < 2^n$. Then $2^{S(n)} = 2^n \cdot 2$.
-Since $2^n > n \ge 1$, we have $2^n \cdot 2 > n \cdot 2 = n + n > n + 1 = S(n)$,
-where the last step uses that $n \ge 1$ so $n + n > n + 1$. Hence $S(n) < 2^{S(n)}$.
+Since $2^n > n \ge 1$, it follows that
+$2^n \cdot 2 > n \cdot 2 = n + n > n + 1 = S(n)$,
+where the last step uses $n \ge 1$ so $n + n > n + 1$. Hence $S(n) < 2^{S(n)}$.
 The inequality $n < 2^n$ is the threshold that distinguishes the growth regimes
 and reappears in every comparison between polynomial and exponential bounds.
 \end{remark*}

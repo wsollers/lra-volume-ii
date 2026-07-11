@@ -44,19 +44,21 @@ b=a+c.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Strict inequality fails exactly when no additive witness in $P$ carries $a$ to
-$b$. In that case, every nontrivial additive step from $a$ misses $b$.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
-&a \not< b
-\Longleftrightarrow
-\underbrace{\forall c \in P\;(b \neq a+c)}_{\text{every proposed additive witness fails}}.
-\end{aligned}
-\]
+\begin{description}
+  \item[Exposition.]
+  Strict inequality fails exactly when no additive witness in $P$ carries
+  $a$ to $b$. In that case, every nontrivial additive step from $a$ misses
+  $b$.
+  \item[Quantified failure.]
+  \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
+  &a \not< b
+  \Longleftrightarrow
+  \underbrace{\forall c \in P\;(b \neq a+c)}_{\text{every proposed additive witness fails}}.
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -110,22 +112,23 @@ a=b.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The non-strict order fails in exactly two simultaneous ways: $a$ is not
-strictly below $b$, and $a$ is not equal to $b$. Thus $b$ neither lies ahead
-of $a$ nor coincides with it.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
-&a \not\le b
-\Longleftrightarrow
-\underbrace{a \not< b}_{\text{no strict additive witness}}
-\land
-\underbrace{a \neq b}_{\text{equality also fails}}.
-\end{aligned}
-\]
+\begin{description}
+  \item[Exposition.]
+  The non-strict order fails in exactly two simultaneous ways: $a$ is not
+  strictly below $b$, and $a$ is not equal to $b$. Thus $b$ neither lies ahead
+  of $a$ nor coincides with it.
+  \item[Quantified failure.]
+  \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
+  &a \not\le b
+  \Longleftrightarrow
+  \underbrace{a \not< b}_{\text{no strict additive witness}}
+  \land
+  \underbrace{a \neq b}_{\text{equality also fails}}.
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -203,6 +206,12 @@ a \le c.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Transitive}(\leq_P,P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 If $b$ lies at or beyond $a$, and $c$ lies at or beyond $b$, then $c$ also
 lies at or beyond $a$. Transitivity expresses the consistency of additive
@@ -237,6 +246,12 @@ a=b.
 &\forall a,b \in P\;
 \bigl((a \le b \land b \le a) \Longrightarrow a=b\bigr).
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Antisymmetric}(\leq_P,P).
 \]
 \end{remark*}
 
@@ -297,6 +312,12 @@ a+c \le b+c.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderPreservingRightAddition}(P,\leq_P,+_P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Adding the same quantity to two comparable elements does not disturb their
 order. The additive witness for $a \le b$ survives after both sides are shifted
@@ -334,6 +355,12 @@ c+a \le c+b.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderPreservingLeftAddition}(P,\leq_P,+_P).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The same order preservation holds when the common summand is added on the
 left. This is the left-handed form of the additive compatibility law.
@@ -358,6 +385,29 @@ a \le b \Longrightarrow c+a \le c+b.
 \hyperref[prf:addition-preserves-order]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\forall a,b,c \in P\;
+\bigl((a \le b \Longrightarrow a+c \le b+c)
+\land
+(a \le b \Longrightarrow c+a \le c+b)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderCompatible}(P,\leq_P,+_P).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The right and left compatibility laws together say that adding a common
+element preserves order no matter which side carries the common summand.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -396,13 +446,19 @@ k\cdot m<k\cdot n.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderEmbedding}(P,<_{P},P,<_{P},x \mapsto k\cdot x).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Multiplication by a fixed natural number is an order embedding of the natural
 numbers into themselves. It shifts strict inequalities forward without
 collapsing distinct values.
 \end{remark*}
 
-\begin{remark*}[Source alignment]
+\begin{remark*}[Interpretation]
 This is the house-style multiplication-order comparison theorem corresponding
 to Feferman's order laws for products \citep{FefermanNumberSystems1964}.
 \end{remark*}
@@ -447,6 +503,12 @@ S(a) \le b.
 &\forall a,b \in P\;
 \bigl(a<b \Longleftrightarrow S(a) \le b\bigr).
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall a,b \in P\;(a<b \Longleftrightarrow S(a) \le b).
 \]
 \end{remark*}
 
@@ -495,6 +557,12 @@ a<b,\qquad a=b,\qquad b<a.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Trichotomy}(P,<_{P}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Any two elements of a Peano system are linearly comparable: one lies below the
 other, or they coincide. Trichotomy is the theorem that upgrades the additive
@@ -531,6 +599,12 @@ Consequently $\le$ is a total order on $P$.
 \[
 \text{Let } (P,S,1) \text{ be a Peano system.}\quad
 \forall a,b \in P\;(a \le b \lor b \le a).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{TotalRelation}(\leq_P,P).
 \]
 \end{remark*}
 

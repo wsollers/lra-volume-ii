@@ -10,6 +10,20 @@ a\cdot b>0_{\mathbb{Z}}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For every $(a,b)\in\operatorname{Pre}\mathbb{Q}$,
+\[
+[a,b]\in\mathbb{Q}_{>0}
+\Longleftrightarrow
+a\cdot b>0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A rational class is declared positive when the product of numerator and
+denominator in any representative is a positive integer.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-class-notation]{Rational Class Notation}
@@ -31,6 +45,18 @@ c\cdot d>0_{\mathbb{Z}}.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+For all prefractions $(a,b),(c,d)$,
+\[
+[a,b]=[c,d]\Longrightarrow
+\bigl(a\cdot b>0_{\mathbb{Z}}\Longleftrightarrow c\cdot d>0_{\mathbb{Z}}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positivity does not depend on the chosen representative of a rational class.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:z-totally-ordered-set]{$\mathbb{Z}$ Is a Totally Ordered Set}
@@ -46,6 +72,19 @@ $\mathbb{Q}$.
 \hyperref[prf:positivity-on-q-well-defined]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{WellDefinedPredicate}
+\bigl(\mathbb{Q}_{>0},
+\operatorname{Quotient}(\operatorname{Pre}\mathbb{Q},\sim_{\mathbb{Q}})\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The representative positivity test descends to a truth-valued predicate on
+rational equivalence classes.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -65,6 +104,17 @@ x<y \quad:\Longleftrightarrow\quad y-x \text{ is positive}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+x<y \Longleftrightarrow y-x\in\mathbb{Q}_{>0}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict rational order is defined by positivity of the difference $y-x$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:positive-rational]{Positive Rational}
@@ -81,6 +131,17 @@ x\le y \quad:\Longleftrightarrow\quad x<y \text{ or } x=y.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+x\le y \Longleftrightarrow x<y\lor x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The non-strict rational order is the reflexive closure of the strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -101,6 +162,19 @@ For all $x,y\in\mathbb{Q}$,
 \hyperref[prf:product-of-positives-is-positive-q]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<x\land 0_{\mathbb{Q}}<y
+\Longrightarrow
+0_{\mathbb{Q}}<x\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The product of two positive rational numbers is positive.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -124,6 +198,18 @@ holds.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$, exactly one of
+\[
+x<0_{\mathbb{Q}},\qquad x=0_{\mathbb{Q}},\qquad 0_{\mathbb{Q}}<x
+\]
+holds.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every rational number has exactly one sign: negative, zero, or positive.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:positive-rational]{Positive Rational}
@@ -144,6 +230,19 @@ holds.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$, exactly one of
+\[
+x<y,\qquad x=y,\qquad y<x
+\]
+holds.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any two rational numbers are related in exactly one strict-order direction, or
+they are equal.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-q]{Strict Order on $\mathbb{Q}$}
@@ -162,6 +261,17 @@ For every $x\in\mathbb{Q}$, not $x<x$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$,
+\[
+\neg(x<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+No rational number is strictly less than itself.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-q]{Strict Order on $\mathbb{Q}$}
@@ -179,6 +289,18 @@ x<y \Longrightarrow \neg(y<x).
 \hyperref[prf:strict-order-on-q-asymmetric]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+x<y\Longrightarrow \neg(y<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict rational order cannot hold in both directions between the same two
+numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -199,6 +321,17 @@ x
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+x<y\land y<z\Longrightarrow x<z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict rational order is transitive.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-q]{Strict Order on $\mathbb{Q}$}
@@ -213,6 +346,17 @@ For every $x\in\mathbb{Q}$, $x\le x$.
 \hyperref[prf:order-on-q-reflexive]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$,
+\[
+x\le x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The non-strict rational order is reflexive.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -230,6 +374,17 @@ x\le y\land y\le x \Longrightarrow x=y.
 \hyperref[prf:order-on-q-antisymmetric]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+x\le y\land y\le x\Longrightarrow x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The non-strict rational order is antisymmetric.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -249,6 +404,17 @@ x\le y\land y\le z \Longrightarrow x\le z.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+x\le y\land y\le z\Longrightarrow x\le z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The non-strict rational order is transitive.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-q]{Order on $\mathbb{Q}$}
@@ -267,6 +433,17 @@ x\le y\text{ or }y\le x.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+x\le y\lor y\le x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The non-strict rational order compares every pair of rational numbers.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-q]{Order on $\mathbb{Q}$}
@@ -281,6 +458,17 @@ The ordered pair $(\mathbb{Q},\le)$ is a totally ordered set.
 \hyperref[prf:q-totally-ordered-set]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{TotalOrder}(\mathbb{Q},\le).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rational carrier together with its non-strict order forms a totally
+ordered set.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -307,6 +495,17 @@ x<y \Longrightarrow z+x<z+y.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+x<y\Longrightarrow z+x<z+y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left addition by a fixed rational preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-q]{Strict Order on $\mathbb{Q}$}
@@ -326,6 +525,17 @@ x<y \Longrightarrow x+z<y+z.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+x<y\Longrightarrow x+z<y+z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right addition by a fixed rational preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-addition-preserves-strict-order-on-q]{Left Addition Preserves Strict Order on $\mathbb{Q}$}
@@ -340,6 +550,19 @@ Addition preserves strict order on both sides in $\mathbb{Q}$.
 \hyperref[prf:addition-preserves-strict-order-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+x<y\Longrightarrow z+x<z+y
+\quad\text{and}\quad
+x<y\Longrightarrow x+z<y+z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition by a fixed rational preserves strict order on both sides.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -359,6 +582,17 @@ x\le y \Longrightarrow z+x\le z+y.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+x\le y\Longrightarrow z+x\le z+y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left addition by a fixed rational preserves non-strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-q]{Order on $\mathbb{Q}$}
@@ -377,6 +611,17 @@ x\le y \Longrightarrow x+z\le y+z.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+x\le y\Longrightarrow x+z\le y+z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right addition by a fixed rational preserves non-strict order.
+\end{remark*}
+
 \begin{dependencies}
 
 \begin{itemize}
@@ -393,6 +638,19 @@ Addition preserves non-strict order on both sides in $\mathbb{Q}$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+x\le y\Longrightarrow z+x\le z+y
+\quad\text{and}\quad
+x\le y\Longrightarrow x+z\le y+z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition by a fixed rational preserves non-strict order on both sides.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-addition-preserves-order-on-q]{Left Addition Preserves Order on $\mathbb{Q}$}
@@ -408,6 +666,20 @@ Addition by a fixed rational reflects
 \hyperref[prf:addition-reflects-order-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+z+x<z+y\Longrightarrow x<y,
+\qquad
+z+x\le z+y\Longrightarrow x\le y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Translation by a fixed rational is order-reflecting because it can be undone
+by adding the additive inverse.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -433,6 +705,19 @@ z\cdot x<z\cdot y.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<z\land x<y
+\Longrightarrow
+z\cdot x<z\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left multiplication by a positive rational preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-q]{Strict Order on $\mathbb{Q}$}
@@ -454,6 +739,19 @@ x\cdot z<y\cdot z.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<z\land x<y
+\Longrightarrow
+x\cdot z<y\cdot z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right multiplication by a positive rational preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:left-positive-multiplication-preserves-strict-order-on-q]{Left Multiplication by Positives Preserves Strict Order on $\mathbb{Q}$}
@@ -468,6 +766,21 @@ Multiplication by a positive rational preserves strict order on both sides.
 \hyperref[prf:positive-multiplication-preserves-strict-order-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<z\land x<y
+\Longrightarrow
+z\cdot x<z\cdot y
+\quad\text{and}\quad
+x\cdot z<y\cdot z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive rational preserves strict order on both sides.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -488,6 +801,19 @@ z\cdot x\le z\cdot y.
 \hyperref[prf:left-positive-multiplication-preserves-order-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<z\land x\le y
+\Longrightarrow
+z\cdot x\le z\cdot y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left multiplication by a positive rational preserves non-strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -510,6 +836,19 @@ x\cdot z\le y\cdot z.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<z\land x\le y
+\Longrightarrow
+x\cdot z\le y\cdot z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right multiplication by a positive rational preserves non-strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-q]{Order on $\mathbb{Q}$}
@@ -524,6 +863,22 @@ Multiplication by a positive rational preserves non-strict order on both sides.
 \hyperref[prf:positive-multiplication-preserves-order-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<z\land x\le y
+\Longrightarrow
+z\cdot x\le z\cdot y
+\quad\text{and}\quad
+x\cdot z\le y\cdot z.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive rational preserves non-strict order on both
+sides.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -545,6 +900,19 @@ z\cdot y<z\cdot x.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+z<0_{\mathbb{Q}}\land x<y
+\Longrightarrow
+z\cdot y<z\cdot x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left multiplication by a negative rational reverses strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order-on-q]{Strict Order on $\mathbb{Q}$}
@@ -565,6 +933,19 @@ z\cdot y\le z\cdot x.
 \hyperref[prf:negative-multiplication-reverses-order-on-q]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y,z\in\mathbb{Q}$,
+\[
+z<0_{\mathbb{Q}}\land x\le y
+\Longrightarrow
+z\cdot y\le z\cdot x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left multiplication by a negative rational reverses non-strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -588,6 +969,19 @@ x<0_{\mathbb{Q}} \Longrightarrow x^{-1}<0_{\mathbb{Q}}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+0_{\mathbb{Q}}<x\Longrightarrow 0_{\mathbb{Q}}<x^{-1},
+\qquad
+x<0_{\mathbb{Q}}\Longrightarrow x^{-1}<0_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A nonzero rational number and its reciprocal have the same sign.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reciprocal-on-q-classes]{Reciprocal on $\mathbb{Q}$}
@@ -609,6 +1003,19 @@ For all $x,y\in\mathbb{Q}$,
 \hyperref[prf:reciprocal-reverses-order-on-positives-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<x<y
+\Longrightarrow
+0_{\mathbb{Q}}<y^{-1}<x^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+On positive rationals, taking reciprocals reverses strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -636,6 +1043,24 @@ y^{-1}<x^{-1}<0_{\mathbb{Q}}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all nonzero $x,y\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<x<y
+\Longrightarrow
+0_{\mathbb{Q}}<y^{-1}<x^{-1},
+\qquad
+x<y<0_{\mathbb{Q}}
+\Longrightarrow
+y^{-1}<x^{-1}<0_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For rationals with the same sign, reciprocal reverses strict order and
+preserves the common sign side.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reciprocal-on-q-classes]{Reciprocal on $\mathbb{Q}$}
@@ -657,6 +1082,17 @@ For every nonzero $x\in\mathbb{Q}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+(x^{-1})^{-1}=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking the reciprocal twice returns the original nonzero rational number.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reciprocal-on-q-classes]{Reciprocal on $\mathbb{Q}$}
@@ -676,6 +1112,18 @@ For all nonzero $x,y\in\mathbb{Q}$,
 \hyperref[prf:reciprocal-of-product-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+(xy)^{-1}=x^{-1}y^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a product of nonzero rational numbers is the product of the
+reciprocals.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -700,6 +1148,19 @@ For all nonzero $x,y\in\mathbb{Q}$,
 \hyperref[prf:reciprocal-reverses-nonstrict-order-on-positives-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+0_{\mathbb{Q}}<x\le y
+\Longrightarrow
+0_{\mathbb{Q}}<y^{-1}\le x^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+On positive rationals, taking reciprocals reverses non-strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -726,6 +1187,24 @@ y^{-1}\le x^{-1}<0_{\mathbb{Q}}.
 \hyperref[prf:reciprocal-reverses-nonstrict-order-on-same-sign-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all nonzero $x,y\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}<x\le y
+\Longrightarrow
+0_{\mathbb{Q}}<y^{-1}\le x^{-1},
+\qquad
+x\le y<0_{\mathbb{Q}}
+\Longrightarrow
+y^{-1}\le x^{-1}<0_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For rationals with the same sign, reciprocal reverses non-strict order and
+preserves the common sign side.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -754,6 +1233,20 @@ x, & 0_{\mathbb{Q}}\le x,\\
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}\le x\Longrightarrow |x|=x,
+\qquad
+x<0_{\mathbb{Q}}\Longrightarrow |x|=-x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The absolute value of a rational number is the number itself when it is
+nonnegative and its additive inverse when it is negative.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-on-q]{Order on $\mathbb{Q}$}
@@ -772,6 +1265,17 @@ For every $x\in\mathbb{Q}$,
 \hyperref[prf:absolute-value-nonnegative-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$,
+\[
+0_{\mathbb{Q}}\le |x|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational absolute value always produces a nonnegative rational number.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -795,6 +1299,17 @@ x=0_{\mathbb{Q}}.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}$,
+\[
+|x|=0_{\mathbb{Q}}\Longleftrightarrow x=0_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The only rational number with absolute value zero is zero itself.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:absolute-value-on-q]{Absolute Value on $\mathbb{Q}$}
@@ -813,6 +1328,17 @@ For all $x,y\in\mathbb{Q}$,
 \hyperref[prf:absolute-value-multiplicative-on-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+|x\cdot y|=|x|\cdot |y|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational absolute value converts products to products of absolute values.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -834,6 +1360,18 @@ For all $x,y\in\mathbb{Q}$,
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For all $x,y\in\mathbb{Q}$,
+\[
+|x+y|\le |x|+|y|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The absolute value of a rational sum is bounded above by the sum of the
+absolute values.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:absolute-value-on-q]{Absolute Value on $\mathbb{Q}$}
@@ -854,6 +1392,17 @@ For every nonzero $x\in\mathbb{Q}$,
 \hyperref[prf:absolute-value-of-reciprocal-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For every $x\in\mathbb{Q}\setminus\{0_{\mathbb{Q}}\}$,
+\[
+|x^{-1}|=|x|^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute value commutes with taking reciprocals of nonzero rational numbers.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

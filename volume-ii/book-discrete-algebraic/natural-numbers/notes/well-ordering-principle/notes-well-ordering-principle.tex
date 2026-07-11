@@ -53,22 +53,26 @@ element with respect to the order $\le$ on $P$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The well-ordering principle would fail if some nonempty subset of $P$ had no
-least element. That means for every candidate minimum, a strictly smaller
-element of the subset exists, producing an infinite strictly descending chain
-in $P$. Induction rules this out.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\[
-\neg\operatorname{WellOrderingPrinciple}
-\Longleftrightarrow
-\exists A \subseteq P\;
-\Bigl(\underbrace{A \neq \varnothing}_{\text{nonempty}}
-\land
-\underbrace{\forall m \in A\;\exists a \in A\;(a < m)}_{\text{no least element}}
-\Bigr).
-\]
+\begin{description}
+  \item[Exposition.]
+  The well-ordering principle would fail if some nonempty subset of $P$ had
+  no least element. That means for every candidate minimum, a strictly smaller
+  element of the subset exists, producing an infinite strictly descending
+  chain in $P$. Induction rules this out.
+  \item[No least element.]
+  \[
+  \neg\operatorname{WellOrderingPrinciple}.
+  \]
+  \[
+  \neg\operatorname{WellOrderingPrinciple}
+  \Longleftrightarrow
+  \exists A \subseteq P\;
+  \Bigl(\underbrace{A \neq \varnothing}_{\text{nonempty}}
+  \land
+  \underbrace{\forall m \in A\;\exists a \in A\;(a < m)}_{\text{no least element}}
+  \Bigr).
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -133,6 +137,15 @@ are equivalent:
 \Longrightarrow
 \forall n \in P\;\varphi(n)\bigr)\Bigr).
 \end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Equivalent}
+\bigl(\operatorname{WellOrderingPrinciple},
+\operatorname{StrongInduction},
+\operatorname{InductionPrinciple}(P,S,1)\bigr).
 \]
 \end{remark*}
 

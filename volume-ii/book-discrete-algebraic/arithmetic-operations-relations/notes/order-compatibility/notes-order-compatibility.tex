@@ -8,6 +8,22 @@ yRz \Longrightarrow (x\mathbin{O}y)R(x\mathbin{O}z),
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ yRz \Longrightarrow (x\mathbin{O}y)R(x\mathbin{O}z).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightMonotone}(O,R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right monotony preserves the relation after a common left input is applied.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -25,6 +41,22 @@ yRz \Longrightarrow (y\mathbin{O}x)R(z\mathbin{O}x).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ yRz \Longrightarrow (y\mathbin{O}x)R(z\mathbin{O}x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftMonotone}(O,R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left monotony preserves the relation after a common right input is applied.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -38,6 +70,24 @@ yRz \Longrightarrow (y\mathbin{O}x)R(z\mathbin{O}x).
 Two-sided monotony means both left monotony and right monotony hold.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftMonotone}(O,R,A)
+\quad\text{and}\quad
+\operatorname{RightMonotone}(O,R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{MonotoneOperation}(O,R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two-sided monotony bundles relation preservation in both operation slots.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -56,6 +106,23 @@ Right reflection means
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ (x\mathbin{O}y)R(x\mathbin{O}z) \Longrightarrow yRz.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightOrderReflecting}(O,R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right order reflection recovers the original relation from related outputs
+with a common left input.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -73,6 +140,23 @@ Left reflection means
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z\in A,\ (y\mathbin{O}x)R(z\mathbin{O}x) \Longrightarrow yRz.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftOrderReflecting}(O,R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left order reflection recovers the original relation from related outputs
+with a common right input.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -87,6 +171,24 @@ Two-sided order reflection means both left order reflection and right order
 reflection hold.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftOrderReflecting}(O,R,A)
+\quad\text{and}\quad
+\operatorname{RightOrderReflecting}(O,R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderReflectingOperation}(O,R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two-sided order reflection bundles reflection in both operation slots.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -119,6 +221,28 @@ a<b \iff b-a\in P.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+P\subset K,\quad
+\forall a,b\in P,\ a+b\in P,\quad
+\forall a,b\in P,\ ab\in P,
+\]
+\[
+\forall a\in K,\ \text{exactly one of }a\in P,\ a=0,\ -a\in P\text{ holds}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveCone}(P,K,+,\cdot,0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A positive cone encodes a strict order through closure under addition and
+multiplication and a sign trichotomy.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:subset]{Subset}
@@ -136,6 +260,22 @@ x\le y \Longrightarrow f(x)\le f(y).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ x\le y \Longrightarrow f(x)\le f(y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Monotone}(f,\le_A,\le_B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A monotone map preserves the non-strict order relation.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -151,6 +291,22 @@ x<y \Longrightarrow f(x)<f(y).
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in A,\ x<y \Longrightarrow f(x)<f(y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{StrictlyMonotone}(f,<_{A},<_{B}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A strictly monotone map preserves strict order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -170,6 +326,22 @@ in ordered arithmetic systems where addition is strictly order-preserving.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z,\ y<z \Longrightarrow x+y<x+z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{RightMonotone}(+,<,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Adding a common left summand preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:right-monotony]{Right Monotony}
@@ -187,6 +359,22 @@ in ordered arithmetic systems where addition is strictly order-preserving.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z,\ y<z \Longrightarrow y+x<z+x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftMonotone}(+,<,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Adding a common right summand preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:left-monotony]{Left Monotony}
@@ -201,6 +389,24 @@ addition preserves order on both sides.
 \hyperref[prf:addition-order-compatibility]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeftMonotone}(+,<,A)
+\quad\text{and}\quad
+\operatorname{RightMonotone}(+,<,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{MonotoneOperation}(+,<,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Addition preserves strict order in both operation slots.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -221,6 +427,22 @@ strictly order-preserving.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z,\ 0<x \land y<z \Longrightarrow x\cdot y<x\cdot z.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveLeftFactorPreservesOrder}(\cdot,<,0,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive left factor preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:right-monotony]{Right Monotony}
@@ -240,6 +462,22 @@ strictly order-preserving.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,z,\ 0<x \land y<z \Longrightarrow y\cdot x<z\cdot x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveRightFactorPreservesOrder}(\cdot,<,0,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive right factor preserves strict order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:left-monotony]{Left Monotony}
@@ -255,6 +493,24 @@ strictly order-preserving, multiplication preserves order on both sides.
 \hyperref[prf:multiplication-order-compatibility]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{PositiveLeftFactorPreservesOrder}(\cdot,<,0,A)
+\quad\text{and}\quad
+\operatorname{PositiveRightFactorPreservesOrder}(\cdot,<,0,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveFactorPreservesOrder}(\cdot,<,0,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by positive elements preserves strict order on both sides.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

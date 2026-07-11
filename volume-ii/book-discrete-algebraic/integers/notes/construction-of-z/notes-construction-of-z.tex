@@ -8,6 +8,23 @@ read as the formal difference $a-b$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+(a,b)\in\mathbb{W}\times\mathbb{W}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IntegerPrepair}((a,b)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An integer prepair is the raw ordered-pair datum used to model a formal
+difference before quotienting.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-pair]{Ordered Pair}
@@ -24,6 +41,23 @@ The integer prepair set is
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Pre}\mathbb{Z}=\mathbb{W}\times\mathbb{W}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PreIntegerSet}(\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The preinteger set is the carrier before imposing formal-difference
+equivalence.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -46,6 +80,26 @@ a+d=c+b.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (a,b),(c,d)\in\operatorname{Pre}\mathbb{Z},\quad
+(a,b)\sim_{\mathbb{Z}}(c,d)
+\Longleftrightarrow
+a+d=c+b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{FormalDifferenceEquivalent}((a,b),(c,d)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two prepairs represent the same formal difference exactly when cross-addition
+balances them.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -64,6 +118,22 @@ For every $(a,b)\in\operatorname{Pre}\mathbb{Z}$,
 \hyperref[prf:formal-difference-equivalence-reflexive]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (a,b)\in\operatorname{Pre}\mathbb{Z},\ (a,b)\sim_{\mathbb{Z}}(a,b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Reflexive}(\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every integer prepair represents the same formal difference as itself.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -84,6 +154,23 @@ For all prepairs $(a,b),(c,d)$,
 \hyperref[prf:formal-difference-equivalence-symmetric]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall p,q\in\operatorname{Pre}\mathbb{Z},\quad
+p\sim_{\mathbb{Z}}q \Longrightarrow q\sim_{\mathbb{Z}}p.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Symmetric}(\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Formal-difference equivalence is reversible.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -106,6 +193,25 @@ For all prepairs $(a,b),(c,d),(e,f)$,
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall p,q,r\in\operatorname{Pre}\mathbb{Z},\quad
+p\sim_{\mathbb{Z}}q\land q\sim_{\mathbb{Z}}r
+\Longrightarrow
+p\sim_{\mathbb{Z}}r.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Transitive}(\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Formal-difference equivalence can be chained through an intermediate prepair.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:addition-on-w-cancellation]{Addition on $\mathbb{W}$ Satisfies Cancellation}
@@ -120,6 +226,23 @@ $\operatorname{Pre}\mathbb{Z}$.
 \hyperref[prf:formal-difference-equivalence-relation]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{EquivalenceRelation}(\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{EquivalenceRelation}(\sim_{\mathbb{Z}},\operatorname{Pre}\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reflexive, symmetric, and transitive laws make quotienting by
+$\sim_{\mathbb{Z}}$ legitimate.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -143,6 +266,23 @@ The integers are the quotient
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\mathbb{Z}=\operatorname{Pre}\mathbb{Z}/{\sim_{\mathbb{Z}}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\mathbb{Z}=\operatorname{Quotient}(\operatorname{Pre}\mathbb{Z},\sim_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The integers are constructed as a quotient of formal differences by
+formal-difference equivalence.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:quotient-set]{Quotient Set}
@@ -158,6 +298,22 @@ The notation $[a,b]$ denotes the $\sim_{\mathbb{Z}}$-equivalence class of the
 prepair $(a,b)$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+[a,b]=[(a,b)]_{\sim_{\mathbb{Z}}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{EquivalenceClassNotation}([a,b],(a,b),\sim_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The bracket notation names the equivalence class of an integer prepair.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -178,6 +334,22 @@ Define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{Z}}=[0,0].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ZeroElement}(0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The integer zero is the class of the zero formal difference.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integer-class-notation]{Integer Class Notation}
@@ -195,6 +367,22 @@ Define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+1_{\mathbb{Z}}=[1,0].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OneElement}(1_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The integer one is the class of the whole-number prepair representing one.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integer-class-notation]{Integer Class Notation}
@@ -209,6 +397,22 @@ The class $0_{\mathbb{Z}}$ is an element of $\mathbb{Z}$.
 \hyperref[prf:zero-is-an-integer]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{Z}}\in\mathbb{Z}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ElementOf}(0_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The distinguished zero class belongs to the quotient carrier.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -225,6 +429,22 @@ The class $1_{\mathbb{Z}}$ is an element of $\mathbb{Z}$.
 \hyperref[prf:one-is-an-integer]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+1_{\mathbb{Z}}\in\mathbb{Z}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ElementOf}(1_{\mathbb{Z}},\mathbb{Z}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The distinguished one class belongs to the quotient carrier.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -245,6 +465,23 @@ In $\mathbb{Z}$,
 \hyperref[prf:zero-not-one-in-z]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{Z}}\ne 1_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Distinct}(0_{\mathbb{Z}},1_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The quotient construction preserves the distinction between the zero and one
+integer classes.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

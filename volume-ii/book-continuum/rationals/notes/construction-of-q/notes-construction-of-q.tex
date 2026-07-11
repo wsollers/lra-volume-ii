@@ -10,6 +10,23 @@ The set of nonzero integers is
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\mathbb{Z}^{\ast}=\{z\in\mathbb{Z}:z\ne0_{\mathbb{Z}}\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NonzeroCarrier}(\mathbb{Z}^{\ast},\mathbb{Z},0_{\mathbb{Z}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The nonzero integers form the allowed denominator set for rational
+prefractions.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integers]{Integers}
@@ -24,6 +41,22 @@ A \emph{prefraction} is an ordered pair $(a,b)\in\mathbb{Z}\times\mathbb{Z}^{\as
 read as the formal quotient $a/b$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(a,b)\in\mathbb{Z}\times\mathbb{Z}^{\ast}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Prefraction}((a,b)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A prefraction is the raw ordered-pair datum used to model a formal quotient.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -42,6 +75,22 @@ The prefraction set is
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Pre}\mathbb{Q}=\mathbb{Z}\times\mathbb{Z}^{\ast}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PrefractionSet}(\operatorname{Pre}\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The prefraction set is the carrier before imposing fraction equivalence.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -65,6 +114,26 @@ a\cdot d=b\cdot c.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (a,b),(c,d)\in\operatorname{Pre}\mathbb{Q},\quad
+(a,b)\sim_{\mathbb{Q}}(c,d)
+\Longleftrightarrow
+a\cdot d=b\cdot c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{FractionEquivalent}((a,b),(c,d)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two prefractions represent the same quotient exactly when cross-multiplication
+balances them.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -83,6 +152,23 @@ For every $(a,b)\in\operatorname{Pre}\mathbb{Q}$,
 \hyperref[prf:fraction-equivalence-reflexive]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (a,b)\in\operatorname{Pre}\mathbb{Q},\quad
+(a,b)\sim_{\mathbb{Q}}(a,b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Reflexive}(\sim_{\mathbb{Q}},\operatorname{Pre}\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every prefraction represents the same quotient as itself.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -103,6 +189,23 @@ For all prefractions $(a,b),(c,d)$,
 \hyperref[prf:fraction-equivalence-symmetric]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall p,q\in\operatorname{Pre}\mathbb{Q},\quad
+p\sim_{\mathbb{Q}}q \Longrightarrow q\sim_{\mathbb{Q}}p.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Symmetric}(\sim_{\mathbb{Q}},\operatorname{Pre}\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Fraction equivalence is reversible.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -125,6 +228,24 @@ For all prefractions $(a,b),(c,d),(e,f)$,
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall p,q,r\in\operatorname{Pre}\mathbb{Q},\quad
+p\sim_{\mathbb{Q}}q\land q\sim_{\mathbb{Q}}r
+\Longrightarrow p\sim_{\mathbb{Q}}r.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Transitive}(\sim_{\mathbb{Q}},\operatorname{Pre}\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Fraction equivalence can be chained through an intermediate prefraction.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:multiplicative-cancellation-on-z]{Multiplicative Cancellation on $\mathbb{Z}$}
@@ -139,6 +260,23 @@ $\operatorname{Pre}\mathbb{Q}$.
 \hyperref[prf:fraction-equivalence-relation]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{EquivalenceRelation}(\sim_{\mathbb{Q}},\operatorname{Pre}\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{EquivalenceRelation}(\sim_{\mathbb{Q}},\operatorname{Pre}\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The equivalence-relation laws make quotienting by $\sim_{\mathbb{Q}}$
+legitimate.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -162,6 +300,23 @@ The rational numbers are the quotient
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\mathbb{Q}=\operatorname{Pre}\mathbb{Q}/{\sim_{\mathbb{Q}}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\mathbb{Q}=\operatorname{Quotient}(\operatorname{Pre}\mathbb{Q},\sim_{\mathbb{Q}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rationals are constructed as a quotient of formal fractions by fraction
+equivalence.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:quotient-set]{Quotient Set}
@@ -177,6 +332,23 @@ The notation $[a,b]$ denotes the $\sim_{\mathbb{Q}}$-equivalence class of the
 prefraction $(a,b)$, where $b\ne 0_{\mathbb{Z}}$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+[a,b]=[(a,b)]_{\sim_{\mathbb{Q}}}
+\quad\text{with}\quad b\ne0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{EquivalenceClassNotation}([a,b],(a,b),\sim_{\mathbb{Q}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The bracket notation names the quotient element represented by a prefraction.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -197,6 +369,24 @@ a\cdot d=b\cdot c.
 \hyperref[prf:equality-criterion-for-rational-classes]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (a,b),(c,d)\in\operatorname{Pre}\mathbb{Q},\quad
+[a,b]=[c,d]\Longleftrightarrow a\cdot d=b\cdot c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{QuotientEqualityCriterion}(\mathbb{Q},\sim_{\mathbb{Q}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Equality of rational quotient elements is exactly fraction equivalence of
+representatives.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -219,6 +409,22 @@ Define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{Q}}=[0_{\mathbb{Z}},1_{\mathbb{Z}}].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ZeroElement}(0_{\mathbb{Q}},\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational zero is represented by zero over one.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-class-notation]{Rational Class Notation}
@@ -236,6 +442,22 @@ Define
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+1_{\mathbb{Q}}=[1_{\mathbb{Z}},1_{\mathbb{Z}}].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OneElement}(1_{\mathbb{Q}},\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational one is represented by one over one.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -257,6 +479,23 @@ a=0_{\mathbb{Z}}.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (a,b)\in\operatorname{Pre}\mathbb{Q},\quad
+[a,b]=0_{\mathbb{Q}}\Longleftrightarrow a=0_{\mathbb{Z}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ZeroCriterion}(\mathbb{Q},0_{\mathbb{Q}},\operatorname{Pre}\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A rational quotient element vanishes exactly when its numerator is zero.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rational-class-notation]{Rational Class Notation}
@@ -275,6 +514,22 @@ The class $0_{\mathbb{Q}}$ is an element of $\mathbb{Q}$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{Q}}\in\mathbb{Q}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ElementOf}(0_{\mathbb{Q}},\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The distinguished zero quotient element belongs to the rational carrier.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:rationals]{Rational Numbers}
@@ -290,6 +545,22 @@ The class $1_{\mathbb{Q}}$ is an element of $\mathbb{Q}$.
 \hyperref[prf:one-is-a-rational]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+1_{\mathbb{Q}}\in\mathbb{Q}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ElementOf}(1_{\mathbb{Q}},\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The distinguished one quotient element belongs to the rational carrier.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -309,6 +580,22 @@ In $\mathbb{Q}$,
 \hyperref[prf:zero-not-one-in-q]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+0_{\mathbb{Q}}\ne1_{\mathbb{Q}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Distinct}(0_{\mathbb{Q}},1_{\mathbb{Q}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rational zero and one elements are distinct.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

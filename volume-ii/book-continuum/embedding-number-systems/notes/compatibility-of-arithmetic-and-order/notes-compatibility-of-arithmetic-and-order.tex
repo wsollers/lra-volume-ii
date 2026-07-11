@@ -17,6 +17,12 @@ Let $\iota_{1}:\mathbb{N}\to\mathbb{W}$, $\iota_{2}:\mathbb{W}\to\mathbb{Z}$, $\
 \forall n,m\in\mathbb{N}\;\bigl(\Phi(n+m)=\Phi(n)+\Phi(m)\ \land\ \Phi(n\cdot m)=\Phi(n)\cdot\Phi(m)\ \land\ (n<m\Leftrightarrow\Phi(n)<\Phi(m))\bigr),\quad \Phi=\iota_{4}\circ\iota_{3}\circ\iota_{2}\circ\iota_{1}.
 \]
 \end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{CompatibleEmbeddingChain}(\mathbb{N},\mathbb{W},\mathbb{Z},\mathbb{Q},\mathbb{R},\Phi)
+\]
+means that the composite embedding preserves the arithmetic and order of the source system.
+\end{remark*}
 \begin{remark*}[Interpretation]
 Compatibility is what makes the single symbol $2$ well-defined across the whole chain: the answer to $2+2$ is the same whether computed in $\mathbb{N}$ or after embedding into $\mathbb{R}$. Without this coherence the inclusion notation would silently carry two different meanings for the same numeral.
 \end{remark*}
