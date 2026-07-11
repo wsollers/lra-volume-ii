@@ -43,7 +43,10 @@ a+b = b+a
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ClosedUnderBinaryOperation}(P,+_P)
+\begin{aligned}
+&C_{+}=\mathsf{ClosureContext}(P,P\times P,P,+_P),\\
+&
+\operatorname{ClosedUnder}(+_P,P,C_{+})
 \land
 \operatorname{Associative}(P,+_P)
 \land
@@ -52,6 +55,7 @@ a+b = b+a
 \operatorname{LeftCancellation}(P,+_P)
 \land
 \operatorname{RightCancellation}(P,+_P).
+\end{aligned}
 \]
 \end{remark*}
 

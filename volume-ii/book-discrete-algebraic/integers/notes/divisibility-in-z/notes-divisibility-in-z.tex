@@ -306,7 +306,11 @@ a\mid b\land a\mid c \Longrightarrow a\mid(b+c).
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{DivisibilityClosedUnderAddition}(\mathbb{Z},+_{\mathbb{Z}},\cdot_{\mathbb{Z}}).
+\begin{aligned}
+&M_a=\{z\in\mathbb{Z}:a\mid z\},\\
+&C_{+}=\mathsf{ClosureContext}(\mathbb{Z},M_a\times M_a,M_a,+_{\mathbb{Z}}),\\
+&\operatorname{ClosedUnder}(+_{\mathbb{Z}},M_a,C_{+}).
+\end{aligned}
 \]
 \end{remark*}
 
