@@ -1,11 +1,19 @@
 \section{Ground Rules}
 \begin{toolkitbox}{Toolkit: Construction Obligations}
-\begin{itemize}
-  \item \textbf{Carrier:} the underlying collection of objects.
-  \item \textbf{Operations:} the arithmetic rules defined on the carrier.
-  \item \textbf{Relations:} equality, equivalence, order, or congruence relations.
-  \item \textbf{Verification:} closure, well-definedness, laws, and embeddings.
-\end{itemize}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{} l p{0.66\linewidth} @{}}
+\toprule
+\textbf{Name} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:number-system-construction-target]{Construction target}
+  & The arithmetic role the new number system is supposed to satisfy. \\
+\hyperref[def:number-system-construction-data]{Construction data}
+  & The carrier, operations, and relations used to build the system. \\
+\hyperref[def:number-system-construction-verification]{Construction verification}
+  & The closure, well-definedness, laws, and embeddings that must be checked. \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-ii/book-discrete-algebraic/constructing-number-systems/notes/ground-rules/notes-constructing-number-systems}

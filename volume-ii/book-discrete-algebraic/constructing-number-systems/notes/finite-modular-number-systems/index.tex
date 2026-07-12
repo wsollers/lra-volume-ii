@@ -1,11 +1,21 @@
 \section{Finite Modular Number Systems}
 \begin{toolkitbox}{Toolkit: Residue Class Arithmetic}
-\begin{itemize}
-  \item \textbf{Modulus:} a positive integer \(n\).
-  \item \textbf{Congruence:} \(a\equiv b\pmod n\) when \(n\mid(a-b)\).
-  \item \textbf{Elements:} equivalence classes of integers modulo \(n\).
-  \item \textbf{Operations:} class addition and multiplication inherited from \(\mathbb{Z}\).
-\end{itemize}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{} l p{0.66\linewidth} @{}}
+\toprule
+\textbf{Name} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:congruence-modulo-integer]{Congruence modulo \(n\)}
+  & \(a\equiv b\pmod n\) when \(n\mid(a-b)\). \\
+\hyperref[def:integers-modulo-n]{Integers modulo \(n\)}
+  & Equivalence classes of integers for a fixed positive modulus \(n\). \\
+\hyperref[def:addition-modulo-n]{Addition modulo \(n\)}
+  & Class addition inherited from addition in \(\mathbb{Z}\). \\
+\hyperref[def:multiplication-modulo-n]{Multiplication modulo \(n\)}
+  & Class multiplication inherited from multiplication in \(\mathbb{Z}\). \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-ii/book-discrete-algebraic/constructing-number-systems/notes/finite-modular-number-systems/notes-modular-number-systems}
