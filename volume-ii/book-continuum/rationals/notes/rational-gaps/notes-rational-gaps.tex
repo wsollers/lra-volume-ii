@@ -1,5 +1,241 @@
 \subsection*{No Rational Square Root of Two}
 
+\begin{definitionbox}{Definition}
+\begin{definition}[Rational Square]
+\label{def:rational-square}
+A rational number $a\in\mathbb{Q}$ is a \emph{rational square} if there
+exists $q\in\mathbb{Q}$ such that
+\[
+a=q^2.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\text{$a$ is a rational square}
+\Longleftrightarrow
+\exists q\in\mathbb{Q}\,(a=q^2).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{$a$ is a rational square}
+\]
+means that $a$ lies in the image of the squaring map on $\mathbb{Q}$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational squares are exactly the rational numbers that already have a rational
+number whose square gives them.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:rationals]{Rationals}
+  \item \hyperref[def:multiplication-on-q-classes]{Multiplication on $\mathbb{Q}$}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Existence of Rational Square Roots on Rational Squares]
+\label{thm:rational-square-root-exists-on-rational-squares}
+If $a\in\mathbb{Q}$ is a rational square, then there exists
+$x\in\mathbb{Q}$ such that
+\[
+x\ge 0_{\mathbb{Q}}
+\quad\text{and}\quad
+x^2=a.
+\]
+\hyperref[prf:rational-square-root-exists-on-rational-squares]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{Q}\;
+\bigl(\text{$a$ is a rational square}
+\Rightarrow
+\exists x\in\mathbb{Q}\,(x\ge 0_{\mathbb{Q}}\land x^2=a)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{$a$ is a rational square}
+\Rightarrow
+\exists x\in\mathbb{Q}\,(x\ge0_{\mathbb{Q}}\land x^2=a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Perfect rational squares have rational square roots; the nonnegative one is
+obtained by taking the absolute value of any rational square root.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:rational-square]{Rational Square}
+  \item \hyperref[def:absolute-value-on-q]{Absolute Value on $\mathbb{Q}$}
+  \item \hyperref[thm:absolute-value-nonnegative-on-q]{Absolute Value Is Nonnegative on $\mathbb{Q}$}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Uniqueness of Nonnegative Rational Square Roots]
+\label{thm:uniqueness-of-nonnegative-rational-square-roots}
+If $x,y\in\mathbb{Q}$, $x\ge 0_{\mathbb{Q}}$, $y\ge 0_{\mathbb{Q}}$, and
+\[
+x^2=y^2,
+\]
+then $x=y$.
+\hyperref[prf:uniqueness-of-nonnegative-rational-square-roots]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{Q}\;
+\bigl((x\ge 0_{\mathbb{Q}}\land y\ge 0_{\mathbb{Q}}\land x^2=y^2)
+\Rightarrow x=y\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Nonnegative}(x)\land\operatorname{Nonnegative}(y)\land x^2=y^2
+\Rightarrow x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The nonnegative sign convention makes a rational square root unique whenever
+one exists.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:q-is-an-ordered-field]{$\mathbb{Q}$ Is an Ordered Field}
+  \item \hyperref[thm:trichotomy-on-q]{Trichotomy on $\mathbb{Q}$}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Rational Square Root]
+\label{def:rational-square-root}
+For a rational square $a\in\mathbb{Q}$, define $\sqrt_{\mathbb{Q}}{a}$ to be
+the unique rational number $x$ such that
+\[
+x\ge 0_{\mathbb{Q}}
+\quad\text{and}\quad
+x^2=a.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\text{$a$ is a rational square}
+\Rightarrow
+\sqrt_{\mathbb{Q}}{a}
+=\text{ the unique }x\in\mathbb{Q}\text{ with }x\ge0_{\mathbb{Q}}\text{ and }x^2=a.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\sqrt_{\mathbb{Q}}{a}
+=\iota x\,(x\in\mathbb{Q}\land x\ge0_{\mathbb{Q}}\land x^2=a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rational square-root symbol is a partial operation: it is defined only on
+rational numbers that are rational squares.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:rational-square-root-exists-on-rational-squares]{Existence of Rational Square Roots on Rational Squares}
+  \item \hyperref[thm:uniqueness-of-nonnegative-rational-square-roots]{Uniqueness of Nonnegative Rational Square Roots}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Rational Square Root Is Well Defined]
+\label{thm:rational-square-root-well-defined}
+For every rational square $a\in\mathbb{Q}$, the value
+$\sqrt_{\mathbb{Q}}{a}$ exists and is unique.
+\hyperref[prf:rational-square-root-well-defined]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{Q}\;
+\bigl(\text{$a$ is a rational square}
+\Rightarrow
+\exists!x\in\mathbb{Q}\,(x\ge0_{\mathbb{Q}}\land x^2=a)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{$a$ is a rational square}
+\Rightarrow
+\exists!x\in\mathbb{Q}\,(x\ge0_{\mathbb{Q}}\land x^2=a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Existence supplies at least one nonnegative rational root on the stated
+domain, and uniqueness makes the notation unambiguous.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:rational-square-root-exists-on-rational-squares]{Existence of Rational Square Roots on Rational Squares}
+  \item \hyperref[thm:uniqueness-of-nonnegative-rational-square-roots]{Uniqueness of Nonnegative Rational Square Roots}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Rational Square Root of a Square]
+\label{thm:rational-square-root-of-square}
+For every $q\in\mathbb{Q}$,
+\[
+\sqrt_{\mathbb{Q}}{q^2}=|q|.
+\]
+\hyperref[prf:rational-square-root-of-square]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall q\in\mathbb{Q}\; \sqrt_{\mathbb{Q}}{q^2}=|q|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\sqrt_{\mathbb{Q}}{q^2}=|q|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking a rational square root after squaring returns magnitude, not signed
+value.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:rational-square-root]{Rational Square Root}
+  \item \hyperref[def:absolute-value-on-q]{Absolute Value on $\mathbb{Q}$}
+  \item \hyperref[thm:rational-square-root-well-defined]{Rational Square Root Is Well Defined}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[No Rational Square Root of Two]
 \label{thm:no-rational-square-root-of-two}
@@ -18,7 +254,8 @@ q\cdot q=2_{\mathbb{Q}}.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-No rational number squares to rational two.
+No rational number squares to rational two. Equivalently, the rational
+square-root operation is not total on the nonnegative rational numbers.
 \end{remark*}
 
 \begin{dependencies}
@@ -26,7 +263,6 @@ No rational number squares to rational two.
   \item \hyperref[thm:q-is-a-field]{$\mathbb{Q}$ Is 
 a Field}
   \item \hyperref[thm:z-integral-domain]{$\mathbb{Z}$ Is an Integral Domain}
-  \item TODO: formalize the parity or infinite-descent facts in $\mathbb{Z}$.
 \end{itemize}
 \end{dependencies}
 
