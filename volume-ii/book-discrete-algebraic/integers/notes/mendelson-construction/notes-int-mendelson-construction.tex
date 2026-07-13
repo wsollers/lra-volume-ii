@@ -1,401 +1,896 @@
 % =========================================================
 % The Integers --- Mendelson Construction
-% Source: Mendelson, \textit{Number Systems and the
-%   Foundations of Analysis}, Chapters 3--4 (core);
-%   Chapters 5--9 (extended theory).
 % =========================================================
 
-% ---------------------------------------------------------
-% \S{}3.1  The equivalence relation on P \times P
-% ---------------------------------------------------------
-\subsection*{\texorpdfstring{\S{}3.1 \quad The Equivalence Relation on $P \times P$}{S3.1 quad The Equivalence Relation on P x P}}
-
-\begin{remark*}[Starting point]
-Mendelson begins from $P \times P$, the set of all ordered pairs of
-positive integers (his notation for $\mathbb{N} \setminus \{0\}$).
-Tao uses $\mathbb{N} \times \mathbb{N}$ (including zero).
-The idea is identical: a pair $(n,j)$ represents the
-``formal difference'' $n - j$.
+\begin{remark*}[Exposition]
+Mendelson constructs the integers from ordered pairs of positive integers.
+The construction has the same quotient shape as Tao's construction, but it
+uses equivalence classes \([(n,j)]\) instead of placeholder differences. It
+then develops more abstract algebra before returning to the ordered integer
+system.
 \end{remark*}
 
-\begin{corollarybox}{Definition 3.1 (Equivalence relation on $P \times P$)}
-For natural numbers $n, k, j, i$, define a relation $\sim$ on
-ordered pairs by
+\begin{definition}[Mendelson equivalence relation on positive pairs]
+\label{def:men-equivalence-relation}
+For positive integers \(n,j,k,i\), define
 \[
-(n,j) \sim (k,i)
-\quad\Longleftrightarrow\quad
-n + i = k + j.
+  (n,j)\sim(k,i)
+  \quad\Longleftrightarrow\quad
+  n+i=k+j.
 \]
-\end{corollarybox}
+\end{definition}
 
-\begin{theorem}[Mendelson 1.1 --- $\sim$ is an equivalence relation]
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Mendelson's relation identifies two positive-integer pairs when
+  cross-addition agrees.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The pair \((n,j)\) represents the formal difference \(n-j\). The defining
+condition uses only addition of positive integers and therefore avoids
+assuming subtraction before the integer system exists.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{theorem}[Mendelson 1.1 --- \(\sim\) is an equivalence relation]
 \label{thm:men-equiv}
-For all natural numbers $h,i,j,k,m,n$:
-\begin{enumerate}
-  \item[\normalfont(R)] $(h,i) \sim (h,i)$ \hfill\textit{(Reflexivity)}
-  \item[\normalfont(S)] $(h,i) \sim (j,k) \Rightarrow (j,k) \sim (h,i)$
-    \hfill\textit{(Symmetry)}
-  \item[\normalfont(T)] $\bigl[(h,i)\sim(j,k)\wedge(j,k)\sim(m,n)\bigr]
-    \Rightarrow (h,i)\sim(m,n)$ \hfill\textit{(Transitivity)}
-\end{enumerate}
+The relation \(\sim\) on positive-integer pairs is reflexive, symmetric, and
+transitive.
 \hyperref[prf:men-equiv]{Go to proof.}
 \end{theorem}
 
-\begin{remark*}[Transitivity uses cancellation]
-As in Tao, transitivity of $\sim$ requires the cancellation law for
-addition in $\mathbb{N}$.
-This is the same load-bearing step in both constructions.
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Mendelson's cross-addition relation is an equivalence relation.}
+\]
 \end{remark*}
 
-\begin{corollarybox}{Definition 3.2 (The integers $\mathbb{Z}$)}
-$\mathbb{Z}$ is the set of all equivalence classes of $P \times P$
-under $\sim$.  Elements of $\mathbb{Z}$ are called \textbf{integers}.
-
-Distinguished elements:
-$0_{\mathbb{Z}} = [(1,1)]$, \quad $1_{\mathbb{Z}} = [(2,1)]$.
-\end{corollarybox}
-
-\begin{remark*}[Notation comparison]
-Mendelson writes $[(n,j)]$ for an equivalence class;
-Tao writes $a {-\!\!-} b$ for the same object.
-Mendelson's notation makes the set-theoretic content explicit.
-Tao's notation is cleaner for computation.
+\begin{remark*}[Interpretation]
+Reflexivity and symmetry are immediate from equality of sums. Transitivity is
+the load-bearing step and uses cancellation for addition in the underlying
+positive-number system.
 \end{remark*}
 
-% ---------------------------------------------------------
-% \S{}3.2  Addition and Multiplication
-% ---------------------------------------------------------
-\subsection*{\S{}3.2 \quad Addition and Multiplication}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-equivalence-relation]{Mendelson equivalence relation}.
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Mendelson integers]
+\label{def:men-integers}
+\(\mathbb{Z}\) is the set of all equivalence classes of positive-integer
+pairs under \(\sim\). The distinguished elements are
+\[
+  0_{\mathbb{Z}}=[(1,1)],
+  \qquad
+  1_{\mathbb{Z}}=[(2,1)].
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Mendelson's integers are equivalence classes of positive-integer pairs.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the set-theoretic version of formal differences. Tao writes
+\(a {-\!\!-} b\), while Mendelson writes an equivalence class \([(n,j)]\);
+both notations encode the same construction pattern.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:men-equiv]{Mendelson equivalence relation}.
+\end{itemize}
+\end{dependencies}
 
 \begin{lemma}[Mendelson 2.1 --- Addition well-defined]
 \label{lem:men-add-welld}
-If $(n,j) \sim (n_1,j_1)$ and $(k,i) \sim (k_1,i_1)$, then
-$(n+k,\; j+i) \sim (n_1+k_1,\; j_1+i_1)$.
+If \((n,j)\sim(n_1,j_1)\) and \((k,i)\sim(k_1,i_1)\), then
+\[
+  (n+k,j+i)\sim(n_1+k_1,j_1+i_1).
+\]
 \hyperref[prf:men-add-welld]{Go to proof.}
 \end{lemma}
 
-\begin{corollarybox}{Definition 3.3 (Addition)}
-For $\alpha, \beta \in \mathbb{Z}$ with representatives
-$(n,j) \in \alpha$ and $(k,i) \in \beta$:
+\begin{remark*}[Standard quantified statement]
 \[
-\alpha +_{\mathbb{Z}} \beta = [(n+k,\; j+i)].
+  \text{Equivalent representatives give equivalent Mendelson sums.}
 \]
-Lemma~2.1 guarantees independence of representatives.
-\end{corollarybox}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This lemma ensures that addition is independent of the chosen representatives
+of the two integer classes.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-integers]{Mendelson integers}.
+  \item \hyperref[def:men-equivalence-relation]{Mendelson equivalence relation}.
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Mendelson addition]
+\label{def:men-addition}
+For \(\alpha,\beta\in\mathbb{Z}\) with representatives
+\((n,j)\in\alpha\) and \((k,i)\in\beta\),
+\[
+  \alpha+_{\mathbb{Z}}\beta=[(n+k,j+i)].
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Mendelson addition adds the first coordinates and the second
+  coordinates of representatives.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula is the class notation analogue of adding formal differences.
+Well-definedness is supplied by Mendelson 2.1.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:men-add-welld]{Addition well-defined}.
+\end{itemize}
+\end{dependencies}
 
 \begin{theorem}[Mendelson 2.2 --- Properties of addition]
 \label{thm:men-add}
-For all $\alpha, \beta, \gamma \in \mathbb{Z}$:
-\begin{enumerate}
-  \item[(i)] Commutativity: $\alpha +_{\mathbb{Z}} \beta
-    = \beta +_{\mathbb{Z}} \alpha$.
-  \item[(ii)] Associativity: $\alpha +_{\mathbb{Z}}
-    (\beta +_{\mathbb{Z}} \gamma)
-    = (\alpha +_{\mathbb{Z}} \beta) +_{\mathbb{Z}} \gamma$.
-  \item[(iii)] Additive identity: $\alpha +_{\mathbb{Z}} 0_{\mathbb{Z}}
-    = \alpha$.
-  \item[(iv)] Unique additive inverse: $\exists!\,\delta \in \mathbb{Z}$
-    such that $\alpha +_{\mathbb{Z}} \delta = 0_{\mathbb{Z}}$.
-\end{enumerate}
+Addition on \(\mathbb{Z}\) is commutative and associative, has
+\(0_{\mathbb{Z}}\) as identity, and gives each integer a unique additive
+inverse.
 \hyperref[prf:men-add]{Go to proof.}
 \end{theorem}
 
-\begin{remark*}[Uniqueness of the inverse]
-Part (iv) asserts both existence \emph{and} uniqueness of $-\alpha$.
-Tao's P4.1.6 asserts existence only; uniqueness follows later from
-C4.1.9.  Mendelson builds uniqueness into the statement.
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Mendelson addition makes the integers an abelian group under addition.}
+\]
 \end{remark*}
+
+\begin{remark*}[Interpretation]
+Mendelson packages existence and uniqueness of additive inverses into the
+addition theorem. Tao separates some of this work across later cancellation
+results.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-addition]{Mendelson addition}.
+\end{itemize}
+\end{dependencies}
 
 \begin{lemma}[Mendelson 2.3 --- Multiplication well-defined]
 \label{lem:men-mul-welld}
-If $(n,j) \sim (n_1,j_1)$ and $(k,i) \sim (k_1,i_1)$, then
-$(nk+ji,\; jk+ni) \sim (n_1k_1+j_1i_1,\; j_1k_1+n_1i_1)$.
+If \((n,j)\sim(n_1,j_1)\) and \((k,i)\sim(k_1,i_1)\), then
+\[
+  (nk+ji,jk+ni)\sim(n_1k_1+j_1i_1,j_1k_1+n_1i_1).
+\]
 \hyperref[prf:men-mul-welld]{Go to proof.}
 \end{lemma}
 
-\begin{corollarybox}{Definition 3.4 (Multiplication)}
-For $\alpha, \beta \in \mathbb{Z}$ with representatives
-$(n,j) \in \alpha$ and $(k,i) \in \beta$:
+\begin{remark*}[Standard quantified statement]
 \[
-\alpha \times_{\mathbb{Z}} \beta = [(nk+ji,\; jk+ni)].
+  \text{Equivalent representatives give equivalent Mendelson products.}
 \]
-Lemma~2.3 guarantees well-definedness.
-\end{corollarybox}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the representative-independence check for multiplication. It is the
+class notation form of the usual product of formal differences.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-integers]{Mendelson integers}.
+  \item \hyperref[def:men-equivalence-relation]{Mendelson equivalence relation}.
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Mendelson multiplication]
+\label{def:men-multiplication}
+For \(\alpha,\beta\in\mathbb{Z}\) with representatives
+\((n,j)\in\alpha\) and \((k,i)\in\beta\),
+\[
+  \alpha\times_{\mathbb{Z}}\beta=[(nk+ji,jk+ni)].
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Mendelson multiplication is the class operation induced by multiplying
+  formal differences.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The positive terms \(nk+ji\) and negative terms \(jk+ni\) are the result of
+expanding \((n-j)(k-i)\) without using subtraction as primitive notation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:men-mul-welld]{Multiplication well-defined}.
+\end{itemize}
+\end{dependencies}
 
 \begin{theorem}[Mendelson 2.4 --- Properties of multiplication]
 \label{thm:men-mul}
-For all $\alpha, \beta, \gamma \in \mathbb{Z}$:
-\begin{enumerate}
-  \item[(i)] Commutativity: $\alpha \times_{\mathbb{Z}} \beta
-    = \beta \times_{\mathbb{Z}} \alpha$.
-  \item[(ii)] Associativity: $\alpha \times_{\mathbb{Z}}
-    (\beta \times_{\mathbb{Z}} \gamma)
-    = (\alpha \times_{\mathbb{Z}} \beta) \times_{\mathbb{Z}} \gamma$.
-  \item[(iii)] Distributivity: $\alpha \times_{\mathbb{Z}}
-    (\beta +_{\mathbb{Z}} \gamma)
-    = (\alpha \times_{\mathbb{Z}} \beta)
-    +_{\mathbb{Z}} (\alpha \times_{\mathbb{Z}} \gamma)$.
-  \item[(iv)] Multiplicative identity: $\alpha \times_{\mathbb{Z}}
-    1_{\mathbb{Z}} = \alpha$.
-  \item[(v)] No zero divisors: $\alpha \neq 0_{\mathbb{Z}} \wedge
-    \beta \neq 0_{\mathbb{Z}} \Rightarrow
-    \alpha \times_{\mathbb{Z}} \beta \neq 0_{\mathbb{Z}}$.
-\end{enumerate}
+Multiplication on \(\mathbb{Z}\) is commutative and associative, distributes
+over addition, has \(1_{\mathbb{Z}}\) as identity, and has no zero divisors.
 \hyperref[prf:men-mul]{Go to proof.}
 \end{theorem}
 
-\begin{remark*}[Structural consequence]
-Theorems 2.2 and 2.4 establish that
-$(\mathbb{Z}, +_\mathbb{Z}, \times_\mathbb{Z})$ is an
-\textbf{integral domain}: a commutative ring with unit and no zero divisors.
-Mendelson makes this explicit in \S3.3 via abstract definitions.
-\end{remark*}
-
-% ---------------------------------------------------------
-% \S{}3.3  Rings and Integral Domains (abstract)
-% ---------------------------------------------------------
-\subsection*{\S{}3.3 \quad Rings and Integral Domains (Abstract Theory)}
-
-\begin{remark*}[Abstract vs concrete]
-Mendelson develops ring theory abstractly before applying it to $\mathbb{Z}$.
-Tao works concretely throughout, naming the ring structure only in
-Remark 4.1.7.
-\end{remark*}
-
-\begin{corollarybox}{Definition 3.5 (Ring; integral domain)}
-A \textbf{ring} $(R,+,\times)$: $(R,+)$ is an abelian group;
-$\times$ is associative; $\times$ distributes over $+$ on both sides.
-A ring is \textbf{commutative} if $xy=yx$;
-has a \textbf{unit} if $\exists\,1$ with $x\cdot 1=1\cdot x=x$.
-A nonzero $x$ is a \textbf{zero divisor} if $\exists$ nonzero $y$
-with $xy=0$.
-An \textbf{integral domain} is a commutative ring with unit,
-$0 \neq 1$, and no zero divisors.
-\end{corollarybox}
-
-\begin{theorem}[Mendelson 3.3 --- Cancellation $\Leftrightarrow$ no zero divisors]
-\label{thm:men-cancel-equiv}
-In a commutative ring with unit:
+\begin{remark*}[Standard quantified statement]
 \[
-(\forall x,y,z:\; xy=xz \wedge x\neq 0 \Rightarrow y=z)
-\;\Longleftrightarrow\;
-\text{no zero divisors.}
+  \text{Mendelson multiplication and addition make } \mathbb{Z}
+  \text{ an integral-domain-like arithmetic system.}
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This theorem gives the multiplicative half of the integer structure and
+already includes the no-zero-divisors property later used for cancellation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:men-add]{Properties of addition}.
+  \item \hyperref[def:men-multiplication]{Mendelson multiplication}.
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Ring and integral domain]
+\label{def:men-ring-integral-domain}
+A ring is a set with addition and multiplication such that addition is an
+abelian group operation, multiplication is associative, and multiplication
+distributes over addition. An integral domain is a commutative ring with unit,
+\(0\neq 1\), and no zero divisors.
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{An integral domain is a commutative ring with identity, nontrivial
+  zero and one, and no zero divisors.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Mendelson inserts abstract algebra here so that properties proved for
+\(\mathbb{Z}\) can be reused in later number systems.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{theorem}[Mendelson 3.3 --- Cancellation and no zero divisors]
+\label{thm:men-cancel-equiv}
+In a commutative ring with unit, cancellation by a nonzero factor is equivalent
+to the absence of zero divisors.
 \hyperref[prf:men-cancel-equiv]{Go to proof.}
 \end{theorem}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{In a commutative ring with unit, nonzero cancellation holds exactly
+  when there are no zero divisors.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The theorem identifies the algebraic condition behind cancellation. It turns
+the no-zero-divisors property into a reusable cancellation principle.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-ring-integral-domain]{Ring and integral domain}.
+\end{itemize}
+\end{dependencies}
+
 \begin{theorem}[Mendelson 3.4 --- Trivial ring]
 \label{thm:men-trivial}
-In a ring with unit: $0=1 \Longleftrightarrow R$ is a singleton.
+In a ring with unit, \(0=1\) if and only if the ring is a singleton.
 \hyperref[prf:men-trivial]{Go to proof.}
 \end{theorem}
 
-% ---------------------------------------------------------
-% \S{}4  Order
-% ---------------------------------------------------------
-\subsection*{\texorpdfstring{\S{}4 \quad Ordered Integral Domains and Order on $\mathbb{Z}$}{S4 quad Ordered Integral Domains and Order on Z}}
-
-\begin{remark*}[Strategy]
-Mendelson proves order theory for any integral domain first, then
-instantiates it for $\mathbb{Z}$.
-This gives order on $\mathbb{Q}$ and $\mathbb{R}$ for free later.
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{A unital ring has }0=1\text{ exactly in the one-element case.}
+\]
 \end{remark*}
 
-\begin{corollarybox}{Definition 4.1 (Ordered integral domain)}
-$(R,+,\times,<)$ is an \textbf{ordered integral domain} if
-$(R,+,\times)$ is an integral domain ($0\neq 1$) and $<$ satisfies:
-\begin{enumerate}
-  \item[(O1)] $x \not< x$ \hfill\textit{Irreflexivity}
-  \item[(O2)] $x<y \wedge y<z \Rightarrow x<z$ \hfill\textit{Transitivity}
-  \item[(O3)] $x<y \vee x=y \vee y<x$ \hfill\textit{Trichotomy}
-  \item[(O4)] $x<y \Rightarrow x+z<y+z$ \hfill\textit{Addition-monotone}
-  \item[(O5)] $x<y \wedge 0<z \Rightarrow xz<yz$ \hfill\textit{Positive-mult-monotone}
-\end{enumerate}
-$x$ is \textbf{positive} if $0<x$; \textbf{negative} if $x<0$.
-\end{corollarybox}
+\begin{remark*}[Interpretation]
+This result explains why \(0\neq 1\) is the nontriviality condition in the
+definition of integral domain.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-ring-integral-domain]{Ring and integral domain}.
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Ordered integral domain]
+\label{def:men-ordered-integral-domain}
+An ordered integral domain is an integral domain equipped with an order \(<\)
+that is trichotomous and transitive, is compatible with addition, and is
+compatible with multiplication by positive elements.
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{An ordered integral domain is an integral domain whose order is
+  compatible with addition and positive multiplication.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Mendelson proves order facts abstractly and then instantiates them for
+\(\mathbb{Z}\). This makes the order theory portable to later ordered
+number systems.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-ring-integral-domain]{Ring and integral domain}.
+\end{itemize}
+\end{dependencies}
 
 \begin{theorem}[Mendelson 4.1 --- Consequences of order axioms]
 \label{thm:men-order-axiom-consequences}
-In any ordered integral domain:
-(i)~exactly one of $x<y$, $x=y$, $y<x$ holds;
-(ii)~$x<y \wedge u<v \Rightarrow x+u<y+v$;
-(iii)~$0<z \wedge xz<yz \Rightarrow x<y$.
+In any ordered integral domain, order alternatives are exclusive, sums of
+ordered inequalities may be added, and multiplication by a positive element
+reflects strict order.
 \hyperref[prf:men-order-axiom-consequences]{Go to proof.}
 \end{theorem}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{The order axioms in an ordered integral domain imply standard
+  comparison and cancellation consequences.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+These consequences are the abstract order tools used later for the concrete
+integer order and for ordered fields.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-ordered-integral-domain]{Ordered integral domain}.
+\end{itemize}
+\end{dependencies}
+
 \begin{theorem}[Mendelson 4.2 --- Order and positivity]
-\label{thm:men-order-and-positivity}
-In any ordered integral domain:
-(i)~$x<y \iff y-x$ positive;
-(ii)~$x<y \iff x-y$ negative;
-(iii)~$x<y \iff -y<-x$;
-(iv)~sum and product of positives are positive;
-(v)~product of two negatives is positive.
-\hyperref[prf:men-order-and-positivity]{Go to proof.}
+\label{thm:men-order-positivity}
+In any ordered integral domain, order may be characterized by positivity of
+differences; negation reverses order; sums and products of positives are
+positive; and the product of two negatives is positive.
+\hyperref[prf:men-order-positivity]{Go to proof.}
 \end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{In an ordered integral domain, order, signs, negation, addition, and
+  multiplication interact by the standard positivity laws.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The theorem turns the order axioms into practical sign rules. These are the
+rules used in integer, rational, and real arithmetic.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:men-order-axiom-consequences]{Consequences of order axioms}.
+\end{itemize}
+\end{dependencies}
 
 \begin{theorem}[Mendelson 4.3 --- Positivity set construction]
 \label{thm:men-pos-set}
-Let $(R,+,\times)$ be an integral domain, $0\neq 1$.
-If $\mathcal{P}\subseteq R$ satisfies:
-$0\notin\mathcal{P}$;
-$\forall x:\; x\in\mathcal{P} \vee x=0 \vee {-x}\in\mathcal{P}$;
-$\mathcal{P}$ closed under $+$ and $\times$;
-then $(R,+,\times,<)$ with $x<y \iff y-x\in\mathcal{P}$ is an
-ordered integral domain and $\mathcal{P}$ is its positive set.
+Let \(R\) be an integral domain with \(0\neq 1\). If
+\(\mathcal{P}\subseteq R\) excludes \(0\), trichotomizes each element by
+membership in \(\mathcal{P}\), equality to \(0\), or membership of its
+negative, and is closed under addition and multiplication, then
+\[
+  x<y \quad\Longleftrightarrow\quad y-x\in\mathcal{P}
+\]
+defines an ordered integral domain whose positive set is \(\mathcal{P}\).
 \hyperref[prf:men-pos-set]{Go to proof.}
 \end{theorem}
 
-\begin{remark*}[Why this matters]
-Theorem 4.3 reduces verifying five order axioms to four positivity
-conditions.  Mendelson uses it to order $\mathbb{Z}$ via
-$\mathcal{P}_\mathbb{Z}$ without checking (O1)--(O5) directly.
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{A suitable positive cone on an integral domain determines an ordered
+  integral domain.}
+\]
 \end{remark*}
+
+\begin{remark*}[Interpretation]
+The theorem reduces order construction to checking positivity conditions. This
+is how Mendelson orders the integers without verifying every order axiom
+directly.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-ordered-integral-domain]{Ordered integral domain}.
+  \item \hyperref[def:men-ring-integral-domain]{Ring and integral domain}.
+\end{itemize}
+\end{dependencies}
 
 \begin{lemma}[Mendelson 4.4 --- Positivity is class-invariant]
 \label{lem:men-positivity-class-invariant}
-For $\alpha\in\mathbb{Z}$ and any two representatives
-$(n,j),(k,i)\in\alpha$: $j<n \iff i<k$.
+For \(\alpha\in\mathbb{Z}\), if \((n,j),(k,i)\in\alpha\), then
+\[
+  j<n \quad\Longleftrightarrow\quad i<k.
+\]
 \hyperref[prf:men-positivity-class-invariant]{Go to proof.}
 \end{lemma}
 
-\begin{corollarybox}{Definition 4.5 (Positivity set $\mathcal{P}_{\mathbb{Z}}$)}
+\begin{remark*}[Standard quantified statement]
 \[
-\mathcal{P}_{\mathbb{Z}}
-= \bigl\{\alpha\in\mathbb{Z}
-: \forall(n,j)\in\alpha,\; j<n \bigr\}.
+  \text{The positivity test for Mendelson integer representatives is
+  independent of representative.}
 \]
-Lemma 4.4 ensures this is well-defined.
-Intuitively: $\alpha$ is positive iff its representative has
-second coordinate strictly less than first, i.e.\ $n-j > 0$.
-\end{corollarybox}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The lemma makes it meaningful to define positivity for an equivalence class
+instead of for a particular ordered pair.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-integers]{Mendelson integers}.
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Mendelson positive set]
+\label{def:men-positive-set}
+\[
+  \mathcal{P}_{\mathbb{Z}}
+  =
+  \{\alpha\in\mathbb{Z}: \text{for every }(n,j)\in\alpha,\; j<n\}.
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{The positive Mendelson integers are the classes whose representatives
+  have second coordinate less than first coordinate.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the class notation form of saying that a formal difference is
+positive exactly when its first coordinate exceeds its second.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:men-positivity-class-invariant]{Positivity is class-invariant}.
+\end{itemize}
+\end{dependencies}
 
 \begin{lemma}[Mendelson 4.5]
 \label{lem:men-positive-set-conditions}
-$\mathcal{P}_\mathbb{Z}$ satisfies the four conditions of Theorem~4.3.
+\(\mathcal{P}_{\mathbb{Z}}\) satisfies the positivity-set conditions of
+Mendelson 4.3.
 \hyperref[prf:men-positive-set-conditions]{Go to proof.}
 \end{lemma}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{The Mendelson positive set satisfies the closure and trichotomy
+  requirements for constructing an order.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This lemma is the concrete verification needed before the abstract
+positivity-set theorem can be applied to \(\mathbb{Z}\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-positive-set]{Mendelson positive set}.
+  \item \hyperref[thm:men-pos-set]{Positivity set construction}.
+\end{itemize}
+\end{dependencies}
+
 \begin{corollary}[Mendelson 4.6]
 \label{cor:men-integers-ordered-integral-domain}
-$(\mathbb{Z},+_\mathbb{Z},\times_\mathbb{Z},<_\mathbb{Z})$ is an
-ordered integral domain with positive set $\mathcal{P}_\mathbb{Z}$.
+\((\mathbb{Z},+_{\mathbb{Z}},\times_{\mathbb{Z}},<_{\mathbb{Z}})\) is an
+ordered integral domain with positive set \(\mathcal{P}_{\mathbb{Z}}\).
 \hyperref[prf:men-integers-ordered-integral-domain]{Go to proof.}
 \end{corollary}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Mendelson's constructed integers form an ordered integral domain.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the consolidation point: the quotient construction, arithmetic
+operations, and positivity set together produce the ordered integer system.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:men-mul]{Properties of multiplication}.
+  \item \hyperref[lem:men-positive-set-conditions]{Positive set conditions}.
+\end{itemize}
+\end{dependencies}
+
 \begin{theorem}[Mendelson 4.7 --- Recovery of Peano system]
 \label{thm:men-positive-integers-form-peano-system}
-Let $T(x)=x+_\mathbb{Z}1_\mathbb{Z}$ for $x\in\mathcal{P}_\mathbb{Z}$.
-Then $(\mathcal{P}_\mathbb{Z},T,1_\mathbb{Z})$ is a Peano system.
+Let \(T(x)=x+_{\mathbb{Z}}1_{\mathbb{Z}}\) on
+\(\mathcal{P}_{\mathbb{Z}}\). Then
+\((\mathcal{P}_{\mathbb{Z}},T,1_{\mathbb{Z}})\) is a Peano system.
 \hyperref[prf:men-positive-integers-form-peano-system]{Go to proof.}
 \end{theorem}
 
-\begin{remark*}[Significance]
-Starting from a Peano system for $\mathbb{N}$, we construct $\mathbb{Z}$,
-and then prove the positive integers \emph{inside} $\mathbb{Z}$ form a
-new Peano system consistent with the original.
-Tao does not prove this explicitly.
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{The positive integers inside Mendelson's } \mathbb{Z}
+  \text{ recover a Peano system.}
+\]
 \end{remark*}
 
-% ---------------------------------------------------------
-% \S{}4  Absolute Value
-% ---------------------------------------------------------
-\subsection*{\S{}4 \quad Absolute Value}
+\begin{remark*}[Interpretation]
+Mendelson proves that the positive part of the constructed integers recovers
+the original natural-number structure. Tao does not emphasize this recovery as
+a separate theorem.
+\end{remark*}
 
-\begin{corollarybox}{Definition 4.6 (Absolute value)}
-In any ordered integral domain:
-$|x| = x$ if $0\leq x$; $|x|=-x$ if $x<0$.
-\end{corollarybox}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:men-integers-ordered-integral-domain]{Integers as ordered integral domain}.
+  \item \hyperref[def:men-positive-set]{Mendelson positive set}.
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Mendelson absolute value]
+\label{def:men-absolute-value}
+In an ordered integral domain,
+\[
+  |x| =
+  \begin{cases}
+    x, & 0\leq x,\\
+    -x, & x<0.
+  \end{cases}
+\]
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Absolute value returns an element or its negative according to sign.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute value measures magnitude independently of sign in any ordered
+integral domain, not only in the integers.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-ordered-integral-domain]{Ordered integral domain}.
+\end{itemize}
+\end{dependencies}
 
 \begin{theorem}[Mendelson 4.8 --- Properties of absolute value]
 \label{thm:men-absolute-value-properties}
-In any ordered integral domain, $|{\cdot}|$ satisfies:
-(1)~$|x|\geq 0$;
-(2)~$|x|=0\iff x=0$;
-(3)~$|-x|=|x|$;
-(4)~$|x-y|=|y-x|$;
-(5)~$|xy|=|x||y|$;
-(6)~$-|x|\leq x\leq|x|$;
-(7)~$|z|<u\iff -u<z<u$;
-(8)~$|z|\leq u\iff -u\leq z\leq u$;
-(9)~$u\geq v \wedge u\geq -v \Rightarrow u\geq|v|$;
-(10)~$|x+y|\leq|x|+|y|$ \textit{(triangle inequality)};
-(11)~$|x-y|\geq\bigl||x|-|y|\bigr|$ \textit{(reverse triangle inequality)}.
+In any ordered integral domain, absolute value is nonnegative, vanishes
+exactly at zero, is invariant under negation, is multiplicative, bounds an
+element between its negative and positive magnitude, characterizes two-sided
+inequalities, and satisfies the triangle and reverse triangle inequalities.
 \hyperref[prf:men-absolute-value-properties]{Go to proof.}
 \end{theorem}
 
-% ---------------------------------------------------------
-% \S{}5  Number theory
-% ---------------------------------------------------------
-\subsection*{\S{}5 \quad Division, Divisibility, Primes}
-
-\begin{remark*}[Scope]
-This material is not in Tao Ch~4 and is not a prerequisite for real
-analysis.  It is valuable background for number theory and abstract algebra.
-See the comparison table for coverage decisions.
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Absolute value in an ordered integral domain satisfies the standard
+  sign, product, interval, triangle, and reverse-triangle laws.}
+\]
 \end{remark*}
+
+\begin{remark*}[Interpretation]
+These are the familiar absolute-value laws stated at the level of ordered
+integral domains. They become available for the integers once the ordered
+integral-domain structure has been built.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-absolute-value]{Mendelson absolute value}.
+  \item \hyperref[thm:men-order-positivity]{Order and positivity}.
+\end{itemize}
+\end{dependencies}
 
 \begin{theorem}[Mendelson 5.1 --- Euclidean division]
 \label{thm:men-euclidean-division}
-For any integer $\alpha>1$ and any integer $\beta$, there exist unique
-integers $q,r$ with $\beta=q\alpha+r$ and $0\leq r<\alpha$.
+For any integer \(\alpha>1\) and any integer \(\beta\), there exist unique
+integers \(q,r\) such that \(\beta=q\alpha+r\) and \(0\leq r<\alpha\).
 \hyperref[prf:men-euclidean-division]{Go to proof.}
 \end{theorem}
 
-\begin{definition}[Divisibility]
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Division by an integer greater than one has a unique quotient and
+  remainder.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This begins Mendelson's number-theoretic development. It is useful background
+for arithmetic but is not part of the shortest path to real analysis.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:men-integers-ordered-integral-domain]{Integers as ordered integral domain}.
+\end{itemize}
+\end{dependencies}
+
+\begin{definition}[Mendelson divisibility]
 \label{def:men-divisibility}
-$\alpha\mid\beta \iff \exists\,\gamma\in\mathbb{Z}:\;\beta=\alpha\gamma$.
+For integers \(\alpha,\beta\),
+\[
+  \alpha\mid\beta
+  \quad\Longleftrightarrow\quad
+  \text{there exists }\gamma\in\mathbb{Z}\text{ such that }\beta=\alpha\gamma.
+\]
 \end{definition}
 
-\begin{theorem}[Mendelson 5.2--5.9]
-\label{thm:men-divisibility-properties}
-Standard divisibility properties, existence and B\'{e}zout form of gcd,
-characterisation of relative primeness, infinitude of primes
-(Euclid), Euclid's lemma ($\rho\mid\alpha\beta\Rightarrow\rho\mid\alpha$
-or $\rho\mid\beta$), and the fundamental theorem of arithmetic
-(unique prime factorisation up to order and sign).
-\hyperref[prf:men-divisibility-properties]{Go to proof.}
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{An integer divides another when the second is an integer multiple of
+  the first.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Divisibility is the basic predicate for the subsequent gcd, prime, and
+factorization results.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:men-integers-ordered-integral-domain]{Integers as ordered integral domain}.
+\end{itemize}
+\end{dependencies}
+
+\begin{theorem}[Mendelson 5.2 --- Basic divisibility properties]
+\label{thm:men-basic-divisibility-properties}
+Integer divisibility is reflexive and transitive, is compatible with
+multiplication, and is unchanged by multiplication of a divisor or dividend by
+a unit.
+\hyperref[prf:men-basic-divisibility-properties]{Go to proof.}
 \end{theorem}
 
-% ---------------------------------------------------------
-% \S{}6  Modular arithmetic
-% ---------------------------------------------------------
-\subsection*{\texorpdfstring{\S{}6 \quad Integers Modulo $n$ (Optional)}{S6 quad Integers Modulo n (Optional)}}
-
-\begin{remark*}[Scope]
-Congruence mod $n$ as an equivalence relation, $\mathbb{Z}_n$ as a
-commutative ring with unit; integral domain iff $n$ is prime.
-Not required for the real analysis track.
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Mendelson's basic divisibility laws give the elementary algebra of }
+  \mid \text{ on } \mathbb{Z}.
+\]
 \end{remark*}
 
-% ---------------------------------------------------------
-% \S{}7--9  Structural theory
-% ---------------------------------------------------------
-\subsection*{\texorpdfstring{\S{}7--9 \quad Integer Action, Embedding Theory, Uniqueness of $\mathbb{Z}$}{S7--9 quad Integer Action, Embedding Theory, Uniqueness of Z}}
-
-\begin{remark*}[Scope]
-Chapters 7--9 are graduate-level algebra.
-Key results:
-\textbf{Thm~8.8}: every characteristic-$0$ integral domain contains
-a copy of $\mathbb{Z}$.
-\textbf{Thm~9.5}: $\mathcal{D}\cong\mathbb{Z}$ iff characteristic~$0$
-and no proper subdomains.
-\textbf{Thm~9.8}: any two well-ordered integral domains are isomorphic
---- $\mathbb{Z}$ is unique up to isomorphism.
-These results are beyond what is needed for real analysis but are
-worth knowing as statements.
+\begin{remark*}[Interpretation]
+These properties are the routine algebraic rules that make divisibility usable
+inside proofs about gcds, primes, and factorization.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-divisibility]{Mendelson divisibility}.
+\end{itemize}
+\end{dependencies}
+
+\begin{theorem}[Mendelson 5.3 --- GCD and Bezout form]
+\label{thm:men-gcd-bezout}
+For integers \(\alpha\) and \(\beta\), not both zero, a greatest common divisor
+exists. Moreover, the greatest common divisor may be written in Bezout form
+\[
+  d = x\alpha+y\beta
+\]
+for some integers \(x,y\).
+\hyperref[prf:men-gcd-bezout]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Nonzero integer pairs have a greatest common divisor admitting a
+  Bezout representation.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Euclidean division theorem drives the descent argument behind gcd
+existence and Bezout representation. This is the bridge from divisibility to
+prime factorization.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-divisibility]{Mendelson divisibility}.
+  \item \hyperref[thm:men-euclidean-division]{Euclidean division}.
+  \item \hyperref[thm:men-basic-divisibility-properties]{Basic divisibility properties}.
+\end{itemize}
+\end{dependencies}
+
+\begin{theorem}[Mendelson 5.4 --- Relative primeness criterion]
+\label{thm:men-relative-primeness}
+Two integers are relatively prime if and only if their greatest common divisor
+is a unit, equivalently if and only if \(1\) is an integer linear combination
+of the two integers up to sign.
+\hyperref[prf:men-relative-primeness]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Relative primeness is characterized by a unit gcd and by a Bezout
+  linear combination.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the form of relative primeness used in divisibility arguments. It
+turns an absence of common divisors into an explicit linear combination.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:men-gcd-bezout]{GCD and Bezout form}.
+\end{itemize}
+\end{dependencies}
+
+\begin{theorem}[Mendelson 5.5 --- Infinitude of primes]
+\label{thm:men-infinitude-of-primes}
+There are infinitely many prime integers.
+\hyperref[prf:men-infinitude-of-primes]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{No finite list contains all prime integers.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is Euclid's classical theorem in the integer setting. The usual proof
+forms a number one more than a product of listed primes.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-divisibility]{Mendelson divisibility}.
+  \item \hyperref[thm:men-basic-divisibility-properties]{Basic divisibility properties}.
+\end{itemize}
+\end{dependencies}
+
+\begin{theorem}[Mendelson 5.6 --- Euclid's lemma]
+\label{thm:men-euclid-lemma}
+If \(\rho\) is prime and \(\rho\mid\alpha\beta\), then
+\[
+  \rho\mid\alpha
+  \quad\text{or}\quad
+  \rho\mid\beta.
+\]
+\hyperref[prf:men-euclid-lemma]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{A prime divisor of a product divides at least one factor.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Euclid's lemma is the key irreducibility property that makes prime
+factorization unique.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:men-relative-primeness]{Relative primeness criterion}.
+  \item \hyperref[def:men-divisibility]{Mendelson divisibility}.
+\end{itemize}
+\end{dependencies}
+
+\begin{theorem}[Mendelson 5.7--5.9 --- Unique prime factorization]
+\label{thm:men-unique-prime-factorization}
+Every nonzero nonunit integer factors into primes, and this factorization is
+unique up to reordering and multiplication of factors by units.
+\hyperref[prf:men-unique-prime-factorization]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{Integer prime factorization exists and is unique up to order and sign.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the fundamental theorem of arithmetic in Mendelson's integer system.
+Existence follows by descent, while uniqueness is controlled by Euclid's
+lemma.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:men-euclid-lemma]{Euclid's lemma}.
+  \item \hyperref[thm:men-infinitude-of-primes]{Infinitude of primes}.
+\end{itemize}
+\end{dependencies}
 
 \begin{definition}[Well-ordered integral domain]
 \label{def:men-well-ordered-integral-domain}
-An ordered integral domain is \textbf{well-ordered} if every nonempty
-subset of its positive elements contains a least element.
+An ordered integral domain is well-ordered if every nonempty subset of its
+positive elements contains a least element.
 \end{definition}
 
-\begin{theorem}[Mendelson 9.8 --- Uniqueness of $\mathbb{Z}$]
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{A well-ordered integral domain is an ordered integral domain whose
+  positive part is well ordered.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The well-ordering condition isolates the extra structure that characterizes
+the integer system among ordered integral domains.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-ordered-integral-domain]{Ordered integral domain}.
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Optional Structural Theory}
+
+\begin{remark*}[Exposition]
+Mendelson also develops congruence modulo \(n\), integer actions, embedding
+theory, and uniqueness of the integer system. These topics are valuable
+context for algebra, but they are optional for the real-analysis route.
+\end{remark*}
+
+\begin{theorem}[Mendelson 9.8 --- Uniqueness of \(\mathbb{Z}\)]
 \label{thm:men-well-ordered-integral-domain-uniqueness}
-Any two well-ordered integral domains are isomorphic.
-In particular, $\mathbb{Z}$ is, up to isomorphism, the unique
-well-ordered integral domain.
+Any two well-ordered integral domains are isomorphic. In particular,
+\(\mathbb{Z}\) is unique up to isomorphism as a well-ordered integral domain.
 \hyperref[prf:men-well-ordered-integral-domain-uniqueness]{Go to proof.}
 \end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \text{The well-ordered integral-domain axioms characterize the integers up
+  to isomorphism.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the structural endpoint of Mendelson's treatment. The integers are not
+only constructed; they are characterized up to the appropriate notion of
+structure-preserving equivalence.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:men-well-ordered-integral-domain]{Well-ordered integral domain}.
+\end{itemize}
+\end{dependencies}

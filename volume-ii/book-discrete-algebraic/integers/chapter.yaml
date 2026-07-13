@@ -273,7 +273,7 @@ environments:
   file: notes\mendelson-construction\notes-int-mendelson-construction.tex
   display_title: Mendelson 4.1 --- Consequences of order axioms
   proof_file: null
-- label: thm:men-order-and-positivity
+- label: thm:men-order-positivity
   type: thm
   file: notes\mendelson-construction\notes-int-mendelson-construction.tex
   display_title: Mendelson 4.2 --- Order and positivity
@@ -318,10 +318,35 @@ environments:
   file: notes\mendelson-construction\notes-int-mendelson-construction.tex
   display_title: Divisibility
   proof_file: null
-- label: thm:men-divisibility-properties
+- label: thm:men-basic-divisibility-properties
   type: thm
   file: notes\mendelson-construction\notes-int-mendelson-construction.tex
-  display_title: Mendelson 5.2--5.9
+  display_title: Mendelson 5.2 --- Basic divisibility properties
+  proof_file: null
+- label: thm:men-gcd-bezout
+  type: thm
+  file: notes\mendelson-construction\notes-int-mendelson-construction.tex
+  display_title: Mendelson 5.3 --- GCD and Bezout form
+  proof_file: null
+- label: thm:men-relative-primeness
+  type: thm
+  file: notes\mendelson-construction\notes-int-mendelson-construction.tex
+  display_title: Mendelson 5.4 --- Relative primeness criterion
+  proof_file: null
+- label: thm:men-infinitude-of-primes
+  type: thm
+  file: notes\mendelson-construction\notes-int-mendelson-construction.tex
+  display_title: Mendelson 5.5 --- Infinitude of primes
+  proof_file: null
+- label: thm:men-euclid-lemma
+  type: thm
+  file: notes\mendelson-construction\notes-int-mendelson-construction.tex
+  display_title: Mendelson 5.6 --- Euclid's lemma
+  proof_file: null
+- label: thm:men-unique-prime-factorization
+  type: thm
+  file: notes\mendelson-construction\notes-int-mendelson-construction.tex
+  display_title: Mendelson 5.7--5.9 --- Unique prime factorization
   proof_file: null
 - label: def:men-well-ordered-integral-domain
   type: def

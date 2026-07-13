@@ -2,21 +2,20 @@
 
 \begin{toolkitbox}{Integer Toolkit -- Tao \S4.1 Quick Reference}
 \small
-\begin{tabular}{l l l}
+\begin{tabular}{l p{0.68\linewidth}}
 \toprule
-\textbf{Label} & \textbf{Statement} & \textbf{Proof method} \\
+\textbf{Name} & \textbf{Meaning} \\
 \midrule
-Def~4.1.1   & $a{-\!\!-}b = c{-\!\!-}d \iff a+d=c+b$ & Definition \\
-Def~4.1.2   & Addition and multiplication formulas & Definition \\
-L4.1.3      & Operations are well-defined & Expand; use $a+b'=a'+b$ \\
-Def~4.1.4   & $-(a{-\!\!-}b) := b{-\!\!-}a$ & Definition \\
-L4.1.5      & Trichotomy of $\mathbb{Z}$ & Cases $a>b$, $a=b$, $a<b$ \\
-P4.1.6      & Nine ring laws & Expand via representatives \\
-Def~4.1.7   & $x - y := x + (-y)$ & Definition \\
-P4.1.8      & No zero divisors & Uses L2.3.3 \\
-C4.1.9      & Cancellation: $ac=bc, c\neq 0 \Rightarrow a=b$ & Uses P4.1.8 or C2.3.7+L4.1.5 \\
-Def~4.1.10  & Order: $n \geq m \iff n = m+a$, $a \in \mathbb{N}$ & Definition \\
-L4.1.11     & Six order properties & Use part (a) as bridge \\
+\hyperref[def:tao-integer-expression]{Integer expression} & Placeholder differences modulo cross-addition. \\
+\hyperref[def:tao-integer-operations]{Integer operations} & Representative formulas for addition and multiplication. \\
+\hyperref[lem:int-well-defined]{Well-definedness} & Equal representatives give equal sums and products. \\
+\hyperref[def:tao-negation]{Negation} & Swapping coordinates gives additive inverse notation. \\
+\hyperref[lem:int-trichotomy]{Trichotomy} & Every integer is zero, positive, or negative. \\
+\hyperref[def:int-subtraction]{Subtraction} & Subtraction is addition of the additive inverse. \\
+\hyperref[prop:int-no-zero-div]{No zero divisors} & A product is zero only when a factor is zero. \\
+\hyperref[cor:int-cancel]{Cancellation} & Nonzero integer factors cancel from product equalities. \\
+\hyperref[def:tao-order-on-z]{Order} & Order is defined by translation by natural numbers. \\
+\hyperref[lem:int-order]{Order properties} & Translation, multiplication, reversal, transitivity, and trichotomy laws. \\
 \bottomrule
 \end{tabular}
 \end{toolkitbox}
