@@ -1,0 +1,58 @@
+\newpage
+\phantomsection
+\label{prf:two-sided-induction-and-recursion}
+\LRAProofFor{thm:two-sided-induction-and-recursion}
+
+\begin{remark*}[Return]
+\hyperref[thm:two-sided-induction-and-recursion]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Two-sided induction and recursion]
+A predicate that holds at zero and is preserved by successor and predecessor
+holds everywhere on \(Z\). Compatible forward and backward recursive clauses
+determine a unique function out of \(Z\).
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+For induction, use the disjoint decomposition
+\(Z=\{0\}\sqcup P\sqcup N\). The zero case is the base hypothesis. A point of
+\(P\) is obtained by starting at \(\mathsf{succ}(0)\) and repeatedly
+applying successor, so ordinary induction along \(P\) proves the predicate on
+the positive ray. A point of \(N\) is obtained by starting at
+\(\mathsf{pred}(0)\) and repeatedly applying predecessor, so ordinary
+induction along \(N\) proves the predicate on the negative ray.
+
+For recursion, define the function separately on the three parts: send zero to
+the chosen base value, define the positive ray by iterating the successor
+step, and define the negative ray by iterating the predecessor step. The
+inverse hypotheses on the two step functions guarantee that the successor and
+predecessor equations agree at the zero crossings. Uniqueness follows by
+two-sided induction applied to the predicate that two candidate functions have
+the same value.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+This is the two-sided analogue of Peano induction. Peano induction has one
+direction away from the base point. The integer line has two directions away
+from zero, so a proof must propagate both right and left. The recursion theorem
+has the same shape: defining a function on integers requires a zero value, a
+right-step rule, and a left-step rule. The two step rules must be compatible,
+because the first positive and first negative points both touch zero through
+the inverse laws.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Use ordinary structural induction on the positive and negative rays; prove
+uniqueness by applying the resulting two-sided induction principle to equality
+of two recursive candidates.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:two-sided-successor-predecessor-inverses]{Successor and predecessor are inverse operations}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

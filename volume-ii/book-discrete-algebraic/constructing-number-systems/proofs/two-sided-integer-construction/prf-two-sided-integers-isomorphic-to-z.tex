@@ -1,0 +1,48 @@
+\newpage
+\phantomsection
+\label{prf:two-sided-integers-isomorphic-to-z}
+\LRAProofFor{thm:two-sided-integers-isomorphic-to-z}
+
+\begin{remark*}[Return]
+\hyperref[thm:two-sided-integers-isomorphic-to-z]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[The two-sided integers are isomorphic to the usual integers]
+The two-sided integer construction is isomorphic to the usual integer system,
+preserving zero, successor, predecessor, addition, multiplication, negation,
+and order.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Define a comparison map by sending zero to \(0\), the \(n\)-th point of the
+positive ray to \(n\), and the \(n\)-th point of the negative ray to \(-n\).
+The disjoint ray decomposition makes the map injective, and two-sided
+induction makes it surjective. The recursive definitions of addition,
+negation, multiplication, and order show that the map preserves the named
+structure. Therefore the two-sided construction is not a new number system but
+a different presentation of the usual integers.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The comparison theorem is the final verification step. A construction may have
+the right-looking operations and still fail to be the intended object. The
+isomorphism proves that every two-sided integer corresponds to exactly one
+usual integer, every usual integer occurs, and the correspondence respects the
+arithmetic and order structure.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Construct the map by ray position, prove bijectivity from disjointness and
+induction, then prove preservation by the recursion equations.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:two-sided-integers-ordered-commutative-ring]{The two-sided construction gives an ordered commutative ring}
+  \item \hyperref[def:integers]{Integers}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

@@ -1,0 +1,317 @@
+\subsection*{The Picture}
+
+\begin{remark*}[Exposition]
+The ordinary construction of the integers in this volume uses formal
+differences: an integer is represented by a pair of whole numbers, and equal
+formal differences are identified by an equivalence relation. That construction
+is canonical for the book because it explains exactly how subtraction is
+adjoined to the whole numbers.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+There is another natural picture. Integers look like two one-way rays separated
+by zero:
+\[
+\cdots,\;-3,\;-2,\;-1,\;0,\;1,\;2,\;3,\;\cdots .
+\]
+The question is whether the integers can be constructed directly as a positive
+ray, a negative ray, and a distinguished zero, with successor and predecessor
+moving along those rays. The answer is yes, but the construction makes
+different proof obligations visible.
+\end{remark*}
+
+\begin{definition}[Two-sided integer rays]
+\label{def:two-sided-integer-rays}
+A \emph{two-sided ray presentation} consists of three disjoint parts:
+\[
+Z=\{0\}\sqcup P\sqcup N,
+\]
+where \(P\) is generated from a first positive element by repeated successor
+and \(N\) is generated from a first negative element by repeated predecessor.
+\end{definition}
+\SourceVariantOf{thm:canonical-form-of-integers}{LRA}{Volume II, Constructing a Number System}{source_variant_of}
+
+\begin{remark*}[Standard quantified statement]
+The carrier is partitioned into zero, a positive ray, and a negative ray.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This starts from the sign picture that is usually drawn after the integers are
+already known. In the present section it is treated as construction data.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:number-system-construction-data]{Construction Data}
+  \item \hyperref[thm:canonical-form-of-integers]{Canonical Form of Integers}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Construction Data}
+
+\begin{definition}[Two-sided successor construction data]
+\label{def:two-sided-successor-construction-data}
+The \emph{two-sided successor construction data} consists of a carrier \(Z\),
+a distinguished element \(0\in Z\), and two total functions
+\[
+\mathsf{succ},\mathsf{pred}:Z\to Z
+\]
+such that
+\[
+\mathsf{pred}(\mathsf{succ}(x))=x
+\quad\text{and}\quad
+\mathsf{succ}(\mathsf{pred}(x))=x
+\]
+for every \(x\in Z\), together with the decomposition
+\[
+Z=\{0\}\sqcup P\sqcup N
+\]
+where \(P\) is generated from \(\mathsf{succ}(0)\) by successor and
+\(N\) is generated from \(\mathsf{pred}(0)\) by predecessor.
+\end{definition}
+\SourceVariantOf{def:integers}{Iwanus-Wybraniec}{Polish integer arithmetic axiomatizations, 1965}{source_variant_of}
+
+\begin{remark*}[Standard quantified statement]
+The raw data are zero, mutually inverse successor and predecessor maps, and a
+disjoint exhaustion by the zero point, the positive successor ray, and the
+negative predecessor ray.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The quotient construction makes equality the first problem. The two-sided
+construction makes case analysis the first problem. Every operation must say
+what happens at zero, on the positive ray, and on the negative ray.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Lean verification record. Source: Iwanu{\'s}, \emph{Some Axiomatic Systems of
+Integers Arithmetic}; Wybraniec, \emph{A Certain System of Axioms in the
+Integer Arithmetic}. Formalizes
+\hyperref[def:two-sided-successor-construction-data]{two-sided successor
+construction data}. Lean module:
+\texttt{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}. Declarations:
+\texttt{Z}, \texttt{succ}, \texttt{pred}. Status: checked against
+\texttt{lra-lean}.
+\end{remark*}
+\LeanFormalizes{def:two-sided-successor-construction-data}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{Z}{checked}
+\LeanFormalizes{def:two-sided-successor-construction-data}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{succ}{checked}
+\LeanFormalizes{def:two-sided-successor-construction-data}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{pred}{checked}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:number-system-construction-data]{Construction Data}
+  \item \hyperref[def:integers]{Integers}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Axioms and Induction}
+
+\begin{theorem}[Successor and predecessor are inverse operations]
+\label{thm:two-sided-successor-predecessor-inverses}
+In the two-sided construction, successor and predecessor satisfy
+\[
+\mathsf{pred}(\mathsf{succ}(x))=x
+\quad\text{and}\quad
+\mathsf{succ}(\mathsf{pred}(x))=x
+\]
+for every \(x\in Z\). Consequently both maps are injective.
+\hyperref[prf:two-sided-successor-predecessor-inverses]{Go to proof.}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+Successor and predecessor undo each other everywhere on \(Z\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This replaces the one-sided Peano successor with a two-sided motion. Moving one
+step right and then one step left returns to the same integer, and conversely.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Lean verification record. Source: Iwanu{\'s}; Wybraniec. Formalizes
+\hyperref[thm:two-sided-successor-predecessor-inverses]{the inverse-operation
+theorem}. Lean module:
+\texttt{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}. Declarations:
+\texttt{pred\_succ}, \texttt{succ\_pred}, \texttt{succ\_injective},
+\texttt{pred\_injective}. Status: checked against \texttt{lra-lean}.
+\end{remark*}
+\LeanFormalizes{thm:two-sided-successor-predecessor-inverses}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{pred_succ}{checked}
+\LeanFormalizes{thm:two-sided-successor-predecessor-inverses}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{succ_pred}{checked}
+\LeanFormalizes{thm:two-sided-successor-predecessor-inverses}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{succ_injective}{checked}
+\LeanFormalizes{thm:two-sided-successor-predecessor-inverses}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{pred_injective}{checked}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:two-sided-successor-construction-data]{Two-sided successor construction data}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorem}[Two-sided induction and recursion]
+\label{thm:two-sided-induction-and-recursion}
+Let \(A\) be a predicate on \(Z\). If \(A(0)\), \(A(x)\Rightarrow
+A(\mathsf{succ}(x))\), and \(A(x)\Rightarrow A(\mathsf{pred}(x))\)
+for every \(x\in Z\), then \(A(x)\) holds for every \(x\in Z\).
+Moreover, any value at zero and mutually inverse successor and predecessor
+steps determine a unique recursive function out of \(Z\).
+\hyperref[prf:two-sided-induction-and-recursion]{Go to proof.}
+\end{theorem}
+\SourceVariantOf{def:number-system-construction-verification}{Iwanus-Wybraniec}{Polish integer arithmetic axiomatizations, 1965}{reduces_to}
+
+\begin{remark*}[Standard quantified statement]
+A property holds everywhere on \(Z\) once it holds at zero and propagates both
+forward and backward; a recursive definition on \(Z\) is determined by its
+zero value and compatible forward and backward steps.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is why the ray decomposition matters. To prove something for every
+integer, prove it at zero, along the positive ray, and along the negative ray.
+To define an operation recursively, the forward and backward clauses must
+agree at the places where the rays meet zero.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Lean verification record. Source: Iwanu{\'s}; Wybraniec. Formalizes
+\hyperref[thm:two-sided-induction-and-recursion]{two-sided induction and
+recursion}. Lean module:
+\texttt{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}. Declarations:
+\texttt{twoSidedInduction}, \texttt{recZ}, \texttt{recursion\_exists},
+\texttt{recursion\_unique}. Status: checked against \texttt{lra-lean}.
+\end{remark*}
+\LeanFormalizes{thm:two-sided-induction-and-recursion}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{twoSidedInduction}{checked}
+\LeanFormalizes{thm:two-sided-induction-and-recursion}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{recZ}{checked}
+\LeanFormalizes{thm:two-sided-induction-and-recursion}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{recursion_exists}{checked}
+\LeanFormalizes{thm:two-sided-induction-and-recursion}{lra-lean}{LRA.VolumeII.Integers.Polish.TwoSidedSuccessor}{recursion_unique}{checked}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:two-sided-successor-predecessor-inverses]{Successor and predecessor are inverse operations}
+  \item \hyperref[def:number-system-construction-verification]{Construction Verification}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Arithmetic from Motion}
+
+\begin{remark*}[Exposition]
+Addition is defined by moving the left input along the ray described by the
+right input: adding zero does nothing, adding a positive element applies
+successor repeatedly, and adding a negative element applies predecessor
+repeatedly. This is conceptually simple, but it creates a long lemma ladder.
+One must prove that successor commutes with addition, predecessor commutes with
+addition, zero is a left identity, addition is commutative, and addition is
+associative.
+\end{remark*}
+
+\begin{remark*}[Why the lemmas are needed]
+The quotient construction pays for arithmetic through well-definedness. The
+two-sided construction pays through structural rewriting. For example,
+commutativity of addition is not built into the definition: the definition
+recurses on the second input, so proving \(x+y=y+x\) requires separate
+successor and predecessor transport lemmas.
+\end{remark*}
+
+\begin{theorem}[The two-sided construction gives an ordered commutative ring]
+\label{thm:two-sided-integers-ordered-commutative-ring}
+With addition, negation, multiplication, and order defined by the two-sided
+successor construction, the resulting system satisfies the laws of an ordered
+commutative ring.
+\hyperref[prf:two-sided-integers-ordered-commutative-ring]{Go to proof.}
+\end{theorem}
+\SourceVariantOf{thm:z-commutative-ring}{Iwanus-Wybraniec}{Polish integer arithmetic axiomatizations, 1965}{reduces_to}
+\SourceVariantOf{thm:z-totally-ordered-set}{Iwanus-Wybraniec}{Polish integer arithmetic axiomatizations, 1965}{reduces_to}
+
+\begin{remark*}[Standard quantified statement]
+The two-sided system has associative and commutative addition, additive
+inverses, associative and commutative multiplication, distributivity, a total
+order, and the usual compatibility of order with addition and multiplication
+by positive elements.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The construction is not shorter than the formal-difference construction. Its
+pedagogical value is that every law can be traced to motion along the two rays.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Lean verification record. Source: Iwanu{\'s}; Wybraniec. Formalizes
+\hyperref[thm:two-sided-integers-ordered-commutative-ring]{the ordered-ring
+workup}. Lean modules:
+\texttt{LRA.VolumeII.Integers.Polish.LandauWorkup} and
+\texttt{LRA.VolumeII.Integers.Polish.Implementation}. Declarations:
+\texttt{add\_comm}, \texttt{add\_assoc}, \texttt{mul\_comm},
+\texttt{mul\_assoc}, \texttt{distrib\_left}, \texttt{distrib\_right},
+\texttt{lt\_trichotomy}, \texttt{PolishOrderedRingLaws}. Status: checked
+against \texttt{lra-lean}.
+\end{remark*}
+\LeanFormalizes{thm:two-sided-integers-ordered-commutative-ring}{lra-lean}{LRA.VolumeII.Integers.Polish.LandauWorkup}{add_comm}{checked}
+\LeanFormalizes{thm:two-sided-integers-ordered-commutative-ring}{lra-lean}{LRA.VolumeII.Integers.Polish.LandauWorkup}{add_assoc}{checked}
+\LeanFormalizes{thm:two-sided-integers-ordered-commutative-ring}{lra-lean}{LRA.VolumeII.Integers.Polish.LandauWorkup}{mul_comm}{checked}
+\LeanFormalizes{thm:two-sided-integers-ordered-commutative-ring}{lra-lean}{LRA.VolumeII.Integers.Polish.LandauWorkup}{mul_assoc}{checked}
+\LeanFormalizes{thm:two-sided-integers-ordered-commutative-ring}{lra-lean}{LRA.VolumeII.Integers.Polish.LandauWorkup}{distrib_left}{checked}
+\LeanFormalizes{thm:two-sided-integers-ordered-commutative-ring}{lra-lean}{LRA.VolumeII.Integers.Polish.LandauWorkup}{distrib_right}{checked}
+\LeanFormalizes{thm:two-sided-integers-ordered-commutative-ring}{lra-lean}{LRA.VolumeII.Integers.Polish.LandauWorkup}{lt_trichotomy}{checked}
+\LeanFormalizes{thm:two-sided-integers-ordered-commutative-ring}{lra-lean}{LRA.VolumeII.Integers.Polish.Implementation}{PolishOrderedRingLaws}{checked}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:two-sided-induction-and-recursion]{Two-sided induction and recursion}
+  \item \hyperref[thm:z-commutative-ring]{\(\mathbb{Z}\) Is a Commutative Ring}
+  \item \hyperref[thm:z-totally-ordered-set]{\(\mathbb{Z}\) Is a Totally Ordered Set}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Comparison with the Standard Construction}
+
+\begin{theorem}[The two-sided integers are isomorphic to the usual integers]
+\label{thm:two-sided-integers-isomorphic-to-z}
+The two-sided integer construction is isomorphic to the usual integer system.
+The isomorphism preserves zero, successor, predecessor, addition,
+multiplication, negation, and order.
+\hyperref[prf:two-sided-integers-isomorphic-to-z]{Go to proof.}
+\end{theorem}
+\SourceVariantOf{def:integers}{Iwanus-Wybraniec}{Polish integer arithmetic axiomatizations, 1965}{reduces_to}
+
+\begin{remark*}[Standard quantified statement]
+There is a structure-preserving bijection between the two-sided construction
+and the canonical integer system.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the comparison theorem that prevents the construction from becoming a
+new arithmetic universe. It is a different presentation of the same integers.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Lean verification record. Source: Iwanu{\'s}; Wybraniec. Formalizes
+\hyperref[thm:two-sided-integers-isomorphic-to-z]{the comparison theorem}.
+Lean modules: \texttt{LRA.VolumeII.Integers.Polish.LandauWorkup} and
+\texttt{LRA.VolumeII.Integers.Polish.DiscreteIntegerStructure}. Declarations:
+\texttt{Z\_iso\_Int}, \texttt{categoricity}. Status: checked against
+\texttt{lra-lean}.
+\end{remark*}
+\LeanFormalizes{thm:two-sided-integers-isomorphic-to-z}{lra-lean}{LRA.VolumeII.Integers.Polish.LandauWorkup}{Z_iso_Int}{checked}
+\LeanFormalizes{thm:two-sided-integers-isomorphic-to-z}{lra-lean}{LRA.VolumeII.Integers.Polish.DiscreteIntegerStructure}{categoricity}{checked}
+
+\begin{remark*}[Exposition]
+The formal-difference construction begins with pairs and an equivalence
+relation. Tao emphasizes expressions \(a{--}b\); Mendelson emphasizes
+equivalence classes of pairs and develops more abstract algebra around them.
+The two-sided construction begins instead with the geometry of the integer
+line. It avoids quotient well-definedness, but it requires explicit recursive
+definitions and many transport lemmas for successor and predecessor.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+This section is therefore not a replacement for the standard construction. It
+is a worked example of construction verification: choose a target, propose
+data, state the axioms, build operations, prove the laws, and finally compare
+the result with the already accepted system.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:two-sided-successor-construction-data]{Two-sided successor construction data}
+  \item \hyperref[thm:two-sided-integers-ordered-commutative-ring]{The two-sided construction gives an ordered commutative ring}
+  \item \hyperref[def:integers]{Integers}
+\end{itemize}
+\end{dependencies}

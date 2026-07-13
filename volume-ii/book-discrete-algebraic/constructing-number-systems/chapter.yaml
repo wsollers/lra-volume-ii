@@ -84,6 +84,30 @@ environments:
     label: thm:z-mod-two-is-two-element-system
     title: Z Mod Two Is the Two-Element System
     proof_file: proofs/zero-one-number-system/prf-z-mod-two-is-two-element-system.tex
+  - type: definition
+    label: def:two-sided-integer-rays
+    title: Two-Sided Integer Rays
+    proof_file: ''
+  - type: definition
+    label: def:two-sided-successor-construction-data
+    title: Two-Sided Successor Construction Data
+    proof_file: ''
+  - type: theorem
+    label: thm:two-sided-successor-predecessor-inverses
+    title: Successor and Predecessor Are Inverse Operations
+    proof_file: proofs/two-sided-integer-construction/prf-two-sided-successor-predecessor-inverses.tex
+  - type: theorem
+    label: thm:two-sided-induction-and-recursion
+    title: Two-Sided Induction and Recursion
+    proof_file: proofs/two-sided-integer-construction/prf-two-sided-induction-and-recursion.tex
+  - type: theorem
+    label: thm:two-sided-integers-ordered-commutative-ring
+    title: The Two-Sided Construction Gives an Ordered Commutative Ring
+    proof_file: proofs/two-sided-integer-construction/prf-two-sided-integers-ordered-commutative-ring.tex
+  - type: theorem
+    label: thm:two-sided-integers-isomorphic-to-z
+    title: The Two-Sided Integers Are Isomorphic to the Usual Integers
+    proof_file: proofs/two-sided-integer-construction/prf-two-sided-integers-isomorphic-to-z.tex
 proof_files:
   - path: proofs/finite-modular-number-systems/prf-congruence-modulo-integer-equivalence.tex
     proves: thm:congruence-modulo-integer-equivalence
@@ -97,3 +121,11 @@ proof_files:
     proves: thm:two-element-system-not-ordered-field
   - path: proofs/zero-one-number-system/prf-z-mod-two-is-two-element-system.tex
     proves: thm:z-mod-two-is-two-element-system
+  - path: proofs/two-sided-integer-construction/prf-two-sided-successor-predecessor-inverses.tex
+    proves: thm:two-sided-successor-predecessor-inverses
+  - path: proofs/two-sided-integer-construction/prf-two-sided-induction-and-recursion.tex
+    proves: thm:two-sided-induction-and-recursion
+  - path: proofs/two-sided-integer-construction/prf-two-sided-integers-ordered-commutative-ring.tex
+    proves: thm:two-sided-integers-ordered-commutative-ring
+  - path: proofs/two-sided-integer-construction/prf-two-sided-integers-isomorphic-to-z.tex
+    proves: thm:two-sided-integers-isomorphic-to-z

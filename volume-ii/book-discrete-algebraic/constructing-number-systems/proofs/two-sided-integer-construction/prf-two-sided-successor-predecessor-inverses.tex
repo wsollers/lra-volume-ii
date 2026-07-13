@@ -1,0 +1,51 @@
+\newpage
+\phantomsection
+\label{prf:two-sided-successor-predecessor-inverses}
+\LRAProofFor{thm:two-sided-successor-predecessor-inverses}
+
+\begin{remark*}[Return]
+\hyperref[thm:two-sided-successor-predecessor-inverses]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Successor and predecessor are inverse operations]
+In the two-sided construction, successor and predecessor undo each other
+everywhere, and both maps are injective.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+The defining clauses for successor and predecessor are checked by cases on
+the three parts of the carrier \(Z=\{0\}\sqcup P\sqcup N\). At \(0\), successor
+enters the first positive point and predecessor returns to \(0\); predecessor
+enters the first negative point and successor returns to \(0\). On the positive
+ray, predecessor removes one successor step unless the point is the first
+positive point, in which case it returns to \(0\). On the negative ray,
+successor removes one predecessor step unless the point is the first negative
+point, in which case it returns to \(0\). These are exactly the two identities.
+
+If \(\mathsf{succ}(x)=\mathsf{succ}(y)\), applying
+\(\mathsf{pred}\) to both sides gives \(x=y\). The proof for predecessor
+is the same, applying successor to both sides.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The point of the definition is that the only delicate places are the two
+crossings through zero. Everywhere else, successor and predecessor simply add
+or remove one constructor on a ray. Thus the proof is a structural case split:
+zero, positive point, negative point. The injectivity statements are not new
+axioms; they are consequences of having inverse functions.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Case split on the carrier, then derive injectivity by composing with the
+opposite operation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:two-sided-successor-construction-data]{Two-sided successor construction data}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

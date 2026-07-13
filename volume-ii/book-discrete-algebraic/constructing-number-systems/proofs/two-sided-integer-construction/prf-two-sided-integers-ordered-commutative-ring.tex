@@ -1,0 +1,65 @@
+\newpage
+\phantomsection
+\label{prf:two-sided-integers-ordered-commutative-ring}
+\LRAProofFor{thm:two-sided-integers-ordered-commutative-ring}
+
+\begin{remark*}[Return]
+\hyperref[thm:two-sided-integers-ordered-commutative-ring]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[The two-sided construction gives an ordered commutative ring]
+With addition, negation, multiplication, and order defined by the two-sided
+successor construction, the resulting system satisfies the laws of an ordered
+commutative ring.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Define addition by recursion on the second input: adding zero is the identity,
+adding a positive point iterates successor, and adding a negative point
+iterates predecessor. The inverse laws prove the boundary equations
+\[
+x+\mathsf{succ}(y)=\mathsf{succ}(x+y),
+\qquad
+x+\mathsf{pred}(y)=\mathsf{pred}(x+y).
+\]
+Two-sided induction then proves the left identity, successor transport,
+predecessor transport, commutativity, and associativity of addition.
+
+Define negation by exchanging the positive and negative rays and fixing zero.
+This gives \(-(-x)=x\) and \(x+(-x)=0\). Define multiplication by repeated
+addition along the right input, using repeated addition of \(-x\) on the
+negative ray. The additive lemmas prove the successor and predecessor
+multiplication equations, and two-sided induction proves commutativity,
+associativity, and distributivity.
+
+Finally, define \(x<y\) when \(y+(-x)\) lies on the positive ray. The
+disjointness of the three parts gives trichotomy and irreflexivity; closure of
+the positive ray under addition and multiplication gives transitivity and the
+order compatibility laws.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The proof is long because every familiar algebra law must be recovered from
+the ray motion. Addition is not symmetric by definition, so commutativity is a
+theorem. Multiplication is not symmetric by definition, so commutativity is
+again a theorem. Order is not imported from the usual integers; it is defined
+by positivity of a difference, so its totality and compatibility with
+arithmetic must also be proved. These are exactly the construction-verification
+obligations from the ground rules of the chapter.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Build addition first, prove its transport lemmas, build negation, build
+multiplication from repeated addition, then define order from the positive ray.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:two-sided-induction-and-recursion]{Two-sided induction and recursion}
+  \item \hyperref[def:number-system-construction-verification]{Construction Verification}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
