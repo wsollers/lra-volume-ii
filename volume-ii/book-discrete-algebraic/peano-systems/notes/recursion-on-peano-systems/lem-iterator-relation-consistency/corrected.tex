@@ -1,0 +1,49 @@
+\begin{lemma}[The Minimal Iterator Relation Is an Iterator Relation]
+\label{lem:iterator-relation-consistency}
+Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
+$R^*$ be the minimal iterator relation for $(W,c,g)$. Then $R^*$ is an
+iterator relation for $(W,c,g)$.
+\hyperref[prf:iterator-relation-consistency]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+R^* \text{ is an iterator relation for } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{MinimalRelation}(R^*,\mathcal C_{\mathrm{it}})
+\Longrightarrow
+\operatorname{IteratorRelation}(R^*,(P,S,1),W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+R^* \text{ is not an iterator relation for } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+R^* \text{ is not an iterator relation for } (W,c,g)
+\Longrightarrow
+R^* \text{ is not the minimal iterator relation for } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The intersection construction does not lose the base pair or the successor
+closure condition. The minimal relation is therefore still one of the
+admissible iterator relations.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:minimal-iterator-relation]{Minimal Iterator Relation}
+\end{itemize}
+\end{dependencies}
+

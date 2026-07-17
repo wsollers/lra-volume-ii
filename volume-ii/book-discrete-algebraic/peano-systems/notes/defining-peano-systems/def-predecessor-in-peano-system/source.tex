@@ -1,0 +1,50 @@
+\begin{definition}[Predecessor in a Peano System]
+\label{def:predecessor-in-peano-system}
+Let $(P,S,1)$ be a Peano system, and let $x,u \in P$. The element $u$ is
+called a \emph{predecessor} of $x$ exactly when
+\[
+S(u)=x.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$ and elements $x,u\in P$,
+\[
+S(u)=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } x,u \in P.\\
+&u \text{ is not a predecessor of } x
+\Longleftrightarrow
+S(u) \neq x.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A predecessor of $x$ is an element whose successor is $x$. This language
+isolates the inverse-looking question attached to the successor map without
+assuming that successor is globally invertible.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+\end{itemize}
+\end{dependencies}
+\end{topicbox}
+
+\begin{topicbox}{Generation by Successor}
+\begin{exposition}
+The Peano axioms describe a counting system generated from a distinguished
+first element by the successor operation. The next theorems make that
+generation principle explicit: every element is either the first element or a
+successor, every non-initial element has a unique predecessor, and no element
+can be its own successor.
+\end{exposition}
+

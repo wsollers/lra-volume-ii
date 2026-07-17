@@ -1,0 +1,231 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: lem:existence-of-iterator-function
+  kind: lemma
+  title: Existence of an Iterator Function
+  canonical_name: Existence of an Iterator Function
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Existence of an Iterator Function
+    owning_concept: Existence of an Iterator Function
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: recursion-on-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex
+  source_line_start: 828
+  source_line_end: 901
+  source_hash: sha256:c023899fe702a4b9bd5c9dc9cb24153eb5158ca5174e24f6a2a54a24f4594724
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: lemma
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: P
+  symbol: P
+- id: S
+  symbol: S
+- id: f
+  symbol: f
+- id: g
+  symbol: g
+- id: n
+  symbol: n
+- id: n)
+  symbol: n)
+assumptions: []
+statement:
+  canonical_prose: Existence of an Iterator Function
+  canonical_latex: '\begin{lemma}[Existence of an Iterator Function]
+
+    \label{lem:existence-of-iterator-function}
+
+    Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.
+
+    Then there exists a function $f:P\to W$ such that
+
+    \[
+
+    f(1)=c
+
+    \qquad\text{and}\qquad
+
+    \forall n\in P\;(f(S(n))=g(f(n))).
+
+    \]
+
+    \hyperref[prf:existence-of-iterator-function]{Go to proof.}
+
+    \end{lemma}'
+  semantic_ast: &id001
+    kind: exists
+    binder: &id002
+      binder_id: f:Pto W (f(1)=cland forall n
+      symbol: f:P\to W (f(1)=c\land \forall n
+      domain:
+        kind: variable
+        binder_id: P
+    restriction: null
+    body:
+      kind: relation
+      relation: '='
+      left: &id003
+        kind: application
+        function: f
+        arguments:
+        - kind: application
+          function: S
+          arguments:
+          - kind: variable
+            binder_id: n
+      right: &id004
+        kind: application
+        function: g
+        arguments:
+        - kind: application
+          function: f
+          arguments:
+          - kind: variable
+            binder_id: n)
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      \exists f:P\to W\;
+
+      \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+      \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        \exists f:P\to W\;
+
+        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: exists
+          binder:
+            binder_id: f:Pto W (f(1)=cland forall n
+            symbol: f:P\to W (f(1)=c\land \forall n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: f
+              arguments:
+              - kind: application
+                function: S
+                arguments:
+                - kind: variable
+                  binder_id: n
+            right:
+              kind: application
+              function: g
+              arguments:
+              - kind: application
+                function: f
+                arguments:
+                - kind: variable
+                  binder_id: n)
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\exists f:P\\to W\\;\n\\bigl(f(1)=c\\land
+          \\forall n\\in P\\;(f(S(n))=g(f(n)))\\bigr).'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\neg\left(\exists f:P\to W\;
+
+        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).\right)'
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: forall
+        binder: *id002
+        restriction: null
+        body:
+          kind: relation
+          relation: \neq
+          left: *id003
+          right: *id004
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: canonical-proof
+    target: prf:existence-of-iterator-function
+    display: null
+    notes: Expected proof label by convention.
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof:
+    proof_label: prf:existence-of-iterator-function
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: lem:existence-of-iterator-function
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

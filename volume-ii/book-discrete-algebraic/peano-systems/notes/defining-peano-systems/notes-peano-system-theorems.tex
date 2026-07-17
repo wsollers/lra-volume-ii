@@ -52,15 +52,12 @@ theorem induction_principle
 \end{formalizationrecord}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$ and a predicate $\varphi$ on $P$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system and let } \varphi
-\text{ be a predicate on } P.\\
-&\Bigl(\varphi(1) \land
+\Bigl(\varphi(1) \land
 \forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n)))\Bigr)
 \Longrightarrow
 \forall n \in P\;\varphi(n).
-\end{aligned}
 \]
 \end{remark*}
 
@@ -119,32 +116,51 @@ entire earlier segment of the Peano system.
 \begin{theorembox}{Theorem (Strong Induction on a Peano System)}
 \begin{theorem}[Strong Induction on a Peano System]
 \label{thm:strong-induction-on-peano-system}
-Let $(P,S,1)$ be a Peano system, and let $\varphi$ be a predicate on $P$.
+Let $(P,S,1)$ be a Peano system, let $<$ be a binary relation on $P$, and let
+$\varphi$ be a predicate on $P$. Suppose that $<$ is compatible with the
+successor structure in the following sense:
+\[
+\forall k\in P,\qquad \neg(k<1),
+\]
+and
+\[
+\forall k,n\in P,\qquad
+k<S(n)\Longleftrightarrow (k<n\lor k=n).
+\]
 If
 \[
-\forall n \in P\;
-\bigl(\forall k \in P\;(k < n \Longrightarrow \varphi(k))\bigr)
-\Longrightarrow \varphi(n),
+\forall n \in P,\qquad
+\left[
+\left(\forall k \in P,\ k < n \Longrightarrow \varphi(k)\right)
+\Longrightarrow \varphi(n)
+\right]
 \]
 then
 \[
-\forall n \in P\;\varphi(n).
+\forall n \in P,\qquad \varphi(n).
 \]
 \hyperref[prf:strong-induction-on-peano-system]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$, a binary relation $<$ on $P$, and a predicate
+$\varphi$ on $P$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system and let } \varphi
-\text{ be a predicate on } P.\\
-&\Bigl(\forall n \in P\;
-\bigl(\forall k \in P\;(k < n \Longrightarrow \varphi(k))\bigr)
-\Longrightarrow \varphi(n)\Bigr)
+\Bigl[
+\bigl(\forall k\in P,\ \neg(k<1)\bigr)
+\land
+\bigl(\forall k,n\in P,\ k<S(n)\Longleftrightarrow(k<n\lor k=n)\bigr)
+\land\\
+\qquad
+\forall n \in P,\quad
+\left(
+\left(\forall k \in P,\ k < n \Longrightarrow \varphi(k)\right)
+\Longrightarrow \varphi(n)
+\right)
+\Bigr]
 \Longrightarrow
-\forall n \in P\;\varphi(n).
-\end{aligned}
+\forall n \in P,\ \varphi(n).
 \]
 \end{remark*}
 
@@ -163,8 +179,6 @@ counterexample arguments.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
-  \item \hyperref[def:strict-less-than-on-peano-system]{Strict Less Than on a Peano System}
-  \item \hyperref[thm:trichotomy-on-peano-system]{Trichotomy on a Peano System}
 \end{itemize}
 \end{dependencies}
 \end{topicbox}
@@ -184,19 +198,15 @@ successor.
 Let $(P,S,1)$ be a Peano system, and let $A \subseteq P$. The subset $A$ is
 called \emph{successor-closed} exactly when
 \[
-\forall n \in P\;(n \in A \Longrightarrow S(n) \in A).
+\forall n \in A,\qquad S(n) \in A.
 \]
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system and let } A \subseteq P.\\
-&A \text{ is successor-closed}
-\Longleftrightarrow
-\forall n \in P\;(n \in A \Longrightarrow S(n) \in A).
-\end{aligned}
+\forall n \in A,\ S(n) \in A.
 \]
 \end{remark*}
 
@@ -206,7 +216,7 @@ called \emph{successor-closed} exactly when
 &\text{Let } (P,S,1) \text{ be a Peano system and let } A \subseteq P.\\
 &A \text{ is not successor-closed}
 \Longleftrightarrow
-\exists n \in P\;(n \in A \land S(n) \notin A).
+\exists n \in A,\ S(n) \notin A.
 \end{aligned}
 \]
 \end{remark*}
@@ -221,7 +231,7 @@ called \emph{successor-closed} exactly when
   \begin{aligned}
   A \text{ is not successor-closed}
   \Longleftrightarrow
-  \exists n \in P\;\underbrace{(n \in A \land S(n) \notin A)}_{\text{closure fails at } n}.
+  \exists n \in A,\ \underbrace{S(n) \notin A}_{\text{closure fails at } n}.
   \end{aligned}
   \]
 \end{description}
@@ -254,14 +264,10 @@ called \emph{inductive} exactly when $1 \in A$ and $A$ is successor-closed.
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system and let } A \subseteq P.\\
-&A \text{ is inductive}
-\Longleftrightarrow
 \bigl(1 \in A \land
-\forall n \in P\;(n \in A \Longrightarrow S(n) \in A)\bigr).
-\end{aligned}
+\forall n \in A,\ S(n) \in A\bigr).
 \]
 \end{remark*}
 
@@ -271,7 +277,7 @@ called \emph{inductive} exactly when $1 \in A$ and $A$ is successor-closed.
 &\text{Let } (P,S,1) \text{ be a Peano system and let } A \subseteq P.\\
 &A \text{ is not inductive}
 \Longleftrightarrow
-\bigl(1 \notin A \lor \exists n \in P\;(n \in A \land S(n) \notin A)\bigr).
+\bigl(1 \notin A \lor \exists n \in A,\ S(n) \notin A\bigr).
 \end{aligned}
 \]
 \end{remark*}
@@ -289,7 +295,7 @@ called \emph{inductive} exactly when $1 \in A$ and $A$ is successor-closed.
   \Longleftrightarrow\;&
   \underbrace{1 \notin A}_{\text{base point missing}}\\
   &\lor
-  \underbrace{\exists n \in P\;(n \in A \land S(n) \notin A)}_{\text{successor closure fails}}.
+  \underbrace{\exists n \in A,\ S(n) \notin A}_{\text{successor closure fails}}.
   \end{aligned}
   \]
 \end{description}
@@ -319,25 +325,26 @@ package so that the internal structure of induction proofs remains explicit.
 \begin{theorem}[Minimality of a Peano System]
 \label{thm:peano-minimality}
 Let $(P,S,1)$ be a Peano system. If $A\subseteq P$ contains $1$ and is closed
-under successor, then $A=P$.
+under successor, then $A=P$. In quantified form,
 \[
-\bigl(1\in A \land
-\forall n\in P\;(n\in A \Longrightarrow S(n)\in A)\bigr)
-\Longrightarrow A=P.
+\forall A\subseteq P,\qquad
+\left[
+\left(1\in A \land
+\forall n\in A,\ S(n)\in A\right)
+\Longrightarrow A=P
+\right]
 \]
 \hyperref[prf:peano-minimality]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system.}\\
-&\forall A\subseteq P\;
+\forall A\subseteq P\;
 \Bigl(\bigl(1\in A \land
-\forall n\in P\;(n\in A \Longrightarrow S(n)\in A)\bigr)
+\forall n\in A,\ S(n)\in A\bigr)
 \Longrightarrow A=P\Bigr).
-\end{aligned}
 \]
 \end{remark*}
 
@@ -345,7 +352,7 @@ under successor, then $A=P$.
 \[
 \forall A\subseteq P\;
 \Bigl(\bigl(1\in A \land
-\forall n\in P\;(n\in A \Longrightarrow S(n)\in A)\bigr)
+\forall n\in A,\ S(n)\in A\bigr)
 \Longrightarrow A=P\Bigr).
 \]
 \end{remark*}
@@ -375,13 +382,9 @@ S(u)=x.
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$ and elements $x,u\in P$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system and let } x,u \in P.\\
-&u \text{ is a predecessor of } x
-\Longleftrightarrow
 S(u)=x.
-\end{aligned}
 \]
 \end{remark*}
 
@@ -459,11 +462,9 @@ theorem every_element_is_one_or_successor
 \end{formalizationrecord}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system.}\\
-&\forall x \in P\;\bigl(x=1 \lor \exists u \in P\;(S(u)=x)\bigr).
-\end{aligned}
+\forall x \in P\;\bigl(x=1 \lor \exists u \in P\;(S(u)=x)\bigr).
 \]
 \end{remark*}
 
@@ -507,11 +508,9 @@ $S(a)\neq S(b)$.
 \end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system.}\\
-&\forall a,b \in P\;(a\neq b \Longrightarrow S(a)\neq S(b)).
-\end{aligned}
+\forall a,b \in P\;(a\neq b \Longrightarrow S(a)\neq S(b)).
 \]
 \end{remark*}
 
@@ -581,12 +580,10 @@ there exists $u \in P$ such that $S(u)=x$.
 \end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system.}\\
-&\forall x \in P\;\bigl(x\neq 1 \Longrightarrow
+\forall x \in P\;\bigl(x\neq 1 \Longrightarrow
 \exists u \in P\;(S(u)=x)\bigr).
-\end{aligned}
 \]
 \end{remark*}
 
@@ -656,11 +653,9 @@ there exists a unique $u \in P$ such that $S(u)=x$.
 \end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system.}\\
-&\forall x \in P\;\bigl(x \neq 1 \Longrightarrow \exists! u \in P\;(S(u)=x)\bigr).
-\end{aligned}
+\forall x \in P\;\bigl(x \neq 1 \Longrightarrow \exists! u \in P\;(S(u)=x)\bigr).
 \]
 \end{remark*}
 
@@ -701,12 +696,10 @@ only if there exists a unique $u \in P$ such that $S(u)=x$.
 \end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system.}\\
-&\forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
+\forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
 \exists! u \in P\;(S(u)=x)\bigr).
-\end{aligned}
 \]
 \end{remark*}
 
@@ -794,17 +787,17 @@ any element of $P$ if and only if $x=1$.
 \end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system.}\\
-&\forall x \in P\;\Bigl(\neg\exists u \in P\;(S(u)=x) \Longleftrightarrow x=1\Bigr).
-\end{aligned}
+\forall x \in P,\quad
+x=1\Longleftrightarrow\neg\exists u \in P,\ S(u)=x.
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\forall x \in P\;\Bigl(\neg\exists u \in P\;(S(u)=x) \Longleftrightarrow x=1\Bigr).
+\forall x \in P,\quad
+x=1\Longleftrightarrow\neg\exists u \in P,\ S(u)=x.
 \]
 \end{remark*}
 
@@ -867,11 +860,9 @@ theorem successor_not_self
 \end{formalizationrecord}
 
 \begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
 \[
-\begin{aligned}
-&\text{Let } (P,S,1) \text{ be a Peano system.}\\
-&\forall n \in P\;(S(n) \neq n).
-\end{aligned}
+\forall n \in P\;(S(n) \neq n).
 \]
 \end{remark*}
 

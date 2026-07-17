@@ -1,0 +1,54 @@
+\begin{definition}[Presburger Arithmetic]
+\label{def:presburger-arithmetic}
+\emph{Presburger arithmetic} is the complete first-order theory of the
+standard natural-number structure in the Presburger signature. Let
+\[
+\mathcal N_{\mathrm{Pres}}
+:=
+(\mathbb{N},0,S,+,<).
+\]
+Then
+\[
+\mathrm{PA}_{\mathrm{Pres}}
+:=
+\operatorname{Th}(\mathcal N_{\mathrm{Pres}})
+=
+\left\{
+\varphi:
+\varphi \text{ is an }\mathcal L_{\mathrm{Pres}}\text{-sentence and }
+\mathcal N_{\mathrm{Pres}}\models\varphi
+\right\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{PresburgerArithmetic}(T)
+\Longleftrightarrow
+T=
+\left\{
+\varphi:
+\varphi \text{ is an }\mathcal L_{\mathrm{Pres}}\text{-sentence and }
+(\mathbb{N},0,S,+,<)\models\varphi
+\right\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Presburger arithmetic isolates the part of arithmetic governed by addition.
+It is strong enough to express linear equations, congruences, and order
+properties of natural numbers, but it cannot directly express multiplication
+as a primitive operation. The later Peano-system material supplies the more
+general recursive framework from which addition, multiplication, order, and
+induction are developed structurally.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:presburger-signature]{Presburger Signature}
+  \item \hyperref[def:natural-numbers]{Natural Numbers}
+  \item \hyperref[def:addition-on-peano-system]{Addition on a Peano System}
+  \item \hyperref[def:peano-system]{Peano System}
+\end{itemize}
+\end{dependencies}

@@ -3,10 +3,12 @@
 \label{def:presburger-signature}
 The \emph{Presburger signature} is the first-order signature
 \[
-\mathcal{L}_{\mathrm{Pres}} = \{0, S, +, <, =\},
+\mathcal{L}_{\mathrm{Pres}} = \{0, S, +, <\},
 \]
 where $0$ is a constant symbol, $S$ is a unary function symbol, $+$ is a
-binary function symbol, and $<$ and $=$ are binary relation symbols.
+binary function symbol, and $<$ is a binary relation symbol. Equality is the
+logical equality symbol of first-order logic, not an additional nonlogical
+relation symbol of the signature.
 \end{definition}
 \end{definitionbox}
 
@@ -14,11 +16,10 @@ binary function symbol, and $<$ and $=$ are binary relation symbols.
 \[
 \operatorname{PresburgerSignature}(\mathcal{L})
 \Longleftrightarrow
-\mathcal{L} = \{0,S,+,<,=\}
+\mathcal{L} = \{0,S,+,<\}
 \land \operatorname{ar}(S)=1
 \land \operatorname{ar}(+)=2
-\land \operatorname{ar}(<)=2
-\land \operatorname{ar}(=)=2.
+\land \operatorname{ar}(<)=2.
 \]
 \end{remark*}
 
@@ -33,23 +34,34 @@ arithmetic.
 \begin{itemize}
   \item \hyperref[def:signature]{First-Order Signature}
   \item \hyperref[def:arity]{Arity}
+  \item \hyperref[def:relation-symbol]{Relation Symbol}
   \item \hyperref[def:signature-constant-symbol]{Constant Symbol}
   \item \hyperref[def:signature-function-symbol]{Function Symbol}
-  \item \hyperref[def:relation-symbol]{Relation Symbol}
 \end{itemize}
 \end{dependencies}
 
 \begin{definitionbox}{Definition (Presburger Arithmetic)}
 \begin{definition}[Presburger Arithmetic]
 \label{def:presburger-arithmetic}
-\emph{Presburger arithmetic} is the first-order theory of the natural numbers
-in the Presburger signature. Its intended structure is
+\emph{Presburger arithmetic} is the complete first-order theory of the
+standard natural-number structure in the Presburger signature. Let
 \[
-(\mathbb{N},0,S,+,<,=),
+\mathcal N_{\mathrm{Pres}}
+:=
+(\mathbb{N},0,S,+,<).
 \]
-and its axioms describe the behavior of zero, successor, addition, order, and
-induction for formulas written in the language
-$\mathcal{L}_{\mathrm{Pres}}$.
+Then
+\[
+\mathrm{PA}_{\mathrm{Pres}}
+:=
+\operatorname{Th}(\mathcal N_{\mathrm{Pres}})
+=
+\left\{
+\varphi:
+\varphi \text{ is an }\mathcal L_{\mathrm{Pres}}\text{-sentence and }
+\mathcal N_{\mathrm{Pres}}\models\varphi
+\right\}.
+\]
 \end{definition}
 \end{definitionbox}
 
@@ -57,8 +69,12 @@ $\mathcal{L}_{\mathrm{Pres}}$.
 \[
 \operatorname{PresburgerArithmetic}(T)
 \Longleftrightarrow
-T \subseteq \operatorname{Sentences}(\mathcal{L}_{\mathrm{Pres}})
-\land T \text{ axiomatizes } (\mathbb{N},0,S,+,<,=).
+T=
+\left\{
+\varphi:
+\varphi \text{ is an }\mathcal L_{\mathrm{Pres}}\text{-sentence and }
+(\mathbb{N},0,S,+,<)\models\varphi
+\right\}.
 \]
 \end{remark*}
 

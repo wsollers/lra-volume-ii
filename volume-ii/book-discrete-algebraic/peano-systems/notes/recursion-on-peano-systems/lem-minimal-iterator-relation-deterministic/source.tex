@@ -1,0 +1,99 @@
+\begin{lemma}[Determinism of the Minimal Iterator Relation]
+\label{lem:minimal-iterator-relation-deterministic}
+Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
+$R^*$ be the minimal iterator relation. For each $n\in P$, there is at most one
+$w\in W$ such that $(n,w)\in R^*$.
+\hyperref[prf:minimal-iterator-relation-deterministic]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Feferman, \emph{The Number Systems}, Section 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
+\Formalizes{lem:minimal-iterator-relation-deterministic}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
+\LeanDeclaration{minimal\_iterator\_relation\_deterministic}
+\textbf{Status:} checked against \texttt{lra-lean}.\par
+
+\begin{leancode}
+theorem minimal_iterator_relation_deterministic
+    (ps : PeanoSystem)
+    (data : IteratorData ps) :
+    forall element : ps.carrier,
+      forall first_value second_value : data.target,
+        minimal_iterator_relation ps data element first_value ->
+        minimal_iterator_relation ps data element second_value ->
+        first_value = second_value := by
+  apply induction_principle ps
+
+  case base_case =>
+    intro first_value second_value first_forced second_forced
+    exact
+      Eq.trans
+        (minimal_iterator_relation_base_unique ps data first_value first_forced)
+        (minimal_iterator_relation_base_unique ps data second_value second_forced).symm
+
+  case successor_step =>
+    intro element induction_hypothesis
+    intro first_successor_value second_successor_value
+    intro first_forced second_forced
+    cases minimal_iterator_relation_complete ps data element with
+    | intro current_value current_forced =>
+        exact
+          Eq.trans
+            (forced_successor_values_are_unique
+              ps data element current_value first_successor_value
+              induction_hypothesis current_forced first_forced)
+            (forced_successor_values_are_unique
+              ps data element current_value second_successor_value
+              induction_hypothesis current_forced second_forced).symm
+\end{leancode}
+\end{formalizationrecord}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in P\;\forall w_0,w_1\in W\;
+\bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\Longrightarrow w_0=w_1\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{FunctionalRelation}(R^*,P,W).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists n\in P\;\exists w_0,w_1\in W\;
+\bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Determinism fails exactly when a single stage has two distinct values in the
+  minimal iterator relation.
+  \item[Two values.]
+  \[
+  \neg\operatorname{FunctionalRelation}(R^*,P,W).
+  \]
+  \[
+  \exists n\in P\;\exists w_0,w_1\in W\;
+  \bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr).
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Determinism says the minimal iterator relation is functional at every stage.
+This repackages forced-value uniqueness in the at-most-one form needed to
+extract a function from the relation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:forced-values-are-unique]{Forced Values Are Unique}
+\end{itemize}
+\end{dependencies}
+

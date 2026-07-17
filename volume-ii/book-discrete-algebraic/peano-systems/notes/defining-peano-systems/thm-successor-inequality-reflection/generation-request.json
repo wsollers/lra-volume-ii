@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:successor-inequality-reflection",
+  "kind": "theorem",
+  "title": "Successor Inequality Reflection",
+  "source": {
+    "label": "thm:successor-inequality-reflection",
+    "kind": "theorem",
+    "title": "Successor Inequality Reflection",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 502,
+    "source_line_end": 573,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-successor-inequality-reflection",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-successor-inequality-reflection/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-successor-inequality-reflection/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-successor-inequality-reflection",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-successor-inequality-reflection/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-successor-inequality-reflection/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "thm:successor-inequality-reflection",
+      "environment_kind": "theorem",
+      "source_line_start": 502,
+      "source_line_end": 573,
+      "current_tex": "\\begin{theorem}[Successor Inequality Reflection]\n\\label{thm:successor-inequality-reflection}\nLet $(P,S,1)$ be a Peano system. For all $a,b \\in P$, if $a \\neq b$, then\n$S(a)\\neq S(b)$.\n\\hyperref[prf:successor-inequality-reflection]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$,\n\\[\n\\forall a,b \\in P\\;(a\\neq b \\Longrightarrow S(a)\\neq S(b)).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\forall a,b \\in P\\;(a\\neq b \\Longrightarrow S(a)\\neq S(b)).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n&\\text{Let } (P,S,1) \\text{ be a Peano system.}\\\\\n&\\exists a,b \\in P\\;(a\\neq b \\land S(a)=S(b)).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Successor inequality reflection fails exactly when two distinct elements\n  have the same successor.\n  \\item[Common successor.]\n  \\[\n  \\neg\\forall a,b \\in P\\;(a\\neq b \\Longrightarrow S(a)\\neq S(b)).\n  \\]\n  \\[\n  \\begin{aligned}\n  &\\exists a,b \\in P\\;\n  \\underbrace{(a\\neq b \\land S(a)=S(b))}_{\\text{distinct elements with a common successor}}.\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Contrapositive quantified statement]\n\\[\n\\begin{aligned}\n&\\text{Let } (P,S,1) \\text{ be a Peano system.}\\\\\n&\\forall a,b \\in P\\;(S(a)=S(b) \\Longrightarrow a=b).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe successor operation reflects inequality: distinct inputs remain distinct\nafter one successor step. This is the contrapositive form of successor\ninjectivity, and it is the form used when an induction step must preserve a\nnegative equality statement.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n  \\item \\hyperref[ax:peano-successor-injective]{Injectivity of Successor}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

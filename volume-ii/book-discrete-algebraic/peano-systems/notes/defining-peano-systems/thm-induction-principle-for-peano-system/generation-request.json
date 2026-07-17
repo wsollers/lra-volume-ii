@@ -1,0 +1,62 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:induction-principle-for-peano-system",
+  "kind": "theorem",
+  "title": "Induction Principle for a Peano System",
+  "source": {
+    "label": "thm:induction-principle-for-peano-system",
+    "kind": "theorem",
+    "title": "Induction Principle for a Peano System",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 15,
+    "source_line_end": 116,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-induction-principle-for-peano-system",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-induction-principle-for-peano-system/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-induction-principle-for-peano-system/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-induction-principle-for-peano-system",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-induction-principle-for-peano-system/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-induction-principle-for-peano-system/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "thm:induction-principle-for-peano-system",
+      "environment_kind": "theorem",
+      "source_line_start": 15,
+      "source_line_end": 116,
+      "current_tex": "\\begin{theorem}[Induction Principle for a Peano System]\n\\label{thm:induction-principle-for-peano-system}\nLet $(P,S,1)$ be a Peano system, and let $\\varphi$ be a predicate on $P$.\nIf\n\\[\n\\varphi(1)\n\\qquad\\text{and}\\qquad\n\\forall n \\in P\\;(\\varphi(n) \\Longrightarrow \\varphi(S(n))),\n\\]\nthen\n\\[\n\\forall n \\in P\\;\\varphi(n).\n\\]\n\\hyperref[prf:induction-principle-for-peano-system]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{formalizationrecord}{Lean 4 Verification Record}\n\\FormalizationSource{Peano, \\emph{Arithmetices principia}; Feferman, \\emph{The Number Systems}, Section 3.1}\n\\Formalizes{thm:induction-principle-for-peano-system}\n\\textbf{Lean module:} \\texttt{LRA.VolumeII.PeanoSystems.Induction}.\\par\n\\LeanDeclaration{induction\\_principle}\n\\textbf{Status:} checked against \\texttt{lra-lean}.\\par\n\n\\begin{leancode}\ntheorem induction_principle\n    (ps : PeanoSystem)\n    (predicate : ps.carrier -> Prop)\n    (base_case : predicate ps.one)\n    (successor_step :\n      forall element : ps.carrier,\n        predicate element ->\n        predicate (ps.successor element)) :\n    forall element : ps.carrier,\n      predicate element :=\n  ps.induction predicate base_case successor_step\n\\end{leancode}\n\\end{formalizationrecord}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$ and a predicate $\\varphi$ on $P$,\n\\[\n\\Bigl(\\varphi(1) \\land\n\\forall n \\in P\\;(\\varphi(n) \\Longrightarrow \\varphi(S(n)))\\Bigr)\n\\Longrightarrow\n\\forall n \\in P\\;\\varphi(n).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{InductionPrinciple}(P,S,1).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Contrapositive quantified statement]\n\\[\n\\begin{aligned}\n&\\text{Let } (P,S,1) \\text{ be a Peano system and let } \\varphi\n\\text{ be a predicate on } P.\\\\\n&\\neg\\forall n \\in P\\;\\varphi(n)\n\\Longrightarrow\n\\neg\\Bigl(\\varphi(1) \\land\n\\forall n \\in P\\;(\\varphi(n) \\Longrightarrow \\varphi(S(n)))\\Bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThis theorem converts the subset form of induction into the predicate form\nused in ordinary arithmetic arguments. A property propagates through the\nentire Peano system once it holds at the distinguished first element and is\npreserved by successor. The theorem therefore turns the structural induction\naxiom into a proof principle for arbitrary predicates on $P$.\n\\end{remark*}\n\n\\begin{remark*}[Source comparison]\nPeano's axiomatization includes induction as part of the natural-number\nstructure. Feferman derives the working form of mathematical induction from\nthe subset formulation of the Peano axioms immediately after Theorem 3.3 in\nChapter 3. The present notes formalize that induction principle as an explicit\nreusable theorem. \\citep{PeanoArithmeticesPrincipia1889}; \\citet{FefermanNumberSystems1964}\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n  \\item \\hyperref[ax:peano-induction]{Induction Axiom}\n\\end{itemize}\n\\end{dependencies}\n\\end{topicbox}\n\n\\begin{topicbox}{Strong Induction}\n\\begin{exposition}\nOrdinary induction propagates a property from each element to its immediate\nsuccessor. Strong induction allows the inductive step to use the property at\nevery predecessor, not just the immediate one. This broader hypothesis makes\nstrong induction convenient when the successor step needs information from the\nentire earlier segment of the Peano system.\n\\end{exposition}\n\n",
+      "formalizations": [
+        {
+          "artifact_label": "thm:induction-principle-for-peano-system",
+          "system": "Lean 4",
+          "repository": "lra-lean",
+          "module": "LRA.VolumeII.PeanoSystems.Induction",
+          "declaration": "induction_principle",
+          "status": "checked",
+          "environment": {
+            "mathlib_policy": "prohibited"
+          },
+          "source_reference": "Peano, \\emph{Arithmetices principia",
+          "source_path": "",
+          "code": "theorem induction_principle\n    (ps : PeanoSystem)\n    (predicate : ps.carrier -> Prop)\n    (base_case : predicate ps.one)\n    (successor_step :\n      forall element : ps.carrier,\n        predicate element ->\n        predicate (ps.successor element)) :\n    forall element : ps.carrier,\n      predicate element :=\n  ps.induction predicate base_case successor_step"
+        }
+      ]
+    }
+  },
+  "creation_mode": "prompt"
+}

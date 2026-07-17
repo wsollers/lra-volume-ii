@@ -1,0 +1,213 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:successor-closed-subset
+  kind: definition
+  title: Successor-Closed Subset
+  canonical_name: Successor-Closed Subset
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Successor-Closed Subset
+    owning_concept: Successor-Closed Subset
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: defining-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex
+  source_line_start: 196
+  source_line_end: 258
+  source_hash: sha256:f27a38dc5a0a74f8c63c70f9658ef5ecff631868f8011dad97e5cfd771049b48
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: definition
+  logical_shape: definition
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: ' S(n)'
+  symbol: ' S(n)'
+- id: A
+  symbol: A
+- id: S
+  symbol: S
+assumptions: []
+statement:
+  canonical_prose: Successor-Closed Subset
+  canonical_latex: '\begin{definition}[Successor-Closed Subset]
+
+    \label{def:successor-closed-subset}
+
+    Let $(P,S,1)$ be a Peano system, and let $A \subseteq P$. The subset $A$ is
+
+    called \emph{successor-closed} exactly when
+
+    \[
+
+    \forall n \in A,\qquad S(n) \in A.
+
+    \]
+
+    \end{definition}'
+  semantic_ast: &id001
+    kind: forall
+    binder: &id002
+      binder_id: n
+      symbol: n
+      domain:
+        kind: variable
+        binder_id: A
+    restriction: null
+    body:
+      kind: relation
+      relation: \in
+      left: &id003
+        kind: application
+        function: S
+        arguments:
+        - kind: variable
+          binder_id: n
+      right: &id004
+        kind: variable
+        binder_id: A
+logical_forms:
+  standard_quantified:
+    latex: 'For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
+
+      \[
+
+      \forall n \in A,\ S(n) \in A.
+
+      \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: 'For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
+
+        \[
+
+        \forall n \in A,\ S(n) \in A.
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: A
+          restriction: null
+          body:
+            kind: relation
+            relation: \in
+            left:
+              kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+            right:
+              kind: variable
+              binder_id: A
+      lark_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: A
+          restriction: null
+          body:
+            kind: relation
+            relation: \in
+            left:
+              kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+            right:
+              kind: variable
+              binder_id: A
+      parsers_agree: true
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: \neg\left(\forall n \in A,\ S(n) \in A.\right)
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: exists
+        binder: *id002
+        restriction: null
+        body:
+          kind: relation
+          relation: \notin
+          left: *id003
+          right: *id004
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: def:successor-closed-subset
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

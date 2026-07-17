@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:general-recursion-theorem-for-peano-system",
+  "kind": "theorem",
+  "title": "General Recursion Theorem",
+  "source": {
+    "label": "thm:general-recursion-theorem-for-peano-system",
+    "kind": "theorem",
+    "title": "General Recursion Theorem",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 1690,
+    "source_line_end": 1774,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-theorem-for-peano-system",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-theorem-for-peano-system/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-theorem-for-peano-system/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-theorem-for-peano-system",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-theorem-for-peano-system/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-theorem-for-peano-system/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "thm:general-recursion-theorem-for-peano-system",
+      "environment_kind": "theorem",
+      "source_line_start": 1690,
+      "source_line_end": 1774,
+      "current_tex": "\\begin{theorem}[General Recursion Theorem]\n\\label{thm:general-recursion-theorem-for-peano-system}\nLet $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\\in W$, and let\n$\\Phi:P\\times W\\to W$ be a stage-dependent step rule. Then there exists a\nunique function $f:P\\to W$ such that\n\\[\nf(1)=c\n\\qquad\\text{and}\\qquad\n\\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n))).\n\\]\n\\hyperref[prf:general-recursion-theorem-for-peano-system]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\exists! f:P\\to W\\;\n\\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n)))\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\exists! f:P\\to W\\;\n\\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\\Phi).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\neg\\exists! f:P\\to W\\;\n\\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n)))\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  General recursion fails if no function satisfies the general recursive\n  clauses or if two distinct functions satisfy them.\n  \\item[Existence or uniqueness failure.]\n  \\[\n  \\neg\\exists! f:P\\to W\\;\n  \\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\\Phi).\n  \\]\n  \\[\n  \\begin{aligned}\n  &\\neg\\exists! f:P\\to W\\;\n  \\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n)))\\bigr)\\\\\n  \\Longleftrightarrow\\;&\n  \\underbrace{\\neg\\exists f:P\\to W\\;\n  \\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n)))\\bigr)}_{\\text{existence fails}}\\\\\n  &\\lor\n  \\underbrace{\\exists f,h:P\\to W\\;\n  \\bigl(f\\neq h\\land f(1)=c\\land h(1)=c\n  \\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n)))\n  \\land \\forall n\\in P\\;(h(S(n))=\\Phi(n,h(n)))\\bigr)}_{\\text{uniqueness fails}}.\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nGeneral recursion justifies recursive definitions whose successor rule depends\non the current stage as well as the current value. Definitions of addition,\nmultiplication, exponentiation, and later arithmetic operations are not part\nof this section. They begin after the recursion principles have been\nestablished.\n\\end{remark*}\n\n\\begin{remark*}[Historical note]\nThis is the stage-dependent form corresponding to Feferman's Theorem 3.4'\n\\citep{FefermanNumberSystems1964}. It is the form used later for arithmetic\ndefinitions; those definitions are deferred to their own sections\n\\citep{FefermanNumberSystems1964,MendelsonNumberSystemsFoundationsAnalysis}.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[lem:uniqueness-of-general-recursive-functions]{Uniqueness of Stage-Dependent Recursion Solutions}\n  \\item \\hyperref[thm:general-recursion-by-state-encoding]{General Recursion by State Encoding}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

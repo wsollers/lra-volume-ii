@@ -1,0 +1,76 @@
+\begin{theorem}[Every Element Is Either $1$ or a Successor]
+\label{thm:every-element-is-one-or-a-successor}
+Let $(P,S,1)$ be a Peano system. For every $x \in P$, either $x=1$ or there
+exists $u \in P$ such that $S(u)=x$.
+\hyperref[prf:every-element-is-one-or-a-successor]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Landau, \emph{Foundations of Analysis}, Section 1; Feferman, \emph{The Number Systems}, Theorem 3.3}
+\Formalizes{thm:every-element-is-one-or-a-successor}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.BasicTheorems}.\par
+\LeanDeclaration{every\_element\_is\_one\_or\_successor}
+\textbf{Status:} checked against \texttt{lra-lean}.\par
+
+\begin{leancode}
+theorem every_element_is_one_or_successor
+    (ps : PeanoSystem) :
+    forall element : ps.carrier,
+      Or (element = ps.one)
+        (Exists (fun predecessor : ps.carrier =>
+          ps.successor predecessor = element)) := by
+  let D : ps.carrier -> Prop :=
+    fun candidate_element =>
+      Or (candidate_element = ps.one)
+        (Exists (fun predecessor : ps.carrier =>
+          ps.successor predecessor = candidate_element))
+
+  apply induction_principle ps D
+
+  case base_case =>
+    exact Or.inl rfl
+
+  case successor_step =>
+    intro element induction_hypothesis
+    exact Or.inr (Exists.intro element rfl)
+\end{leancode}
+\end{formalizationrecord}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
+\[
+\forall x \in P\;\bigl(x=1 \lor \exists u \in P\;(S(u)=x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{SuccessorCoversNonbase}(S,1,P).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every element of a Peano system is reached by starting at the distinguished
+first element and moving forward by successor. The only possible exception to
+having a predecessor is the element $1$ itself.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This theorem is one of the basic successor consequences of Peano's
+axiomatization \citep{PeanoArithmeticesPrincipia1889}. In the present
+organization it corresponds directly to Theorem 3.3 in
+\citet{FefermanNumberSystems1964}. Feferman uses this result to show that
+the distinguished initial element is the only possible non-successor in a
+Peano system.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+  \item \hyperref[ax:peano-base-in-set]{Distinguished Element Lies in the Underlying Set}
+  \item \hyperref[ax:peano-successor-closure]{Closure Under Successor}
+  \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
+\end{itemize}
+\end{dependencies}
+

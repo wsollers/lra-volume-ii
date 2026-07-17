@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:general-recursive-function",
+  "kind": "definition",
+  "title": "Solution of a Stage-Dependent Recursion",
+  "source": {
+    "label": "def:general-recursive-function",
+    "kind": "definition",
+    "title": "Solution of a Stage-Dependent Recursion",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 1405,
+    "source_line_end": 1488,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-general-recursive-function",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-general-recursive-function/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-general-recursive-function/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-general-recursive-function",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-general-recursive-function/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-general-recursive-function/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "def:general-recursive-function",
+      "environment_kind": "definition",
+      "source_line_start": 1405,
+      "source_line_end": 1488,
+      "current_tex": "\\begin{definition}[Solution of a Stage-Dependent Recursion]\n\\label{def:general-recursive-function}\nLet $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\\in W$, and let\n$\\Phi\\colon P\\times W\\to W$ be a stage-dependent step rule. A function\n$f\\colon P\\to W$\nis called a \\emph{solution of the stage-dependent recursion determined by\n$(W,c,\\Phi)$}\nexactly when\n\\[\nf(1)=c\n\\qquad\\text{and}\\qquad\n\\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n))).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{aligned}\nf \\text{ is a solution of the stage-dependent recursion determined by } (W,c,\\Phi)\n\\Longleftrightarrow\\;&\nf\\colon P\\to W\\land f(1)=c\\\\\n&\\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n))).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n\\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\\Phi)\n\\Longleftrightarrow\\;&\nf\\colon P\\to W\\land f(1)=c\\\\\n&\\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n))).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\nf \\text{ is not a solution of the stage-dependent recursion determined by } (W,c,\\Phi)\n\\Longleftrightarrow\\;&\nf \\text{ is not a function from } P \\text{ to } W\\\\\n&\\lor f(1)\\neq c\n\\lor \\exists n\\in P\\;(f(S(n))\\neq \\Phi(n,f(n))).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  A candidate fails to solve the stage-dependent recursion if it has the wrong\n  domain or codomain, the wrong base value, or a failed stage-dependent\n  successor equation.\n  \\item[Invalid candidate.]\n  \\[\n  \\neg\\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\\Phi).\n  \\]\n  \\[\n  \\begin{aligned}\n  f \\text{ is not a solution of the stage-dependent recursion determined by } (W,c,\\Phi)\n  \\Longleftrightarrow\\;&\n  f \\text{ is not a function from } P \\text{ to } W\\\\\n  &\\lor f(1)\\neq c\n  \\lor \\exists n\\in P\\;(f(S(n))\\neq \\Phi(n,f(n))).\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nStage-dependent recursion solutions are the stage-dependent analogues of\niterator-generated functions.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:stage-dependent-step-rule]{Stage-Dependent Step Rule}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

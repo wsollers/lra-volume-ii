@@ -1,0 +1,99 @@
+\begin{theorem}[General Recursion by State Encoding]
+\label{thm:general-recursion-by-state-encoding}
+Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
+$\Phi\colon P\times W\to W$ be a stage-dependent step rule. Define
+\[
+G\colon P\times W\to P\times W,
+\qquad
+(n,w)\mapsto (S(n),\Phi(n,w)).
+\]
+Then there exists a unique function $H\colon P\to P\times W$ such that
+\[
+H(1)=(1,c)
+\]
+and
+\[
+\forall n\in P,\qquad
+H(S(n))=G(H(n)).
+\]
+Equivalently,
+\[
+\forall n\in P,\qquad
+H(S(n))=
+\left(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n)))\right).
+\]
+\hyperref[prf:general-recursion-by-state-encoding]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+With $G\colon P\times W\to P\times W$ defined by
+\[
+(n,w)\mapsto (S(n),\Phi(n,w)),
+\]
+one has
+\[
+\exists! H\colon P\to P\times W\;
+\left[
+H(1)=(1,c)\land
+\forall n\in P,\ H(S(n))=G(H(n))
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+Let $G\colon P\times W\to P\times W$ be defined by
+\[
+(n,w)\mapsto (S(n),\Phi(n,w)).
+\]
+Then state encoding is the iterator assertion
+\[
+\exists! H\colon P\to P\times W\;
+\operatorname{IteratorFunction}(H,(P,S,1),P\times W,(1,c),G).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+With $G$ as above,
+\[
+\neg\exists! H\colon P\to P\times W\;
+\left[
+H(1)=(1,c)\land
+\forall n\in P,\ H(S(n))=G(H(n))
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Unique state encoding fails if no candidate state function satisfies the
+  iterator clauses, or if two distinct candidate state functions satisfy them.
+  \item[No unique encoded iterator.]
+  \[
+  \neg\exists! H\colon P\to P\times W\;
+  \operatorname{IteratorFunction}(H,(P,S,1),P\times W,(1,c),G).
+  \]
+  \[
+  \neg\exists! H\colon P\to P\times W\;
+  \left[
+  H(1)=(1,c)\land
+  \forall n\in P,\ H(S(n))=G(H(n))
+  \right].
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The theorem converts stage-dependent recursion into ordinary iteration by
+carrying the current stage together with the current value as the recursive
+state.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:peano-iterator-theorem]{Peano Iterator Theorem}
+  \item \hyperref[def:stage-dependent-step-rule]{Stage-Dependent Step Rule}
+\end{itemize}
+\end{dependencies}
+

@@ -1,0 +1,44 @@
+\begin{theorem}[Iterator Base Clause]
+\label{thm:iterator-base-value}
+Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
+$f$ be the iterator-generated function determined by $(W,c,g)$. Then
+\[
+f(1)=c.
+\]
+\hyperref[prf:iterator-base-value]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+f \text{ is the iterator-generated function determined by } (W,c,g)
+\Longrightarrow f(1)=c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
+\Longrightarrow f(1)=c.
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+f(1)\neq c
+\Longrightarrow
+f \text{ is not the iterator-generated function determined by } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The base clause is not an additional theorem about the generated function; it
+is one of the clauses built into the unique recursive specification.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:iterator-generated-function]{Iterator-Generated Function}
+\end{itemize}
+\end{dependencies}
+

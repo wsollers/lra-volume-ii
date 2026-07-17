@@ -1,0 +1,83 @@
+\begin{definition}[Solution of a Stage-Dependent Recursion]
+\label{def:general-recursive-function}
+Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
+$\Phi\colon P\times W\to W$ be a stage-dependent step rule. A function
+$f\colon P\to W$
+is called a \emph{solution of the stage-dependent recursion determined by
+$(W,c,\Phi)$}
+exactly when
+\[
+f(1)=c
+\qquad\text{and}\qquad
+\forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+f \text{ is a solution of the stage-dependent recursion determined by } (W,c,\Phi)
+\Longleftrightarrow\;&
+f\colon P\to W\land f(1)=c\\
+&\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi)
+\Longleftrightarrow\;&
+f\colon P\to W\land f(1)=c\\
+&\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+f \text{ is not a solution of the stage-dependent recursion determined by } (W,c,\Phi)
+\Longleftrightarrow\;&
+f \text{ is not a function from } P \text{ to } W\\
+&\lor f(1)\neq c
+\lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n))).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  A candidate fails to solve the stage-dependent recursion if it has the wrong
+  domain or codomain, the wrong base value, or a failed stage-dependent
+  successor equation.
+  \item[Invalid candidate.]
+  \[
+  \neg\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi).
+  \]
+  \[
+  \begin{aligned}
+  f \text{ is not a solution of the stage-dependent recursion determined by } (W,c,\Phi)
+  \Longleftrightarrow\;&
+  f \text{ is not a function from } P \text{ to } W\\
+  &\lor f(1)\neq c
+  \lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n))).
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Stage-dependent recursion solutions are the stage-dependent analogues of
+iterator-generated functions.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:stage-dependent-step-rule]{Stage-Dependent Step Rule}
+\end{itemize}
+\end{dependencies}
+

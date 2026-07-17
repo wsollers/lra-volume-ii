@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:general-recursion-by-state-encoding",
+  "kind": "theorem",
+  "title": "General Recursion by State Encoding",
+  "source": {
+    "label": "thm:general-recursion-by-state-encoding",
+    "kind": "theorem",
+    "title": "General Recursion by State Encoding",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 1590,
+    "source_line_end": 1689,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-by-state-encoding",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-by-state-encoding/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-by-state-encoding/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-by-state-encoding",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-by-state-encoding/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-general-recursion-by-state-encoding/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "thm:general-recursion-by-state-encoding",
+      "environment_kind": "theorem",
+      "source_line_start": 1590,
+      "source_line_end": 1689,
+      "current_tex": "\\begin{theorem}[General Recursion by State Encoding]\n\\label{thm:general-recursion-by-state-encoding}\nLet $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\\in W$, and let\n$\\Phi\\colon P\\times W\\to W$ be a stage-dependent step rule. Define\n\\[\nG\\colon P\\times W\\to P\\times W,\n\\qquad\n(n,w)\\mapsto (S(n),\\Phi(n,w)).\n\\]\nThen there exists a unique function $H\\colon P\\to P\\times W$ such that\n\\[\nH(1)=(1,c)\n\\]\nand\n\\[\n\\forall n\\in P,\\qquad\nH(S(n))=G(H(n)).\n\\]\nEquivalently,\n\\[\n\\forall n\\in P,\\qquad\nH(S(n))=\n\\left(S(\\pi_1(H(n))),\\Phi(\\pi_1(H(n)),\\pi_2(H(n)))\\right).\n\\]\n\\hyperref[prf:general-recursion-by-state-encoding]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\nWith $G\\colon P\\times W\\to P\\times W$ defined by\n\\[\n(n,w)\\mapsto (S(n),\\Phi(n,w)),\n\\]\none has\n\\[\n\\exists! H\\colon P\\to P\\times W\\;\n\\left[\nH(1)=(1,c)\\land\n\\forall n\\in P,\\ H(S(n))=G(H(n))\n\\right].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\nLet $G\\colon P\\times W\\to P\\times W$ be defined by\n\\[\n(n,w)\\mapsto (S(n),\\Phi(n,w)).\n\\]\nThen state encoding is the iterator assertion\n\\[\n\\exists! H\\colon P\\to P\\times W\\;\n\\operatorname{IteratorFunction}(H,(P,S,1),P\\times W,(1,c),G).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\nWith $G$ as above,\n\\[\n\\neg\\exists! H\\colon P\\to P\\times W\\;\n\\left[\nH(1)=(1,c)\\land\n\\forall n\\in P,\\ H(S(n))=G(H(n))\n\\right].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Unique state encoding fails if no candidate state function satisfies the\n  iterator clauses, or if two distinct candidate state functions satisfy them.\n  \\item[No unique encoded iterator.]\n  \\[\n  \\neg\\exists! H\\colon P\\to P\\times W\\;\n  \\operatorname{IteratorFunction}(H,(P,S,1),P\\times W,(1,c),G).\n  \\]\n  \\[\n  \\neg\\exists! H\\colon P\\to P\\times W\\;\n  \\left[\n  H(1)=(1,c)\\land\n  \\forall n\\in P,\\ H(S(n))=G(H(n))\n  \\right].\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe theorem converts stage-dependent recursion into ordinary iteration by\ncarrying the current stage together with the current value as the recursive\nstate.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[thm:peano-iterator-theorem]{Peano Iterator Theorem}\n  \\item \\hyperref[def:stage-dependent-step-rule]{Stage-Dependent Step Rule}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

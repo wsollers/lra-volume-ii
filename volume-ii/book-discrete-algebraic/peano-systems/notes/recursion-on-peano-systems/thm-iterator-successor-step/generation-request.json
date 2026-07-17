@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:iterator-successor-step",
+  "kind": "theorem",
+  "title": "Iterator Successor Clause",
+  "source": {
+    "label": "thm:iterator-successor-step",
+    "kind": "theorem",
+    "title": "Iterator Successor Clause",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 1152,
+    "source_line_end": 1198,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-iterator-successor-step",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-iterator-successor-step/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-iterator-successor-step/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-iterator-successor-step",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-iterator-successor-step/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-iterator-successor-step/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "thm:iterator-successor-step",
+      "environment_kind": "theorem",
+      "source_line_start": 1152,
+      "source_line_end": 1198,
+      "current_tex": "\\begin{theorem}[Iterator Successor Clause]\n\\label{thm:iterator-successor-step}\nLet $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let\n$f$ be the iterator-generated function determined by $(W,c,g)$. Then\n\\[\n\\forall n\\in P\\;(f(S(n))=g(f(n))).\n\\]\n\\hyperref[prf:iterator-successor-step]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nf \\text{ is the iterator-generated function determined by } (W,c,g)\n\\Longrightarrow\n\\forall n\\in P\\;(f(S(n))=g(f(n))).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)\n\\Longrightarrow\n\\forall n\\in P\\;(f(S(n))=g(f(n))).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Contrapositive quantified statement]\n\\[\n\\exists n\\in P\\;(f(S(n))\\neq g(f(n)))\n\\Longrightarrow\nf \\text{ is not the iterator-generated function determined by } (W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe successor clause says that the generated function advances by applying\nthe update rule to the previous value at every Peano stage.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:iterator-generated-function]{Iterator-Generated Function}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

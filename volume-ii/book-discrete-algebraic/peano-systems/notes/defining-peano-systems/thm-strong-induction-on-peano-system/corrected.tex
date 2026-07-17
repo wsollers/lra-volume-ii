@@ -1,0 +1,78 @@
+\begin{theorem}[Strong Induction on a Peano System]
+\label{thm:strong-induction-on-peano-system}
+Let $(P,S,1)$ be a Peano system, let $<$ be a binary relation on $P$, and let
+$\varphi$ be a predicate on $P$. Suppose that $<$ is compatible with the
+successor structure in the following sense:
+\[
+\forall k\in P,\qquad \neg(k<1),
+\]
+and
+\[
+\forall k,n\in P,\qquad
+k<S(n)\Longleftrightarrow (k<n\lor k=n).
+\]
+If
+\[
+\forall n \in P,\qquad
+\left[
+\left(\forall k \in P,\ k < n \Longrightarrow \varphi(k)\right)
+\Longrightarrow \varphi(n)
+\right]
+\]
+then
+\[
+\forall n \in P,\qquad \varphi(n).
+\]
+\hyperref[prf:strong-induction-on-peano-system]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$, a binary relation $<$ on $P$, and a predicate
+$\varphi$ on $P$,
+\[
+\Bigl[
+\bigl(\forall k\in P,\ \neg(k<1)\bigr)
+\land
+\bigl(\forall k,n\in P,\ k<S(n)\Longleftrightarrow(k<n\lor k=n)\bigr)
+\land\\
+\qquad
+\forall n \in P,\quad
+\left(
+\left(\forall k \in P,\ k < n \Longrightarrow \varphi(k)\right)
+\Longrightarrow \varphi(n)
+\right)
+\Bigr]
+\Longrightarrow
+\forall n \in P,\ \varphi(n).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{StrongInductionPrinciple}(P,<,\varphi).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strong induction grants the inductive step access to the entire history below
+$n$, not just the single predecessor. It is the proof form behind least
+counterexample arguments.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
+\end{itemize}
+\end{dependencies}
+\end{topicbox}
+
+\begin{topicbox}{Inductive Subsets and Predecessors}
+\begin{exposition}
+Induction is expressed in terms of subsets of a Peano system. Two structural
+notions appear repeatedly in that setting: closure under successor and
+membership generated from the distinguished first element. Predecessor language
+is also convenient once it is known that every non-initial element arises as a
+successor.
+\end{exposition}
+

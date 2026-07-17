@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "ax:peano-induction",
+  "kind": "axiom",
+  "title": "Induction Axiom",
+  "source": {
+    "label": "ax:peano-induction",
+    "kind": "axiom",
+    "title": "Induction Axiom",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+    "source_line_start": 204,
+    "source_line_end": 237,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-induction",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-induction/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-induction/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-induction",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-induction/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-induction/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+      "label": "ax:peano-induction",
+      "environment_kind": "axiom",
+      "source_line_start": 204,
+      "source_line_end": 237,
+      "current_tex": "\\begin{axiom}[Induction Axiom]\n\\label{ax:peano-induction}\nLet $A \\subseteq P$. If $1 \\in A$ and if\n\\[\n\\forall n \\in P\\;(n \\in A \\Longrightarrow S(n) \\in A),\n\\]\nthen $A=P$.\n\\end{axiom}\n\\end{axiombox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall A \\subseteq P\\;\n\\Bigl(\\bigl(1 \\in A \\land\n\\forall n \\in P\\;(n \\in A \\Longrightarrow S(n) \\in A)\\bigr)\n\\Longrightarrow A=P\\Bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{InductionPrinciple}(P,S,1).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nAny subset of the underlying set that contains the distinguished element and is\nclosed under successor must already contain the entire set. This axiom rules\nout rogue elements and is the logical source of mathematical induction.\n\\end{remark*}\n\n\\NoLocalDependencies\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

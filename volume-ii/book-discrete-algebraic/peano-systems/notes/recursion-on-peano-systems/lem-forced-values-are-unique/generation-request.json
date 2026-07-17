@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:forced-values-are-unique",
+  "kind": "lemma",
+  "title": "Forced Values Are Unique",
+  "source": {
+    "label": "lem:forced-values-are-unique",
+    "kind": "lemma",
+    "title": "Forced Values Are Unique",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 469,
+    "source_line_end": 535,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-forced-values-are-unique",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-forced-values-are-unique/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-forced-values-are-unique/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-forced-values-are-unique",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-forced-values-are-unique/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-forced-values-are-unique/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "lem:forced-values-are-unique",
+      "environment_kind": "lemma",
+      "source_line_start": 469,
+      "source_line_end": 535,
+      "current_tex": "\\begin{lemma}[Forced Values Are Unique]\n\\label{lem:forced-values-are-unique}\nLet $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let\n$R^*$ be the minimal iterator relation. If $(n,w_0)\\in R^*$ and\n$(n,w_1)\\in R^*$, then $w_0=w_1$.\n\\hyperref[prf:forced-values-are-unique]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall n\\in P\\;\\forall w_0,w_1\\in W\\;\n\\bigl((n,w_0)\\in R^*\\land (n,w_1)\\in R^*\\Longrightarrow w_0=w_1\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{FunctionalRelation}(R^*,P,W).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists n\\in P\\;\\exists w_0,w_1\\in W\\;\n\\bigl((n,w_0)\\in R^*\\land (n,w_1)\\in R^*\\land w_0\\neq w_1\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Forced value uniqueness fails exactly when one stage is assigned two\n  distinct values by the minimal iterator relation.\n  \\item[Two forced values.]\n  \\[\n  \\neg\\operatorname{FunctionalRelation}(R^*,P,W).\n  \\]\n  \\[\n  \\exists n\\in P\\;\\exists w_0,w_1\\in W\\;\n  \\bigl((n,w_0)\\in R^*\\land (n,w_1)\\in R^*\\land w_0\\neq w_1\\bigr).\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Contrapositive quantified statement]\n\\[\n\\exists n\\in P\\;\\exists w_0,w_1\\in W\\;\n\\bigl((n,w_0)\\in R^*\\land (n,w_1)\\in R^*\\land w_0\\neq w_1\\bigr)\n\\Longrightarrow\nR^* \\text{ is not functional at every stage}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nNo stage can be forced to carry two different values. This is the key\ndeterminacy step in the minimal-relation construction used to turn recursive\nspecifications into functions \\citep{FefermanNumberSystems1964}.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[lem:iterator-relation-consistency]{The Minimal Iterator Relation Is an Iterator Relation}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

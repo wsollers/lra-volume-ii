@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:presburger-arithmetic",
+  "kind": "definition",
+  "title": "Presburger Arithmetic",
+  "source": {
+    "label": "def:presburger-arithmetic",
+    "kind": "definition",
+    "title": "Presburger Arithmetic",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "presburger-arithmetic",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/notes-presburger-arithmetic.tex",
+    "source_line_start": 44,
+    "source_line_end": 98,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-arithmetic",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-arithmetic/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-arithmetic/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-arithmetic",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-arithmetic/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-arithmetic/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/notes-presburger-arithmetic.tex",
+      "label": "def:presburger-arithmetic",
+      "environment_kind": "definition",
+      "source_line_start": 44,
+      "source_line_end": 98,
+      "current_tex": "\\begin{definition}[Presburger Arithmetic]\n\\label{def:presburger-arithmetic}\n\\emph{Presburger arithmetic} is the complete first-order theory of the\nstandard natural-number structure in the Presburger signature. Let\n\\[\n\\mathcal N_{\\mathrm{Pres}}\n:=\n(\\mathbb{N},0,S,+,<).\n\\]\nThen\n\\[\n\\mathrm{PA}_{\\mathrm{Pres}}\n:=\n\\operatorname{Th}(\\mathcal N_{\\mathrm{Pres}})\n=\n\\left\\{\n\\varphi:\n\\varphi \\text{ is an }\\mathcal L_{\\mathrm{Pres}}\\text{-sentence and }\n\\mathcal N_{\\mathrm{Pres}}\\models\\varphi\n\\right\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\operatorname{PresburgerArithmetic}(T)\n\\Longleftrightarrow\nT=\n\\left\\{\n\\varphi:\n\\varphi \\text{ is an }\\mathcal L_{\\mathrm{Pres}}\\text{-sentence and }\n(\\mathbb{N},0,S,+,<)\\models\\varphi\n\\right\\}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nPresburger arithmetic isolates the part of arithmetic governed by addition.\nIt is strong enough to express linear equations, congruences, and order\nproperties of natural numbers, but it cannot directly express multiplication\nas a primitive operation. The later Peano-system material supplies the more\ngeneral recursive framework from which addition, multiplication, order, and\ninduction are developed structurally.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:presburger-signature]{Presburger Signature}\n  \\item \\hyperref[def:natural-numbers]{Natural Numbers}\n  \\item \\hyperref[def:addition-on-peano-system]{Addition on a Peano System}\n  \\item \\hyperref[def:peano-system]{Peano System}\n\\end{itemize}\n\\end{dependencies}\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

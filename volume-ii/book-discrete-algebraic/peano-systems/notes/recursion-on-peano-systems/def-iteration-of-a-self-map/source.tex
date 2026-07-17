@@ -1,0 +1,43 @@
+\begin{definition}[Iteration of a Self-Map]
+\label{def:iteration-of-a-self-map}
+Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
+$g:W\to W$. The iterator-generated function determined by $(W,c,g)$ is called
+the \emph{iteration of $g$ from $c$ along $P$}.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+f \text{ is the iteration of } g \text{ from } c \text{ along } P
+\Longleftrightarrow
+f \text{ is the iterator-generated function determined by } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+f \text{ is the iteration of } g \text{ from } c \text{ along } P
+\Longleftrightarrow
+\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+f \text{ is not the iteration of } g \text{ from } c \text{ along } P
+\Longleftrightarrow
+f \text{ is not the iterator-generated function determined by } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Iteration is the special case of recursion in which the same self-map is used
+at every stage.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:iterator-generated-function]{Iterator-Generated Function}
+\end{itemize}
+\end{dependencies}
+

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:strong-induction-on-peano-system",
+  "kind": "theorem",
+  "title": "Strong Induction on a Peano System",
+  "source": {
+    "label": "thm:strong-induction-on-peano-system",
+    "kind": "theorem",
+    "title": "Strong Induction on a Peano System",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 117,
+    "source_line_end": 195,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-strong-induction-on-peano-system",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-strong-induction-on-peano-system/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-strong-induction-on-peano-system/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-strong-induction-on-peano-system",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-strong-induction-on-peano-system/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-strong-induction-on-peano-system/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "thm:strong-induction-on-peano-system",
+      "environment_kind": "theorem",
+      "source_line_start": 117,
+      "source_line_end": 195,
+      "current_tex": "\\begin{theorem}[Strong Induction on a Peano System]\n\\label{thm:strong-induction-on-peano-system}\nLet $(P,S,1)$ be a Peano system, let $<$ be a binary relation on $P$, and let\n$\\varphi$ be a predicate on $P$. Suppose that $<$ is compatible with the\nsuccessor structure in the following sense:\n\\[\n\\forall k\\in P,\\qquad \\neg(k<1),\n\\]\nand\n\\[\n\\forall k,n\\in P,\\qquad\nk<S(n)\\Longleftrightarrow (k<n\\lor k=n).\n\\]\nIf\n\\[\n\\forall n \\in P,\\qquad\n\\left[\n\\left(\\forall k \\in P,\\ k < n \\Longrightarrow \\varphi(k)\\right)\n\\Longrightarrow \\varphi(n)\n\\right]\n\\]\nthen\n\\[\n\\forall n \\in P,\\qquad \\varphi(n).\n\\]\n\\hyperref[prf:strong-induction-on-peano-system]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$, a binary relation $<$ on $P$, and a predicate\n$\\varphi$ on $P$,\n\\[\n\\Bigl[\n\\bigl(\\forall k\\in P,\\ \\neg(k<1)\\bigr)\n\\land\n\\bigl(\\forall k,n\\in P,\\ k<S(n)\\Longleftrightarrow(k<n\\lor k=n)\\bigr)\n\\land\\\\\n\\qquad\n\\forall n \\in P,\\quad\n\\left(\n\\left(\\forall k \\in P,\\ k < n \\Longrightarrow \\varphi(k)\\right)\n\\Longrightarrow \\varphi(n)\n\\right)\n\\Bigr]\n\\Longrightarrow\n\\forall n \\in P,\\ \\varphi(n).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{StrongInductionPrinciple}(P,<,\\varphi).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nStrong induction grants the inductive step access to the entire history below\n$n$, not just the single predecessor. It is the proof form behind least\ncounterexample arguments.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}\n\\end{itemize}\n\\end{dependencies}\n\\end{topicbox}\n\n\\begin{topicbox}{Inductive Subsets and Predecessors}\n\\begin{exposition}\nInduction is expressed in terms of subsets of a Peano system. Two structural\nnotions appear repeatedly in that setting: closure under successor and\nmembership generated from the distinguished first element. Predecessor language\nis also convenient once it is known that every non-initial element arises as a\nsuccessor.\n\\end{exposition}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,66 @@
+\begin{lemma}[Forced Values Are Unique]
+\label{lem:forced-values-are-unique}
+Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
+$R^*$ be the minimal iterator relation. If $(n,w_0)\in R^*$ and
+$(n,w_1)\in R^*$, then $w_0=w_1$.
+\hyperref[prf:forced-values-are-unique]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in P\;\forall w_0,w_1\in W\;
+\bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\Longrightarrow w_0=w_1\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{FunctionalRelation}(R^*,P,W).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists n\in P\;\exists w_0,w_1\in W\;
+\bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Forced value uniqueness fails exactly when one stage is assigned two
+  distinct values by the minimal iterator relation.
+  \item[Two forced values.]
+  \[
+  \neg\operatorname{FunctionalRelation}(R^*,P,W).
+  \]
+  \[
+  \exists n\in P\;\exists w_0,w_1\in W\;
+  \bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr).
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\exists n\in P\;\exists w_0,w_1\in W\;
+\bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr)
+\Longrightarrow
+R^* \text{ is not functional at every stage}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+No stage can be forced to carry two different values. This is the key
+determinacy step in the minimal-relation construction used to turn recursive
+specifications into functions \citep{FefermanNumberSystems1964}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:iterator-relation-consistency]{The Minimal Iterator Relation Is an Iterator Relation}
+\end{itemize}
+\end{dependencies}
+

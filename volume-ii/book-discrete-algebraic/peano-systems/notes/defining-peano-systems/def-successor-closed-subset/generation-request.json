@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:successor-closed-subset",
+  "kind": "definition",
+  "title": "Successor-Closed Subset",
+  "source": {
+    "label": "def:successor-closed-subset",
+    "kind": "definition",
+    "title": "Successor-Closed Subset",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 196,
+    "source_line_end": 258,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-successor-closed-subset",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-successor-closed-subset/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-successor-closed-subset/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-successor-closed-subset",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-successor-closed-subset/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-successor-closed-subset/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "def:successor-closed-subset",
+      "environment_kind": "definition",
+      "source_line_start": 196,
+      "source_line_end": 258,
+      "current_tex": "\\begin{definition}[Successor-Closed Subset]\n\\label{def:successor-closed-subset}\nLet $(P,S,1)$ be a Peano system, and let $A \\subseteq P$. The subset $A$ is\ncalled \\emph{successor-closed} exactly when\n\\[\n\\forall n \\in A,\\qquad S(n) \\in A.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$ and a subset $A\\subseteq P$,\n\\[\n\\forall n \\in A,\\ S(n) \\in A.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n&\\text{Let } (P,S,1) \\text{ be a Peano system and let } A \\subseteq P.\\\\\n&A \\text{ is not successor-closed}\n\\Longleftrightarrow\n\\exists n \\in A,\\ S(n) \\notin A.\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  A subset fails to be successor-closed exactly when it contains some element\n  of $P$ but fails to contain that element's successor.\n  \\item[Quantified failure.]\n  \\[\n  \\begin{aligned}\n  A \\text{ is not successor-closed}\n  \\Longleftrightarrow\n  \\exists n \\in A,\\ \\underbrace{S(n) \\notin A}_{\\text{closure fails at } n}.\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nA successor-closed subset is stable under one step of counting. Once an\nelement of $A$ is present, its successor remains in $A$ as well.\n\\end{remark*}\n\n\\begin{remark*}[Source comparison]\nThe notion of a successor-closed subset is implicit in condition (iii) of\nFeferman's Definition 3.1. The present notes isolate it as a separate\ndefinition so that induction arguments can refer to the closure condition\ndirectly. \\citep{FefermanNumberSystems1964}\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

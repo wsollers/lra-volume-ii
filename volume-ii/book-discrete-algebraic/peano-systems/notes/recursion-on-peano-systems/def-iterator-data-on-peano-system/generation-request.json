@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:iterator-data-on-peano-system",
+  "kind": "definition",
+  "title": "Iterator Data",
+  "source": {
+    "label": "def:iterator-data-on-peano-system",
+    "kind": "definition",
+    "title": "Iterator Data",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 163,
+    "source_line_end": 228,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-data-on-peano-system",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-data-on-peano-system/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-data-on-peano-system/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-data-on-peano-system",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-data-on-peano-system/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-data-on-peano-system/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "def:iterator-data-on-peano-system",
+      "environment_kind": "definition",
+      "source_line_start": 163,
+      "source_line_end": 228,
+      "current_tex": "\\begin{definition}[Iterator Data]\n\\label{def:iterator-data-on-peano-system}\nLet $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\\in W$, and let\n$g:W\\to W$ be a function. The triple $(W,c,g)$ is called \\emph{iterator data}\nfor $(P,S,1)$.\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n(W,c,g) \\text{ is iterator data for } (P,S,1)\n\\Longleftrightarrow\n\\bigl(W \\text{ is a set}\\land c\\in W\\land g:W\\to W\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{IteratorData}(W,c,g)\n\\Longleftrightarrow\n\\bigl(W \\text{ is a set}\\land c\\in W\\land g:W\\to W\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n(W,c,g) \\text{ is not iterator data for } (P,S,1)\n\\Longleftrightarrow\n\\bigl(W \\text{ is not a set}\\lor c\\notin W\\lor g \\text{ is not a function } W\\to W\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Iterator data fails if the proposed value collection is not a set, if the\n  initial value does not lie in the value set, or if the proposed update rule\n  is not a self-map of the value set.\n  \\item[Invalid data.]\n  \\[\n  \\neg\\operatorname{IteratorData}(W,c,g).\n  \\]\n  \\[\n  \\begin{aligned}\n  &(W,c,g) \\text{ is not iterator data for } (P,S,1)\\\\\n  \\Longleftrightarrow\\;&\n  \\underbrace{W \\text{ is not a set}}_{\\text{no value set}}\\\\\n  &\\lor \\underbrace{c\\notin W}_{\\text{invalid initial value}}\\\\\n  &\\lor \\underbrace{g \\text{ is not a function } W\\to W}_{\\text{invalid update rule}}.\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nIterator data records the value set, the first value, and the fixed rule used\nto pass from each value to the next value.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

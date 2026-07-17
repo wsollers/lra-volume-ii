@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "ax:peano-successor-injective",
+  "kind": "axiom",
+  "title": "Injectivity of Successor",
+  "source": {
+    "label": "ax:peano-successor-injective",
+    "kind": "axiom",
+    "title": "Injectivity of Successor",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+    "source_line_start": 177,
+    "source_line_end": 203,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-injective",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-injective/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-injective/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-injective",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-injective/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-injective/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+      "label": "ax:peano-successor-injective",
+      "environment_kind": "axiom",
+      "source_line_start": 177,
+      "source_line_end": 203,
+      "current_tex": "\\begin{axiom}[Injectivity of Successor]\n\\label{ax:peano-successor-injective}\nIf $m,n \\in P$ and $S(m)=S(n)$, then $m=n$.\n\\end{axiom}\n\\end{axiombox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall m,n \\in P\\;(S(m)=S(n) \\Longrightarrow m=n).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{Injective}(S,P,P).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nDifferent natural numbers do not collapse to the same successor. The successor\noperation preserves distinctness and lets predecessor reasoning work whenever a\nsuccessor is known.\n\\end{remark*}\n\n\\NoLocalDependencies\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

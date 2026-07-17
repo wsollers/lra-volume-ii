@@ -1,0 +1,65 @@
+\begin{definition}[Inductive Subset of a Peano System]
+\label{def:inductive-subset-of-peano-system}
+Let $(P,S,1)$ be a Peano system, and let $A \subseteq P$. The subset $A$ is
+called \emph{inductive} exactly when $1 \in A$ and $A$ is successor-closed.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
+\[
+\bigl(1 \in A \land
+\forall n \in A,\ S(n) \in A\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } A \subseteq P.\\
+&A \text{ is not inductive}
+\Longleftrightarrow
+\bigl(1 \notin A \lor \exists n \in A,\ S(n) \notin A\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  A subset fails to be inductive in exactly two ways: it may fail to contain
+  the distinguished first element, or it may contain some element while
+  failing to contain that element's successor.
+  \item[Quantified failure.]
+  \[
+  \begin{aligned}
+  A \text{ is not inductive}
+  \Longleftrightarrow\;&
+  \underbrace{1 \notin A}_{\text{base point missing}}\\
+  &\lor
+  \underbrace{\exists n \in A,\ S(n) \notin A}_{\text{successor closure fails}}.
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An inductive subset contains the distinguished first element and is closed
+under successor. Such a subset contains every stage obtained by starting at
+$1$ and applying successor repeatedly.
+\end{remark*}
+
+\begin{remark*}[Source comparison]
+The notion of an inductive subset packages the two hypotheses appearing in the
+induction clause of Feferman's Definition 3.1. The present notes name this
+package so that the internal structure of induction proofs remains explicit.
+\citep{FefermanNumberSystems1964}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+  \item \hyperref[def:successor-closed-subset]{Successor-Closed Subset}
+\end{itemize}
+\end{dependencies}
+

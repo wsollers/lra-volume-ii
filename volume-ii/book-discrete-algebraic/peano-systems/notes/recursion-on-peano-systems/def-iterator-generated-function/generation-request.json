@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:iterator-generated-function",
+  "kind": "definition",
+  "title": "Iterator-Generated Function",
+  "source": {
+    "label": "def:iterator-generated-function",
+    "kind": "definition",
+    "title": "Iterator-Generated Function",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 1028,
+    "source_line_end": 1106,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-generated-function",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-generated-function/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-generated-function/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-generated-function",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-generated-function/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-generated-function/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "def:iterator-generated-function",
+      "environment_kind": "definition",
+      "source_line_start": 1028,
+      "source_line_end": 1106,
+      "current_tex": "\\begin{definition}[Iterator-Generated Function]\n\\label{def:iterator-generated-function}\nLet $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.\nThe unique function $f:P\\to W$ satisfying\n\\[\nf(1)=c\n\\qquad\\text{and}\\qquad\n\\forall n\\in P\\;(f(S(n))=g(f(n)))\n\\]\nis called the \\emph{iterator-generated function determined by $(W,c,g)$}.\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nf \\text{ is the iterator-generated function determined by } (W,c,g)\n\\Longleftrightarrow\n\\bigl(f:P\\to W\\land f(1)=c\n\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)\n\\Longleftrightarrow\n\\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)\n\\land\n\\exists! h:P\\to W\\;\n\\operatorname{IteratorFunction}(h,(P,S,1),W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\nf \\text{ is not the iterator-generated function determined by } (W,c,g)\n\\Longleftrightarrow\\;&\nf \\text{ is not a function } P\\to W\\\\\n&\\lor f(1)\\neq c\n\\lor \\exists n\\in P\\;(f(S(n))\\neq g(f(n))).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  A candidate fails to be the iterator-generated function if it is not a\n  function from $P$ to $W$, if it has the wrong base value, or if it violates\n  the successor clause.\n  \\item[Invalid candidate.]\n  \\[\n  \\neg\\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g).\n  \\]\n  \\[\n  \\begin{aligned}\n  f \\text{ is not the iterator-generated function determined by } (W,c,g)\n  \\Longleftrightarrow\\;&\n  f \\text{ is not a function } P\\to W\\\\\n  &\\lor f(1)\\neq c\n  \\lor \\exists n\\in P\\;(f(S(n))\\neq g(f(n))).\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThis definition packages the unique function supplied by the Peano Iterator\nTheorem as a named object available for later constructions.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[thm:peano-iterator-theorem]{Peano Iterator Theorem}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

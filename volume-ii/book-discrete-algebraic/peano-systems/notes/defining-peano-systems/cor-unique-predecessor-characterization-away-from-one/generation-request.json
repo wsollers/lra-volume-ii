@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:unique-predecessor-characterization-away-from-one",
+  "kind": "corollary",
+  "title": "Unique Predecessor Characterization Away from $1$",
+  "source": {
+    "label": "cor:unique-predecessor-characterization-away-from-one",
+    "kind": "corollary",
+    "title": "Unique Predecessor Characterization Away from $1$",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 690,
+    "source_line_end": 780,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-unique-predecessor-characterization-away-from-one",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-unique-predecessor-characterization-away-from-one/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-unique-predecessor-characterization-away-from-one/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-unique-predecessor-characterization-away-from-one",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-unique-predecessor-characterization-away-from-one/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-unique-predecessor-characterization-away-from-one/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "cor:unique-predecessor-characterization-away-from-one",
+      "environment_kind": "corollary",
+      "source_line_start": 690,
+      "source_line_end": 780,
+      "current_tex": "\\begin{corollary}[Unique Predecessor Characterization Away from $1$]\n\\label{cor:unique-predecessor-characterization-away-from-one}\nLet $(P,S,1)$ be a Peano system. For every $x \\in P$, $x \\neq 1$ if and\nonly if there exists a unique $u \\in P$ such that $S(u)=x$.\n\\hyperref[prf:unique-predecessor-characterization-away-from-one]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$,\n\\[\n\\forall x \\in P\\;\\bigl(x\\neq 1 \\Longleftrightarrow\n\\exists! u \\in P\\;(S(u)=x)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\forall x \\in P\\;\\bigl(x\\neq 1 \\Longleftrightarrow\n\\exists! u \\in P\\;(S(u)=x)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n&\\text{Let } (P,S,1) \\text{ be a Peano system.}\\\\\n&\\exists x \\in P\\;\\Bigl(\n\\bigl(x\\neq 1 \\land\n(\\forall u \\in P\\;(S(u)\\neq x)\\\\\n&\\qquad\\qquad\\qquad\\lor\n\\exists u,v \\in P\\;(S(u)=x \\land S(v)=x \\land u\\neq v))\\bigr)\\\\\n&\\qquad\\qquad\\lor\n\\bigl(x=1 \\land \\exists u \\in P\\;(S(u)=x \\land\n\\forall v \\in P\\;(S(v)=x \\Longrightarrow v=u))\\bigr)\n\\Bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  The biconditional can fail in two ways: a non-initial element can fail to\n  have a unique predecessor, or the distinguished first element can have a\n  unique predecessor.\n  \\item[Characterization failure.]\n  \\[\n  \\neg\\forall x \\in P\\;\\bigl(x\\neq 1 \\Longleftrightarrow\n  \\exists! u \\in P\\;(S(u)=x)\\bigr).\n  \\]\n  \\[\n  \\begin{aligned}\n  &\\exists x \\in P\\;\\Bigl(\n  \\underbrace{\\bigl(x\\neq 1 \\land\n  (\\forall u \\in P\\;(S(u)\\neq x)\n  \\lor\n  \\exists u,v \\in P\\;(S(u)=x \\land S(v)=x \\land u\\neq v))\\bigr)}_\n  {\\text{non-initial element lacks a unique predecessor}}\\\\\n  &\\qquad\\qquad\\lor\n  \\underbrace{\\bigl(x=1 \\land \\exists u \\in P\\;(S(u)=x \\land\n  \\forall v \\in P\\;(S(v)=x \\Longrightarrow v=u))\\bigr)}_\n  {\\text{the first element has a unique predecessor}}\n  \\Bigr).\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nBeing different from the distinguished first element is exactly the same as\nhaving a unique predecessor. This turns the informal phrase \"away from $1$\"\ninto an internal characterization of the successor structure.\n\\end{remark*}\n\n\\begin{remark*}[Source comparison]\nThis corollary packages the predecessor analysis surrounding Feferman's\nTheorem 3.3. The forward direction is the predecessor\nexistence-and-uniqueness result, while the reverse direction uses the axiom\nthat $1$ is not a successor. \\citet{FefermanNumberSystems1964}\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n  \\item \\hyperref[ax:peano-base-not-successor]{Distinguished Element Is Not a Successor}\n  \\item \\hyperref[cor:predecessor-exists-unique-away-from-one]{Predecessor Existence and Uniqueness Away from $1$}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

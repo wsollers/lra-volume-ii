@@ -1,0 +1,62 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:no-object-is-its-own-successor",
+  "kind": "theorem",
+  "title": "No Object Is Its Own Successor",
+  "source": {
+    "label": "thm:no-object-is-its-own-successor",
+    "kind": "theorem",
+    "title": "No Object Is Its Own Successor",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 824,
+    "source_line_end": 916,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-no-object-is-its-own-successor",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-no-object-is-its-own-successor/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-no-object-is-its-own-successor/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-no-object-is-its-own-successor",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-no-object-is-its-own-successor/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/thm-no-object-is-its-own-successor/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "thm:no-object-is-its-own-successor",
+      "environment_kind": "theorem",
+      "source_line_start": 824,
+      "source_line_end": 916,
+      "current_tex": "\\begin{theorem}[No Object Is Its Own Successor]\n\\label{thm:no-object-is-its-own-successor}\nLet $(P,S,1)$ be a Peano system. For every $n \\in P$,\n\\[\nS(n) \\neq n.\n\\]\n\\hyperref[prf:no-object-is-its-own-successor]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{formalizationrecord}{Lean 4 Verification Record}\n\\FormalizationSource{Landau, \\emph{Foundations of Analysis}, Section 2, Theorem 2}\n\\Formalizes{thm:no-object-is-its-own-successor}\n\\textbf{Lean module:} \\texttt{LRA.VolumeII.PeanoSystems.BasicTheorems}.\\par\n\\LeanDeclaration{successor\\_not\\_self}\n\\textbf{Status:} checked against \\texttt{lra-lean}.\\par\n\n\\begin{leancode}\ntheorem successor_not_self\n    (ps : PeanoSystem) :\n    forall element : ps.carrier,\n      Not (ps.successor element = element) := by\n  apply induction_principle ps\n\n  case base_case =>\n    exact ps.one_not_successor ps.one\n\n  case successor_step =>\n    intro element induction_hypothesis\n    exact\n      successor_preserves_inequality\n        ps\n        (ps.successor element)\n        element\n        induction_hypothesis\n\\end{leancode}\n\\end{formalizationrecord}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$,\n\\[\n\\forall n \\in P\\;(S(n) \\neq n).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nSuccessor always moves forward in the counting structure. No element can be\nrecovered by applying successor to itself.\n\\end{remark*}\n\n\\begin{remark*}[Historical note]\nThis theorem is a standard consequence of the Peano axioms in the classical\ndevelopment of the natural numbers \\citep{PeanoArithmeticesPrincipia1889}.\nFeferman includes the corresponding result as an exercise in Chapter 3 of\n\\citet{FefermanNumberSystems1964}.\n\\end{remark*}\n\n\\begin{workedexample}[Why the base case is forced]\n\\LRAWorkedExampleFor{thm:no-object-is-its-own-successor}\n\\LRAWorkedExampleUses{ax:peano-base-not-successor}\n\\LRAWorkedExampleTags{peano systems, induction, base case}\nFor the first element, the theorem says\n\\[\nS(1)\\neq 1.\n\\]\nThis is exactly the axiom that the distinguished element is not a successor:\nthere is no element $x\\in P$ with $S(x)=1$. In particular, taking $x=1$\nwould be impossible, so $S(1)\\neq 1$.\n\\end{workedexample}\n\n\\begin{workedexample}[Why the induction step uses injectivity]\n\\LRAWorkedExampleFor{thm:no-object-is-its-own-successor}\n\\LRAWorkedExampleUses{ax:peano-successor-injective, thm:induction-principle-for-peano-system}\n\\LRAWorkedExampleTags{peano systems, induction, injectivity}\nSuppose the induction hypothesis gives $S(n)\\neq n$. To prove the next case,\nwe must show\n\\[\nS(S(n))\\neq S(n).\n\\]\nIf equality held, injectivity of $S$ would let us cancel the outer successor\nand conclude $S(n)=n$, contradicting the induction hypothesis. Thus the\nproperty propagates from $n$ to $S(n)$.\n\\end{workedexample}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[ax:peano-base-not-successor]{Distinguished Element Is Not a Successor}\n  \\item \\hyperref[ax:peano-successor-injective]{Injectivity of Successor}\n  \\item \\hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}\n\\end{itemize}\n\\end{dependencies}\n\\end{topicbox}\n",
+      "formalizations": [
+        {
+          "artifact_label": "thm:no-object-is-its-own-successor",
+          "system": "Lean 4",
+          "repository": "lra-lean",
+          "module": "LRA.VolumeII.PeanoSystems.BasicTheorems",
+          "declaration": "successor_not_self",
+          "status": "checked",
+          "environment": {
+            "mathlib_policy": "prohibited"
+          },
+          "source_reference": "Landau, \\emph{Foundations of Analysis",
+          "source_path": "",
+          "code": "theorem successor_not_self\n    (ps : PeanoSystem) :\n    forall element : ps.carrier,\n      Not (ps.successor element = element) := by\n  apply induction_principle ps\n\n  case base_case =>\n    exact ps.one_not_successor ps.one\n\n  case successor_step =>\n    intro element induction_hypothesis\n    exact\n      successor_preserves_inequality\n        ps\n        (ps.successor element)\n        element\n        induction_hypothesis"
+        }
+      ]
+    }
+  },
+  "creation_mode": "prompt"
+}

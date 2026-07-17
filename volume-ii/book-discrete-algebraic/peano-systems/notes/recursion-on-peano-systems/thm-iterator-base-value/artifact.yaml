@@ -1,0 +1,312 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:iterator-base-value
+  kind: theorem
+  title: Iterator Base Clause
+  canonical_name: Iterator Base Clause
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Iterator Base Clause
+    owning_concept: Iterator Base Clause
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: recursion-on-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex
+  source_line_start: 1107
+  source_line_end: 1151
+  source_hash: sha256:c023899fe702a4b9bd5c9dc9cb24153eb5158ca5174e24f6a2a54a24f4594724
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: theorem
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: P,S,1
+  symbol: P,S,1
+- id: W
+  symbol: W
+- id: c
+  symbol: c
+- id: f
+  symbol: f
+- id: g
+  symbol: g
+- id: P
+  symbol: P
+- id: S
+  symbol: S
+assumptions: []
+statement:
+  canonical_prose: Iterator Base Clause
+  canonical_latex: '\begin{theorem}[Iterator Base Clause]
+
+    \label{thm:iterator-base-value}
+
+    Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
+
+    $f$ be the iterator-generated function determined by $(W,c,g)$. Then
+
+    \[
+
+    f(1)=c.
+
+    \]
+
+    \hyperref[prf:iterator-base-value]{Go to proof.}
+
+    \end{theorem}'
+  semantic_ast:
+    kind: raw_latex
+    latex: '\begin{theorem}[Iterator Base Clause]
+
+      \label{thm:iterator-base-value}
+
+      Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and
+      let
+
+      $f$ be the iterator-generated function determined by $(W,c,g)$. Then
+
+      \[
+
+      f(1)=c.
+
+      \]
+
+      \hyperref[prf:iterator-base-value]{Go to proof.}
+
+      \end{theorem}'
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      f \text{ is the iterator-generated function determined by } (W,c,g)
+
+      \Longrightarrow f(1)=c.
+
+      \]'
+    ast:
+      kind: raw_latex
+      latex: '\[
+
+        f \text{ is the iterator-generated function determined by } (W,c,g)
+
+        \Longrightarrow f(1)=c.
+
+        \]'
+  predicate_reading:
+    latex: '\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
+
+      \Longrightarrow f(1)=c.'
+    ast:
+      kind: implies
+      left:
+        kind: predicate
+        predicate_id: pred:iterator-generated-function
+        name: IteratorGeneratedFunction
+        arguments:
+        - kind: variable
+          binder_id: f
+        - kind: tuple
+          elements:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+        - kind: variable
+          binder_id: W
+        - kind: variable
+          binder_id: c
+        - kind: variable
+          binder_id: g
+      right:
+        kind: relation
+        relation: '='
+        left:
+          kind: application
+          function: f
+          arguments:
+          - kind: constant
+            name: '1'
+        right:
+          kind: variable
+          binder_id: c
+    parser_witnesses:
+      original_latex: '\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
+
+        \Longrightarrow f(1)=c.'
+      hand_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: predicate
+            predicate_id: pred:iterator-generated-function
+            name: IteratorGeneratedFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+          right:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: f
+              arguments:
+              - kind: constant
+                name: '1'
+            right:
+              kind: variable
+              binder_id: c
+      lark_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: predicate
+            predicate_id: pred:iterator-generated-function
+            name: IteratorGeneratedFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+          right:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: f
+              arguments:
+              - kind: constant
+                name: '1'
+            right:
+              kind: variable
+              binder_id: c
+      parsers_agree: true
+  negation:
+    mechanical:
+      latex: '\neg(\[
+
+        f \text{ is the iterator-generated function determined by } (W,c,g)
+
+        \Longrightarrow f(1)=c.
+
+        \])'
+      ast:
+        kind: not
+        operand:
+          kind: raw_latex
+          latex: '\begin{theorem}[Iterator Base Clause]
+
+            \label{thm:iterator-base-value}
+
+            Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it,
+            and let
+
+            $f$ be the iterator-generated function determined by $(W,c,g)$. Then
+
+            \[
+
+            f(1)=c.
+
+            \]
+
+            \hyperref[prf:iterator-base-value]{Go to proof.}
+
+            \end{theorem}'
+    approved_normal_form: null
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: canonical-proof
+    target: prf:iterator-base-value
+    display: null
+    notes: Expected proof label by convention.
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof:
+    proof_label: prf:iterator-base-value
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: thm:iterator-base-value
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

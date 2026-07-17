@@ -1,0 +1,305 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: ax:peano-system-existence
+  kind: axiom
+  title: Existence of a Peano System
+  canonical_name: Existence of a Peano System
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Existence of a Peano System
+    owning_concept: Existence of a Peano System
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: defining-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex
+  source_line_start: 238
+  source_line_end: 275
+  source_hash: sha256:7887f013fddcbacc993ee001aafc12896b7af4a3ce369b780c1e9a32b1cb7a19
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: axiom
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Existence of a Peano System
+  canonical_latex: '\begin{axiom}[Existence of a Peano System]
+
+    \label{ax:peano-system-existence}
+
+    There exists a Peano system.
+
+    \end{axiom}'
+  semantic_ast:
+    kind: raw_latex
+    latex: '\begin{axiom}[Existence of a Peano System]
+
+      \label{ax:peano-system-existence}
+
+      There exists a Peano system.
+
+      \end{axiom}'
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
+
+      \]'
+    ast:
+      kind: exists
+      binder:
+        binder_id: e2
+        symbol: e_2
+        domain:
+          kind: raw_latex
+          latex: ambient context
+      restriction: null
+      body:
+        kind: exists
+        binder:
+          binder_id: e1
+          symbol: e_1
+          domain:
+            kind: raw_latex
+            latex: ambient context
+        restriction: null
+        body:
+          kind: raw_latex
+          latex: '\[
+
+            \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
+
+            \]'
+  predicate_reading:
+    latex: \exists P\;\exists S\;\operatorname{PeanoSystem}(P,S,1).
+    ast:
+      kind: exists
+      binder:
+        binder_id: P
+        symbol: P
+        domain: null
+      restriction: null
+      body:
+        kind: exists
+        binder:
+          binder_id: S
+          symbol: S
+          domain: null
+        restriction: null
+        body:
+          kind: predicate
+          predicate_id: pred:peano-system
+          name: PeanoSystem
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+    parser_witnesses:
+      original_latex: \exists P\;\exists S\;\operatorname{PeanoSystem}(P,S,1).
+      hand_parser:
+        available: true
+        ast:
+          kind: exists
+          binder:
+            binder_id: P
+            symbol: P
+            domain: null
+          restriction: null
+          body:
+            kind: exists
+            binder:
+              binder_id: S
+              symbol: S
+              domain: null
+            restriction: null
+            body:
+              kind: predicate
+              predicate_id: pred:peano-system
+              name: PeanoSystem
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+      lark_parser:
+        available: true
+        ast:
+          kind: exists
+          binder:
+            binder_id: P
+            symbol: P
+            domain: null
+          restriction: null
+          body:
+            kind: exists
+            binder:
+              binder_id: S
+              symbol: S
+              domain: null
+            restriction: null
+            body:
+              kind: predicate
+              predicate_id: pred:peano-system
+              name: PeanoSystem
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+      parsers_agree: true
+  negation:
+    mechanical:
+      latex: '\neg(\[
+
+        \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
+
+        \])'
+      ast:
+        kind: exists
+        binder:
+          binder_id: w1
+          symbol: w
+          domain:
+            kind: raw_latex
+            latex: counterexample context
+        restriction: null
+        body:
+          kind: exists
+          binder:
+            binder_id: e2
+            symbol: e_2
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: exists
+            binder:
+              binder_id: e1
+              symbol: e_1
+              domain:
+                kind: raw_latex
+                latex: ambient context
+            restriction: null
+            body:
+              kind: not
+              operand:
+                kind: raw_latex
+                latex: '\neg(\[
+
+                  \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
+
+                  \])'
+    approved_normal_form:
+      latex: '\neg(\[
+
+        \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
+
+        \])'
+      ast:
+        kind: exists
+        binder:
+          binder_id: w1
+          symbol: w
+          domain:
+            kind: raw_latex
+            latex: counterexample context
+        restriction: null
+        body:
+          kind: exists
+          binder:
+            binder_id: e2
+            symbol: e_2
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: exists
+            binder:
+              binder_id: e1
+              symbol: e_1
+              domain:
+                kind: raw_latex
+                latex: ambient context
+            restriction: null
+            body:
+              kind: not
+              operand:
+                kind: raw_latex
+                latex: '\neg(\[
+
+                  \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
+
+                  \])'
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: ax:peano-system-existence
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

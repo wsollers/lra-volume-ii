@@ -1,0 +1,78 @@
+\begin{definition}[Iterator-Generated Function]
+\label{def:iterator-generated-function}
+Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.
+The unique function $f:P\to W$ satisfying
+\[
+f(1)=c
+\qquad\text{and}\qquad
+\forall n\in P\;(f(S(n))=g(f(n)))
+\]
+is called the \emph{iterator-generated function determined by $(W,c,g)$}.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+f \text{ is the iterator-generated function determined by } (W,c,g)
+\Longleftrightarrow
+\bigl(f:P\to W\land f(1)=c
+\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
+\Longleftrightarrow
+\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
+\land
+\exists! h:P\to W\;
+\operatorname{IteratorFunction}(h,(P,S,1),W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+f \text{ is not the iterator-generated function determined by } (W,c,g)
+\Longleftrightarrow\;&
+f \text{ is not a function } P\to W\\
+&\lor f(1)\neq c
+\lor \exists n\in P\;(f(S(n))\neq g(f(n))).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  A candidate fails to be the iterator-generated function if it is not a
+  function from $P$ to $W$, if it has the wrong base value, or if it violates
+  the successor clause.
+  \item[Invalid candidate.]
+  \[
+  \neg\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g).
+  \]
+  \[
+  \begin{aligned}
+  f \text{ is not the iterator-generated function determined by } (W,c,g)
+  \Longleftrightarrow\;&
+  f \text{ is not a function } P\to W\\
+  &\lor f(1)\neq c
+  \lor \exists n\in P\;(f(S(n))\neq g(f(n))).
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This definition packages the unique function supplied by the Peano Iterator
+Theorem as a named object available for later constructions.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:peano-iterator-theorem]{Peano Iterator Theorem}
+\end{itemize}
+\end{dependencies}
+

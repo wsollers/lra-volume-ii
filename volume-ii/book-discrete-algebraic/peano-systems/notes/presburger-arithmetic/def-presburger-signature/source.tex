@@ -1,0 +1,41 @@
+\begin{definition}[Presburger Signature]
+\label{def:presburger-signature}
+The \emph{Presburger signature} is the first-order signature
+\[
+\mathcal{L}_{\mathrm{Pres}} = \{0, S, +, <\},
+\]
+where $0$ is a constant symbol, $S$ is a unary function symbol, $+$ is a
+binary function symbol, and $<$ is a binary relation symbol. Equality is the
+logical equality symbol of first-order logic, not an additional nonlogical
+relation symbol of the signature.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{PresburgerSignature}(\mathcal{L})
+\Longleftrightarrow
+\mathcal{L} = \{0,S,+,<\}
+\land \operatorname{ar}(S)=1
+\land \operatorname{ar}(+)=2
+\land \operatorname{ar}(<)=2.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Presburger signature names addition and order, but it deliberately omits
+multiplication as a function symbol. This makes Presburger arithmetic a theory
+of the additive structure of the natural numbers rather than a theory of full
+arithmetic.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:signature]{First-Order Signature}
+  \item \hyperref[def:arity]{Arity}
+  \item \hyperref[def:relation-symbol]{Relation Symbol}
+  \item \hyperref[def:signature-constant-symbol]{Constant Symbol}
+  \item \hyperref[def:signature-function-symbol]{Function Symbol}
+\end{itemize}
+\end{dependencies}
+

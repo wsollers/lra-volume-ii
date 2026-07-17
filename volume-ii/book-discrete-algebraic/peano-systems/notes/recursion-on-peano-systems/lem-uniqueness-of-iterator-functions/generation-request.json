@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:uniqueness-of-iterator-functions",
+  "kind": "lemma",
+  "title": "Uniqueness of Iterator Functions",
+  "source": {
+    "label": "lem:uniqueness-of-iterator-functions",
+    "kind": "lemma",
+    "title": "Uniqueness of Iterator Functions",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 727,
+    "source_line_end": 827,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-iterator-functions",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-iterator-functions/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-iterator-functions/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-iterator-functions",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-iterator-functions/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-iterator-functions/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "lem:uniqueness-of-iterator-functions",
+      "environment_kind": "lemma",
+      "source_line_start": 727,
+      "source_line_end": 827,
+      "current_tex": "\\begin{lemma}[Uniqueness of Iterator Functions]\n\\label{lem:uniqueness-of-iterator-functions}\nLet $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it. If\n$f,h:P\\to W$ satisfy\n\\[\nf(1)=c,\\qquad h(1)=c,\n\\]\nand\n\\[\n\\forall n\\in P\\;(f(S(n))=g(f(n)))\n\\qquad\\text{and}\\qquad\n\\forall n\\in P\\;(h(S(n))=g(h(n))),\n\\]\nthen $f=h$.\n\\hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{aligned}\n\\forall f,h:P\\to W\\;\\Bigl(&\nf(1)=c\\land h(1)=c\\\\\n&\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\\\\n&\\land \\forall n\\in P\\;(h(S(n))=g(h(n)))\n\\Longrightarrow f=h\\Bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\forall f,h:P\\to W\\;\n\\bigl(\\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)\n\\land \\operatorname{IteratorFunction}(h,(P,S,1),W,c,g)\n\\Longrightarrow f=h\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n\\exists f,h:P\\to W\\;\\Bigl(&\nf(1)=c\\land h(1)=c\\\\\n&\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\\\\n&\\land \\forall n\\in P\\;(h(S(n))=g(h(n)))\n\\land f\\neq h\\Bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Uniqueness fails exactly when two distinct functions satisfy the same base\n  clause and the same successor clause.\n  \\item[Two iterator functions.]\n  \\[\n  \\neg\\forall f,h:P\\to W\\;\n  \\bigl(\\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)\n  \\land \\operatorname{IteratorFunction}(h,(P,S,1),W,c,g)\n  \\Longrightarrow f=h\\bigr).\n  \\]\n  \\[\n  \\begin{aligned}\n  \\exists f,h:P\\to W\\;\\Bigl(&\n  f(1)=c\\land h(1)=c\\\\\n  &\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\\\\n  &\\land \\forall n\\in P\\;(h(S(n))=g(h(n)))\n  \\land f\\neq h\\Bigr).\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Contrapositive quantified statement]\n\\[\n\\begin{aligned}\nf\\neq h\n\\Longrightarrow\\;&\nf(1)\\neq c\\lor h(1)\\neq c\\\\\n&\\lor \\exists n\\in P\\;(f(S(n))\\neq g(f(n)))\\\\\n&\\lor \\exists n\\in P\\;(h(S(n))\\neq g(h(n))).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe iterator clauses determine at most one function. Any difference between\ntwo candidate functions must show up as a failure of the base clause or a\nfailure of one of the successor clauses.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:iterator-data-on-peano-system]{Iterator Data}\n  \\item \\hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:existence-of-iterator-function",
+  "kind": "lemma",
+  "title": "Existence of an Iterator Function",
+  "source": {
+    "label": "lem:existence-of-iterator-function",
+    "kind": "lemma",
+    "title": "Existence of an Iterator Function",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 828,
+    "source_line_end": 901,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-existence-of-iterator-function",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-existence-of-iterator-function/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-existence-of-iterator-function/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-existence-of-iterator-function",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-existence-of-iterator-function/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-existence-of-iterator-function/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "lem:existence-of-iterator-function",
+      "environment_kind": "lemma",
+      "source_line_start": 828,
+      "source_line_end": 901,
+      "current_tex": "\\begin{lemma}[Existence of an Iterator Function]\n\\label{lem:existence-of-iterator-function}\nLet $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.\nThen there exists a function $f:P\\to W$ such that\n\\[\nf(1)=c\n\\qquad\\text{and}\\qquad\n\\forall n\\in P\\;(f(S(n))=g(f(n))).\n\\]\n\\hyperref[prf:existence-of-iterator-function]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\exists f:P\\to W\\;\n\\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\exists f:P\\to W\\;\n\\operatorname{IteratorFunction}(f,(P,S,1),W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\forall f:P\\to W\\;\n\\bigl(f(1)\\neq c\\lor \\exists n\\in P\\;(f(S(n))\\neq g(f(n)))\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Existence fails exactly when every candidate function misses the base value\n  or misses the recursive successor equation at some stage.\n  \\item[No iterator function.]\n  \\[\n  \\neg\\exists f:P\\to W\\;\n  \\operatorname{IteratorFunction}(f,(P,S,1),W,c,g).\n  \\]\n  \\[\n  \\forall f:P\\to W\\;\n  \\bigl(f(1)\\neq c\\lor \\exists n\\in P\\;(f(S(n))\\neq g(f(n)))\\bigr).\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Contrapositive quantified statement]\n\\[\n\\neg\\exists f:P\\to W\\;\n\\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\bigr)\n\\Longrightarrow\nR^* \\text{ is not both deterministic and complete}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nExistence is the assertion that the minimal relation is not merely graph-like\nlocally, but supplies a value at every stage and hence determines an actual\nfunction.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[lem:minimal-iterator-relation-deterministic]{Determinism of the Minimal Iterator Relation}\n  \\item \\hyperref[lem:minimal-iterator-relation-complete]{Totality of the Minimal Iterator Relation}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

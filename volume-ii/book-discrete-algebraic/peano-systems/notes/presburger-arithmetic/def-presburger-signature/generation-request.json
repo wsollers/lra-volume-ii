@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:presburger-signature",
+  "kind": "definition",
+  "title": "Presburger Signature",
+  "source": {
+    "label": "def:presburger-signature",
+    "kind": "definition",
+    "title": "Presburger Signature",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "presburger-arithmetic",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/notes-presburger-arithmetic.tex",
+    "source_line_start": 2,
+    "source_line_end": 43,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-signature",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-signature/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-signature/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-signature",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-signature/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/def-presburger-signature/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/notes-presburger-arithmetic.tex",
+      "label": "def:presburger-signature",
+      "environment_kind": "definition",
+      "source_line_start": 2,
+      "source_line_end": 43,
+      "current_tex": "\\begin{definition}[Presburger Signature]\n\\label{def:presburger-signature}\nThe \\emph{Presburger signature} is the first-order signature\n\\[\n\\mathcal{L}_{\\mathrm{Pres}} = \\{0, S, +, <\\},\n\\]\nwhere $0$ is a constant symbol, $S$ is a unary function symbol, $+$ is a\nbinary function symbol, and $<$ is a binary relation symbol. Equality is the\nlogical equality symbol of first-order logic, not an additional nonlogical\nrelation symbol of the signature.\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\operatorname{PresburgerSignature}(\\mathcal{L})\n\\Longleftrightarrow\n\\mathcal{L} = \\{0,S,+,<\\}\n\\land \\operatorname{ar}(S)=1\n\\land \\operatorname{ar}(+)=2\n\\land \\operatorname{ar}(<)=2.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe Presburger signature names addition and order, but it deliberately omits\nmultiplication as a function symbol. This makes Presburger arithmetic a theory\nof the additive structure of the natural numbers rather than a theory of full\narithmetic.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:signature]{First-Order Signature}\n  \\item \\hyperref[def:arity]{Arity}\n  \\item \\hyperref[def:relation-symbol]{Relation Symbol}\n  \\item \\hyperref[def:signature-constant-symbol]{Constant Symbol}\n  \\item \\hyperref[def:signature-function-symbol]{Function Symbol}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

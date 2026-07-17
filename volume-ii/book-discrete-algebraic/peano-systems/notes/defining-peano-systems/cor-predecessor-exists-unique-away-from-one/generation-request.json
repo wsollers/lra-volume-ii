@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:predecessor-exists-unique-away-from-one",
+  "kind": "corollary",
+  "title": "Predecessor Existence and Uniqueness Away from $1$",
+  "source": {
+    "label": "cor:predecessor-exists-unique-away-from-one",
+    "kind": "corollary",
+    "title": "Predecessor Existence and Uniqueness Away from $1$",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 647,
+    "source_line_end": 689,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-predecessor-exists-unique-away-from-one",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-predecessor-exists-unique-away-from-one/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-predecessor-exists-unique-away-from-one/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-predecessor-exists-unique-away-from-one",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-predecessor-exists-unique-away-from-one/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-predecessor-exists-unique-away-from-one/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "cor:predecessor-exists-unique-away-from-one",
+      "environment_kind": "corollary",
+      "source_line_start": 647,
+      "source_line_end": 689,
+      "current_tex": "\\begin{corollary}[Predecessor Existence and Uniqueness Away from $1$]\n\\label{cor:predecessor-exists-unique-away-from-one}\nLet $(P,S,1)$ be a Peano system, and let $x \\in P$ with $x \\neq 1$. Then\nthere exists a unique $u \\in P$ such that $S(u)=x$.\n\\hyperref[prf:predecessor-exists-unique-away-from-one]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$,\n\\[\n\\forall x \\in P\\;\\bigl(x \\neq 1 \\Longrightarrow \\exists! u \\in P\\;(S(u)=x)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\forall x \\in P\\;\\bigl(x \\neq 1 \\Longrightarrow \\exists! u \\in P\\;(S(u)=x)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nEvery element distinct from $1$ has exactly one predecessor. The successor map\ntherefore organizes the non-initial part of a Peano system into one-step\nextensions of earlier elements.\n\\end{remark*}\n\n\\begin{remark*}[Source comparison]\nFeferman proves predecessor existence and uniqueness together inside Theorem\n3.3. The present notes separate the uniqueness statement into an independent\ncorollary so that it can be cited directly in later proofs.\n\\citet{FefermanNumberSystems1964}\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n  \\item \\hyperref[cor:non-one-elements-have-a-predecessor]{Non-One Elements Have a Predecessor}\n  \\item \\hyperref[ax:peano-successor-injective]{Injectivity of Successor}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

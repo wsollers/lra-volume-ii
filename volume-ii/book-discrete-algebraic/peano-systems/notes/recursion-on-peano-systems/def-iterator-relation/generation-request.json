@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:iterator-relation",
+  "kind": "definition",
+  "title": "Iterator Relation",
+  "source": {
+    "label": "def:iterator-relation",
+    "kind": "definition",
+    "title": "Iterator Relation",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 229,
+    "source_line_end": 320,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-relation",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-relation/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-relation/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-relation",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-relation/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iterator-relation/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "def:iterator-relation",
+      "environment_kind": "definition",
+      "source_line_start": 229,
+      "source_line_end": 320,
+      "current_tex": "\\begin{definition}[Iterator Relation]\n\\label{def:iterator-relation}\nLet $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it. A\nrelation $R\\subseteq P\\times W$ is called an \\emph{iterator relation} for\n$(W,c,g)$ exactly when\n\\[\n(1,c)\\in R\n\\]\nand\n\\[\n\\forall n\\in P\\;\\forall w\\in W\\;\n\\bigl((n,w)\\in R\\Longrightarrow (S(n),g(w))\\in R\\bigr).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{aligned}\nR \\text{ is an iterator relation for } (W,c,g)\n\\Longleftrightarrow\\;&\nR\\subseteq P\\times W\n\\land (1,c)\\in R\\\\\n&\\land\n\\forall n\\in P\\;\\forall w\\in W\\;\n\\bigl((n,w)\\in R\\Longrightarrow (S(n),g(w))\\in R\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n\\operatorname{IteratorRelation}(R,(P,S,1),W,c,g)\n\\Longleftrightarrow\\;&\n\\operatorname{Relation}(R,P,W)\n\\land (1,c)\\in R\\\\\n&\\land\n\\forall n\\in P\\;\\forall w\\in W\\;\n\\bigl((n,w)\\in R\\Longrightarrow (S(n),g(w))\\in R\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\nR \\text{ is not an iterator relation for } (W,c,g)\n\\Longleftrightarrow\\;&\nR\\not\\subseteq P\\times W\n\\lor (1,c)\\notin R\\\\\n&\\lor \\exists n\\in P\\;\\exists w\\in W\\;\n\\bigl((n,w)\\in R\\land (S(n),g(w))\\notin R\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  An iterator relation fails if it is not a relation inside $P\\times W$, if\n  it omits the required base pair, or if it is not closed under the iterator\n  step.\n  \\item[Invalid relation.]\n  \\[\n  \\neg\\operatorname{IteratorRelation}(R,(P,S,1),W,c,g).\n  \\]\n  \\[\n  \\begin{aligned}\n  R \\text{ is not an iterator relation for } (W,c,g)\n  \\Longleftrightarrow\\;&\n  \\underbrace{R\\not\\subseteq P\\times W}_{\\text{wrong ambient relation}}\\\\\n  &\\lor \\underbrace{(1,c)\\notin R}_{\\text{base pair missing}}\\\\\n  &\\lor \\underbrace{\\exists n\\in P\\;\\exists w\\in W\\;\n  \\bigl((n,w)\\in R\\land (S(n),g(w))\\notin R\\bigr)}_{\\text{step closure fails}}.\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nAn iterator relation is any graph-like set of possible stage-value pairs that\ncontains the required first pair and is closed under the recursive step.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:iterator-data-on-peano-system]{Iterator Data}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,72 @@
+\begin{corollary}[Non-One Elements Have a Predecessor]
+\label{cor:non-one-elements-have-a-predecessor}
+Let $(P,S,1)$ be a Peano system. For every $x \in P$, if $x \neq 1$, then
+there exists $u \in P$ such that $S(u)=x$.
+\hyperref[prf:non-one-elements-have-a-predecessor]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
+\[
+\forall x \in P\;\bigl(x\neq 1 \Longrightarrow
+\exists u \in P\;(S(u)=x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall x \in P\;\bigl(x\neq 1 \Longrightarrow
+\exists u \in P\;(S(u)=x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\exists x \in P\;\bigl(x\neq 1 \land
+\forall u \in P\;(S(u)\neq x)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The statement fails exactly when some element distinct from $1$ has no
+  predecessor.
+  \item[Missing predecessor.]
+  \[
+  \neg\forall x \in P\;\bigl(x\neq 1 \Longrightarrow
+  \exists u \in P\;(S(u)=x)\bigr).
+  \]
+  \[
+  \begin{aligned}
+  &\exists x \in P\;
+  \underbrace{\bigl(x\neq 1 \land
+  \forall u \in P\;(S(u)\neq x)\bigr)}_{\text{non-initial element with no predecessor}}.
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every non-initial element of a Peano system is reached by one successor step
+from an earlier element. This separates predecessor existence from predecessor
+uniqueness so that later arguments can cite only the part they need.
+\end{remark*}
+
+\begin{remark*}[Source comparison]
+Feferman's Theorem 3.3 contains this predecessor-existence fact as part of the
+structural analysis of Peano systems. The present notes record it separately
+before adding uniqueness. \citet{FefermanNumberSystems1964}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+  \item \hyperref[thm:every-element-is-one-or-a-successor]{Every Element Is Either $1$ or a Successor}
+\end{itemize}
+\end{dependencies}
+

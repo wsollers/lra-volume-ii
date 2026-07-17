@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:uniqueness-of-peano-systems-up-to-isomorphism",
+  "kind": "theorem",
+  "title": "Uniqueness of Peano Systems up to Isomorphism",
+  "source": {
+    "label": "thm:uniqueness-of-peano-systems-up-to-isomorphism",
+    "kind": "theorem",
+    "title": "Uniqueness of Peano Systems up to Isomorphism",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 1775,
+    "source_line_end": 1858,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-uniqueness-of-peano-systems-up-to-isomorphism",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-uniqueness-of-peano-systems-up-to-isomorphism/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-uniqueness-of-peano-systems-up-to-isomorphism/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-uniqueness-of-peano-systems-up-to-isomorphism",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-uniqueness-of-peano-systems-up-to-isomorphism/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-uniqueness-of-peano-systems-up-to-isomorphism/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "thm:uniqueness-of-peano-systems-up-to-isomorphism",
+      "environment_kind": "theorem",
+      "source_line_start": 1775,
+      "source_line_end": 1858,
+      "current_tex": "\\begin{theorem}[Uniqueness of Peano Systems up to Isomorphism]\n\\label{thm:uniqueness-of-peano-systems-up-to-isomorphism}\nLet $(P,S_P,1_P)$ and $(Q,S_Q,1_Q)$ be Peano systems. Then there exists a\nunique bijection $\\theta:P\\to Q$ such that\n\\[\n\\theta(1_P)=1_Q\n\\]\nand\n\\[\n\\forall n\\in P\\;(\\theta(S_P(n))=S_Q(\\theta(n))).\n\\]\nThus any two Peano systems are isomorphic.\n\\hyperref[prf:uniqueness-of-peano-systems-up-to-isomorphism]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\exists! \\theta:P\\to Q\\;\n\\bigl(\\theta \\text{ is bijective}\\land \\theta(1_P)=1_Q\n\\land \\forall n\\in P\\;(\\theta(S_P(n))=S_Q(\\theta(n)))\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\nLet $A=(P,S_P,1_P)$ and $B=(Q,S_Q,1_Q)$. The theorem asserts\n\\[\n\\operatorname{Isomorphism}(A,B),\n\\]\nwith unique witness $\\theta:P\\to Q$ satisfying the displayed base and\nsuccessor-preservation clauses.\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n&\\neg\\exists! \\theta:P\\to Q\\;\n\\bigl(\\theta \\text{ is bijective}\\land \\theta(1_P)=1_Q\\\\\n&\\qquad\\qquad\\qquad\\land\n\\forall n\\in P\\;(\\theta(S_P(n))=S_Q(\\theta(n)))\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Categoricity fails if no structure-preserving bijection exists between the\n  two Peano systems or if more than one such bijection exists.\n  \\item[Isomorphism failure.]\n  \\[\n  \\neg\\operatorname{Isomorphism}((P,S_P,1_P),(Q,S_Q,1_Q)).\n  \\]\n  \\[\n  \\begin{aligned}\n  &\\neg\\exists! \\theta:P\\to Q\\;\n  \\bigl(\\theta \\text{ is bijective}\\land \\theta(1_P)=1_Q\\\\\n  &\\qquad\\qquad\\qquad\\land\n  \\forall n\\in P\\;(\\theta(S_P(n))=S_Q(\\theta(n)))\\bigr).\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nAll Peano systems have the same structure up to a unique isomorphism. The\nelements may be named differently, but the distinguished first element and\nsuccessor structure determine the translation.\n\\end{remark*}\n\n\\begin{remark*}[Historical note]\nThis is the categoricity theorem for Peano systems, following Feferman's\nTheorem 3.5 and Simpson's Peano-system presentation\n\\citep{FefermanNumberSystems1964,simpson2011peanosystems}.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n  \\item \\hyperref[thm:general-recursion-theorem-for-peano-system]{General Recursion Theorem}\n\\end{itemize}\n\\end{dependencies}\n\\end{topicbox}\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

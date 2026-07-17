@@ -1,0 +1,101 @@
+\begin{theorem}[Induction Principle for a Peano System]
+\label{thm:induction-principle-for-peano-system}
+Let $(P,S,1)$ be a Peano system, and let $\varphi$ be a predicate on $P$.
+If
+\[
+\varphi(1)
+\qquad\text{and}\qquad
+\forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n))),
+\]
+then
+\[
+\forall n \in P\;\varphi(n).
+\]
+\hyperref[prf:induction-principle-for-peano-system]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Peano, \emph{Arithmetices principia}; Feferman, \emph{The Number Systems}, Section 3.1}
+\Formalizes{thm:induction-principle-for-peano-system}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Induction}.\par
+\LeanDeclaration{induction\_principle}
+\textbf{Status:} checked against \texttt{lra-lean}.\par
+
+\begin{leancode}
+theorem induction_principle
+    (ps : PeanoSystem)
+    (predicate : ps.carrier -> Prop)
+    (base_case : predicate ps.one)
+    (successor_step :
+      forall element : ps.carrier,
+        predicate element ->
+        predicate (ps.successor element)) :
+    forall element : ps.carrier,
+      predicate element :=
+  ps.induction predicate base_case successor_step
+\end{leancode}
+\end{formalizationrecord}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$ and a predicate $\varphi$ on $P$,
+\[
+\Bigl(\varphi(1) \land
+\forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n)))\Bigr)
+\Longrightarrow
+\forall n \in P\;\varphi(n).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{InductionPrinciple}(P,S,1).
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } \varphi
+\text{ be a predicate on } P.\\
+&\neg\forall n \in P\;\varphi(n)
+\Longrightarrow
+\neg\Bigl(\varphi(1) \land
+\forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n)))\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This theorem converts the subset form of induction into the predicate form
+used in ordinary arithmetic arguments. A property propagates through the
+entire Peano system once it holds at the distinguished first element and is
+preserved by successor. The theorem therefore turns the structural induction
+axiom into a proof principle for arbitrary predicates on $P$.
+\end{remark*}
+
+\begin{remark*}[Source comparison]
+Peano's axiomatization includes induction as part of the natural-number
+structure. Feferman derives the working form of mathematical induction from
+the subset formulation of the Peano axioms immediately after Theorem 3.3 in
+Chapter 3. The present notes formalize that induction principle as an explicit
+reusable theorem. \citep{PeanoArithmeticesPrincipia1889}; \citet{FefermanNumberSystems1964}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+  \item \hyperref[ax:peano-induction]{Induction Axiom}
+\end{itemize}
+\end{dependencies}
+\end{topicbox}
+
+\begin{topicbox}{Strong Induction}
+\begin{exposition}
+Ordinary induction propagates a property from each element to its immediate
+successor. Strong induction allows the inductive step to use the property at
+every predecessor, not just the immediate one. This broader hypothesis makes
+strong induction convenient when the successor step needs information from the
+entire earlier segment of the Peano system.
+\end{exposition}
+

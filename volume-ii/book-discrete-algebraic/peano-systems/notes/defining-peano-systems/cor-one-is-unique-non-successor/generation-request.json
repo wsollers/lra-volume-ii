@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:one-is-unique-non-successor",
+  "kind": "corollary",
+  "title": "The Distinguished Element Is the Unique Non-Successor",
+  "source": {
+    "label": "cor:one-is-unique-non-successor",
+    "kind": "corollary",
+    "title": "The Distinguished Element Is the Unique Non-Successor",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 781,
+    "source_line_end": 823,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-one-is-unique-non-successor",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-one-is-unique-non-successor/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-one-is-unique-non-successor/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-one-is-unique-non-successor",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-one-is-unique-non-successor/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-one-is-unique-non-successor/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "cor:one-is-unique-non-successor",
+      "environment_kind": "corollary",
+      "source_line_start": 781,
+      "source_line_end": 823,
+      "current_tex": "\\begin{corollary}[The Distinguished Element Is the Unique Non-Successor]\n\\label{cor:one-is-unique-non-successor}\nLet $(P,S,1)$ be a Peano system. An element $x \\in P$ is not a successor of\nany element of $P$ if and only if $x=1$.\n\\hyperref[prf:one-is-unique-non-successor]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$,\n\\[\n\\forall x \\in P,\\quad\nx=1\\Longleftrightarrow\\neg\\exists u \\in P,\\ S(u)=x.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\forall x \\in P,\\quad\nx=1\\Longleftrightarrow\\neg\\exists u \\in P,\\ S(u)=x.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe distinguished first element is characterized internally as the unique\nelement with no predecessor. This gives a structural description of $1$ that\ndoes not depend on external notation.\n\\end{remark*}\n\n\\begin{remark*}[Source comparison]\nThis corollary extracts a structural characterization of the distinguished\ninitial element that is implicit in the discussion surrounding Theorem 3.3 of\nFeferman. \\citet{FefermanNumberSystems1964}\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[ax:peano-base-not-successor]{Distinguished Element Is Not a Successor}\n  \\item \\hyperref[cor:predecessor-exists-unique-away-from-one]{Predecessor Existence and Uniqueness Away from $1$}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

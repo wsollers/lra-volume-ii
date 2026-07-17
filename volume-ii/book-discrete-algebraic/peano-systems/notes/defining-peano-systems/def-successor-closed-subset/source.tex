@@ -1,0 +1,62 @@
+\begin{definition}[Successor-Closed Subset]
+\label{def:successor-closed-subset}
+Let $(P,S,1)$ be a Peano system, and let $A \subseteq P$. The subset $A$ is
+called \emph{successor-closed} exactly when
+\[
+\forall n \in A,\qquad S(n) \in A.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
+\[
+\forall n \in A,\ S(n) \in A.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } A \subseteq P.\\
+&A \text{ is not successor-closed}
+\Longleftrightarrow
+\exists n \in A,\ S(n) \notin A.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  A subset fails to be successor-closed exactly when it contains some element
+  of $P$ but fails to contain that element's successor.
+  \item[Quantified failure.]
+  \[
+  \begin{aligned}
+  A \text{ is not successor-closed}
+  \Longleftrightarrow
+  \exists n \in A,\ \underbrace{S(n) \notin A}_{\text{closure fails at } n}.
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A successor-closed subset is stable under one step of counting. Once an
+element of $A$ is present, its successor remains in $A$ as well.
+\end{remark*}
+
+\begin{remark*}[Source comparison]
+The notion of a successor-closed subset is implicit in condition (iii) of
+Feferman's Definition 3.1. The present notes isolate it as a separate
+definition so that induction arguments can refer to the closure condition
+directly. \citep{FefermanNumberSystems1964}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+\end{itemize}
+\end{dependencies}
+

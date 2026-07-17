@@ -1,0 +1,62 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:minimal-iterator-relation-deterministic",
+  "kind": "lemma",
+  "title": "Determinism of the Minimal Iterator Relation",
+  "source": {
+    "label": "lem:minimal-iterator-relation-deterministic",
+    "kind": "lemma",
+    "title": "Determinism of the Minimal Iterator Relation",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 536,
+    "source_line_end": 635,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-minimal-iterator-relation-deterministic",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-minimal-iterator-relation-deterministic/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-minimal-iterator-relation-deterministic/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-minimal-iterator-relation-deterministic",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-minimal-iterator-relation-deterministic/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-minimal-iterator-relation-deterministic/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "lem:minimal-iterator-relation-deterministic",
+      "environment_kind": "lemma",
+      "source_line_start": 536,
+      "source_line_end": 635,
+      "current_tex": "\\begin{lemma}[Determinism of the Minimal Iterator Relation]\n\\label{lem:minimal-iterator-relation-deterministic}\nLet $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let\n$R^*$ be the minimal iterator relation. For each $n\\in P$, there is at most one\n$w\\in W$ such that $(n,w)\\in R^*$.\n\\hyperref[prf:minimal-iterator-relation-deterministic]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{formalizationrecord}{Lean 4 Verification Record}\n\\FormalizationSource{Feferman, \\emph{The Number Systems}, Section 3.4; Mendelson, \\emph{Number Systems and the Foundations of Analysis}, Section 2.2}\n\\Formalizes{lem:minimal-iterator-relation-deterministic}\n\\textbf{Lean module:} \\texttt{LRA.VolumeII.PeanoSystems.Recursion}.\\par\n\\LeanDeclaration{minimal\\_iterator\\_relation\\_deterministic}\n\\textbf{Status:} checked against \\texttt{lra-lean}.\\par\n\n\\begin{leancode}\ntheorem minimal_iterator_relation_deterministic\n    (ps : PeanoSystem)\n    (data : IteratorData ps) :\n    forall element : ps.carrier,\n      forall first_value second_value : data.target,\n        minimal_iterator_relation ps data element first_value ->\n        minimal_iterator_relation ps data element second_value ->\n        first_value = second_value := by\n  apply induction_principle ps\n\n  case base_case =>\n    intro first_value second_value first_forced second_forced\n    exact\n      Eq.trans\n        (minimal_iterator_relation_base_unique ps data first_value first_forced)\n        (minimal_iterator_relation_base_unique ps data second_value second_forced).symm\n\n  case successor_step =>\n    intro element induction_hypothesis\n    intro first_successor_value second_successor_value\n    intro first_forced second_forced\n    cases minimal_iterator_relation_complete ps data element with\n    | intro current_value current_forced =>\n        exact\n          Eq.trans\n            (forced_successor_values_are_unique\n              ps data element current_value first_successor_value\n              induction_hypothesis current_forced first_forced)\n            (forced_successor_values_are_unique\n              ps data element current_value second_successor_value\n              induction_hypothesis current_forced second_forced).symm\n\\end{leancode}\n\\end{formalizationrecord}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall n\\in P\\;\\forall w_0,w_1\\in W\\;\n\\bigl((n,w_0)\\in R^*\\land (n,w_1)\\in R^*\\Longrightarrow w_0=w_1\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{FunctionalRelation}(R^*,P,W).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists n\\in P\\;\\exists w_0,w_1\\in W\\;\n\\bigl((n,w_0)\\in R^*\\land (n,w_1)\\in R^*\\land w_0\\neq w_1\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Determinism fails exactly when a single stage has two distinct values in the\n  minimal iterator relation.\n  \\item[Two values.]\n  \\[\n  \\neg\\operatorname{FunctionalRelation}(R^*,P,W).\n  \\]\n  \\[\n  \\exists n\\in P\\;\\exists w_0,w_1\\in W\\;\n  \\bigl((n,w_0)\\in R^*\\land (n,w_1)\\in R^*\\land w_0\\neq w_1\\bigr).\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nDeterminism says the minimal iterator relation is functional at every stage.\nThis repackages forced-value uniqueness in the at-most-one form needed to\nextract a function from the relation.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[lem:forced-values-are-unique]{Forced Values Are Unique}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": [
+        {
+          "artifact_label": "lem:minimal-iterator-relation-deterministic",
+          "system": "Lean 4",
+          "repository": "lra-lean",
+          "module": "LRA.VolumeII.PeanoSystems.Recursion",
+          "declaration": "minimal_iterator_relation_deterministic",
+          "status": "checked",
+          "environment": {
+            "mathlib_policy": "prohibited"
+          },
+          "source_reference": "Feferman, \\emph{The Number Systems",
+          "source_path": "",
+          "code": "theorem minimal_iterator_relation_deterministic\n    (ps : PeanoSystem)\n    (data : IteratorData ps) :\n    forall element : ps.carrier,\n      forall first_value second_value : data.target,\n        minimal_iterator_relation ps data element first_value ->\n        minimal_iterator_relation ps data element second_value ->\n        first_value = second_value := by\n  apply induction_principle ps\n\n  case base_case =>\n    intro first_value second_value first_forced second_forced\n    exact\n      Eq.trans\n        (minimal_iterator_relation_base_unique ps data first_value first_forced)\n        (minimal_iterator_relation_base_unique ps data second_value second_forced).symm\n\n  case successor_step =>\n    intro element induction_hypothesis\n    intro first_successor_value second_successor_value\n    intro first_forced second_forced\n    cases minimal_iterator_relation_complete ps data element with\n    | intro current_value current_forced =>\n        exact\n          Eq.trans\n            (forced_successor_values_are_unique\n              ps data element current_value first_successor_value\n              induction_hypothesis current_forced first_forced)\n            (forced_successor_values_are_unique\n              ps data element current_value second_successor_value\n              induction_hypothesis current_forced second_forced).symm"
+        }
+      ]
+    }
+  },
+  "creation_mode": "prompt"
+}

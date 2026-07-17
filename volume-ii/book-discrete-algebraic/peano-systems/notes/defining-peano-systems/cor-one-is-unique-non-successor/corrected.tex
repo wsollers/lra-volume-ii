@@ -1,0 +1,42 @@
+\begin{corollary}[The Distinguished Element Is the Unique Non-Successor]
+\label{cor:one-is-unique-non-successor}
+Let $(P,S,1)$ be a Peano system. An element $x \in P$ is not a successor of
+any element of $P$ if and only if $x=1$.
+\hyperref[prf:one-is-unique-non-successor]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
+\[
+\forall x \in P,\quad
+x=1\Longleftrightarrow\neg\exists u \in P,\ S(u)=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall x \in P,\quad
+x=1\Longleftrightarrow\neg\exists u \in P,\ S(u)=x.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The distinguished first element is characterized internally as the unique
+element with no predecessor. This gives a structural description of $1$ that
+does not depend on external notation.
+\end{remark*}
+
+\begin{remark*}[Source comparison]
+This corollary extracts a structural characterization of the distinguished
+initial element that is implicit in the discussion surrounding Theorem 3.3 of
+Feferman. \citet{FefermanNumberSystems1964}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:peano-base-not-successor]{Distinguished Element Is Not a Successor}
+  \item \hyperref[cor:predecessor-exists-unique-away-from-one]{Predecessor Existence and Uniqueness Away from $1$}
+\end{itemize}
+\end{dependencies}
+

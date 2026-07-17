@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "ax:peano-system-existence",
+  "kind": "axiom",
+  "title": "Existence of a Peano System",
+  "source": {
+    "label": "ax:peano-system-existence",
+    "kind": "axiom",
+    "title": "Existence of a Peano System",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+    "source_line_start": 238,
+    "source_line_end": 275,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-system-existence",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-system-existence/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-system-existence/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-system-existence",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-system-existence/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-system-existence/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+      "label": "ax:peano-system-existence",
+      "environment_kind": "axiom",
+      "source_line_start": 238,
+      "source_line_end": 275,
+      "current_tex": "\\begin{axiom}[Existence of a Peano System]\n\\label{ax:peano-system-existence}\nThere exists a Peano system.\n\\end{axiom}\n\\end{axiombox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\exists P\\;\\exists S\\;\\bigl((P,S,1)\\text{ is a Peano system}\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\exists P\\;\\exists S\\;\\operatorname{PeanoSystem}(P,S,1).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe Peano axioms are not merely a formal pattern; at least one structure\nsatisfies them. This axiom guarantees that the abstract counting system is\navailable before it receives the conventional name $\\mathbb{N}$.\n\\end{remark*}\n\n\\begin{remark*}[Historical note]\nThis axiom corresponds to Axiom 3.2 of\n\\citet{FefermanNumberSystems1964}, where the existence of at least one Peano\nsystem is taken as a foundational assumption.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n  \\item \\hyperref[def:language]{Language}\n\\end{itemize}\n\\end{dependencies}\n\\end{topicbox}\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

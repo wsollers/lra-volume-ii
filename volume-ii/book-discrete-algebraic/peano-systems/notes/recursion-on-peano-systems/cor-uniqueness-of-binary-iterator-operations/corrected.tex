@@ -1,0 +1,100 @@
+\begin{corollary}[Uniqueness of Binary Iterator Operations]
+\label{cor:uniqueness-of-binary-iterator-operations}
+Let $(P,S,1)$ be a Peano system, let $A$ be a set, let $W$ be a set, and
+suppose each $a\in A$ determines iterator data $(W,c_a,g_a)$ for $(P,S,1)$.
+If $F,G:A\times P\to W$ satisfy
+\[
+F(a,1)=c_a,\qquad G(a,1)=c_a
+\]
+and
+\[
+F(a,S(n))=g_a(F(a,n)),
+\qquad
+G(a,S(n))=g_a(G(a,n))
+\]
+for all $a\in A$ and all $n\in P$, then $F=G$.
+\hyperref[prf:uniqueness-of-binary-iterator-operations]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\forall a\in A\;\forall n\in P\;&\Bigl(
+F(a,1)=c_a\land G(a,1)=c_a\\
+&\land F(a,S(n))=g_a(F(a,n))
+\land G(a,S(n))=g_a(G(a,n))\Bigr)
+\Longrightarrow F=G.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+For each $a\in A$, write $F_a(n)=F(a,n)$ and $G_a(n)=G(a,n)$. Then
+\[
+\forall a\in A\;
+\bigl(\operatorname{IteratorFunction}(F_a,(P,S,1),W,c_a,g_a)
+\land \operatorname{IteratorFunction}(G_a,(P,S,1),W,c_a,g_a)
+\Longrightarrow F_a=G_a\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+\exists a\in A\;\exists n\in P\;\Bigl(&
+F(a,1)=c_a\land G(a,1)=c_a\\
+&\land F(a,S(n))=g_a(F(a,n))
+\land G(a,S(n))=g_a(G(a,n))
+\land F\neq G\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Binary iterator uniqueness fails if two different binary operations satisfy
+  the same one-parameter iterator specification for every fixed parameter.
+  \item[Two binary operations.]
+  \[
+  \exists a\in A\;\exists n\in P\;(F(a,n)\neq G(a,n)).
+  \]
+  \[
+  \begin{aligned}
+  \exists a\in A\;\exists n\in P\;\Bigl(&
+  F(a,1)=c_a\land G(a,1)=c_a\\
+  &\land F(a,S(n))=g_a(F(a,n))
+  \land G(a,S(n))=g_a(G(a,n))
+  \land F\neq G\Bigr).
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For each fixed first argument, the binary operation is an ordinary iterator in
+the second argument. Uniqueness for the binary operation is therefore
+pointwise uniqueness of iterator functions.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This isolates the binary-operation uniqueness pattern used by Thurston before
+existence is invoked \citep{thurston1956numbersystem}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:uniqueness-of-iterator-functions]{Uniqueness of Iterator Functions}
+\end{itemize}
+\end{dependencies}
+\end{topicbox}
+
+\begin{topicbox}{General Recursion}
+\begin{exposition}
+Pure iteration uses a fixed self-map $g:W\to W$. General recursion allows the
+successor rule to depend on the current stage as well as on the current value.
+The state-encoding theorem below reduces that stage-dependent case to the
+Peano Iterator Theorem.
+\end{exposition}
+

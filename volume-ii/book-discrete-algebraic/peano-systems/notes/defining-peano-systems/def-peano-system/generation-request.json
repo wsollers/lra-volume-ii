@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:peano-system",
+  "kind": "definition",
+  "title": "Peano System",
+  "source": {
+    "label": "def:peano-system",
+    "kind": "definition",
+    "title": "Peano System",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+    "source_line_start": 13,
+    "source_line_end": 111,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-peano-system",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-peano-system/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-peano-system/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-peano-system",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-peano-system/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-peano-system/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+      "label": "def:peano-system",
+      "environment_kind": "definition",
+      "source_line_start": 13,
+      "source_line_end": 111,
+      "current_tex": "\\begin{definition}[Peano System]\n\\label{def:peano-system}\nA triple $(P,S,1)$, where $P$ is a set, is called a \\emph{Peano system}\nexactly when the following clauses hold:\n\\begin{enumerate}\n  \\item[\\textbf{P1.}] $1 \\in P$.\n  \\item[\\textbf{P2.}] $S\\colon P\\to P$ is a function.\n  \\item[\\textbf{P3.}] For every $n \\in P$, $S(n) \\neq 1$.\n  \\item[\\textbf{P4.}] For all $m,n \\in P$, if $S(m)=S(n)$ then $m=n$.\n  \\item[\\textbf{P5.}] If $A \\subseteq P$, $1 \\in A$, and\n  \\[\n    \\forall n \\in P\\;(n \\in A \\Longrightarrow S(n) \\in A),\n  \\]\n  then $A=P$.\n\\end{enumerate}\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{aligned}\n&(P,S,1) \\text{ is a Peano system}\\\\\n&\\Longleftrightarrow\n\\Bigl(P \\text{ is a set} \\land 1 \\in P \\land S\\colon P \\to P \\\\\n&\\qquad \\land \\forall n \\in P\\;(S(n) \\neq 1) \\\\\n&\\qquad \\land \\forall m,n \\in P\\;(S(m)=S(n) \\Longrightarrow m=n) \\\\\n&\\qquad \\land \\forall A \\subseteq P\\;\n\\bigl((1 \\in A \\land\n\\forall n \\in P\\;(n \\in A \\Longrightarrow S(n) \\in A))\n\\Longrightarrow A=P\\bigr)\\Bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{PeanoSystem}(P,S,1).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  A triple $(P,S,1)$ fails to be a Peano system if the distinguished element\n  does not lie in the underlying set, if the successor map leaves the set, if\n  the successor hits $1$, if the successor identifies two distinct elements,\n  or if there exists a proper subset of $P$ that contains $1$ and is closed\n  under successor.\n  \\item[Axiom failure.]\n  \\[\n  \\neg\\operatorname{PeanoSystem}(P,S,1).\n  \\]\n  \\[\n  \\begin{aligned}\n  \\neg\\,\\text{$(P,S,1)$ is a Peano system}\n  \\Longrightarrow\\;&\n  1 \\notin P \\\\\n  &\\lor \\exists n \\in P\\;(S(n) \\notin P) \\\\\n  &\\lor \\exists n \\in P\\;(S(n)=1) \\\\\n  &\\lor \\exists m,n \\in P\\;(m \\neq n \\land S(m)=S(n)) \\\\\n  &\\lor \\exists A \\subseteq P\\;\n  \\bigl(1 \\in A \\land\n  \\forall n \\in P\\;(n \\in A \\Longrightarrow S(n) \\in A)\n  \\land A \\neq P\\bigr).\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nA Peano system is the abstract data of counting: an underlying set, a first\nelement, and a successor operation satisfying the usual non-collision and\ninduction principles. The purpose of the definition is to isolate the ambient\nobject before the individual axioms are recorded and used one by one.\n\n\nThe five displayed clauses are the house-style Peano-system presentation of\nPeano's axiomatization of arithmetic \\citep{PeanoArithmeticesPrincipia1889}.\nThey are stated here in structural form so that later definitions and proofs\ncan refer directly to the successor and induction clauses.\n\\end{remark*}\n\n\\begin{remark*}[Source comparison]\nThis definition corresponds closely to Definition 3.1 in\nFeferman, where Peano systems are introduced as the abstract structural\nframework underlying the positive integers. The present notes expand the\ndefinition into explicit quantified, failure-mode, and decomposition forms in\norder to support later logical analysis and dependency extraction.\n\\citet{FefermanNumberSystems1964}\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:function]{Function}\n  \\item \\hyperref[def:subset]{Subset}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

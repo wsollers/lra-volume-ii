@@ -1,0 +1,42 @@
+\begin{corollary}[Predecessor Existence and Uniqueness Away from $1$]
+\label{cor:predecessor-exists-unique-away-from-one}
+Let $(P,S,1)$ be a Peano system, and let $x \in P$ with $x \neq 1$. Then
+there exists a unique $u \in P$ such that $S(u)=x$.
+\hyperref[prf:predecessor-exists-unique-away-from-one]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
+\[
+\forall x \in P\;\bigl(x \neq 1 \Longrightarrow \exists! u \in P\;(S(u)=x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall x \in P\;\bigl(x \neq 1 \Longrightarrow \exists! u \in P\;(S(u)=x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every element distinct from $1$ has exactly one predecessor. The successor map
+therefore organizes the non-initial part of a Peano system into one-step
+extensions of earlier elements.
+\end{remark*}
+
+\begin{remark*}[Source comparison]
+Feferman proves predecessor existence and uniqueness together inside Theorem
+3.3. The present notes separate the uniqueness statement into an independent
+corollary so that it can be cited directly in later proofs.
+\citet{FefermanNumberSystems1964}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+  \item \hyperref[cor:non-one-elements-have-a-predecessor]{Non-One Elements Have a Predecessor}
+  \item \hyperref[ax:peano-successor-injective]{Injectivity of Successor}
+\end{itemize}
+\end{dependencies}
+

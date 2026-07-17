@@ -1,0 +1,396 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: lem:uniqueness-of-iterator-functions
+  kind: lemma
+  title: Uniqueness of Iterator Functions
+  canonical_name: Uniqueness of Iterator Functions
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Uniqueness of Iterator Functions
+    owning_concept: Uniqueness of Iterator Functions
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: recursion-on-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex
+  source_line_start: 727
+  source_line_end: 827
+  source_hash: sha256:c023899fe702a4b9bd5c9dc9cb24153eb5158ca5174e24f6a2a54a24f4594724
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: lemma
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Uniqueness of Iterator Functions
+  canonical_latex: '\begin{lemma}[Uniqueness of Iterator Functions]
+
+    \label{lem:uniqueness-of-iterator-functions}
+
+    Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it. If
+
+    $f,h:P\to W$ satisfy
+
+    \[
+
+    f(1)=c,\qquad h(1)=c,
+
+    \]
+
+    and
+
+    \[
+
+    \forall n\in P\;(f(S(n))=g(f(n)))
+
+    \qquad\text{and}\qquad
+
+    \forall n\in P\;(h(S(n))=g(h(n))),
+
+    \]
+
+    then $f=h$.
+
+    \hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}
+
+    \end{lemma}'
+  semantic_ast:
+    kind: forall
+    binder:
+      binder_id: f2
+      symbol: f_2
+      domain:
+        kind: raw_latex
+        latex: ambient context
+    restriction: null
+    body:
+      kind: forall
+      binder:
+        binder_id: f1
+        symbol: f_1
+        domain:
+          kind: raw_latex
+          latex: ambient context
+      restriction: null
+      body:
+        kind: raw_latex
+        latex: '\begin{lemma}[Uniqueness of Iterator Functions]
+
+          \label{lem:uniqueness-of-iterator-functions}
+
+          Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for
+          it. If
+
+          $f,h:P\to W$ satisfy
+
+          \[
+
+          f(1)=c,\qquad h(1)=c,
+
+          \]
+
+          and
+
+          \[
+
+          \forall n\in P\;(f(S(n))=g(f(n)))
+
+          \qquad\text{and}\qquad
+
+          \forall n\in P\;(h(S(n))=g(h(n))),
+
+          \]
+
+          then $f=h$.
+
+          \hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}
+
+          \end{lemma}'
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      \begin{aligned}
+
+      \forall f,h:P\to W\;\Bigl(&
+
+      f(1)=c\land h(1)=c\\
+
+      &\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+
+      &\land \forall n\in P\;(h(S(n))=g(h(n)))
+
+      \Longrightarrow f=h\Bigr).
+
+      \end{aligned}
+
+      \]'
+    ast:
+      kind: forall
+      binder:
+        binder_id: f4
+        symbol: f_4
+        domain:
+          kind: raw_latex
+          latex: ambient context
+      restriction: null
+      body:
+        kind: forall
+        binder:
+          binder_id: f3
+          symbol: f_3
+          domain:
+            kind: raw_latex
+            latex: ambient context
+        restriction: null
+        body:
+          kind: forall
+          binder:
+            binder_id: f2
+            symbol: f_2
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: forall
+            binder:
+              binder_id: f1
+              symbol: f_1
+              domain:
+                kind: raw_latex
+                latex: ambient context
+            restriction: null
+            body:
+              kind: raw_latex
+              latex: '\[
+
+                \begin{aligned}
+
+                \forall f,h:P\to W\;\Bigl(&
+
+                f(1)=c\land h(1)=c\\
+
+                &\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+
+                &\land \forall n\in P\;(h(S(n))=g(h(n)))
+
+                \Longrightarrow f=h\Bigr).
+
+                \end{aligned}
+
+                \]'
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\[
+
+        \begin{aligned}
+
+        \exists f,h:P\to W\;\Bigl(&
+
+        f(1)=c\land h(1)=c\\
+
+        &\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+
+        &\land \forall n\in P\;(h(S(n))=g(h(n)))
+
+        \land f\neq h\Bigr).
+
+        \end{aligned}
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f2
+            symbol: f_2
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: forall
+            binder:
+              binder_id: f1
+              symbol: f_1
+              domain:
+                kind: raw_latex
+                latex: ambient context
+            restriction: null
+            body:
+              kind: raw_latex
+              latex: '\begin{lemma}[Uniqueness of Iterator Functions]
+
+                \label{lem:uniqueness-of-iterator-functions}
+
+                Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data
+                for it. If
+
+                $f,h:P\to W$ satisfy
+
+                \[
+
+                f(1)=c,\qquad h(1)=c,
+
+                \]
+
+                and
+
+                \[
+
+                \forall n\in P\;(f(S(n))=g(f(n)))
+
+                \qquad\text{and}\qquad
+
+                \forall n\in P\;(h(S(n))=g(h(n))),
+
+                \]
+
+                then $f=h$.
+
+                \hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}
+
+                \end{lemma}'
+    approved_normal_form:
+      latex: '\[
+
+        \begin{aligned}
+
+        \exists f,h:P\to W\;\Bigl(&
+
+        f(1)=c\land h(1)=c\\
+
+        &\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+
+        &\land \forall n\in P\;(h(S(n))=g(h(n)))
+
+        \land f\neq h\Bigr).
+
+        \end{aligned}
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f2
+            symbol: f_2
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: forall
+            binder:
+              binder_id: f1
+              symbol: f_1
+              domain:
+                kind: raw_latex
+                latex: ambient context
+            restriction: null
+            body:
+              kind: raw_latex
+              latex: '\begin{lemma}[Uniqueness of Iterator Functions]
+
+                \label{lem:uniqueness-of-iterator-functions}
+
+                Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data
+                for it. If
+
+                $f,h:P\to W$ satisfy
+
+                \[
+
+                f(1)=c,\qquad h(1)=c,
+
+                \]
+
+                and
+
+                \[
+
+                \forall n\in P\;(f(S(n))=g(f(n)))
+
+                \qquad\text{and}\qquad
+
+                \forall n\in P\;(h(S(n))=g(h(n))),
+
+                \]
+
+                then $f=h$.
+
+                \hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}
+
+                \end{lemma}'
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: canonical-proof
+    target: prf:uniqueness-of-iterator-functions
+    display: null
+    notes: Expected proof label by convention.
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof:
+    proof_label: prf:uniqueness-of-iterator-functions
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: lem:uniqueness-of-iterator-functions
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:uniqueness-of-general-recursive-functions",
+  "kind": "lemma",
+  "title": "Uniqueness of Stage-Dependent Recursion Solutions",
+  "source": {
+    "label": "lem:uniqueness-of-general-recursive-functions",
+    "kind": "lemma",
+    "title": "Uniqueness of Stage-Dependent Recursion Solutions",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 1489,
+    "source_line_end": 1589,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-general-recursive-functions",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-general-recursive-functions/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-general-recursive-functions/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-general-recursive-functions",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-general-recursive-functions/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-uniqueness-of-general-recursive-functions/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "lem:uniqueness-of-general-recursive-functions",
+      "environment_kind": "lemma",
+      "source_line_start": 1489,
+      "source_line_end": 1589,
+      "current_tex": "\\begin{lemma}[Uniqueness of Stage-Dependent Recursion Solutions]\n\\label{lem:uniqueness-of-general-recursive-functions}\nLet $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\\in W$, and let\n$\\Phi\\colon P\\times W\\to W$ be a stage-dependent step rule. If\n$f,h\\colon P\\to W$ satisfy\n\\[\nf(1)=c,\\qquad h(1)=c,\n\\]\nand\n\\[\n\\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n)))\n\\qquad\\text{and}\\qquad\n\\forall n\\in P\\;(h(S(n))=\\Phi(n,h(n))),\n\\]\nthen $f=h$.\n\\hyperref[prf:uniqueness-of-general-recursive-functions]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{aligned}\n\\forall f,h\\colon P\\to W\\;\\Bigl(&\nf(1)=c\\land h(1)=c\\\\\n&\\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n)))\\\\\n&\\land \\forall n\\in P\\;(h(S(n))=\\Phi(n,h(n)))\n\\Longrightarrow f=h\\Bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\forall f,h\\colon P\\to W\\;\n\\bigl(\\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\\Phi)\n\\land \\operatorname{StageDependentRecursionSolution}(h,(P,S,1),W,c,\\Phi)\n\\Longrightarrow f=h\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n\\exists f,h\\colon P\\to W\\;\\Bigl(&\nf(1)=c\\land h(1)=c\\\\\n&\\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n)))\\\\\n&\\land \\forall n\\in P\\;(h(S(n))=\\Phi(n,h(n)))\n\\land f\\neq h\\Bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Uniqueness of stage-dependent recursion solutions fails if two distinct functions\n  satisfy the same base clause and the same stage-dependent successor clause.\n  \\item[Two recursive functions.]\n  \\[\n  \\neg\\forall f,h\\colon P\\to W\\;\n  \\bigl(\\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\\Phi)\n  \\land \\operatorname{StageDependentRecursionSolution}(h,(P,S,1),W,c,\\Phi)\n  \\Longrightarrow f=h\\bigr).\n  \\]\n  \\[\n  \\begin{aligned}\n  \\exists f,h\\colon P\\to W\\;\\Bigl(&\n  f(1)=c\\land h(1)=c\\\\\n  &\\land \\forall n\\in P\\;(f(S(n))=\\Phi(n,f(n)))\\\\\n  &\\land \\forall n\\in P\\;(h(S(n))=\\Phi(n,h(n)))\n  \\land f\\neq h\\Bigr).\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Contrapositive quantified statement]\n\\[\n\\begin{aligned}\nf\\neq h\n\\Longrightarrow\\;&\nf(1)\\neq c\\lor h(1)\\neq c\\\\\n&\\lor \\exists n\\in P\\;(f(S(n))\\neq \\Phi(n,f(n)))\\\\\n&\\lor \\exists n\\in P\\;(h(S(n))\\neq \\Phi(n,h(n))).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nOnce the initial value and stage-dependent rule are fixed, two recursive\ncandidates cannot diverge without violating one of the defining clauses.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:general-recursive-function]{Solution of a Stage-Dependent Recursion}\n  \\item \\hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

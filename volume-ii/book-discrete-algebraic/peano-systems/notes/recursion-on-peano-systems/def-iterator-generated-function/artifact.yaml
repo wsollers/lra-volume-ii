@@ -1,0 +1,262 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:iterator-generated-function
+  kind: definition
+  title: Iterator-Generated Function
+  canonical_name: Iterator-Generated Function
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Iterator-Generated Function
+    owning_concept: Iterator-Generated Function
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: recursion-on-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex
+  source_line_start: 1028
+  source_line_end: 1106
+  source_hash: sha256:c023899fe702a4b9bd5c9dc9cb24153eb5158ca5174e24f6a2a54a24f4594724
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: definition
+  logical_shape: definition
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Iterator-Generated Function
+  canonical_latex: '\begin{definition}[Iterator-Generated Function]
+
+    \label{def:iterator-generated-function}
+
+    Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.
+
+    The unique function $f:P\to W$ satisfying
+
+    \[
+
+    f(1)=c
+
+    \qquad\text{and}\qquad
+
+    \forall n\in P\;(f(S(n))=g(f(n)))
+
+    \]
+
+    is called the \emph{iterator-generated function determined by $(W,c,g)$}.
+
+    \end{definition}'
+  semantic_ast:
+    kind: iff
+    left:
+      kind: raw_latex
+      latex: left side
+    right:
+      kind: forall
+      binder:
+        binder_id: f1
+        symbol: f_1
+        domain:
+          kind: raw_latex
+          latex: ambient context
+      restriction: null
+      body:
+        kind: raw_latex
+        latex: '\[
+
+          f \text{ is the iterator-generated function determined by } (W,c,g)
+
+          \Longleftrightarrow
+
+          \bigl(f:P\to W\land f(1)=c
+
+          \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+          \]'
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      f \text{ is the iterator-generated function determined by } (W,c,g)
+
+      \Longleftrightarrow
+
+      \bigl(f:P\to W\land f(1)=c
+
+      \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+      \]'
+    ast:
+      kind: iff
+      left:
+        kind: raw_latex
+        latex: left side
+      right:
+        kind: forall
+        binder:
+          binder_id: f1
+          symbol: f_1
+          domain:
+            kind: raw_latex
+            latex: ambient context
+        restriction: null
+        body:
+          kind: raw_latex
+          latex: '\[
+
+            f \text{ is the iterator-generated function determined by } (W,c,g)
+
+            \Longleftrightarrow
+
+            \bigl(f:P\to W\land f(1)=c
+
+            \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+            \]'
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\[
+
+        \begin{aligned}
+
+        f \text{ is not the iterator-generated function determined by } (W,c,g)
+
+        \Longleftrightarrow\;&
+
+        f \text{ is not a function } P\to W\\
+
+        &\lor f(1)\neq c
+
+        \lor \exists n\in P\;(f(S(n))\neq g(f(n))).
+
+        \end{aligned}
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f1
+            symbol: f_1
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: raw_latex
+            latex: '\[
+
+              f \text{ is the iterator-generated function determined by } (W,c,g)
+
+              \Longleftrightarrow
+
+              \bigl(f:P\to W\land f(1)=c
+
+              \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+              \]'
+    approved_normal_form:
+      latex: '\[
+
+        \begin{aligned}
+
+        f \text{ is not the iterator-generated function determined by } (W,c,g)
+
+        \Longleftrightarrow\;&
+
+        f \text{ is not a function } P\to W\\
+
+        &\lor f(1)\neq c
+
+        \lor \exists n\in P\;(f(S(n))\neq g(f(n))).
+
+        \end{aligned}
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f1
+            symbol: f_1
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: raw_latex
+            latex: '\[
+
+              f \text{ is the iterator-generated function determined by } (W,c,g)
+
+              \Longleftrightarrow
+
+              \bigl(f:P\to W\land f(1)=c
+
+              \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+              \]'
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: def:iterator-generated-function
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

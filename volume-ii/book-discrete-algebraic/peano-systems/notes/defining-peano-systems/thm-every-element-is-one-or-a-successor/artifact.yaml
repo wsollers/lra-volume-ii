@@ -1,0 +1,343 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:every-element-is-one-or-a-successor
+  kind: theorem
+  title: Every Element Is Either $1$ or a Successor
+  canonical_name: Every Element Is Either $1$ or a Successor
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Every Element Is Either $1$ or a Successor
+    owning_concept: Every Element Is Either $1$ or a Successor
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: defining-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex
+  source_line_start: 425
+  source_line_end: 501
+  source_hash: sha256:f27a38dc5a0a74f8c63c70f9658ef5ecff631868f8011dad97e5cfd771049b48
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: theorem
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: P
+  symbol: P
+- id: S
+  symbol: S
+assumptions: []
+statement:
+  canonical_prose: Every Element Is Either $1$ or a Successor
+  canonical_latex: '\begin{theorem}[Every Element Is Either $1$ or a Successor]
+
+    \label{thm:every-element-is-one-or-a-successor}
+
+    Let $(P,S,1)$ be a Peano system. For every $x \in P$, either $x=1$ or there
+
+    exists $u \in P$ such that $S(u)=x$.
+
+    \hyperref[prf:every-element-is-one-or-a-successor]{Go to proof.}
+
+    \end{theorem}'
+  semantic_ast: &id001
+    kind: forall
+    binder: &id002
+      binder_id: x
+      symbol: x
+      domain:
+        kind: variable
+        binder_id: P
+    restriction: null
+    body:
+      kind: or
+      left:
+        kind: relation
+        relation: '='
+        left: &id003
+          kind: variable
+          binder_id: x
+        right: &id004
+          kind: constant
+          name: '1'
+      right:
+        kind: exists
+        binder: &id005
+          binder_id: u
+          symbol: u
+          domain:
+            kind: variable
+            binder_id: P
+        restriction: null
+        body:
+          kind: relation
+          relation: '='
+          left: &id006
+            kind: application
+            function: S
+            arguments:
+            - kind: variable
+              binder_id: u
+          right: &id007
+            kind: variable
+            binder_id: x
+logical_forms:
+  standard_quantified:
+    latex: 'For a Peano system $(P,S,1)$,
+
+      \[
+
+      \forall x \in P\;\bigl(x=1 \lor \exists u \in P\;(S(u)=x)\bigr).
+
+      \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: 'For a Peano system $(P,S,1)$,
+
+        \[
+
+        \forall x \in P\;\bigl(x=1 \lor \exists u \in P\;(S(u)=x)\bigr).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: x
+            symbol: x
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: or
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: x
+              right:
+                kind: constant
+                name: '1'
+            right:
+              kind: exists
+              binder:
+                binder_id: u
+                symbol: u
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: u
+                right:
+                  kind: variable
+                  binder_id: x
+      lark_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: x
+            symbol: x
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: or
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: x
+              right:
+                kind: constant
+                name: '1'
+            right:
+              kind: exists
+              binder:
+                binder_id: u
+                symbol: u
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: u
+                right:
+                  kind: variable
+                  binder_id: x
+      parsers_agree: true
+  predicate_reading:
+    latex: \operatorname{SuccessorCoversNonbase}(S,1,P).
+    ast:
+      kind: predicate
+      predicate_id: pred:successor-covers-nonbase
+      name: SuccessorCoversNonbase
+      arguments:
+      - kind: variable
+        binder_id: S
+      - kind: constant
+        name: '1'
+      - kind: variable
+        binder_id: P
+    parser_witnesses:
+      original_latex: \operatorname{SuccessorCoversNonbase}(S,1,P).
+      hand_parser:
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:successor-covers-nonbase
+          name: SuccessorCoversNonbase
+          arguments:
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+          - kind: variable
+            binder_id: P
+      lark_parser:
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:successor-covers-nonbase
+          name: SuccessorCoversNonbase
+          arguments:
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+          - kind: variable
+            binder_id: P
+      parsers_agree: true
+  negation:
+    mechanical:
+      latex: \neg\left(\forall x \in P\;\bigl(x=1 \lor \exists u \in P\;(S(u)=x)\bigr).\right)
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: exists
+        binder: *id002
+        restriction: null
+        body:
+          kind: and
+          left:
+            kind: relation
+            relation: \neq
+            left: *id003
+            right: *id004
+          right:
+            kind: forall
+            binder: *id005
+            restriction: null
+            body:
+              kind: relation
+              relation: \neq
+              left: *id006
+              right: *id007
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: canonical-proof
+    target: prf:every-element-is-one-or-a-successor
+    display: null
+    notes: Expected proof label by convention.
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof:
+    proof_label: prf:every-element-is-one-or-a-successor
+  formalizations:
+  - artifact_label: thm:every-element-is-one-or-a-successor
+    system: Lean 4
+    repository: lra-lean
+    module: LRA.VolumeII.PeanoSystems.BasicTheorems
+    declaration: every_element_is_one_or_successor
+    status: checked
+    environment:
+      mathlib_policy: prohibited
+    source_reference: Landau, \emph{Foundations of Analysis
+    source_path: ''
+    code: "theorem every_element_is_one_or_successor\n    (ps : PeanoSystem) :\n \
+      \   forall element : ps.carrier,\n      Or (element = ps.one)\n        (Exists\
+      \ (fun predecessor : ps.carrier =>\n          ps.successor predecessor = element))\
+      \ := by\n  let D : ps.carrier -> Prop :=\n    fun candidate_element =>\n   \
+      \   Or (candidate_element = ps.one)\n        (Exists (fun predecessor : ps.carrier\
+      \ =>\n          ps.successor predecessor = candidate_element))\n\n  apply induction_principle\
+      \ ps D\n\n  case base_case =>\n    exact Or.inl rfl\n\n  case successor_step\
+      \ =>\n    intro element induction_hypothesis\n    exact Or.inr (Exists.intro\
+      \ element rfl)"
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: thm:every-element-is-one-or-a-successor
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

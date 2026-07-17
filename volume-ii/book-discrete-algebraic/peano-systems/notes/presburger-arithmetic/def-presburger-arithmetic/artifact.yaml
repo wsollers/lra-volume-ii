@@ -1,0 +1,251 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:presburger-arithmetic
+  kind: definition
+  title: Presburger Arithmetic
+  canonical_name: Presburger Arithmetic
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Presburger Arithmetic
+    owning_concept: Presburger Arithmetic
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: presburger-arithmetic
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/notes-presburger-arithmetic.tex
+  source_line_start: 44
+  source_line_end: 98
+  source_hash: sha256:2ca816d96d95f81413ecafcf10b1eb3dfd4b4cda7cc113a8c4b403e5f05f067f
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: definition
+  logical_shape: definition
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: T
+  symbol: T
+- id: "left\nvarphi:\nvarphi text is an mathcal L_mathrmPrestext-sentence and \n(mathbbN,0,S,+,<)modelsvarphi\n\
+    right"
+  symbol: "left\nvarphi:\nvarphi text is an mathcal L_mathrmPrestext-sentence and\
+    \ \n(mathbbN,0,S,+,<)modelsvarphi\nright"
+- id: ' varphi: varphi text is an mathcal L_mathrmPrestext-sentence and  (mathbbN,0,S,+,<)modelsvarphi '
+  symbol: ' varphi: varphi text is an mathcal L_mathrmPrestext-sentence and  (mathbbN,0,S,+,<)modelsvarphi '
+assumptions: []
+statement:
+  canonical_prose: Presburger Arithmetic
+  canonical_latex: '\begin{definition}[Presburger Arithmetic]
+
+    \label{def:presburger-arithmetic}
+
+    \emph{Presburger arithmetic} is the complete first-order theory of the
+
+    standard natural-number structure in the Presburger signature. Let
+
+    \[
+
+    \mathcal N_{\mathrm{Pres}}
+
+    :=
+
+    (\mathbb{N},0,S,+,<).
+
+    \]
+
+    Then
+
+    \[
+
+    \mathrm{PA}_{\mathrm{Pres}}
+
+    :=
+
+    \operatorname{Th}(\mathcal N_{\mathrm{Pres}})
+
+    =
+
+    \left\{
+
+    \varphi:
+
+    \varphi \text{ is an }\mathcal L_{\mathrm{Pres}}\text{-sentence and }
+
+    \mathcal N_{\mathrm{Pres}}\models\varphi
+
+    \right\}.
+
+    \]
+
+    \end{definition}'
+  semantic_ast: &id001
+    kind: iff
+    left:
+      kind: predicate
+      predicate_id: pred:presburger-arithmetic
+      name: PresburgerArithmetic
+      arguments:
+      - kind: variable
+        binder_id: T
+    right:
+      kind: relation
+      relation: '='
+      left:
+        kind: variable
+        binder_id: T
+      right:
+        kind: variable
+        binder_id: ' varphi: varphi text is an mathcal L_mathrmPrestext-sentence and  (mathbbN,0,S,+,<)modelsvarphi '
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      \operatorname{PresburgerArithmetic}(T)
+
+      \Longleftrightarrow
+
+      T=
+
+      \left\{
+
+      \varphi:
+
+      \varphi \text{ is an }\mathcal L_{\mathrm{Pres}}\text{-sentence and }
+
+      (\mathbb{N},0,S,+,<)\models\varphi
+
+      \right\}.
+
+      \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        \operatorname{PresburgerArithmetic}(T)
+
+        \Longleftrightarrow
+
+        T=
+
+        \left\{
+
+        \varphi:
+
+        \varphi \text{ is an }\mathcal L_{\mathrm{Pres}}\text{-sentence and }
+
+        (\mathbb{N},0,S,+,<)\models\varphi
+
+        \right\}.
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:presburger-arithmetic
+            name: PresburgerArithmetic
+            arguments:
+            - kind: variable
+              binder_id: T
+          right:
+            kind: relation
+            relation: '='
+            left:
+              kind: variable
+              binder_id: T
+            right:
+              kind: variable
+              binder_id: ' varphi: varphi text is an mathcal L_mathrmPrestext-sentence
+                and  (mathbbN,0,S,+,<)modelsvarphi '
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\operatorname{PresburgerArithmetic}(T)\n\\Longleftrightarrow\nT=\n\\left\\{\n\\varphi:\n\\varphi
+          \\text{ is an }\\mathcal L_{\\mathrm{Pres}}\\text{-sentence and }\n(\\mathbb{N},0,S,+,<)\\models\\varphi\n\\right\\}.'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\neg\left(\operatorname{PresburgerArithmetic}(T)
+
+        \Longleftrightarrow
+
+        T=
+
+        \left\{
+
+        \varphi:
+
+        \varphi \text{ is an }\mathcal L_{\mathrm{Pres}}\text{-sentence and }
+
+        (\mathbb{N},0,S,+,<)\models\varphi
+
+        \right\}.\right)'
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: not
+        operand: *id001
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: def:presburger-arithmetic
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

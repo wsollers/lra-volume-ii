@@ -12,8 +12,8 @@ Dedekind--Peano line of axiomatizing the natural-number structure
 \begin{definitionbox}{Definition (Peano System)}
 \begin{definition}[Peano System]
 \label{def:peano-system}
-A triple $(P,S,1)$ is called a \emph{Peano system} exactly when $P$ is a set,
-$1 \in P$, $S : P \to P$ is a function, and the following axioms hold:
+A \emph{Peano system} is a triple $(P,S,1)$ satisfying the following
+conditions:
 \begin{enumerate}
   \item[\textbf{P1.}] $1 \in P$.
   \item[\textbf{P2.}] For every $n \in P$, $S(n) \in P$.
@@ -33,8 +33,8 @@ $1 \in P$, $S : P \to P$ is a function, and the following axioms hold:
 \begin{aligned}
 &(P,S,1) \text{ is a Peano system}\\
 &\Longleftrightarrow
-\Bigl(P \text{ is a set} \land 1 \in P \land S : P \to P \\
-&\qquad \land \forall n \in P\;(S(n) \in P) \\
+\Bigl(P \text{ is a set} \land 1 \in P
+\land \forall n \in P\;(S(n) \in P) \\
 &\qquad \land \forall n \in P\;(S(n) \neq 1) \\
 &\qquad \land \forall m,n \in P\;(S(m)=S(n) \Longrightarrow m=n) \\
 &\qquad \land \forall A \subseteq P\;
@@ -81,10 +81,11 @@ $1 \in P$, $S : P \to P$ is a function, and the following axioms hold:
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-A Peano system is the abstract data of counting: an underlying set, a first
-element, and a successor operation satisfying the usual non-collision and
-induction principles. The purpose of the definition is to isolate the ambient
-object before the individual axioms are recorded and used one by one.
+A Peano system is the abstract data of counting: an underlying set, a
+distinguished first element, and an injective successor operation whose image
+omits the first element, together with an induction principle. The purpose of
+the definition is to isolate the ambient object before the individual axioms
+are recorded and used one by one.
 
 
 The five displayed clauses are the house-style Peano-system presentation of

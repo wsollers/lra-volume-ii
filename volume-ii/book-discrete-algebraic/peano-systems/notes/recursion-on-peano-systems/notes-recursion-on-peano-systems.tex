@@ -415,8 +415,8 @@ set-theoretic presentations cited here
 \end{itemize}
 \end{dependencies}
 
-\begin{lemmabox}{Lemma (Consistency of the Minimal Iterator Relation)}
-\begin{lemma}[Consistency of the Minimal Iterator Relation]
+\begin{lemmabox}{Lemma (The Minimal Iterator Relation Is an Iterator Relation)}
+\begin{lemma}[The Minimal Iterator Relation Is an Iterator Relation]
 \label{lem:iterator-relation-consistency}
 Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
 $R^*$ be the minimal iterator relation for $(W,c,g)$. Then $R^*$ is an
@@ -528,7 +528,7 @@ specifications into functions \citep{FefermanNumberSystems1964}.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[lem:iterator-relation-consistency]{Consistency of the Minimal Iterator Relation}
+  \item \hyperref[lem:iterator-relation-consistency]{The Minimal Iterator Relation Is an Iterator Relation}
 \end{itemize}
 \end{dependencies}
 
@@ -632,8 +632,8 @@ extract a function from the relation.
 \end{itemize}
 \end{dependencies}
 
-\begin{lemmabox}{Lemma (Completeness of the Minimal Iterator Relation)}
-\begin{lemma}[Completeness of the Minimal Iterator Relation]
+\begin{lemmabox}{Lemma (Totality of the Minimal Iterator Relation)}
+\begin{lemma}[Totality of the Minimal Iterator Relation]
 \label{lem:minimal-iterator-relation-complete}
 Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
 $R^*$ be the minimal iterator relation. For each $n\in P$, there exists
@@ -697,7 +697,7 @@ theorem minimal_iterator_relation_complete
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-  Completeness fails exactly when some stage of $P$ receives no value in the
+  Totality fails exactly when some stage of $P$ receives no value in the
   minimal iterator relation.
   \item[Missing value.]
   \[
@@ -712,13 +712,13 @@ theorem minimal_iterator_relation_complete
 \begin{remark*}[Interpretation]
 This is the totality half of Feferman's minimal-relation construction for
 recursive definition: after determinacy gives at most one value at each stage,
-completeness gives at least one value at each stage
+totality gives at least one value at each stage
 \citep{FefermanNumberSystems1964}.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[lem:iterator-relation-consistency]{Consistency of the Minimal Iterator Relation}
+  \item \hyperref[lem:iterator-relation-consistency]{The Minimal Iterator Relation Is an Iterator Relation}
   \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
 \end{itemize}
 \end{dependencies}
@@ -894,7 +894,7 @@ function.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[lem:minimal-iterator-relation-deterministic]{Determinism of the Minimal Iterator Relation}
-  \item \hyperref[lem:minimal-iterator-relation-complete]{Completeness of the Minimal Iterator Relation}
+  \item \hyperref[lem:minimal-iterator-relation-complete]{Totality of the Minimal Iterator Relation}
 \end{itemize}
 \end{dependencies}
 
@@ -1401,12 +1401,14 @@ current Peano stage and the current value.
 \end{itemize}
 \end{dependencies}
 
-\begin{definitionbox}{Definition (General Recursive Function)}
-\begin{definition}[General Recursive Function]
+\begin{definitionbox}{Definition (Solution of a Stage-Dependent Recursion)}
+\begin{definition}[Solution of a Stage-Dependent Recursion]
 \label{def:general-recursive-function}
 Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
-$\Phi:P\times W\to W$ be a stage-dependent step rule. A function $f:P\to W$
-is called the \emph{general recursive function determined by $(W,c,\Phi)$}
+$\Phi\colon P\times W\to W$ be a stage-dependent step rule. A function
+$f\colon P\to W$
+is called a \emph{solution of the stage-dependent recursion determined by
+$(W,c,\Phi)$}
 exactly when
 \[
 f(1)=c
@@ -1419,9 +1421,9 @@ f(1)=c
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-f \text{ is the general recursive function determined by } (W,c,\Phi)
+f \text{ is a solution of the stage-dependent recursion determined by } (W,c,\Phi)
 \Longleftrightarrow\;&
-f:P\to W\land f(1)=c\\
+f\colon P\to W\land f(1)=c\\
 &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
 \end{aligned}
 \]
@@ -1430,9 +1432,9 @@ f:P\to W\land f(1)=c\\
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi)
+\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi)
 \Longleftrightarrow\;&
-f:P\to W\land f(1)=c\\
+f\colon P\to W\land f(1)=c\\
 &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
 \end{aligned}
 \]
@@ -1441,9 +1443,9 @@ f:P\to W\land f(1)=c\\
 \begin{remark*}[Negated quantified statement]
 \[
 \begin{aligned}
-f \text{ is not the general recursive function determined by } (W,c,\Phi)
+f \text{ is not a solution of the stage-dependent recursion determined by } (W,c,\Phi)
 \Longleftrightarrow\;&
-f \text{ is not a function } P\to W\\
+f \text{ is not a function from } P \text{ to } W\\
 &\lor f(1)\neq c
 \lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n))).
 \end{aligned}
@@ -1453,18 +1455,18 @@ f \text{ is not a function } P\to W\\
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-  A candidate fails to be the general recursive function if it has the wrong
+  A candidate fails to solve the stage-dependent recursion if it has the wrong
   domain or codomain, the wrong base value, or a failed stage-dependent
   successor equation.
   \item[Invalid candidate.]
   \[
-  \neg\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi).
+  \neg\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi).
   \]
   \[
   \begin{aligned}
-  f \text{ is not the general recursive function determined by } (W,c,\Phi)
+  f \text{ is not a solution of the stage-dependent recursion determined by } (W,c,\Phi)
   \Longleftrightarrow\;&
-  f \text{ is not a function } P\to W\\
+  f \text{ is not a function from } P \text{ to } W\\
   &\lor f(1)\neq c
   \lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n))).
   \end{aligned}
@@ -1473,7 +1475,7 @@ f \text{ is not a function } P\to W\\
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-General recursive functions are the stage-dependent analogues of
+Stage-dependent recursion solutions are the stage-dependent analogues of
 iterator-generated functions.
 \end{remark*}
 
@@ -1483,11 +1485,12 @@ iterator-generated functions.
 \end{itemize}
 \end{dependencies}
 
-\begin{lemmabox}{Lemma (Uniqueness of General Recursive Functions)}
-\begin{lemma}[Uniqueness of General Recursive Functions]
+\begin{lemmabox}{Lemma (Uniqueness of Stage-Dependent Recursion Solutions)}
+\begin{lemma}[Uniqueness of Stage-Dependent Recursion Solutions]
 \label{lem:uniqueness-of-general-recursive-functions}
 Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
-$\Phi:P\times W\to W$ be a stage-dependent step rule. If $f,h:P\to W$ satisfy
+$\Phi\colon P\times W\to W$ be a stage-dependent step rule. If
+$f,h\colon P\to W$ satisfy
 \[
 f(1)=c,\qquad h(1)=c,
 \]
@@ -1505,7 +1508,7 @@ then $f=h$.
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-\forall f,h:P\to W\;\Bigl(&
+\forall f,h\colon P\to W\;\Bigl(&
 f(1)=c\land h(1)=c\\
 &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\\
 &\land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))
@@ -1516,9 +1519,9 @@ f(1)=c\land h(1)=c\\
 
 \begin{remark*}[Predicate reading]
 \[
-\forall f,h:P\to W\;
-\bigl(\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi)
-\land \operatorname{GeneralRecursiveFunction}(h,(P,S,1),W,c,\Phi)
+\forall f,h\colon P\to W\;
+\bigl(\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi)
+\land \operatorname{StageDependentRecursionSolution}(h,(P,S,1),W,c,\Phi)
 \Longrightarrow f=h\bigr).
 \]
 \end{remark*}
@@ -1526,7 +1529,7 @@ f(1)=c\land h(1)=c\\
 \begin{remark*}[Negated quantified statement]
 \[
 \begin{aligned}
-\exists f,h:P\to W\;\Bigl(&
+\exists f,h\colon P\to W\;\Bigl(&
 f(1)=c\land h(1)=c\\
 &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\\
 &\land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))
@@ -1538,18 +1541,18 @@ f(1)=c\land h(1)=c\\
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-  Uniqueness of general recursive functions fails if two distinct functions
+  Uniqueness of stage-dependent recursion solutions fails if two distinct functions
   satisfy the same base clause and the same stage-dependent successor clause.
   \item[Two recursive functions.]
   \[
-  \neg\forall f,h:P\to W\;
-  \bigl(\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi)
-  \land \operatorname{GeneralRecursiveFunction}(h,(P,S,1),W,c,\Phi)
+  \neg\forall f,h\colon P\to W\;
+  \bigl(\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi)
+  \land \operatorname{StageDependentRecursionSolution}(h,(P,S,1),W,c,\Phi)
   \Longrightarrow f=h\bigr).
   \]
   \[
   \begin{aligned}
-  \exists f,h:P\to W\;\Bigl(&
+  \exists f,h\colon P\to W\;\Bigl(&
   f(1)=c\land h(1)=c\\
   &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\\
   &\land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))
@@ -1578,7 +1581,7 @@ candidates cannot diverge without violating one of the defining clauses.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:general-recursive-function]{General Recursive Function}
+  \item \hyperref[def:general-recursive-function]{Solution of a Stage-Dependent Recursion}
   \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
 \end{itemize}
 \end{dependencies}
@@ -1587,69 +1590,85 @@ candidates cannot diverge without violating one of the defining clauses.
 \begin{theorem}[General Recursion by State Encoding]
 \label{thm:general-recursion-by-state-encoding}
 Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
-$\Phi:P\times W\to W$ be a stage-dependent step rule. There exists a function
-$H:P\to P\times W$ such that
+$\Phi\colon P\times W\to W$ be a stage-dependent step rule. Define
+\[
+G\colon P\times W\to P\times W,
+\qquad
+(n,w)\mapsto (S(n),\Phi(n,w)).
+\]
+Then there exists a unique function $H\colon P\to P\times W$ such that
 \[
 H(1)=(1,c)
 \]
 and
 \[
-\forall n\in P\;
-\bigl(H(S(n))=(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n))))\bigr).
+\forall n\in P,\qquad
+H(S(n))=G(H(n)).
+\]
+Equivalently,
+\[
+\forall n\in P,\qquad
+H(S(n))=
+\left(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n)))\right).
 \]
 \hyperref[prf:general-recursion-by-state-encoding]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
+With $G\colon P\times W\to P\times W$ defined by
 \[
-\exists H:P\to P\times W\;
-\Bigl(H(1)=(1,c)\land
-\forall n\in P\;
-H(S(n))=(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n))))\Bigr).
+(n,w)\mapsto (S(n),\Phi(n,w)),
+\]
+one has
+\[
+\exists! H\colon P\to P\times W\;
+\left[
+H(1)=(1,c)\land
+\forall n\in P,\ H(S(n))=G(H(n))
+\right].
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-Let $\Gamma_\Phi:P\times W\to P\times W$ be defined by
+Let $G\colon P\times W\to P\times W$ be defined by
 \[
-\Gamma_\Phi(p,w)=(S(p),\Phi(p,w)).
+(n,w)\mapsto (S(n),\Phi(n,w)).
 \]
 Then state encoding is the iterator assertion
 \[
-\exists H:P\to P\times W\;
-\operatorname{IteratorFunction}(H,(P,S,1),P\times W,(1,c),\Gamma_\Phi).
+\exists! H\colon P\to P\times W\;
+\operatorname{IteratorFunction}(H,(P,S,1),P\times W,(1,c),G).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+With $G$ as above,
 \[
-\begin{aligned}
-\forall H:P\to P\times W\;\Bigl(&
-H(1)\neq (1,c)\\
-&\lor \exists n\in P\;
-H(S(n))\neq(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n))))\Bigr).
-\end{aligned}
+\neg\exists! H\colon P\to P\times W\;
+\left[
+H(1)=(1,c)\land
+\forall n\in P,\ H(S(n))=G(H(n))
+\right].
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-  State encoding fails if every candidate state function has the wrong initial
-  state or violates the encoded successor step at some stage.
-  \item[No encoded iterator.]
+  Unique state encoding fails if no candidate state function satisfies the
+  iterator clauses, or if two distinct candidate state functions satisfy them.
+  \item[No unique encoded iterator.]
   \[
-  \neg\exists H:P\to P\times W\;
-  \operatorname{IteratorFunction}(H,(P,S,1),P\times W,(1,c),\Gamma_\Phi).
+  \neg\exists! H\colon P\to P\times W\;
+  \operatorname{IteratorFunction}(H,(P,S,1),P\times W,(1,c),G).
   \]
   \[
-  \begin{aligned}
-  \forall H:P\to P\times W\;\Bigl(&
-  H(1)\neq (1,c)\\
-  &\lor \exists n\in P\;
-  H(S(n))\neq(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n))))\Bigr).
-  \end{aligned}
+  \neg\exists! H\colon P\to P\times W\;
+  \left[
+  H(1)=(1,c)\land
+  \forall n\in P,\ H(S(n))=G(H(n))
+  \right].
   \]
 \end{description}
 \end{remark*}
@@ -1692,7 +1711,7 @@ f(1)=c
 \begin{remark*}[Predicate reading]
 \[
 \exists! f:P\to W\;
-\operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi).
+\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi).
 \]
 \end{remark*}
 
@@ -1711,7 +1730,7 @@ f(1)=c
   \item[Existence or uniqueness failure.]
   \[
   \neg\exists! f:P\to W\;
-  \operatorname{GeneralRecursiveFunction}(f,(P,S,1),W,c,\Phi).
+  \operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi).
   \]
   \[
   \begin{aligned}
@@ -1747,7 +1766,7 @@ definitions; those definitions are deferred to their own sections
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[lem:uniqueness-of-general-recursive-functions]{Uniqueness of General Recursive Functions}
+  \item \hyperref[lem:uniqueness-of-general-recursive-functions]{Uniqueness of Stage-Dependent Recursion Solutions}
   \item \hyperref[thm:general-recursion-by-state-encoding]{General Recursion by State Encoding}
 \end{itemize}
 \end{dependencies}

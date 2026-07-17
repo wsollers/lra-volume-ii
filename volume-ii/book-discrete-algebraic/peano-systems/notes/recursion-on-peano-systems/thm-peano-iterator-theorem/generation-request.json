@@ -1,0 +1,62 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:peano-iterator-theorem",
+  "kind": "theorem",
+  "title": "Peano Iterator Theorem",
+  "source": {
+    "label": "thm:peano-iterator-theorem",
+    "kind": "theorem",
+    "title": "Peano Iterator Theorem",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 902,
+    "source_line_end": 1027,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-peano-iterator-theorem",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-peano-iterator-theorem/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-peano-iterator-theorem/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-peano-iterator-theorem",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-peano-iterator-theorem/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/thm-peano-iterator-theorem/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "thm:peano-iterator-theorem",
+      "environment_kind": "theorem",
+      "source_line_start": 902,
+      "source_line_end": 1027,
+      "current_tex": "\\begin{theorem}[Peano Iterator Theorem]\n\\label{thm:peano-iterator-theorem}\nLet $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.\nThen there exists a unique function $f:P\\to W$ such that\n\\[\nf(1)=c\n\\qquad\\text{and}\\qquad\n\\forall n\\in P\\;(f(S(n))=g(f(n))).\n\\]\n\\hyperref[prf:peano-iterator-theorem]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{formalizationrecord}{Lean 4 Verification Record}\n\\FormalizationSource{Feferman, \\emph{The Number Systems}, Theorem 3.4; Mendelson, \\emph{Number Systems and the Foundations of Analysis}, Section 2.2}\n\\Formalizes{thm:peano-iterator-theorem}\n\\textbf{Lean module:} \\texttt{LRA.VolumeII.PeanoSystems.Recursion}.\\par\n\\LeanDeclaration{peano\\_iterator\\_theorem}\n\\textbf{Status:} checked against \\texttt{lra-lean}.\\par\n\n\\begin{leancode}\ntheorem peano_iterator_theorem\n    (ps : PeanoSystem)\n    (target : Type)\n    (initial_value : target)\n    (step_rule : target -> target) :\n    Exists (fun iterator_function : ps.carrier -> target =>\n      And\n        (satisfies_iterator_clauses\n          ps target initial_value step_rule iterator_function)\n        (forall other_iterator : ps.carrier -> target,\n          satisfies_iterator_clauses\n            ps target initial_value step_rule other_iterator ->\n          forall element : ps.carrier,\n            other_iterator element = iterator_function element)) := by\n  refine\n    Exists.intro\n      (iter ps target initial_value step_rule)\n      ?_\n  constructor\n  exact iter_satisfies_iterator_clauses ps target initial_value step_rule\n  intro other_iterator other_satisfies element\n  exact\n    Eq.symm\n      (iterator_function_unique\n        ps target initial_value step_rule\n        (iter ps target initial_value step_rule)\n        other_iterator\n        (iter_satisfies_iterator_clauses ps target initial_value step_rule)\n        other_satisfies\n        element)\n\\end{leancode}\n\\end{formalizationrecord}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\exists! f:P\\to W\\;\n\\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\exists! f:P\\to W\\;\n\\operatorname{IteratorFunction}(f,(P,S,1),W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n&\\neg\\exists! f:P\\to W\\;\n\\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  The iterator theorem fails only if no function satisfies the iterator\n  clauses or if more than one function satisfies them.\n  \\item[Existence or uniqueness failure.]\n  \\[\n  \\neg\\exists! f:P\\to W\\;\n  \\operatorname{IteratorFunction}(f,(P,S,1),W,c,g).\n  \\]\n  \\[\n  \\begin{aligned}\n  &\\neg\\exists! f:P\\to W\\;\n  \\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\bigr)\\\\\n  \\Longleftrightarrow\\;&\n  \\underbrace{\\neg\\exists f:P\\to W\\;\n  \\bigl(f(1)=c\\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\\bigr)}_{\\text{existence fails}}\\\\\n  &\\lor\n  \\underbrace{\\exists f,h:P\\to W\\;\n  \\bigl(f\\neq h\\land f(1)=c\\land h(1)=c\n  \\land \\forall n\\in P\\;(f(S(n))=g(f(n)))\n  \\land \\forall n\\in P\\;(h(S(n))=g(h(n)))\\bigr)}_{\\text{uniqueness fails}}.\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe theorem says that iterator data is sufficient to turn a recursive\nspecification into a genuine definition: there is exactly one graph and hence\nexactly one function satisfying the base and successor clauses.\n\\end{remark*}\n\n\\begin{remark*}[Historical note]\nThis is the one-based Peano-system version of the iterator theorem in\n\\citet{FefermanNumberSystems1964,MendelsonNumberSystemsFoundationsAnalysis,simpson2011peanosystems}.\nIt is also the set-theoretic instance of the natural numbers object universal\nproperty \\citep{lawvere1969adjointness}; Dedekind's recursion theorem is the\nclassical ancestor \\citep{dedekind1901essays}.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[lem:uniqueness-of-iterator-functions]{Uniqueness of Iterator Functions}\n  \\item \\hyperref[lem:existence-of-iterator-function]{Existence of an Iterator Function}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": [
+        {
+          "artifact_label": "thm:peano-iterator-theorem",
+          "system": "Lean 4",
+          "repository": "lra-lean",
+          "module": "LRA.VolumeII.PeanoSystems.Recursion",
+          "declaration": "peano_iterator_theorem",
+          "status": "checked",
+          "environment": {
+            "mathlib_policy": "prohibited"
+          },
+          "source_reference": "Feferman, \\emph{The Number Systems",
+          "source_path": "",
+          "code": "theorem peano_iterator_theorem\n    (ps : PeanoSystem)\n    (target : Type)\n    (initial_value : target)\n    (step_rule : target -> target) :\n    Exists (fun iterator_function : ps.carrier -> target =>\n      And\n        (satisfies_iterator_clauses\n          ps target initial_value step_rule iterator_function)\n        (forall other_iterator : ps.carrier -> target,\n          satisfies_iterator_clauses\n            ps target initial_value step_rule other_iterator ->\n          forall element : ps.carrier,\n            other_iterator element = iterator_function element)) := by\n  refine\n    Exists.intro\n      (iter ps target initial_value step_rule)\n      ?_\n  constructor\n  exact iter_satisfies_iterator_clauses ps target initial_value step_rule\n  intro other_iterator other_satisfies element\n  exact\n    Eq.symm\n      (iterator_function_unique\n        ps target initial_value step_rule\n        (iter ps target initial_value step_rule)\n        other_iterator\n        (iter_satisfies_iterator_clauses ps target initial_value step_rule)\n        other_satisfies\n        element)"
+        }
+      ]
+    }
+  },
+  "creation_mode": "prompt"
+}

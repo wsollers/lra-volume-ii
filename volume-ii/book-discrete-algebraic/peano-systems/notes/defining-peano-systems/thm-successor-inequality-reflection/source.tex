@@ -1,0 +1,71 @@
+\begin{theorem}[Successor Inequality Reflection]
+\label{thm:successor-inequality-reflection}
+Let $(P,S,1)$ be a Peano system. For all $a,b \in P$, if $a \neq b$, then
+$S(a)\neq S(b)$.
+\hyperref[prf:successor-inequality-reflection]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
+\[
+\forall a,b \in P\;(a\neq b \Longrightarrow S(a)\neq S(b)).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall a,b \in P\;(a\neq b \Longrightarrow S(a)\neq S(b)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\exists a,b \in P\;(a\neq b \land S(a)=S(b)).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Successor inequality reflection fails exactly when two distinct elements
+  have the same successor.
+  \item[Common successor.]
+  \[
+  \neg\forall a,b \in P\;(a\neq b \Longrightarrow S(a)\neq S(b)).
+  \]
+  \[
+  \begin{aligned}
+  &\exists a,b \in P\;
+  \underbrace{(a\neq b \land S(a)=S(b))}_{\text{distinct elements with a common successor}}.
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\forall a,b \in P\;(S(a)=S(b) \Longrightarrow a=b).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The successor operation reflects inequality: distinct inputs remain distinct
+after one successor step. This is the contrapositive form of successor
+injectivity, and it is the form used when an induction step must preserve a
+negative equality statement.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+  \item \hyperref[ax:peano-successor-injective]{Injectivity of Successor}
+\end{itemize}
+\end{dependencies}
+

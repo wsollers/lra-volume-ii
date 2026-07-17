@@ -1,0 +1,33 @@
+\begin{axiom}[Induction Axiom]
+\label{ax:peano-induction}
+Let $A \subseteq P$. If $1 \in A$ and if
+\[
+\forall n \in P\;(n \in A \Longrightarrow S(n) \in A),
+\]
+then $A=P$.
+\end{axiom}
+\end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall A \subseteq P\;
+\Bigl(\bigl(1 \in A \land
+\forall n \in P\;(n \in A \Longrightarrow S(n) \in A)\bigr)
+\Longrightarrow A=P\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{InductionPrinciple}(P,S,1).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any subset of the underlying set that contains the distinguished element and is
+closed under successor must already contain the entire set. This axiom rules
+out rogue elements and is the logical source of mathematical induction.
+\end{remark*}
+
+\NoLocalDependencies
+

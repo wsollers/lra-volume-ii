@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:stage-dependent-step-rule",
+  "kind": "definition",
+  "title": "Stage-Dependent Step Rule",
+  "source": {
+    "label": "def:stage-dependent-step-rule",
+    "kind": "definition",
+    "title": "Stage-Dependent Step Rule",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 1344,
+    "source_line_end": 1404,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-stage-dependent-step-rule",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-stage-dependent-step-rule/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-stage-dependent-step-rule/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-stage-dependent-step-rule",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-stage-dependent-step-rule/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-stage-dependent-step-rule/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "def:stage-dependent-step-rule",
+      "environment_kind": "definition",
+      "source_line_start": 1344,
+      "source_line_end": 1404,
+      "current_tex": "\\begin{definition}[Stage-Dependent Step Rule]\n\\label{def:stage-dependent-step-rule}\nLet $(P,S,1)$ be a Peano system and let $W$ be a set. A\n\\emph{stage-dependent step rule} on $W$ over $P$ is a function\n\\[\n\\Phi:P\\times W\\to W.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\Phi \\text{ is a stage-dependent step rule on } W \\text{ over } P\n\\Longleftrightarrow\n\\Phi:P\\times W\\to W.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{StageDependentStepRule}(\\Phi,P,W)\n\\Longleftrightarrow\n\\Phi:P\\times W\\to W.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\Phi \\text{ is not a stage-dependent step rule on } W \\text{ over } P\n\\Longleftrightarrow\n\\Phi \\text{ is not a function } P\\times W\\to W.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  A stage-dependent step rule fails precisely when it is not a well-defined\n  function from stage-value pairs back into the value set.\n  \\item[Invalid step rule.]\n  \\[\n  \\neg\\operatorname{StageDependentStepRule}(\\Phi,P,W).\n  \\]\n  \\[\n  \\Phi \\text{ is not a function } P\\times W\\to W.\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nA stage-dependent step rule allows the next value to depend on both the\ncurrent Peano stage and the current value.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

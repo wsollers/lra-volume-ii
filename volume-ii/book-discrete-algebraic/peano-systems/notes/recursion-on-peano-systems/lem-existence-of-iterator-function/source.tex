@@ -1,0 +1,73 @@
+\begin{lemma}[Existence of an Iterator Function]
+\label{lem:existence-of-iterator-function}
+Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.
+Then there exists a function $f:P\to W$ such that
+\[
+f(1)=c
+\qquad\text{and}\qquad
+\forall n\in P\;(f(S(n))=g(f(n))).
+\]
+\hyperref[prf:existence-of-iterator-function]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists f:P\to W\;
+\bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\exists f:P\to W\;
+\operatorname{IteratorFunction}(f,(P,S,1),W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\forall f:P\to W\;
+\bigl(f(1)\neq c\lor \exists n\in P\;(f(S(n))\neq g(f(n)))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Existence fails exactly when every candidate function misses the base value
+  or misses the recursive successor equation at some stage.
+  \item[No iterator function.]
+  \[
+  \neg\exists f:P\to W\;
+  \operatorname{IteratorFunction}(f,(P,S,1),W,c,g).
+  \]
+  \[
+  \forall f:P\to W\;
+  \bigl(f(1)\neq c\lor \exists n\in P\;(f(S(n))\neq g(f(n)))\bigr).
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\neg\exists f:P\to W\;
+\bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr)
+\Longrightarrow
+R^* \text{ is not both deterministic and complete}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Existence is the assertion that the minimal relation is not merely graph-like
+locally, but supplies a value at every stage and hence determines an actual
+function.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:minimal-iterator-relation-deterministic]{Determinism of the Minimal Iterator Relation}
+  \item \hyperref[lem:minimal-iterator-relation-complete]{Totality of the Minimal Iterator Relation}
+\end{itemize}
+\end{dependencies}
+

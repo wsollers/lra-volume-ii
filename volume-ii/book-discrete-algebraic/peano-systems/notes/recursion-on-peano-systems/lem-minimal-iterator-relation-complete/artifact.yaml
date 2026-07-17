@@ -1,0 +1,252 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: lem:minimal-iterator-relation-complete
+  kind: lemma
+  title: Totality of the Minimal Iterator Relation
+  canonical_name: Totality of the Minimal Iterator Relation
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Totality of the Minimal Iterator Relation
+    owning_concept: Totality of the Minimal Iterator Relation
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: recursion-on-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex
+  source_line_start: 636
+  source_line_end: 726
+  source_hash: sha256:c023899fe702a4b9bd5c9dc9cb24153eb5158ca5174e24f6a2a54a24f4594724
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: lemma
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: P
+  symbol: P
+- id: R^*
+  symbol: R^*
+- id: W
+  symbol: W
+- id: n,w
+  symbol: n,w
+- id: P exists win W
+  symbol: P exists win W
+- id: w
+  symbol: w
+assumptions: []
+statement:
+  canonical_prose: Totality of the Minimal Iterator Relation
+  canonical_latex: '\begin{lemma}[Totality of the Minimal Iterator Relation]
+
+    \label{lem:minimal-iterator-relation-complete}
+
+    Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
+
+    $R^*$ be the minimal iterator relation. For each $n\in P$, there exists
+
+    $w\in W$ such that $(n,w)\in R^*$.
+
+    \hyperref[prf:minimal-iterator-relation-complete]{Go to proof.}
+
+    \end{lemma}'
+  semantic_ast: &id001
+    kind: forall
+    binder: &id002
+      binder_id: n
+      symbol: n
+      domain:
+        kind: variable
+        binder_id: P exists win W
+    restriction: null
+    body:
+      kind: relation
+      relation: \in
+      left: &id003
+        kind: tuple
+        elements:
+        - kind: variable
+          binder_id: n
+        - kind: variable
+          binder_id: w
+      right: &id004
+        kind: variable
+        binder_id: R^*
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      \forall n\in P\;\exists w\in W\;((n,w)\in R^*).
+
+      \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        \forall n\in P\;\exists w\in W\;((n,w)\in R^*).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P exists win W
+          restriction: null
+          body:
+            kind: relation
+            relation: \in
+            left:
+              kind: tuple
+              elements:
+              - kind: variable
+                binder_id: n
+              - kind: variable
+                binder_id: w
+            right:
+              kind: variable
+              binder_id: R^*
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\forall n\\in P\\;\\exists
+          w\\in W\\;((n,w)\\in R^*).'''
+      parsers_agree: false
+  predicate_reading:
+    latex: \operatorname{TotalRelation}(R^*,P,W).
+    ast:
+      kind: predicate
+      predicate_id: pred:total-relation
+      name: TotalRelation
+      arguments:
+      - kind: variable
+        binder_id: R^*
+      - kind: variable
+        binder_id: P
+      - kind: variable
+        binder_id: W
+    parser_witnesses:
+      original_latex: \operatorname{TotalRelation}(R^*,P,W).
+      hand_parser:
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:total-relation
+          name: TotalRelation
+          arguments:
+          - kind: variable
+            binder_id: R^*
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: W
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\operatorname{TotalRelation}(R^*,P,W).'''
+      parsers_agree: false
+  negation:
+    mechanical:
+      latex: \neg\left(\forall n\in P\;\exists w\in W\;((n,w)\in R^*).\right)
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: exists
+        binder: *id002
+        restriction: null
+        body:
+          kind: relation
+          relation: \notin
+          left: *id003
+          right: *id004
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: canonical-proof
+    target: prf:minimal-iterator-relation-complete
+    display: null
+    notes: Expected proof label by convention.
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof:
+    proof_label: prf:minimal-iterator-relation-complete
+  formalizations:
+  - artifact_label: lem:minimal-iterator-relation-complete
+    system: Lean 4
+    repository: lra-lean
+    module: LRA.VolumeII.PeanoSystems.Recursion
+    declaration: minimal_iterator_relation_complete
+    status: checked
+    environment:
+      mathlib_policy: prohibited
+    source_reference: Feferman, \emph{The Number Systems
+    source_path: ''
+    code: "theorem minimal_iterator_relation_complete\n    (ps : PeanoSystem)\n  \
+      \  (data : IteratorData ps) :\n    forall element : ps.carrier,\n      Exists\
+      \ (fun value : data.target =>\n        minimal_iterator_relation ps data element\
+      \ value) := by\n  apply induction_principle ps\n\n  case base_case =>\n    exact\n\
+      \      Exists.intro\n        data.initial_value\n        (minimal_iterator_relation_is_iterator_relation\
+      \ ps data).left\n\n  case successor_step =>\n    intro element induction_hypothesis\n\
+      \    cases induction_hypothesis with\n    | intro value value_is_forced =>\n\
+      \        exact\n          Exists.intro\n            (data.step_rule value)\n\
+      \            ((minimal_iterator_relation_is_iterator_relation ps data).right\n\
+      \              element value value_is_forced)"
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: lem:minimal-iterator-relation-complete
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

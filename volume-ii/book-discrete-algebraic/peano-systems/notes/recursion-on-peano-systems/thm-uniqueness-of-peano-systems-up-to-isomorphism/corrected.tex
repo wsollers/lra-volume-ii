@@ -1,0 +1,83 @@
+\begin{theorem}[Uniqueness of Peano Systems up to Isomorphism]
+\label{thm:uniqueness-of-peano-systems-up-to-isomorphism}
+Let $(P,S_P,1_P)$ and $(Q,S_Q,1_Q)$ be Peano systems. Then there exists a
+unique bijection $\theta:P\to Q$ such that
+\[
+\theta(1_P)=1_Q
+\]
+and
+\[
+\forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n))).
+\]
+Thus any two Peano systems are isomorphic.
+\hyperref[prf:uniqueness-of-peano-systems-up-to-isomorphism]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists! \theta:P\to Q\;
+\bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q
+\land \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+Let $A=(P,S_P,1_P)$ and $B=(Q,S_Q,1_Q)$. The theorem asserts
+\[
+\operatorname{Isomorphism}(A,B),
+\]
+with unique witness $\theta:P\to Q$ satisfying the displayed base and
+successor-preservation clauses.
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\neg\exists! \theta:P\to Q\;
+\bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q\\
+&\qquad\qquad\qquad\land
+\forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Categoricity fails if no structure-preserving bijection exists between the
+  two Peano systems or if more than one such bijection exists.
+  \item[Isomorphism failure.]
+  \[
+  \neg\operatorname{Isomorphism}((P,S_P,1_P),(Q,S_Q,1_Q)).
+  \]
+  \[
+  \begin{aligned}
+  &\neg\exists! \theta:P\to Q\;
+  \bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q\\
+  &\qquad\qquad\qquad\land
+  \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+All Peano systems have the same structure up to a unique isomorphism. The
+elements may be named differently, but the distinguished first element and
+successor structure determine the translation.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This is the categoricity theorem for Peano systems, following Feferman's
+Theorem 3.5 and Simpson's Peano-system presentation
+\citep{FefermanNumberSystems1964,simpson2011peanosystems}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+  \item \hyperref[thm:general-recursion-theorem-for-peano-system]{General Recursion Theorem}
+\end{itemize}
+\end{dependencies}
+\end{topicbox}

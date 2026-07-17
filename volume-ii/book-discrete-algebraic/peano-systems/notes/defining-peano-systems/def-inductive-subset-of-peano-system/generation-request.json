@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:inductive-subset-of-peano-system",
+  "kind": "definition",
+  "title": "Inductive Subset of a Peano System",
+  "source": {
+    "label": "def:inductive-subset-of-peano-system",
+    "kind": "definition",
+    "title": "Inductive Subset of a Peano System",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 259,
+    "source_line_end": 324,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-inductive-subset-of-peano-system",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-inductive-subset-of-peano-system/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-inductive-subset-of-peano-system/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-inductive-subset-of-peano-system",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-inductive-subset-of-peano-system/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-inductive-subset-of-peano-system/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "def:inductive-subset-of-peano-system",
+      "environment_kind": "definition",
+      "source_line_start": 259,
+      "source_line_end": 324,
+      "current_tex": "\\begin{definition}[Inductive Subset of a Peano System]\n\\label{def:inductive-subset-of-peano-system}\nLet $(P,S,1)$ be a Peano system, and let $A \\subseteq P$. The subset $A$ is\ncalled \\emph{inductive} exactly when $1 \\in A$ and $A$ is successor-closed.\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$ and a subset $A\\subseteq P$,\n\\[\n\\bigl(1 \\in A \\land\n\\forall n \\in A,\\ S(n) \\in A\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n&\\text{Let } (P,S,1) \\text{ be a Peano system and let } A \\subseteq P.\\\\\n&A \\text{ is not inductive}\n\\Longleftrightarrow\n\\bigl(1 \\notin A \\lor \\exists n \\in A,\\ S(n) \\notin A\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  A subset fails to be inductive in exactly two ways: it may fail to contain\n  the distinguished first element, or it may contain some element while\n  failing to contain that element's successor.\n  \\item[Quantified failure.]\n  \\[\n  \\begin{aligned}\n  A \\text{ is not inductive}\n  \\Longleftrightarrow\\;&\n  \\underbrace{1 \\notin A}_{\\text{base point missing}}\\\\\n  &\\lor\n  \\underbrace{\\exists n \\in A,\\ S(n) \\notin A}_{\\text{successor closure fails}}.\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nAn inductive subset contains the distinguished first element and is closed\nunder successor. Such a subset contains every stage obtained by starting at\n$1$ and applying successor repeatedly.\n\\end{remark*}\n\n\\begin{remark*}[Source comparison]\nThe notion of an inductive subset packages the two hypotheses appearing in the\ninduction clause of Feferman's Definition 3.1. The present notes name this\npackage so that the internal structure of induction proofs remains explicit.\n\\citep{FefermanNumberSystems1964}\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n  \\item \\hyperref[def:successor-closed-subset]{Successor-Closed Subset}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

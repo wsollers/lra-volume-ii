@@ -1,0 +1,280 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:general-recursion-theorem-for-peano-system
+  kind: theorem
+  title: General Recursion Theorem
+  canonical_name: General Recursion Theorem
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - General Recursion Theorem
+    owning_concept: General Recursion Theorem
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: recursion-on-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex
+  source_line_start: 1690
+  source_line_end: 1774
+  source_hash: sha256:c023899fe702a4b9bd5c9dc9cb24153eb5158ca5174e24f6a2a54a24f4594724
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: theorem
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: General Recursion Theorem
+  canonical_latex: '\begin{theorem}[General Recursion Theorem]
+
+    \label{thm:general-recursion-theorem-for-peano-system}
+
+    Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
+
+    $\Phi:P\times W\to W$ be a stage-dependent step rule. Then there exists a
+
+    unique function $f:P\to W$ such that
+
+    \[
+
+    f(1)=c
+
+    \qquad\text{and}\qquad
+
+    \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+
+    \]
+
+    \hyperref[prf:general-recursion-theorem-for-peano-system]{Go to proof.}
+
+    \end{theorem}'
+  semantic_ast:
+    kind: forall
+    binder:
+      binder_id: f1
+      symbol: f_1
+      domain:
+        kind: raw_latex
+        latex: ambient context
+    restriction: null
+    body:
+      kind: raw_latex
+      latex: '\begin{theorem}[General Recursion Theorem]
+
+        \label{thm:general-recursion-theorem-for-peano-system}
+
+        Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
+
+        $\Phi:P\times W\to W$ be a stage-dependent step rule. Then there exists a
+
+        unique function $f:P\to W$ such that
+
+        \[
+
+        f(1)=c
+
+        \qquad\text{and}\qquad
+
+        \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+
+        \]
+
+        \hyperref[prf:general-recursion-theorem-for-peano-system]{Go to proof.}
+
+        \end{theorem}'
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      \exists! f:P\to W\;
+
+      \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr).
+
+      \]'
+    ast:
+      kind: forall
+      binder:
+        binder_id: f1
+        symbol: f_1
+        domain:
+          kind: raw_latex
+          latex: ambient context
+      restriction: null
+      body:
+        kind: exists
+        binder:
+          binder_id: e1
+          symbol: e_1
+          domain:
+            kind: raw_latex
+            latex: ambient context
+        restriction: null
+        body:
+          kind: raw_latex
+          latex: '\[
+
+            \exists! f:P\to W\;
+
+            \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr).
+
+            \]'
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\[
+
+        \neg\exists! f:P\to W\;
+
+        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr).
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f1
+            symbol: f_1
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: raw_latex
+            latex: '\begin{theorem}[General Recursion Theorem]
+
+              \label{thm:general-recursion-theorem-for-peano-system}
+
+              Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and
+              let
+
+              $\Phi:P\times W\to W$ be a stage-dependent step rule. Then there exists
+              a
+
+              unique function $f:P\to W$ such that
+
+              \[
+
+              f(1)=c
+
+              \qquad\text{and}\qquad
+
+              \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+
+              \]
+
+              \hyperref[prf:general-recursion-theorem-for-peano-system]{Go to proof.}
+
+              \end{theorem}'
+    approved_normal_form:
+      latex: '\[
+
+        \neg\exists! f:P\to W\;
+
+        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr).
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f1
+            symbol: f_1
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: raw_latex
+            latex: '\begin{theorem}[General Recursion Theorem]
+
+              \label{thm:general-recursion-theorem-for-peano-system}
+
+              Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and
+              let
+
+              $\Phi:P\times W\to W$ be a stage-dependent step rule. Then there exists
+              a
+
+              unique function $f:P\to W$ such that
+
+              \[
+
+              f(1)=c
+
+              \qquad\text{and}\qquad
+
+              \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+
+              \]
+
+              \hyperref[prf:general-recursion-theorem-for-peano-system]{Go to proof.}
+
+              \end{theorem}'
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: canonical-proof
+    target: prf:general-recursion-theorem-for-peano-system
+    display: null
+    notes: Expected proof label by convention.
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof:
+    proof_label: prf:general-recursion-theorem-for-peano-system
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: thm:general-recursion-theorem-for-peano-system
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:iteration-of-a-self-map",
+  "kind": "definition",
+  "title": "Iteration of a Self-Map",
+  "source": {
+    "label": "def:iteration-of-a-self-map",
+    "kind": "definition",
+    "title": "Iteration of a Self-Map",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 1199,
+    "source_line_end": 1242,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iteration-of-a-self-map",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iteration-of-a-self-map/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iteration-of-a-self-map/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iteration-of-a-self-map",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iteration-of-a-self-map/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-iteration-of-a-self-map/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "def:iteration-of-a-self-map",
+      "environment_kind": "definition",
+      "source_line_start": 1199,
+      "source_line_end": 1242,
+      "current_tex": "\\begin{definition}[Iteration of a Self-Map]\n\\label{def:iteration-of-a-self-map}\nLet $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\\in W$, and let\n$g:W\\to W$. The iterator-generated function determined by $(W,c,g)$ is called\nthe \\emph{iteration of $g$ from $c$ along $P$}.\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nf \\text{ is the iteration of } g \\text{ from } c \\text{ along } P\n\\Longleftrightarrow\nf \\text{ is the iterator-generated function determined by } (W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nf \\text{ is the iteration of } g \\text{ from } c \\text{ along } P\n\\Longleftrightarrow\n\\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nf \\text{ is not the iteration of } g \\text{ from } c \\text{ along } P\n\\Longleftrightarrow\nf \\text{ is not the iterator-generated function determined by } (W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nIteration is the special case of recursion in which the same self-map is used\nat every stage.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:iterator-generated-function]{Iterator-Generated Function}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

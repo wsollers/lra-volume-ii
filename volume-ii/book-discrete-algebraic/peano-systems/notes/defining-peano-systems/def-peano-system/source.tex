@@ -1,0 +1,98 @@
+\begin{definition}[Peano System]
+\label{def:peano-system}
+A triple $(P,S,1)$, where $P$ is a set, is called a \emph{Peano system}
+exactly when the following clauses hold:
+\begin{enumerate}
+  \item[\textbf{P1.}] $1 \in P$.
+  \item[\textbf{P2.}] $S\colon P\to P$ is a function.
+  \item[\textbf{P3.}] For every $n \in P$, $S(n) \neq 1$.
+  \item[\textbf{P4.}] For all $m,n \in P$, if $S(m)=S(n)$ then $m=n$.
+  \item[\textbf{P5.}] If $A \subseteq P$, $1 \in A$, and
+  \[
+    \forall n \in P\;(n \in A \Longrightarrow S(n) \in A),
+  \]
+  then $A=P$.
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&(P,S,1) \text{ is a Peano system}\\
+&\Longleftrightarrow
+\Bigl(P \text{ is a set} \land 1 \in P \land S\colon P \to P \\
+&\qquad \land \forall n \in P\;(S(n) \neq 1) \\
+&\qquad \land \forall m,n \in P\;(S(m)=S(n) \Longrightarrow m=n) \\
+&\qquad \land \forall A \subseteq P\;
+\bigl((1 \in A \land
+\forall n \in P\;(n \in A \Longrightarrow S(n) \in A))
+\Longrightarrow A=P\bigr)\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PeanoSystem}(P,S,1).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  A triple $(P,S,1)$ fails to be a Peano system if the distinguished element
+  does not lie in the underlying set, if the successor map leaves the set, if
+  the successor hits $1$, if the successor identifies two distinct elements,
+  or if there exists a proper subset of $P$ that contains $1$ and is closed
+  under successor.
+  \item[Axiom failure.]
+  \[
+  \neg\operatorname{PeanoSystem}(P,S,1).
+  \]
+  \[
+  \begin{aligned}
+  \neg\,\text{$(P,S,1)$ is a Peano system}
+  \Longrightarrow\;&
+  1 \notin P \\
+  &\lor \exists n \in P\;(S(n) \notin P) \\
+  &\lor \exists n \in P\;(S(n)=1) \\
+  &\lor \exists m,n \in P\;(m \neq n \land S(m)=S(n)) \\
+  &\lor \exists A \subseteq P\;
+  \bigl(1 \in A \land
+  \forall n \in P\;(n \in A \Longrightarrow S(n) \in A)
+  \land A \neq P\bigr).
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A Peano system is the abstract data of counting: an underlying set, a first
+element, and a successor operation satisfying the usual non-collision and
+induction principles. The purpose of the definition is to isolate the ambient
+object before the individual axioms are recorded and used one by one.
+
+
+The five displayed clauses are the house-style Peano-system presentation of
+Peano's axiomatization of arithmetic \citep{PeanoArithmeticesPrincipia1889}.
+They are stated here in structural form so that later definitions and proofs
+can refer directly to the successor and induction clauses.
+\end{remark*}
+
+\begin{remark*}[Source comparison]
+This definition corresponds closely to Definition 3.1 in
+Feferman, where Peano systems are introduced as the abstract structural
+framework underlying the positive integers. The present notes expand the
+definition into explicit quantified, failure-mode, and decomposition forms in
+order to support later logical analysis and dependency extraction.
+\citet{FefermanNumberSystems1964}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+

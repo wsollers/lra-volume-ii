@@ -1,0 +1,91 @@
+\begin{definition}[Iterator Relation]
+\label{def:iterator-relation}
+Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it. A
+relation $R\subseteq P\times W$ is called an \emph{iterator relation} for
+$(W,c,g)$ exactly when
+\[
+(1,c)\in R
+\]
+and
+\[
+\forall n\in P\;\forall w\in W\;
+\bigl((n,w)\in R\Longrightarrow (S(n),g(w))\in R\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+R \text{ is an iterator relation for } (W,c,g)
+\Longleftrightarrow\;&
+R\subseteq P\times W
+\land (1,c)\in R\\
+&\land
+\forall n\in P\;\forall w\in W\;
+\bigl((n,w)\in R\Longrightarrow (S(n),g(w))\in R\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+\operatorname{IteratorRelation}(R,(P,S,1),W,c,g)
+\Longleftrightarrow\;&
+\operatorname{Relation}(R,P,W)
+\land (1,c)\in R\\
+&\land
+\forall n\in P\;\forall w\in W\;
+\bigl((n,w)\in R\Longrightarrow (S(n),g(w))\in R\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+R \text{ is not an iterator relation for } (W,c,g)
+\Longleftrightarrow\;&
+R\not\subseteq P\times W
+\lor (1,c)\notin R\\
+&\lor \exists n\in P\;\exists w\in W\;
+\bigl((n,w)\in R\land (S(n),g(w))\notin R\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  An iterator relation fails if it is not a relation inside $P\times W$, if
+  it omits the required base pair, or if it is not closed under the iterator
+  step.
+  \item[Invalid relation.]
+  \[
+  \neg\operatorname{IteratorRelation}(R,(P,S,1),W,c,g).
+  \]
+  \[
+  \begin{aligned}
+  R \text{ is not an iterator relation for } (W,c,g)
+  \Longleftrightarrow\;&
+  \underbrace{R\not\subseteq P\times W}_{\text{wrong ambient relation}}\\
+  &\lor \underbrace{(1,c)\notin R}_{\text{base pair missing}}\\
+  &\lor \underbrace{\exists n\in P\;\exists w\in W\;
+  \bigl((n,w)\in R\land (S(n),g(w))\notin R\bigr)}_{\text{step closure fails}}.
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An iterator relation is any graph-like set of possible stage-value pairs that
+contains the required first pair and is closed under the recursive step.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:iterator-data-on-peano-system]{Iterator Data}
+\end{itemize}
+\end{dependencies}
+

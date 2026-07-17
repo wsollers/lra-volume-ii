@@ -1,0 +1,62 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:minimal-iterator-relation",
+  "kind": "definition",
+  "title": "Minimal Iterator Relation",
+  "source": {
+    "label": "def:minimal-iterator-relation",
+    "kind": "definition",
+    "title": "Minimal Iterator Relation",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 321,
+    "source_line_end": 418,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-minimal-iterator-relation",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-minimal-iterator-relation/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-minimal-iterator-relation/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-minimal-iterator-relation",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-minimal-iterator-relation/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/def-minimal-iterator-relation/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "def:minimal-iterator-relation",
+      "environment_kind": "definition",
+      "source_line_start": 321,
+      "source_line_end": 418,
+      "current_tex": "\\begin{definition}[Minimal Iterator Relation]\n\\label{def:minimal-iterator-relation}\nLet $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.\nThe \\emph{minimal iterator relation} for $(W,c,g)$ is\n\\[\nR^*\n=\n\\bigcap\\{R\\subseteq P\\times W : R \\text{ is an iterator relation for }\n(W,c,g)\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{formalizationrecord}{Lean 4 Verification Record}\n\\FormalizationSource{Feferman, \\emph{The Number Systems}, Section 3.4; Mendelson, \\emph{Number Systems and the Foundations of Analysis}, Section 2.2}\n\\Formalizes{def:minimal-iterator-relation}\n\\textbf{Lean module:} \\texttt{LRA.VolumeII.PeanoSystems.Recursion}.\\par\n\\LeanDeclaration{minimal\\_iterator\\_relation}\n\\textbf{Status:} checked against \\texttt{lra-lean}.\\par\n\n\\begin{leancode}\ndef minimal_iterator_relation\n    (ps : PeanoSystem)\n    (data : IteratorData ps)\n    (element : ps.carrier)\n    (value : data.target) : Prop :=\n  forall relation : ps.carrier -> data.target -> Prop,\n    iterator_relation ps data relation ->\n    relation element value\n\\end{leancode}\n\\end{formalizationrecord}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n(n,w)\\in R^*\n\\Longleftrightarrow\n\\forall R\\subseteq P\\times W\\;\n\\bigl(R \\text{ is an iterator relation for } (W,c,g)\n\\Longrightarrow (n,w)\\in R\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\nLet $\\mathcal C_{\\mathrm{it}}$ be the closure condition\n\\[\n\\mathcal C_{\\mathrm{it}}(R)\n\\Longleftrightarrow\n\\operatorname{IteratorRelation}(R,(P,S,1),W,c,g).\n\\]\nThen the definition says\n\\[\n\\operatorname{MinimalRelation}(R^*,\\mathcal C_{\\mathrm{it}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n(n,w)\\notin R^*\n\\Longleftrightarrow\n\\exists R\\subseteq P\\times W\\;\n\\bigl(R \\text{ is an iterator relation for } (W,c,g)\\land (n,w)\\notin R\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  A pair fails to belong to the minimal iterator relation exactly when some\n  iterator relation omits that pair. Such a pair is not forced by the base and\n  successor-closure clauses.\n  \\item[Omitted pair.]\n  \\[\n  \\neg (n,w)\\in R^*.\n  \\]\n  \\[\n  (n,w)\\notin R^*\n  \\Longleftrightarrow\n  \\exists R\\subseteq P\\times W\\;\n  \\bigl(R \\text{ is an iterator relation for } (W,c,g)\\land (n,w)\\notin R\\bigr).\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe minimal iterator relation consists exactly of the stage-value pairs forced\nby the base pair and the successor closure rule. This is the $R^*$ construction\nused in Feferman's proof of recursive definition, and in the related\nset-theoretic presentations cited here\n\\citep{FefermanNumberSystems1964,hrbacek_jech1999,chi_recursion_wustl}.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:iterator-relation]{Iterator Relation}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": [
+        {
+          "artifact_label": "def:minimal-iterator-relation",
+          "system": "Lean 4",
+          "repository": "lra-lean",
+          "module": "LRA.VolumeII.PeanoSystems.Recursion",
+          "declaration": "minimal_iterator_relation",
+          "status": "checked",
+          "environment": {
+            "mathlib_policy": "prohibited"
+          },
+          "source_reference": "Feferman, \\emph{The Number Systems",
+          "source_path": "",
+          "code": "def minimal_iterator_relation\n    (ps : PeanoSystem)\n    (data : IteratorData ps)\n    (element : ps.carrier)\n    (value : data.target) : Prop :=\n  forall relation : ps.carrier -> data.target -> Prop,\n    iterator_relation ps data relation ->\n    relation element value"
+        }
+      ]
+    }
+  },
+  "creation_mode": "prompt"
+}

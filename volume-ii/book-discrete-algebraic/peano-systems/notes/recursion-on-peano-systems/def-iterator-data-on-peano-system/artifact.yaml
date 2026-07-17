@@ -1,0 +1,192 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:iterator-data-on-peano-system
+  kind: definition
+  title: Iterator Data
+  canonical_name: Iterator Data
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Iterator Data
+    owning_concept: Iterator Data
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: recursion-on-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex
+  source_line_start: 163
+  source_line_end: 228
+  source_hash: sha256:c023899fe702a4b9bd5c9dc9cb24153eb5158ca5174e24f6a2a54a24f4594724
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: definition
+  logical_shape: definition
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Iterator Data
+  canonical_latex: '\begin{definition}[Iterator Data]
+
+    \label{def:iterator-data-on-peano-system}
+
+    Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
+
+    $g:W\to W$ be a function. The triple $(W,c,g)$ is called \emph{iterator data}
+
+    for $(P,S,1)$.
+
+    \end{definition}'
+  semantic_ast:
+    kind: iff
+    left:
+      kind: raw_latex
+      latex: left side
+    right:
+      kind: raw_latex
+      latex: '\[
+
+        (W,c,g) \text{ is iterator data for } (P,S,1)
+
+        \Longleftrightarrow
+
+        \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
+
+        \]'
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      (W,c,g) \text{ is iterator data for } (P,S,1)
+
+      \Longleftrightarrow
+
+      \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
+
+      \]'
+    ast:
+      kind: iff
+      left:
+        kind: raw_latex
+        latex: left side
+      right:
+        kind: raw_latex
+        latex: '\[
+
+          (W,c,g) \text{ is iterator data for } (P,S,1)
+
+          \Longleftrightarrow
+
+          \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
+
+          \]'
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\[
+
+        (W,c,g) \text{ is not iterator data for } (P,S,1)
+
+        \Longleftrightarrow
+
+        \bigl(W \text{ is not a set}\lor c\notin W\lor g \text{ is not a function
+        } W\to W\bigr).
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: raw_latex
+          latex: '\[
+
+            (W,c,g) \text{ is iterator data for } (P,S,1)
+
+            \Longleftrightarrow
+
+            \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
+
+            \]'
+    approved_normal_form:
+      latex: '\[
+
+        (W,c,g) \text{ is not iterator data for } (P,S,1)
+
+        \Longleftrightarrow
+
+        \bigl(W \text{ is not a set}\lor c\notin W\lor g \text{ is not a function
+        } W\to W\bigr).
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: raw_latex
+          latex: '\[
+
+            (W,c,g) \text{ is iterator data for } (P,S,1)
+
+            \Longleftrightarrow
+
+            \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
+
+            \]'
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: def:iterator-data-on-peano-system
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

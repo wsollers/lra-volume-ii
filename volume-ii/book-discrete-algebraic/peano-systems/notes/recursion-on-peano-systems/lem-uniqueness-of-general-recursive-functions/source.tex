@@ -1,0 +1,100 @@
+\begin{lemma}[Uniqueness of Stage-Dependent Recursion Solutions]
+\label{lem:uniqueness-of-general-recursive-functions}
+Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
+$\Phi\colon P\times W\to W$ be a stage-dependent step rule. If
+$f,h\colon P\to W$ satisfy
+\[
+f(1)=c,\qquad h(1)=c,
+\]
+and
+\[
+\forall n\in P\;(f(S(n))=\Phi(n,f(n)))
+\qquad\text{and}\qquad
+\forall n\in P\;(h(S(n))=\Phi(n,h(n))),
+\]
+then $f=h$.
+\hyperref[prf:uniqueness-of-general-recursive-functions]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\forall f,h\colon P\to W\;\Bigl(&
+f(1)=c\land h(1)=c\\
+&\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\\
+&\land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))
+\Longrightarrow f=h\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall f,h\colon P\to W\;
+\bigl(\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi)
+\land \operatorname{StageDependentRecursionSolution}(h,(P,S,1),W,c,\Phi)
+\Longrightarrow f=h\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+\exists f,h\colon P\to W\;\Bigl(&
+f(1)=c\land h(1)=c\\
+&\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\\
+&\land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))
+\land f\neq h\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Uniqueness of stage-dependent recursion solutions fails if two distinct functions
+  satisfy the same base clause and the same stage-dependent successor clause.
+  \item[Two recursive functions.]
+  \[
+  \neg\forall f,h\colon P\to W\;
+  \bigl(\operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi)
+  \land \operatorname{StageDependentRecursionSolution}(h,(P,S,1),W,c,\Phi)
+  \Longrightarrow f=h\bigr).
+  \]
+  \[
+  \begin{aligned}
+  \exists f,h\colon P\to W\;\Bigl(&
+  f(1)=c\land h(1)=c\\
+  &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\\
+  &\land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))
+  \land f\neq h\Bigr).
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+f\neq h
+\Longrightarrow\;&
+f(1)\neq c\lor h(1)\neq c\\
+&\lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n)))\\
+&\lor \exists n\in P\;(h(S(n))\neq \Phi(n,h(n))).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Once the initial value and stage-dependent rule are fixed, two recursive
+candidates cannot diverge without violating one of the defining clauses.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:general-recursive-function]{Solution of a Stage-Dependent Recursion}
+  \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
+\end{itemize}
+\end{dependencies}
+

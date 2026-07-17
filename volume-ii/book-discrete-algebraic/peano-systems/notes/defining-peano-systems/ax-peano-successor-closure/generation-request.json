@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "ax:peano-successor-closure",
+  "kind": "axiom",
+  "title": "Closure Under Successor",
+  "source": {
+    "label": "ax:peano-successor-closure",
+    "kind": "axiom",
+    "title": "Closure Under Successor",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+    "source_line_start": 135,
+    "source_line_end": 155,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-closure",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-closure/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-closure/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-closure",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-closure/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-successor-closure/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+      "label": "ax:peano-successor-closure",
+      "environment_kind": "axiom",
+      "source_line_start": 135,
+      "source_line_end": 155,
+      "current_tex": "\\begin{axiom}[Closure Under Successor]\n\\label{ax:peano-successor-closure}\nIf $n \\in P$, then $S(n) \\in P$.\n\\end{axiom}\n\\end{axiombox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall n \\in P\\;(S(n) \\in P).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nApplying the successor operation to an element of the underlying set never\nleaves that set. Successor is therefore an internal operation on the counting\nsystem.\n\\end{remark*}\n\n\\NoLocalDependencies\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

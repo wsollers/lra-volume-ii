@@ -1,0 +1,46 @@
+\begin{theorem}[Iterator Successor Clause]
+\label{thm:iterator-successor-step}
+Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
+$f$ be the iterator-generated function determined by $(W,c,g)$. Then
+\[
+\forall n\in P\;(f(S(n))=g(f(n))).
+\]
+\hyperref[prf:iterator-successor-step]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+f \text{ is the iterator-generated function determined by } (W,c,g)
+\Longrightarrow
+\forall n\in P\;(f(S(n))=g(f(n))).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
+\Longrightarrow
+\forall n\in P\;(f(S(n))=g(f(n))).
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\exists n\in P\;(f(S(n))\neq g(f(n)))
+\Longrightarrow
+f \text{ is not the iterator-generated function determined by } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The successor clause says that the generated function advances by applying
+the update rule to the previous value at every Peano stage.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:iterator-generated-function]{Iterator-Generated Function}
+\end{itemize}
+\end{dependencies}
+

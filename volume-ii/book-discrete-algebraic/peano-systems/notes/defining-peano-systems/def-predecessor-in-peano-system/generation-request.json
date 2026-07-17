@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:predecessor-in-peano-system",
+  "kind": "definition",
+  "title": "Predecessor in a Peano System",
+  "source": {
+    "label": "def:predecessor-in-peano-system",
+    "kind": "definition",
+    "title": "Predecessor in a Peano System",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 374,
+    "source_line_end": 424,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-predecessor-in-peano-system",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-predecessor-in-peano-system/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-predecessor-in-peano-system/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-predecessor-in-peano-system",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-predecessor-in-peano-system/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/def-predecessor-in-peano-system/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "def:predecessor-in-peano-system",
+      "environment_kind": "definition",
+      "source_line_start": 374,
+      "source_line_end": 424,
+      "current_tex": "\\begin{definition}[Predecessor in a Peano System]\n\\label{def:predecessor-in-peano-system}\nLet $(P,S,1)$ be a Peano system, and let $x,u \\in P$. The element $u$ is\ncalled a \\emph{predecessor} of $x$ exactly when\n\\[\nS(u)=x.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$ and elements $x,u\\in P$,\n\\[\nS(u)=x.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n&\\text{Let } (P,S,1) \\text{ be a Peano system and let } x,u \\in P.\\\\\n&u \\text{ is not a predecessor of } x\n\\Longleftrightarrow\nS(u) \\neq x.\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nA predecessor of $x$ is an element whose successor is $x$. This language\nisolates the inverse-looking question attached to the successor map without\nassuming that successor is globally invertible.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n\\end{itemize}\n\\end{dependencies}\n\\end{topicbox}\n\n\\begin{topicbox}{Generation by Successor}\n\\begin{exposition}\nThe Peano axioms describe a counting system generated from a distinguished\nfirst element by the successor operation. The next theorems make that\ngeneration principle explicit: every element is either the first element or a\nsuccessor, every non-initial element has a unique predecessor, and no element\ncan be its own successor.\n\\end{exposition}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

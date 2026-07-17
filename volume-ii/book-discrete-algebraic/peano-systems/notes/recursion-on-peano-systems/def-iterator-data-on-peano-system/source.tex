@@ -1,0 +1,65 @@
+\begin{definition}[Iterator Data]
+\label{def:iterator-data-on-peano-system}
+Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
+$g:W\to W$ be a function. The triple $(W,c,g)$ is called \emph{iterator data}
+for $(P,S,1)$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(W,c,g) \text{ is iterator data for } (P,S,1)
+\Longleftrightarrow
+\bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IteratorData}(W,c,g)
+\Longleftrightarrow
+\bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+(W,c,g) \text{ is not iterator data for } (P,S,1)
+\Longleftrightarrow
+\bigl(W \text{ is not a set}\lor c\notin W\lor g \text{ is not a function } W\to W\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Iterator data fails if the proposed value collection is not a set, if the
+  initial value does not lie in the value set, or if the proposed update rule
+  is not a self-map of the value set.
+  \item[Invalid data.]
+  \[
+  \neg\operatorname{IteratorData}(W,c,g).
+  \]
+  \[
+  \begin{aligned}
+  &(W,c,g) \text{ is not iterator data for } (P,S,1)\\
+  \Longleftrightarrow\;&
+  \underbrace{W \text{ is not a set}}_{\text{no value set}}\\
+  &\lor \underbrace{c\notin W}_{\text{invalid initial value}}\\
+  &\lor \underbrace{g \text{ is not a function } W\to W}_{\text{invalid update rule}}.
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Iterator data records the value set, the first value, and the fixed rule used
+to pass from each value to the next value.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:peano-system]{Peano System}
+\end{itemize}
+\end{dependencies}
+

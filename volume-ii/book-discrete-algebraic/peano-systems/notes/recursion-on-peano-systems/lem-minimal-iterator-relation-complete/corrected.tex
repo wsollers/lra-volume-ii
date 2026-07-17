@@ -1,0 +1,90 @@
+\begin{lemma}[Totality of the Minimal Iterator Relation]
+\label{lem:minimal-iterator-relation-complete}
+Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let
+$R^*$ be the minimal iterator relation. For each $n\in P$, there exists
+$w\in W$ such that $(n,w)\in R^*$.
+\hyperref[prf:minimal-iterator-relation-complete]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Feferman, \emph{The Number Systems}, Section 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
+\Formalizes{lem:minimal-iterator-relation-complete}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
+\LeanDeclaration{minimal\_iterator\_relation\_complete}
+\textbf{Status:} checked against \texttt{lra-lean}.\par
+
+\begin{leancode}
+theorem minimal_iterator_relation_complete
+    (ps : PeanoSystem)
+    (data : IteratorData ps) :
+    forall element : ps.carrier,
+      Exists (fun value : data.target =>
+        minimal_iterator_relation ps data element value) := by
+  apply induction_principle ps
+
+  case base_case =>
+    exact
+      Exists.intro
+        data.initial_value
+        (minimal_iterator_relation_is_iterator_relation ps data).left
+
+  case successor_step =>
+    intro element induction_hypothesis
+    cases induction_hypothesis with
+    | intro value value_is_forced =>
+        exact
+          Exists.intro
+            (data.step_rule value)
+            ((minimal_iterator_relation_is_iterator_relation ps data).right
+              element value value_is_forced)
+\end{leancode}
+\end{formalizationrecord}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in P\;\exists w\in W\;((n,w)\in R^*).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{TotalRelation}(R^*,P,W).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists n\in P\;\forall w\in W\;((n,w)\notin R^*).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Totality fails exactly when some stage of $P$ receives no value in the
+  minimal iterator relation.
+  \item[Missing value.]
+  \[
+  \neg\operatorname{TotalRelation}(R^*,P,W).
+  \]
+  \[
+  \exists n\in P\;\forall w\in W\;((n,w)\notin R^*).
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the totality half of Feferman's minimal-relation construction for
+recursive definition: after determinacy gives at most one value at each stage,
+totality gives at least one value at each stage
+\citep{FefermanNumberSystems1964}.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:iterator-relation-consistency]{The Minimal Iterator Relation Is an Iterator Relation}
+  \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
+\end{itemize}
+\end{dependencies}
+

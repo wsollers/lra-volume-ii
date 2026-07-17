@@ -1,0 +1,100 @@
+\begin{lemma}[Uniqueness of Iterator Functions]
+\label{lem:uniqueness-of-iterator-functions}
+Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it. If
+$f,h:P\to W$ satisfy
+\[
+f(1)=c,\qquad h(1)=c,
+\]
+and
+\[
+\forall n\in P\;(f(S(n))=g(f(n)))
+\qquad\text{and}\qquad
+\forall n\in P\;(h(S(n))=g(h(n))),
+\]
+then $f=h$.
+\hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\forall f,h:P\to W\;\Bigl(&
+f(1)=c\land h(1)=c\\
+&\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+&\land \forall n\in P\;(h(S(n))=g(h(n)))
+\Longrightarrow f=h\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall f,h:P\to W\;
+\bigl(\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
+\land \operatorname{IteratorFunction}(h,(P,S,1),W,c,g)
+\Longrightarrow f=h\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+\exists f,h:P\to W\;\Bigl(&
+f(1)=c\land h(1)=c\\
+&\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+&\land \forall n\in P\;(h(S(n))=g(h(n)))
+\land f\neq h\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Uniqueness fails exactly when two distinct functions satisfy the same base
+  clause and the same successor clause.
+  \item[Two iterator functions.]
+  \[
+  \neg\forall f,h:P\to W\;
+  \bigl(\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
+  \land \operatorname{IteratorFunction}(h,(P,S,1),W,c,g)
+  \Longrightarrow f=h\bigr).
+  \]
+  \[
+  \begin{aligned}
+  \exists f,h:P\to W\;\Bigl(&
+  f(1)=c\land h(1)=c\\
+  &\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+  &\land \forall n\in P\;(h(S(n))=g(h(n)))
+  \land f\neq h\Bigr).
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+f\neq h
+\Longrightarrow\;&
+f(1)\neq c\lor h(1)\neq c\\
+&\lor \exists n\in P\;(f(S(n))\neq g(f(n)))\\
+&\lor \exists n\in P\;(h(S(n))\neq g(h(n))).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The iterator clauses determine at most one function. Any difference between
+two candidate functions must show up as a failure of the base clause or a
+failure of one of the successor clauses.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:iterator-data-on-peano-system]{Iterator Data}
+  \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
+\end{itemize}
+\end{dependencies}
+

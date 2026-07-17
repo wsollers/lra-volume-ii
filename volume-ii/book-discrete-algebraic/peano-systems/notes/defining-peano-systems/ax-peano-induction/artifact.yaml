@@ -1,0 +1,406 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: ax:peano-induction
+  kind: axiom
+  title: Induction Axiom
+  canonical_name: Induction Axiom
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Induction Axiom
+    owning_concept: Induction Axiom
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: defining-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex
+  source_line_start: 204
+  source_line_end: 237
+  source_hash: sha256:7887f013fddcbacc993ee001aafc12896b7af4a3ce369b780c1e9a32b1cb7a19
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: axiom
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: P
+  symbol: P
+- id: S
+  symbol: S
+- id: subset_of
+  symbol: subset_of
+assumptions: []
+statement:
+  canonical_prose: Induction Axiom
+  canonical_latex: '\begin{axiom}[Induction Axiom]
+
+    \label{ax:peano-induction}
+
+    Let $A \subseteq P$. If $1 \in A$ and if
+
+    \[
+
+    \forall n \in P\;(n \in A \Longrightarrow S(n) \in A),
+
+    \]
+
+    then $A=P$.
+
+    \end{axiom}'
+  semantic_ast: &id001
+    kind: forall
+    binder: &id002
+      binder_id: A
+      symbol: A
+      domain:
+        kind: application
+        function: subset_of
+        arguments:
+        - kind: variable
+          binder_id: P
+    restriction: null
+    body:
+      kind: implies
+      left: &id003
+        kind: and
+        left:
+          kind: relation
+          relation: \in
+          left:
+            kind: constant
+            name: '1'
+          right:
+            kind: variable
+            binder_id: A
+        right:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: implies
+            left:
+              kind: relation
+              relation: \in
+              left:
+                kind: variable
+                binder_id: n
+              right:
+                kind: variable
+                binder_id: A
+            right:
+              kind: relation
+              relation: \in
+              left:
+                kind: application
+                function: S
+                arguments:
+                - kind: variable
+                  binder_id: n
+              right:
+                kind: variable
+                binder_id: A
+      right:
+        kind: relation
+        relation: '='
+        left: &id004
+          kind: variable
+          binder_id: A
+        right: &id005
+          kind: variable
+          binder_id: P
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      \forall A \subseteq P\;
+
+      \Bigl(\bigl(1 \in A \land
+
+      \forall n \in P\;(n \in A \Longrightarrow S(n) \in A)\bigr)
+
+      \Longrightarrow A=P\Bigr).
+
+      \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        \forall A \subseteq P\;
+
+        \Bigl(\bigl(1 \in A \land
+
+        \forall n \in P\;(n \in A \Longrightarrow S(n) \in A)\bigr)
+
+        \Longrightarrow A=P\Bigr).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: A
+            symbol: A
+            domain:
+              kind: application
+              function: subset_of
+              arguments:
+              - kind: variable
+                binder_id: P
+          restriction: null
+          body:
+            kind: implies
+            left:
+              kind: and
+              left:
+                kind: relation
+                relation: \in
+                left:
+                  kind: constant
+                  name: '1'
+                right:
+                  kind: variable
+                  binder_id: A
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: implies
+                  left:
+                    kind: relation
+                    relation: \in
+                    left:
+                      kind: variable
+                      binder_id: n
+                    right:
+                      kind: variable
+                      binder_id: A
+                  right:
+                    kind: relation
+                    relation: \in
+                    left:
+                      kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                    right:
+                      kind: variable
+                      binder_id: A
+            right:
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: A
+              right:
+                kind: variable
+                binder_id: P
+      lark_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: A
+            symbol: A
+            domain:
+              kind: application
+              function: subset_of
+              arguments:
+              - kind: variable
+                binder_id: P
+          restriction: null
+          body:
+            kind: implies
+            left:
+              kind: and
+              left:
+                kind: relation
+                relation: \in
+                left:
+                  kind: constant
+                  name: '1'
+                right:
+                  kind: variable
+                  binder_id: A
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: implies
+                  left:
+                    kind: relation
+                    relation: \in
+                    left:
+                      kind: variable
+                      binder_id: n
+                    right:
+                      kind: variable
+                      binder_id: A
+                  right:
+                    kind: relation
+                    relation: \in
+                    left:
+                      kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                    right:
+                      kind: variable
+                      binder_id: A
+            right:
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: A
+              right:
+                kind: variable
+                binder_id: P
+      parsers_agree: true
+  predicate_reading:
+    latex: \operatorname{InductionPrinciple}(P,S,1).
+    ast:
+      kind: predicate
+      predicate_id: pred:induction-principle
+      name: InductionPrinciple
+      arguments:
+      - kind: variable
+        binder_id: P
+      - kind: variable
+        binder_id: S
+      - kind: constant
+        name: '1'
+    parser_witnesses:
+      original_latex: \operatorname{InductionPrinciple}(P,S,1).
+      hand_parser:
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:induction-principle
+          name: InductionPrinciple
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+      lark_parser:
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:induction-principle
+          name: InductionPrinciple
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+      parsers_agree: true
+  negation:
+    mechanical:
+      latex: '\neg\left(\forall A \subseteq P\;
+
+        \Bigl(\bigl(1 \in A \land
+
+        \forall n \in P\;(n \in A \Longrightarrow S(n) \in A)\bigr)
+
+        \Longrightarrow A=P\Bigr).\right)'
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: exists
+        binder: *id002
+        restriction: null
+        body:
+          kind: and
+          left: *id003
+          right:
+            kind: relation
+            relation: \neq
+            left: *id004
+            right: *id005
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: ax:peano-induction
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

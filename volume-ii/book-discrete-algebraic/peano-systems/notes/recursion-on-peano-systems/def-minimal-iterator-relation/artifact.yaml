@@ -1,0 +1,274 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:minimal-iterator-relation
+  kind: definition
+  title: Minimal Iterator Relation
+  canonical_name: Minimal Iterator Relation
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Minimal Iterator Relation
+    owning_concept: Minimal Iterator Relation
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: recursion-on-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex
+  source_line_start: 321
+  source_line_end: 418
+  source_hash: sha256:c023899fe702a4b9bd5c9dc9cb24153eb5158ca5174e24f6a2a54a24f4594724
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: definition
+  logical_shape: definition
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Minimal Iterator Relation
+  canonical_latex: '\begin{definition}[Minimal Iterator Relation]
+
+    \label{def:minimal-iterator-relation}
+
+    Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.
+
+    The \emph{minimal iterator relation} for $(W,c,g)$ is
+
+    \[
+
+    R^*
+
+    =
+
+    \bigcap\{R\subseteq P\times W : R \text{ is an iterator relation for }
+
+    (W,c,g)\}.
+
+    \]
+
+    \end{definition}'
+  semantic_ast:
+    kind: iff
+    left:
+      kind: raw_latex
+      latex: left side
+    right:
+      kind: forall
+      binder:
+        binder_id: f1
+        symbol: f_1
+        domain:
+          kind: raw_latex
+          latex: ambient context
+      restriction: null
+      body:
+        kind: raw_latex
+        latex: '\[
+
+          (n,w)\in R^*
+
+          \Longleftrightarrow
+
+          \forall R\subseteq P\times W\;
+
+          \bigl(R \text{ is an iterator relation for } (W,c,g)
+
+          \Longrightarrow (n,w)\in R\bigr).
+
+          \]'
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      (n,w)\in R^*
+
+      \Longleftrightarrow
+
+      \forall R\subseteq P\times W\;
+
+      \bigl(R \text{ is an iterator relation for } (W,c,g)
+
+      \Longrightarrow (n,w)\in R\bigr).
+
+      \]'
+    ast:
+      kind: iff
+      left:
+        kind: raw_latex
+        latex: left side
+      right:
+        kind: forall
+        binder:
+          binder_id: f1
+          symbol: f_1
+          domain:
+            kind: raw_latex
+            latex: ambient context
+        restriction: null
+        body:
+          kind: raw_latex
+          latex: '\[
+
+            (n,w)\in R^*
+
+            \Longleftrightarrow
+
+            \forall R\subseteq P\times W\;
+
+            \bigl(R \text{ is an iterator relation for } (W,c,g)
+
+            \Longrightarrow (n,w)\in R\bigr).
+
+            \]'
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\[
+
+        (n,w)\notin R^*
+
+        \Longleftrightarrow
+
+        \exists R\subseteq P\times W\;
+
+        \bigl(R \text{ is an iterator relation for } (W,c,g)\land (n,w)\notin R\bigr).
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f1
+            symbol: f_1
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: raw_latex
+            latex: '\[
+
+              (n,w)\in R^*
+
+              \Longleftrightarrow
+
+              \forall R\subseteq P\times W\;
+
+              \bigl(R \text{ is an iterator relation for } (W,c,g)
+
+              \Longrightarrow (n,w)\in R\bigr).
+
+              \]'
+    approved_normal_form:
+      latex: '\[
+
+        (n,w)\notin R^*
+
+        \Longleftrightarrow
+
+        \exists R\subseteq P\times W\;
+
+        \bigl(R \text{ is an iterator relation for } (W,c,g)\land (n,w)\notin R\bigr).
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f1
+            symbol: f_1
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: raw_latex
+            latex: '\[
+
+              (n,w)\in R^*
+
+              \Longleftrightarrow
+
+              \forall R\subseteq P\times W\;
+
+              \bigl(R \text{ is an iterator relation for } (W,c,g)
+
+              \Longrightarrow (n,w)\in R\bigr).
+
+              \]'
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations:
+  - artifact_label: def:minimal-iterator-relation
+    system: Lean 4
+    repository: lra-lean
+    module: LRA.VolumeII.PeanoSystems.Recursion
+    declaration: minimal_iterator_relation
+    status: checked
+    environment:
+      mathlib_policy: prohibited
+    source_reference: Feferman, \emph{The Number Systems
+    source_path: ''
+    code: "def minimal_iterator_relation\n    (ps : PeanoSystem)\n    (data : IteratorData\
+      \ ps)\n    (element : ps.carrier)\n    (value : data.target) : Prop :=\n  forall\
+      \ relation : ps.carrier -> data.target -> Prop,\n    iterator_relation ps data\
+      \ relation ->\n    relation element value"
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: def:minimal-iterator-relation
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

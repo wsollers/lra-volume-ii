@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:iterator-relation-consistency",
+  "kind": "lemma",
+  "title": "The Minimal Iterator Relation Is an Iterator Relation",
+  "source": {
+    "label": "lem:iterator-relation-consistency",
+    "kind": "lemma",
+    "title": "The Minimal Iterator Relation Is an Iterator Relation",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "recursion-on-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+    "source_line_start": 419,
+    "source_line_end": 468,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-iterator-relation-consistency",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-iterator-relation-consistency/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-iterator-relation-consistency/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-iterator-relation-consistency",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-iterator-relation-consistency/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/lem-iterator-relation-consistency/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex",
+      "label": "lem:iterator-relation-consistency",
+      "environment_kind": "lemma",
+      "source_line_start": 419,
+      "source_line_end": 468,
+      "current_tex": "\\begin{lemma}[The Minimal Iterator Relation Is an Iterator Relation]\n\\label{lem:iterator-relation-consistency}\nLet $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and let\n$R^*$ be the minimal iterator relation for $(W,c,g)$. Then $R^*$ is an\niterator relation for $(W,c,g)$.\n\\hyperref[prf:iterator-relation-consistency]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nR^* \\text{ is an iterator relation for } (W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{MinimalRelation}(R^*,\\mathcal C_{\\mathrm{it}})\n\\Longrightarrow\n\\operatorname{IteratorRelation}(R^*,(P,S,1),W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nR^* \\text{ is not an iterator relation for } (W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Contrapositive quantified statement]\n\\[\nR^* \\text{ is not an iterator relation for } (W,c,g)\n\\Longrightarrow\nR^* \\text{ is not the minimal iterator relation for } (W,c,g).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe intersection construction does not lose the base pair or the successor\nclosure condition. The minimal relation is therefore still one of the\nadmissible iterator relations.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:minimal-iterator-relation]{Minimal Iterator Relation}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

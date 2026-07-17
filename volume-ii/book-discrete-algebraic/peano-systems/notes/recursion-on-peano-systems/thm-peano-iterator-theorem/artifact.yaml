@@ -1,0 +1,302 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:peano-iterator-theorem
+  kind: theorem
+  title: Peano Iterator Theorem
+  canonical_name: Peano Iterator Theorem
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Peano Iterator Theorem
+    owning_concept: Peano Iterator Theorem
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: recursion-on-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/recursion-on-peano-systems/notes-recursion-on-peano-systems.tex
+  source_line_start: 902
+  source_line_end: 1027
+  source_hash: sha256:c023899fe702a4b9bd5c9dc9cb24153eb5158ca5174e24f6a2a54a24f4594724
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: theorem
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Peano Iterator Theorem
+  canonical_latex: '\begin{theorem}[Peano Iterator Theorem]
+
+    \label{thm:peano-iterator-theorem}
+
+    Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.
+
+    Then there exists a unique function $f:P\to W$ such that
+
+    \[
+
+    f(1)=c
+
+    \qquad\text{and}\qquad
+
+    \forall n\in P\;(f(S(n))=g(f(n))).
+
+    \]
+
+    \hyperref[prf:peano-iterator-theorem]{Go to proof.}
+
+    \end{theorem}'
+  semantic_ast:
+    kind: forall
+    binder:
+      binder_id: f1
+      symbol: f_1
+      domain:
+        kind: raw_latex
+        latex: ambient context
+    restriction: null
+    body:
+      kind: raw_latex
+      latex: '\begin{theorem}[Peano Iterator Theorem]
+
+        \label{thm:peano-iterator-theorem}
+
+        Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.
+
+        Then there exists a unique function $f:P\to W$ such that
+
+        \[
+
+        f(1)=c
+
+        \qquad\text{and}\qquad
+
+        \forall n\in P\;(f(S(n))=g(f(n))).
+
+        \]
+
+        \hyperref[prf:peano-iterator-theorem]{Go to proof.}
+
+        \end{theorem}'
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      \exists! f:P\to W\;
+
+      \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+      \]'
+    ast:
+      kind: forall
+      binder:
+        binder_id: f1
+        symbol: f_1
+        domain:
+          kind: raw_latex
+          latex: ambient context
+      restriction: null
+      body:
+        kind: exists
+        binder:
+          binder_id: e1
+          symbol: e_1
+          domain:
+            kind: raw_latex
+            latex: ambient context
+        restriction: null
+        body:
+          kind: raw_latex
+          latex: '\[
+
+            \exists! f:P\to W\;
+
+            \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+            \]'
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\[
+
+        \begin{aligned}
+
+        &\neg\exists! f:P\to W\;
+
+        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+        \end{aligned}
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f1
+            symbol: f_1
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: raw_latex
+            latex: '\begin{theorem}[Peano Iterator Theorem]
+
+              \label{thm:peano-iterator-theorem}
+
+              Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data
+              for it.
+
+              Then there exists a unique function $f:P\to W$ such that
+
+              \[
+
+              f(1)=c
+
+              \qquad\text{and}\qquad
+
+              \forall n\in P\;(f(S(n))=g(f(n))).
+
+              \]
+
+              \hyperref[prf:peano-iterator-theorem]{Go to proof.}
+
+              \end{theorem}'
+    approved_normal_form:
+      latex: '\[
+
+        \begin{aligned}
+
+        &\neg\exists! f:P\to W\;
+
+        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+        \end{aligned}
+
+        \]'
+      ast:
+        kind: not
+        operand:
+          kind: forall
+          binder:
+            binder_id: f1
+            symbol: f_1
+            domain:
+              kind: raw_latex
+              latex: ambient context
+          restriction: null
+          body:
+            kind: raw_latex
+            latex: '\begin{theorem}[Peano Iterator Theorem]
+
+              \label{thm:peano-iterator-theorem}
+
+              Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data
+              for it.
+
+              Then there exists a unique function $f:P\to W$ such that
+
+              \[
+
+              f(1)=c
+
+              \qquad\text{and}\qquad
+
+              \forall n\in P\;(f(S(n))=g(f(n))).
+
+              \]
+
+              \hyperref[prf:peano-iterator-theorem]{Go to proof.}
+
+              \end{theorem}'
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: canonical-proof
+    target: prf:peano-iterator-theorem
+    display: null
+    notes: Expected proof label by convention.
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof:
+    proof_label: prf:peano-iterator-theorem
+  formalizations:
+  - artifact_label: thm:peano-iterator-theorem
+    system: Lean 4
+    repository: lra-lean
+    module: LRA.VolumeII.PeanoSystems.Recursion
+    declaration: peano_iterator_theorem
+    status: checked
+    environment:
+      mathlib_policy: prohibited
+    source_reference: Feferman, \emph{The Number Systems
+    source_path: ''
+    code: "theorem peano_iterator_theorem\n    (ps : PeanoSystem)\n    (target : Type)\n\
+      \    (initial_value : target)\n    (step_rule : target -> target) :\n    Exists\
+      \ (fun iterator_function : ps.carrier -> target =>\n      And\n        (satisfies_iterator_clauses\n\
+      \          ps target initial_value step_rule iterator_function)\n        (forall\
+      \ other_iterator : ps.carrier -> target,\n          satisfies_iterator_clauses\n\
+      \            ps target initial_value step_rule other_iterator ->\n         \
+      \ forall element : ps.carrier,\n            other_iterator element = iterator_function\
+      \ element)) := by\n  refine\n    Exists.intro\n      (iter ps target initial_value\
+      \ step_rule)\n      ?_\n  constructor\n  exact iter_satisfies_iterator_clauses\
+      \ ps target initial_value step_rule\n  intro other_iterator other_satisfies\
+      \ element\n  exact\n    Eq.symm\n      (iterator_function_unique\n        ps\
+      \ target initial_value step_rule\n        (iter ps target initial_value step_rule)\n\
+      \        other_iterator\n        (iter_satisfies_iterator_clauses ps target\
+      \ initial_value step_rule)\n        other_satisfies\n        element)"
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: thm:peano-iterator-theorem
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

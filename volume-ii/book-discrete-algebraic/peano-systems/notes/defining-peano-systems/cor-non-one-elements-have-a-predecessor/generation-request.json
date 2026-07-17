@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:non-one-elements-have-a-predecessor",
+  "kind": "corollary",
+  "title": "Non-One Elements Have a Predecessor",
+  "source": {
+    "label": "cor:non-one-elements-have-a-predecessor",
+    "kind": "corollary",
+    "title": "Non-One Elements Have a Predecessor",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+    "source_line_start": 574,
+    "source_line_end": 646,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-non-one-elements-have-a-predecessor",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-non-one-elements-have-a-predecessor/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-non-one-elements-have-a-predecessor/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-non-one-elements-have-a-predecessor",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-non-one-elements-have-a-predecessor/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/cor-non-one-elements-have-a-predecessor/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex",
+      "label": "cor:non-one-elements-have-a-predecessor",
+      "environment_kind": "corollary",
+      "source_line_start": 574,
+      "source_line_end": 646,
+      "current_tex": "\\begin{corollary}[Non-One Elements Have a Predecessor]\n\\label{cor:non-one-elements-have-a-predecessor}\nLet $(P,S,1)$ be a Peano system. For every $x \\in P$, if $x \\neq 1$, then\nthere exists $u \\in P$ such that $S(u)=x$.\n\\hyperref[prf:non-one-elements-have-a-predecessor]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\nFor a Peano system $(P,S,1)$,\n\\[\n\\forall x \\in P\\;\\bigl(x\\neq 1 \\Longrightarrow\n\\exists u \\in P\\;(S(u)=x)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\forall x \\in P\\;\\bigl(x\\neq 1 \\Longrightarrow\n\\exists u \\in P\\;(S(u)=x)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n&\\text{Let } (P,S,1) \\text{ be a Peano system.}\\\\\n&\\exists x \\in P\\;\\bigl(x\\neq 1 \\land\n\\forall u \\in P\\;(S(u)\\neq x)\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  The statement fails exactly when some element distinct from $1$ has no\n  predecessor.\n  \\item[Missing predecessor.]\n  \\[\n  \\neg\\forall x \\in P\\;\\bigl(x\\neq 1 \\Longrightarrow\n  \\exists u \\in P\\;(S(u)=x)\\bigr).\n  \\]\n  \\[\n  \\begin{aligned}\n  &\\exists x \\in P\\;\n  \\underbrace{\\bigl(x\\neq 1 \\land\n  \\forall u \\in P\\;(S(u)\\neq x)\\bigr)}_{\\text{non-initial element with no predecessor}}.\n  \\end{aligned}\n  \\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nEvery non-initial element of a Peano system is reached by one successor step\nfrom an earlier element. This separates predecessor existence from predecessor\nuniqueness so that later arguments can cite only the part they need.\n\\end{remark*}\n\n\\begin{remark*}[Source comparison]\nFeferman's Theorem 3.3 contains this predecessor-existence fact as part of the\nstructural analysis of Peano systems. The present notes record it separately\nbefore adding uniqueness. \\citet{FefermanNumberSystems1964}\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:peano-system]{Peano System}\n  \\item \\hyperref[thm:every-element-is-one-or-a-successor]{Every Element Is Either $1$ or a Successor}\n\\end{itemize}\n\\end{dependencies}\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

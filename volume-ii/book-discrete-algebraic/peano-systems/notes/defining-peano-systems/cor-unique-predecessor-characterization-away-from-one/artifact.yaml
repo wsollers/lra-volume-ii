@@ -1,0 +1,300 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: cor:unique-predecessor-characterization-away-from-one
+  kind: corollary
+  title: Unique Predecessor Characterization Away from $1$
+  canonical_name: Unique Predecessor Characterization Away from $1$
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Unique Predecessor Characterization Away from $1$
+    owning_concept: Unique Predecessor Characterization Away from $1$
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: defining-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex
+  source_line_start: 690
+  source_line_end: 780
+  source_hash: sha256:f27a38dc5a0a74f8c63c70f9658ef5ecff631868f8011dad97e5cfd771049b48
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: corollary
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: P
+  symbol: P
+- id: S(u)=x
+  symbol: S(u)=x
+- id: exists! u
+  symbol: exists! u
+assumptions: []
+statement:
+  canonical_prose: Unique Predecessor Characterization Away from $1$
+  canonical_latex: '\begin{corollary}[Unique Predecessor Characterization Away from
+    $1$]
+
+    \label{cor:unique-predecessor-characterization-away-from-one}
+
+    Let $(P,S,1)$ be a Peano system. For every $x \in P$, $x \neq 1$ if and
+
+    only if there exists a unique $u \in P$ such that $S(u)=x$.
+
+    \hyperref[prf:unique-predecessor-characterization-away-from-one]{Go to proof.}
+
+    \end{corollary}'
+  semantic_ast: &id001
+    kind: forall
+    binder: &id002
+      binder_id: x
+      symbol: x
+      domain:
+        kind: variable
+        binder_id: P
+    restriction: null
+    body: &id003
+      kind: iff
+      left:
+        kind: relation
+        relation: \neq
+        left:
+          kind: variable
+          binder_id: x
+        right:
+          kind: constant
+          name: '1'
+      right:
+        kind: relation
+        relation: \in
+        left:
+          kind: variable
+          binder_id: exists! u
+        right:
+          kind: application
+          function: P
+          arguments:
+          - kind: variable
+            binder_id: S(u)=x
+logical_forms:
+  standard_quantified:
+    latex: 'For a Peano system $(P,S,1)$,
+
+      \[
+
+      \forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
+
+      \exists! u \in P\;(S(u)=x)\bigr).
+
+      \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: 'For a Peano system $(P,S,1)$,
+
+        \[
+
+        \forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
+
+        \exists! u \in P\;(S(u)=x)\bigr).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: x
+            symbol: x
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: iff
+            left:
+              kind: relation
+              relation: \neq
+              left:
+                kind: variable
+                binder_id: x
+              right:
+                kind: constant
+                name: '1'
+            right:
+              kind: relation
+              relation: \in
+              left:
+                kind: variable
+                binder_id: exists! u
+              right:
+                kind: application
+                function: P
+                arguments:
+                - kind: variable
+                  binder_id: S(u)=x
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\forall x \\in P\\;\\bigl(x\\neq
+          1 \\Longleftrightarrow\n\\exists! u \\in P\\;(S(u)=x)\\bigr).'''
+      parsers_agree: false
+  predicate_reading:
+    latex: '\forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
+
+      \exists! u \in P\;(S(u)=x)\bigr).'
+    ast:
+      kind: forall
+      binder:
+        binder_id: x
+        symbol: x
+        domain:
+          kind: variable
+          binder_id: P
+      restriction: null
+      body:
+        kind: iff
+        left:
+          kind: relation
+          relation: \neq
+          left:
+            kind: variable
+            binder_id: x
+          right:
+            kind: constant
+            name: '1'
+        right:
+          kind: relation
+          relation: \in
+          left:
+            kind: variable
+            binder_id: exists! u
+          right:
+            kind: application
+            function: P
+            arguments:
+            - kind: variable
+              binder_id: S(u)=x
+    parser_witnesses:
+      original_latex: '\forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
+
+        \exists! u \in P\;(S(u)=x)\bigr).'
+      hand_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: x
+            symbol: x
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: iff
+            left:
+              kind: relation
+              relation: \neq
+              left:
+                kind: variable
+                binder_id: x
+              right:
+                kind: constant
+                name: '1'
+            right:
+              kind: relation
+              relation: \in
+              left:
+                kind: variable
+                binder_id: exists! u
+              right:
+                kind: application
+                function: P
+                arguments:
+                - kind: variable
+                  binder_id: S(u)=x
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\forall x \\in P\\;\\bigl(x\\neq
+          1 \\Longleftrightarrow\n\\exists! u \\in P\\;(S(u)=x)\\bigr).'''
+      parsers_agree: false
+  negation:
+    mechanical:
+      latex: '\neg\left(\forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
+
+        \exists! u \in P\;(S(u)=x)\bigr).\right)'
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: exists
+        binder: *id002
+        restriction: null
+        body:
+          kind: not
+          operand: *id003
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: canonical-proof
+    target: prf:unique-predecessor-characterization-away-from-one
+    display: null
+    notes: Expected proof label by convention.
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof:
+    proof_label: prf:unique-predecessor-characterization-away-from-one
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: cor:unique-predecessor-characterization-away-from-one
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

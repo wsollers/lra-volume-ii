@@ -1,0 +1,309 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:presburger-signature
+  kind: definition
+  title: Presburger Signature
+  canonical_name: Presburger Signature
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Presburger Signature
+    owning_concept: Presburger Signature
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: presburger-arithmetic
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/presburger-arithmetic/notes-presburger-arithmetic.tex
+  source_line_start: 2
+  source_line_end: 43
+  source_hash: sha256:2ca816d96d95f81413ecafcf10b1eb3dfd4b4cda7cc113a8c4b403e5f05f067f
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: definition
+  logical_shape: definition
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: 0,S,+,<
+  symbol: 0,S,+,<
+- id: mathcalL
+  symbol: mathcalL
+- id: operatornamear(+)
+  symbol: operatornamear(+)
+- id: operatornamear(<)
+  symbol: operatornamear(<)
+- id: operatornamear(S)
+  symbol: operatornamear(S)
+- id: +
+  symbol: +
+- id: '0'
+  symbol: '0'
+- id: <
+  symbol: <
+- id: S
+  symbol: S
+assumptions: []
+statement:
+  canonical_prose: Presburger Signature
+  canonical_latex: '\begin{definition}[Presburger Signature]
+
+    \label{def:presburger-signature}
+
+    The \emph{Presburger signature} is the first-order signature
+
+    \[
+
+    \mathcal{L}_{\mathrm{Pres}} = \{0, S, +, <\},
+
+    \]
+
+    where $0$ is a constant symbol, $S$ is a unary function symbol, $+$ is a
+
+    binary function symbol, and $<$ is a binary relation symbol. Equality is the
+
+    logical equality symbol of first-order logic, not an additional nonlogical
+
+    relation symbol of the signature.
+
+    \end{definition}'
+  semantic_ast: &id001
+    kind: iff
+    left:
+      kind: predicate
+      predicate_id: pred:presburger-signature
+      name: PresburgerSignature
+      arguments:
+      - kind: variable
+        binder_id: mathcalL
+    right:
+      kind: and
+      left:
+        kind: relation
+        relation: '='
+        left:
+          kind: variable
+          binder_id: mathcalL
+        right:
+          kind: tuple
+          elements:
+          - kind: variable
+            binder_id: '0'
+          - kind: variable
+            binder_id: S
+          - kind: variable
+            binder_id: +
+          - kind: variable
+            binder_id: <
+      right:
+        kind: and
+        left:
+          kind: relation
+          relation: '='
+          left:
+            kind: variable
+            binder_id: operatornamear(S)
+          right:
+            kind: constant
+            name: '1'
+        right:
+          kind: and
+          left:
+            kind: relation
+            relation: '='
+            left:
+              kind: variable
+              binder_id: operatornamear(+)
+            right:
+              kind: constant
+              name: '2'
+          right:
+            kind: relation
+            relation: '='
+            left:
+              kind: variable
+              binder_id: operatornamear(<)
+            right:
+              kind: constant
+              name: '2'
+logical_forms:
+  standard_quantified:
+    latex: '\[
+
+      \operatorname{PresburgerSignature}(\mathcal{L})
+
+      \Longleftrightarrow
+
+      \mathcal{L} = \{0,S,+,<\}
+
+      \land \operatorname{ar}(S)=1
+
+      \land \operatorname{ar}(+)=2
+
+      \land \operatorname{ar}(<)=2.
+
+      \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        \operatorname{PresburgerSignature}(\mathcal{L})
+
+        \Longleftrightarrow
+
+        \mathcal{L} = \{0,S,+,<\}
+
+        \land \operatorname{ar}(S)=1
+
+        \land \operatorname{ar}(+)=2
+
+        \land \operatorname{ar}(<)=2.
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:presburger-signature
+            name: PresburgerSignature
+            arguments:
+            - kind: variable
+              binder_id: mathcalL
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: mathcalL
+              right:
+                kind: tuple
+                elements:
+                - kind: variable
+                  binder_id: '0'
+                - kind: variable
+                  binder_id: S
+                - kind: variable
+                  binder_id: +
+                - kind: variable
+                  binder_id: <
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: variable
+                  binder_id: operatornamear(S)
+                right:
+                  kind: constant
+                  name: '1'
+              right:
+                kind: and
+                left:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: variable
+                    binder_id: operatornamear(+)
+                  right:
+                    kind: constant
+                    name: '2'
+                right:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: variable
+                    binder_id: operatornamear(<)
+                  right:
+                    kind: constant
+                    name: '2'
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\operatorname{PresburgerSignature}(\\mathcal{L})\n\\Longleftrightarrow\n\\mathcal{L}
+          = \\{0,S,+,<\\}\n\\land \\operatorname{ar}(S)=1\n\\land \\operatorname{ar}(+)=2\n\\land
+          \\operatorname{ar}(<)=2.'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\neg\left(\operatorname{PresburgerSignature}(\mathcal{L})
+
+        \Longleftrightarrow
+
+        \mathcal{L} = \{0,S,+,<\}
+
+        \land \operatorname{ar}(S)=1
+
+        \land \operatorname{ar}(+)=2
+
+        \land \operatorname{ar}(<)=2.\right)'
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: not
+        operand: *id001
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: def:presburger-signature
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

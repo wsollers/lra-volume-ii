@@ -1,0 +1,232 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:no-object-is-its-own-successor
+  kind: theorem
+  title: No Object Is Its Own Successor
+  canonical_name: No Object Is Its Own Successor
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - No Object Is Its Own Successor
+    owning_concept: No Object Is Its Own Successor
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-ii
+  commit: e17001b1fc7e9e703ecc4670d94a63b3ed204386
+  volume: ii
+  book: book-discrete-algebraic
+  chapter: peano-systems
+  topic: defining-peano-systems
+  source_file: volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-peano-system-theorems.tex
+  source_line_start: 824
+  source_line_end: 916
+  source_hash: sha256:f27a38dc5a0a74f8c63c70f9658ef5ecff631868f8011dad97e5cfd771049b48
+classification:
+  mathematical_domain: Peano systems
+  artifact_form: theorem
+  logical_shape: implication or assertion
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: P
+  symbol: P
+- id: S
+  symbol: S
+assumptions: []
+statement:
+  canonical_prose: No Object Is Its Own Successor
+  canonical_latex: '\begin{theorem}[No Object Is Its Own Successor]
+
+    \label{thm:no-object-is-its-own-successor}
+
+    Let $(P,S,1)$ be a Peano system. For every $n \in P$,
+
+    \[
+
+    S(n) \neq n.
+
+    \]
+
+    \hyperref[prf:no-object-is-its-own-successor]{Go to proof.}
+
+    \end{theorem}'
+  semantic_ast: &id001
+    kind: forall
+    binder: &id002
+      binder_id: n
+      symbol: n
+      domain:
+        kind: variable
+        binder_id: P
+    restriction: null
+    body:
+      kind: relation
+      relation: \neq
+      left: &id003
+        kind: application
+        function: S
+        arguments:
+        - kind: variable
+          binder_id: n
+      right: &id004
+        kind: variable
+        binder_id: n
+logical_forms:
+  standard_quantified:
+    latex: 'For a Peano system $(P,S,1)$,
+
+      \[
+
+      \forall n \in P\;(S(n) \neq n).
+
+      \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: 'For a Peano system $(P,S,1)$,
+
+        \[
+
+        \forall n \in P\;(S(n) \neq n).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: relation
+            relation: \neq
+            left:
+              kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+            right:
+              kind: variable
+              binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: relation
+            relation: \neq
+            left:
+              kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+            right:
+              kind: variable
+              binder_id: n
+      parsers_agree: true
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: \neg\left(\forall n \in P\;(S(n) \neq n).\right)
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: exists
+        binder: *id002
+        restriction: null
+        body:
+          kind: relation
+          relation: '='
+          left: *id003
+          right: *id004
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Failure is represented by the negated quantified form or theorem
+      negation.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: canonical-proof
+    target: prf:no-object-is-its-own-successor
+    display: null
+    notes: Expected proof label by convention.
+notation: {}
+exposition:
+  summary: Codex-local semantic validation payload generated from routed source.
+verification:
+  canonical_proof:
+    proof_label: prf:no-object-is-its-own-successor
+  formalizations:
+  - artifact_label: thm:no-object-is-its-own-successor
+    system: Lean 4
+    repository: lra-lean
+    module: LRA.VolumeII.PeanoSystems.BasicTheorems
+    declaration: successor_not_self
+    status: checked
+    environment:
+      mathlib_policy: prohibited
+    source_reference: Landau, \emph{Foundations of Analysis
+    source_path: ''
+    code: "theorem successor_not_self\n    (ps : PeanoSystem) :\n    forall element\
+      \ : ps.carrier,\n      Not (ps.successor element = element) := by\n  apply induction_principle\
+      \ ps\n\n  case base_case =>\n    exact ps.one_not_successor ps.one\n\n  case\
+      \ successor_step =>\n    intro element induction_hypothesis\n    exact\n   \
+      \   successor_preserves_inequality\n        ps\n        (ps.successor element)\n\
+      \        element\n        induction_hypothesis"
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: thm:no-object-is-its-own-successor
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local reference payload
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - AST uses raw LaTeX leaves for pilot validation
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local provider mode
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  registry_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  schema_commit: 1ed05d51be55daa33d8b398b21d42a07b2ae2cb8
+  renderer_contract: local-reference-codex-provider

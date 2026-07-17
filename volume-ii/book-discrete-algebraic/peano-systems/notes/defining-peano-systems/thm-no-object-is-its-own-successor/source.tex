@@ -1,0 +1,92 @@
+\begin{theorem}[No Object Is Its Own Successor]
+\label{thm:no-object-is-its-own-successor}
+Let $(P,S,1)$ be a Peano system. For every $n \in P$,
+\[
+S(n) \neq n.
+\]
+\hyperref[prf:no-object-is-its-own-successor]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Landau, \emph{Foundations of Analysis}, Section 2, Theorem 2}
+\Formalizes{thm:no-object-is-its-own-successor}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.BasicTheorems}.\par
+\LeanDeclaration{successor\_not\_self}
+\textbf{Status:} checked against \texttt{lra-lean}.\par
+
+\begin{leancode}
+theorem successor_not_self
+    (ps : PeanoSystem) :
+    forall element : ps.carrier,
+      Not (ps.successor element = element) := by
+  apply induction_principle ps
+
+  case base_case =>
+    exact ps.one_not_successor ps.one
+
+  case successor_step =>
+    intro element induction_hypothesis
+    exact
+      successor_preserves_inequality
+        ps
+        (ps.successor element)
+        element
+        induction_hypothesis
+\end{leancode}
+\end{formalizationrecord}
+
+\begin{remark*}[Standard quantified statement]
+For a Peano system $(P,S,1)$,
+\[
+\forall n \in P\;(S(n) \neq n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Successor always moves forward in the counting structure. No element can be
+recovered by applying successor to itself.
+\end{remark*}
+
+\begin{remark*}[Historical note]
+This theorem is a standard consequence of the Peano axioms in the classical
+development of the natural numbers \citep{PeanoArithmeticesPrincipia1889}.
+Feferman includes the corresponding result as an exercise in Chapter 3 of
+\citet{FefermanNumberSystems1964}.
+\end{remark*}
+
+\begin{workedexample}[Why the base case is forced]
+\LRAWorkedExampleFor{thm:no-object-is-its-own-successor}
+\LRAWorkedExampleUses{ax:peano-base-not-successor}
+\LRAWorkedExampleTags{peano systems, induction, base case}
+For the first element, the theorem says
+\[
+S(1)\neq 1.
+\]
+This is exactly the axiom that the distinguished element is not a successor:
+there is no element $x\in P$ with $S(x)=1$. In particular, taking $x=1$
+would be impossible, so $S(1)\neq 1$.
+\end{workedexample}
+
+\begin{workedexample}[Why the induction step uses injectivity]
+\LRAWorkedExampleFor{thm:no-object-is-its-own-successor}
+\LRAWorkedExampleUses{ax:peano-successor-injective, thm:induction-principle-for-peano-system}
+\LRAWorkedExampleTags{peano systems, induction, injectivity}
+Suppose the induction hypothesis gives $S(n)\neq n$. To prove the next case,
+we must show
+\[
+S(S(n))\neq S(n).
+\]
+If equality held, injectivity of $S$ would let us cancel the outer successor
+and conclude $S(n)=n$, contradicting the induction hypothesis. Thus the
+property propagates from $n$ to $S(n)$.
+\end{workedexample}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:peano-base-not-successor]{Distinguished Element Is Not a Successor}
+  \item \hyperref[ax:peano-successor-injective]{Injectivity of Successor}
+  \item \hyperref[thm:induction-principle-for-peano-system]{Induction Principle for a Peano System}
+\end{itemize}
+\end{dependencies}
+\end{topicbox}

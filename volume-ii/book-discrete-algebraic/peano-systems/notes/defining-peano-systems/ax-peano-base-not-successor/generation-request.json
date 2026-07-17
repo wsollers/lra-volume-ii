@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "ax:peano-base-not-successor",
+  "kind": "axiom",
+  "title": "Distinguished Element Is Not a Successor",
+  "source": {
+    "label": "ax:peano-base-not-successor",
+    "kind": "axiom",
+    "title": "Distinguished Element Is Not a Successor",
+    "book": "book-discrete-algebraic",
+    "chapter": "peano-systems",
+    "section": "defining-peano-systems",
+    "book_root": "volume-ii-discrete-number-systems.tex",
+    "source_file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+    "source_line_start": 156,
+    "source_line_end": 176,
+    "artifact_package": {
+      "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-base-not-successor",
+      "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-base-not-successor/artifact.yaml",
+      "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-base-not-successor/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-base-not-successor",
+    "artifact": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-base-not-successor/artifact.yaml",
+    "corrected_tex": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/ax-peano-base-not-successor/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-ii",
+      "file": "volume-ii/book-discrete-algebraic/peano-systems/notes/defining-peano-systems/notes-defining-peano-systems.tex",
+      "label": "ax:peano-base-not-successor",
+      "environment_kind": "axiom",
+      "source_line_start": 156,
+      "source_line_end": 176,
+      "current_tex": "\\begin{axiom}[Distinguished Element Is Not a Successor]\n\\label{ax:peano-base-not-successor}\nFor every $n \\in P$, $S(n) \\neq 1$.\n\\end{axiom}\n\\end{axiombox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall n \\in P\\;(S(n) \\neq 1).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe first natural number does not arise by taking the successor of an earlier\nnatural number. This keeps the counting system from folding backward onto its\nstarting point.\n\\end{remark*}\n\n\\NoLocalDependencies\n\n",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}
