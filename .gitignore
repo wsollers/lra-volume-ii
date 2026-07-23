@@ -123,3 +123,6 @@ desktop.ini
 !volume-ii/**/*-asset.pdf
 common/
 .claude/
+
+# Local Google Drive upload scratch directories
+**/.tmp.driveupload/
