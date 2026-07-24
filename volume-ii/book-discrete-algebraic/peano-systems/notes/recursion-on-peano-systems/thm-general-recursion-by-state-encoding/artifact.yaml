@@ -29,7 +29,29 @@ classification:
   logical_framework: mathematical_vernacular
   language_level: mixed
 context: []
-parameters: []
+parameters:
+- id: Phi
+  symbol: Phi
+- id: S
+  symbol: S
+- id: n
+  symbol: n
+- id: w
+  symbol: w
+- id: G
+  symbol: G
+- id: H
+  symbol: H
+- id: P
+  symbol: P
+- id: W
+  symbol: W
+- id: c
+  symbol: c
+- id: cartesian_product
+  symbol: cartesian_product
+- id: function_space
+  symbol: function_space
 assumptions: []
 statement:
   canonical_prose: General Recursion by State Encoding
@@ -84,77 +106,73 @@ statement:
     \hyperref[prf:general-recursion-by-state-encoding]{Go to proof.}
 
     \end{theorem}'
-  semantic_ast:
-    kind: forall
+  semantic_ast: &id001
+    kind: exists_unique
     binder:
-      binder_id: f2
-      symbol: f_2
+      binder_id: H
+      symbol: H
       domain:
-        kind: raw_latex
-        latex: ambient context
+        kind: application
+        function: function_space
+        arguments:
+        - kind: variable
+          binder_id: P
+        - kind: application
+          function: cartesian_product
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: W
     restriction: null
     body:
-      kind: forall
-      binder:
-        binder_id: f1
-        symbol: f_1
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
-        kind: raw_latex
-        latex: '\begin{theorem}[General Recursion by State Encoding]
-
-          \label{thm:general-recursion-by-state-encoding}
-
-          Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and let
-
-          $\Phi\colon P\times W\to W$ be a stage-dependent step rule. Define
-
-          \[
-
-          G\colon P\times W\to P\times W,
-
-          \qquad
-
-          (n,w)\mapsto (S(n),\Phi(n,w)).
-
-          \]
-
-          Then there exists a unique function $H\colon P\to P\times W$ such that
-
-          \[
-
-          H(1)=(1,c)
-
-          \]
-
-          and
-
-          \[
-
-          \forall n\in P,\qquad
-
-          H(S(n))=G(H(n)).
-
-          \]
-
-          Equivalently,
-
-          \[
-
-          \forall n\in P,\qquad
-
-          H(S(n))=
-
-          \left(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n)))\right).
-
-          \]
-
-          \hyperref[prf:general-recursion-by-state-encoding]{Go to proof.}
-
-          \end{theorem}'
+      kind: and
+      left:
+        kind: relation
+        relation: '='
+        left:
+          kind: application
+          function: H
+          arguments:
+          - kind: constant
+            name: '1'
+        right:
+          kind: tuple
+          elements:
+          - kind: constant
+            name: '1'
+          - kind: variable
+            binder_id: c
+      right:
+        kind: forall
+        binder:
+          binder_id: n
+          symbol: n
+          domain:
+            kind: variable
+            binder_id: P
+        restriction: null
+        body:
+          kind: relation
+          relation: '='
+          left:
+            kind: application
+            function: H
+            arguments:
+            - kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+          right:
+            kind: application
+            function: G
+            arguments:
+            - kind: application
+              function: H
+              arguments:
+              - kind: variable
+                binder_id: n
 logical_forms:
   standard_quantified:
     latex: 'With $G\colon P\times W\to P\times W$ defined by
@@ -180,57 +198,257 @@ logical_forms:
       \right].
 
       \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: 'With $G\colon P\times W\to P\times W$ defined by
+
+        \[
+
+        (n,w)\mapsto (S(n),\Phi(n,w)),
+
+        \]
+
+        one has
+
+        \[
+
+        \exists! H\colon P\to P\times W\;
+
+        \left[
+
+        H(1)=(1,c)\land
+
+        \forall n\in P,\ H(S(n))=G(H(n))
+
+        \right].
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: exists_unique
+          binder:
+            binder_id: H
+            symbol: H
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: application
+                function: cartesian_product
+                arguments:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: W
+          restriction: null
+          body:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: H
+                arguments:
+                - kind: constant
+                  name: '1'
+              right:
+                kind: tuple
+                elements:
+                - kind: constant
+                  name: '1'
+                - kind: variable
+                  binder_id: c
+            right:
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: H
+                  arguments:
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                right:
+                  kind: application
+                  function: G
+                  arguments:
+                  - kind: application
+                    function: H
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: exists_unique
+          binder:
+            binder_id: H
+            symbol: H
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: application
+                function: cartesian_product
+                arguments:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: W
+          restriction: null
+          body:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: H
+                arguments:
+                - kind: constant
+                  name: '1'
+              right:
+                kind: tuple
+                elements:
+                - kind: constant
+                  name: '1'
+                - kind: variable
+                  binder_id: c
+            right:
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: H
+                  arguments:
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                right:
+                  kind: application
+                  function: G
+                  arguments:
+                  - kind: application
+                    function: H
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+      parsers_agree: true
+  predicate_reading:
+    latex: (n,w)\mapsto (S(n),\Phi(n,w)).
     ast:
-      kind: forall
-      binder:
-        binder_id: f1
-        symbol: f_1
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
-        kind: exists
-        binder:
-          binder_id: e1
-          symbol: e_1
-          domain:
-            kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: raw_latex
-          latex: 'With $G\colon P\times W\to P\times W$ defined by
-
-            \[
-
-            (n,w)\mapsto (S(n),\Phi(n,w)),
-
-            \]
-
-            one has
-
-            \[
-
-            \exists! H\colon P\to P\times W\;
-
-            \left[
-
-            H(1)=(1,c)\land
-
-            \forall n\in P,\ H(S(n))=G(H(n))
-
-            \right].
-
-            \]'
-  predicate_reading: null
+      kind: relation
+      relation: \mapsto
+      left:
+        kind: tuple
+        elements:
+        - kind: variable
+          binder_id: n
+        - kind: variable
+          binder_id: w
+      right:
+        kind: tuple
+        elements:
+        - kind: application
+          function: S
+          arguments:
+          - kind: variable
+            binder_id: n
+        - kind: application
+          function: Phi
+          arguments:
+          - kind: variable
+            binder_id: n
+          - kind: variable
+            binder_id: w
+    parser_witnesses:
+      original_latex: (n,w)\mapsto (S(n),\Phi(n,w)).
+      hand_parser:
+        available: true
+        ast:
+          kind: relation
+          relation: \mapsto
+          left:
+            kind: tuple
+            elements:
+            - kind: variable
+              binder_id: n
+            - kind: variable
+              binder_id: w
+          right:
+            kind: tuple
+            elements:
+            - kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+            - kind: application
+              function: Phi
+              arguments:
+              - kind: variable
+                binder_id: n
+              - kind: variable
+                binder_id: w
+      lark_parser:
+        available: true
+        ast:
+          kind: relation
+          relation: \mapsto
+          left:
+            kind: tuple
+            elements:
+            - kind: variable
+              binder_id: n
+            - kind: variable
+              binder_id: w
+          right:
+            kind: tuple
+            elements:
+            - kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+            - kind: application
+              function: Phi
+              arguments:
+              - kind: variable
+                binder_id: n
+              - kind: variable
+                binder_id: w
+      parsers_agree: true
   negation:
     mechanical:
-      latex: 'With $G$ as above,
-
-        \[
-
-        \neg\exists! H\colon P\to P\times W\;
+      latex: '\neg\left(\exists! H\colon P\to P\times W\;
 
         \left[
 
@@ -238,175 +456,15 @@ logical_forms:
 
         \forall n\in P,\ H(S(n))=G(H(n))
 
-        \right].
-
-        \]'
+        \right].\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f2
-            symbol: f_2
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: forall
-            binder:
-              binder_id: f1
-              symbol: f_1
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: raw_latex
-              latex: '\begin{theorem}[General Recursion by State Encoding]
-
-                \label{thm:general-recursion-by-state-encoding}
-
-                Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and
-                let
-
-                $\Phi\colon P\times W\to W$ be a stage-dependent step rule. Define
-
-                \[
-
-                G\colon P\times W\to P\times W,
-
-                \qquad
-
-                (n,w)\mapsto (S(n),\Phi(n,w)).
-
-                \]
-
-                Then there exists a unique function $H\colon P\to P\times W$ such
-                that
-
-                \[
-
-                H(1)=(1,c)
-
-                \]
-
-                and
-
-                \[
-
-                \forall n\in P,\qquad
-
-                H(S(n))=G(H(n)).
-
-                \]
-
-                Equivalently,
-
-                \[
-
-                \forall n\in P,\qquad
-
-                H(S(n))=
-
-                \left(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n)))\right).
-
-                \]
-
-                \hyperref[prf:general-recursion-by-state-encoding]{Go to proof.}
-
-                \end{theorem}'
+        operand: *id001
     approved_normal_form:
-      latex: 'With $G$ as above,
-
-        \[
-
-        \neg\exists! H\colon P\to P\times W\;
-
-        \left[
-
-        H(1)=(1,c)\land
-
-        \forall n\in P,\ H(S(n))=G(H(n))
-
-        \right].
-
-        \]'
+      latex: null
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f2
-            symbol: f_2
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: forall
-            binder:
-              binder_id: f1
-              symbol: f_1
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: raw_latex
-              latex: '\begin{theorem}[General Recursion by State Encoding]
-
-                \label{thm:general-recursion-by-state-encoding}
-
-                Let $(P,S,1)$ be a Peano system, let $W$ be a set, let $c\in W$, and
-                let
-
-                $\Phi\colon P\times W\to W$ be a stage-dependent step rule. Define
-
-                \[
-
-                G\colon P\times W\to P\times W,
-
-                \qquad
-
-                (n,w)\mapsto (S(n),\Phi(n,w)).
-
-                \]
-
-                Then there exists a unique function $H\colon P\to P\times W$ such
-                that
-
-                \[
-
-                H(1)=(1,c)
-
-                \]
-
-                and
-
-                \[
-
-                \forall n\in P,\qquad
-
-                H(S(n))=G(H(n)).
-
-                \]
-
-                Equivalently,
-
-                \[
-
-                \forall n\in P,\qquad
-
-                H(S(n))=
-
-                \left(S(\pi_1(H(n))),\Phi(\pi_1(H(n)),\pi_2(H(n)))\right).
-
-                \]
-
-                \hyperref[prf:general-recursion-by-state-encoding]{Go to proof.}
-
-                \end{theorem}'
+        operand: *id001
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

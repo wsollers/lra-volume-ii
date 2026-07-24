@@ -58,27 +58,70 @@ statement:
     \hyperref[prf:minimal-iterator-relation-deterministic]{Go to proof.}
 
     \end{lemma}'
-  semantic_ast: &id001
+  semantic_ast: &id002
     kind: forall
-    binder: &id002
+    binder: &id005
       binder_id: n
       symbol: n
       domain:
         kind: variable
-        binder_id: P forall w_0
+        binder_id: P
     restriction: null
     body:
-      kind: relation
-      relation: \in
-      left: &id003
-        kind: variable
-        binder_id: w_1
-      right: &id004
-        kind: application
-        function: W
-        arguments:
-        - kind: variable
-          binder_id: (n,w_0)in R^*land (n,w_1)in R^*Longrightarrow w_0=w_1
+      kind: forall
+      binder: &id006
+        binder_id: w_0
+        symbol: w_0
+        domain: &id001
+          kind: variable
+          binder_id: W
+      restriction: null
+      body:
+        kind: forall
+        binder: &id007
+          binder_id: w_1
+          symbol: w_1
+          domain: *id001
+        restriction: null
+        body:
+          kind: implies
+          left: &id008
+            kind: and
+            left:
+              kind: relation
+              relation: \in
+              left:
+                kind: tuple
+                elements:
+                - kind: variable
+                  binder_id: n
+                - kind: variable
+                  binder_id: w_0
+              right:
+                kind: variable
+                binder_id: R^*
+            right:
+              kind: relation
+              relation: \in
+              left:
+                kind: tuple
+                elements:
+                - kind: variable
+                  binder_id: n
+                - kind: variable
+                  binder_id: w_1
+              right:
+                kind: variable
+                binder_id: R^*
+          right:
+            kind: relation
+            relation: '='
+            left: &id009
+              kind: variable
+              binder_id: w_0
+            right: &id010
+              kind: variable
+              binder_id: w_1
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -88,7 +131,7 @@ logical_forms:
       \bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\Longrightarrow w_0=w_1\bigr).
 
       \]'
-    ast: *id001
+    ast: *id002
     parser_witnesses:
       original_latex: '\[
 
@@ -106,26 +149,130 @@ logical_forms:
             symbol: n
             domain:
               kind: variable
-              binder_id: P forall w_0
+              binder_id: P
           restriction: null
           body:
-            kind: relation
-            relation: \in
-            left:
-              kind: variable
-              binder_id: w_1
-            right:
-              kind: application
-              function: W
-              arguments:
-              - kind: variable
-                binder_id: (n,w_0)in R^*land (n,w_1)in R^*Longrightarrow w_0=w_1
+            kind: forall
+            binder:
+              binder_id: w_0
+              symbol: w_0
+              domain: &id003
+                kind: variable
+                binder_id: W
+            restriction: null
+            body:
+              kind: forall
+              binder:
+                binder_id: w_1
+                symbol: w_1
+                domain: *id003
+              restriction: null
+              body:
+                kind: implies
+                left:
+                  kind: and
+                  left:
+                    kind: relation
+                    relation: \in
+                    left:
+                      kind: tuple
+                      elements:
+                      - kind: variable
+                        binder_id: n
+                      - kind: variable
+                        binder_id: w_0
+                    right:
+                      kind: variable
+                      binder_id: R^*
+                  right:
+                    kind: relation
+                    relation: \in
+                    left:
+                      kind: tuple
+                      elements:
+                      - kind: variable
+                        binder_id: n
+                      - kind: variable
+                        binder_id: w_1
+                    right:
+                      kind: variable
+                      binder_id: R^*
+                right:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: variable
+                    binder_id: w_0
+                  right:
+                    kind: variable
+                    binder_id: w_1
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\forall n\\in P\\;\\forall
-          w_0,w_1\\in W\\;\n\\bigl((n,w_0)\\in R^*\\land (n,w_1)\\in R^*\\Longrightarrow
-          w_0=w_1\\bigr).'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: forall
+            binder:
+              binder_id: w_0
+              symbol: w_0
+              domain: &id004
+                kind: variable
+                binder_id: W
+            restriction: null
+            body:
+              kind: forall
+              binder:
+                binder_id: w_1
+                symbol: w_1
+                domain: *id004
+              restriction: null
+              body:
+                kind: implies
+                left:
+                  kind: and
+                  left:
+                    kind: relation
+                    relation: \in
+                    left:
+                      kind: tuple
+                      elements:
+                      - kind: variable
+                        binder_id: n
+                      - kind: variable
+                        binder_id: w_0
+                    right:
+                      kind: variable
+                      binder_id: R^*
+                  right:
+                    kind: relation
+                    relation: \in
+                    left:
+                      kind: tuple
+                      elements:
+                      - kind: variable
+                        binder_id: n
+                      - kind: variable
+                        binder_id: w_1
+                    right:
+                      kind: variable
+                      binder_id: R^*
+                right:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: variable
+                    binder_id: w_0
+                  right:
+                    kind: variable
+                    binder_id: w_1
+      parsers_agree: true
   predicate_reading:
     latex: \operatorname{FunctionalRelation}(R^*,P,W).
     ast:
@@ -155,9 +302,19 @@ logical_forms:
           - kind: variable
             binder_id: W
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\operatorname{FunctionalRelation}(R^*,P,W).'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:functional-relation
+          name: FunctionalRelation
+          arguments:
+          - kind: variable
+            binder_id: R^*
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: W
+      parsers_agree: true
   negation:
     mechanical:
       latex: '\neg\left(\forall n\in P\;\forall w_0,w_1\in W\;
@@ -165,18 +322,29 @@ logical_forms:
         \bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\Longrightarrow w_0=w_1\bigr).\right)'
       ast:
         kind: not
-        operand: *id001
+        operand: *id002
     approved_normal_form:
       latex: null
       ast:
         kind: exists
-        binder: *id002
+        binder: *id005
         restriction: null
         body:
-          kind: relation
-          relation: \notin
-          left: *id003
-          right: *id004
+          kind: exists
+          binder: *id006
+          restriction: null
+          body:
+            kind: exists
+            binder: *id007
+            restriction: null
+            body:
+              kind: and
+              left: *id008
+              right:
+                kind: relation
+                relation: \neq
+                left: *id009
+                right: *id010
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

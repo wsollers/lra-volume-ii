@@ -36,6 +36,12 @@ parameters:
   symbol: S(u)=x
 - id: exists! u
   symbol: exists! u
+- id: P;(S(u)=x)
+  symbol: P;(S(u)=x)
+- id: P(S(u)=x)
+  symbol: P(S(u)=x)
+- id: S
+  symbol: S
 assumptions: []
 statement:
   canonical_prose: Unique Predecessor Characterization Away from $1$
@@ -60,29 +66,38 @@ statement:
         kind: variable
         binder_id: P
     restriction: null
-    body: &id003
+    body:
       kind: iff
-      left:
+      left: &id003
         kind: relation
         relation: \neq
-        left:
+        left: &id005
           kind: variable
           binder_id: x
-        right:
+        right: &id006
           kind: constant
           name: '1'
-      right:
-        kind: relation
-        relation: \in
-        left:
-          kind: variable
-          binder_id: exists! u
-        right:
-          kind: application
-          function: P
-          arguments:
-          - kind: variable
-            binder_id: S(u)=x
+      right: &id004
+        kind: exists_unique
+        binder:
+          binder_id: u
+          symbol: u
+          domain:
+            kind: variable
+            binder_id: P
+        restriction: null
+        body:
+          kind: relation
+          relation: '='
+          left:
+            kind: application
+            function: S
+            arguments:
+            - kind: variable
+              binder_id: u
+          right:
+            kind: variable
+            binder_id: x
 logical_forms:
   standard_quantified:
     latex: 'For a Peano system $(P,S,1)$,
@@ -128,22 +143,70 @@ logical_forms:
                 kind: constant
                 name: '1'
             right:
+              kind: exists_unique
+              binder:
+                binder_id: u
+                symbol: u
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: u
+                right:
+                  kind: variable
+                  binder_id: x
+      lark_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: x
+            symbol: x
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: iff
+            left:
               kind: relation
-              relation: \in
+              relation: \neq
               left:
                 kind: variable
-                binder_id: exists! u
+                binder_id: x
               right:
-                kind: application
-                function: P
-                arguments:
-                - kind: variable
-                  binder_id: S(u)=x
-      lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\forall x \\in P\\;\\bigl(x\\neq
-          1 \\Longleftrightarrow\n\\exists! u \\in P\\;(S(u)=x)\\bigr).'''
-      parsers_agree: false
+                kind: constant
+                name: '1'
+            right:
+              kind: exists_unique
+              binder:
+                binder_id: u
+                symbol: u
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: u
+                right:
+                  kind: variable
+                  binder_id: x
+      parsers_agree: true
   predicate_reading:
     latex: '\forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
 
@@ -169,17 +232,26 @@ logical_forms:
             kind: constant
             name: '1'
         right:
-          kind: relation
-          relation: \in
-          left:
-            kind: variable
-            binder_id: exists! u
-          right:
-            kind: application
-            function: P
-            arguments:
-            - kind: variable
-              binder_id: S(u)=x
+          kind: exists_unique
+          binder:
+            binder_id: u
+            symbol: u
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: u
+            right:
+              kind: variable
+              binder_id: x
     parser_witnesses:
       original_latex: '\forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
 
@@ -207,22 +279,70 @@ logical_forms:
                 kind: constant
                 name: '1'
             right:
+              kind: exists_unique
+              binder:
+                binder_id: u
+                symbol: u
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: u
+                right:
+                  kind: variable
+                  binder_id: x
+      lark_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: x
+            symbol: x
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: iff
+            left:
               kind: relation
-              relation: \in
+              relation: \neq
               left:
                 kind: variable
-                binder_id: exists! u
+                binder_id: x
               right:
-                kind: application
-                function: P
-                arguments:
-                - kind: variable
-                  binder_id: S(u)=x
-      lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\forall x \\in P\\;\\bigl(x\\neq
-          1 \\Longleftrightarrow\n\\exists! u \\in P\\;(S(u)=x)\\bigr).'''
-      parsers_agree: false
+                kind: constant
+                name: '1'
+            right:
+              kind: exists_unique
+              binder:
+                binder_id: u
+                symbol: u
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: u
+                right:
+                  kind: variable
+                  binder_id: x
+      parsers_agree: true
   negation:
     mechanical:
       latex: '\neg\left(\forall x \in P\;\bigl(x\neq 1 \Longleftrightarrow
@@ -238,8 +358,21 @@ logical_forms:
         binder: *id002
         restriction: null
         body:
-          kind: not
-          operand: *id003
+          kind: or
+          left:
+            kind: and
+            left: *id003
+            right:
+              kind: not
+              operand: *id004
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left: *id005
+              right: *id006
+            right: *id004
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

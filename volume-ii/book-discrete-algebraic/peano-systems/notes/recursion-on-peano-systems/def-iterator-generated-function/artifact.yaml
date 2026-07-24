@@ -29,7 +29,21 @@ classification:
   logical_framework: mathematical_vernacular
   language_level: mixed
 context: []
-parameters: []
+parameters:
+- id: P
+  symbol: P
+- id: S
+  symbol: S
+- id: c
+  symbol: c
+- id: f
+  symbol: f
+- id: g
+  symbol: g
+- id: W
+  symbol: W
+- id: function_space
+  symbol: function_space
 assumptions: []
 statement:
   canonical_prose: Iterator-Generated Function
@@ -54,33 +68,71 @@ statement:
     is called the \emph{iterator-generated function determined by $(W,c,g)$}.
 
     \end{definition}'
-  semantic_ast:
+  semantic_ast: &id001
     kind: iff
-    left:
+    left: &id002
       kind: raw_latex
-      latex: left side
-    right:
-      kind: forall
-      binder:
-        binder_id: f1
-        symbol: f_1
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
-        kind: raw_latex
-        latex: '\[
-
-          f \text{ is the iterator-generated function determined by } (W,c,g)
-
-          \Longleftrightarrow
-
-          \bigl(f:P\to W\land f(1)=c
-
-          \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
-
-          \]'
+      latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+    right: &id009
+      kind: and
+      left: &id003
+        kind: relation
+        relation: \colon
+        left:
+          kind: variable
+          binder_id: f
+        right:
+          kind: application
+          function: function_space
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: W
+      right:
+        kind: and
+        left:
+          kind: relation
+          relation: '='
+          left: &id004
+            kind: application
+            function: f
+            arguments:
+            - kind: constant
+              name: '1'
+          right: &id005
+            kind: variable
+            binder_id: c
+        right:
+          kind: forall
+          binder: &id006
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: relation
+            relation: '='
+            left: &id007
+              kind: application
+              function: f
+              arguments:
+              - kind: application
+                function: S
+                arguments:
+                - kind: variable
+                  binder_id: n
+            right: &id008
+              kind: application
+              function: g
+              arguments:
+              - kind: application
+                function: f
+                arguments:
+                - kind: variable
+                  binder_id: n
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -94,119 +146,473 @@ logical_forms:
       \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
 
       \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        f \text{ is the iterator-generated function determined by } (W,c,g)
+
+        \Longleftrightarrow
+
+        \bigl(f:P\to W\land f(1)=c
+
+        \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: \colon
+              left:
+                kind: variable
+                binder_id: f
+              right:
+                kind: application
+                function: function_space
+                arguments:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: W
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: constant
+                    name: '1'
+                right:
+                  kind: variable
+                  binder_id: c
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: f
+                    arguments:
+                    - kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: g
+                    arguments:
+                    - kind: application
+                      function: f
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: \colon
+              left:
+                kind: variable
+                binder_id: f
+              right:
+                kind: application
+                function: function_space
+                arguments:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: W
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: constant
+                    name: '1'
+                right:
+                  kind: variable
+                  binder_id: c
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: f
+                    arguments:
+                    - kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: g
+                    arguments:
+                    - kind: application
+                      function: f
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+      parsers_agree: true
+  predicate_reading:
+    latex: '\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
+
+      \Longleftrightarrow
+
+      \operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
+
+      \land
+
+      \exists! h:P\to W\;
+
+      \operatorname{IteratorFunction}(h,(P,S,1),W,c,g).'
     ast:
       kind: iff
       left:
-        kind: raw_latex
-        latex: left side
+        kind: predicate
+        predicate_id: pred:iterator-generated-function
+        name: IteratorGeneratedFunction
+        arguments:
+        - kind: variable
+          binder_id: f
+        - kind: tuple
+          elements:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+        - kind: variable
+          binder_id: W
+        - kind: variable
+          binder_id: c
+        - kind: variable
+          binder_id: g
       right:
-        kind: forall
-        binder:
-          binder_id: f1
-          symbol: f_1
-          domain:
-            kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: raw_latex
-          latex: '\[
+        kind: and
+        left:
+          kind: predicate
+          predicate_id: pred:iterator-function
+          name: IteratorFunction
+          arguments:
+          - kind: variable
+            binder_id: f
+          - kind: tuple
+            elements:
+            - kind: variable
+              binder_id: P
+            - kind: variable
+              binder_id: S
+            - kind: constant
+              name: '1'
+          - kind: variable
+            binder_id: W
+          - kind: variable
+            binder_id: c
+          - kind: variable
+            binder_id: g
+        right:
+          kind: exists_unique
+          binder:
+            binder_id: h
+            symbol: h
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: predicate
+            predicate_id: pred:iterator-function
+            name: IteratorFunction
+            arguments:
+            - kind: variable
+              binder_id: h
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+    parser_witnesses:
+      original_latex: '\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
 
-            f \text{ is the iterator-generated function determined by } (W,c,g)
+        \Longleftrightarrow
 
-            \Longleftrightarrow
+        \operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
 
-            \bigl(f:P\to W\land f(1)=c
+        \land
 
-            \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+        \exists! h:P\to W\;
 
-            \]'
-  predicate_reading: null
+        \operatorname{IteratorFunction}(h,(P,S,1),W,c,g).'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:iterator-generated-function
+            name: IteratorGeneratedFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+          right:
+            kind: and
+            left:
+              kind: predicate
+              predicate_id: pred:iterator-function
+              name: IteratorFunction
+              arguments:
+              - kind: variable
+                binder_id: f
+              - kind: tuple
+                elements:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: S
+                - kind: constant
+                  name: '1'
+              - kind: variable
+                binder_id: W
+              - kind: variable
+                binder_id: c
+              - kind: variable
+                binder_id: g
+            right:
+              kind: exists_unique
+              binder:
+                binder_id: h
+                symbol: h
+                domain:
+                  kind: application
+                  function: function_space
+                  arguments:
+                  - kind: variable
+                    binder_id: P
+                  - kind: variable
+                    binder_id: W
+              restriction: null
+              body:
+                kind: predicate
+                predicate_id: pred:iterator-function
+                name: IteratorFunction
+                arguments:
+                - kind: variable
+                  binder_id: h
+                - kind: tuple
+                  elements:
+                  - kind: variable
+                    binder_id: P
+                  - kind: variable
+                    binder_id: S
+                  - kind: constant
+                    name: '1'
+                - kind: variable
+                  binder_id: W
+                - kind: variable
+                  binder_id: c
+                - kind: variable
+                  binder_id: g
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:iterator-generated-function
+            name: IteratorGeneratedFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+          right:
+            kind: and
+            left:
+              kind: predicate
+              predicate_id: pred:iterator-function
+              name: IteratorFunction
+              arguments:
+              - kind: variable
+                binder_id: f
+              - kind: tuple
+                elements:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: S
+                - kind: constant
+                  name: '1'
+              - kind: variable
+                binder_id: W
+              - kind: variable
+                binder_id: c
+              - kind: variable
+                binder_id: g
+            right:
+              kind: exists_unique
+              binder:
+                binder_id: h
+                symbol: h
+                domain:
+                  kind: application
+                  function: function_space
+                  arguments:
+                  - kind: variable
+                    binder_id: P
+                  - kind: variable
+                    binder_id: W
+              restriction: null
+              body:
+                kind: predicate
+                predicate_id: pred:iterator-function
+                name: IteratorFunction
+                arguments:
+                - kind: variable
+                  binder_id: h
+                - kind: tuple
+                  elements:
+                  - kind: variable
+                    binder_id: P
+                  - kind: variable
+                    binder_id: S
+                  - kind: constant
+                    name: '1'
+                - kind: variable
+                  binder_id: W
+                - kind: variable
+                  binder_id: c
+                - kind: variable
+                  binder_id: g
+      parsers_agree: true
   negation:
     mechanical:
-      latex: '\[
+      latex: '\neg\left(f \text{ is the iterator-generated function determined by
+        } (W,c,g)
 
-        \begin{aligned}
+        \Longleftrightarrow
 
-        f \text{ is not the iterator-generated function determined by } (W,c,g)
+        \bigl(f:P\to W\land f(1)=c
 
-        \Longleftrightarrow\;&
-
-        f \text{ is not a function } P\to W\\
-
-        &\lor f(1)\neq c
-
-        \lor \exists n\in P\;(f(S(n))\neq g(f(n))).
-
-        \end{aligned}
-
-        \]'
+        \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\[
-
-              f \text{ is the iterator-generated function determined by } (W,c,g)
-
-              \Longleftrightarrow
-
-              \bigl(f:P\to W\land f(1)=c
-
-              \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
-
-              \]'
+        operand: *id001
     approved_normal_form:
-      latex: '\[
-
-        \begin{aligned}
-
-        f \text{ is not the iterator-generated function determined by } (W,c,g)
-
-        \Longleftrightarrow\;&
-
-        f \text{ is not a function } P\to W\\
-
-        &\lor f(1)\neq c
-
-        \lor \exists n\in P\;(f(S(n))\neq g(f(n))).
-
-        \end{aligned}
-
-        \]'
+      latex: null
       ast:
-        kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\[
-
-              f \text{ is the iterator-generated function determined by } (W,c,g)
-
-              \Longleftrightarrow
-
-              \bigl(f:P\to W\land f(1)=c
-
-              \land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
-
-              \]'
+        kind: or
+        left:
+          kind: and
+          left: *id002
+          right:
+            kind: or
+            left:
+              kind: not
+              operand: *id003
+            right:
+              kind: or
+              left:
+                kind: relation
+                relation: \neq
+                left: *id004
+                right: *id005
+              right:
+                kind: exists
+                binder: *id006
+                restriction: null
+                body:
+                  kind: relation
+                  relation: \neq
+                  left: *id007
+                  right: *id008
+        right:
+          kind: and
+          left:
+            kind: not
+            operand: *id002
+          right: *id009
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

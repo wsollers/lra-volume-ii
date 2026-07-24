@@ -42,6 +42,12 @@ parameters:
   symbol: n
 - id: n)
   symbol: n)
+- id: W
+  symbol: W
+- id: c
+  symbol: c
+- id: function_space
+  symbol: function_space
 assumptions: []
 statement:
   canonical_prose: Existence of an Iterator Function
@@ -69,33 +75,61 @@ statement:
   semantic_ast: &id001
     kind: exists
     binder: &id002
-      binder_id: f:Pto W (f(1)=cland forall n
-      symbol: f:P\to W (f(1)=c\land \forall n
+      binder_id: f
+      symbol: f
       domain:
-        kind: variable
-        binder_id: P
+        kind: application
+        function: function_space
+        arguments:
+        - kind: variable
+          binder_id: P
+        - kind: variable
+          binder_id: W
     restriction: null
     body:
-      kind: relation
-      relation: '='
-      left: &id003
-        kind: application
-        function: f
-        arguments:
-        - kind: application
-          function: S
-          arguments:
-          - kind: variable
-            binder_id: n
-      right: &id004
-        kind: application
-        function: g
-        arguments:
-        - kind: application
+      kind: and
+      left:
+        kind: relation
+        relation: '='
+        left: &id003
+          kind: application
           function: f
           arguments:
-          - kind: variable
-            binder_id: n)
+          - kind: constant
+            name: '1'
+        right: &id004
+          kind: variable
+          binder_id: c
+      right:
+        kind: forall
+        binder: &id005
+          binder_id: n
+          symbol: n
+          domain:
+            kind: variable
+            binder_id: P
+        restriction: null
+        body:
+          kind: relation
+          relation: '='
+          left: &id006
+            kind: application
+            function: f
+            arguments:
+            - kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+          right: &id007
+            kind: application
+            function: g
+            arguments:
+            - kind: application
+              function: f
+              arguments:
+              - kind: variable
+                binder_id: n
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -119,39 +153,240 @@ logical_forms:
         ast:
           kind: exists
           binder:
-            binder_id: f:Pto W (f(1)=cland forall n
-            symbol: f:P\to W (f(1)=c\land \forall n
+            binder_id: f
+            symbol: f
             domain:
-              kind: variable
-              binder_id: P
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
           restriction: null
           body:
-            kind: relation
-            relation: '='
+            kind: and
             left:
-              kind: application
-              function: f
-              arguments:
-              - kind: application
-                function: S
-                arguments:
-                - kind: variable
-                  binder_id: n
-            right:
-              kind: application
-              function: g
-              arguments:
-              - kind: application
+              kind: relation
+              relation: '='
+              left:
+                kind: application
                 function: f
                 arguments:
-                - kind: variable
-                  binder_id: n)
+                - kind: constant
+                  name: '1'
+              right:
+                kind: variable
+                binder_id: c
+            right:
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                right:
+                  kind: application
+                  function: g
+                  arguments:
+                  - kind: application
+                    function: f
+                    arguments:
+                    - kind: variable
+                      binder_id: n
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\exists f:P\\to W\\;\n\\bigl(f(1)=c\\land
-          \\forall n\\in P\\;(f(S(n))=g(f(n)))\\bigr).'''
-      parsers_agree: false
-  predicate_reading: null
+        available: true
+        ast:
+          kind: exists
+          binder:
+            binder_id: f
+            symbol: f
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: f
+                arguments:
+                - kind: constant
+                  name: '1'
+              right:
+                kind: variable
+                binder_id: c
+            right:
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                right:
+                  kind: application
+                  function: g
+                  arguments:
+                  - kind: application
+                    function: f
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+      parsers_agree: true
+  predicate_reading:
+    latex: '\exists f:P\to W\;
+
+      \operatorname{IteratorFunction}(f,(P,S,1),W,c,g).'
+    ast:
+      kind: exists
+      binder:
+        binder_id: f
+        symbol: f
+        domain:
+          kind: application
+          function: function_space
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: W
+      restriction: null
+      body:
+        kind: predicate
+        predicate_id: pred:iterator-function
+        name: IteratorFunction
+        arguments:
+        - kind: variable
+          binder_id: f
+        - kind: tuple
+          elements:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+        - kind: variable
+          binder_id: W
+        - kind: variable
+          binder_id: c
+        - kind: variable
+          binder_id: g
+    parser_witnesses:
+      original_latex: '\exists f:P\to W\;
+
+        \operatorname{IteratorFunction}(f,(P,S,1),W,c,g).'
+      hand_parser:
+        available: true
+        ast:
+          kind: exists
+          binder:
+            binder_id: f
+            symbol: f
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: predicate
+            predicate_id: pred:iterator-function
+            name: IteratorFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+      lark_parser:
+        available: true
+        ast:
+          kind: exists
+          binder:
+            binder_id: f
+            symbol: f
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: predicate
+            predicate_id: pred:iterator-function
+            name: IteratorFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+      parsers_agree: true
   negation:
     mechanical:
       latex: '\neg\left(\exists f:P\to W\;
@@ -167,10 +402,21 @@ logical_forms:
         binder: *id002
         restriction: null
         body:
-          kind: relation
-          relation: \neq
-          left: *id003
-          right: *id004
+          kind: or
+          left:
+            kind: relation
+            relation: \neq
+            left: *id003
+            right: *id004
+          right:
+            kind: exists
+            binder: *id005
+            restriction: null
+            body:
+              kind: relation
+              relation: \neq
+              left: *id006
+              right: *id007
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

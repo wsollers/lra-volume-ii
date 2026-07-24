@@ -40,15 +40,23 @@ statement:
     There exists a Peano system.
 
     \end{axiom}'
-  semantic_ast:
-    kind: raw_latex
-    latex: '\begin{axiom}[Existence of a Peano System]
-
-      \label{ax:peano-system-existence}
-
-      There exists a Peano system.
-
-      \end{axiom}'
+  semantic_ast: &id001
+    kind: exists
+    binder: &id002
+      binder_id: P
+      symbol: P
+      domain: null
+    restriction: null
+    body:
+      kind: exists
+      binder: &id003
+        binder_id: S
+        symbol: S
+        domain: null
+      restriction: null
+      body: &id004
+        kind: raw_latex
+        latex: (P,S,1)\text{ is a Peano system}
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -56,31 +64,52 @@ logical_forms:
       \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
 
       \]'
-    ast:
-      kind: exists
-      binder:
-        binder_id: e2
-        symbol: e_2
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
-        kind: exists
-        binder:
-          binder_id: e1
-          symbol: e_1
-          domain:
-            kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: raw_latex
-          latex: '\[
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
 
-            \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
+        \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
 
-            \]'
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: exists
+          binder:
+            binder_id: P
+            symbol: P
+            domain: null
+          restriction: null
+          body:
+            kind: exists
+            binder:
+              binder_id: S
+              symbol: S
+              domain: null
+            restriction: null
+            body:
+              kind: raw_latex
+              latex: (P,S,1)\text{ is a Peano system}
+      lark_parser:
+        available: true
+        ast:
+          kind: exists
+          binder:
+            binder_id: P
+            symbol: P
+            domain: null
+          restriction: null
+          body:
+            kind: exists
+            binder:
+              binder_id: S
+              symbol: S
+              domain: null
+            restriction: null
+            body:
+              kind: raw_latex
+              latex: (P,S,1)\text{ is a Peano system}
+      parsers_agree: true
   predicate_reading:
     latex: \exists P\;\exists S\;\operatorname{PeanoSystem}(P,S,1).
     ast:
@@ -167,89 +196,23 @@ logical_forms:
       parsers_agree: true
   negation:
     mechanical:
-      latex: '\neg(\[
-
-        \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
-
-        \])'
+      latex: \neg\left(\exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).\right)
       ast:
-        kind: exists
-        binder:
-          binder_id: w1
-          symbol: w
-          domain:
-            kind: raw_latex
-            latex: counterexample context
-        restriction: null
-        body:
-          kind: exists
-          binder:
-            binder_id: e2
-            symbol: e_2
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: exists
-            binder:
-              binder_id: e1
-              symbol: e_1
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: not
-              operand:
-                kind: raw_latex
-                latex: '\neg(\[
-
-                  \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
-
-                  \])'
+        kind: not
+        operand: *id001
     approved_normal_form:
-      latex: '\neg(\[
-
-        \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
-
-        \])'
+      latex: null
       ast:
-        kind: exists
-        binder:
-          binder_id: w1
-          symbol: w
-          domain:
-            kind: raw_latex
-            latex: counterexample context
+        kind: forall
+        binder: *id002
         restriction: null
         body:
-          kind: exists
-          binder:
-            binder_id: e2
-            symbol: e_2
-            domain:
-              kind: raw_latex
-              latex: ambient context
+          kind: forall
+          binder: *id003
           restriction: null
           body:
-            kind: exists
-            binder:
-              binder_id: e1
-              symbol: e_1
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: not
-              operand:
-                kind: raw_latex
-                latex: '\neg(\[
-
-                  \exists P\;\exists S\;\bigl((P,S,1)\text{ is a Peano system}\bigr).
-
-                  \])'
+            kind: not
+            operand: *id004
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

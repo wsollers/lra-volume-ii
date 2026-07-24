@@ -62,22 +62,9 @@ statement:
     \hyperref[prf:iterator-relation-consistency]{Go to proof.}
 
     \end{lemma}'
-  semantic_ast:
+  semantic_ast: &id001
     kind: raw_latex
-    latex: '\begin{lemma}[The Minimal Iterator Relation Is an Iterator Relation]
-
-      \label{lem:iterator-relation-consistency}
-
-      Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and
-      let
-
-      $R^*$ be the minimal iterator relation for $(W,c,g)$. Then $R^*$ is an
-
-      iterator relation for $(W,c,g)$.
-
-      \hyperref[prf:iterator-relation-consistency]{Go to proof.}
-
-      \end{lemma}'
+    latex: R^* \text{ is an iterator relation for } (W,c,g)
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -85,13 +72,24 @@ logical_forms:
       R^* \text{ is an iterator relation for } (W,c,g).
 
       \]'
-    ast:
-      kind: raw_latex
-      latex: '\[
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
 
         R^* \text{ is an iterator relation for } (W,c,g).
 
         \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: raw_latex
+          latex: R^* \text{ is an iterator relation for } (W,c,g)
+      lark_parser:
+        available: true
+        ast:
+          kind: raw_latex
+          latex: R^* \text{ is an iterator relation for } (W,c,g)
+      parsers_agree: true
   predicate_reading:
     latex: '\operatorname{MinimalRelation}(R^*,\mathcal C_{\mathrm{it}})
 
@@ -171,59 +169,51 @@ logical_forms:
             - kind: variable
               binder_id: g
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\operatorname{MinimalRelation}(R^*,\\mathcal
-          C_{\\mathrm{it}})\n\\Longrightarrow\n\\operatorname{IteratorRelation}(R^*,(P,S,1),W,c,g).'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: predicate
+            predicate_id: pred:minimal-relation
+            name: MinimalRelation
+            arguments:
+            - kind: variable
+              binder_id: R^*
+            - kind: variable
+              binder_id: mathcal C_mathrmit
+          right:
+            kind: predicate
+            predicate_id: pred:iterator-relation
+            name: IteratorRelation
+            arguments:
+            - kind: variable
+              binder_id: R^*
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+      parsers_agree: true
   negation:
     mechanical:
-      latex: '\[
-
-        R^* \text{ is not an iterator relation for } (W,c,g).
-
-        \]'
+      latex: \neg\left(R^* \text{ is an iterator relation for } (W,c,g).\right)
       ast:
         kind: not
-        operand:
-          kind: raw_latex
-          latex: '\begin{lemma}[The Minimal Iterator Relation Is an Iterator Relation]
-
-            \label{lem:iterator-relation-consistency}
-
-            Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it,
-            and let
-
-            $R^*$ be the minimal iterator relation for $(W,c,g)$. Then $R^*$ is an
-
-            iterator relation for $(W,c,g)$.
-
-            \hyperref[prf:iterator-relation-consistency]{Go to proof.}
-
-            \end{lemma}'
+        operand: *id001
     approved_normal_form:
-      latex: '\[
-
-        R^* \text{ is not an iterator relation for } (W,c,g).
-
-        \]'
+      latex: null
       ast:
         kind: not
-        operand:
-          kind: raw_latex
-          latex: '\begin{lemma}[The Minimal Iterator Relation Is an Iterator Relation]
-
-            \label{lem:iterator-relation-consistency}
-
-            Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it,
-            and let
-
-            $R^*$ be the minimal iterator relation for $(W,c,g)$. Then $R^*$ is an
-
-            iterator relation for $(W,c,g)$.
-
-            \hyperref[prf:iterator-relation-consistency]{Go to proof.}
-
-            \end{lemma}'
+        operand: *id001
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

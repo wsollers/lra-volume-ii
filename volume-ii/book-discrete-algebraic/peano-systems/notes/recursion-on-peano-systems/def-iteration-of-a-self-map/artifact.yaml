@@ -29,7 +29,19 @@ classification:
   logical_framework: mathematical_vernacular
   language_level: mixed
 context: []
-parameters: []
+parameters:
+- id: P
+  symbol: P
+- id: S
+  symbol: S
+- id: W
+  symbol: W
+- id: c
+  symbol: c
+- id: f
+  symbol: f
+- id: g
+  symbol: g
 assumptions: []
 statement:
   canonical_prose: Iteration of a Self-Map
@@ -44,22 +56,14 @@ statement:
     the \emph{iteration of $g$ from $c$ along $P$}.
 
     \end{definition}'
-  semantic_ast:
+  semantic_ast: &id001
     kind: iff
-    left:
+    left: &id002
       kind: raw_latex
-      latex: left side
-    right:
+      latex: f \text{ is the iteration of } g \text{ from } c \text{ along } P
+    right: &id003
       kind: raw_latex
-      latex: '\[
-
-        f \text{ is the iteration of } g \text{ from } c \text{ along } P
-
-        \Longleftrightarrow
-
-        f \text{ is the iterator-generated function determined by } (W,c,g).
-
-        \]'
+      latex: f \text{ is the iterator-generated function determined by } (W,c,g)
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -71,70 +75,165 @@ logical_forms:
       f \text{ is the iterator-generated function determined by } (W,c,g).
 
       \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        f \text{ is the iteration of } g \text{ from } c \text{ along } P
+
+        \Longleftrightarrow
+
+        f \text{ is the iterator-generated function determined by } (W,c,g).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iteration of } g \text{ from } c \text{ along }
+              P
+          right:
+            kind: raw_latex
+            latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iteration of } g \text{ from } c \text{ along }
+              P
+          right:
+            kind: raw_latex
+            latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+      parsers_agree: true
+  predicate_reading:
+    latex: 'f \text{ is the iteration of } g \text{ from } c \text{ along } P
+
+      \Longleftrightarrow
+
+      \operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g).'
     ast:
       kind: iff
       left:
         kind: raw_latex
-        latex: left side
+        latex: f \text{ is the iteration of } g \text{ from } c \text{ along } P
       right:
-        kind: raw_latex
-        latex: '\[
+        kind: predicate
+        predicate_id: pred:iterator-generated-function
+        name: IteratorGeneratedFunction
+        arguments:
+        - kind: variable
+          binder_id: f
+        - kind: tuple
+          elements:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+        - kind: variable
+          binder_id: W
+        - kind: variable
+          binder_id: c
+        - kind: variable
+          binder_id: g
+    parser_witnesses:
+      original_latex: 'f \text{ is the iteration of } g \text{ from } c \text{ along
+        } P
 
-          f \text{ is the iteration of } g \text{ from } c \text{ along } P
+        \Longleftrightarrow
 
-          \Longleftrightarrow
-
-          f \text{ is the iterator-generated function determined by } (W,c,g).
-
-          \]'
-  predicate_reading: null
+        \operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g).'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iteration of } g \text{ from } c \text{ along }
+              P
+          right:
+            kind: predicate
+            predicate_id: pred:iterator-generated-function
+            name: IteratorGeneratedFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iteration of } g \text{ from } c \text{ along }
+              P
+          right:
+            kind: predicate
+            predicate_id: pred:iterator-generated-function
+            name: IteratorGeneratedFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+      parsers_agree: true
   negation:
     mechanical:
-      latex: '\[
-
-        f \text{ is not the iteration of } g \text{ from } c \text{ along } P
+      latex: '\neg\left(f \text{ is the iteration of } g \text{ from } c \text{ along
+        } P
 
         \Longleftrightarrow
 
-        f \text{ is not the iterator-generated function determined by } (W,c,g).
-
-        \]'
+        f \text{ is the iterator-generated function determined by } (W,c,g).\right)'
       ast:
         kind: not
-        operand:
-          kind: raw_latex
-          latex: '\[
-
-            f \text{ is the iteration of } g \text{ from } c \text{ along } P
-
-            \Longleftrightarrow
-
-            f \text{ is the iterator-generated function determined by } (W,c,g).
-
-            \]'
+        operand: *id001
     approved_normal_form:
-      latex: '\[
-
-        f \text{ is not the iteration of } g \text{ from } c \text{ along } P
-
-        \Longleftrightarrow
-
-        f \text{ is not the iterator-generated function determined by } (W,c,g).
-
-        \]'
+      latex: null
       ast:
-        kind: not
-        operand:
-          kind: raw_latex
-          latex: '\[
-
-            f \text{ is the iteration of } g \text{ from } c \text{ along } P
-
-            \Longleftrightarrow
-
-            f \text{ is the iterator-generated function determined by } (W,c,g).
-
-            \]'
+        kind: or
+        left:
+          kind: and
+          left: *id002
+          right:
+            kind: not
+            operand: *id003
+        right:
+          kind: and
+          left:
+            kind: not
+            operand: *id002
+          right: *id003
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

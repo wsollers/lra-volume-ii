@@ -29,7 +29,15 @@ classification:
   logical_framework: mathematical_vernacular
   language_level: mixed
 context: []
-parameters: []
+parameters:
+- id: W
+  symbol: W
+- id: c
+  symbol: c
+- id: g
+  symbol: g
+- id: function_space
+  symbol: function_space
 assumptions: []
 statement:
   canonical_prose: Iterator Data
@@ -44,22 +52,41 @@ statement:
     for $(P,S,1)$.
 
     \end{definition}'
-  semantic_ast:
+  semantic_ast: &id001
     kind: iff
-    left:
+    left: &id002
       kind: raw_latex
-      latex: left side
-    right:
-      kind: raw_latex
-      latex: '\[
-
-        (W,c,g) \text{ is iterator data for } (P,S,1)
-
-        \Longleftrightarrow
-
-        \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
-
-        \]'
+      latex: (W,c,g) \text{ is iterator data for } (P,S,1)
+    right: &id007
+      kind: and
+      left: &id003
+        kind: raw_latex
+        latex: W \text{ is a set}
+      right:
+        kind: and
+        left:
+          kind: relation
+          relation: \in
+          left: &id004
+            kind: variable
+            binder_id: c
+          right: &id005
+            kind: variable
+            binder_id: W
+        right: &id006
+          kind: relation
+          relation: \colon
+          left:
+            kind: variable
+            binder_id: g
+          right:
+            kind: application
+            function: function_space
+            arguments:
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: W
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -71,72 +98,276 @@ logical_forms:
       \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
 
       \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        (W,c,g) \text{ is iterator data for } (P,S,1)
+
+        \Longleftrightarrow
+
+        \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: (W,c,g) \text{ is iterator data for } (P,S,1)
+          right:
+            kind: and
+            left:
+              kind: raw_latex
+              latex: W \text{ is a set}
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: \in
+                left:
+                  kind: variable
+                  binder_id: c
+                right:
+                  kind: variable
+                  binder_id: W
+              right:
+                kind: relation
+                relation: \colon
+                left:
+                  kind: variable
+                  binder_id: g
+                right:
+                  kind: application
+                  function: function_space
+                  arguments:
+                  - kind: variable
+                    binder_id: W
+                  - kind: variable
+                    binder_id: W
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: (W,c,g) \text{ is iterator data for } (P,S,1)
+          right:
+            kind: and
+            left:
+              kind: raw_latex
+              latex: W \text{ is a set}
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: \in
+                left:
+                  kind: variable
+                  binder_id: c
+                right:
+                  kind: variable
+                  binder_id: W
+              right:
+                kind: relation
+                relation: \colon
+                left:
+                  kind: variable
+                  binder_id: g
+                right:
+                  kind: application
+                  function: function_space
+                  arguments:
+                  - kind: variable
+                    binder_id: W
+                  - kind: variable
+                    binder_id: W
+      parsers_agree: true
+  predicate_reading:
+    latex: '\operatorname{IteratorData}(W,c,g)
+
+      \Longleftrightarrow
+
+      \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).'
     ast:
       kind: iff
       left:
-        kind: raw_latex
-        latex: left side
+        kind: predicate
+        predicate_id: pred:iterator-data
+        name: IteratorData
+        arguments:
+        - kind: variable
+          binder_id: W
+        - kind: variable
+          binder_id: c
+        - kind: variable
+          binder_id: g
       right:
-        kind: raw_latex
-        latex: '\[
+        kind: and
+        left:
+          kind: raw_latex
+          latex: W \text{ is a set}
+        right:
+          kind: and
+          left:
+            kind: relation
+            relation: \in
+            left:
+              kind: variable
+              binder_id: c
+            right:
+              kind: variable
+              binder_id: W
+          right:
+            kind: relation
+            relation: \colon
+            left:
+              kind: variable
+              binder_id: g
+            right:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: W
+              - kind: variable
+                binder_id: W
+    parser_witnesses:
+      original_latex: '\operatorname{IteratorData}(W,c,g)
 
-          (W,c,g) \text{ is iterator data for } (P,S,1)
+        \Longleftrightarrow
 
-          \Longleftrightarrow
-
-          \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
-
-          \]'
-  predicate_reading: null
+        \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:iterator-data
+            name: IteratorData
+            arguments:
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+          right:
+            kind: and
+            left:
+              kind: raw_latex
+              latex: W \text{ is a set}
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: \in
+                left:
+                  kind: variable
+                  binder_id: c
+                right:
+                  kind: variable
+                  binder_id: W
+              right:
+                kind: relation
+                relation: \colon
+                left:
+                  kind: variable
+                  binder_id: g
+                right:
+                  kind: application
+                  function: function_space
+                  arguments:
+                  - kind: variable
+                    binder_id: W
+                  - kind: variable
+                    binder_id: W
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:iterator-data
+            name: IteratorData
+            arguments:
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+          right:
+            kind: and
+            left:
+              kind: raw_latex
+              latex: W \text{ is a set}
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: \in
+                left:
+                  kind: variable
+                  binder_id: c
+                right:
+                  kind: variable
+                  binder_id: W
+              right:
+                kind: relation
+                relation: \colon
+                left:
+                  kind: variable
+                  binder_id: g
+                right:
+                  kind: application
+                  function: function_space
+                  arguments:
+                  - kind: variable
+                    binder_id: W
+                  - kind: variable
+                    binder_id: W
+      parsers_agree: true
   negation:
     mechanical:
-      latex: '\[
-
-        (W,c,g) \text{ is not iterator data for } (P,S,1)
+      latex: '\neg\left((W,c,g) \text{ is iterator data for } (P,S,1)
 
         \Longleftrightarrow
 
-        \bigl(W \text{ is not a set}\lor c\notin W\lor g \text{ is not a function
-        } W\to W\bigr).
-
-        \]'
+        \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).\right)'
       ast:
         kind: not
-        operand:
-          kind: raw_latex
-          latex: '\[
-
-            (W,c,g) \text{ is iterator data for } (P,S,1)
-
-            \Longleftrightarrow
-
-            \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
-
-            \]'
+        operand: *id001
     approved_normal_form:
-      latex: '\[
-
-        (W,c,g) \text{ is not iterator data for } (P,S,1)
-
-        \Longleftrightarrow
-
-        \bigl(W \text{ is not a set}\lor c\notin W\lor g \text{ is not a function
-        } W\to W\bigr).
-
-        \]'
+      latex: null
       ast:
-        kind: not
-        operand:
-          kind: raw_latex
-          latex: '\[
-
-            (W,c,g) \text{ is iterator data for } (P,S,1)
-
-            \Longleftrightarrow
-
-            \bigl(W \text{ is a set}\land c\in W\land g:W\to W\bigr).
-
-            \]'
+        kind: or
+        left:
+          kind: and
+          left: *id002
+          right:
+            kind: or
+            left:
+              kind: not
+              operand: *id003
+            right:
+              kind: or
+              left:
+                kind: relation
+                relation: \notin
+                left: *id004
+                right: *id005
+              right:
+                kind: not
+                operand: *id006
+        right:
+          kind: and
+          left:
+            kind: not
+            operand: *id002
+          right: *id007
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

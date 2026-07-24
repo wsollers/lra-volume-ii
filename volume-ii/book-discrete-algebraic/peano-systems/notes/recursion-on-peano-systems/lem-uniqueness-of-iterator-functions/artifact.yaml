@@ -29,7 +29,27 @@ classification:
   logical_framework: mathematical_vernacular
   language_level: mixed
 context: []
-parameters: []
+parameters:
+- id: P
+  symbol: P
+- id: S
+  symbol: S
+- id: f
+  symbol: f
+- id: g
+  symbol: g
+- id: h
+  symbol: h
+- id: h)
+  symbol: h)
+- id: n
+  symbol: n
+- id: W
+  symbol: W
+- id: c
+  symbol: c
+- id: function_space
+  symbol: function_space
 assumptions: []
 statement:
   canonical_prose: Uniqueness of Iterator Functions
@@ -64,58 +84,128 @@ statement:
     \hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}
 
     \end{lemma}'
-  semantic_ast:
+  semantic_ast: &id002
     kind: forall
-    binder:
-      binder_id: f2
-      symbol: f_2
-      domain:
-        kind: raw_latex
-        latex: ambient context
+    binder: &id008
+      binder_id: f
+      symbol: f
+      domain: &id001
+        kind: application
+        function: function_space
+        arguments:
+        - kind: variable
+          binder_id: P
+        - kind: variable
+          binder_id: W
     restriction: null
     body:
       kind: forall
-      binder:
-        binder_id: f1
-        symbol: f_1
-        domain:
-          kind: raw_latex
-          latex: ambient context
+      binder: &id009
+        binder_id: h
+        symbol: h
+        domain: *id001
       restriction: null
       body:
-        kind: raw_latex
-        latex: '\begin{lemma}[Uniqueness of Iterator Functions]
-
-          \label{lem:uniqueness-of-iterator-functions}
-
-          Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for
-          it. If
-
-          $f,h:P\to W$ satisfy
-
-          \[
-
-          f(1)=c,\qquad h(1)=c,
-
-          \]
-
-          and
-
-          \[
-
-          \forall n\in P\;(f(S(n))=g(f(n)))
-
-          \qquad\text{and}\qquad
-
-          \forall n\in P\;(h(S(n))=g(h(n))),
-
-          \]
-
-          then $f=h$.
-
-          \hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}
-
-          \end{lemma}'
+        kind: implies
+        left: &id010
+          kind: and
+          left:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: f
+              arguments:
+              - kind: constant
+                name: '1'
+            right:
+              kind: variable
+              binder_id: c
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: h
+                arguments:
+                - kind: constant
+                  name: '1'
+              right:
+                kind: variable
+                binder_id: c
+            right:
+              kind: and
+              left:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: f
+                    arguments:
+                    - kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: g
+                    arguments:
+                    - kind: application
+                      function: f
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: h
+                    arguments:
+                    - kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: g
+                    arguments:
+                    - kind: application
+                      function: h
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+        right:
+          kind: relation
+          relation: '='
+          left: &id011
+            kind: variable
+            binder_id: f
+          right: &id012
+            kind: variable
+            binder_id: h
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -135,69 +225,528 @@ logical_forms:
       \end{aligned}
 
       \]'
+    ast: *id002
+    parser_witnesses:
+      original_latex: '\[
+
+        \begin{aligned}
+
+        \forall f,h:P\to W\;\Bigl(&
+
+        f(1)=c\land h(1)=c\\
+
+        &\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+
+        &\land \forall n\in P\;(h(S(n))=g(h(n)))
+
+        \Longrightarrow f=h\Bigr).
+
+        \end{aligned}
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: f
+            symbol: f
+            domain: &id003
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: forall
+            binder:
+              binder_id: h
+              symbol: h
+              domain: *id003
+            restriction: null
+            body:
+              kind: implies
+              left:
+                kind: and
+                left:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: f
+                    arguments:
+                    - kind: constant
+                      name: '1'
+                  right:
+                    kind: variable
+                    binder_id: c
+                right:
+                  kind: and
+                  left:
+                    kind: relation
+                    relation: '='
+                    left:
+                      kind: application
+                      function: h
+                      arguments:
+                      - kind: constant
+                        name: '1'
+                    right:
+                      kind: variable
+                      binder_id: c
+                  right:
+                    kind: and
+                    left:
+                      kind: forall
+                      binder:
+                        binder_id: n
+                        symbol: n
+                        domain:
+                          kind: variable
+                          binder_id: P
+                      restriction: null
+                      body:
+                        kind: relation
+                        relation: '='
+                        left:
+                          kind: application
+                          function: f
+                          arguments:
+                          - kind: application
+                            function: S
+                            arguments:
+                            - kind: variable
+                              binder_id: n
+                        right:
+                          kind: application
+                          function: g
+                          arguments:
+                          - kind: application
+                            function: f
+                            arguments:
+                            - kind: variable
+                              binder_id: n
+                    right:
+                      kind: forall
+                      binder:
+                        binder_id: n
+                        symbol: n
+                        domain:
+                          kind: variable
+                          binder_id: P
+                      restriction: null
+                      body:
+                        kind: relation
+                        relation: '='
+                        left:
+                          kind: application
+                          function: h
+                          arguments:
+                          - kind: application
+                            function: S
+                            arguments:
+                            - kind: variable
+                              binder_id: n
+                        right:
+                          kind: application
+                          function: g
+                          arguments:
+                          - kind: application
+                            function: h
+                            arguments:
+                            - kind: variable
+                              binder_id: n
+              right:
+                kind: relation
+                relation: '='
+                left:
+                  kind: variable
+                  binder_id: f
+                right:
+                  kind: variable
+                  binder_id: h
+      lark_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: f
+            symbol: f
+            domain: &id004
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: forall
+            binder:
+              binder_id: h
+              symbol: h
+              domain: *id004
+            restriction: null
+            body:
+              kind: implies
+              left:
+                kind: and
+                left:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: f
+                    arguments:
+                    - kind: constant
+                      name: '1'
+                  right:
+                    kind: variable
+                    binder_id: c
+                right:
+                  kind: and
+                  left:
+                    kind: relation
+                    relation: '='
+                    left:
+                      kind: application
+                      function: h
+                      arguments:
+                      - kind: constant
+                        name: '1'
+                    right:
+                      kind: variable
+                      binder_id: c
+                  right:
+                    kind: and
+                    left:
+                      kind: forall
+                      binder:
+                        binder_id: n
+                        symbol: n
+                        domain:
+                          kind: variable
+                          binder_id: P
+                      restriction: null
+                      body:
+                        kind: relation
+                        relation: '='
+                        left:
+                          kind: application
+                          function: f
+                          arguments:
+                          - kind: application
+                            function: S
+                            arguments:
+                            - kind: variable
+                              binder_id: n
+                        right:
+                          kind: application
+                          function: g
+                          arguments:
+                          - kind: application
+                            function: f
+                            arguments:
+                            - kind: variable
+                              binder_id: n
+                    right:
+                      kind: forall
+                      binder:
+                        binder_id: n
+                        symbol: n
+                        domain:
+                          kind: variable
+                          binder_id: P
+                      restriction: null
+                      body:
+                        kind: relation
+                        relation: '='
+                        left:
+                          kind: application
+                          function: h
+                          arguments:
+                          - kind: application
+                            function: S
+                            arguments:
+                            - kind: variable
+                              binder_id: n
+                        right:
+                          kind: application
+                          function: g
+                          arguments:
+                          - kind: application
+                            function: h
+                            arguments:
+                            - kind: variable
+                              binder_id: n
+              right:
+                kind: relation
+                relation: '='
+                left:
+                  kind: variable
+                  binder_id: f
+                right:
+                  kind: variable
+                  binder_id: h
+      parsers_agree: true
+  predicate_reading:
+    latex: '\forall f,h:P\to W\;
+
+      \bigl(\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
+
+      \land \operatorname{IteratorFunction}(h,(P,S,1),W,c,g)
+
+      \Longrightarrow f=h\bigr).'
     ast:
       kind: forall
       binder:
-        binder_id: f4
-        symbol: f_4
-        domain:
-          kind: raw_latex
-          latex: ambient context
+        binder_id: f
+        symbol: f
+        domain: &id005
+          kind: application
+          function: function_space
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: W
       restriction: null
       body:
         kind: forall
         binder:
-          binder_id: f3
-          symbol: f_3
-          domain:
-            kind: raw_latex
-            latex: ambient context
+          binder_id: h
+          symbol: h
+          domain: *id005
         restriction: null
         body:
+          kind: implies
+          left:
+            kind: and
+            left:
+              kind: predicate
+              predicate_id: pred:iterator-function
+              name: IteratorFunction
+              arguments:
+              - kind: variable
+                binder_id: f
+              - kind: tuple
+                elements:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: S
+                - kind: constant
+                  name: '1'
+              - kind: variable
+                binder_id: W
+              - kind: variable
+                binder_id: c
+              - kind: variable
+                binder_id: g
+            right:
+              kind: predicate
+              predicate_id: pred:iterator-function
+              name: IteratorFunction
+              arguments:
+              - kind: variable
+                binder_id: h
+              - kind: tuple
+                elements:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: S
+                - kind: constant
+                  name: '1'
+              - kind: variable
+                binder_id: W
+              - kind: variable
+                binder_id: c
+              - kind: variable
+                binder_id: g
+          right:
+            kind: relation
+            relation: '='
+            left:
+              kind: variable
+              binder_id: f
+            right:
+              kind: variable
+              binder_id: h
+    parser_witnesses:
+      original_latex: '\forall f,h:P\to W\;
+
+        \bigl(\operatorname{IteratorFunction}(f,(P,S,1),W,c,g)
+
+        \land \operatorname{IteratorFunction}(h,(P,S,1),W,c,g)
+
+        \Longrightarrow f=h\bigr).'
+      hand_parser:
+        available: true
+        ast:
           kind: forall
           binder:
-            binder_id: f2
-            symbol: f_2
-            domain:
-              kind: raw_latex
-              latex: ambient context
+            binder_id: f
+            symbol: f
+            domain: &id006
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
           restriction: null
           body:
             kind: forall
             binder:
-              binder_id: f1
-              symbol: f_1
-              domain:
-                kind: raw_latex
-                latex: ambient context
+              binder_id: h
+              symbol: h
+              domain: *id006
             restriction: null
             body:
-              kind: raw_latex
-              latex: '\[
-
-                \begin{aligned}
-
-                \forall f,h:P\to W\;\Bigl(&
-
-                f(1)=c\land h(1)=c\\
-
-                &\land \forall n\in P\;(f(S(n))=g(f(n)))\\
-
-                &\land \forall n\in P\;(h(S(n))=g(h(n)))
-
-                \Longrightarrow f=h\Bigr).
-
-                \end{aligned}
-
-                \]'
-  predicate_reading: null
+              kind: implies
+              left:
+                kind: and
+                left:
+                  kind: predicate
+                  predicate_id: pred:iterator-function
+                  name: IteratorFunction
+                  arguments:
+                  - kind: variable
+                    binder_id: f
+                  - kind: tuple
+                    elements:
+                    - kind: variable
+                      binder_id: P
+                    - kind: variable
+                      binder_id: S
+                    - kind: constant
+                      name: '1'
+                  - kind: variable
+                    binder_id: W
+                  - kind: variable
+                    binder_id: c
+                  - kind: variable
+                    binder_id: g
+                right:
+                  kind: predicate
+                  predicate_id: pred:iterator-function
+                  name: IteratorFunction
+                  arguments:
+                  - kind: variable
+                    binder_id: h
+                  - kind: tuple
+                    elements:
+                    - kind: variable
+                      binder_id: P
+                    - kind: variable
+                      binder_id: S
+                    - kind: constant
+                      name: '1'
+                  - kind: variable
+                    binder_id: W
+                  - kind: variable
+                    binder_id: c
+                  - kind: variable
+                    binder_id: g
+              right:
+                kind: relation
+                relation: '='
+                left:
+                  kind: variable
+                  binder_id: f
+                right:
+                  kind: variable
+                  binder_id: h
+      lark_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: f
+            symbol: f
+            domain: &id007
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: forall
+            binder:
+              binder_id: h
+              symbol: h
+              domain: *id007
+            restriction: null
+            body:
+              kind: implies
+              left:
+                kind: and
+                left:
+                  kind: predicate
+                  predicate_id: pred:iterator-function
+                  name: IteratorFunction
+                  arguments:
+                  - kind: variable
+                    binder_id: f
+                  - kind: tuple
+                    elements:
+                    - kind: variable
+                      binder_id: P
+                    - kind: variable
+                      binder_id: S
+                    - kind: constant
+                      name: '1'
+                  - kind: variable
+                    binder_id: W
+                  - kind: variable
+                    binder_id: c
+                  - kind: variable
+                    binder_id: g
+                right:
+                  kind: predicate
+                  predicate_id: pred:iterator-function
+                  name: IteratorFunction
+                  arguments:
+                  - kind: variable
+                    binder_id: h
+                  - kind: tuple
+                    elements:
+                    - kind: variable
+                      binder_id: P
+                    - kind: variable
+                      binder_id: S
+                    - kind: constant
+                      name: '1'
+                  - kind: variable
+                    binder_id: W
+                  - kind: variable
+                    binder_id: c
+                  - kind: variable
+                    binder_id: g
+              right:
+                kind: relation
+                relation: '='
+                left:
+                  kind: variable
+                  binder_id: f
+                right:
+                  kind: variable
+                  binder_id: h
+      parsers_agree: true
   negation:
     mechanical:
-      latex: '\[
+      latex: '\neg\left(\begin{aligned}
 
-        \begin{aligned}
-
-        \exists f,h:P\to W\;\Bigl(&
+        \forall f,h:P\to W\;\Bigl(&
 
         f(1)=c\land h(1)=c\\
 
@@ -205,137 +754,30 @@ logical_forms:
 
         &\land \forall n\in P\;(h(S(n))=g(h(n)))
 
-        \land f\neq h\Bigr).
+        \Longrightarrow f=h\Bigr).
 
-        \end{aligned}
-
-        \]'
+        \end{aligned}\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f2
-            symbol: f_2
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: forall
-            binder:
-              binder_id: f1
-              symbol: f_1
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: raw_latex
-              latex: '\begin{lemma}[Uniqueness of Iterator Functions]
-
-                \label{lem:uniqueness-of-iterator-functions}
-
-                Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data
-                for it. If
-
-                $f,h:P\to W$ satisfy
-
-                \[
-
-                f(1)=c,\qquad h(1)=c,
-
-                \]
-
-                and
-
-                \[
-
-                \forall n\in P\;(f(S(n))=g(f(n)))
-
-                \qquad\text{and}\qquad
-
-                \forall n\in P\;(h(S(n))=g(h(n))),
-
-                \]
-
-                then $f=h$.
-
-                \hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}
-
-                \end{lemma}'
+        operand: *id002
     approved_normal_form:
-      latex: '\[
-
-        \begin{aligned}
-
-        \exists f,h:P\to W\;\Bigl(&
-
-        f(1)=c\land h(1)=c\\
-
-        &\land \forall n\in P\;(f(S(n))=g(f(n)))\\
-
-        &\land \forall n\in P\;(h(S(n))=g(h(n)))
-
-        \land f\neq h\Bigr).
-
-        \end{aligned}
-
-        \]'
+      latex: null
       ast:
-        kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f2
-            symbol: f_2
-            domain:
-              kind: raw_latex
-              latex: ambient context
+        kind: exists
+        binder: *id008
+        restriction: null
+        body:
+          kind: exists
+          binder: *id009
           restriction: null
           body:
-            kind: forall
-            binder:
-              binder_id: f1
-              symbol: f_1
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: raw_latex
-              latex: '\begin{lemma}[Uniqueness of Iterator Functions]
-
-                \label{lem:uniqueness-of-iterator-functions}
-
-                Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data
-                for it. If
-
-                $f,h:P\to W$ satisfy
-
-                \[
-
-                f(1)=c,\qquad h(1)=c,
-
-                \]
-
-                and
-
-                \[
-
-                \forall n\in P\;(f(S(n))=g(f(n)))
-
-                \qquad\text{and}\qquad
-
-                \forall n\in P\;(h(S(n))=g(h(n))),
-
-                \]
-
-                then $f=h$.
-
-                \hyperref[prf:uniqueness-of-iterator-functions]{Go to proof.}
-
-                \end{lemma}'
+            kind: and
+            left: *id010
+            right:
+              kind: relation
+              relation: \neq
+              left: *id011
+              right: *id012
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

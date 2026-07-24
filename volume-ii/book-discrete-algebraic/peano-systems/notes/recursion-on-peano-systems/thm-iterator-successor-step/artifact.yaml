@@ -64,35 +64,41 @@ statement:
     \hyperref[prf:iterator-successor-step]{Go to proof.}
 
     \end{theorem}'
-  semantic_ast:
-    kind: forall
-    binder:
-      binder_id: f1
-      symbol: f_1
-      domain:
-        kind: raw_latex
-        latex: ambient context
-    restriction: null
-    body:
+  semantic_ast: &id001
+    kind: implies
+    left: &id002
       kind: raw_latex
-      latex: '\begin{theorem}[Iterator Successor Clause]
-
-        \label{thm:iterator-successor-step}
-
-        Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and
-        let
-
-        $f$ be the iterator-generated function determined by $(W,c,g)$. Then
-
-        \[
-
-        \forall n\in P\;(f(S(n))=g(f(n))).
-
-        \]
-
-        \hyperref[prf:iterator-successor-step]{Go to proof.}
-
-        \end{theorem}'
+      latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+    right:
+      kind: forall
+      binder: &id003
+        binder_id: n
+        symbol: n
+        domain:
+          kind: variable
+          binder_id: P
+      restriction: null
+      body:
+        kind: relation
+        relation: '='
+        left: &id004
+          kind: application
+          function: f
+          arguments:
+          - kind: application
+            function: S
+            arguments:
+            - kind: variable
+              binder_id: n
+        right: &id005
+          kind: application
+          function: g
+          arguments:
+          - kind: application
+            function: f
+            arguments:
+            - kind: variable
+              binder_id: n
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -104,26 +110,92 @@ logical_forms:
       \forall n\in P\;(f(S(n))=g(f(n))).
 
       \]'
-    ast:
-      kind: forall
-      binder:
-        binder_id: f1
-        symbol: f_1
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
-        kind: raw_latex
-        latex: '\[
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
 
-          f \text{ is the iterator-generated function determined by } (W,c,g)
+        f \text{ is the iterator-generated function determined by } (W,c,g)
 
-          \Longrightarrow
+        \Longrightarrow
 
-          \forall n\in P\;(f(S(n))=g(f(n))).
+        \forall n\in P\;(f(S(n))=g(f(n))).
 
-          \]'
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+          right:
+            kind: forall
+            binder:
+              binder_id: n
+              symbol: n
+              domain:
+                kind: variable
+                binder_id: P
+            restriction: null
+            body:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: f
+                arguments:
+                - kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+              right:
+                kind: application
+                function: g
+                arguments:
+                - kind: application
+                  function: f
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+          right:
+            kind: forall
+            binder:
+              binder_id: n
+              symbol: n
+              domain:
+                kind: variable
+                binder_id: P
+            restriction: null
+            body:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: f
+                arguments:
+                - kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+              right:
+                kind: application
+                function: g
+                arguments:
+                - kind: application
+                  function: f
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+      parsers_agree: true
   predicate_reading:
     latex: '\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
 
@@ -302,47 +374,29 @@ logical_forms:
       parsers_agree: true
   negation:
     mechanical:
-      latex: '\neg(\[
-
-        f \text{ is the iterator-generated function determined by } (W,c,g)
+      latex: '\neg\left(f \text{ is the iterator-generated function determined by
+        } (W,c,g)
 
         \Longrightarrow
 
-        \forall n\in P\;(f(S(n))=g(f(n))).
-
-        \])'
+        \forall n\in P\;(f(S(n))=g(f(n))).\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: and
+        left: *id002
+        right:
+          kind: exists
+          binder: *id003
           restriction: null
           body:
-            kind: raw_latex
-            latex: '\begin{theorem}[Iterator Successor Clause]
-
-              \label{thm:iterator-successor-step}
-
-              Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for
-              it, and let
-
-              $f$ be the iterator-generated function determined by $(W,c,g)$. Then
-
-              \[
-
-              \forall n\in P\;(f(S(n))=g(f(n))).
-
-              \]
-
-              \hyperref[prf:iterator-successor-step]{Go to proof.}
-
-              \end{theorem}'
-    approved_normal_form: null
+            kind: relation
+            relation: \neq
+            left: *id004
+            right: *id005
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

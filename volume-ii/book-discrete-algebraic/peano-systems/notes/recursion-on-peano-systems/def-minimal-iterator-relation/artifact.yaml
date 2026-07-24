@@ -29,7 +29,29 @@ classification:
   logical_framework: mathematical_vernacular
   language_level: mixed
 context: []
-parameters: []
+parameters:
+- id: P
+  symbol: P
+- id: R
+  symbol: R
+- id: R^*
+  symbol: R^*
+- id: S
+  symbol: S
+- id: W
+  symbol: W
+- id: c
+  symbol: c
+- id: cartesian_product
+  symbol: cartesian_product
+- id: g
+  symbol: g
+- id: n
+  symbol: n
+- id: subset_of
+  symbol: subset_of
+- id: w
+  symbol: w
 assumptions: []
 statement:
   canonical_prose: Minimal Iterator Relation
@@ -54,35 +76,56 @@ statement:
     \]
 
     \end{definition}'
-  semantic_ast:
+  semantic_ast: &id001
     kind: iff
-    left:
-      kind: raw_latex
-      latex: left side
-    right:
+    left: &id002
+      kind: relation
+      relation: \in
+      left: &id007
+        kind: tuple
+        elements:
+        - kind: variable
+          binder_id: n
+        - kind: variable
+          binder_id: w
+      right: &id008
+        kind: variable
+        binder_id: R^*
+    right: &id009
       kind: forall
-      binder:
-        binder_id: f1
-        symbol: f_1
+      binder: &id003
+        binder_id: R
+        symbol: R
         domain:
-          kind: raw_latex
-          latex: ambient context
+          kind: application
+          function: subset_of
+          arguments:
+          - kind: application
+            function: cartesian_product
+            arguments:
+            - kind: variable
+              binder_id: P
+            - kind: variable
+              binder_id: W
       restriction: null
       body:
-        kind: raw_latex
-        latex: '\[
-
-          (n,w)\in R^*
-
-          \Longleftrightarrow
-
-          \forall R\subseteq P\times W\;
-
-          \bigl(R \text{ is an iterator relation for } (W,c,g)
-
-          \Longrightarrow (n,w)\in R\bigr).
-
-          \]'
+        kind: implies
+        left: &id004
+          kind: raw_latex
+          latex: R \text{ is an iterator relation for } (W,c,g)
+        right:
+          kind: relation
+          relation: \in
+          left: &id005
+            kind: tuple
+            elements:
+            - kind: variable
+              binder_id: n
+            - kind: variable
+              binder_id: w
+          right: &id006
+            kind: variable
+            binder_id: R
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -98,113 +141,262 @@ logical_forms:
       \Longrightarrow (n,w)\in R\bigr).
 
       \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        (n,w)\in R^*
+
+        \Longleftrightarrow
+
+        \forall R\subseteq P\times W\;
+
+        \bigl(R \text{ is an iterator relation for } (W,c,g)
+
+        \Longrightarrow (n,w)\in R\bigr).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: relation
+            relation: \in
+            left:
+              kind: tuple
+              elements:
+              - kind: variable
+                binder_id: n
+              - kind: variable
+                binder_id: w
+            right:
+              kind: variable
+              binder_id: R^*
+          right:
+            kind: forall
+            binder:
+              binder_id: R
+              symbol: R
+              domain:
+                kind: application
+                function: subset_of
+                arguments:
+                - kind: application
+                  function: cartesian_product
+                  arguments:
+                  - kind: variable
+                    binder_id: P
+                  - kind: variable
+                    binder_id: W
+            restriction: null
+            body:
+              kind: implies
+              left:
+                kind: raw_latex
+                latex: R \text{ is an iterator relation for } (W,c,g)
+              right:
+                kind: relation
+                relation: \in
+                left:
+                  kind: tuple
+                  elements:
+                  - kind: variable
+                    binder_id: n
+                  - kind: variable
+                    binder_id: w
+                right:
+                  kind: variable
+                  binder_id: R
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: relation
+            relation: \in
+            left:
+              kind: tuple
+              elements:
+              - kind: variable
+                binder_id: n
+              - kind: variable
+                binder_id: w
+            right:
+              kind: variable
+              binder_id: R^*
+          right:
+            kind: forall
+            binder:
+              binder_id: R
+              symbol: R
+              domain:
+                kind: application
+                function: subset_of
+                arguments:
+                - kind: application
+                  function: cartesian_product
+                  arguments:
+                  - kind: variable
+                    binder_id: P
+                  - kind: variable
+                    binder_id: W
+            restriction: null
+            body:
+              kind: implies
+              left:
+                kind: raw_latex
+                latex: R \text{ is an iterator relation for } (W,c,g)
+              right:
+                kind: relation
+                relation: \in
+                left:
+                  kind: tuple
+                  elements:
+                  - kind: variable
+                    binder_id: n
+                  - kind: variable
+                    binder_id: w
+                right:
+                  kind: variable
+                  binder_id: R
+      parsers_agree: true
+  predicate_reading:
+    latex: '\mathcal C_{\mathrm{it}}(R)
+
+      \Longleftrightarrow
+
+      \operatorname{IteratorRelation}(R,(P,S,1),W,c,g).'
     ast:
       kind: iff
       left:
         kind: raw_latex
-        latex: left side
+        latex: mathcal C_{mathrm{it}}(R)
       right:
-        kind: forall
-        binder:
-          binder_id: f1
-          symbol: f_1
-          domain:
+        kind: predicate
+        predicate_id: pred:iterator-relation
+        name: IteratorRelation
+        arguments:
+        - kind: variable
+          binder_id: R
+        - kind: tuple
+          elements:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+        - kind: variable
+          binder_id: W
+        - kind: variable
+          binder_id: c
+        - kind: variable
+          binder_id: g
+    parser_witnesses:
+      original_latex: '\mathcal C_{\mathrm{it}}(R)
+
+        \Longleftrightarrow
+
+        \operatorname{IteratorRelation}(R,(P,S,1),W,c,g).'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
             kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: raw_latex
-          latex: '\[
-
-            (n,w)\in R^*
-
-            \Longleftrightarrow
-
-            \forall R\subseteq P\times W\;
-
-            \bigl(R \text{ is an iterator relation for } (W,c,g)
-
-            \Longrightarrow (n,w)\in R\bigr).
-
-            \]'
-  predicate_reading: null
+            latex: mathcal C_{mathrm{it}}(R)
+          right:
+            kind: predicate
+            predicate_id: pred:iterator-relation
+            name: IteratorRelation
+            arguments:
+            - kind: variable
+              binder_id: R
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: mathcal C_{mathrm{it}}(R)
+          right:
+            kind: predicate
+            predicate_id: pred:iterator-relation
+            name: IteratorRelation
+            arguments:
+            - kind: variable
+              binder_id: R
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+      parsers_agree: true
   negation:
     mechanical:
-      latex: '\[
-
-        (n,w)\notin R^*
+      latex: '\neg\left((n,w)\in R^*
 
         \Longleftrightarrow
 
-        \exists R\subseteq P\times W\;
+        \forall R\subseteq P\times W\;
 
-        \bigl(R \text{ is an iterator relation for } (W,c,g)\land (n,w)\notin R\bigr).
+        \bigl(R \text{ is an iterator relation for } (W,c,g)
 
-        \]'
+        \Longrightarrow (n,w)\in R\bigr).\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\[
-
-              (n,w)\in R^*
-
-              \Longleftrightarrow
-
-              \forall R\subseteq P\times W\;
-
-              \bigl(R \text{ is an iterator relation for } (W,c,g)
-
-              \Longrightarrow (n,w)\in R\bigr).
-
-              \]'
+        operand: *id001
     approved_normal_form:
-      latex: '\[
-
-        (n,w)\notin R^*
-
-        \Longleftrightarrow
-
-        \exists R\subseteq P\times W\;
-
-        \bigl(R \text{ is an iterator relation for } (W,c,g)\land (n,w)\notin R\bigr).
-
-        \]'
+      latex: null
       ast:
-        kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\[
-
-              (n,w)\in R^*
-
-              \Longleftrightarrow
-
-              \forall R\subseteq P\times W\;
-
-              \bigl(R \text{ is an iterator relation for } (W,c,g)
-
-              \Longrightarrow (n,w)\in R\bigr).
-
-              \]'
+        kind: or
+        left:
+          kind: and
+          left: *id002
+          right:
+            kind: exists
+            binder: *id003
+            restriction: null
+            body:
+              kind: and
+              left: *id004
+              right:
+                kind: relation
+                relation: \notin
+                left: *id005
+                right: *id006
+        right:
+          kind: and
+          left:
+            kind: relation
+            relation: \notin
+            left: *id007
+            right: *id008
+          right: *id009
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

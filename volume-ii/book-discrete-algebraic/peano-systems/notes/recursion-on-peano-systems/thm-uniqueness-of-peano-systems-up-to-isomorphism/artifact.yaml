@@ -29,7 +29,31 @@ classification:
   logical_framework: mathematical_vernacular
   language_level: mixed
 context: []
-parameters: []
+parameters:
+- id: 1_P
+  symbol: 1_P
+- id: 1_Q
+  symbol: 1_Q
+- id: P
+  symbol: P
+- id: Q
+  symbol: Q
+- id: S_P(n)
+  symbol: S_P(n)
+- id: S_Q(theta(n))
+  symbol: S_Q(theta(n))
+- id: function_space
+  symbol: function_space
+- id: theta
+  symbol: theta
+- id: A
+  symbol: A
+- id: B
+  symbol: B
+- id: S_P
+  symbol: S_P
+- id: S_Q
+  symbol: S_Q
 assumptions: []
 statement:
   canonical_prose: Uniqueness of Peano Systems up to Isomorphism
@@ -60,44 +84,69 @@ statement:
     \hyperref[prf:uniqueness-of-peano-systems-up-to-isomorphism]{Go to proof.}
 
     \end{theorem}'
-  semantic_ast:
-    kind: forall
+  semantic_ast: &id001
+    kind: exists_unique
     binder:
-      binder_id: f1
-      symbol: f_1
+      binder_id: theta
+      symbol: \theta
       domain:
-        kind: raw_latex
-        latex: ambient context
+        kind: application
+        function: function_space
+        arguments:
+        - kind: variable
+          binder_id: P
+        - kind: variable
+          binder_id: Q
     restriction: null
     body:
-      kind: raw_latex
-      latex: '\begin{theorem}[Uniqueness of Peano Systems up to Isomorphism]
-
-        \label{thm:uniqueness-of-peano-systems-up-to-isomorphism}
-
-        Let $(P,S_P,1_P)$ and $(Q,S_Q,1_Q)$ be Peano systems. Then there exists a
-
-        unique bijection $\theta:P\to Q$ such that
-
-        \[
-
-        \theta(1_P)=1_Q
-
-        \]
-
-        and
-
-        \[
-
-        \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n))).
-
-        \]
-
-        Thus any two Peano systems are isomorphic.
-
-        \hyperref[prf:uniqueness-of-peano-systems-up-to-isomorphism]{Go to proof.}
-
-        \end{theorem}'
+      kind: and
+      left:
+        kind: raw_latex
+        latex: theta \text{ is bijective}
+      right:
+        kind: and
+        left:
+          kind: relation
+          relation: '='
+          left:
+            kind: application
+            function: theta
+            arguments:
+            - kind: variable
+              binder_id: 1_P
+          right:
+            kind: variable
+            binder_id: 1_Q
+        right:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: theta
+              arguments:
+              - kind: application
+                function: S_P
+                arguments:
+                - kind: variable
+                  binder_id: n
+            right:
+              kind: application
+              function: S_Q
+              arguments:
+              - kind: application
+                function: theta
+                arguments:
+                - kind: variable
+                  binder_id: n
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -109,151 +158,199 @@ logical_forms:
       \land \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
 
       \]'
+    parser_witnesses:
+      original_latex: '\[
+
+        \exists! \theta:P\to Q\;
+
+        \bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q
+
+        \land \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: exists_unique
+          binder:
+            binder_id: theta
+            symbol: \theta
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: Q
+          restriction: null
+          body:
+            kind: and
+            left:
+              kind: raw_latex
+              latex: theta \text{ is bijective}
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: theta
+                  arguments:
+                  - kind: variable
+                    binder_id: 1_P
+                right:
+                  kind: variable
+                  binder_id: 1_Q
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: theta
+                    arguments:
+                    - kind: application
+                      function: S_P
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: S_Q
+                    arguments:
+                    - kind: application
+                      function: theta
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: exists_unique
+          binder:
+            binder_id: theta
+            symbol: \theta
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: Q
+          restriction: null
+          body:
+            kind: and
+            left:
+              kind: raw_latex
+              latex: theta \text{ is bijective}
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: theta
+                  arguments:
+                  - kind: variable
+                    binder_id: 1_P
+                right:
+                  kind: variable
+                  binder_id: 1_Q
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: theta
+                    arguments:
+                    - kind: application
+                      function: S_P
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: S_Q
+                    arguments:
+                    - kind: application
+                      function: theta
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+      parsers_agree: true
+    ast: *id001
+  predicate_reading:
+    latex: \operatorname{Isomorphism}(A,B),
     ast:
-      kind: forall
-      binder:
-        binder_id: f1
-        symbol: f_1
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
-        kind: exists
-        binder:
-          binder_id: e1
-          symbol: e_1
-          domain:
-            kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: raw_latex
-          latex: '\[
-
-            \exists! \theta:P\to Q\;
-
-            \bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q
-
-            \land \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
-
-            \]'
-  predicate_reading: null
+      kind: predicate
+      predicate_id: pred:isomorphism
+      name: Isomorphism
+      arguments:
+      - kind: variable
+        binder_id: A
+      - kind: variable
+        binder_id: B
+    parser_witnesses:
+      original_latex: \operatorname{Isomorphism}(A,B),
+      hand_parser:
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:isomorphism
+          name: Isomorphism
+          arguments:
+          - kind: variable
+            binder_id: A
+          - kind: variable
+            binder_id: B
+      lark_parser:
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:isomorphism
+          name: Isomorphism
+          arguments:
+          - kind: variable
+            binder_id: A
+          - kind: variable
+            binder_id: B
+      parsers_agree: true
   negation:
     mechanical:
-      latex: '\[
+      latex: '\neg\left(\exists! \theta:P\to Q\;
 
-        \begin{aligned}
+        \bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q
 
-        &\neg\exists! \theta:P\to Q\;
-
-        \bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q\\
-
-        &\qquad\qquad\qquad\land
-
-        \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
-
-        \end{aligned}
-
-        \]'
+        \land \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\begin{theorem}[Uniqueness of Peano Systems up to Isomorphism]
-
-              \label{thm:uniqueness-of-peano-systems-up-to-isomorphism}
-
-              Let $(P,S_P,1_P)$ and $(Q,S_Q,1_Q)$ be Peano systems. Then there exists
-              a
-
-              unique bijection $\theta:P\to Q$ such that
-
-              \[
-
-              \theta(1_P)=1_Q
-
-              \]
-
-              and
-
-              \[
-
-              \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n))).
-
-              \]
-
-              Thus any two Peano systems are isomorphic.
-
-              \hyperref[prf:uniqueness-of-peano-systems-up-to-isomorphism]{Go to proof.}
-
-              \end{theorem}'
+        operand: *id001
     approved_normal_form:
-      latex: '\[
-
-        \begin{aligned}
-
-        &\neg\exists! \theta:P\to Q\;
-
-        \bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q\\
-
-        &\qquad\qquad\qquad\land
-
-        \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
-
-        \end{aligned}
-
-        \]'
+      latex: null
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\begin{theorem}[Uniqueness of Peano Systems up to Isomorphism]
-
-              \label{thm:uniqueness-of-peano-systems-up-to-isomorphism}
-
-              Let $(P,S_P,1_P)$ and $(Q,S_Q,1_Q)$ be Peano systems. Then there exists
-              a
-
-              unique bijection $\theta:P\to Q$ such that
-
-              \[
-
-              \theta(1_P)=1_Q
-
-              \]
-
-              and
-
-              \[
-
-              \forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n))).
-
-              \]
-
-              Thus any two Peano systems are isomorphic.
-
-              \hyperref[prf:uniqueness-of-peano-systems-up-to-isomorphism]{Go to proof.}
-
-              \end{theorem}'
+        operand: *id001
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

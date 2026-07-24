@@ -84,6 +84,12 @@ parameters:
   symbol: P
 - id: S
   symbol: S
+- id: G
+  symbol: G
+- id: g_a(F(a,n))
+  symbol: g_a(F(a,n))
+- id: g_a(G(a,n))
+  symbol: g_a(G(a,n))
 assumptions: []
 statement:
   canonical_prose: Uniqueness of Binary Iterator Operations
@@ -121,26 +127,118 @@ statement:
 
     \end{corollary}'
   semantic_ast: &id001
-    kind: implies
-    left: &id002
-      kind: relation
-      relation: \in
-      left:
+    kind: forall
+    binder: &id002
+      binder_id: a
+      symbol: a
+      domain:
         kind: variable
-        binder_id: beginaligned forall a
-      right:
-        kind: variable
-        binder_id: A forall nin P &( F(a,1)=c_aland G(a,1)=c_a &land F(a,S(n))=g_a(F(a,n))
-          land G(a,S(n))=g_a(G(a,n)))
-    right:
-      kind: relation
-      relation: '='
+        binder_id: A
+    restriction: null
+    body:
+      kind: implies
       left: &id003
-        kind: variable
-        binder_id: F
-      right: &id004
-        kind: variable
-        binder_id: G. endaligned
+        kind: forall
+        binder:
+          binder_id: n
+          symbol: n
+          domain:
+            kind: variable
+            binder_id: P
+        restriction: null
+        body:
+          kind: and
+          left:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: F
+              arguments:
+              - kind: variable
+                binder_id: a
+              - kind: constant
+                name: '1'
+            right:
+              kind: variable
+              binder_id: c_a
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: G
+                arguments:
+                - kind: variable
+                  binder_id: a
+                - kind: constant
+                  name: '1'
+              right:
+                kind: variable
+                binder_id: c_a
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: F
+                  arguments:
+                  - kind: variable
+                    binder_id: a
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                right:
+                  kind: application
+                  function: g_a
+                  arguments:
+                  - kind: application
+                    function: F
+                    arguments:
+                    - kind: variable
+                      binder_id: a
+                    - kind: variable
+                      binder_id: n
+              right:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: G
+                  arguments:
+                  - kind: variable
+                    binder_id: a
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                right:
+                  kind: application
+                  function: g_a
+                  arguments:
+                  - kind: application
+                    function: G
+                    arguments:
+                    - kind: variable
+                      binder_id: a
+                    - kind: variable
+                      binder_id: n
+      right:
+        kind: relation
+        relation: '='
+        left: &id004
+          kind: variable
+          binder_id: F
+        right: &id005
+          kind: variable
+          binder_id: G
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -182,33 +280,234 @@ logical_forms:
       hand_parser:
         available: true
         ast:
-          kind: implies
-          left:
-            kind: relation
-            relation: \in
+          kind: forall
+          binder:
+            binder_id: a
+            symbol: a
+            domain:
+              kind: variable
+              binder_id: A
+          restriction: null
+          body:
+            kind: implies
             left:
-              kind: variable
-              binder_id: beginaligned forall a
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: and
+                left:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: F
+                    arguments:
+                    - kind: variable
+                      binder_id: a
+                    - kind: constant
+                      name: '1'
+                  right:
+                    kind: variable
+                    binder_id: c_a
+                right:
+                  kind: and
+                  left:
+                    kind: relation
+                    relation: '='
+                    left:
+                      kind: application
+                      function: G
+                      arguments:
+                      - kind: variable
+                        binder_id: a
+                      - kind: constant
+                        name: '1'
+                    right:
+                      kind: variable
+                      binder_id: c_a
+                  right:
+                    kind: and
+                    left:
+                      kind: relation
+                      relation: '='
+                      left:
+                        kind: application
+                        function: F
+                        arguments:
+                        - kind: variable
+                          binder_id: a
+                        - kind: application
+                          function: S
+                          arguments:
+                          - kind: variable
+                            binder_id: n
+                      right:
+                        kind: application
+                        function: g_a
+                        arguments:
+                        - kind: application
+                          function: F
+                          arguments:
+                          - kind: variable
+                            binder_id: a
+                          - kind: variable
+                            binder_id: n
+                    right:
+                      kind: relation
+                      relation: '='
+                      left:
+                        kind: application
+                        function: G
+                        arguments:
+                        - kind: variable
+                          binder_id: a
+                        - kind: application
+                          function: S
+                          arguments:
+                          - kind: variable
+                            binder_id: n
+                      right:
+                        kind: application
+                        function: g_a
+                        arguments:
+                        - kind: application
+                          function: G
+                          arguments:
+                          - kind: variable
+                            binder_id: a
+                          - kind: variable
+                            binder_id: n
             right:
-              kind: variable
-              binder_id: A forall nin P &( F(a,1)=c_aland G(a,1)=c_a &land F(a,S(n))=g_a(F(a,n))
-                land G(a,S(n))=g_a(G(a,n)))
-          right:
-            kind: relation
-            relation: '='
-            left:
-              kind: variable
-              binder_id: F
-            right:
-              kind: variable
-              binder_id: G. endaligned
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: F
+              right:
+                kind: variable
+                binder_id: G
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\begin{aligned}\n\\forall a\\in
-          A\\;\\forall n\\in P\\;&\\Bigl(\nF(a,1)=c_a\\land G(a,1)=c_a\\\\\n&\\land
-          F(a,S(n))=g_a(F(a,n))\n\\land G(a,S(n))=g_a(G(a,n))\\Bigr)\n\\Longrightarrow
-          F=G.\n\\end{aligned}'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: a
+            symbol: a
+            domain:
+              kind: variable
+              binder_id: A
+          restriction: null
+          body:
+            kind: implies
+            left:
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: and
+                left:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: F
+                    arguments:
+                    - kind: variable
+                      binder_id: a
+                    - kind: constant
+                      name: '1'
+                  right:
+                    kind: variable
+                    binder_id: c_a
+                right:
+                  kind: and
+                  left:
+                    kind: relation
+                    relation: '='
+                    left:
+                      kind: application
+                      function: G
+                      arguments:
+                      - kind: variable
+                        binder_id: a
+                      - kind: constant
+                        name: '1'
+                    right:
+                      kind: variable
+                      binder_id: c_a
+                  right:
+                    kind: and
+                    left:
+                      kind: relation
+                      relation: '='
+                      left:
+                        kind: application
+                        function: F
+                        arguments:
+                        - kind: variable
+                          binder_id: a
+                        - kind: application
+                          function: S
+                          arguments:
+                          - kind: variable
+                            binder_id: n
+                      right:
+                        kind: application
+                        function: g_a
+                        arguments:
+                        - kind: application
+                          function: F
+                          arguments:
+                          - kind: variable
+                            binder_id: a
+                          - kind: variable
+                            binder_id: n
+                    right:
+                      kind: relation
+                      relation: '='
+                      left:
+                        kind: application
+                        function: G
+                        arguments:
+                        - kind: variable
+                          binder_id: a
+                        - kind: application
+                          function: S
+                          arguments:
+                          - kind: variable
+                            binder_id: n
+                      right:
+                        kind: application
+                        function: g_a
+                        arguments:
+                        - kind: application
+                          function: G
+                          arguments:
+                          - kind: variable
+                            binder_id: a
+                          - kind: variable
+                            binder_id: n
+            right:
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: F
+              right:
+                kind: variable
+                binder_id: G
+      parsers_agree: true
   predicate_reading:
     latex: '\forall a\in A\;
 
@@ -443,13 +742,17 @@ logical_forms:
     approved_normal_form:
       latex: null
       ast:
-        kind: and
-        left: *id002
-        right:
-          kind: relation
-          relation: \neq
+        kind: exists
+        binder: *id002
+        restriction: null
+        body:
+          kind: and
           left: *id003
-          right: *id004
+          right:
+            kind: relation
+            relation: \neq
+            left: *id004
+            right: *id005
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

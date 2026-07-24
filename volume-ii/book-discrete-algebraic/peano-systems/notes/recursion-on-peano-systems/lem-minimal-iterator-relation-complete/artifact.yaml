@@ -65,21 +65,30 @@ statement:
       symbol: n
       domain:
         kind: variable
-        binder_id: P exists win W
+        binder_id: P
     restriction: null
     body:
-      kind: relation
-      relation: \in
-      left: &id003
-        kind: tuple
-        elements:
-        - kind: variable
-          binder_id: n
-        - kind: variable
-          binder_id: w
-      right: &id004
-        kind: variable
-        binder_id: R^*
+      kind: exists
+      binder: &id003
+        binder_id: w
+        symbol: w
+        domain:
+          kind: variable
+          binder_id: W
+      restriction: null
+      body:
+        kind: relation
+        relation: \in
+        left: &id004
+          kind: tuple
+          elements:
+          - kind: variable
+            binder_id: n
+          - kind: variable
+            binder_id: w
+        right: &id005
+          kind: variable
+          binder_id: R^*
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -103,32 +112,70 @@ logical_forms:
             symbol: n
             domain:
               kind: variable
-              binder_id: P exists win W
+              binder_id: P
           restriction: null
           body:
-            kind: relation
-            relation: \in
-            left:
-              kind: tuple
-              elements:
-              - kind: variable
-                binder_id: n
-              - kind: variable
-                binder_id: w
-            right:
-              kind: variable
-              binder_id: R^*
+            kind: exists
+            binder:
+              binder_id: w
+              symbol: w
+              domain:
+                kind: variable
+                binder_id: W
+            restriction: null
+            body:
+              kind: relation
+              relation: \in
+              left:
+                kind: tuple
+                elements:
+                - kind: variable
+                  binder_id: n
+                - kind: variable
+                  binder_id: w
+              right:
+                kind: variable
+                binder_id: R^*
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\forall n\\in P\\;\\exists
-          w\\in W\\;((n,w)\\in R^*).'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: exists
+            binder:
+              binder_id: w
+              symbol: w
+              domain:
+                kind: variable
+                binder_id: W
+            restriction: null
+            body:
+              kind: relation
+              relation: \in
+              left:
+                kind: tuple
+                elements:
+                - kind: variable
+                  binder_id: n
+                - kind: variable
+                  binder_id: w
+              right:
+                kind: variable
+                binder_id: R^*
+      parsers_agree: true
   predicate_reading:
-    latex: \operatorname{TotalRelation}(R^*,P,W).
+    latex: \operatorname{TotalOnDomain}(R^*,P,W).
     ast:
       kind: predicate
-      predicate_id: pred:total-relation
-      name: TotalRelation
+      predicate_id: pred:total-on-domain
+      name: TotalOnDomain
       arguments:
       - kind: variable
         binder_id: R^*
@@ -137,13 +184,13 @@ logical_forms:
       - kind: variable
         binder_id: W
     parser_witnesses:
-      original_latex: \operatorname{TotalRelation}(R^*,P,W).
+      original_latex: \operatorname{TotalOnDomain}(R^*,P,W).
       hand_parser:
         available: true
         ast:
           kind: predicate
-          predicate_id: pred:total-relation
-          name: TotalRelation
+          predicate_id: pred:total-on-domain
+          name: TotalOnDomain
           arguments:
           - kind: variable
             binder_id: R^*
@@ -152,9 +199,19 @@ logical_forms:
           - kind: variable
             binder_id: W
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\operatorname{TotalRelation}(R^*,P,W).'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:total-on-domain
+          name: TotalOnDomain
+          arguments:
+          - kind: variable
+            binder_id: R^*
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: W
+      parsers_agree: true
   negation:
     mechanical:
       latex: \neg\left(\forall n\in P\;\exists w\in W\;((n,w)\in R^*).\right)
@@ -168,10 +225,14 @@ logical_forms:
         binder: *id002
         restriction: null
         body:
-          kind: relation
-          relation: \notin
-          left: *id003
-          right: *id004
+          kind: forall
+          binder: *id003
+          restriction: null
+          body:
+            kind: relation
+            relation: \notin
+            left: *id004
+            right: *id005
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

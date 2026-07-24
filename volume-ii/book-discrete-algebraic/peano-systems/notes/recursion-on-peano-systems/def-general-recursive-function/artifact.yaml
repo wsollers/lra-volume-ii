@@ -29,7 +29,27 @@ classification:
   logical_framework: mathematical_vernacular
   language_level: mixed
 context: []
-parameters: []
+parameters:
+- id: ; f
+  symbol: ; f
+- id: P
+  symbol: P
+- id: Phi
+  symbol: Phi
+- id: Phi(n,f(n))
+  symbol: Phi(n,f(n))
+- id: Pto W
+  symbol: Pto W
+- id: S
+  symbol: S
+- id: W
+  symbol: W
+- id: c
+  symbol: c
+- id: f
+  symbol: f
+- id: function_space
+  symbol: function_space
 assumptions: []
 statement:
   canonical_prose: Solution of a Stage-Dependent Recursion
@@ -60,38 +80,74 @@ statement:
     \]
 
     \end{definition}'
-  semantic_ast:
+  semantic_ast: &id001
     kind: iff
-    left:
+    left: &id002
       kind: raw_latex
-      latex: left side
-    right:
-      kind: forall
-      binder:
-        binder_id: f1
-        symbol: f_1
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
-        kind: raw_latex
-        latex: '\[
-
-          \begin{aligned}
-
-          f \text{ is a solution of the stage-dependent recursion determined by }
-          (W,c,\Phi)
-
-          \Longleftrightarrow\;&
-
-          f\colon P\to W\land f(1)=c\\
-
-          &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
-
-          \end{aligned}
-
-          \]'
+      latex: f \text{ is a solution of the stage-dependent recursion determined by
+        } (W,c,Phi)
+    right: &id009
+      kind: and
+      left: &id003
+        kind: relation
+        relation: \colon
+        left:
+          kind: variable
+          binder_id: f
+        right:
+          kind: application
+          function: function_space
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: W
+      right:
+        kind: and
+        left:
+          kind: relation
+          relation: '='
+          left: &id004
+            kind: application
+            function: f
+            arguments:
+            - kind: constant
+              name: '1'
+          right: &id005
+            kind: variable
+            binder_id: c
+        right:
+          kind: forall
+          binder: &id006
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: relation
+            relation: '='
+            left: &id007
+              kind: application
+              function: f
+              arguments:
+              - kind: application
+                function: S
+                arguments:
+                - kind: variable
+                  binder_id: n
+            right: &id008
+              kind: application
+              function: Phi
+              arguments:
+              - kind: variable
+                binder_id: n
+              - kind: application
+                function: f
+                arguments:
+                - kind: variable
+                  binder_id: n
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -109,136 +165,498 @@ logical_forms:
       \end{aligned}
 
       \]'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
+
+        \begin{aligned}
+
+        f \text{ is a solution of the stage-dependent recursion determined by } (W,c,\Phi)
+
+        \Longleftrightarrow\;&
+
+        f\colon P\to W\land f(1)=c\\
+
+        &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+
+        \end{aligned}
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: f \text{ is a solution of the stage-dependent recursion determined
+              by } (W,c,Phi)
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: \colon
+              left:
+                kind: variable
+                binder_id: f
+              right:
+                kind: application
+                function: function_space
+                arguments:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: W
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: constant
+                    name: '1'
+                right:
+                  kind: variable
+                  binder_id: c
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: f
+                    arguments:
+                    - kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: Phi
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                    - kind: application
+                      function: f
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: f \text{ is a solution of the stage-dependent recursion determined
+              by } (W,c,Phi)
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: \colon
+              left:
+                kind: variable
+                binder_id: f
+              right:
+                kind: application
+                function: function_space
+                arguments:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: W
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: constant
+                    name: '1'
+                right:
+                  kind: variable
+                  binder_id: c
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: f
+                    arguments:
+                    - kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: Phi
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                    - kind: application
+                      function: f
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+      parsers_agree: true
+  predicate_reading:
+    latex: '\begin{aligned}
+
+      \operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi)
+
+      \Longleftrightarrow\;&
+
+      f\colon P\to W\land f(1)=c\\
+
+      &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
+
+      \end{aligned}'
     ast:
       kind: iff
       left:
-        kind: raw_latex
-        latex: left side
+        kind: predicate
+        predicate_id: pred:stage-dependent-recursion-solution
+        name: StageDependentRecursionSolution
+        arguments:
+        - kind: variable
+          binder_id: f
+        - kind: tuple
+          elements:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+        - kind: variable
+          binder_id: W
+        - kind: variable
+          binder_id: c
+        - kind: variable
+          binder_id: Phi
       right:
-        kind: forall
-        binder:
-          binder_id: f1
-          symbol: f_1
-          domain:
-            kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: raw_latex
-          latex: '\[
+        kind: and
+        left:
+          kind: relation
+          relation: \colon
+          left:
+            kind: variable
+            binder_id: f
+          right:
+            kind: application
+            function: function_space
+            arguments:
+            - kind: variable
+              binder_id: P
+            - kind: variable
+              binder_id: W
+        right:
+          kind: and
+          left:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: f
+              arguments:
+              - kind: constant
+                name: '1'
+            right:
+              kind: variable
+              binder_id: c
+          right:
+            kind: forall
+            binder:
+              binder_id: n
+              symbol: n
+              domain:
+                kind: variable
+                binder_id: P
+            restriction: null
+            body:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: f
+                arguments:
+                - kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+              right:
+                kind: application
+                function: Phi
+                arguments:
+                - kind: variable
+                  binder_id: n
+                - kind: application
+                  function: f
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+    parser_witnesses:
+      original_latex: '\begin{aligned}
 
-            \begin{aligned}
+        \operatorname{StageDependentRecursionSolution}(f,(P,S,1),W,c,\Phi)
 
-            f \text{ is a solution of the stage-dependent recursion determined by
-            } (W,c,\Phi)
+        \Longleftrightarrow\;&
 
-            \Longleftrightarrow\;&
+        f\colon P\to W\land f(1)=c\\
 
-            f\colon P\to W\land f(1)=c\\
+        &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
 
-            &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
-
-            \end{aligned}
-
-            \]'
-  predicate_reading: null
+        \end{aligned}'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:stage-dependent-recursion-solution
+            name: StageDependentRecursionSolution
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: Phi
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: \colon
+              left:
+                kind: variable
+                binder_id: f
+              right:
+                kind: application
+                function: function_space
+                arguments:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: W
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: constant
+                    name: '1'
+                right:
+                  kind: variable
+                  binder_id: c
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: f
+                    arguments:
+                    - kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: Phi
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                    - kind: application
+                      function: f
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:stage-dependent-recursion-solution
+            name: StageDependentRecursionSolution
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: Phi
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: \colon
+              left:
+                kind: variable
+                binder_id: f
+              right:
+                kind: application
+                function: function_space
+                arguments:
+                - kind: variable
+                  binder_id: P
+                - kind: variable
+                  binder_id: W
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: constant
+                    name: '1'
+                right:
+                  kind: variable
+                  binder_id: c
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: f
+                    arguments:
+                    - kind: application
+                      function: S
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+                  right:
+                    kind: application
+                    function: Phi
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                    - kind: application
+                      function: f
+                      arguments:
+                      - kind: variable
+                        binder_id: n
+      parsers_agree: true
   negation:
     mechanical:
-      latex: '\[
+      latex: '\neg\left(\begin{aligned}
 
-        \begin{aligned}
-
-        f \text{ is not a solution of the stage-dependent recursion determined by
-        } (W,c,\Phi)
+        f \text{ is a solution of the stage-dependent recursion determined by } (W,c,\Phi)
 
         \Longleftrightarrow\;&
 
-        f \text{ is not a function from } P \text{ to } W\\
+        f\colon P\to W\land f(1)=c\\
 
-        &\lor f(1)\neq c
+        &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
 
-        \lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n))).
-
-        \end{aligned}
-
-        \]'
+        \end{aligned}\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\[
-
-              \begin{aligned}
-
-              f \text{ is a solution of the stage-dependent recursion determined by
-              } (W,c,\Phi)
-
-              \Longleftrightarrow\;&
-
-              f\colon P\to W\land f(1)=c\\
-
-              &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
-
-              \end{aligned}
-
-              \]'
+        operand: *id001
     approved_normal_form:
-      latex: '\[
-
-        \begin{aligned}
-
-        f \text{ is not a solution of the stage-dependent recursion determined by
-        } (W,c,\Phi)
-
-        \Longleftrightarrow\;&
-
-        f \text{ is not a function from } P \text{ to } W\\
-
-        &\lor f(1)\neq c
-
-        \lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n))).
-
-        \end{aligned}
-
-        \]'
+      latex: null
       ast:
-        kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\[
-
-              \begin{aligned}
-
-              f \text{ is a solution of the stage-dependent recursion determined by
-              } (W,c,\Phi)
-
-              \Longleftrightarrow\;&
-
-              f\colon P\to W\land f(1)=c\\
-
-              &\land \forall n\in P\;(f(S(n))=\Phi(n,f(n))).
-
-              \end{aligned}
-
-              \]'
+        kind: or
+        left:
+          kind: and
+          left: *id002
+          right:
+            kind: or
+            left:
+              kind: not
+              operand: *id003
+            right:
+              kind: or
+              left:
+                kind: relation
+                relation: \neq
+                left: *id004
+                right: *id005
+              right:
+                kind: exists
+                binder: *id006
+                restriction: null
+                body:
+                  kind: relation
+                  relation: \neq
+                  left: *id007
+                  right: *id008
+        right:
+          kind: and
+          left:
+            kind: not
+            operand: *id002
+          right: *id009
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

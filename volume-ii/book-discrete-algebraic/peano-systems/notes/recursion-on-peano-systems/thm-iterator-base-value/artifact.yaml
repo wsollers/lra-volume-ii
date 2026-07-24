@@ -64,26 +64,23 @@ statement:
     \hyperref[prf:iterator-base-value]{Go to proof.}
 
     \end{theorem}'
-  semantic_ast:
-    kind: raw_latex
-    latex: '\begin{theorem}[Iterator Base Clause]
-
-      \label{thm:iterator-base-value}
-
-      Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it, and
-      let
-
-      $f$ be the iterator-generated function determined by $(W,c,g)$. Then
-
-      \[
-
-      f(1)=c.
-
-      \]
-
-      \hyperref[prf:iterator-base-value]{Go to proof.}
-
-      \end{theorem}'
+  semantic_ast: &id001
+    kind: implies
+    left: &id002
+      kind: raw_latex
+      latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+    right:
+      kind: relation
+      relation: '='
+      left: &id003
+        kind: application
+        function: f
+        arguments:
+        - kind: constant
+          name: '1'
+      right: &id004
+        kind: variable
+        binder_id: c
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -93,15 +90,54 @@ logical_forms:
       \Longrightarrow f(1)=c.
 
       \]'
-    ast:
-      kind: raw_latex
-      latex: '\[
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\[
 
         f \text{ is the iterator-generated function determined by } (W,c,g)
 
         \Longrightarrow f(1)=c.
 
         \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+          right:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: f
+              arguments:
+              - kind: constant
+                name: '1'
+            right:
+              kind: variable
+              binder_id: c
+      lark_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: raw_latex
+            latex: f \text{ is the iterator-generated function determined by } (W,c,g)
+          right:
+            kind: relation
+            relation: '='
+            left:
+              kind: application
+              function: f
+              arguments:
+              - kind: constant
+                name: '1'
+            right:
+              kind: variable
+              binder_id: c
+      parsers_agree: true
   predicate_reading:
     latex: '\operatorname{IteratorGeneratedFunction}(f,(P,S,1),W,c,g)
 
@@ -222,36 +258,23 @@ logical_forms:
       parsers_agree: true
   negation:
     mechanical:
-      latex: '\neg(\[
+      latex: '\neg\left(f \text{ is the iterator-generated function determined by
+        } (W,c,g)
 
-        f \text{ is the iterator-generated function determined by } (W,c,g)
-
-        \Longrightarrow f(1)=c.
-
-        \])'
+        \Longrightarrow f(1)=c.\right)'
       ast:
         kind: not
-        operand:
-          kind: raw_latex
-          latex: '\begin{theorem}[Iterator Base Clause]
-
-            \label{thm:iterator-base-value}
-
-            Let $(P,S,1)$ be a Peano system, let $(W,c,g)$ be iterator data for it,
-            and let
-
-            $f$ be the iterator-generated function determined by $(W,c,g)$. Then
-
-            \[
-
-            f(1)=c.
-
-            \]
-
-            \hyperref[prf:iterator-base-value]{Go to proof.}
-
-            \end{theorem}'
-    approved_normal_form: null
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: and
+        left: *id002
+        right:
+          kind: relation
+          relation: \neq
+          left: *id003
+          right: *id004
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

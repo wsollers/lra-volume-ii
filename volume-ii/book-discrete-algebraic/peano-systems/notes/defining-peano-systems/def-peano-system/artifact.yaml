@@ -34,6 +34,12 @@ parameters:
   symbol: P
 - id: S
   symbol: S
+- id: P to P
+  symbol: P to P
+- id: subset_of
+  symbol: subset_of
+- id: function_space
+  symbol: function_space
 assumptions: []
 statement:
   canonical_prose: Peano System
@@ -45,84 +51,176 @@ statement:
     \ For all $m,n \\in P$, if $S(m)=S(n)$ then $m=n$.\n  \\item[\\textbf{P5.}] If\
     \ $A \\subseteq P$, $1 \\in A$, and\n  \\[\n    \\forall n \\in P\\;(n \\in A\
     \ \\Longrightarrow S(n) \\in A),\n  \\]\n  then $A=P$.\n\\end{enumerate}\n\\end{definition}"
-  semantic_ast:
+  semantic_ast: &id002
     kind: iff
-    left:
+    left: &id005
       kind: raw_latex
-      latex: left side
-    right:
-      kind: forall
-      binder:
-        binder_id: f5
-        symbol: f_5
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
-        kind: forall
-        binder:
-          binder_id: f4
-          symbol: f_4
-          domain:
-            kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: forall
-          binder:
-            binder_id: f3
-            symbol: f_3
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: forall
-            binder:
-              binder_id: f2
-              symbol: f_2
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
+      latex: (P,S,1) \text{ is a Peano system}
+    right: &id022
+      kind: and
+      left: &id006
+        kind: raw_latex
+        latex: P \text{ is a set}
+      right:
+        kind: and
+        left:
+          kind: relation
+          relation: \in
+          left: &id007
+            kind: constant
+            name: '1'
+          right: &id008
+            kind: variable
+            binder_id: P
+        right:
+          kind: and
+          left: &id009
+            kind: relation
+            relation: \colon
+            left:
+              kind: variable
+              binder_id: S
+            right:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: P
+          right:
+            kind: and
+            left:
               kind: forall
-              binder:
-                binder_id: f1
-                symbol: f_1
+              binder: &id010
+                binder_id: n
+                symbol: n
                 domain:
-                  kind: raw_latex
-                  latex: ambient context
+                  kind: variable
+                  binder_id: P
               restriction: null
               body:
-                kind: raw_latex
-                latex: '\[
-
-                  \begin{aligned}
-
-                  &(P,S,1) \text{ is a Peano system}\\
-
-                  &\Longleftrightarrow
-
-                  \Bigl(P \text{ is a set} \land 1 \in P \land S\colon P \to P \\
-
-                  &\qquad \land \forall n \in P\;(S(n) \neq 1) \\
-
-                  &\qquad \land \forall m,n \in P\;(S(m)=S(n) \Longrightarrow m=n)
-                  \\
-
-                  &\qquad \land \forall A \subseteq P\;
-
-                  \bigl((1 \in A \land
-
-                  \forall n \in P\;(n \in A \Longrightarrow S(n) \in A))
-
-                  \Longrightarrow A=P\bigr)\Bigr).
-
-                  \end{aligned}
-
-                  \]'
+                kind: relation
+                relation: \neq
+                left: &id011
+                  kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+                right: &id012
+                  kind: constant
+                  name: '1'
+            right:
+              kind: and
+              left:
+                kind: forall
+                binder: &id013
+                  binder_id: m
+                  symbol: m
+                  domain: &id001
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: forall
+                  binder: &id014
+                    binder_id: n
+                    symbol: n
+                    domain: *id001
+                  restriction: null
+                  body:
+                    kind: implies
+                    left: &id015
+                      kind: relation
+                      relation: '='
+                      left:
+                        kind: application
+                        function: S
+                        arguments:
+                        - kind: variable
+                          binder_id: m
+                      right:
+                        kind: application
+                        function: S
+                        arguments:
+                        - kind: variable
+                          binder_id: n
+                    right:
+                      kind: relation
+                      relation: '='
+                      left: &id016
+                        kind: variable
+                        binder_id: m
+                      right: &id017
+                        kind: variable
+                        binder_id: n
+              right:
+                kind: forall
+                binder: &id018
+                  binder_id: A
+                  symbol: A
+                  domain:
+                    kind: application
+                    function: subset_of
+                    arguments:
+                    - kind: variable
+                      binder_id: P
+                restriction: null
+                body:
+                  kind: implies
+                  left: &id019
+                    kind: and
+                    left:
+                      kind: relation
+                      relation: \in
+                      left:
+                        kind: constant
+                        name: '1'
+                      right:
+                        kind: variable
+                        binder_id: A
+                    right:
+                      kind: forall
+                      binder:
+                        binder_id: n
+                        symbol: n
+                        domain:
+                          kind: variable
+                          binder_id: P
+                      restriction: null
+                      body:
+                        kind: implies
+                        left:
+                          kind: relation
+                          relation: \in
+                          left:
+                            kind: variable
+                            binder_id: n
+                          right:
+                            kind: variable
+                            binder_id: A
+                        right:
+                          kind: relation
+                          relation: \in
+                          left:
+                            kind: application
+                            function: S
+                            arguments:
+                            - kind: variable
+                              binder_id: n
+                          right:
+                            kind: variable
+                            binder_id: A
+                  right:
+                    kind: relation
+                    relation: '='
+                    left: &id020
+                      kind: variable
+                      binder_id: A
+                    right: &id021
+                      kind: variable
+                      binder_id: P
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -150,84 +248,378 @@ logical_forms:
       \end{aligned}
 
       \]'
-    ast:
-      kind: iff
-      left:
-        kind: raw_latex
-        latex: left side
-      right:
-        kind: forall
-        binder:
-          binder_id: f5
-          symbol: f_5
-          domain:
+    ast: *id002
+    parser_witnesses:
+      original_latex: '\[
+
+        \begin{aligned}
+
+        &(P,S,1) \text{ is a Peano system}\\
+
+        &\Longleftrightarrow
+
+        \Bigl(P \text{ is a set} \land 1 \in P \land S\colon P \to P \\
+
+        &\qquad \land \forall n \in P\;(S(n) \neq 1) \\
+
+        &\qquad \land \forall m,n \in P\;(S(m)=S(n) \Longrightarrow m=n) \\
+
+        &\qquad \land \forall A \subseteq P\;
+
+        \bigl((1 \in A \land
+
+        \forall n \in P\;(n \in A \Longrightarrow S(n) \in A))
+
+        \Longrightarrow A=P\bigr)\Bigr).
+
+        \end{aligned}
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
             kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: forall
-          binder:
-            binder_id: f4
-            symbol: f_4
-            domain:
+            latex: (P,S,1) \text{ is a Peano system}
+          right:
+            kind: and
+            left:
               kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: forall
-            binder:
-              binder_id: f3
-              symbol: f_3
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: forall
-              binder:
-                binder_id: f2
-                symbol: f_2
-                domain:
-                  kind: raw_latex
-                  latex: ambient context
-              restriction: null
-              body:
-                kind: forall
-                binder:
-                  binder_id: f1
-                  symbol: f_1
-                  domain:
-                    kind: raw_latex
-                    latex: ambient context
-                restriction: null
-                body:
-                  kind: raw_latex
-                  latex: '\[
-
-                    \begin{aligned}
-
-                    &(P,S,1) \text{ is a Peano system}\\
-
-                    &\Longleftrightarrow
-
-                    \Bigl(P \text{ is a set} \land 1 \in P \land S\colon P \to P \\
-
-                    &\qquad \land \forall n \in P\;(S(n) \neq 1) \\
-
-                    &\qquad \land \forall m,n \in P\;(S(m)=S(n) \Longrightarrow m=n)
-                    \\
-
-                    &\qquad \land \forall A \subseteq P\;
-
-                    \bigl((1 \in A \land
-
-                    \forall n \in P\;(n \in A \Longrightarrow S(n) \in A))
-
-                    \Longrightarrow A=P\bigr)\Bigr).
-
-                    \end{aligned}
-
-                    \]'
+              latex: P \text{ is a set}
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: \in
+                left:
+                  kind: constant
+                  name: '1'
+                right:
+                  kind: variable
+                  binder_id: P
+              right:
+                kind: and
+                left:
+                  kind: relation
+                  relation: \colon
+                  left:
+                    kind: variable
+                    binder_id: S
+                  right:
+                    kind: application
+                    function: function_space
+                    arguments:
+                    - kind: variable
+                      binder_id: P
+                    - kind: variable
+                      binder_id: P
+                right:
+                  kind: and
+                  left:
+                    kind: forall
+                    binder:
+                      binder_id: n
+                      symbol: n
+                      domain:
+                        kind: variable
+                        binder_id: P
+                    restriction: null
+                    body:
+                      kind: relation
+                      relation: \neq
+                      left:
+                        kind: application
+                        function: S
+                        arguments:
+                        - kind: variable
+                          binder_id: n
+                      right:
+                        kind: constant
+                        name: '1'
+                  right:
+                    kind: and
+                    left:
+                      kind: forall
+                      binder:
+                        binder_id: m
+                        symbol: m
+                        domain: &id003
+                          kind: variable
+                          binder_id: P
+                      restriction: null
+                      body:
+                        kind: forall
+                        binder:
+                          binder_id: n
+                          symbol: n
+                          domain: *id003
+                        restriction: null
+                        body:
+                          kind: implies
+                          left:
+                            kind: relation
+                            relation: '='
+                            left:
+                              kind: application
+                              function: S
+                              arguments:
+                              - kind: variable
+                                binder_id: m
+                            right:
+                              kind: application
+                              function: S
+                              arguments:
+                              - kind: variable
+                                binder_id: n
+                          right:
+                            kind: relation
+                            relation: '='
+                            left:
+                              kind: variable
+                              binder_id: m
+                            right:
+                              kind: variable
+                              binder_id: n
+                    right:
+                      kind: forall
+                      binder:
+                        binder_id: A
+                        symbol: A
+                        domain:
+                          kind: application
+                          function: subset_of
+                          arguments:
+                          - kind: variable
+                            binder_id: P
+                      restriction: null
+                      body:
+                        kind: implies
+                        left:
+                          kind: and
+                          left:
+                            kind: relation
+                            relation: \in
+                            left:
+                              kind: constant
+                              name: '1'
+                            right:
+                              kind: variable
+                              binder_id: A
+                          right:
+                            kind: forall
+                            binder:
+                              binder_id: n
+                              symbol: n
+                              domain:
+                                kind: variable
+                                binder_id: P
+                            restriction: null
+                            body:
+                              kind: implies
+                              left:
+                                kind: relation
+                                relation: \in
+                                left:
+                                  kind: variable
+                                  binder_id: n
+                                right:
+                                  kind: variable
+                                  binder_id: A
+                              right:
+                                kind: relation
+                                relation: \in
+                                left:
+                                  kind: application
+                                  function: S
+                                  arguments:
+                                  - kind: variable
+                                    binder_id: n
+                                right:
+                                  kind: variable
+                                  binder_id: A
+                        right:
+                          kind: relation
+                          relation: '='
+                          left:
+                            kind: variable
+                            binder_id: A
+                          right:
+                            kind: variable
+                            binder_id: P
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: raw_latex
+            latex: (P,S,1) \text{ is a Peano system}
+          right:
+            kind: and
+            left:
+              kind: raw_latex
+              latex: P \text{ is a set}
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: \in
+                left:
+                  kind: constant
+                  name: '1'
+                right:
+                  kind: variable
+                  binder_id: P
+              right:
+                kind: and
+                left:
+                  kind: relation
+                  relation: \colon
+                  left:
+                    kind: variable
+                    binder_id: S
+                  right:
+                    kind: application
+                    function: function_space
+                    arguments:
+                    - kind: variable
+                      binder_id: P
+                    - kind: variable
+                      binder_id: P
+                right:
+                  kind: and
+                  left:
+                    kind: forall
+                    binder:
+                      binder_id: n
+                      symbol: n
+                      domain:
+                        kind: variable
+                        binder_id: P
+                    restriction: null
+                    body:
+                      kind: relation
+                      relation: \neq
+                      left:
+                        kind: application
+                        function: S
+                        arguments:
+                        - kind: variable
+                          binder_id: n
+                      right:
+                        kind: constant
+                        name: '1'
+                  right:
+                    kind: and
+                    left:
+                      kind: forall
+                      binder:
+                        binder_id: m
+                        symbol: m
+                        domain: &id004
+                          kind: variable
+                          binder_id: P
+                      restriction: null
+                      body:
+                        kind: forall
+                        binder:
+                          binder_id: n
+                          symbol: n
+                          domain: *id004
+                        restriction: null
+                        body:
+                          kind: implies
+                          left:
+                            kind: relation
+                            relation: '='
+                            left:
+                              kind: application
+                              function: S
+                              arguments:
+                              - kind: variable
+                                binder_id: m
+                            right:
+                              kind: application
+                              function: S
+                              arguments:
+                              - kind: variable
+                                binder_id: n
+                          right:
+                            kind: relation
+                            relation: '='
+                            left:
+                              kind: variable
+                              binder_id: m
+                            right:
+                              kind: variable
+                              binder_id: n
+                    right:
+                      kind: forall
+                      binder:
+                        binder_id: A
+                        symbol: A
+                        domain:
+                          kind: application
+                          function: subset_of
+                          arguments:
+                          - kind: variable
+                            binder_id: P
+                      restriction: null
+                      body:
+                        kind: implies
+                        left:
+                          kind: and
+                          left:
+                            kind: relation
+                            relation: \in
+                            left:
+                              kind: constant
+                              name: '1'
+                            right:
+                              kind: variable
+                              binder_id: A
+                          right:
+                            kind: forall
+                            binder:
+                              binder_id: n
+                              symbol: n
+                              domain:
+                                kind: variable
+                                binder_id: P
+                            restriction: null
+                            body:
+                              kind: implies
+                              left:
+                                kind: relation
+                                relation: \in
+                                left:
+                                  kind: variable
+                                  binder_id: n
+                                right:
+                                  kind: variable
+                                  binder_id: A
+                              right:
+                                kind: relation
+                                relation: \in
+                                left:
+                                  kind: application
+                                  function: S
+                                  arguments:
+                                  - kind: variable
+                                    binder_id: n
+                                right:
+                                  kind: variable
+                                  binder_id: A
+                        right:
+                          kind: relation
+                          relation: '='
+                          left:
+                            kind: variable
+                            binder_id: A
+                          right:
+                            kind: variable
+                            binder_id: P
+      parsers_agree: true
   predicate_reading:
     latex: \operatorname{PeanoSystem}(P,S,1).
     ast:
@@ -272,9 +664,7 @@ logical_forms:
       parsers_agree: true
   negation:
     mechanical:
-      latex: '\neg(\[
-
-        \begin{aligned}
+      latex: '\neg\left(\begin{aligned}
 
         &(P,S,1) \text{ is a Peano system}\\
 
@@ -294,187 +684,81 @@ logical_forms:
 
         \Longrightarrow A=P\bigr)\Bigr).
 
-        \end{aligned}
-
-        \])'
+        \end{aligned}\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f5
-            symbol: f_5
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: forall
-            binder:
-              binder_id: f4
-              symbol: f_4
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: forall
-              binder:
-                binder_id: f3
-                symbol: f_3
-                domain:
-                  kind: raw_latex
-                  latex: ambient context
-              restriction: null
-              body:
-                kind: forall
-                binder:
-                  binder_id: f2
-                  symbol: f_2
-                  domain:
-                    kind: raw_latex
-                    latex: ambient context
-                restriction: null
-                body:
-                  kind: forall
-                  binder:
-                    binder_id: f1
-                    symbol: f_1
-                    domain:
-                      kind: raw_latex
-                      latex: ambient context
-                  restriction: null
-                  body:
-                    kind: raw_latex
-                    latex: '\[
-
-                      \begin{aligned}
-
-                      &(P,S,1) \text{ is a Peano system}\\
-
-                      &\Longleftrightarrow
-
-                      \Bigl(P \text{ is a set} \land 1 \in P \land S\colon P \to P
-                      \\
-
-                      &\qquad \land \forall n \in P\;(S(n) \neq 1) \\
-
-                      &\qquad \land \forall m,n \in P\;(S(m)=S(n) \Longrightarrow
-                      m=n) \\
-
-                      &\qquad \land \forall A \subseteq P\;
-
-                      \bigl((1 \in A \land
-
-                      \forall n \in P\;(n \in A \Longrightarrow S(n) \in A))
-
-                      \Longrightarrow A=P\bigr)\Bigr).
-
-                      \end{aligned}
-
-                      \]'
+        operand: *id002
     approved_normal_form:
-      latex: '\neg(\[
-
-        \begin{aligned}
-
-        &(P,S,1) \text{ is a Peano system}\\
-
-        &\Longleftrightarrow
-
-        \Bigl(P \text{ is a set} \land 1 \in P \land S\colon P \to P \\
-
-        &\qquad \land \forall n \in P\;(S(n) \neq 1) \\
-
-        &\qquad \land \forall m,n \in P\;(S(m)=S(n) \Longrightarrow m=n) \\
-
-        &\qquad \land \forall A \subseteq P\;
-
-        \bigl((1 \in A \land
-
-        \forall n \in P\;(n \in A \Longrightarrow S(n) \in A))
-
-        \Longrightarrow A=P\bigr)\Bigr).
-
-        \end{aligned}
-
-        \])'
+      latex: null
       ast:
-        kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f5
-            symbol: f_5
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: forall
-            binder:
-              binder_id: f4
-              symbol: f_4
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: forall
-              binder:
-                binder_id: f3
-                symbol: f_3
-                domain:
-                  kind: raw_latex
-                  latex: ambient context
-              restriction: null
-              body:
-                kind: forall
-                binder:
-                  binder_id: f2
-                  symbol: f_2
-                  domain:
-                    kind: raw_latex
-                    latex: ambient context
-                restriction: null
-                body:
-                  kind: forall
-                  binder:
-                    binder_id: f1
-                    symbol: f_1
-                    domain:
-                      kind: raw_latex
-                      latex: ambient context
-                  restriction: null
-                  body:
-                    kind: raw_latex
-                    latex: '\[
-
-                      \begin{aligned}
-
-                      &(P,S,1) \text{ is a Peano system}\\
-
-                      &\Longleftrightarrow
-
-                      \Bigl(P \text{ is a set} \land 1 \in P \land S\colon P \to P
-                      \\
-
-                      &\qquad \land \forall n \in P\;(S(n) \neq 1) \\
-
-                      &\qquad \land \forall m,n \in P\;(S(m)=S(n) \Longrightarrow
-                      m=n) \\
-
-                      &\qquad \land \forall A \subseteq P\;
-
-                      \bigl((1 \in A \land
-
-                      \forall n \in P\;(n \in A \Longrightarrow S(n) \in A))
-
-                      \Longrightarrow A=P\bigr)\Bigr).
-
-                      \end{aligned}
-
-                      \]'
+        kind: or
+        left:
+          kind: and
+          left: *id005
+          right:
+            kind: or
+            left:
+              kind: not
+              operand: *id006
+            right:
+              kind: or
+              left:
+                kind: relation
+                relation: \notin
+                left: *id007
+                right: *id008
+              right:
+                kind: or
+                left:
+                  kind: not
+                  operand: *id009
+                right:
+                  kind: or
+                  left:
+                    kind: exists
+                    binder: *id010
+                    restriction: null
+                    body:
+                      kind: relation
+                      relation: '='
+                      left: *id011
+                      right: *id012
+                  right:
+                    kind: or
+                    left:
+                      kind: exists
+                      binder: *id013
+                      restriction: null
+                      body:
+                        kind: exists
+                        binder: *id014
+                        restriction: null
+                        body:
+                          kind: and
+                          left: *id015
+                          right:
+                            kind: relation
+                            relation: \neq
+                            left: *id016
+                            right: *id017
+                    right:
+                      kind: exists
+                      binder: *id018
+                      restriction: null
+                      body:
+                        kind: and
+                        left: *id019
+                        right:
+                          kind: relation
+                          relation: \neq
+                          left: *id020
+                          right: *id021
+        right:
+          kind: and
+          left:
+            kind: not
+            operand: *id005
+          right: *id022
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

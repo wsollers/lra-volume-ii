@@ -36,6 +36,8 @@ parameters:
   symbol: P
 - id: varphi
   symbol: varphi
+- id: S
+  symbol: S
 assumptions: []
 statement:
   canonical_prose: Strong Induction on a Peano System
@@ -92,122 +94,140 @@ statement:
     \hyperref[prf:strong-induction-on-peano-system]{Go to proof.}
 
     \end{theorem}'
-  semantic_ast:
-    kind: iff
-    left:
-      kind: raw_latex
-      latex: left side
-    right:
-      kind: forall
-      binder:
-        binder_id: f6
-        symbol: f_6
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
+  semantic_ast: &id004
+    kind: implies
+    left: &id005
+      kind: and
+      left:
         kind: forall
         binder:
-          binder_id: f5
-          symbol: f_5
+          binder_id: k
+          symbol: k
           domain:
-            kind: raw_latex
-            latex: ambient context
+            kind: variable
+            binder_id: P
         restriction: null
         body:
+          kind: not
+          operand:
+            kind: relation
+            relation: <
+            left:
+              kind: variable
+              binder_id: k
+            right:
+              kind: constant
+              name: '1'
+      right:
+        kind: and
+        left:
           kind: forall
           binder:
-            binder_id: f4
-            symbol: f_4
-            domain:
-              kind: raw_latex
-              latex: ambient context
+            binder_id: k
+            symbol: k
+            domain: &id001
+              kind: variable
+              binder_id: P
           restriction: null
           body:
             kind: forall
             binder:
-              binder_id: f3
-              symbol: f_3
-              domain:
-                kind: raw_latex
-                latex: ambient context
+              binder_id: n
+              symbol: n
+              domain: *id001
             restriction: null
             body:
+              kind: iff
+              left:
+                kind: relation
+                relation: <
+                left:
+                  kind: variable
+                  binder_id: k
+                right:
+                  kind: application
+                  function: S
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+              right:
+                kind: or
+                left:
+                  kind: relation
+                  relation: <
+                  left:
+                    kind: variable
+                    binder_id: k
+                  right:
+                    kind: variable
+                    binder_id: n
+                right:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: variable
+                    binder_id: k
+                  right:
+                    kind: variable
+                    binder_id: n
+        right:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: implies
+            left:
               kind: forall
               binder:
-                binder_id: f2
-                symbol: f_2
+                binder_id: k
+                symbol: k
                 domain:
-                  kind: raw_latex
-                  latex: ambient context
+                  kind: variable
+                  binder_id: P
               restriction: null
               body:
-                kind: forall
-                binder:
-                  binder_id: f1
-                  symbol: f_1
-                  domain:
-                    kind: raw_latex
-                    latex: ambient context
-                restriction: null
-                body:
-                  kind: raw_latex
-                  latex: '\begin{theorem}[Strong Induction on a Peano System]
-
-                    \label{thm:strong-induction-on-peano-system}
-
-                    Let $(P,S,1)$ be a Peano system, let $<$ be a binary relation
-                    on $P$, and let
-
-                    $\varphi$ be a predicate on $P$. Suppose that $<$ is compatible
-                    with the
-
-                    successor structure in the following sense:
-
-                    \[
-
-                    \forall k\in P,\qquad \neg(k<1),
-
-                    \]
-
-                    and
-
-                    \[
-
-                    \forall k,n\in P,\qquad
-
-                    k<S(n)\Longleftrightarrow (k<n\lor k=n).
-
-                    \]
-
-                    If
-
-                    \[
-
-                    \forall n \in P,\qquad
-
-                    \left[
-
-                    \left(\forall k \in P,\ k < n \Longrightarrow \varphi(k)\right)
-
-                    \Longrightarrow \varphi(n)
-
-                    \right]
-
-                    \]
-
-                    then
-
-                    \[
-
-                    \forall n \in P,\qquad \varphi(n).
-
-                    \]
-
-                    \hyperref[prf:strong-induction-on-peano-system]{Go to proof.}
-
-                    \end{theorem}'
+                kind: implies
+                left:
+                  kind: relation
+                  relation: <
+                  left:
+                    kind: variable
+                    binder_id: k
+                  right:
+                    kind: variable
+                    binder_id: n
+                right:
+                  kind: application
+                  function: varphi
+                  arguments:
+                  - kind: variable
+                    binder_id: k
+            right:
+              kind: application
+              function: varphi
+              arguments:
+              - kind: variable
+                binder_id: n
+    right:
+      kind: forall
+      binder: &id006
+        binder_id: n
+        symbol: n
+        domain:
+          kind: variable
+          binder_id: P
+      restriction: null
+      body: &id007
+        kind: application
+        function: varphi
+        arguments:
+        - kind: variable
+          binder_id: n
 logical_forms:
   standard_quantified:
     latex: 'For a Peano system $(P,S,1)$, a binary relation $<$ on $P$, and a predicate
@@ -245,139 +265,9 @@ logical_forms:
       \forall n \in P,\ \varphi(n).
 
       \]'
-    ast:
-      kind: iff
-      left:
-        kind: raw_latex
-        latex: left side
-      right:
-        kind: forall
-        binder:
-          binder_id: f6
-          symbol: f_6
-          domain:
-            kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: forall
-          binder:
-            binder_id: f5
-            symbol: f_5
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: forall
-            binder:
-              binder_id: f4
-              symbol: f_4
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: forall
-              binder:
-                binder_id: f3
-                symbol: f_3
-                domain:
-                  kind: raw_latex
-                  latex: ambient context
-              restriction: null
-              body:
-                kind: forall
-                binder:
-                  binder_id: f2
-                  symbol: f_2
-                  domain:
-                    kind: raw_latex
-                    latex: ambient context
-                restriction: null
-                body:
-                  kind: forall
-                  binder:
-                    binder_id: f1
-                    symbol: f_1
-                    domain:
-                      kind: raw_latex
-                      latex: ambient context
-                  restriction: null
-                  body:
-                    kind: raw_latex
-                    latex: 'For a Peano system $(P,S,1)$, a binary relation $<$ on
-                      $P$, and a predicate
-
-                      $\varphi$ on $P$,
-
-                      \[
-
-                      \Bigl[
-
-                      \bigl(\forall k\in P,\ \neg(k<1)\bigr)
-
-                      \land
-
-                      \bigl(\forall k,n\in P,\ k<S(n)\Longleftrightarrow(k<n\lor k=n)\bigr)
-
-                      \land\\
-
-                      \qquad
-
-                      \forall n \in P,\quad
-
-                      \left(
-
-                      \left(\forall k \in P,\ k < n \Longrightarrow \varphi(k)\right)
-
-                      \Longrightarrow \varphi(n)
-
-                      \right)
-
-                      \Bigr]
-
-                      \Longrightarrow
-
-                      \forall n \in P,\ \varphi(n).
-
-                      \]'
-  predicate_reading:
-    latex: \operatorname{StrongInductionPrinciple}(P,<,\varphi).
-    ast:
-      kind: predicate
-      predicate_id: pred:strong-induction-principle
-      name: StrongInductionPrinciple
-      arguments:
-      - kind: variable
-        binder_id: P
-      - kind: variable
-        binder_id: <
-      - kind: variable
-        binder_id: varphi
     parser_witnesses:
-      original_latex: \operatorname{StrongInductionPrinciple}(P,<,\varphi).
-      hand_parser:
-        available: true
-        ast:
-          kind: predicate
-          predicate_id: pred:strong-induction-principle
-          name: StrongInductionPrinciple
-          arguments:
-          - kind: variable
-            binder_id: P
-          - kind: variable
-            binder_id: <
-          - kind: variable
-            binder_id: varphi
-      lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\operatorname{StrongInductionPrinciple}(P,<,\\varphi).'''
-      parsers_agree: false
-  negation:
-    mechanical:
-      latex: '\neg(For a Peano system $(P,S,1)$, a binary relation $<$ on $P$, and
-        a predicate
+      original_latex: 'For a Peano system $(P,S,1)$, a binary relation $<$ on $P$,
+        and a predicate
 
         $\varphi$ on $P$,
 
@@ -411,126 +301,367 @@ logical_forms:
 
         \forall n \in P,\ \varphi(n).
 
-        \])'
-      ast:
-        kind: not
-        operand:
-          kind: iff
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: implies
           left:
-            kind: raw_latex
-            latex: left side
-          right:
-            kind: forall
-            binder:
-              binder_id: f6
-              symbol: f_6
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
+            kind: and
+            left:
               kind: forall
               binder:
-                binder_id: f5
-                symbol: f_5
+                binder_id: k
+                symbol: k
                 domain:
-                  kind: raw_latex
-                  latex: ambient context
+                  kind: variable
+                  binder_id: P
               restriction: null
               body:
+                kind: not
+                operand:
+                  kind: relation
+                  relation: <
+                  left:
+                    kind: variable
+                    binder_id: k
+                  right:
+                    kind: constant
+                    name: '1'
+            right:
+              kind: and
+              left:
                 kind: forall
                 binder:
-                  binder_id: f4
-                  symbol: f_4
-                  domain:
-                    kind: raw_latex
-                    latex: ambient context
+                  binder_id: k
+                  symbol: k
+                  domain: &id002
+                    kind: variable
+                    binder_id: P
                 restriction: null
                 body:
                   kind: forall
                   binder:
-                    binder_id: f3
-                    symbol: f_3
-                    domain:
-                      kind: raw_latex
-                      latex: ambient context
+                    binder_id: n
+                    symbol: n
+                    domain: *id002
                   restriction: null
                   body:
+                    kind: iff
+                    left:
+                      kind: relation
+                      relation: <
+                      left:
+                        kind: variable
+                        binder_id: k
+                      right:
+                        kind: application
+                        function: S
+                        arguments:
+                        - kind: variable
+                          binder_id: n
+                    right:
+                      kind: or
+                      left:
+                        kind: relation
+                        relation: <
+                        left:
+                          kind: variable
+                          binder_id: k
+                        right:
+                          kind: variable
+                          binder_id: n
+                      right:
+                        kind: relation
+                        relation: '='
+                        left:
+                          kind: variable
+                          binder_id: k
+                        right:
+                          kind: variable
+                          binder_id: n
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: implies
+                  left:
                     kind: forall
                     binder:
-                      binder_id: f2
-                      symbol: f_2
+                      binder_id: k
+                      symbol: k
                       domain:
-                        kind: raw_latex
-                        latex: ambient context
+                        kind: variable
+                        binder_id: P
                     restriction: null
                     body:
-                      kind: forall
-                      binder:
-                        binder_id: f1
-                        symbol: f_1
-                        domain:
-                          kind: raw_latex
-                          latex: ambient context
-                      restriction: null
-                      body:
-                        kind: raw_latex
-                        latex: '\begin{theorem}[Strong Induction on a Peano System]
+                      kind: implies
+                      left:
+                        kind: relation
+                        relation: <
+                        left:
+                          kind: variable
+                          binder_id: k
+                        right:
+                          kind: variable
+                          binder_id: n
+                      right:
+                        kind: application
+                        function: varphi
+                        arguments:
+                        - kind: variable
+                          binder_id: k
+                  right:
+                    kind: application
+                    function: varphi
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+          right:
+            kind: forall
+            binder:
+              binder_id: n
+              symbol: n
+              domain:
+                kind: variable
+                binder_id: P
+            restriction: null
+            body:
+              kind: application
+              function: varphi
+              arguments:
+              - kind: variable
+                binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: and
+            left:
+              kind: forall
+              binder:
+                binder_id: k
+                symbol: k
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: not
+                operand:
+                  kind: relation
+                  relation: <
+                  left:
+                    kind: variable
+                    binder_id: k
+                  right:
+                    kind: constant
+                    name: '1'
+            right:
+              kind: and
+              left:
+                kind: forall
+                binder:
+                  binder_id: k
+                  symbol: k
+                  domain: &id003
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: forall
+                  binder:
+                    binder_id: n
+                    symbol: n
+                    domain: *id003
+                  restriction: null
+                  body:
+                    kind: iff
+                    left:
+                      kind: relation
+                      relation: <
+                      left:
+                        kind: variable
+                        binder_id: k
+                      right:
+                        kind: application
+                        function: S
+                        arguments:
+                        - kind: variable
+                          binder_id: n
+                    right:
+                      kind: or
+                      left:
+                        kind: relation
+                        relation: <
+                        left:
+                          kind: variable
+                          binder_id: k
+                        right:
+                          kind: variable
+                          binder_id: n
+                      right:
+                        kind: relation
+                        relation: '='
+                        left:
+                          kind: variable
+                          binder_id: k
+                        right:
+                          kind: variable
+                          binder_id: n
+              right:
+                kind: forall
+                binder:
+                  binder_id: n
+                  symbol: n
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: implies
+                  left:
+                    kind: forall
+                    binder:
+                      binder_id: k
+                      symbol: k
+                      domain:
+                        kind: variable
+                        binder_id: P
+                    restriction: null
+                    body:
+                      kind: implies
+                      left:
+                        kind: relation
+                        relation: <
+                        left:
+                          kind: variable
+                          binder_id: k
+                        right:
+                          kind: variable
+                          binder_id: n
+                      right:
+                        kind: application
+                        function: varphi
+                        arguments:
+                        - kind: variable
+                          binder_id: k
+                  right:
+                    kind: application
+                    function: varphi
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+          right:
+            kind: forall
+            binder:
+              binder_id: n
+              symbol: n
+              domain:
+                kind: variable
+                binder_id: P
+            restriction: null
+            body:
+              kind: application
+              function: varphi
+              arguments:
+              - kind: variable
+                binder_id: n
+      parsers_agree: true
+    ast: *id004
+  predicate_reading:
+    latex: \operatorname{StrongInductionPrinciple}(P,<,\varphi).
+    ast:
+      kind: predicate
+      predicate_id: pred:strong-induction-principle
+      name: StrongInductionPrinciple
+      arguments:
+      - kind: variable
+        binder_id: P
+      - kind: variable
+        binder_id: <
+      - kind: variable
+        binder_id: varphi
+    parser_witnesses:
+      original_latex: \operatorname{StrongInductionPrinciple}(P,<,\varphi).
+      hand_parser:
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:strong-induction-principle
+          name: StrongInductionPrinciple
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: <
+          - kind: variable
+            binder_id: varphi
+      lark_parser:
+        available: true
+        ast:
+          kind: predicate
+          predicate_id: pred:strong-induction-principle
+          name: StrongInductionPrinciple
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: <
+          - kind: variable
+            binder_id: varphi
+      parsers_agree: true
+  negation:
+    mechanical:
+      latex: '\neg\left(\Bigl[
 
-                          \label{thm:strong-induction-on-peano-system}
+        \bigl(\forall k\in P,\ \neg(k<1)\bigr)
 
-                          Let $(P,S,1)$ be a Peano system, let $<$ be a binary relation
-                          on $P$, and let
+        \land
 
-                          $\varphi$ be a predicate on $P$. Suppose that $<$ is compatible
-                          with the
+        \bigl(\forall k,n\in P,\ k<S(n)\Longleftrightarrow(k<n\lor k=n)\bigr)
 
-                          successor structure in the following sense:
+        \land\\
 
-                          \[
+        \qquad
 
-                          \forall k\in P,\qquad \neg(k<1),
+        \forall n \in P,\quad
 
-                          \]
+        \left(
 
-                          and
+        \left(\forall k \in P,\ k < n \Longrightarrow \varphi(k)\right)
 
-                          \[
+        \Longrightarrow \varphi(n)
 
-                          \forall k,n\in P,\qquad
+        \right)
 
-                          k<S(n)\Longleftrightarrow (k<n\lor k=n).
+        \Bigr]
 
-                          \]
+        \Longrightarrow
 
-                          If
-
-                          \[
-
-                          \forall n \in P,\qquad
-
-                          \left[
-
-                          \left(\forall k \in P,\ k < n \Longrightarrow \varphi(k)\right)
-
-                          \Longrightarrow \varphi(n)
-
-                          \right]
-
-                          \]
-
-                          then
-
-                          \[
-
-                          \forall n \in P,\qquad \varphi(n).
-
-                          \]
-
-                          \hyperref[prf:strong-induction-on-peano-system]{Go to proof.}
-
-                          \end{theorem}'
-    approved_normal_form: null
+        \forall n \in P,\ \varphi(n).\right)'
+      ast:
+        kind: not
+        operand: *id004
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: and
+        left: *id005
+        right:
+          kind: exists
+          binder: *id006
+          restriction: null
+          body:
+            kind: not
+            operand: *id007
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

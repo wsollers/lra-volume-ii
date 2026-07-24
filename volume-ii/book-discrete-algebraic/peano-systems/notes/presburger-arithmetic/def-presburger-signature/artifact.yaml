@@ -74,41 +74,33 @@ statement:
     \end{definition}'
   semantic_ast: &id001
     kind: iff
-    left:
+    left: &id002
       kind: predicate
       predicate_id: pred:presburger-signature
       name: PresburgerSignature
       arguments:
       - kind: variable
         binder_id: mathcalL
-    right:
+    right: &id011
       kind: and
       left:
         kind: relation
         relation: '='
-        left:
+        left: &id003
           kind: variable
           binder_id: mathcalL
-        right:
-          kind: tuple
-          elements:
-          - kind: variable
-            binder_id: '0'
-          - kind: variable
-            binder_id: S
-          - kind: variable
-            binder_id: +
-          - kind: variable
-            binder_id: <
+        right: &id004
+          kind: variable
+          binder_id: 0,S,+,<
       right:
         kind: and
         left:
           kind: relation
           relation: '='
-          left:
+          left: &id005
             kind: variable
             binder_id: operatornamear(S)
-          right:
+          right: &id006
             kind: constant
             name: '1'
         right:
@@ -116,19 +108,19 @@ statement:
           left:
             kind: relation
             relation: '='
-            left:
+            left: &id007
               kind: variable
               binder_id: operatornamear(+)
-            right:
+            right: &id008
               kind: constant
               name: '2'
           right:
             kind: relation
             relation: '='
-            left:
+            left: &id009
               kind: variable
               binder_id: operatornamear(<)
-            right:
+            right: &id010
               kind: constant
               name: '2'
 logical_forms:
@@ -185,16 +177,8 @@ logical_forms:
                 kind: variable
                 binder_id: mathcalL
               right:
-                kind: tuple
-                elements:
-                - kind: variable
-                  binder_id: '0'
-                - kind: variable
-                  binder_id: S
-                - kind: variable
-                  binder_id: +
-                - kind: variable
-                  binder_id: <
+                kind: variable
+                binder_id: 0,S,+,<
             right:
               kind: and
               left:
@@ -227,11 +211,59 @@ logical_forms:
                     kind: constant
                     name: '2'
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\operatorname{PresburgerSignature}(\\mathcal{L})\n\\Longleftrightarrow\n\\mathcal{L}
-          = \\{0,S,+,<\\}\n\\land \\operatorname{ar}(S)=1\n\\land \\operatorname{ar}(+)=2\n\\land
-          \\operatorname{ar}(<)=2.'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:presburger-signature
+            name: PresburgerSignature
+            arguments:
+            - kind: variable
+              binder_id: mathcalL
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: mathcalL
+              right:
+                kind: variable
+                binder_id: 0,S,+,<
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '='
+                left:
+                  kind: variable
+                  binder_id: operatornamear(S)
+                right:
+                  kind: constant
+                  name: '1'
+              right:
+                kind: and
+                left:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: variable
+                    binder_id: operatornamear(+)
+                  right:
+                    kind: constant
+                    name: '2'
+                right:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: variable
+                    binder_id: operatornamear(<)
+                  right:
+                    kind: constant
+                    name: '2'
+      parsers_agree: true
   predicate_reading: null
   negation:
     mechanical:
@@ -252,8 +284,42 @@ logical_forms:
     approved_normal_form:
       latex: null
       ast:
-        kind: not
-        operand: *id001
+        kind: or
+        left:
+          kind: and
+          left: *id002
+          right:
+            kind: or
+            left:
+              kind: relation
+              relation: \neq
+              left: *id003
+              right: *id004
+            right:
+              kind: or
+              left:
+                kind: relation
+                relation: \neq
+                left: *id005
+                right: *id006
+              right:
+                kind: or
+                left:
+                  kind: relation
+                  relation: \neq
+                  left: *id007
+                  right: *id008
+                right:
+                  kind: relation
+                  relation: \neq
+                  left: *id009
+                  right: *id010
+        right:
+          kind: and
+          left:
+            kind: not
+            operand: *id002
+          right: *id011
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

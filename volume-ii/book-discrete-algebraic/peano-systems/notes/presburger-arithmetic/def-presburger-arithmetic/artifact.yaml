@@ -86,22 +86,23 @@ statement:
     \end{definition}'
   semantic_ast: &id001
     kind: iff
-    left:
+    left: &id002
       kind: predicate
       predicate_id: pred:presburger-arithmetic
       name: PresburgerArithmetic
       arguments:
       - kind: variable
         binder_id: T
-    right:
+    right: &id005
       kind: relation
       relation: '='
-      left:
+      left: &id003
         kind: variable
         binder_id: T
-      right:
-        kind: variable
-        binder_id: ' varphi: varphi text is an mathcal L_mathrmPrestext-sentence and  (mathbbN,0,S,+,<)modelsvarphi '
+      right: &id004
+        kind: raw_latex
+        latex: \{ varphi COLON varphi \text{ is an }mathcal_L_{mathrm_Pres}\text{-sentence
+          and } (mathbb{N},0,S,+,<)modelsvarphi \}
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -162,14 +163,31 @@ logical_forms:
               kind: variable
               binder_id: T
             right:
-              kind: variable
-              binder_id: ' varphi: varphi text is an mathcal L_mathrmPrestext-sentence
-                and  (mathbbN,0,S,+,<)modelsvarphi '
+              kind: raw_latex
+              latex: \{ varphi COLON varphi \text{ is an }mathcal_L_{mathrm_Pres}\text{-sentence
+                and } (mathbb{N},0,S,+,<)modelsvarphi \}
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\operatorname{PresburgerArithmetic}(T)\n\\Longleftrightarrow\nT=\n\\left\\{\n\\varphi:\n\\varphi
-          \\text{ is an }\\mathcal L_{\\mathrm{Pres}}\\text{-sentence and }\n(\\mathbb{N},0,S,+,<)\\models\\varphi\n\\right\\}.'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: predicate
+            predicate_id: pred:presburger-arithmetic
+            name: PresburgerArithmetic
+            arguments:
+            - kind: variable
+              binder_id: T
+          right:
+            kind: relation
+            relation: '='
+            left:
+              kind: variable
+              binder_id: T
+            right:
+              kind: raw_latex
+              latex: \{ varphi COLON varphi \text{ is an }mathcal_L_{mathrm_Pres}\text{-sentence
+                and } (mathbb{N},0,S,+,<)modelsvarphi \}
+      parsers_agree: true
   predicate_reading: null
   negation:
     mechanical:
@@ -194,8 +212,21 @@ logical_forms:
     approved_normal_form:
       latex: null
       ast:
-        kind: not
-        operand: *id001
+        kind: or
+        left:
+          kind: and
+          left: *id002
+          right:
+            kind: relation
+            relation: \neq
+            left: *id003
+            right: *id004
+        right:
+          kind: and
+          left:
+            kind: not
+            operand: *id002
+          right: *id005
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

@@ -29,7 +29,21 @@ classification:
   logical_framework: mathematical_vernacular
   language_level: mixed
 context: []
-parameters: []
+parameters:
+- id: P
+  symbol: P
+- id: S
+  symbol: S
+- id: W
+  symbol: W
+- id: c
+  symbol: c
+- id: f
+  symbol: f
+- id: function_space
+  symbol: function_space
+- id: g
+  symbol: g
 assumptions: []
 statement:
   canonical_prose: Peano Iterator Theorem
@@ -54,38 +68,64 @@ statement:
     \hyperref[prf:peano-iterator-theorem]{Go to proof.}
 
     \end{theorem}'
-  semantic_ast:
-    kind: forall
+  semantic_ast: &id001
+    kind: exists_unique
     binder:
-      binder_id: f1
-      symbol: f_1
+      binder_id: f
+      symbol: f
       domain:
-        kind: raw_latex
-        latex: ambient context
+        kind: application
+        function: function_space
+        arguments:
+        - kind: variable
+          binder_id: P
+        - kind: variable
+          binder_id: W
     restriction: null
     body:
-      kind: raw_latex
-      latex: '\begin{theorem}[Peano Iterator Theorem]
-
-        \label{thm:peano-iterator-theorem}
-
-        Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data for it.
-
-        Then there exists a unique function $f:P\to W$ such that
-
-        \[
-
-        f(1)=c
-
-        \qquad\text{and}\qquad
-
-        \forall n\in P\;(f(S(n))=g(f(n))).
-
-        \]
-
-        \hyperref[prf:peano-iterator-theorem]{Go to proof.}
-
-        \end{theorem}'
+      kind: and
+      left:
+        kind: relation
+        relation: '='
+        left:
+          kind: application
+          function: f
+          arguments:
+          - kind: constant
+            name: '1'
+        right:
+          kind: variable
+          binder_id: c
+      right:
+        kind: forall
+        binder:
+          binder_id: n
+          symbol: n
+          domain:
+            kind: variable
+            binder_id: P
+        restriction: null
+        body:
+          kind: relation
+          relation: '='
+          left:
+            kind: application
+            function: f
+            arguments:
+            - kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+          right:
+            kind: application
+            function: g
+            arguments:
+            - kind: application
+              function: f
+              arguments:
+              - kind: variable
+                binder_id: n
 logical_forms:
   standard_quantified:
     latex: '\[
@@ -95,129 +135,267 @@ logical_forms:
       \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
 
       \]'
+    parser_witnesses:
+      original_latex: '\[
+
+        \exists! f:P\to W\;
+
+        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: exists_unique
+          binder:
+            binder_id: f
+            symbol: f
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: f
+                arguments:
+                - kind: constant
+                  name: '1'
+              right:
+                kind: variable
+                binder_id: c
+            right:
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                right:
+                  kind: application
+                  function: g
+                  arguments:
+                  - kind: application
+                    function: f
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: exists_unique
+          binder:
+            binder_id: f
+            symbol: f
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: and
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: application
+                function: f
+                arguments:
+                - kind: constant
+                  name: '1'
+              right:
+                kind: variable
+                binder_id: c
+            right:
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: relation
+                relation: '='
+                left:
+                  kind: application
+                  function: f
+                  arguments:
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+                right:
+                  kind: application
+                  function: g
+                  arguments:
+                  - kind: application
+                    function: f
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+      parsers_agree: true
+    ast: *id001
+  predicate_reading:
+    latex: '\exists! f:P\to W\;
+
+      \operatorname{IteratorFunction}(f,(P,S,1),W,c,g).'
     ast:
-      kind: forall
+      kind: exists_unique
       binder:
-        binder_id: f1
-        symbol: f_1
+        binder_id: f
+        symbol: f
         domain:
-          kind: raw_latex
-          latex: ambient context
+          kind: application
+          function: function_space
+          arguments:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: W
       restriction: null
       body:
-        kind: exists
-        binder:
-          binder_id: e1
-          symbol: e_1
-          domain:
-            kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: raw_latex
-          latex: '\[
+        kind: predicate
+        predicate_id: pred:iterator-function
+        name: IteratorFunction
+        arguments:
+        - kind: variable
+          binder_id: f
+        - kind: tuple
+          elements:
+          - kind: variable
+            binder_id: P
+          - kind: variable
+            binder_id: S
+          - kind: constant
+            name: '1'
+        - kind: variable
+          binder_id: W
+        - kind: variable
+          binder_id: c
+        - kind: variable
+          binder_id: g
+    parser_witnesses:
+      original_latex: '\exists! f:P\to W\;
 
-            \exists! f:P\to W\;
-
-            \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
-
-            \]'
-  predicate_reading: null
+        \operatorname{IteratorFunction}(f,(P,S,1),W,c,g).'
+      hand_parser:
+        available: true
+        ast:
+          kind: exists_unique
+          binder:
+            binder_id: f
+            symbol: f
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: predicate
+            predicate_id: pred:iterator-function
+            name: IteratorFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+      lark_parser:
+        available: true
+        ast:
+          kind: exists_unique
+          binder:
+            binder_id: f
+            symbol: f
+            domain:
+              kind: application
+              function: function_space
+              arguments:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: W
+          restriction: null
+          body:
+            kind: predicate
+            predicate_id: pred:iterator-function
+            name: IteratorFunction
+            arguments:
+            - kind: variable
+              binder_id: f
+            - kind: tuple
+              elements:
+              - kind: variable
+                binder_id: P
+              - kind: variable
+                binder_id: S
+              - kind: constant
+                name: '1'
+            - kind: variable
+              binder_id: W
+            - kind: variable
+              binder_id: c
+            - kind: variable
+              binder_id: g
+      parsers_agree: true
   negation:
     mechanical:
-      latex: '\[
+      latex: '\neg\left(\exists! f:P\to W\;
 
-        \begin{aligned}
-
-        &\neg\exists! f:P\to W\;
-
-        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
-
-        \end{aligned}
-
-        \]'
+        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\begin{theorem}[Peano Iterator Theorem]
-
-              \label{thm:peano-iterator-theorem}
-
-              Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data
-              for it.
-
-              Then there exists a unique function $f:P\to W$ such that
-
-              \[
-
-              f(1)=c
-
-              \qquad\text{and}\qquad
-
-              \forall n\in P\;(f(S(n))=g(f(n))).
-
-              \]
-
-              \hyperref[prf:peano-iterator-theorem]{Go to proof.}
-
-              \end{theorem}'
+        operand: *id001
     approved_normal_form:
-      latex: '\[
-
-        \begin{aligned}
-
-        &\neg\exists! f:P\to W\;
-
-        \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
-
-        \end{aligned}
-
-        \]'
+      latex: null
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f1
-            symbol: f_1
-            domain:
-              kind: raw_latex
-              latex: ambient context
-          restriction: null
-          body:
-            kind: raw_latex
-            latex: '\begin{theorem}[Peano Iterator Theorem]
-
-              \label{thm:peano-iterator-theorem}
-
-              Let $(P,S,1)$ be a Peano system, and let $(W,c,g)$ be iterator data
-              for it.
-
-              Then there exists a unique function $f:P\to W$ such that
-
-              \[
-
-              f(1)=c
-
-              \qquad\text{and}\qquad
-
-              \forall n\in P\;(f(S(n))=g(f(n))).
-
-              \]
-
-              \hyperref[prf:peano-iterator-theorem]{Go to proof.}
-
-              \end{theorem}'
+        operand: *id001
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

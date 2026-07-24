@@ -34,6 +34,8 @@ parameters:
   symbol: P
 - id: S
   symbol: S
+- id: varphi
+  symbol: varphi
 assumptions: []
 statement:
   canonical_prose: Induction Principle for a Peano System
@@ -66,55 +68,57 @@ statement:
     \hyperref[prf:induction-principle-for-peano-system]{Go to proof.}
 
     \end{theorem}'
-  semantic_ast:
-    kind: forall
-    binder:
-      binder_id: f2
-      symbol: f_2
-      domain:
-        kind: raw_latex
-        latex: ambient context
-    restriction: null
-    body:
+  semantic_ast: &id001
+    kind: implies
+    left: &id002
+      kind: and
+      left:
+        kind: application
+        function: varphi
+        arguments:
+        - kind: constant
+          name: '1'
+      right:
+        kind: forall
+        binder:
+          binder_id: n
+          symbol: n
+          domain:
+            kind: variable
+            binder_id: P
+        restriction: null
+        body:
+          kind: implies
+          left:
+            kind: application
+            function: varphi
+            arguments:
+            - kind: variable
+              binder_id: n
+          right:
+            kind: application
+            function: varphi
+            arguments:
+            - kind: application
+              function: S
+              arguments:
+              - kind: variable
+                binder_id: n
+    right:
       kind: forall
-      binder:
-        binder_id: f1
-        symbol: f_1
+      binder: &id003
+        binder_id: n
+        symbol: n
         domain:
-          kind: raw_latex
-          latex: ambient context
+          kind: variable
+          binder_id: P
       restriction: null
-      body:
-        kind: raw_latex
-        latex: '\begin{theorem}[Induction Principle for a Peano System]
-
-          \label{thm:induction-principle-for-peano-system}
-
-          Let $(P,S,1)$ be a Peano system, and let $\varphi$ be a predicate on $P$.
-
-          If
-
-          \[
-
-          \varphi(1)
-
-          \qquad\text{and}\qquad
-
-          \forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n))),
-
-          \]
-
-          then
-
-          \[
-
-          \forall n \in P\;\varphi(n).
-
-          \]
-
-          \hyperref[prf:induction-principle-for-peano-system]{Go to proof.}
-
-          \end{theorem}'
+      body: &id004
+        kind: application
+        function: varphi
+        arguments:
+        - kind: variable
+          binder_id: n
 logical_forms:
   standard_quantified:
     latex: 'For a Peano system $(P,S,1)$ and a predicate $\varphi$ on $P$,
@@ -130,39 +134,128 @@ logical_forms:
       \forall n \in P\;\varphi(n).
 
       \]'
-    ast:
-      kind: forall
-      binder:
-        binder_id: f2
-        symbol: f_2
-        domain:
-          kind: raw_latex
-          latex: ambient context
-      restriction: null
-      body:
-        kind: forall
-        binder:
-          binder_id: f1
-          symbol: f_1
-          domain:
-            kind: raw_latex
-            latex: ambient context
-        restriction: null
-        body:
-          kind: raw_latex
-          latex: 'For a Peano system $(P,S,1)$ and a predicate $\varphi$ on $P$,
+    ast: *id001
+    parser_witnesses:
+      original_latex: 'For a Peano system $(P,S,1)$ and a predicate $\varphi$ on $P$,
 
-            \[
+        \[
 
-            \Bigl(\varphi(1) \land
+        \Bigl(\varphi(1) \land
 
-            \forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n)))\Bigr)
+        \forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n)))\Bigr)
 
-            \Longrightarrow
+        \Longrightarrow
 
-            \forall n \in P\;\varphi(n).
+        \forall n \in P\;\varphi(n).
 
-            \]'
+        \]'
+      hand_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: and
+            left:
+              kind: application
+              function: varphi
+              arguments:
+              - kind: constant
+                name: '1'
+            right:
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: implies
+                left:
+                  kind: application
+                  function: varphi
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+                right:
+                  kind: application
+                  function: varphi
+                  arguments:
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+          right:
+            kind: forall
+            binder:
+              binder_id: n
+              symbol: n
+              domain:
+                kind: variable
+                binder_id: P
+            restriction: null
+            body:
+              kind: application
+              function: varphi
+              arguments:
+              - kind: variable
+                binder_id: n
+      lark_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: and
+            left:
+              kind: application
+              function: varphi
+              arguments:
+              - kind: constant
+                name: '1'
+            right:
+              kind: forall
+              binder:
+                binder_id: n
+                symbol: n
+                domain:
+                  kind: variable
+                  binder_id: P
+              restriction: null
+              body:
+                kind: implies
+                left:
+                  kind: application
+                  function: varphi
+                  arguments:
+                  - kind: variable
+                    binder_id: n
+                right:
+                  kind: application
+                  function: varphi
+                  arguments:
+                  - kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: n
+          right:
+            kind: forall
+            binder:
+              binder_id: n
+              symbol: n
+              domain:
+                kind: variable
+                binder_id: P
+            restriction: null
+            body:
+              kind: application
+              function: varphi
+              arguments:
+              - kind: variable
+                binder_id: n
+      parsers_agree: true
   predicate_reading:
     latex: \operatorname{InductionPrinciple}(P,S,1).
     ast:
@@ -207,72 +300,28 @@ logical_forms:
       parsers_agree: true
   negation:
     mechanical:
-      latex: '\neg(For a Peano system $(P,S,1)$ and a predicate $\varphi$ on $P$,
-
-        \[
-
-        \Bigl(\varphi(1) \land
+      latex: '\neg\left(\Bigl(\varphi(1) \land
 
         \forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n)))\Bigr)
 
         \Longrightarrow
 
-        \forall n \in P\;\varphi(n).
-
-        \])'
+        \forall n \in P\;\varphi(n).\right)'
       ast:
         kind: not
-        operand:
-          kind: forall
-          binder:
-            binder_id: f2
-            symbol: f_2
-            domain:
-              kind: raw_latex
-              latex: ambient context
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: and
+        left: *id002
+        right:
+          kind: exists
+          binder: *id003
           restriction: null
           body:
-            kind: forall
-            binder:
-              binder_id: f1
-              symbol: f_1
-              domain:
-                kind: raw_latex
-                latex: ambient context
-            restriction: null
-            body:
-              kind: raw_latex
-              latex: '\begin{theorem}[Induction Principle for a Peano System]
-
-                \label{thm:induction-principle-for-peano-system}
-
-                Let $(P,S,1)$ be a Peano system, and let $\varphi$ be a predicate
-                on $P$.
-
-                If
-
-                \[
-
-                \varphi(1)
-
-                \qquad\text{and}\qquad
-
-                \forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n))),
-
-                \]
-
-                then
-
-                \[
-
-                \forall n \in P\;\varphi(n).
-
-                \]
-
-                \hyperref[prf:induction-principle-for-peano-system]{Go to proof.}
-
-                \end{theorem}'
-    approved_normal_form: null
+            kind: not
+            operand: *id004
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []

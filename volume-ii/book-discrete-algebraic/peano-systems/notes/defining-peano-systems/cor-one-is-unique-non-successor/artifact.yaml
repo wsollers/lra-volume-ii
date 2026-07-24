@@ -65,20 +65,20 @@ statement:
         kind: variable
         binder_id: P
     restriction: null
-    body: &id003
+    body:
       kind: iff
-      left:
+      left: &id003
         kind: relation
         relation: '='
-        left:
+        left: &id005
           kind: variable
           binder_id: x
-        right:
+        right: &id006
           kind: constant
           name: '1'
-      right:
+      right: &id007
         kind: not
-        operand:
+        operand: &id004
           kind: exists
           binder:
             binder_id: u
@@ -167,10 +167,51 @@ logical_forms:
                     kind: variable
                     binder_id: x
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\forall x \\in P,\\quad\nx=1\\Longleftrightarrow\\neg\\exists
-          u \\in P,\\ S(u)=x.'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: x
+            symbol: x
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: iff
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: x
+              right:
+                kind: constant
+                name: '1'
+            right:
+              kind: not
+              operand:
+                kind: exists
+                binder:
+                  binder_id: u
+                  symbol: u
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: u
+                  right:
+                    kind: variable
+                    binder_id: x
+      parsers_agree: true
   predicate_reading:
     latex: '\forall x \in P,\quad
 
@@ -268,10 +309,51 @@ logical_forms:
                     kind: variable
                     binder_id: x
       lark_parser:
-        available: false
-        error: 'could not parse controlled formula: ''\\forall x \\in P,\\quad\nx=1\\Longleftrightarrow\\neg\\exists
-          u \\in P,\\ S(u)=x.'''
-      parsers_agree: false
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: x
+            symbol: x
+            domain:
+              kind: variable
+              binder_id: P
+          restriction: null
+          body:
+            kind: iff
+            left:
+              kind: relation
+              relation: '='
+              left:
+                kind: variable
+                binder_id: x
+              right:
+                kind: constant
+                name: '1'
+            right:
+              kind: not
+              operand:
+                kind: exists
+                binder:
+                  binder_id: u
+                  symbol: u
+                  domain:
+                    kind: variable
+                    binder_id: P
+                restriction: null
+                body:
+                  kind: relation
+                  relation: '='
+                  left:
+                    kind: application
+                    function: S
+                    arguments:
+                    - kind: variable
+                      binder_id: u
+                  right:
+                    kind: variable
+                    binder_id: x
+      parsers_agree: true
   negation:
     mechanical:
       latex: '\neg\left(\forall x \in P,\quad
@@ -287,8 +369,19 @@ logical_forms:
         binder: *id002
         restriction: null
         body:
-          kind: not
-          operand: *id003
+          kind: or
+          left:
+            kind: and
+            left: *id003
+            right: *id004
+          right:
+            kind: and
+            left:
+              kind: relation
+              relation: \neq
+              left: *id005
+              right: *id006
+            right: *id007
     normalization_requires: []
   contrapositive: null
   equivalent_forms: []
