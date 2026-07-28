@@ -67,7 +67,41 @@ For a Peano system $(P,S,1)$ and a predicate $\varphi$ on $P$,
 \]
 \end{remark*}
 
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the contrapositive failure
+  pattern for induction.
+  \item[\(\operatorname{InductionPrinciple}\) fails.] The induction conclusion
+  can fail only when the base case or the successor step fails:
+  \[
+  \neg\forall n \in P\;\varphi(n)
+  \Longrightarrow
+  \neg\Bigl(\varphi(1) \land
+  \forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n)))\Bigr).
+  \]
+  In predicate-reading form this is recorded by the negation of
+  \[
+  \operatorname{InductionPrinciple}(P,S,1).
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } \varphi
+\text{ be a predicate on } P.\\
+&\neg\forall n \in P\;\varphi(n)
+\Longrightarrow
+\neg\Bigl(\varphi(1) \land
+\forall n \in P\;(\varphi(n) \Longrightarrow \varphi(S(n)))\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \begin{aligned}
 &\text{Let } (P,S,1) \text{ be a Peano system and let } \varphi
@@ -221,6 +255,17 @@ For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } A \subseteq P.\\
+&A \text{ is not successor-closed}
+\Longleftrightarrow
+\exists n \in A,\ S(n) \notin A.
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -228,6 +273,14 @@ For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
   of $P$ but fails to contain that element's successor.
   \item[Quantified failure.]
   \[
+  \begin{aligned}
+  A \text{ is not successor-closed}
+  \Longleftrightarrow
+  \exists n \in A,\ \underbrace{S(n) \notin A}_{\text{closure fails at } n}.
+  \end{aligned}
+  \]
+
+\[
   \begin{aligned}
   A \text{ is not successor-closed}
   \Longleftrightarrow
@@ -282,6 +335,17 @@ For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } A \subseteq P.\\
+&A \text{ is not inductive}
+\Longleftrightarrow
+\bigl(1 \notin A \lor \exists n \in A,\ S(n) \notin A\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -290,6 +354,16 @@ For a Peano system $(P,S,1)$ and a subset $A\subseteq P$,
   failing to contain that element's successor.
   \item[Quantified failure.]
   \[
+  \begin{aligned}
+  A \text{ is not inductive}
+  \Longleftrightarrow\;&
+  \underbrace{1 \notin A}_{\text{base point missing}}\\
+  &\lor
+  \underbrace{\exists n \in A,\ S(n) \notin A}_{\text{successor closure fails}}.
+  \end{aligned}
+  \]
+
+\[
   \begin{aligned}
   A \text{ is not inductive}
   \Longleftrightarrow\;&
@@ -397,6 +471,41 @@ S(u)=x.
 S(u) \neq x.
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } x,u \in P.\\
+&u \text{ is not a predecessor of } x
+\Longleftrightarrow
+S(u) \neq x.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\neq\) condition.] The predicate fails exactly in the displayed negation case:
+  \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system and let } x,u \in P.\\
+  &u \text{ is not a predecessor of } x
+  \Longleftrightarrow
+  S(u) \neq x.
+  \end{aligned}
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system and let } x,u \in P.\\
+  &u \text{ is not a predecessor of } x
+  \Longleftrightarrow
+  S(u) \neq x.
+  \end{aligned}
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -529,6 +638,15 @@ For a Peano system $(P,S,1)$,
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\exists a,b \in P\;(a\neq b \land S(a)=S(b)).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -548,6 +666,15 @@ For a Peano system $(P,S,1)$,
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\forall a,b \in P\;(S(a)=S(b) \Longrightarrow a=b).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \begin{aligned}
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\
@@ -595,6 +722,16 @@ For a Peano system $(P,S,1)$,
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\exists x \in P\;\bigl(x\neq 1 \land
+\forall u \in P\;(S(u)\neq x)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\
@@ -711,6 +848,23 @@ For a Peano system $(P,S,1)$,
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\exists x \in P\;\Bigl(
+\bigl(x\neq 1 \land
+(\forall u \in P\;(S(u)\neq x)\\
+&\qquad\qquad\qquad\lor
+\exists u,v \in P\;(S(u)=x \land S(v)=x \land u\neq v))\bigr)\\
+&\qquad\qquad\lor
+\bigl(x=1 \land \exists u \in P\;(S(u)=x \land
+\forall v \in P\;(S(v)=x \Longrightarrow v=u))\bigr)
+\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\

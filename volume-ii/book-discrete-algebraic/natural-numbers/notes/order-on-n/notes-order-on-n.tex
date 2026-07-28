@@ -43,6 +43,17 @@ b=a+c.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
+&a \not< b
+\Longleftrightarrow
+\forall c \in P\;(b \neq a+c).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -51,6 +62,15 @@ b=a+c.
   $b$.
   \item[Quantified failure.]
   \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
+  &a \not< b
+  \Longleftrightarrow
+  \underbrace{\forall c \in P\;(b \neq a+c)}_{\text{every proposed additive witness fails}}.
+  \end{aligned}
+  \]
+
+\[
   \begin{aligned}
   &\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
   &a \not< b
@@ -111,6 +131,17 @@ a=b.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
+&a \not\le b
+\Longleftrightarrow
+\bigl(a \not< b \land a \neq b\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -119,6 +150,17 @@ a=b.
   of $a$ nor coincides with it.
   \item[Quantified failure.]
   \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
+  &a \not\le b
+  \Longleftrightarrow
+  \underbrace{a \not< b}_{\text{no strict additive witness}}
+  \land
+  \underbrace{a \neq b}_{\text{equality also fails}}.
+  \end{aligned}
+  \]
+
+\[
   \begin{aligned}
   &\text{Let } (P,S,1) \text{ be a Peano system and let } a,b \in P.\\
   &a \not\le b
@@ -255,7 +297,35 @@ a=b.
 \]
 \end{remark*}
 
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the failed antisymmetry
+  pattern.
+  \item[\(\operatorname{Antisymmetric}\) fails.] Antisymmetry would fail only
+  if two distinct elements were comparable in both directions:
+  \[
+  \exists a,b \in P\;\bigl(a\neq b \land a\le b \land b\le a\bigr).
+  \]
+  In predicate-reading form this is recorded by the negation of
+  \[
+  \operatorname{Antisymmetric}(\leq_P,P).
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\forall a,b \in P\;
+\bigl(a \neq b \Longrightarrow \neg(a \le b \land b \le a)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \begin{aligned}
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\

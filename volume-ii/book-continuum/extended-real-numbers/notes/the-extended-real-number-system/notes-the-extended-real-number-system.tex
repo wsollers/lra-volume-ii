@@ -47,6 +47,32 @@ x\notin\overline{\mathbb{R}}
 x\notin\mathbb{R}\land x\ne-\infty\land x\ne+\infty.
 \]
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+x\notin\overline{\mathbb{R}}
+\Longleftrightarrow
+x\notin\mathbb{R}\land x\ne-\infty\land x\ne+\infty.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{ExtendedReal}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  x\notin\overline{\mathbb{R}}
+  \Longleftrightarrow
+  x\notin\mathbb{R}\land x\ne-\infty\land x\ne+\infty.
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  x\notin\overline{\mathbb{R}}
+  \Longleftrightarrow
+  x\notin\mathbb{R}\land x\ne-\infty\land x\ne+\infty.
+  \]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 The extended real line is the real line with one formal endpoint attached at
 each end.
@@ -73,6 +99,29 @@ It is \emph{infinite} if $x=-\infty$ or $x=+\infty$.
 \neg\operatorname{Finite}_{\overline{\mathbb{R}}}(x)
 \Longleftrightarrow x=-\infty\lor x=+\infty.
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{Finite}_{\overline{\mathbb{R}}}(x)
+\Longleftrightarrow x=-\infty\lor x=+\infty.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{Finite}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \neg\operatorname{Finite}_{\overline{\mathbb{R}}}(x)
+  \Longleftrightarrow x=-\infty\lor x=+\infty.
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{Finite}_{\overline{\mathbb{R}}}(x)
+  \Longleftrightarrow x=-\infty\lor x=+\infty.
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 Finite extended reals are exactly the ordinary real numbers.
@@ -116,6 +165,35 @@ x=-\infty\lor y=+\infty\lor
 x\ne-\infty\land y\ne+\infty\land
 (x,y\in\mathbb{R}\Rightarrow y<x).
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg(x\le_{\overline{\mathbb{R}}}y)
+\Longleftrightarrow
+x\ne-\infty\land y\ne+\infty\land
+(x,y\in\mathbb{R}\Rightarrow y<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{ExtendedLeq}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \neg(x\le_{\overline{\mathbb{R}}}y)
+  \Longleftrightarrow
+  x\ne-\infty\land y\ne+\infty\land
+  (x,y\in\mathbb{R}\Rightarrow y<x).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg(x\le_{\overline{\mathbb{R}}}y)
+  \Longleftrightarrow
+  x\ne-\infty\land y\ne+\infty\land
+  (x,y\in\mathbb{R}\Rightarrow y<x).
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 The new symbols are the least and greatest elements; nothing changes between
@@ -177,6 +255,26 @@ means that any two extended real numbers are comparable in the extended order.
 \[
 \exists x,y\in\overline{\mathbb{R}}\;(x\nleq y\land y\nleq x).
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \exists x,y\in\overline{\mathbb{R}}\;(x\nleq y\land y\nleq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{TotalOrder}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \exists x,y\in\overline{\mathbb{R}}\;(x\nleq y\land y\nleq x).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+    \exists x,y\in\overline{\mathbb{R}}\;(x\nleq y\land y\nleq x).
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 Adding two endpoints preserves linear comparability.
@@ -253,6 +351,26 @@ means that $-\infty$ is least and $+\infty$ is greatest in the extended real ord
 \[
 \exists y\in\overline{\mathbb{R}}\;(y<-\infty\lor +\infty<y).
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \exists y\in\overline{\mathbb{R}}\;(y<-\infty\lor +\infty<y).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{Bottom}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \exists y\in\overline{\mathbb{R}}\;(y<-\infty\lor +\infty<y).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+    \exists y\in\overline{\mathbb{R}}\;(y<-\infty\lor +\infty<y).
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 The infinite symbols are the bottom and top of the extended order.

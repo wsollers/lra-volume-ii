@@ -192,6 +192,14 @@ for $(P,S,1)$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+(W,c,g) \text{ is not iterator data for } (P,S,1)
+\Longleftrightarrow
+\bigl(W \text{ is not a set}\lor c\notin W\lor g \text{ is not a function } W\to W\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -271,6 +279,19 @@ R\subseteq P\times W
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+R \text{ is not an iterator relation for } (W,c,g)
+\Longleftrightarrow\;&
+R\not\subseteq P\times W
+\lor (1,c)\notin R\\
+&\lor \exists n\in P\;\exists w\in W\;
+\bigl((n,w)\in R\land (S(n),g(w))\notin R\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
 R \text{ is not an iterator relation for } (W,c,g)
@@ -382,6 +403,15 @@ Then the definition says
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+(n,w)\notin R^*
+\Longleftrightarrow
+\exists R\subseteq P\times W\;
+\bigl(R \text{ is an iterator relation for } (W,c,g)\land (n,w)\notin R\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -445,7 +475,35 @@ R^* \text{ is not an iterator relation for } (W,c,g).
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  R^* \text{ is not an iterator relation for } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{MinimalRelation}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  R^* \text{ is not an iterator relation for } (W,c,g).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+    R^* \text{ is not an iterator relation for } (W,c,g).
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Contrapositive quantified statement]
+\[
+R^* \text{ is not an iterator relation for } (W,c,g)
+\Longrightarrow
+R^* \text{ is not the minimal iterator relation for } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 R^* \text{ is not an iterator relation for } (W,c,g)
 \Longrightarrow
@@ -495,6 +553,13 @@ $(n,w_1)\in R^*$, then $w_0=w_1$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\exists n\in P\;\exists w_0,w_1\in W\;
+\bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -512,6 +577,15 @@ $(n,w_1)\in R^*$, then $w_0=w_1$.
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\exists n\in P\;\exists w_0,w_1\in W\;
+\bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr)
+\Longrightarrow
+R^* \text{ is not functional at every stage}.
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \exists n\in P\;\exists w_0,w_1\in W\;
 \bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr)
@@ -598,6 +672,13 @@ theorem minimal_iterator_relation_deterministic
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+\[
+\exists n\in P\;\exists w_0,w_1\in W\;
+\bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
 \[
 \exists n\in P\;\exists w_0,w_1\in W\;
 \bigl((n,w_0)\in R^*\land (n,w_1)\in R^*\land w_0\neq w_1\bigr).
@@ -694,6 +775,12 @@ theorem minimal_iterator_relation_complete
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \exists n\in P\;\forall w\in W\;((n,w)\notin R^*).
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -775,6 +862,18 @@ f(1)=c\land h(1)=c\\
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+\exists f,h:P\to W\;\Bigl(&
+f(1)=c\land h(1)=c\\
+&\land \forall n\in P\;(f(S(n))=g(f(n)))\\
+&\land \forall n\in P\;(h(S(n))=g(h(n)))
+\land f\neq h\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -800,6 +899,18 @@ f(1)=c\land h(1)=c\\
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+f\neq h
+\Longrightarrow\;&
+f(1)\neq c\lor h(1)\neq c\\
+&\lor \exists n\in P\;(f(S(n))\neq g(f(n)))\\
+&\lor \exists n\in P\;(h(S(n))\neq g(h(n))).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \begin{aligned}
 f\neq h
@@ -859,6 +970,13 @@ f(1)=c
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\forall f:P\to W\;
+\bigl(f(1)\neq c\lor \exists n\in P\;(f(S(n))\neq g(f(n)))\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -877,6 +995,15 @@ f(1)=c
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\neg\exists f:P\to W\;
+\bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr)
+\Longrightarrow
+R^* \text{ is not both deterministic and complete}.
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \neg\exists f:P\to W\;
 \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr)
@@ -968,6 +1095,15 @@ theorem peano_iterator_theorem
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\neg\exists! f:P\to W\;
+\bigl(f(1)=c\land \forall n\in P\;(f(S(n))=g(f(n)))\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
 &\neg\exists! f:P\to W\;
@@ -1070,6 +1206,18 @@ f \text{ is not a function } P\to W\\
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+f \text{ is not the iterator-generated function determined by } (W,c,g)
+\Longleftrightarrow\;&
+f \text{ is not a function } P\to W\\
+&\lor f(1)\neq c
+\lor \exists n\in P\;(f(S(n))\neq g(f(n))).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -1129,7 +1277,35 @@ f \text{ is the iterator-generated function determined by } (W,c,g)
 \]
 \end{remark*}
 
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the failure of the base
+  clause for the iterator-generated function.
+  \item[\(\operatorname{IteratorGeneratedFunction}\) base clause fails.] The
+  base clause fails when the generated function does not send \(1\) to \(c\):
+  \[
+  f(1)\neq c.
+  \]
+  In predicate-reading form this is recorded by the contrapositive condition
+  \[
+  f(1)\neq c
+  \Longrightarrow
+  f \text{ is not the iterator-generated function determined by } (W,c,g).
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Contrapositive quantified statement]
+\[
+f(1)\neq c
+\Longrightarrow
+f \text{ is not the iterator-generated function determined by } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 f(1)\neq c
 \Longrightarrow
@@ -1176,7 +1352,36 @@ f \text{ is the iterator-generated function determined by } (W,c,g)
 \]
 \end{remark*}
 
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the failure of the successor
+  clause for the iterator-generated function.
+  \item[\(\operatorname{IteratorGeneratedFunction}\) successor clause fails.]
+  The successor clause fails when some Peano stage does not advance by applying
+  the update rule:
+  \[
+  \exists n\in P\;(f(S(n))\neq g(f(n))).
+  \]
+  In predicate-reading form this is recorded by the contrapositive condition
+  \[
+  \exists n\in P\;(f(S(n))\neq g(f(n)))
+  \Longrightarrow
+  f \text{ is not the iterator-generated function determined by } (W,c,g).
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\exists n\in P\;(f(S(n))\neq g(f(n)))
+\Longrightarrow
+f \text{ is not the iterator-generated function determined by } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \exists n\in P\;(f(S(n))\neq g(f(n)))
 \Longrightarrow
@@ -1226,6 +1431,32 @@ f \text{ is not the iteration of } g \text{ from } c \text{ along } P
 \Longleftrightarrow
 f \text{ is not the iterator-generated function determined by } (W,c,g).
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+f \text{ is not the iteration of } g \text{ from } c \text{ along } P
+\Longleftrightarrow
+f \text{ is not the iterator-generated function determined by } (W,c,g).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{IteratorGeneratedFunction}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  f \text{ is not the iteration of } g \text{ from } c \text{ along } P
+  \Longleftrightarrow
+  f \text{ is not the iterator-generated function determined by } (W,c,g).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  f \text{ is not the iteration of } g \text{ from } c \text{ along } P
+  \Longleftrightarrow
+  f \text{ is not the iterator-generated function determined by } (W,c,g).
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1282,6 +1513,18 @@ For each $a\in A$, write $F_a(n)=F(a,n)$ and $G_a(n)=G(a,n)$. Then
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+\exists a\in A\;\exists n\in P\;\Bigl(&
+F(a,1)=c_a\land G(a,1)=c_a\\
+&\land F(a,S(n))=g_a(F(a,n))
+\land G(a,S(n))=g_a(G(a,n))
+\land F\neq G\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
 \exists a\in A\;\exists n\in P\;\Bigl(&
@@ -1375,6 +1618,14 @@ Let $(P,S,1)$ be a Peano system and let $W$ be a set. A
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\Phi \text{ is not a stage-dependent step rule on } W \text{ over } P
+\Longleftrightarrow
+\Phi \text{ is not a function } P\times W\to W.
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -1441,6 +1692,18 @@ f\colon P\to W\land f(1)=c\\
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+f \text{ is not a solution of the stage-dependent recursion determined by } (W,c,\Phi)
+\Longleftrightarrow\;&
+f \text{ is not a function from } P \text{ to } W\\
+&\lor f(1)\neq c
+\lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n))).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
 f \text{ is not a solution of the stage-dependent recursion determined by } (W,c,\Phi)
@@ -1538,6 +1801,18 @@ f(1)=c\land h(1)=c\\
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+\exists f,h\colon P\to W\;\Bigl(&
+f(1)=c\land h(1)=c\\
+&\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\\
+&\land \forall n\in P\;(h(S(n))=\Phi(n,h(n)))
+\land f\neq h\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -1563,6 +1838,18 @@ f(1)=c\land h(1)=c\\
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+f\neq h
+\Longrightarrow\;&
+f(1)\neq c\lor h(1)\neq c\\
+&\lor \exists n\in P\;(f(S(n))\neq \Phi(n,f(n)))\\
+&\lor \exists n\in P\;(h(S(n))\neq \Phi(n,h(n))).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \begin{aligned}
 f\neq h
@@ -1653,6 +1940,16 @@ H(1)=(1,c)\land
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists! H\colon P\to P\times W\;
+\left[
+H(1)=(1,c)\land
+\forall n\in P,\ H(S(n))=G(H(n))
+\right].
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -1716,6 +2013,13 @@ f(1)=c
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+\[
+\neg\exists! f:P\to W\;
+\bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
 \[
 \neg\exists! f:P\to W\;
 \bigl(f(1)=c\land \forall n\in P\;(f(S(n))=\Phi(n,f(n)))\bigr).
@@ -1806,6 +2110,17 @@ successor-preservation clauses.
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\neg\exists! \theta:P\to Q\;
+\bigl(\theta \text{ is bijective}\land \theta(1_P)=1_Q\\
+&\qquad\qquad\qquad\land
+\forall n\in P\;(\theta(S_P(n))=S_Q(\theta(n)))\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
 &\neg\exists! \theta:P\to Q\;

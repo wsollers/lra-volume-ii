@@ -94,6 +94,19 @@ means that $\varphi$ is injective, preserves the selected structure $\mathcal{S}
 \end{aligned}
 \]
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\varphi \text{ is not an embedding}\\
+&\Longleftrightarrow
+\Bigl(\exists a,a'\in A\;(a\neq a'\land \varphi(a)=\varphi(a'))\\
+&\qquad\lor\ \varphi \text{ fails to preserve a constant, sum, or product}\\
+&\qquad\lor\ \exists a,a'\in A\;\bigl((a<_A a'\land \neg(\varphi(a)<_B\varphi(a')))
+\lor(\varphi(a)<_B\varphi(a')\land \neg(a<_A a'))\bigr)\Bigr).
+\end{aligned}
+\]
+\end{remark*}
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] An embedding can fail by losing distinctness, by failing to preserve selected algebraic structure, or by failing to preserve and reflect order.

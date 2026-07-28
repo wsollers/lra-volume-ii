@@ -26,6 +26,29 @@ means that $I$ is convex in the extended real order.
 \bigl(x\le y\le z\land y\notin I\bigr).
 \]
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\exists x,z\in I\;\exists y\in\overline{\mathbb{R}}\;
+\bigl(x\le y\le z\land y\notin I\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{ExtendedRealInterval}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \exists x,z\in I\;\exists y\in\overline{\mathbb{R}}\;
+  \bigl(x\le y\le z\land y\notin I\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \exists x,z\in I\;\exists y\in\overline{\mathbb{R}}\;
+  \bigl(x\le y\le z\land y\notin I\bigr).
+  \]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 The interval condition is unchanged, but the ambient ordered set now has two
 extra endpoints.
@@ -144,6 +167,26 @@ only if for all $x,z\in I$ with $x\le z$,
 \[
 \exists x,z\in I\;\bigl(x\le z\land [x,z]_{\overline{\mathbb{R}}}\nsubseteq I\bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \exists x,z\in I\;\bigl(x\le z\land [x,z]_{\overline{\mathbb{R}}}\nsubseteq I\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{ExtendedRealInterval}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \exists x,z\in I\;\bigl(x\le z\land [x,z]_{\overline{\mathbb{R}}}\nsubseteq I\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+    \exists x,z\in I\;\bigl(x\le z\land [x,z]_{\overline{\mathbb{R}}}\nsubseteq I\bigr).
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 The familiar interval characterization survives after adjoining the two

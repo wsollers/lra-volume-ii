@@ -44,6 +44,26 @@ I\text{ is not an interval}
 \bigl(\operatorname{Between}(x,y,z)\land y\notin I\bigr).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{Interval}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  I\text{ is not an interval}
+  \Longleftrightarrow
+  \exists x,z\in I\;\exists y\in\mathbb{R}\;
+  \bigl(x<y<z\land y\notin I\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{Interval}(I)
+  \Longleftrightarrow
+  \exists x,z\in I\;\exists y\in\mathbb{R}\;
+  \bigl(\operatorname{Between}(x,y,z)\land y\notin I\bigr).
+  \]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 An interval has no order gaps: once it contains two endpoints, it contains
 every real point between them.
@@ -184,6 +204,24 @@ with $x<z$,
 \neg\operatorname{Interval}(I).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{Interval}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \neg\operatorname{Interval}(I)
+  \Longleftrightarrow
+  \exists x,z\in I\;\bigl(x<z\land [x,z]\nsubseteq I\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \exists x,z\in I\;\bigl(x<z\land [x,z]\nsubseteq I\bigr)
+  \Longleftrightarrow
+  \neg\operatorname{Interval}(I).
+  \]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 The pointwise betweenness definition of interval is equivalent to saying that
 every closed segment joining two points of the set stays inside the set.
@@ -230,6 +268,22 @@ I\text{ is one of the standard interval types}\bigr).
 \[
 \neg\operatorname{StandardRealInterval}(I)\Longrightarrow \neg\operatorname{Interval}(I).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{Interval}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \exists I\subseteq\mathbb{R}\;
+  \bigl(\operatorname{Interval}(I)\land
+  \neg\operatorname{StandardRealInterval}(I)\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{StandardRealInterval}(I)\Longrightarrow \neg\operatorname{Interval}(I).
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 The real-line interval condition has no exotic bounded or unbounded shapes:

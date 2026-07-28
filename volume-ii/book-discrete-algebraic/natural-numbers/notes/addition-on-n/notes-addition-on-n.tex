@@ -55,6 +55,21 @@ x \neq f_m(n).
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system. For each } m \in P,
+\text{ let } f_m : P \to P \text{ satisfy}\\
+&f_m(1)=S(m)
+\qquad\text{and}\qquad
+\forall n \in P\;(f_m(S(n))=S(f_m(n))).\\
+&\text{Then for all } m,n,x \in P,\quad x \neq m+n
+\Longleftrightarrow
+x \neq f_m(n).
+\end{aligned}
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -64,6 +79,19 @@ x \neq f_m(n).
   is simply a value of $P$ different from $f_m(n)$.
   \item[Quantified failure.]
   \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system. For each } m \in P,
+  \text{ let } f_m : P \to P \text{ satisfy}\\
+  &f_m(1)=S(m)
+  \qquad\text{and}\qquad
+  \forall n \in P\;(f_m(S(n))=S(f_m(n))).\\
+  &x \neq m+n
+  \Longleftrightarrow
+  \underbrace{x \neq f_m(n)}_{\text{candidate value disagrees with the recursive output}}.
+  \end{aligned}
+  \]
+
+\[
   \begin{aligned}
   &\text{Let } (P,S,1) \text{ be a Peano system. For each } m \in P,
   \text{ let } f_m : P \to P \text{ satisfy}\\
@@ -404,7 +432,35 @@ b=c.
 \]
 \end{remark*}
 
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the contrapositive failure
+  pattern for left cancellation.
+  \item[\(\operatorname{LeftCancellation}\) fails.] Left cancellation would
+  fail only if distinct inputs became equal after adding the same element on the
+  left:
+  \[
+  \exists a,b,c \in P\;\bigl(b \neq c \land a+b=a+c\bigr).
+  \]
+  In predicate-reading form this is recorded by the negation of
+  \[
+  \operatorname{LeftCancellation}(P,+_P).
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\forall a,b,c \in P\;\bigl(b \neq c \Longrightarrow a+b \neq a+c\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \begin{aligned}
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\
@@ -459,7 +515,35 @@ b=c.
 \]
 \end{remark*}
 
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the contrapositive failure
+  pattern for right cancellation.
+  \item[\(\operatorname{RightCancellation}\) fails.] Right cancellation would
+  fail only if distinct inputs became equal after adding the same element on the
+  right:
+  \[
+  \exists a,b,c \in P\;\bigl(b \neq c \land b+a=c+a\bigr).
+  \]
+  In predicate-reading form this is recorded by the negation of
+  \[
+  \operatorname{RightCancellation}(P,+_P).
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system.}\\
+&\forall a,b,c \in P\;\bigl(b \neq c \Longrightarrow b+a \neq c+a\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
 \[
 \begin{aligned}
 &\text{Let } (P,S,1) \text{ be a Peano system.}\\

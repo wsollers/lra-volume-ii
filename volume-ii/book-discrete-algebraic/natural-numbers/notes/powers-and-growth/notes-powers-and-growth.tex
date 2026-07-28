@@ -56,6 +56,50 @@ x \neq a^n \Longleftrightarrow x \neq h_a(n).
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\text{Let } (P,S,1) \text{ be a Peano system. For each } a \in P,
+\text{ let } h_a : P \to P \text{ satisfy}\\
+&h_a(1)=a
+\qquad\text{and}\qquad
+\forall n \in P\;(h_a(S(n))=h_a(n)\cdot a).\\
+&\text{Then for all } a,n,x \in P,\quad
+x \neq a^n \Longleftrightarrow x \neq h_a(n).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\neq\) condition.] The predicate fails exactly in the displayed negation case:
+  \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system. For each } a \in P,
+  \text{ let } h_a : P \to P \text{ satisfy}\\
+  &h_a(1)=a
+  \qquad\text{and}\qquad
+  \forall n \in P\;(h_a(S(n))=h_a(n)\cdot a).\\
+  &\text{Then for all } a,n,x \in P,\quad
+  x \neq a^n \Longleftrightarrow x \neq h_a(n).
+  \end{aligned}
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \begin{aligned}
+  &\text{Let } (P,S,1) \text{ be a Peano system. For each } a \in P,
+  \text{ let } h_a : P \to P \text{ satisfy}\\
+  &h_a(1)=a
+  \qquad\text{and}\qquad
+  \forall n \in P\;(h_a(S(n))=h_a(n)\cdot a).\\
+  &\text{Then for all } a,n,x \in P,\quad
+  x \neq a^n \Longleftrightarrow x \neq h_a(n).
+  \end{aligned}
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Exponentiation is repeated multiplication in the same sense that multiplication
 is repeated addition. The base $a$ is the fixed left factor; the exponent $n$

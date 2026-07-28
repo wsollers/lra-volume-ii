@@ -36,6 +36,23 @@ x^2=a.
 \neg\operatorname{HasNonnegativeSquareRoot}(a).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{Nonnegative}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \exists a\in\mathbb{R}\;
+  \bigl(a\ge 0\land
+  \forall x\in\mathbb{R}\;(x<0\lor x^2\ne a)\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \operatorname{Nonnegative}(a)\land
+  \neg\operatorname{HasNonnegativeSquareRoot}(a).
+  \]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 Nonnegative real numbers have nonnegative real square roots. This is a
 completeness consequence, not an algebraic field axiom.
@@ -82,6 +99,21 @@ x=y.
 \operatorname{SameSquare}(x,y)\land\operatorname{Nonnegative}(x,y)\land x\ne y.
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{Nonnegative}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \exists x,y\in\mathbb{R}\;
+  \bigl(x\ge 0\land y\ge 0\land x^2=y^2\land x\ne y\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \operatorname{SameSquare}(x,y)\land\operatorname{Nonnegative}(x,y)\land x\ne y.
+  \]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 The sign restriction removes the ambiguity between opposite square roots.
 \end{remark*}
@@ -123,6 +155,21 @@ a\ge 0\land
 \neg\operatorname{UniqueNonnegativeSquareRoot}(a).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{NonnegativeSquareRoot}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  a\ge 0\land
+  \neg\exists!x\in\mathbb{R}\;(x\ge 0\land x^2=a).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{UniqueNonnegativeSquareRoot}(a).
+  \]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 The radical symbol names the unique nonnegative solution of the square
 equation.
@@ -160,6 +207,20 @@ equation.
 \[
 \neg\operatorname{Irrational}(\sqrt2).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{Irrational}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \sqrt2\in\mathbb{Q}.
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{Irrational}(\sqrt2).
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 The square root supplied by completeness need not be rational; the classical
