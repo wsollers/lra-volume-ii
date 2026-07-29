@@ -20,7 +20,11 @@ For positive integers \(n,j,k,i\), define
 \]
 \end{definition}
 \SourceVariantOf{def:integer-prepair}{Mendelson}{Number Systems and the Foundations of Analysis, Chapter 2}{source_variant_of}
+
+
 \SourceVariantOf{def:formal-difference-equivalence}{Mendelson}{Number Systems and the Foundations of Analysis, Chapter 2}{source_variant_of}
+
+\LeanFormalizes{def:men-equivalence-relation}{lra-lean}{LRA.VolumeII.Integers.Mendelson.Construction.Model}{equivalent}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -45,6 +49,8 @@ transitive.
 \end{theorem}
 \SourceVariantOf{thm:formal-difference-equivalence-relation}{Mendelson}{Number Systems and the Foundations of Analysis, Chapter 2}{reduces_to}
 
+
+\LeanFormalizes{thm:men-equiv}{lra-lean}{LRA.VolumeII.Integers.Mendelson.Construction.Model}{equivalent_is_equivalence_relation}{pending}
 \begin{remark*}[Standard quantified statement]
 \[
   \text{Mendelson's cross-addition relation is an equivalence relation.}
@@ -75,6 +81,8 @@ pairs under \(\sim\). The distinguished elements are
 \end{definition}
 \SourceVariantOf{def:integers}{Mendelson}{Number Systems and the Foundations of Analysis, Chapter 2}{source_variant_of}
 
+
+\LeanFormalizes{def:men-integers}{lra-lean}{LRA.VolumeII.Integers.Mendelson.Construction.Model}{Carrier}{pending}
 \begin{remark*}[Standard quantified statement]
 \[
   \text{Mendelson's integers are equivalence classes of positive-integer pairs.}
@@ -103,6 +111,8 @@ If \((n,j)\sim(n_1,j_1)\) and \((k,i)\sim(k_1,i_1)\), then
 \end{lemma}
 \SourceVariantOf{thm:addition-on-z-well-defined}{Mendelson}{Number Systems and the Foundations of Analysis, Chapter 2}{reduces_to}
 
+
+\LeanFormalizes{lem:men-add-welld}{lra-lean}{LRA.VolumeII.Integers.Mendelson.Construction.Model}{representative_operations_respect_equivalence}{pending}
 \begin{remark*}[Standard quantified statement]
 \[
   \text{Equivalent representatives give equivalent Mendelson sums.}
@@ -131,6 +141,8 @@ For \(\alpha,\beta\in\mathbb{Z}\) with representatives
 \end{definition}
 \SourceVariantOf{def:addition-on-z-classes}{Mendelson}{Number Systems and the Foundations of Analysis, Chapter 2}{source_variant_of}
 
+
+\LeanFormalizes{def:men-addition}{lra-lean}{LRA.VolumeII.Integers.Mendelson.Construction.Model}{representative_addition}{pending}
 \begin{remark*}[Standard quantified statement]
 \[
   \text{Mendelson addition adds the first coordinates and the second
@@ -186,6 +198,8 @@ If \((n,j)\sim(n_1,j_1)\) and \((k,i)\sim(k_1,i_1)\), then
 \end{lemma}
 \SourceVariantOf{thm:multiplication-on-z-well-defined}{Mendelson}{Number Systems and the Foundations of Analysis, Chapter 2}{reduces_to}
 
+
+\LeanFormalizes{lem:men-mul-welld}{lra-lean}{LRA.VolumeII.Integers.Mendelson.Construction.Model}{representative_operations_respect_equivalence}{pending}
 \begin{remark*}[Standard quantified statement]
 \[
   \text{Equivalent representatives give equivalent Mendelson products.}
@@ -214,6 +228,8 @@ For \(\alpha,\beta\in\mathbb{Z}\) with representatives
 \end{definition}
 \SourceVariantOf{def:multiplication-on-z-classes}{Mendelson}{Number Systems and the Foundations of Analysis, Chapter 2}{source_variant_of}
 
+
+\LeanFormalizes{def:men-multiplication}{lra-lean}{LRA.VolumeII.Integers.Mendelson.Construction.Model}{representative_multiplication}{pending}
 \begin{remark*}[Standard quantified statement]
 \[
   \text{Mendelson multiplication is the class operation induced by multiplying
@@ -492,6 +508,8 @@ instead of for a particular ordered pair.
 \end{definition}
 \SourceVariantOf{def:positive-integer}{Mendelson}{Number Systems and the Foundations of Analysis, Chapter 2}{source_variant_of}
 
+
+\LeanFormalizes{def:men-positive-set}{lra-lean}{LRA.VolumeII.Integers.Mendelson.Construction.Model}{positive_class}{pending}
 \begin{remark*}[Standard quantified statement]
 \[
   \text{The positive Mendelson integers are the classes whose representatives
@@ -572,6 +590,8 @@ Let \(T(x)=x+_{\mathbb{Z}}1_{\mathbb{Z}}\) on
 \((\mathcal{P}_{\mathbb{Z}},T,1_{\mathbb{Z}})\) is a Peano system.
 \hyperref[prf:men-positive-integers-form-peano-system]{Go to proof.}
 \end{theorem}
+
+\LeanFormalizes{thm:men-positive-integers-form-peano-system}{lra-lean}{LRA.VolumeII.Integers.Mendelson.Construction.Model}{positive_classes_recover_natural_number_model}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
