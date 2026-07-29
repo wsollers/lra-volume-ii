@@ -294,7 +294,7 @@ verification:
   - artifact_label: thm:every-element-is-one-or-a-successor
     system: Lean 4
     repository: lra-lean
-    module: LRA.VolumeII.PeanoSystems.BasicTheorems
+    module: LRA.VolumeII.PeanoSystems.PeanoSystem
     declaration: every_element_is_one_or_successor
     status: checked
     environment:

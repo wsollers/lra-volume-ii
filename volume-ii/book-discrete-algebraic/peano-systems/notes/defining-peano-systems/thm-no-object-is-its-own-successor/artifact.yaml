@@ -186,7 +186,7 @@ verification:
   - artifact_label: thm:no-object-is-its-own-successor
     system: Lean 4
     repository: lra-lean
-    module: LRA.VolumeII.PeanoSystems.BasicTheorems
+    module: LRA.VolumeII.PeanoSystems.PeanoSystem
     declaration: successor_not_self
     status: checked
     environment:
