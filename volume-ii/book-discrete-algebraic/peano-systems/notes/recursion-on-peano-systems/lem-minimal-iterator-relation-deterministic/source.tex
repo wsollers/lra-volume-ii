@@ -11,42 +11,20 @@ $w\in W$ such that $(n,w)\in R^*$.
 \begin{formalizationrecord}{Lean 4 Verification Record}
 \FormalizationSource{Feferman, \emph{The Number Systems}, Section 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
 \Formalizes{lem:minimal-iterator-relation-deterministic}
-\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
-\LeanDeclaration{minimal\_iterator\_relation\_deterministic}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion.Iterator}.\par
+\LeanDeclaration{MinimalIteratorRelationDeterministic}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-theorem minimal_iterator_relation_deterministic
+theorem MinimalIteratorRelationDeterministic
     (ps : PeanoSystem)
     (data : IteratorData ps) :
     forall element : ps.carrier,
-      forall first_value second_value : data.target,
-        minimal_iterator_relation ps data element first_value ->
-        minimal_iterator_relation ps data element second_value ->
+      forall first_value second_value : data.Target,
+        MinimalIteratorRelation ps data element first_value ->
+        MinimalIteratorRelation ps data element second_value ->
         first_value = second_value := by
-  apply induction_principle ps
-
-  case base_case =>
-    intro first_value second_value first_forced second_forced
-    exact
-      Eq.trans
-        (minimal_iterator_relation_base_unique ps data first_value first_forced)
-        (minimal_iterator_relation_base_unique ps data second_value second_forced).symm
-
-  case successor_step =>
-    intro element induction_hypothesis
-    intro first_successor_value second_successor_value
-    intro first_forced second_forced
-    cases minimal_iterator_relation_complete ps data element with
-    | intro current_value current_forced =>
-        exact
-          Eq.trans
-            (forced_successor_values_are_unique
-              ps data element current_value first_successor_value
-              induction_hypothesis current_forced first_forced)
-            (forced_successor_values_are_unique
-              ps data element current_value second_successor_value
-              induction_hypothesis current_forced second_forced).symm
+  sorry
 \end{leancode}
 \end{formalizationrecord}
 

@@ -18,6 +18,40 @@ for all $a\in A$ and all $n\in P$, then $F=G$.
 \end{corollarybox}
 \LeanFormalizes{cor:uniqueness-of-binary-iterator-operations}{lra-lean}{LRA.VolumeII.PeanoSystems.Recursion.Iterator}{UniquenessOfBinaryIteratorOperations}{pending}
 
+\begin{formalizationrecord}{Lean 4 Verification Record}
+\FormalizationSource{Thurston, \emph{The Number System}, Ch.A Theorem 3}
+\Formalizes{cor:uniqueness-of-binary-iterator-operations}
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion.Iterator}.\par
+\LeanDeclaration{UniquenessOfBinaryIteratorOperations}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
+
+\begin{leancode}
+theorem UniquenessOfBinaryIteratorOperations
+    (ps : PeanoSystem)
+    (parameterType target : Type)
+    (initialValueForParameter : parameterType -> target)
+    (stepRuleForParameter : parameterType -> target -> target)
+    (firstOperation secondOperation :
+      parameterType -> ps.carrier -> target) :
+    BinaryIteratorOperationClauses
+      ps
+      parameterType
+      target
+      initialValueForParameter
+      stepRuleForParameter
+      firstOperation ->
+    BinaryIteratorOperationClauses
+      ps
+      parameterType
+      target
+      initialValueForParameter
+      stepRuleForParameter
+      secondOperation ->
+    firstOperation = secondOperation := by
+  sorry
+\end{leancode}
+\end{formalizationrecord}
+
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}

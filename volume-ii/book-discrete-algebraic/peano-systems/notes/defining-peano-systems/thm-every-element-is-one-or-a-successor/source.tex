@@ -11,30 +11,17 @@ exists $u \in P$ such that $S(u)=x$.
 \FormalizationSource{Landau, \emph{Foundations of Analysis}, Section 1; Feferman, \emph{The Number Systems}, Theorem 3.3}
 \Formalizes{thm:every-element-is-one-or-a-successor}
 \textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.PeanoSystem}.\par
-\LeanDeclaration{every\_element\_is\_one\_or\_successor}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\LeanDeclaration{EveryElementIsOneOrASuccessor}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-theorem every_element_is_one_or_successor
+theorem EveryElementIsOneOrASuccessor
     (ps : PeanoSystem) :
     forall element : ps.carrier,
-      Or (element = ps.one)
-        (Exists (fun predecessor : ps.carrier =>
-          ps.successor predecessor = element)) := by
-  let D : ps.carrier -> Prop :=
-    fun candidate_element =>
-      Or (candidate_element = ps.one)
-        (Exists (fun predecessor : ps.carrier =>
-          ps.successor predecessor = candidate_element))
-
-  apply induction_principle ps D
-
-  case base_case =>
-    exact Or.inl rfl
-
-  case successor_step =>
-    intro element induction_hypothesis
-    exact Or.inr (Exists.intro element rfl)
+      element = ps.one \/
+        exists predecessor : ps.carrier,
+          ps.successor predecessor = element := by
+  sorry
 \end{leancode}
 \end{formalizationrecord}
 

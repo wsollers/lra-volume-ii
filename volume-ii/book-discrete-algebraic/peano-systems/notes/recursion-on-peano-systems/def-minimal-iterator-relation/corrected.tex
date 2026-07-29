@@ -14,18 +14,18 @@ R^*
 \begin{formalizationrecord}{Lean 4 Verification Record}
 \FormalizationSource{Feferman, \emph{The Number Systems}, Section 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
 \Formalizes{def:minimal-iterator-relation}
-\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
-\LeanDeclaration{minimal\_iterator\_relation}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion.Iterator}.\par
+\LeanDeclaration{MinimalIteratorRelation}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-def minimal_iterator_relation
+def MinimalIteratorRelation
     (ps : PeanoSystem)
     (data : IteratorData ps)
     (element : ps.carrier)
-    (value : data.target) : Prop :=
-  forall relation : ps.carrier -> data.target -> Prop,
-    iterator_relation ps data relation ->
+    (value : data.Target) : Prop :=
+  forall relation : ps.carrier -> data.Target -> Prop,
+    IteratorRelation ps data relation ->
     relation element value
 \end{leancode}
 \end{formalizationrecord}

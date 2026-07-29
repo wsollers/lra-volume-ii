@@ -10,34 +10,18 @@ $w\in W$ such that $(n,w)\in R^*$.
 \begin{formalizationrecord}{Lean 4 Verification Record}
 \FormalizationSource{Feferman, \emph{The Number Systems}, Section 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
 \Formalizes{lem:minimal-iterator-relation-complete}
-\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
-\LeanDeclaration{minimal\_iterator\_relation\_complete}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion.Iterator}.\par
+\LeanDeclaration{MinimalIteratorRelationComplete}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-theorem minimal_iterator_relation_complete
+theorem MinimalIteratorRelationComplete
     (ps : PeanoSystem)
     (data : IteratorData ps) :
     forall element : ps.carrier,
-      Exists (fun value : data.target =>
-        minimal_iterator_relation ps data element value) := by
-  apply induction_principle ps
-
-  case base_case =>
-    exact
-      Exists.intro
-        data.initial_value
-        (minimal_iterator_relation_is_iterator_relation ps data).left
-
-  case successor_step =>
-    intro element induction_hypothesis
-    cases induction_hypothesis with
-    | intro value value_is_forced =>
-        exact
-          Exists.intro
-            (data.step_rule value)
-            ((minimal_iterator_relation_is_iterator_relation ps data).right
-              element value value_is_forced)
+      exists value : data.Target,
+        MinimalIteratorRelation ps data element value := by
+  sorry
 \end{leancode}
 \end{formalizationrecord}
 

@@ -32,22 +32,24 @@ then
 \begin{formalizationrecord}{Lean 4 Verification Record}
 \FormalizationSource{Peano, \emph{Arithmetices principia}; Feferman, \emph{The Number Systems}, Section 3.1}
 \Formalizes{thm:induction-principle-for-peano-system}
-\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Induction}.\par
-\LeanDeclaration{induction\_principle}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.InductionPrinciple}.\par
+\LeanDeclaration{InductionPrincipleForPeanoSystem}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-theorem induction_principle
+theorem InductionPrincipleForPeanoSystem
     (ps : PeanoSystem)
-    (predicate : ps.carrier -> Prop)
+    (predicate : LRA.VolumeI.Set.LRASet ps.carrier)
     (base_case : predicate ps.one)
     (successor_step :
       forall element : ps.carrier,
-        predicate element ->
-        predicate (ps.successor element)) :
-    forall element : ps.carrier,
-      predicate element :=
-  ps.induction predicate base_case successor_step
+        predicate element -> predicate (ps.successor element)) :
+    forall element : ps.carrier, predicate element :=
+  PeanoAxioms.PeanoInduction
+    ps
+    predicate
+    base_case
+    successor_step
 \end{leancode}
 \end{formalizationrecord}
 
@@ -543,30 +545,17 @@ exists $u \in P$ such that $S(u)=x$.
 \FormalizationSource{Landau, \emph{Foundations of Analysis}, Section 1; Feferman, \emph{The Number Systems}, Theorem 3.3}
 \Formalizes{thm:every-element-is-one-or-a-successor}
 \textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.PeanoSystem}.\par
-\LeanDeclaration{every\_element\_is\_one\_or\_successor}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\LeanDeclaration{EveryElementIsOneOrASuccessor}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-theorem every_element_is_one_or_successor
+theorem EveryElementIsOneOrASuccessor
     (ps : PeanoSystem) :
     forall element : ps.carrier,
-      Or (element = ps.one)
-        (Exists (fun predecessor : ps.carrier =>
-          ps.successor predecessor = element)) := by
-  let D : ps.carrier -> Prop :=
-    fun candidate_element =>
-      Or (candidate_element = ps.one)
-        (Exists (fun predecessor : ps.carrier =>
-          ps.successor predecessor = candidate_element))
-
-  apply induction_principle ps D
-
-  case base_case =>
-    exact Or.inl rfl
-
-  case successor_step =>
-    intro element induction_hypothesis
-    exact Or.inr (Exists.intro element rfl)
+      element = ps.one \/
+        exists predecessor : ps.carrier,
+          ps.successor predecessor = element := by
+  sorry
 \end{leancode}
 \end{formalizationrecord}
 
@@ -989,27 +978,15 @@ S(n) \neq n.
 \FormalizationSource{Landau, \emph{Foundations of Analysis}, Section 2, Theorem 2}
 \Formalizes{thm:no-object-is-its-own-successor}
 \textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.PeanoSystem}.\par
-\LeanDeclaration{successor\_not\_self}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\LeanDeclaration{NoObjectIsItsOwnSuccessor}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-theorem successor_not_self
+theorem NoObjectIsItsOwnSuccessor
     (ps : PeanoSystem) :
     forall element : ps.carrier,
-      Not (ps.successor element = element) := by
-  apply induction_principle ps
-
-  case base_case =>
-    exact ps.one_not_successor ps.one
-
-  case successor_step =>
-    intro element induction_hypothesis
-    exact
-      successor_preserves_inequality
-        ps
-        (ps.successor element)
-        element
-        induction_hypothesis
+      ps.successor element ≠ element := by
+  sorry
 \end{leancode}
 \end{formalizationrecord}
 

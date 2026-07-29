@@ -13,27 +13,15 @@ S(n) \neq n.
 \FormalizationSource{Landau, \emph{Foundations of Analysis}, Section 2, Theorem 2}
 \Formalizes{thm:no-object-is-its-own-successor}
 \textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.PeanoSystem}.\par
-\LeanDeclaration{successor\_not\_self}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\LeanDeclaration{NoObjectIsItsOwnSuccessor}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-theorem successor_not_self
+theorem NoObjectIsItsOwnSuccessor
     (ps : PeanoSystem) :
     forall element : ps.carrier,
-      Not (ps.successor element = element) := by
-  apply induction_principle ps
-
-  case base_case =>
-    exact ps.one_not_successor ps.one
-
-  case successor_step =>
-    intro element induction_hypothesis
-    exact
-      successor_preserves_inequality
-        ps
-        (ps.successor element)
-        element
-        induction_hypothesis
+      ps.successor element ≠ element := by
+  sorry
 \end{leancode}
 \end{formalizationrecord}
 

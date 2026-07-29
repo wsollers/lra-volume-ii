@@ -19,22 +19,24 @@ then
 \begin{formalizationrecord}{Lean 4 Verification Record}
 \FormalizationSource{Peano, \emph{Arithmetices principia}; Feferman, \emph{The Number Systems}, Section 3.1}
 \Formalizes{thm:induction-principle-for-peano-system}
-\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Induction}.\par
-\LeanDeclaration{induction\_principle}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.InductionPrinciple}.\par
+\LeanDeclaration{InductionPrincipleForPeanoSystem}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-theorem induction_principle
+theorem InductionPrincipleForPeanoSystem
     (ps : PeanoSystem)
-    (predicate : ps.carrier -> Prop)
+    (predicate : LRA.VolumeI.Set.LRASet ps.carrier)
     (base_case : predicate ps.one)
     (successor_step :
       forall element : ps.carrier,
-        predicate element ->
-        predicate (ps.successor element)) :
-    forall element : ps.carrier,
-      predicate element :=
-  ps.induction predicate base_case successor_step
+        predicate element -> predicate (ps.successor element)) :
+    forall element : ps.carrier, predicate element :=
+  PeanoAxioms.PeanoInduction
+    ps
+    predicate
+    base_case
+    successor_step
 \end{leancode}
 \end{formalizationrecord}
 

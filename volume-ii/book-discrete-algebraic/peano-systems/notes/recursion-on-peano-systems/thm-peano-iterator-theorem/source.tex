@@ -15,41 +15,32 @@ f(1)=c
 \begin{formalizationrecord}{Lean 4 Verification Record}
 \FormalizationSource{Feferman, \emph{The Number Systems}, Theorem 3.4; Mendelson, \emph{Number Systems and the Foundations of Analysis}, Section 2.2}
 \Formalizes{thm:peano-iterator-theorem}
-\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion}.\par
-\LeanDeclaration{peano\_iterator\_theorem}
-\textbf{Status:} checked against \texttt{lra-lean}.\par
+\textbf{Lean module:} \texttt{LRA.VolumeII.PeanoSystems.Recursion.Iterator}.\par
+\LeanDeclaration{PeanoIteratorTheorem}
+\textbf{Status:} pending against \texttt{lra-lean}.\par
 
 \begin{leancode}
-theorem peano_iterator_theorem
+theorem PeanoIteratorTheorem
     (ps : PeanoSystem)
     (target : Type)
     (initial_value : target)
     (step_rule : target -> target) :
-    Exists (fun iterator_function : ps.carrier -> target =>
-      And
-        (satisfies_iterator_clauses
-          ps target initial_value step_rule iterator_function)
-        (forall other_iterator : ps.carrier -> target,
-          satisfies_iterator_clauses
-            ps target initial_value step_rule other_iterator ->
-          forall element : ps.carrier,
-            other_iterator element = iterator_function element)) := by
-  refine
-    Exists.intro
-      (iter ps target initial_value step_rule)
-      ?_
-  constructor
-  exact iter_satisfies_iterator_clauses ps target initial_value step_rule
-  intro other_iterator other_satisfies element
-  exact
-    Eq.symm
-      (iterator_function_unique
-        ps target initial_value step_rule
-        (iter ps target initial_value step_rule)
-        other_iterator
-        (iter_satisfies_iterator_clauses ps target initial_value step_rule)
-        other_satisfies
-        element)
+    exists iterator_function : ps.carrier -> target,
+      IteratorFunctionClauses
+        ps
+        target
+        initial_value
+        step_rule
+        iterator_function /\
+      forall other_iterator : ps.carrier -> target,
+        IteratorFunctionClauses
+          ps
+          target
+          initial_value
+          step_rule
+          other_iterator ->
+        other_iterator = iterator_function := by
+  sorry
 \end{leancode}
 \end{formalizationrecord}
 
