@@ -1,0 +1,10 @@
+subject: numbers
+display_title: "Numbers"
+volume: volume-ii
+book: book-arithmetic
+path: volume-ii/book-arithmetic/numbers
+status: planned
+sections: []
+dependencies:
+  prior: 
+  next: 

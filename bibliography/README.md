@@ -8,6 +8,7 @@ Current shards:
 
 - `volume-ii-discrete-number-systems.bib`
 - `volume-ii-the-continuum.bib`
+- `volume-ii-arithmetic.bib`
 
 Add entries only to the shard for the owning book root, then run:
 

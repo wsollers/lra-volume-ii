@@ -18,7 +18,7 @@ Shared LaTeX infrastructure comes from sibling `../lra-common`; do not commit a 
 Use `volume-ii.tex` for the full volume, or one of the book roots:
 
 ```text
-volume-ii-discrete-number-systems.tex, volume-ii-the-continuum.tex
+volume-ii-discrete-number-systems.tex, volume-ii-the-continuum.tex, volume-ii-arithmetic.tex
 ```
 
 For Overleaf, provide `common/` beside the TeX roots as local project staging only. Edit shared infrastructure in `lra-common`.
