@@ -8,4 +8,7 @@ dependencies:
 path: volume-ii/book-continuum/numbers-summary
 book: book-continuum
 environments: []
+topics:
+  - number-systems-summary
+  - constructible-numbers
 proof_files: []
